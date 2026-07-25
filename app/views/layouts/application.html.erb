@@ -18,7 +18,10 @@
   </head>
   <body>
     <% if authenticated? %>
-      <% navigation_items = [ { label: t("layout.dashboard"), href: root_path, active: current_page?(root_path) } ] %>
+      <% navigation_items = [
+        { label: t("layout.dashboard"), href: root_path, active: current_page?(root_path) },
+        { label: t("layout.component_showcase"), href: component_showcase_path, active: current_page?(component_showcase_path) }
+      ] %>
       <% account_actions = capture do %>
         <%= button_to t("authentication.sign_out"), session_path, method: :delete, class: "button button--secondary" %>
       <% end %>

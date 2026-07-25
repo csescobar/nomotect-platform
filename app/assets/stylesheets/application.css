@@ -85,6 +85,14 @@ input, select { width: 100%; min-height: var(--control-height); padding: 0.625re
 .page-header__title, .page-header__description { margin: 0; }
 .page-header__description { color: var(--color-text-muted); }
 .page-header__actions { display: flex; align-items: center; gap: var(--space-sm); }
+.showcase { display: grid; gap: var(--space-xl); }
+.showcase__section { display: grid; gap: var(--space-md); padding-block: var(--space-lg); border-top: 1px solid var(--color-border); }
+.showcase__section > h2 { margin: 0; }
+.showcase__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); }
+.showcase__stack, .showcase__form { display: grid; gap: var(--space-md); }
+.showcase__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--space-md); }
+.showcase__grid h3, .showcase__grid p { margin-top: 0; }
+.showcase__form { max-width: 40rem; }
 
 @media (max-width: 48rem) {
   .app-header { align-items: flex-start; flex-direction: column; }

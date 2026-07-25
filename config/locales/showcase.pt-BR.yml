@@ -1,0 +1,27 @@
+pt-BR:
+  layout:
+    component_showcase: "Mostruário de componentes"
+  showcase:
+    title: "Mostruário de componentes"
+    description: "Exemplos vivos do design system da plataforma e de seus estados acessíveis."
+    disabled: "Desabilitado"
+    alert_body: "Este exemplo demonstra feedback semântico e contraste legível."
+    card_body: "Cards agrupam conteúdos relacionados sem introduzir estilos específicos de produto."
+    empty_title: "Nenhum item ainda"
+    empty_description: "Crie o primeiro item para começar."
+    empty_action: "Criar item"
+    sections:
+      buttons: "Botões"
+      feedback: "Feedback e status"
+      containers: "Contêineres e estados vazios"
+      forms: "Controles de formulário"
+    form:
+      name: "Nome"
+      name_help: "Use o nome pelo qual as pessoas reconhecerão você."
+      email: "Endereço de e-mail"
+      locale: "Idioma"
+      active: "Ativo"
+      role: "Função"
+      admin: "Administrador"
+      member: "Membro"
+      submit: "Salvar exemplo"
