@@ -1,6 +1,11 @@
 en:
   application:
     name: Rails Hotwire Platform
+  theme:
+    label: Theme
+    system: System
+    light: Light
+    dark: Dark
   authentication:
     required: Please sign in to continue.
     sign_in: Sign in
