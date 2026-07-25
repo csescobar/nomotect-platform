@@ -49,6 +49,21 @@ input, select { width: 100%; min-height: var(--control-height); padding: 0.625re
 .ui-empty-state__title, .ui-empty-state__description { margin: 0; }
 .ui-empty-state__description { color: var(--color-text-muted); }
 .ui-empty-state__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); margin-top: var(--space-sm); }
+.ui-field { display: grid; gap: var(--space-xs, 0.25rem); margin-bottom: var(--space-md); }
+.ui-field__label { font-weight: 600; }
+.ui-field__required { color: var(--color-primary); }
+.ui-input, .ui-field select, .ui-field textarea { width: 100%; min-height: var(--control-height); padding: 0.625rem 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); color: var(--color-text); }
+.ui-field textarea { min-height: 7rem; resize: vertical; }
+.ui-field--invalid .ui-input, .ui-field--invalid select, .ui-field--invalid textarea { border-width: 2px; border-color: var(--color-text); }
+.ui-field__help { margin: 0; color: var(--color-text-muted); font-size: var(--font-size-sm); }
+.ui-field__errors { margin: 0; padding-left: var(--space-lg); color: var(--color-text); font-size: var(--font-size-sm); }
+.ui-checkbox-field__label, .ui-radio-group__option { display: inline-flex; align-items: flex-start; gap: var(--space-sm); }
+.ui-checkbox, .ui-radio { width: auto; min-height: auto; margin-top: 0.2rem; }
+.ui-radio-group { padding: 0; border: 0; }
+.ui-radio-group__options { display: grid; gap: var(--space-sm); }
+.ui-error-summary { display: grid; gap: var(--space-sm); margin-bottom: var(--space-lg); padding: var(--space-md); border: 2px solid var(--color-text); border-radius: var(--radius-md); background: var(--color-surface); }
+.ui-error-summary__title { margin: 0; font-size: var(--font-size-md); }
+.ui-error-summary__list { margin: 0; padding-left: var(--space-lg); }
 
 @media (max-width: 40rem) {
   .app-header { align-items: flex-start; flex-direction: column; }
