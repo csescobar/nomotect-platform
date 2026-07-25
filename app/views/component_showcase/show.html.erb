@@ -47,10 +47,21 @@
     <%= form_with scope: :showcase, url: component_showcase_path, method: :get, builder: Ui::FormBuilder, html: { class: "showcase__form" } do |form| %>
       <%= form.ui_text_field :name, label: t("showcase.form.name"), help_text: t("showcase.form.name_help"), required: true %>
       <%= form.ui_email_field :email, label: t("showcase.form.email") %>
-      <%= form.ui_select :locale, [ [ "English", "en" ], [ "Português", "pt-BR" ] ], label: t("showcase.form.locale") %>
+      <%= form.ui_select :locale, Localization::SupportedLocales.options, label: t("showcase.form.locale") %>
       <%= form.ui_checkbox :active, label: t("showcase.form.active") %>
       <%= form.ui_radio_group :role, [ [ "admin", t("showcase.form.admin") ], [ "member", t("showcase.form.member") ] ], label: t("showcase.form.role") %>
       <%= form.ui_submit t("showcase.form.submit") %>
     <% end %>
+  </section>
+
+  <section class="showcase__section" aria-labelledby="showcase-formatting">
+    <h2 id="showcase-formatting"><%= t("showcase.sections.formatting") %></h2>
+    <dl class="showcase__grid">
+      <div><dt><%= t("showcase.formatting.date") %></dt><dd><%= format_local_date(Date.new(2026, 7, 25)) %></dd></div>
+      <div><dt><%= t("showcase.formatting.time") %></dt><dd><%= format_local_time(Time.utc(2026, 7, 25, 18, 30)) %></dd></div>
+      <div><dt><%= t("showcase.formatting.number") %></dt><dd><%= format_local_number(12345.67) %></dd></div>
+      <div><dt><%= t("showcase.formatting.percentage") %></dt><dd><%= format_local_percentage(42.5) %></dd></div>
+      <div><dt><%= t("showcase.formatting.currency") %></dt><dd><%= format_local_currency(1234.5) %></dd></div>
+    </dl>
   </section>
 </div>
