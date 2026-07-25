@@ -26,9 +26,9 @@ class Ui::Forms::FormComponentsTest < ViewComponent::TestCase
           form.ui_date_field(:birthday),
           form.ui_datetime_field(:starts_at),
           form.ui_text_area(:notes),
-          form.ui_select(:locale, [[ "English", "en" ], [ "Português", "pt-BR" ]]),
+          form.ui_select(:locale, [ [ "English", "en" ], [ "Português", "pt-BR" ] ]),
           form.ui_checkbox(:active, label: "Active", help_text: "Allow access"),
-          form.ui_radio_group(:role, [[ "admin", "Administrator" ], [ "member", "Member" ]], label: "Role"),
+          form.ui_radio_group(:role, [ [ "admin", "Administrator" ], [ "member", "Member" ] ], label: "Role"),
           form.ui_submit("Save")
         ])
       end
