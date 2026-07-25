@@ -24,19 +24,58 @@ Read the [platform vision](VISION.md) and [Engineering Constitution](ENGINEERING
 - Internationalization and accessibility from the first feature
 - Auditable operations and explicit governance
 
-## Planned stack
+## Runtime baseline
 
-- Ruby on Rails
+- Ruby 4.0.5
+- Rails 8.1.3
+- PostgreSQL 18.4
 - First-party Rails authentication
 - Hotwire: Turbo and Stimulus
 - ViewComponent
-- PostgreSQL
-- Tabulator as the first grid UI adapter
-- Rails I18n
-- Minitest initially
-- Capybara and Playwright
+- Importmap and Propshaft
+- Minitest
 - Brakeman, bundler-audit and RuboCop
-- OpenTelemetry-compatible observability
+
+## Quick start
+
+Prerequisites are Ruby 4.0.5 and PostgreSQL 18.
+
+```bash
+bash bin/setup
+bash bin/dev
+```
+
+Create the first user through the Rails console; the project intentionally ships without default credentials:
+
+```bash
+ruby bin/rails console
+User.create!(
+  email_address: "admin@example.com",
+  password: "replace-with-a-long-password",
+  password_confirmation: "replace-with-a-long-password"
+)
+```
+
+Run the complete local verification pipeline with:
+
+```bash
+bash bin/ci
+```
+
+## Platform core contracts
+
+- First-party session authentication and password reset
+- Deny-by-default authorization policy contract
+- Request-scoped identity and correlation context
+- Database-aware health endpoint at `/health`
+- Structured JSON logging option
+- CSP, secure cookies and request throttling baseline
+- ViewComponent base and first UI component
+- English and Brazilian Portuguese locale baseline
+- Stable developer commands under `bin/`
+- GitHub Actions quality and security pipeline
+
+Read the [Platform Core AI Context](docs/modules/platform-core/AI_CONTEXT.md) for invariants, review boundaries and known limitations.
 
 ## Documentation
 
@@ -106,7 +145,7 @@ The `main` branch is protected. Changes are developed on focused branches and su
 
 ## Status
 
-Epic 0 establishes the project constitution, legal identity, architecture and governance. Executable Rails application work begins in Epic 1.
+Epic 0 established the project constitution, legal identity, architecture and governance. Epic 1 introduces the executable Rails platform core and targets the first `v0.1.0` development baseline.
 
 ## License
 
