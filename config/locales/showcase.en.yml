@@ -15,6 +15,7 @@ en:
       feedback: "Feedback and status"
       containers: "Containers and empty states"
       forms: "Form controls"
+      formatting: "Locale-aware formatting"
     form:
       name: "Name"
       name_help: "Use the name people will recognize."
@@ -25,3 +26,9 @@ en:
       admin: "Administrator"
       member: "Member"
       submit: "Save example"
+    formatting:
+      date: "Date"
+      time: "Date and time"
+      number: "Number"
+      percentage: "Percentage"
+      currency: "Currency"
