@@ -46,6 +46,14 @@ jobs:
       - name: Lint
         run: bash bin/lint
 
+      - name: Upload lint report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rubocop-report
+          path: tmp/rubocop.txt
+          if-no-files-found: ignore
+
       - name: Security analysis
         run: bash bin/security
 
