@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
+  url: <%= ENV["DATABASE_URL"] %>
+
+
+development:
+  <<: *default
+  database: rails_hotwire_platform_development
+
+
+test:
+  <<: *default
+  database: rails_hotwire_platform_test
+
+
+production:
+  <<: *default
+  database: rails_hotwire_platform_production
