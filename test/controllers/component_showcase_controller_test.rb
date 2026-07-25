@@ -2,9 +2,14 @@ require "test_helper"
 
 class ComponentShowcaseControllerTest < ActionDispatch::IntegrationTest
   setup do
-    user = User.create!(email_address: "showcase@example.com", password: "a-secure-password")
-    session = user.sessions.create!(user_agent: "test", ip_address: "127.0.0.1")
-    cookies.signed[:session_id] = session.id
+    User.create!(email_address: "showcase@example.com", password: "a-secure-password")
+
+    post session_path, params: {
+      email_address: "showcase@example.com",
+      password: "a-secure-password"
+    }
+
+    assert_redirected_to root_url
   end
 
   test "showcase renders representative components without accessibility violations" do
