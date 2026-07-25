@@ -1,0 +1,56 @@
+<% content_for :title, t("showcase.title") %>
+
+<div class="showcase">
+  <%= render Ui::Layout::PageHeaderComponent.new(title: t("showcase.title"), description: t("showcase.description")) %>
+
+  <section class="showcase__section" aria-labelledby="showcase-buttons">
+    <h2 id="showcase-buttons"><%= t("showcase.sections.buttons") %></h2>
+    <div class="showcase__row">
+      <% Ui::ButtonComponent::VARIANTS.each do |variant| %>
+        <%= render Ui::ButtonComponent.new(label: variant.to_s.humanize, variant: variant) %>
+      <% end %>
+      <%= render Ui::ButtonComponent.new(label: t("showcase.disabled"), disabled: true) %>
+    </div>
+  </section>
+
+  <section class="showcase__section" aria-labelledby="showcase-feedback">
+    <h2 id="showcase-feedback"><%= t("showcase.sections.feedback") %></h2>
+    <div class="showcase__stack">
+      <% Ui::AlertComponent::VARIANTS.each do |variant| %>
+        <%= render Ui::AlertComponent.new(title: variant.to_s.humanize, variant: variant).with_content(t("showcase.alert_body")) %>
+      <% end %>
+      <div class="showcase__row">
+        <% Ui::BadgeComponent::VARIANTS.each do |variant| %>
+          <%= render Ui::BadgeComponent.new(label: variant.to_s.humanize, variant: variant) %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase__section" aria-labelledby="showcase-containers">
+    <h2 id="showcase-containers"><%= t("showcase.sections.containers") %></h2>
+    <div class="showcase__grid">
+      <% Ui::CardComponent::VARIANTS.each do |variant| %>
+        <%= render Ui::CardComponent.new(variant: variant) do %>
+          <h3><%= variant.to_s.humanize %></h3>
+          <p><%= t("showcase.card_body") %></p>
+        <% end %>
+      <% end %>
+    </div>
+    <%= render Ui::EmptyStateComponent.new(title: t("showcase.empty_title"), description: t("showcase.empty_description")) do %>
+      <%= render Ui::ButtonComponent.new(label: t("showcase.empty_action")) %>
+    <% end %>
+  </section>
+
+  <section class="showcase__section" aria-labelledby="showcase-forms">
+    <h2 id="showcase-forms"><%= t("showcase.sections.forms") %></h2>
+    <%= form_with scope: :showcase, url: component_showcase_path, method: :get, builder: Ui::FormBuilder, html: { class: "showcase__form" } do |form| %>
+      <%= form.ui_text_field :name, label: t("showcase.form.name"), help_text: t("showcase.form.name_help"), required: true %>
+      <%= form.ui_email_field :email, label: t("showcase.form.email") %>
+      <%= form.ui_select :locale, [ [ "English", "en" ], [ "Português", "pt-BR" ] ], label: t("showcase.form.locale") %>
+      <%= form.ui_checkbox :active, label: t("showcase.form.active") %>
+      <%= form.ui_radio_group :role, [ [ "admin", t("showcase.form.admin") ], [ "member", t("showcase.form.member") ] ], label: t("showcase.form.role") %>
+      <%= form.ui_submit t("showcase.form.submit") %>
+    <% end %>
+  </section>
+</div>
