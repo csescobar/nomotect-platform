@@ -1,0 +1,37 @@
+en:
+  layout:
+    organizations: "Organizations"
+  organizations:
+    created: "Organization created."
+    updated: "Organization updated."
+    destroyed: "Organization deleted."
+    member_count:
+      one: "1 member"
+      other: "%{count} members"
+    delete_confirmation: "Delete this organization and all of its memberships?"
+    index:
+      title: "Organizations"
+      description: "Manage the workspaces where people and product data are organized."
+    new:
+      title: "Create organization"
+      description: "Create a workspace and become its first owner."
+    edit:
+      title: "Edit %{name}"
+      description: "Update the organization identity."
+    show:
+      description: "Organization membership and access overview."
+      members: "Members"
+    empty:
+      title: "No organizations yet"
+      description: "Create the first organization to begin collaborating."
+    fields:
+      name: "Organization name"
+    actions:
+      new: "New organization"
+      save: "Save organization"
+      edit: "Edit organization"
+      delete: "Delete organization"
+    roles:
+      owner: "Owner"
+      admin: "Administrator"
+      member: "Member"
