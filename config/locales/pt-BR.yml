@@ -1,0 +1,35 @@
+pt-BR:
+  application:
+    name: Rails Hotwire Platform
+  authentication:
+    required: Entre na sua conta para continuar.
+    sign_in: Entrar
+    sign_out: Sair
+    email: Endereço de e-mail
+    password: Senha
+    invalid_credentials: O endereço de e-mail ou a senha está incorreto.
+    try_later: Muitas tentativas. Tente novamente mais tarde.
+  passwords:
+    forgot: Esqueceu sua senha?
+    reset: Redefinir sua senha
+    send_instructions: Enviar instruções
+    instructions_sent: Se a conta existir, as instruções foram enviadas.
+    choose_new: Escolha uma nova senha
+    confirm: Confirme a senha
+    update: Atualizar senha
+    updated: Sua senha foi atualizada. Entre novamente.
+    invalid_token: O link de redefinição é inválido ou expirou.
+    mailer:
+      subject: Instruções para redefinir a senha
+      heading: Redefina sua senha
+      instructions: Use o link abaixo para escolher uma nova senha.
+      action: Escolher uma nova senha
+      expiration: Este link expira em 20 minutos.
+  home:
+    title: Fundação da plataforma
+    heading: Rails Hotwire Platform está em execução
+    description: O núcleo executável, autenticação, contexto de requisição, health checks, contrato de autorização, ViewComponent e Hotwire estão disponíveis.
+    primary_action: Verificar saúde do serviço
+  errors:
+    not_found: O recurso solicitado não foi encontrado.
+    forbidden: Você não tem autorização para executar esta ação.
