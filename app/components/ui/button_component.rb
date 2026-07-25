@@ -1,19 +1,32 @@
 module Ui
-  class ButtonComponent < ApplicationComponent
-    def initialize(label:, href: nil, variant: :primary, type: :button)
+  class ButtonComponent < BaseComponent
+    VARIANTS = %i[primary secondary danger ghost].freeze
+    SIZES = %i[small medium large].freeze
+
+    def initialize(label:, href: nil, variant: :primary, size: :medium, type: :button, disabled: false, html_options: {})
       @label = label
       @href = href
-      @variant = variant
+      @variant = variant.to_sym
+      @size = size.to_sym
       @type = type
+      @disabled = disabled
+      @html_options = html_options
+
+      validate_option!(:variant, @variant, VARIANTS)
+      validate_option!(:size, @size, SIZES)
     end
 
     def call
-      classes = "button button--#{@variant}"
+      options = merged_html_options(
+        class: class_names("button", "button--#{@variant}", "button--#{@size}"),
+        aria: { disabled: @disabled }
+      )
 
       if @href
-        link_to @label, @href, class: classes
+        options[:tabindex] = -1 if @disabled
+        link_to(@label, @disabled ? nil : @href, options)
       else
-        tag.button @label, class: classes, type: @type
+        tag.button(@label, **options.merge(type: @type, disabled: @disabled))
       end
     end
   end
