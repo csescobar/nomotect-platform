@@ -1,0 +1,8 @@
+# Initial ownership. Split by module as the maintainer team grows.
+* @csescobar
+
+/docs/security/ @csescobar
+/SECURITY.md @csescobar
+/ENGINEERING_CONSTITUTION.md @csescobar
+/ARCHITECTURE.md @csescobar
+/AI_PRINCIPLES.md @csescobar
