@@ -17,22 +17,36 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <header class="app-header">
-      <strong><%= t("application.name") %></strong>
-      <div class="app-header__actions">
-        <%= render Ui::ThemeSwitcherComponent.new %>
-        <% if authenticated? %>
-          <%= button_to t("authentication.sign_out"), session_path, method: :delete, class: "button button--secondary" %>
-        <% end %>
-      </div>
-    </header>
-
-    <main class="app-main">
-      <% flash.each do |type, message| %>
-        <div class="flash flash--<%= type %>" role="status"><%= message %></div>
+    <% if authenticated? %>
+      <% navigation_items = [ { label: t("layout.dashboard"), href: root_path, active: current_page?(root_path) } ] %>
+      <% account_actions = capture do %>
+        <%= button_to t("authentication.sign_out"), session_path, method: :delete, class: "button button--secondary" %>
       <% end %>
 
-      <%= yield %>
-    </main>
+      <%= render Ui::Layout::ApplicationShellComponent.new(
+        navigation_items: navigation_items,
+        current_user: Current.user,
+        account_actions: account_actions
+      ) do %>
+        <% flash.each do |type, message| %>
+          <div class="flash flash--<%= type %>" role="status"><%= message %></div>
+        <% end %>
+        <%= yield %>
+      <% end %>
+    <% else %>
+      <header class="app-header">
+        <strong><%= t("application.name") %></strong>
+        <div class="app-header__actions">
+          <%= render Ui::ThemeSwitcherComponent.new %>
+        </div>
+      </header>
+
+      <main class="app-main" id="main-content">
+        <% flash.each do |type, message| %>
+          <div class="flash flash--<%= type %>" role="status"><%= message %></div>
+        <% end %>
+        <%= yield %>
+      </main>
+    <% end %>
   </body>
 </html>
