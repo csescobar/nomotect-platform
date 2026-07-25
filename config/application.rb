@@ -11,7 +11,7 @@ module RailsHotwirePlatform
 
     config.time_zone = "UTC"
     config.active_record.default_timezone = :utc
-    config.i18n.available_locales = [:"en", :"pt-BR"]
+    config.i18n.available_locales = [ :en, :"pt-BR" ]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = true
 
