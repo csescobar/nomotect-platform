@@ -1,6 +1,6 @@
 # Agent Instructions
 
-These instructions define how agents work in this repository. All AI-assisted contributions must also comply with [AI_PRINCIPLES.md](AI_PRINCIPLES.md).
+These instructions define how agents work in this repository. All AI-assisted contributions must also comply with [AI_PRINCIPLES.md](AI_PRINCIPLES.md), [VISION.md](VISION.md) and the contracts under [`docs/ai`](docs/ai/README.md).
 
 ## Branch and pull request workflow
 
@@ -10,6 +10,18 @@ These instructions define how agents work in this repository. All AI-assisted co
 - Open a draft pull request unless the user explicitly requests a ready-for-review pull request.
 - Use English for repository content, comments, commit messages, issues and pull requests.
 
+## Context discovery
+
+Before changing a platform module:
+
+1. Read its `AI_CONTEXT.md` when present.
+2. Read linked ADRs and public API documentation.
+3. Identify the contribution boundary defined in `docs/ai/contribution-boundaries.md`.
+4. Inspect canonical tests and examples.
+5. State any missing or contradictory context rather than guessing.
+
+Repository-native contracts are the source of truth. External codebase-memory or indexing tools may assist discovery but must not override repository contracts.
+
 ## Architecture
 
 - Keep domain logic independent of Rails controllers, Turbo and HTML.
@@ -18,6 +30,7 @@ These instructions define how agents work in this repository. All AI-assisted co
 - Never bypass authorization or tenant scoping.
 - Never construct SQL from client-provided identifiers.
 - Preserve module boundaries and avoid speculative abstractions.
+- Update module contracts when public APIs, invariants, dependencies or extension points change.
 
 ## Required validation
 
@@ -36,6 +49,7 @@ Until application code exists, verify Markdown, JSON, internal links and configu
 - Document security, privacy, accessibility and migration impact.
 - Add i18n keys for all user-facing text.
 - Do not document behavior that has not been implemented or formally planned.
+- Keep `AI_CONTEXT.md` and machine-readable architecture metadata synchronized with supported behavior.
 
 ## Security
 
@@ -50,5 +64,6 @@ When finishing work, summarize:
 
 - Branch and pull request.
 - Files and behavior changed.
+- Contracts or boundaries affected.
 - Validation performed.
 - Known limitations or follow-up work.
