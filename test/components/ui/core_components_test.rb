@@ -14,7 +14,8 @@ class Ui::CoreComponentsTest < ViewComponent::TestCase
   end
 
   test "card renders block content and custom attributes" do
-    render_inline Ui::CardComponent.new(variant: :outlined, html_options: { id: "profile" }) { "Profile" }
+    component = Ui::CardComponent.new(variant: :outlined, html_options: { id: "profile" }).with_content("Profile")
+    render_inline component
 
     assert_selector "section#profile.ui-card.ui-card--outlined", text: "Profile"
   end
@@ -26,7 +27,8 @@ class Ui::CoreComponentsTest < ViewComponent::TestCase
   end
 
   test "danger alert uses assertive role" do
-    render_inline Ui::AlertComponent.new(title: "Error", variant: :danger) { "Try again" }
+    component = Ui::AlertComponent.new(title: "Error", variant: :danger).with_content("Try again")
+    render_inline component
 
     assert_selector "div.ui-alert.ui-alert--danger[role='alert']"
     assert_selector ".ui-alert__title", text: "Error"
@@ -40,12 +42,18 @@ class Ui::CoreComponentsTest < ViewComponent::TestCase
   end
 
   test "empty state connects its heading with aria-labelledby" do
-    render_inline Ui::EmptyStateComponent.new(title: "No records", description: "Create the first one") { "Action" }
+    component = Ui::EmptyStateComponent.new(
+      title: "No records",
+      description: "Create the first one"
+    ).with_content("Action")
+    render_inline component
 
-    assert_selector "section.ui-empty-state[aria-labelledby]" do |section|
-      heading_id = section.first["aria-labelledby"]
-      assert_selector "h2##{heading_id}", text: "No records"
-    end
+    document = Nokogiri::HTML.fragment(rendered_content)
+    section = document.at_css("section.ui-empty-state")
+    heading = document.at_css("h2.ui-empty-state__title")
+
+    assert_equal heading["id"], section["aria-labelledby"]
+    assert_equal "No records", heading.text
     assert_selector ".ui-empty-state__description", text: "Create the first one"
     assert_selector ".ui-empty-state__actions", text: "Action"
   end
