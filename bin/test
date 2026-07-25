@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ruby bin/rails test "$@"
+mkdir -p tmp/ci
+ruby bin/rails test "$@" 2>&1 | tee tmp/ci/test-report.txt
