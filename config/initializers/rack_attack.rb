@@ -13,7 +13,7 @@ class Rack::Attack
     [
       429,
       { "content-type" => "application/json", "retry-after" => retry_after.to_s },
-      [{ error: "rate_limited", request_id: request.request_id }.to_json]
+      [ { error: "rate_limited", request_id: request.request_id }.to_json ]
     ]
   end
 end
