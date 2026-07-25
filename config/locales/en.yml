@@ -1,0 +1,35 @@
+en:
+  application:
+    name: Rails Hotwire Platform
+  authentication:
+    required: Please sign in to continue.
+    sign_in: Sign in
+    sign_out: Sign out
+    email: Email address
+    password: Password
+    invalid_credentials: The email address or password is incorrect.
+    try_later: Too many attempts. Please try again later.
+  passwords:
+    forgot: Forgot your password?
+    reset: Reset your password
+    send_instructions: Send reset instructions
+    instructions_sent: If that account exists, reset instructions have been sent.
+    choose_new: Choose a new password
+    confirm: Confirm password
+    update: Update password
+    updated: Your password has been updated. Please sign in again.
+    invalid_token: The password reset link is invalid or has expired.
+    mailer:
+      subject: Password reset instructions
+      heading: Reset your password
+      instructions: Use the link below to choose a new password.
+      action: Choose a new password
+      expiration: This link expires in 20 minutes.
+  home:
+    title: Platform foundation
+    heading: Rails Hotwire Platform is running
+    description: The executable platform core, authentication, request context, health checks, authorization contract, ViewComponent and Hotwire are available.
+    primary_action: Check service health
+  errors:
+    not_found: The requested resource was not found.
+    forbidden: You are not authorized to perform this action.
