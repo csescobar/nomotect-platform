@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-exec bin/rails server "$@"
+exec ruby bin/rails server "$@"
