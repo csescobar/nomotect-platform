@@ -5,6 +5,8 @@ pt-BR:
     updated: "Idioma alterado para %{locale}."
     unsupported: "Este idioma não é suportado."
   date:
+    month_names: [~, janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro]
+    abbr_month_names: [~, jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez]
     formats:
       short: "%d/%m/%Y"
       long: "%-d de %B de %Y"
