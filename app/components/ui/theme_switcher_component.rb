@@ -7,7 +7,7 @@ module Ui
         safe_join([
           tag.label(I18n.t("theme.label"), for: "theme-preference", class: "theme-switcher__label"),
           tag.select(
-            options_for_select(OPTIONS.map { |theme| [I18n.t("theme.#{theme}"), theme] }),
+            options_for_select(OPTIONS.map { |theme| [ I18n.t("theme.#{theme}"), theme ] }),
             id: "theme-preference",
             class: "theme-switcher__select",
             data: { theme_target: "select", action: "theme#change" }
