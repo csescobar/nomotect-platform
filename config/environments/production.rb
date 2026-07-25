@@ -8,7 +8,7 @@ Rails.application.configure do
   config.public_file_server.headers = { "cache-control" => "public, max-age=#{1.year.to_i}" }
   config.active_storage.service = :local
   config.force_ssl = true
-  config.log_tags = [:request_id]
+  config.log_tags = [ :request_id ]
   config.logger = ActiveSupport::TaggedLogging.logger($stdout)
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
   config.active_support.report_deprecations = false
