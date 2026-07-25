@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-bundle exec rubocop "$@"
+mkdir -p tmp
+bundle exec rubocop --format progress --format simple --out tmp/rubocop.txt "$@"
