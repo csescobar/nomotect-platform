@@ -1,0 +1,25 @@
+<% content_for :title, @organization.name %>
+
+<%= render Ui::Layout::PageHeaderComponent.new(title: @organization.name, description: t("organizations.show.description")) do |header| %>
+  <% if @organization.membership_for(Current.user)&.admin? %>
+    <% header.with_actions do %>
+      <%= link_to t("organizations.actions.edit"), edit_organization_path(@organization), class: "button button--secondary" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<section aria-labelledby="organization-members">
+  <h2 id="organization-members"><%= t("organizations.show.members") %></h2>
+  <div class="showcase__stack">
+    <% @organization.memberships.includes(:user).order(:created_at).each do |membership| %>
+      <%= render Ui::CardComponent.new do %>
+        <strong><%= membership.user.email_address %></strong>
+        <p><%= t("organizations.roles.#{membership.role}") %></p>
+      <% end %>
+    <% end %>
+  </div>
+</section>
+
+<% if @organization.membership_for(Current.user)&.owner? %>
+  <%= button_to t("organizations.actions.delete"), @organization, method: :delete, class: "button button--danger", data: { turbo_confirm: t("organizations.delete_confirmation") } %>
+<% end %>
