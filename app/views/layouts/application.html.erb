@@ -5,15 +5,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script nonce="<%= content_security_policy_nonce %>">
+      (() => {
+        const preference = localStorage.getItem("rails-hotwire-platform-theme");
+        if (preference === "light" || preference === "dark") {
+          document.documentElement.dataset.theme = preference;
+        }
+      })();
+    </script>
+    <%= stylesheet_link_tag "design_tokens", "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   <body>
     <header class="app-header">
       <strong><%= t("application.name") %></strong>
-      <% if authenticated? %>
-        <%= button_to t("authentication.sign_out"), session_path, method: :delete, class: "button button--secondary" %>
-      <% end %>
+      <div class="app-header__actions">
+        <%= render Ui::ThemeSwitcherComponent.new %>
+        <% if authenticated? %>
+          <%= button_to t("authentication.sign_out"), session_path, method: :delete, class: "button button--secondary" %>
+        <% end %>
+      </div>
     </header>
 
     <main class="app-main">

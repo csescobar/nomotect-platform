@@ -1,6 +1,11 @@
 pt-BR:
   application:
     name: Rails Hotwire Platform
+  theme:
+    label: Tema
+    system: Sistema
+    light: Claro
+    dark: Escuro
   authentication:
     required: Entre na sua conta para continuar.
     sign_in: Entrar
