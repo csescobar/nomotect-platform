@@ -1,0 +1,9 @@
+en:
+  layout:
+    skip_to_content: Skip to main content
+    open_navigation: Open navigation
+    close_navigation: Close navigation
+    primary_navigation: Primary navigation
+    breadcrumbs: Breadcrumbs
+    account: Account
+    dashboard: Dashboard
