@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+bash bin/lint
+bash bin/security
+bash bin/test
