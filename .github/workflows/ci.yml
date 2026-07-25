@@ -59,3 +59,11 @@ jobs:
 
       - name: Test
         run: bash bin/test
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: tmp/ci/test-report.txt
+          if-no-files-found: ignore
