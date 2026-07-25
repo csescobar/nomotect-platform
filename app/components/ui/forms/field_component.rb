@@ -30,7 +30,7 @@ module Ui
 
       def label_markup
         tag.label(for: @input_id, class: "ui-field__label") do
-          safe_join([@label, required_markup].compact, " ")
+          safe_join([ @label, required_markup ].compact, " ")
         end
       end
 
