@@ -1,10 +1,14 @@
 # Rails Hotwire Platform
 
-A modular, security-conscious foundation for enterprise applications built with Ruby on Rails, Hotwire, ViewComponent, PostgreSQL and open-source UI tooling.
+An AI-First Enterprise Application Platform for building secure, governed, accessible and maintainable business applications with Ruby on Rails, Hotwire, ViewComponent, PostgreSQL and open-source tooling.
 
 ## Vision
 
 This project is not intended to be only a starter template. It is a reusable application platform that standardizes architecture, design system, internationalization, advanced grids, security, governance, observability and developer experience.
+
+AI-first means the repository is intentionally structured so humans and coding agents can understand, extend and validate it safely without depending on undocumented knowledge or a specific AI vendor. Human accountability and review remain mandatory.
+
+Read the full [platform vision](VISION.md).
 
 ## Core principles
 
@@ -16,6 +20,7 @@ This project is not intended to be only a starter template. It is a reusable app
 - Design tokens instead of hard-coded styling
 - Internationalization from the first commit
 - Auditable operations and explicit governance
+- Machine-readable architecture contracts
 - Agent-friendly conventions and executable documentation
 
 ## Planned stack
@@ -35,9 +40,19 @@ This project is not intended to be only a starter template. It is a reusable app
 
 ### Architecture
 
+- [Platform vision](VISION.md)
 - [Product vision](docs/architecture/product-vision.md)
 - [Platform architecture](docs/architecture/platform-architecture.md)
 - [Module catalog](docs/architecture/module-catalog.md)
+
+### AI-first architecture
+
+- [AI-first architecture overview](docs/ai/README.md)
+- [Module contract specification](docs/ai/module-contract-specification.md)
+- [Contribution boundaries](docs/ai/contribution-boundaries.md)
+- [Architecture manifest schema](docs/ai/architecture-manifest.schema.json)
+- [Agent command playbooks](docs/ai/commands/README.md)
+- [AI-first roadmap](docs/ai/ai-first-roadmap.md)
 
 ### Platform capabilities
 
@@ -61,7 +76,7 @@ This project is not intended to be only a starter template. It is a reusable app
 
 ### Delivery
 
-- [Roadmap](docs/roadmap/roadmap.md)
+- [Platform roadmap](docs/roadmap/roadmap.md)
 
 ## Contribution workflow
 
