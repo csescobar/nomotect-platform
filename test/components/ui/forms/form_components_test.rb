@@ -7,6 +7,10 @@ class Ui::Forms::FormComponentsTest < ViewComponent::TestCase
     attr_accessor :name, :email, :password, :age, :rate, :birthday, :starts_at, :notes, :locale, :active, :role
 
     validates :email, presence: true
+
+    def self.model_name
+      ActiveModel::Name.new(self, nil, "Profile")
+    end
   end
 
   class HarnessComponent < ViewComponent::Base
