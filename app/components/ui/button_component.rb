@@ -1,4 +1,4 @@
-module UI
+module Ui
   class ButtonComponent < ApplicationComponent
     def initialize(label:, href: nil, variant: :primary, type: :button)
       @label = label
