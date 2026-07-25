@@ -27,7 +27,7 @@ module Accessibility
     def unlabeled_controls
       document.css("input:not([type='hidden']), select, textarea").filter_map do |control|
         next if control["aria-label"].present? || labelled_by?(control)
-        next if control["id"].present? && document.at_css("label[for='#{css_escape(control['id'])}']")
+        next if control["id"].present? && label_for?(control["id"])
 
         Violation.new(rule: :control_label, message: "Control has no accessible label: #{control.name}##{control['id']}")
       end
@@ -45,7 +45,7 @@ module Accessibility
       document.css("[aria-labelledby], [aria-describedby], [aria-controls]").flat_map do |node|
         %w[aria-labelledby aria-describedby aria-controls].flat_map do |attribute|
           node[attribute].to_s.split.filter_map do |id|
-            next if document.at_css("##{css_escape(id)}")
+            next if node_with_id?(id)
 
             Violation.new(rule: :aria_reference, message: "#{attribute} references missing id: #{id}")
           end
@@ -61,11 +61,15 @@ module Accessibility
     end
 
     def labelled_by?(node)
-      node["aria-labelledby"].to_s.split.any? { |id| document.at_css("##{css_escape(id)}") }
+      node["aria-labelledby"].to_s.split.any? { |id| node_with_id?(id) }
     end
 
-    def css_escape(value)
-      value.to_s.gsub(/([^a-zA-Z0-9_-])/, '\\\\1')
+    def label_for?(id)
+      document.xpath(".//label[@for=$id]", nil, id: id).any?
+    end
+
+    def node_with_id?(id)
+      document.xpath(".//*[@id=$id]", nil, id: id).any?
     end
   end
 end
