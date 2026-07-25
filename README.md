@@ -33,15 +33,39 @@ This project is not intended to be only a starter template. It is a reusable app
 
 ## Documentation
 
+### Architecture
+
 - [Product vision](docs/architecture/product-vision.md)
 - [Platform architecture](docs/architecture/platform-architecture.md)
 - [Module catalog](docs/architecture/module-catalog.md)
+
+### Platform capabilities
+
 - [Design system](docs/design-system/overview.md)
 - [Grid architecture](docs/grid/architecture.md)
 - [Internationalization](docs/i18n/strategy.md)
 - [Security baseline](docs/security/security-baseline.md)
+- [Threat model](docs/security/threat-model.md)
+
+### Governance and contribution
+
 - [Governance model](docs/governance/governance-model.md)
+- [Coding standards](docs/governance/coding-standards.md)
+- [Contribution model](docs/governance/contribution-model.md)
+- [Release process](docs/governance/release-process.md)
+- [Versioning policy](docs/governance/versioning.md)
+- [Privacy and LGPD](docs/governance/privacy-and-lgpd.md)
+- [AI contribution principles](AI_PRINCIPLES.md)
+- [Agent instructions](AGENTS.md)
+- [Contributing guide](CONTRIBUTING.md)
+
+### Delivery
+
 - [Roadmap](docs/roadmap/roadmap.md)
+
+## Contribution workflow
+
+The `main` branch is protected. Changes should be developed on focused branches and submitted through pull requests. Squash merge is the preferred strategy for completed changes.
 
 ## Status
 
