@@ -2,7 +2,7 @@ pt-BR:
   localization:
     label: "Idioma"
     apply: "Aplicar"
-    updated: "Idioma alterado para %{locale}."
+    updated: "Idioma alterado para %{locale_name}."
     unsupported: "Este idioma não é suportado."
   date:
     month_names: [~, janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro]
@@ -18,6 +18,10 @@ pt-BR:
     format:
       separator: ","
       delimiter: "."
+    precision:
+      format:
+        separator: ","
+        delimiter: "."
     currency:
       format:
         unit: "R$"
