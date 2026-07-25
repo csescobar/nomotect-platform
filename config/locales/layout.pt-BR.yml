@@ -1,0 +1,9 @@
+pt-BR:
+  layout:
+    skip_to_content: Ir para o conteúdo principal
+    open_navigation: Abrir navegação
+    close_navigation: Fechar navegação
+    primary_navigation: Navegação principal
+    breadcrumbs: Trilha de navegação
+    account: Conta
+    dashboard: Painel
