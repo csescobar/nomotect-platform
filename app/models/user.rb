@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   normalizes :email_address, with: ->(email) { email.strip.downcase }
 
+  before_validation :apply_localization_defaults
+
   validates :email_address, presence: true, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 12 }, allow_nil: true
   validates :locale, inclusion: { in: ->(_) { Localization::SupportedLocales.codes } }
@@ -14,6 +16,12 @@ class User < ApplicationRecord
   end
 
   private
+
+  def apply_localization_defaults
+    entry = Localization::SupportedLocales.fetch(locale)
+    self.locale = entry.code
+    self.time_zone = entry.time_zone if time_zone.blank?
+  end
 
   def time_zone_must_be_supported
     errors.add(:time_zone, :invalid) unless Time.find_zone(time_zone)
