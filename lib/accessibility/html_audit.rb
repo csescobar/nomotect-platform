@@ -25,7 +25,9 @@ module Accessibility
     end
 
     def unlabeled_controls
-      document.css("input:not([type='hidden']), select, textarea").filter_map do |control|
+      selector = "input:not([type='hidden']):not([type='submit']):not([type='button']):not([type='reset']):not([type='image']), select, textarea"
+
+      document.css(selector).filter_map do |control|
         next if control["aria-label"].present? || labelled_by?(control)
         next if control["id"].present? && label_for?(control["id"])
 
@@ -34,8 +36,9 @@ module Accessibility
     end
 
     def unnamed_interactives
-      document.css("button, a[href]").filter_map do |node|
-        next if node.text.squish.present? || node["aria-label"].present? || labelled_by?(node)
+      document.css("button, a[href], input[type='submit'], input[type='button'], input[type='reset'], input[type='image']").filter_map do |node|
+        next if node.text.squish.present? || node["value"].present? || node["alt"].present?
+        next if node["aria-label"].present? || labelled_by?(node)
 
         Violation.new(rule: :accessible_name, message: "Interactive element has no accessible name: #{node.name}")
       end
