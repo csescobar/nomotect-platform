@@ -15,6 +15,7 @@ pt-BR:
       feedback: "Feedback e status"
       containers: "Contêineres e estados vazios"
       forms: "Controles de formulário"
+      formatting: "Formatação de acordo com o idioma"
     form:
       name: "Nome"
       name_help: "Use o nome pelo qual as pessoas reconhecerão você."
@@ -25,3 +26,9 @@ pt-BR:
       admin: "Administrador"
       member: "Membro"
       submit: "Salvar exemplo"
+    formatting:
+      date: "Data"
+      time: "Data e hora"
+      number: "Número"
+      percentage: "Porcentagem"
+      currency: "Moeda"
