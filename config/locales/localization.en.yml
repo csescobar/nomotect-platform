@@ -2,7 +2,7 @@ en:
   localization:
     label: "Language"
     apply: "Apply"
-    updated: "Language changed to %{locale}."
+    updated: "Language changed to %{locale_name}."
     unsupported: "That language is not supported."
   date:
     formats:
@@ -16,6 +16,10 @@ en:
     format:
       separator: "."
       delimiter: ","
+    precision:
+      format:
+        separator: "."
+        delimiter: ","
     currency:
       format:
         unit: "$"
