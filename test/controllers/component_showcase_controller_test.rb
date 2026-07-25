@@ -4,7 +4,11 @@ class ComponentShowcaseControllerTest < ActionDispatch::IntegrationTest
   setup do
     User.create!(email_address: "showcase@example.com", password: "a-secure-password")
 
+    get new_session_path
+    authenticity_token = Nokogiri::HTML(response.body).at_css("input[name='authenticity_token']")["value"]
+
     post session_path, params: {
+      authenticity_token: authenticity_token,
       email_address: "showcase@example.com",
       password: "a-secure-password"
     }
