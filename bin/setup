@@ -2,6 +2,6 @@
 set -euo pipefail
 
 bundle check || bundle install
-bin/rails db:prepare
+ruby bin/rails db:prepare
 
 printf "\nPlatform setup complete.\n"
