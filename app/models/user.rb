@@ -18,9 +18,8 @@ class User < ApplicationRecord
   private
 
   def apply_localization_defaults
-    entry = Localization::SupportedLocales.fetch(locale)
-    self.locale = entry.code
-    self.time_zone = entry.time_zone if time_zone.blank?
+    self.locale = Localization::SupportedLocales.default.code if locale.blank?
+    self.time_zone = Localization::SupportedLocales.fetch(locale).time_zone if time_zone.blank?
   end
 
   def time_zone_must_be_supported
