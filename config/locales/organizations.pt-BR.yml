@@ -1,0 +1,37 @@
+pt-BR:
+  layout:
+    organizations: "Organizações"
+  organizations:
+    created: "Organização criada."
+    updated: "Organização atualizada."
+    destroyed: "Organização excluída."
+    member_count:
+      one: "1 membro"
+      other: "%{count} membros"
+    delete_confirmation: "Excluir esta organização e todas as suas associações?"
+    index:
+      title: "Organizações"
+      description: "Gerencie os espaços de trabalho onde pessoas e dados do produto são organizados."
+    new:
+      title: "Criar organização"
+      description: "Crie um espaço de trabalho e torne-se seu primeiro proprietário."
+    edit:
+      title: "Editar %{name}"
+      description: "Atualize a identidade da organização."
+    show:
+      description: "Visão geral dos membros e acessos da organização."
+      members: "Membros"
+    empty:
+      title: "Nenhuma organização ainda"
+      description: "Crie a primeira organização para começar a colaborar."
+    fields:
+      name: "Nome da organização"
+    actions:
+      new: "Nova organização"
+      save: "Salvar organização"
+      edit: "Editar organização"
+      delete: "Excluir organização"
+    roles:
+      owner: "Proprietário"
+      admin: "Administrador"
+      member: "Membro"
