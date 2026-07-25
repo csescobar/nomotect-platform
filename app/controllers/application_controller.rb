@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   include Authentication
   include Authorization
 
+  helper LocalizationHelper
+
   before_action :set_request_context
   around_action :switch_localization
 
