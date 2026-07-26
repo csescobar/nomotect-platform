@@ -57,6 +57,14 @@ jobs:
       - name: Security analysis
         run: bash bin/security
 
+      - name: Upload security report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brakeman-report
+          path: tmp/ci/brakeman.json
+          if-no-files-found: ignore
+
       - name: Test
         run: bash bin/test
 
