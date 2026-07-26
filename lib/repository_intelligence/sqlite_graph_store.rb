@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
+require "digest"
 require "fileutils"
 require "json"
 require "open3"
-require "shellwords"
+require "time"
 
 module RepositoryIntelligence
   class SqliteGraphStore
@@ -33,17 +34,18 @@ module RepositoryIntelligence
     end
 
     def metadata
-      parse_json(query_json("SELECT key, value FROM graph_metadata ORDER BY key;"), key: "key", value: "value")
+      query_json("SELECT key, value FROM graph_metadata ORDER BY key;").to_h do |row|
+        [row.fetch("key"), row.fetch("value")]
+      end
     end
 
     def node(id)
-      rows = query_json("SELECT id, type, name, path, properties FROM nodes WHERE id = #{quote(id)} LIMIT 1;")
-      rows.first
+      query_json("SELECT id, type, name, path, properties FROM nodes WHERE id = #{quote(id)} LIMIT 1;").first
     end
 
     def impact(id, depth: 2)
       depth = [[depth.to_i, 1].max, 10].min
-      sql = <<~SQL
+      query_json(<<~SQL)
         WITH RECURSIVE traversal(id, depth) AS (
           SELECT #{quote(id)}, 0
           UNION
@@ -56,7 +58,6 @@ module RepositoryIntelligence
         SELECT DISTINCT nodes.id, nodes.type, nodes.name, nodes.path, nodes.properties
         FROM nodes JOIN traversal ON nodes.id = traversal.id ORDER BY nodes.id;
       SQL
-      query_json(sql)
     end
 
     private
@@ -110,15 +111,13 @@ module RepositoryIntelligence
     end
 
     def insert_node_sql(node)
-      payload = node.to_h
-      hash = Digest::SHA256.hexdigest(JSON.generate(payload))
+      hash = Digest::SHA256.hexdigest(JSON.generate(node.to_h))
       "INSERT OR REPLACE INTO nodes VALUES (#{quote(node.id)}, #{quote(node.type)}, #{quote(node.name)}, #{quote(node.path)}, #{quote(JSON.generate(node.properties))}, #{quote(hash)});"
     end
 
     def insert_edge_sql(edge)
-      payload = edge.to_h
       id = Digest::SHA256.hexdigest([edge.from, edge.type, edge.to].join("\0"))
-      hash = Digest::SHA256.hexdigest(JSON.generate(payload))
+      hash = Digest::SHA256.hexdigest(JSON.generate(edge.to_h))
       "INSERT OR REPLACE INTO edges VALUES (#{quote(id)}, #{quote(edge.from)}, #{quote(edge.to)}, #{quote(edge.type)}, #{quote(JSON.generate(edge.properties))}, #{quote(hash)});"
     end
 
@@ -140,10 +139,6 @@ module RepositoryIntelligence
       raise "SQLite graph query failed: #{error}" unless status.success?
 
       output.strip.empty? ? [] : JSON.parse(output)
-    end
-
-    def parse_json(rows, key:, value:)
-      rows.to_h { |row| [row.fetch(key), row.fetch(value)] }
     end
 
     def quote(value)
