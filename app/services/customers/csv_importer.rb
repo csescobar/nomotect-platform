@@ -10,13 +10,13 @@ module Customers
         run.increment!(:processed_rows)
       rescue ActiveRecord::RecordInvalid => error
         run.increment!(:failed_rows)
-        run.update!(errors: run.errors + [ { row: row.to_h, messages: error.record.errors.full_messages } ])
+        run.update!(error_details: run.error_details + [ { row: row.to_h, messages: error.record.errors.full_messages } ])
       end
 
       run.update!(status: run.failed_rows.zero? ? "completed" : "failed")
       run
     rescue CSV::MalformedCSVError => error
-      run&.update!(status: "failed", errors: [ { messages: [ error.message ] } ])
+      run&.update!(status: "failed", error_details: [ { messages: [ error.message ] } ])
       raise
     end
   end
