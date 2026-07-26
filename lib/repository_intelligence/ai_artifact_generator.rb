@@ -41,8 +41,7 @@ module RepositoryIntelligence
     end
 
     def validate
-      generated = generate.files
-      generated.filter_map do |relative, content|
+      generate.files.filter_map do |relative, content|
         path = output_directory.join(relative)
         next "missing generated artifact: #{relative}" unless path.file?
         next if path.read == content
@@ -57,7 +56,8 @@ module RepositoryIntelligence
 
     def module_groups
       graph.nodes.values.reject { |node| node.type == "document" }.group_by do |node|
-        node.name.to_s.split("::").first.presence || "Platform"
+        name = node.name.to_s.split("::").first
+        name.empty? ? "Platform" : name
       end.sort.to_h
     end
 
@@ -167,7 +167,9 @@ module RepositoryIntelligence
     end
 
     def quality_report(files)
-      documented_nodes = graph.nodes.values.count { |node| graph.edges.any? { |edge| edge.from == node.id && edge.type == "DOCUMENTED_BY" } }
+      documented_nodes = graph.nodes.values.count do |node|
+        graph.edges.any? { |edge| edge.from == node.id && edge.type == "DOCUMENTED_BY" }
+      end
       public_nodes = graph.nodes.values.count { |node| %w[controller model job policy].include?(node.type) }
       score = public_nodes.zero? ? 100 : ((documented_nodes.to_f / public_nodes) * 100).round
       {
