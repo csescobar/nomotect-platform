@@ -22,7 +22,7 @@ class RepositoryIntelligenceAiArtifactTest < ActiveSupport::TestCase
       generator = RepositoryIntelligence::AiArtifactGenerator.new(
         repository_path: Rails.root,
         graph:,
-        contracts: [{ "id" => "customer", "version" => 1 }],
+        contracts: [ { "id" => "customer", "version" => 1 } ],
         output_directory: directory
       )
 
