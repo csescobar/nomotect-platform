@@ -47,6 +47,7 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
     assert_equal [ "job:CustomerSync", "model:Customer" ], RepositoryIntelligence.dependency_path(from: "CustomerSync", to: "Customer")
     assert_equal "customer", RepositoryIntelligence.contract("Customer").fetch("id")
     assert_equal "implement-feature", RepositoryIntelligence.playbook("implement_feature").fetch("id")
+    assert_equal contracts, RepositoryIntelligence.contracts
     assert RepositoryIntelligence.capabilities.key?(:graph)
     assert_equal 2, RepositoryIntelligence.statistics.fetch(:nodes)
   end
@@ -104,14 +105,16 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
     end
   end
 
-  test "serves MCP resources and shared query tools" do
+  test "serves semantic MCP resources tools and audit events" do
     graph = RepositoryIntelligence::GovernanceGraph.new
     graph.add_node(RepositoryIntelligence::Node.new(id: "module:test", type: "module", name: "Test", path: nil, properties: {}))
     RepositoryIntelligence.configure(
-      graph:, contracts: [], playbooks: [], manifest: { files: [] }, readiness: { status: "ready" }
+      graph:, contracts: [ { "id" => "test", "owns" => [ "Test" ] } ], playbooks: [],
+      manifest: { files: [] }, readiness: { status: "ready" }
     )
     server = RepositoryIntelligence::McpServer.new(
-      intelligence: RepositoryIntelligence, playbooks: [], input: StringIO.new, output: StringIO.new
+      intelligence: RepositoryIntelligence, playbooks: [], provider_status: { available: true },
+      input: StringIO.new, output: StringIO.new
     )
 
     initialized = server.handle("jsonrpc" => "2.0", "id" => 1, "method" => "initialize")
@@ -119,8 +122,35 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
       "jsonrpc" => "2.0", "id" => 2, "method" => "tools/call",
       "params" => { "name" => "describe_module", "arguments" => { "id" => "module:test" } }
     )
+    provider = server.handle(
+      "jsonrpc" => "2.0", "id" => 3, "method" => "resources/read",
+      "params" => { "uri" => "platform://provider" }
+    )
+    audit = server.handle(
+      "jsonrpc" => "2.0", "id" => 4, "method" => "resources/read",
+      "params" => { "uri" => "platform://audit" }
+    )
 
     assert_equal "2025-06-18", initialized.dig(:result, :protocolVersion)
     assert_includes described.dig(:result, :content, 0, :text), "module:test"
+    assert_includes provider.dig(:result, :contents, 0, :text), "available"
+    assert_includes audit.dig(:result, :contents, 0, :text), "describe_module"
+  end
+
+  test "denies MCP writes and enforces request budgets" do
+    RepositoryIntelligence.configure(graph: RepositoryIntelligence::GovernanceGraph.new, contracts: [], playbooks: [])
+    guard = RepositoryIntelligence::McpRequestGuard.new(max_requests: 1)
+    server = RepositoryIntelligence::McpServer.new(
+      intelligence: RepositoryIntelligence, playbooks: [], guard:, input: StringIO.new, output: StringIO.new
+    )
+
+    denied = server.handle(
+      "jsonrpc" => "2.0", "id" => 1, "method" => "tools/call",
+      "params" => { "name" => "generate_artifacts", "arguments" => {} }
+    )
+    limited = server.handle("jsonrpc" => "2.0", "id" => 2, "method" => "initialize")
+
+    assert_equal(-32602, denied.dig(:error, :code))
+    assert_equal(-32001, limited.dig(:error, :code))
   end
 end

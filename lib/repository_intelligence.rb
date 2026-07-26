@@ -34,6 +34,16 @@ module RepositoryIntelligence
       @manifest
     end
 
+    def contracts
+      require_configuration!
+      @contracts
+    end
+
+    def playbooks
+      require_configuration!
+      @playbooks
+    end
+
     def capabilities
       require_configuration!
       @capability_registry.to_h
@@ -114,8 +124,8 @@ module RepositoryIntelligence
     def register_default_capabilities
       @capability_registry = CapabilityRegistry.new
         .register(:graph, description: "Normalized repository graph queries", public_methods: %i[graph search describe_module impact_analysis dependency_path statistics])
-        .register(:contracts, description: "Machine-readable module and invariant contracts", public_methods: %i[contract invariants])
-        .register(:playbooks, description: "Versioned cross-vendor engineering playbooks", public_methods: %i[playbook])
+        .register(:contracts, description: "Machine-readable module and invariant contracts", public_methods: %i[contracts contract invariants])
+        .register(:playbooks, description: "Versioned cross-vendor engineering playbooks", public_methods: %i[playbooks playbook])
         .register(:generation, description: "Deterministic AI artifact generation", public_methods: %i[generate!])
         .register(:validation, description: "Repository intelligence drift and quality validation", public_methods: %i[validate! readiness])
         .register(:events, description: "Internal repository intelligence lifecycle events", public_methods: %i[subscribe publish])
