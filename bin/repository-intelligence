@@ -15,6 +15,7 @@ require_relative "../lib/repository_intelligence/sqlite_graph_store"
 require_relative "../lib/repository_intelligence/snapshot_drift"
 require_relative "../lib/repository_intelligence/ai_artifact_generator"
 require_relative "../lib/repository_intelligence/mcp_server"
+require_relative "../lib/repository_intelligence/mcp_playbook_tools"
 
 root = File.expand_path("..", __dir__)
 commit = ENV["GITHUB_SHA"].to_s
@@ -35,7 +36,6 @@ report = RepositoryIntelligence::ReadinessReport.new(
   manifest:, graph:, contract_errors: contracts.validate + graph_errors, playbook_errors: playbooks.validate,
   indexed_commit: provider_result.repository_commit, current_commit: commit
 ).to_h.merge(provider: provider.status)
-
 output = Pathname(root).join("docs/ai/generated")
 ai_output = output.join("contexts")
 graph_payload = graph.to_h.merge(repository_commit: commit)
@@ -49,12 +49,10 @@ validation = lambda do
   ).validate(graph_payload)
   report.fetch(:findings) + drift.findings + ai_artifacts.validate
 end
-
 RepositoryIntelligence.configure(
   graph:, contracts: contracts.load, playbooks: playbooks.load, manifest:, readiness: report,
   generator: ai_artifacts, validator: validation
 )
-
 case command
 when "generate"
   writer = RepositoryIntelligence::SnapshotWriter.new(output_directory: output)
@@ -71,7 +69,6 @@ when "generate"
   abort JSON.pretty_generate(report) unless report.fetch(:status) == "ready"
 when "refresh"
   abort "sqlite3 command is required for refresh" unless store.available?
-
   changed = ARGV.empty? ? manifest.fetch(:files).map { |file| file.fetch(:path) } : ARGV
   store.replace_sources(graph:, source_paths: changed, repository_commit: commit, provider: provider_result.provider)
   RepositoryIntelligence.generate!
@@ -81,7 +78,6 @@ when "validate"
   findings = RepositoryIntelligence.validate!
   validated = report.merge(status: findings.empty? ? "ready" : "not_ready", findings:)
   abort JSON.pretty_generate(validated) unless validated.fetch(:status) == "ready"
-
   puts JSON.generate(validated)
 when "query"
   operation = ARGV.shift || "statistics"
