@@ -15,6 +15,14 @@ class OrganizationPolicy < ApplicationPolicy
     membership&.owner?
   end
 
+  def manage_members?
+    membership&.admin?
+  end
+
+  def manage_owners?
+    membership&.owner?
+  end
+
   private
 
   def membership
