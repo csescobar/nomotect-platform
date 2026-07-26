@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   end
   patch "organization_invitations/:token/accept", to: "organization_invitations#accept", as: :accept_organization_invitation
 
+  resources :grids, only: :show do
+    resources :grid_saved_views, only: %i[create update destroy]
+  end
+
   get "component_showcase", to: "component_showcase#show", as: :component_showcase
   get "health", to: "health#show", as: :health
   get "up", to: "rails/health#show", as: :rails_health_check
