@@ -33,7 +33,9 @@ class OrganizationMemberAdministrationTest < ActionDispatch::IntegrationTest
     )
     sign_in(@invitee)
 
-    get accept_organization_invitation_path(invitation.acceptance_token)
+    patch accept_organization_invitation_path(invitation.acceptance_token), params: {
+      authenticity_token: csrf_token
+    }
 
     assert_redirected_to organization_path(@organization)
     assert_equal "member", @organization.membership_for(@invitee).role
