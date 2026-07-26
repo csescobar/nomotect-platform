@@ -4,6 +4,11 @@ class Organization < ApplicationRecord
   has_many :organization_invitations, dependent: :destroy
   has_many :customers, dependent: :destroy
   has_many :domain_events, dependent: :nullify
+  has_many :notifications, dependent: :destroy
+  has_many :stored_files, dependent: :destroy
+  has_many :import_runs, dependent: :destroy
+  has_many :webhook_endpoints, dependent: :destroy
+  has_many :feature_flags, dependent: :destroy
 
   before_validation :assign_slug, on: :create
 
