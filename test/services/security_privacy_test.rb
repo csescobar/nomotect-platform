@@ -41,9 +41,9 @@ class SecurityPrivacyTest < ActiveSupport::TestCase
   end
 
   test "throttle hashes identity and blocks above limit" do
-    Rails.cache.clear
-    first = Security::Throttle.check!(scope: "test", identity: "private@example.com", limit: 1, period: 1.minute)
-    second = Security::Throttle.check!(scope: "test", identity: "private@example.com", limit: 1, period: 1.minute)
+    cache = ActiveSupport::Cache::MemoryStore.new
+    first = Security::Throttle.check!(scope: "test", identity: "private@example.com", limit: 1, period: 1.minute, cache: cache)
+    second = Security::Throttle.check!(scope: "test", identity: "private@example.com", limit: 1, period: 1.minute, cache: cache)
 
     assert first.allowed
     assert_not second.allowed
