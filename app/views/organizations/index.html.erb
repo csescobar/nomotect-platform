@@ -1,9 +1,7 @@
 <% content_for :title, t("organizations.index.title") %>
 
-<%= render Ui::Layout::PageHeaderComponent.new(title: t("organizations.index.title"), description: t("organizations.index.description")) do |header| %>
-  <% header.with_actions do %>
-    <%= link_to t("organizations.actions.new"), new_organization_path, class: "button button--primary" %>
-  <% end %>
+<%= render Ui::Layout::PageHeaderComponent.new(title: t("organizations.index.title"), description: t("organizations.index.description")) do %>
+  <%= link_to t("organizations.actions.new"), new_organization_path, class: "button button--primary" %>
 <% end %>
 
 <% if @organizations.any? %>
