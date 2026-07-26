@@ -10,7 +10,7 @@ class GridsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: GridEngine::TabulatorAdapter.new(@definition).call(@result) }
+      format.json { render json: GridEngine::TabulatorAdapter.new(@definition).response(@result) }
       format.csv do
         relation = GridEngine::ActiveRecordAdapter.new(@definition).call(export_ast, scope: grid_scope).records
         send_data GridEngine::CsvExporter.new(@definition).call(relation, columns: selected_columns),
