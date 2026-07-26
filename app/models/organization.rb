@@ -2,6 +2,8 @@ class Organization < ApplicationRecord
   has_many :memberships, dependent: :destroy
   has_many :users, through: :memberships
   has_many :organization_invitations, dependent: :destroy
+  has_many :customers, dependent: :destroy
+  has_many :domain_events, dependent: :nullify
 
   before_validation :assign_slug, on: :create
 
