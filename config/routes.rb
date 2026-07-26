@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :organizations do
     resources :memberships, only: %i[update destroy]
     resources :organization_invitations, only: %i[create destroy]
+    resources :customers
   end
   patch "organization_invitations/:token/accept", to: "organization_invitations#accept", as: :accept_organization_invitation
 
