@@ -3,6 +3,8 @@ require "csv"
 module Customers
   class CsvImporter
     def self.call(organization:, requested_by:, csv:)
+      TenantBoundary.assert_membership!(organization: organization, user: requested_by)
+
       run = ImportRun.create!(organization: organization, requested_by: requested_by, kind: "customers", status: "processing")
       operation = Customers::Create.new(actor: requested_by)
 
