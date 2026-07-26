@@ -1,33 +1,36 @@
 <% content_for :title, t("grid_engine.#{@definition.key}.title") %>
+<% current_columns = Array(params[:columns]).presence || @preferences["columns"] %>
+<% export_params = @query_params.deep_dup.merge("columns" => current_columns).compact %>
 
 <%= render Ui::Layout::PageHeaderComponent.new(
   title: t("grid_engine.#{@definition.key}.title"),
   description: t("grid_engine.#{@definition.key}.description")
 ) do %>
-  <%= link_to t("grid_engine.actions.export"), grid_path(@definition.key, format: :csv, view_id: @selected_view&.id), class: "button button--secondary" %>
+  <%= link_to t("grid_engine.actions.export"), grid_path(@definition.key, export_params.merge(format: :csv)), class: "button button--secondary" %>
 <% end %>
 
 <section class="showcase__section" aria-labelledby="grid-controls-heading">
   <h2 id="grid-controls-heading"><%= t("grid_engine.controls.title") %></h2>
 
-  <%= form_with url: grid_path(@definition.key), method: :get, data: { turbo_frame: "grid-results" }, html: { class: "showcase__form" } do |form| %>
-    <%= form.label :name_filter, t("grid_engine.controls.name_filter") %>
-    <%= form.search_field :name_filter, value: params[:name_filter], class: "ui-input" %>
-    <%= form.hidden_field "filters[][column]", value: "name" %>
-    <%= form.hidden_field "filters[][operator]", value: "contains" %>
-    <%= form.hidden_field "filters[][value]", value: params[:name_filter] %>
+  <%= form_with url: grid_path(@definition.key), method: :get, data: { turbo_frame: "grid-results" }, html: { class: "showcase__form" } do %>
+    <%= label_tag "filters_0_value", t("grid_engine.controls.name_filter") %>
+    <%= hidden_field_tag "filters[][column]", "name" %>
+    <%= hidden_field_tag "filters[][operator]", "contains" %>
+    <%= search_field_tag "filters[][value]", @query_params.dig("filters", 0, "value"), id: "filters_0_value", class: "ui-input" %>
 
-    <%= form.label :sort_direction, t("grid_engine.controls.sort_direction") %>
-    <%= form.select :sort_direction,
-      [[ t("grid_engine.sort.asc"), "asc" ], [ t("grid_engine.sort.desc"), "desc" ]],
-      { selected: params[:sort_direction] || "asc" },
+    <%= label_tag "sorts_0_direction", t("grid_engine.controls.sort_direction") %>
+    <%= hidden_field_tag "sorts[][column]", "name" %>
+    <%= select_tag "sorts[][direction]",
+      options_for_select(
+        [[ t("grid_engine.sort.asc"), "asc" ], [ t("grid_engine.sort.desc"), "desc" ]],
+        @query_params.dig("sorts", 0, "direction") || "asc"
+      ),
+      id: "sorts_0_direction",
       class: "ui-input" %>
-    <%= form.hidden_field "sorts[][column]", value: "name" %>
-    <%= form.hidden_field "sorts[][direction]", value: params[:sort_direction] || "asc" %>
 
     <fieldset class="ui-field">
       <legend class="ui-field__label"><%= t("grid_engine.controls.columns") %></legend>
-      <% selected = Array(@preferences["columns"]).presence || @definition.columns.values.select(&:visible).map(&:key) %>
+      <% selected = current_columns.presence || @definition.columns.values.select(&:visible).map(&:key) %>
       <% @definition.columns.each_value do |column| %>
         <label class="ui-checkbox-field__label">
           <%= check_box_tag "columns[]", column.key, selected.include?(column.key), id: "column_#{column.key}", class: "ui-checkbox" %>
@@ -36,7 +39,7 @@
       <% end %>
     </fieldset>
 
-    <%= form.submit t("grid_engine.actions.apply"), class: "button button--primary" %>
+    <%= submit_tag t("grid_engine.actions.apply"), class: "button button--primary" %>
   <% end %>
 </section>
 
@@ -59,7 +62,7 @@
     <%= form.label :name, t("grid_engine.saved_views.name") %>
     <%= form.text_field :name, required: true, maxlength: 80, class: "ui-input" %>
     <%= form.hidden_field :query_json, value: @query_params.to_json %>
-    <%= form.hidden_field :preferences_json, value: { columns: Array(params[:columns]).presence || @preferences["columns"] }.to_json %>
+    <%= form.hidden_field :preferences_json, value: { columns: current_columns }.to_json %>
     <label class="ui-checkbox-field__label">
       <%= form.check_box :default, class: "ui-checkbox" %>
       <span><%= t("grid_engine.saved_views.make_default") %></span>
@@ -70,9 +73,5 @@
 
 <%= turbo_frame_tag "grid-results" do %>
   <p aria-live="polite"><%= t("grid_engine.results", count: @result.total_count) %></p>
-  <%= GridEngine::HtmlRenderer.new(
-    @definition,
-    @result.records,
-    columns: Array(params[:columns]).presence || @preferences["columns"]
-  ).call %>
+  <%= GridEngine::HtmlRenderer.new(@definition, @result.records, columns: current_columns).call %>
 <% end %>
