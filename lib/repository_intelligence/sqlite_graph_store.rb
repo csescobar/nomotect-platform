@@ -35,7 +35,7 @@ module RepositoryIntelligence
 
     def metadata
       query_json("SELECT key, value FROM graph_metadata ORDER BY key;").to_h do |row|
-        [row.fetch("key"), row.fetch("value")]
+        [ row.fetch("key"), row.fetch("value") ]
       end
     end
 
@@ -44,7 +44,7 @@ module RepositoryIntelligence
     end
 
     def impact(id, depth: 2)
-      depth = [[depth.to_i, 1].max, 10].min
+      depth = [ [ depth.to_i, 1 ].max, 10 ].min
       query_json(<<~SQL)
         WITH RECURSIVE traversal(id, depth) AS (
           SELECT #{quote(id)}, 0
@@ -71,14 +71,14 @@ module RepositoryIntelligence
         source_paths.nil? || selected_ids.include?(edge.from) || selected_ids.include?(edge.to)
       end
 
-      statements = [schema_sql, "BEGIN IMMEDIATE;"]
+      statements = [ schema_sql, "BEGIN IMMEDIATE;" ]
       if source_paths
         source_paths.each { |source| statements << "DELETE FROM nodes WHERE path = #{quote(source)};" }
         selected_ids.each do |id|
           statements << "DELETE FROM edges WHERE from_node_id = #{quote(id)} OR to_node_id = #{quote(id)};"
         end
       else
-        statements.concat(["DELETE FROM edges;", "DELETE FROM nodes;"])
+        statements.concat([ "DELETE FROM edges;", "DELETE FROM nodes;" ])
       end
       node_rows.each { |node| statements << insert_node_sql(node) }
       edge_rows.each { |edge| statements << insert_edge_sql(edge) }
@@ -116,7 +116,7 @@ module RepositoryIntelligence
     end
 
     def insert_edge_sql(edge)
-      id = Digest::SHA256.hexdigest([edge.from, edge.type, edge.to].join("\0"))
+      id = Digest::SHA256.hexdigest([ edge.from, edge.type, edge.to ].join("\0"))
       hash = Digest::SHA256.hexdigest(JSON.generate(edge.to_h))
       "INSERT OR REPLACE INTO edges VALUES (#{quote(id)}, #{quote(edge.from)}, #{quote(edge.to)}, #{quote(edge.type)}, #{quote(JSON.generate(edge.properties))}, #{quote(hash)});"
     end
