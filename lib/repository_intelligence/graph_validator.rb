@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "set"
+
 module RepositoryIntelligence
   class GraphValidator
     def initialize(graph)
