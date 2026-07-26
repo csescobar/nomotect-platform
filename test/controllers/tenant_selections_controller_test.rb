@@ -11,32 +11,52 @@ class TenantSelectionsControllerTest < ActionDispatch::IntegrationTest
     Membership.create!(organization: @first, user: @user, role: "owner")
     Membership.create!(organization: @second, user: @user, role: "member")
 
-    post session_path, params: { email_address: @user.email_address, password: @password }
-    assert_response :redirect, response.body
+    get new_session_path
+    post session_path,
+      params: { email_address: @user.email_address, password: @password },
+      headers: csrf_headers
+    assert_response :redirect
   end
 
   test "selects only an organization belonging to the signed-in user" do
-    patch tenant_selection_path, params: { organization_id: @second.id }
+    get root_path
+    patch tenant_selection_path,
+      params: { organization_id: @second.id },
+      headers: csrf_headers
 
-    assert_response :redirect, response.body
     assert_redirected_to organization_path(@second)
     follow_redirect!
     assert_response :success
   end
 
   test "rejects cross-tenant selection" do
-    patch tenant_selection_path, params: { organization_id: @foreign.id }
+    get root_path
+    patch tenant_selection_path,
+      params: { organization_id: @foreign.id },
+      headers: csrf_headers
 
-    assert_response :not_found, response.body
+    assert_response :not_found
   end
 
   test "rejects a selected tenant after membership removal" do
-    patch tenant_selection_path, params: { organization_id: @second.id }
-    assert_response :redirect, response.body
+    get root_path
+    patch tenant_selection_path,
+      params: { organization_id: @second.id },
+      headers: csrf_headers
+    assert_response :redirect
 
     @second.memberships.find_by!(user: @user).destroy!
     get root_path
 
-    assert_response :not_found, response.body
+    assert_response :not_found
+  end
+
+  private
+
+  def csrf_headers
+    token = response.body.match(/<meta name="csrf-token" content="([^"]+)"/)&.captures&.first
+    raise "CSRF meta token not found in response" if token.blank?
+
+    { "X-CSRF-Token" => token }
   end
 end
