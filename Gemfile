@@ -14,6 +14,7 @@ gem "bootsnap", require: false
 gem "bcrypt", "~> 3.1"
 gem "view_component"
 gem "rack-attack"
+gem "csv"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
