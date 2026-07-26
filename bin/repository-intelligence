@@ -94,7 +94,13 @@ when "query"
            end
   puts JSON.pretty_generate(result)
 when "mcp"
-  RepositoryIntelligence::McpServer.new(intelligence: RepositoryIntelligence, playbooks: playbooks.load).run
+  RepositoryIntelligence::McpServer.new(
+    intelligence: RepositoryIntelligence,
+    playbooks: playbooks.load,
+    provider_status: provider.status,
+    artifact_directory: output,
+    allow_writes: ENV["MCP_ALLOW_WRITES"] == "true"
+  ).run
 else
   abort "Usage: bin/repository-intelligence [generate|refresh [paths...]|validate|query [operation]|mcp]"
 end
