@@ -165,16 +165,151 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 
 **Quality evidence:** tenant-safe privacy request, export, anonymization, preference and retention contracts; nonce-based CSP and explicit security headers; hashed scoped throttles with retry metadata and instrumentation; production secret validation and redaction rules; deterministic CycloneDX SBOM and checksum artifacts tied to the source commit; repository and module threat models; security and privacy AI context; English and Brazilian Portuguese copy; automated regression tests; and fully green CI run #120 before the final traceability update.
 
-## Epic 8 — AI-Native Infrastructure
+## Epic 8 — AI Platform and Repository Intelligence
 
 **Status:** ◐ Partially delivered
 
+**Objective:** transform the repository into a self-describing, provider-neutral AI engineering platform that exposes code intelligence, architecture, governance, security, privacy, tenancy and delivery knowledge through deterministic artifacts, executable playbooks and an MCP server.
+
+**Architectural boundary:** the platform owns the normalized governance and architecture graph, not a duplicate general-purpose source-code parser. Structural code intelligence is supplied through replaceable providers such as Codebase Memory and GitNexus. See ADR `docs/architecture/decisions/0003-federated-repository-intelligence.md`.
+
+### Delivered baseline
+
 - [x] Initial module AI contexts
+
+### Wave 1 — Repository Intelligence Foundation
+
+- [ ] Repository scanner and extractor framework
+- [ ] Provider-neutral `CodeGraphProvider` contract
+- [ ] Codebase Memory adapter
+- [ ] GitNexus adapter
+- [ ] Provider capability and version detection
+- [ ] Normalized repository metadata and stable identifiers
+- [ ] Per-node and per-edge provenance metadata
+- [ ] Indexed commit SHA and freshness tracking
+- [ ] Incremental local refresh for changed files
+- [ ] Clean deterministic regeneration for CI
+
+### Wave 2 — Federated Knowledge Graph
+
+- [ ] Unified graph schema for code, architecture and governance knowledge
+- [ ] Structural nodes for modules, models, controllers, routes, services, policies, jobs, components, views and tests
+- [ ] Governance nodes for epics, capabilities, contracts, documents, playbooks, completion gates and delivery evidence
+- [ ] Security, privacy and tenant-invariant nodes
+- [ ] Normalized relationship types and confidence metadata
+- [ ] Recursive dependency and call-path traversal
+- [ ] Cross-layer impact-analysis engine
+- [ ] Graph diff and changed-impact reports
+- [ ] Orphan, broken-reference and invalid-edge validation
+
+### Wave 3 — Graph Storage and Distribution
+
+- [ ] Preserve provider-native indexes as disposable local caches
+- [ ] Local normalized SQLite query store
+- [ ] Transactional incremental node and edge replacement
+- [ ] Deterministic committed architectural graph snapshot
+- [ ] JSON and JSON-LD exports
+- [ ] Mermaid and Graphviz DOT exports
+- [ ] Snapshot hashes, schema versions and extractor versions
+- [ ] CI artifacts for detailed code-level graphs
+- [ ] Drift detection between source, provider index, normalized store and committed snapshot
+
+### Wave 4 — Machine-Readable Contracts
+
+- [ ] Versioned module contracts
+- [ ] Public API and extension-point contracts
+- [ ] Allowed and forbidden dependency contracts
+- [ ] Security and privacy contracts
+- [ ] Tenant-boundary contracts
+- [ ] Required test and documentation contracts
+- [ ] Contract JSON Schemas
+- [ ] Contract validation and breaking-change detection
+
+### Wave 5 — Generated AI Artifacts
+
 - [ ] Generated architecture manifest
-- [ ] Dependency graph and drift detection
-- [ ] Agent playbook validation
-- [ ] Repository readiness reports
-- [ ] Architecture and documentation consistency checks
+- [ ] Generated or validated module AI contexts
+- [ ] Generated module and public-contract documentation
+- [ ] Generated dependency and impact reports
+- [ ] Generated architecture diagrams
+- [ ] Generated repository readiness report
+- [ ] Architecture, documentation and AI-context consistency checks
+
+### Wave 6 — Executable Playbook Engine
+
+- [ ] Versioned, cross-vendor playbook specification
+- [ ] Typed inputs and JSON Schema validation
+- [ ] Deterministic stages, validators and completion gates
+- [ ] Feature implementation and bug-fix playbooks
+- [ ] Refactoring and migration playbooks
+- [ ] Security, privacy and tenant-boundary review playbooks
+- [ ] Documentation and architecture synchronization playbooks
+- [ ] Release-preparation and readiness playbooks
+- [ ] Safe execution boundaries with no arbitrary shell, SQL or Ruby evaluation
+
+### Wave 7 — MCP Server Module
+
+#### Resources
+
+- [ ] Repository and architecture manifests
+- [ ] Module, dependency, route, entity, test and governance graphs
+- [ ] Machine-readable contracts
+- [ ] AI contexts and architecture documentation
+- [ ] Executable playbooks
+- [ ] Readiness and freshness reports
+
+#### Tools
+
+- [ ] Repository and symbol search
+- [ ] Module description and ownership lookup
+- [ ] Dependency paths and call-path queries
+- [ ] Cross-layer impact analysis
+- [ ] Architecture, contract, documentation, i18n and design-system validation
+- [ ] Manifest, graph, AI-context and documentation generation
+- [ ] Bounded executable playbook runs
+- [ ] Repository readiness reporting
+
+#### Prompts
+
+- [ ] Feature implementation
+- [ ] Bug investigation and correction
+- [ ] Security and privacy review
+- [ ] Tenant-boundary review
+- [ ] Refactoring and migration
+- [ ] Pull-request review
+- [ ] Release preparation
+
+#### Security and transport
+
+- [ ] Stdio transport for local clients
+- [ ] Versioned MCP schemas and capability discovery
+- [ ] Read-only operation by default
+- [ ] Explicit capability flags for generated-file writes
+- [ ] Repository-root path allowlisting and traversal protection
+- [ ] Secret redaction, output limits and execution timeouts
+- [ ] Structured audit events for every tool execution
+- [ ] End-to-end MCP client fixture tests
+- [ ] Remote transport deferred until authenticated authorization and deployment contracts are defined
+
+### Wave 8 — AI Readiness Pipeline
+
+- [ ] Architecture and dependency drift detection
+- [ ] Graph freshness and commit synchronization validation
+- [ ] Contract and public-API drift detection
+- [ ] Documentation and AI-context drift detection
+- [ ] Playbook schema and completion-gate validation
+- [ ] Generated artifact reproducibility checks
+- [ ] Repository readiness quality gate
+- [ ] Full clean generation and validation in `bin/ci`
+- [ ] Final GitHub Actions run with every generator and validator executed successfully
+
+**Target architecture:** source repository → external structural code-graph provider plus platform scanners → normalized governance graph → SQLite query store and deterministic committed snapshots → CLI, CI, generated documentation and MCP resources/tools/prompts.
+
+**Delivery evidence required:** provider adapters, repository intelligence engine, normalized knowledge graph, contract schemas, playbook engine, MCP server, generated architecture artifacts, graph exports, readiness reports and final green CI evidence.
+
+**Quality evidence required:** provider independence, deterministic generation, source and commit provenance, reproducible graph snapshots, bounded incremental refresh, secure MCP capability boundaries, architecture drift detection, cross-vendor playbooks, integration tests and fully green CI.
+
+**Exit criteria:** every Wave 1–8 capability is implemented or explicitly deferred with an accepted architectural decision; provider-specific indexes are replaceable and disposable; the normalized governance graph can be regenerated from source; MCP resources, tools and prompts operate through shared application services; committed artifacts match a clean CI rebuild; and the final PR-head GitHub Actions run is fully green.
 
 ## Epic 9 — Distribution and Enterprise Extensions
 
