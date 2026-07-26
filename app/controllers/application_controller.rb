@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ApplicationPolicy::NotAuthorizedError, with: :render_forbidden
+  rescue_from TenantBoundary::Violation, with: :render_forbidden
 
   private
 
@@ -24,6 +25,7 @@ class ApplicationController < ActionController::Base
     membership = resolve_active_membership
     Current.membership = membership
     Current.organization = membership&.organization
+    session[:active_organization_id] = membership&.organization_id
   end
 
   def resolve_active_membership
@@ -32,9 +34,14 @@ class ApplicationController < ActionController::Base
 
     if requested_slug
       memberships.joins(:organization).find_by!(organizations: { slug: requested_slug })
+    elsif session[:active_organization_id].present?
+      memberships.find_by!(organization_id: session[:active_organization_id])
     else
       memberships.order(:created_at).first
     end
+  rescue ActiveRecord::RecordNotFound
+    session.delete(:active_organization_id)
+    raise
   end
 
   def switch_localization(&action)
