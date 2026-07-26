@@ -21,6 +21,8 @@ class SecurityPrivacyTest < ActiveSupport::TestCase
   end
 
   test "rejects export when requester no longer belongs to tenant" do
+    replacement = User.create!(email_address: "replacement-#{SecureRandom.hex(4)}@example.com", password: "correct horse battery staple")
+    Membership.create!(organization: @organization, user: replacement, role: "owner")
     request = PrivacyRequest.create!(organization: @organization, requested_by: @user, kind: "export")
     @organization.memberships.find_by!(user: @user).destroy!
 
