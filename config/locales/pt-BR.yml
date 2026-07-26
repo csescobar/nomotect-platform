@@ -6,6 +6,8 @@ pt-BR:
     system: Sistema
     light: Claro
     dark: Escuro
+  tenant_selection:
+    updated: Organização ativa atualizada.
   authentication:
     required: Entre na sua conta para continuar.
     sign_in: Entrar
