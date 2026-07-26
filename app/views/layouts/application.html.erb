@@ -20,6 +20,7 @@
     <% if authenticated? %>
       <% navigation_items = [
         { label: t("layout.dashboard"), href: root_path, active: current_page?(root_path) },
+        { label: t("layout.organizations"), href: organizations_path, active: request.path.start_with?(organizations_path) },
         { label: t("layout.component_showcase"), href: component_showcase_path, active: current_page?(component_showcase_path) }
       ] %>
       <% account_actions = capture do %>
