@@ -152,16 +152,18 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 
 ## Epic 7 — Security and Privacy
 
-**Status:** 🚧 In progress
+**Status:** ✅ Complete
 
-- [ ] Privacy and LGPD workflows
-- [ ] Secure headers and CSP
-- [ ] Rate limiting and abuse controls
-- [ ] Secrets and key management
-- [ ] Dependency, SBOM and provenance automation
-- [ ] Threat models and security test suites
+- [x] Privacy and LGPD workflows
+- [x] Secure headers and CSP
+- [x] Rate limiting and abuse controls
+- [x] Secrets and key management
+- [x] Dependency, SBOM and provenance automation
+- [x] Threat models and security test suites
 
-**Active implementation evidence:** draft PR #21 currently contains the Epic 7 gap audit. None of the Epic 7 capabilities are complete until implementation, security-focused tests and final green CI evidence are added.
+**Delivery evidence:** PR #21.
+
+**Quality evidence:** tenant-safe privacy request, export, anonymization, preference and retention contracts; nonce-based CSP and explicit security headers; hashed scoped throttles with retry metadata and instrumentation; production secret validation and redaction rules; deterministic CycloneDX SBOM and checksum artifacts tied to the source commit; repository and module threat models; security and privacy AI context; English and Brazilian Portuguese copy; automated regression tests; and fully green CI run #120 before the final traceability update.
 
 ## Epic 8 — AI-Native Infrastructure
 

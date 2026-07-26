@@ -69,19 +69,21 @@ bash bin/ci
 - Request-scoped identity and correlation context
 - Database-aware health endpoint at `/health`
 - Structured JSON logging option
-- CSP, secure cookies and request throttling baseline
+- Nonce-based CSP, secure response headers, secure cookies and scoped request throttling
+- Tenant-safe privacy export, anonymization, processing preferences and retention policies
+- Production secret validation, redaction rules and rotation runbooks
+- Deterministic CycloneDX SBOM and checksum generation in CI
 - ViewComponent base and first UI component
 - English and Brazilian Portuguese locale baseline
 - Stable developer commands under `bin/`
 - GitHub Actions quality and security pipeline
 
-Read the [Platform Core AI Context](docs/modules/platform-core/AI_CONTEXT.md) for invariants, review boundaries and known limitations.
+Read the [Platform Core AI Context](docs/modules/platform-core/AI_CONTEXT.md) and [Security and Privacy AI Context](docs/modules/security-privacy/AI_CONTEXT.md) for invariants, review boundaries and known limitations.
 
 ## Current development status
 
-- ✅ Epics 0–6 are complete, covering project foundation, platform core, design system and internationalization, grid engine, domain framework and reference application, Enterprise Services, and the Multi-Tenant Platform.
-- 🚧 Epic 7 — Security and Privacy is in progress. Draft PR #21 currently contains the implementation gap audit; its roadmap capabilities remain incomplete until code, security-focused tests and final green CI evidence are delivered.
-- ◐ Epic 8 — AI-Native Infrastructure is partially delivered through the initial module AI contexts.
+- ✅ Epics 0–7 are complete, covering project foundation, platform core, design system and internationalization, grid engine, domain framework and reference application, Enterprise Services, the Multi-Tenant Platform, and Security and Privacy.
+- ◐ Epic 8 — AI-Native Infrastructure is partially delivered through the initial module AI contexts and is the next implementation epic.
 - ⏳ Epics 9 and 10 remain planned for distribution, release engineering, framework validation and stable-release readiness.
 
 The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and traceability source.
@@ -125,6 +127,9 @@ The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and
 - [Internationalization](docs/i18n/strategy.md)
 - [Security baseline](docs/security/security-baseline.md)
 - [Threat model](docs/security/threat-model.md)
+- [Epic 7 threat model](docs/security/epic-7-threat-model.md)
+- [Security operations and rotation](docs/security/security-operations.md)
+- [Security and Privacy AI Context](docs/modules/security-privacy/AI_CONTEXT.md)
 
 ### Governance and contribution
 
