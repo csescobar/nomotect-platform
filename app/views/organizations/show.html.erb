@@ -14,11 +14,12 @@
         <strong><%= membership.user.email_address %></strong>
         <p><%= t("organizations.roles.#{membership.role}") %></p>
 
-        <% if @membership.admin? && membership.user != Current.user %>
+        <% if @membership.admin? && membership.user != Current.user && (!membership.owner? || @membership.owner?) %>
           <div class="showcase__row">
+            <% available_roles = @membership.owner? ? Membership::ROLES : Membership::MANAGEABLE_ROLES %>
             <%= form_with model: [ @organization, membership ], method: :patch do |form| %>
               <%= form.select :role,
-                Membership::ROLES.map { |role| [ t("organizations.roles.#{role}"), role ] },
+                available_roles.map { |role| [ t("organizations.roles.#{role}"), role ] },
                 {},
                 aria: { label: t("memberships.change_role", email: membership.user.email_address) } %>
               <%= form.submit t("memberships.actions.update"), class: "button button--secondary button--small" %>
