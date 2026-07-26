@@ -4,13 +4,13 @@ module Security
   class Throttle
     Result = Data.define(:allowed, :retry_after)
 
-    def self.check!(scope:, identity:, limit:, period:)
+    def self.check!(scope:, identity:, limit:, period:, cache: Rails.cache)
       digest = Digest::SHA256.hexdigest(identity.to_s)
       bucket = Time.current.to_i / period.to_i
       key = "security:throttle:#{scope}:#{digest}:#{bucket}"
-      count = Rails.cache.increment(key, 1, expires_in: period)
+      count = cache.increment(key, 1, expires_in: period)
       count ||= begin
-        Rails.cache.write(key, 1, expires_in: period)
+        cache.write(key, 1, expires_in: period)
         1
       end
 
