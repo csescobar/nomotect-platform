@@ -56,7 +56,10 @@
           <%= render Ui::CardComponent.new do %>
             <strong><%= invitation.email_address %></strong>
             <p><%= t("organizations.roles.#{invitation.role}") %></p>
-            <p><%= link_to t("organization_invitations.actions.accept_link"), accept_organization_invitation_path(invitation.acceptance_token) %></p>
+            <%= button_to t("organization_invitations.actions.accept_link"),
+              accept_organization_invitation_path(invitation.acceptance_token),
+              method: :patch,
+              class: "button button--secondary button--small" %>
             <%= button_to t("organization_invitations.actions.revoke"),
               [ @organization, invitation ],
               method: :delete,
