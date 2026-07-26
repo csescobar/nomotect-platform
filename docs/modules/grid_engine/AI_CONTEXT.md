@@ -8,7 +8,10 @@ The Grid Engine provides a framework-neutral, server-authoritative contract for 
 
 - `app/lib/grid_engine/**`
 - `app/models/grid_saved_view.rb`
-- grid migrations, controllers, components, locale files, and tests
+- `app/controllers/grids_controller.rb`
+- `app/controllers/grid_saved_views_controller.rb`
+- `app/views/grids/**`
+- grid migrations, routes, locale files, and tests
 
 ## Invariants
 
@@ -19,10 +22,21 @@ The Grid Engine provides a framework-neutral, server-authoritative contract for 
 5. SQL fragments never come directly from request parameters.
 6. Tabulator is an adapter, not the source of business rules.
 7. HTML and Turbo fallbacks expose the same data and authorization boundary.
-8. Saved views belong to a user and grid key; consumers must scope them to the current user.
-9. Exports reuse the validated definition and query AST.
-10. Public behavior is covered by tests and localized where visible to users.
+8. Saved views belong to a user and grid key and are always loaded through `Current.user`.
+9. Exports reuse the validated definition, AST, tenant-aware scope, and an explicit row limit.
+10. Column personalization only accepts keys declared by the grid definition.
+11. Visible behavior is localized and covered by model, adapter, request, security, and accessibility tests.
 
-## Current implementation sequence
+## Public contracts
 
-The first slice establishes the DSL, registries, immutable query AST, Active Record/Arel adapter, Tabulator response contract, HTML fallback, and baseline tests. Persistence for saved views, exports, and end-user column personalization follows on the same Epic 3 branch.
+- `GridEngine::Definition` is the DSL boundary.
+- `GridEngine::Query::Parser` converts request data into an immutable AST.
+- `GridEngine::ActiveRecordAdapter` applies an AST to an already-authorized relation.
+- `GridEngine::TabulatorAdapter` exposes framework-specific columns and response payloads.
+- `GridEngine::HtmlRenderer` provides the accessible no-JavaScript and Turbo fallback.
+- `GridEngine::CsvExporter` produces bounded exports from validated, authorized relations.
+- `GridSavedView` persists user-owned query and presentation preferences.
+
+## Extension guidance
+
+New grids must be registered in `GridEngine::Catalog`, declare every public column, and provide an explicitly authorized base relation in `GridsController#grid_scope`. Never infer a scope from the model class or accept model/attribute names from request parameters.
