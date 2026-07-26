@@ -89,19 +89,20 @@ module RepositoryIntelligence
     end
 
     def read_resource(uri)
-      payload = case uri
-                when "platform://manifest" then intelligence.manifest
-                when "platform://graph" then intelligence.graph.to_h
-                when "platform://capabilities" then intelligence.capabilities
-                when "platform://statistics" then intelligence.statistics
-                when "platform://contracts" then contract_index
-                when "platform://playbooks" then playbooks
-                when "platform://provider" then provider_status
-                when "platform://readiness" then intelligence.readiness
-                when "platform://audit" then audit_log.to_a
-                else read_artifact(uri)
-                end
-      { contents: [{ uri:, mimeType: mime_type(payload), text: serialize(payload) }] }
+      payload =
+        case uri
+        when "platform://manifest" then intelligence.manifest
+        when "platform://graph" then intelligence.graph.to_h
+        when "platform://capabilities" then intelligence.capabilities
+        when "platform://statistics" then intelligence.statistics
+        when "platform://contracts" then intelligence.contracts
+        when "platform://playbooks" then intelligence.playbooks
+        when "platform://provider" then provider_status
+        when "platform://readiness" then intelligence.readiness
+        when "platform://audit" then audit_log.to_a
+        else read_artifact(uri)
+        end
+      { contents: [ { uri:, mimeType: mime_type(payload), text: serialize(payload) } ] }
     end
 
     def tools
@@ -126,25 +127,26 @@ module RepositoryIntelligence
     def call_tool(params)
       name = params.fetch("name")
       arguments = params.fetch("arguments", {})
-      payload = case name
-                when "describe_module" then intelligence.describe_module(arguments.fetch("id"))
-                when "describe_contract" then intelligence.contract(arguments.fetch("id"))
-                when "describe_playbook" then intelligence.playbook(arguments.fetch("id"))
-                when "search" then intelligence.search(query: arguments["query"], type: arguments["type"], limit: arguments.fetch("limit", 50))
-                when "impact_analysis" then intelligence.impact_analysis(arguments.fetch("id"), depth: arguments.fetch("depth", 2))
-                when "dependency_path" then intelligence.dependency_path(from: arguments.fetch("from"), to: arguments.fetch("to"), max_depth: arguments.fetch("max_depth", 6))
-                when "find_tests" then intelligence.search(query: arguments["query"], type: "test", limit: arguments.fetch("limit", 50))
-                when "find_documentation" then intelligence.search(query: arguments["query"], type: "document", limit: arguments.fetch("limit", 50))
-                when "find_invariants" then intelligence.invariants(kind: arguments["kind"])
-                when "graph_statistics" then intelligence.statistics
-                when "provider_health" then provider_status
-                when "validate_repository" then intelligence.validate!
-                when "generate_artifacts" then generate_artifacts
-                when "readiness_report" then intelligence.readiness
-                else raise ArgumentError, "Unknown tool"
-                end
+      payload =
+        case name
+        when "describe_module" then intelligence.describe_module(arguments.fetch("id"))
+        when "describe_contract" then intelligence.contract(arguments.fetch("id"))
+        when "describe_playbook" then intelligence.playbook(arguments.fetch("id"))
+        when "search" then intelligence.search(query: arguments["query"], type: arguments["type"], limit: arguments.fetch("limit", 50))
+        when "impact_analysis" then intelligence.impact_analysis(arguments.fetch("id"), depth: arguments.fetch("depth", 2))
+        when "dependency_path" then intelligence.dependency_path(from: arguments.fetch("from"), to: arguments.fetch("to"), max_depth: arguments.fetch("max_depth", 6))
+        when "find_tests" then intelligence.search(query: arguments["query"], type: "test", limit: arguments.fetch("limit", 50))
+        when "find_documentation" then intelligence.search(query: arguments["query"], type: "document", limit: arguments.fetch("limit", 50))
+        when "find_invariants" then intelligence.invariants(kind: arguments["kind"])
+        when "graph_statistics" then intelligence.statistics
+        when "provider_health" then provider_status
+        when "validate_repository" then intelligence.validate!
+        when "generate_artifacts" then generate_artifacts
+        when "readiness_report" then intelligence.readiness
+        else raise ArgumentError, "Unknown tool"
+        end
       intelligence.publish(:mcp_tool_called, tool: name, read_only: name != "generate_artifacts")
-      { content: [{ type: "text", text: JSON.pretty_generate(payload) }] }
+      { content: [ { type: "text", text: JSON.pretty_generate(payload) } ] }
     end
 
     def generate_artifacts
@@ -161,7 +163,7 @@ module RepositoryIntelligence
     def prompt(name)
       {
         description: "Executable repository playbook",
-        messages: [{ role: "user", content: { type: "text", text: YAML.dump(intelligence.playbook(name)) } }]
+        messages: [ { role: "user", content: { type: "text", text: YAML.dump(intelligence.playbook(name)) } } ]
       }
     end
 
@@ -186,12 +188,6 @@ module RepositoryIntelligence
       path.read
     end
 
-    def contract_index
-      intelligence.search(limit: 1)
-      intelligence.capability(:contracts)
-      intelligence.instance_variable_get(:@contracts) || []
-    end
-
     def audit(request, operation:, status:, duration_ms:, error: nil)
       audit_log.record(
         request_id: request && request["id"], method: request && request["method"], operation:,
@@ -213,7 +209,10 @@ module RepositoryIntelligence
     end
 
     def object_schema(required, **properties)
-      { type: "object", properties: { required => { type: "string" } }.merge(properties), required: [required], additionalProperties: false }
+      {
+        type: "object", properties: { required => { type: "string" } }.merge(properties),
+        required: [ required ], additionalProperties: false
+      }
     end
 
     def query_schema
