@@ -171,10 +171,19 @@ The early organization and membership delivery does not mark Epic 6 complete and
 
 **Status:** ⏳ Planned
 
-- [ ] Extract proven modules into versioned gems where justified
-- [ ] Compatibility and upgrade tooling
-- [ ] Automated changelogs and releases
-- [ ] Separate commercial enterprise repository and integration contracts
+- [ ] Establish a root `VERSION` file as the canonical released project version.
+- [ ] Add per-PR YAML change fragments with `none`, `patch`, `minor` or `major` release impact.
+- [ ] Require release-impact declarations and validate fragment structure in CI.
+- [ ] Generate and maintain `CHANGELOG.md` from accepted change fragments using Added, Changed, Deprecated, Removed, Fixed and Security sections.
+- [ ] Reconstruct the historical changelog from merged PRs and release evidence after the scheduled Epic 4–8 implementation pipeline is complete.
+- [ ] Generate GitHub release notes from the same normalized release metadata.
+- [ ] Add release preparation automation that updates `VERSION`, consumes fragments, updates the changelog and opens a release PR.
+- [ ] Verify consistency between `VERSION`, Git tags, release notes, SBOM and provenance metadata.
+- [ ] Extract proven modules into versioned gems where justified.
+- [ ] Add compatibility and upgrade tooling.
+- [ ] Separate commercial enterprise repository and integration contracts.
+
+**Execution order:** complete the currently scheduled implementation pipeline through Epic 8 first. Then run the historical changelog reconstruction and release-engineering work as part of Epic 9 before publishing the stable `v1.0.0` release.
 
 ## Release targets
 
@@ -182,4 +191,4 @@ The early organization and membership delivery does not mark Epic 6 complete and
 - ✅ `v0.2.0`: design system and i18n baseline delivered
 - ⏳ `v0.3.0`: grid engine baseline
 - ⏳ `v0.4.0`: reference application and domain framework
-- ⏳ `v1.0.0`: stable documented contracts with upgrade policy and production evidence
+- ⏳ `v1.0.0`: stable documented contracts with upgrade policy, historical changelog, automated release notes and production evidence
