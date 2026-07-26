@@ -15,7 +15,7 @@ class TenantBoundary
     record
   end
 
-  def self.assert_same_tenant!(organization:, *records)
+  def self.assert_same_tenant!(*records, organization:)
     records.compact.each { |record| assert_record!(organization: organization, record: record) }
     true
   end
