@@ -57,13 +57,20 @@ jobs:
       - name: Security analysis
         run: bash bin/security
 
-      - name: Upload security report
+      - name: Generate SBOM and checksum
+        if: always()
+        run: ruby bin/sbom
+
+      - name: Upload security reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: brakeman-report
-          path: tmp/ci/brakeman.json
-          if-no-files-found: ignore
+          name: security-evidence
+          path: |
+            tmp/ci/brakeman.json
+            tmp/ci/sbom.cdx.json
+            tmp/ci/sbom.cdx.json.sha256
+          if-no-files-found: error
 
       - name: Test
         run: bash bin/test
