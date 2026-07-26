@@ -112,19 +112,23 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 
 ## Epic 5 — Enterprise Services
 
-**Status:** ⏳ Planned — next implementation epic
+**Status:** ✅ Complete
 
-- [ ] Audit and observability
-- [ ] Background jobs and idempotency
-- [ ] Notifications
-- [ ] Files
-- [ ] Imports and exports
-- [ ] Workflow and state transitions
-- [ ] Integrations, webhooks and feature flags
+- [x] Audit and observability
+- [x] Background jobs and idempotency
+- [x] Notifications
+- [x] Files
+- [x] Imports and exports
+- [x] Workflow and state transitions
+- [x] Integrations, webhooks and feature flags
+
+**Delivery evidence:** Epic 5 stacked draft PR.
+
+**Quality evidence:** tenant-scoped service contracts, safe webhook delivery, encrypted webhook secrets, deterministic exports, tracked imports, structured instrumentation, AI context, and automated tests.
 
 ## Epic 6 — Multi-Tenant Platform
 
-**Status:** ◐ Partially delivered ahead of sequence
+**Status:** ◐ Partially delivered ahead of sequence — next implementation epic
 
 ### Delivered
 
