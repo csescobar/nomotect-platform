@@ -84,18 +84,22 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 ## Epic 4 — Domain Framework and Reference Application
 
-**Status:** ⏳ Planned — next implementation epic
+**Status:** ✅ Complete
 
-- [ ] Operations, queries, policies and domain events
-- [ ] Rich domain model conventions
-- [ ] Reference Customers capability
-- [ ] CRUD with grid, audit, authorization and i18n
-- [ ] Optimistic locking and conflict UI
-- [ ] System and security tests
+- [x] Operations, queries, policies and domain events
+- [x] Rich domain model conventions
+- [x] Reference Customers capability
+- [x] CRUD with grid, audit, authorization and i18n
+- [x] Optimistic locking and conflict UI
+- [x] System and security tests
+
+**Delivery evidence:** PR #15.
+
+**Target release:** `v0.4.0` baseline delivered.
 
 ## Epic 5 — Enterprise Services
 
-**Status:** ⏳ Planned
+**Status:** ⏳ Planned — next implementation epic
 
 - [ ] Audit and observability
 - [ ] Background jobs and idempotency
@@ -170,5 +174,5 @@ The early organization and membership delivery does not mark Epic 6 complete.
 - ✅ `v0.1.0`: executable platform core baseline delivered
 - ✅ `v0.2.0`: design system and i18n baseline delivered
 - ✅ `v0.3.0`: grid engine baseline delivered
-- ⏳ `v0.4.0`: reference application and domain framework
+- ✅ `v0.4.0`: reference application and domain framework baseline delivered
 - ⏳ `v1.0.0`: stable documented contracts with upgrade policy and production evidence
