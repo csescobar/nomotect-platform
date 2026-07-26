@@ -35,8 +35,8 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
     graph.add_node(RepositoryIntelligence::Node.new(id: "model:Customer", type: "model", name: "Customer", path: "app/models/customer.rb", properties: {}))
     graph.add_node(RepositoryIntelligence::Node.new(id: "job:CustomerSync", type: "job", name: "CustomerSync", path: "app/jobs/customer_sync_job.rb", properties: {}))
     graph.add_edge(RepositoryIntelligence::Edge.new(from: "job:CustomerSync", to: "model:Customer", type: "USES", properties: {}))
-    contracts = [{ "id" => "customer", "version" => 1, "owns" => ["Customer"], "invariants" => ["tenant boundary is required"] }]
-    playbooks = [{ "id" => "implement-feature", "title" => "Implement feature" }]
+    contracts = [ { "id" => "customer", "version" => 1, "owns" => [ "Customer" ], "invariants" => [ "tenant boundary is required" ] } ]
+    playbooks = [ { "id" => "implement-feature", "title" => "Implement feature" } ]
 
     RepositoryIntelligence.configure(
       graph:, contracts:, playbooks:, manifest: { files: [] }, readiness: { status: "ready" }
@@ -44,7 +44,7 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
 
     assert_equal "Customer", RepositoryIntelligence.describe_module("Customer").dig(:node, :name)
     assert_equal 1, RepositoryIntelligence.search(type: :job).size
-    assert_equal ["job:CustomerSync", "model:Customer"], RepositoryIntelligence.dependency_path(from: "CustomerSync", to: "Customer")
+    assert_equal [ "job:CustomerSync", "model:Customer" ], RepositoryIntelligence.dependency_path(from: "CustomerSync", to: "Customer")
     assert_equal "customer", RepositoryIntelligence.contract("Customer").fetch("id")
     assert_equal "implement-feature", RepositoryIntelligence.playbook("implement_feature").fetch("id")
     assert_equal contracts, RepositoryIntelligence.contracts
@@ -91,7 +91,7 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
     Dir.mktmpdir do |directory|
       contracts = File.join(directory, "contracts")
       playbooks = File.join(directory, "playbooks")
-      FileUtils.mkdir_p([contracts, playbooks])
+      FileUtils.mkdir_p([ contracts, playbooks ])
       File.write(File.join(contracts, "contract.yml"), YAML.dump(
         "id" => "test", "version" => 1, "owns" => [], "may_use" => [], "cannot_use" => [],
         "invariants" => [], "required_tests" => []
@@ -109,7 +109,7 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
     graph = RepositoryIntelligence::GovernanceGraph.new
     graph.add_node(RepositoryIntelligence::Node.new(id: "module:test", type: "module", name: "Test", path: nil, properties: {}))
     RepositoryIntelligence.configure(
-      graph:, contracts: [{ "id" => "test", "owns" => ["Test"] }], playbooks: [],
+      graph:, contracts: [ { "id" => "test", "owns" => [ "Test" ] } ], playbooks: [],
       manifest: { files: [] }, readiness: { status: "ready" }
     )
     server = RepositoryIntelligence::McpServer.new(
