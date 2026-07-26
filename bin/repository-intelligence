@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require "json"
 require "open3"
 require "pathname"
 require_relative "../lib/repository_intelligence"
@@ -44,8 +45,7 @@ ai_artifacts = RepositoryIntelligence::AiArtifactGenerator.new(
 )
 validation = lambda do
   drift = RepositoryIntelligence::SnapshotDrift.new(
-    snapshot_path: output.join("repository-graph.json"),
-    checksum_path: output.join("repository-graph.json.sha256")
+    snapshot_path: output.join("repository-graph.json"), checksum_path: output.join("repository-graph.json.sha256")
   ).validate(graph_payload)
   report.fetch(:findings) + drift.findings + ai_artifacts.validate
 end
@@ -93,14 +93,23 @@ when "query"
            else RepositoryIntelligence.statistics
            end
   puts JSON.pretty_generate(result)
+when "playbook"
+  operation = ARGV.shift || "list"
+  result = case operation
+           when "list" then RepositoryIntelligence.playbooks
+           when "validate" then RepositoryIntelligence.validate_playbook(ARGV.fetch(0))
+           when "execute"
+             inputs = ARGV[1] ? JSON.parse(ARGV[1]) : {}
+             RepositoryIntelligence.execute_playbook(ARGV.fetch(0), inputs:).to_h
+           when "status" then RepositoryIntelligence.playbook_execution(ARGV.fetch(0)).to_h
+           else abort "Usage: ... playbook [list|validate ID|execute ID [JSON]|status EXECUTION_ID]"
+           end
+  puts JSON.pretty_generate(result)
 when "mcp"
   RepositoryIntelligence::McpServer.new(
-    intelligence: RepositoryIntelligence,
-    playbooks: playbooks.load,
-    provider_status: provider.status,
-    artifact_directory: output,
-    allow_writes: ENV["MCP_ALLOW_WRITES"] == "true"
+    intelligence: RepositoryIntelligence, playbooks: playbooks.load, provider_status: provider.status,
+    artifact_directory: output, allow_writes: ENV["MCP_ALLOW_WRITES"] == "true"
   ).run
 else
-  abort "Usage: bin/repository-intelligence [generate|refresh [paths...]|validate|query [operation]|mcp]"
+  abort "Usage: bin/repository-intelligence [generate|refresh|validate|query|playbook|mcp]"
 end
