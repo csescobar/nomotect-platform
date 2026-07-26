@@ -3,6 +3,7 @@ require "bundler"
 require "digest"
 require "json"
 require "fileutils"
+require "time"
 
 lockfile = Bundler::LockfileParser.new(Bundler.read_file("Gemfile.lock"))
 components = lockfile.specs.sort_by(&:name).map do |spec|
