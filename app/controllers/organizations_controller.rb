@@ -7,6 +7,10 @@ class OrganizationsController < ApplicationController
 
   def show
     authorize!(@organization, :show?)
+    @membership = @organization.membership_for(Current.user)
+    @memberships = @organization.memberships.includes(:user).order(:created_at)
+    @pending_invitations = @organization.organization_invitations.pending.order(:created_at)
+    @invitation = @organization.organization_invitations.new
   end
 
   def new

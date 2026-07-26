@@ -35,3 +35,35 @@ en:
       owner: "Owner"
       admin: "Administrator"
       member: "Member"
+  memberships:
+    updated: "Member role updated."
+    destroyed: "Member removed."
+    change_role: "Change role for %{email}"
+    remove_confirmation: "Remove %{email} from this organization?"
+    actions:
+      update: "Update role"
+      remove: "Remove member"
+  organization_invitations:
+    title: "Invite people"
+    pending: "Pending invitations"
+    created: "Invitation created."
+    accepted: "Invitation accepted."
+    revoked: "Invitation revoked."
+    invalid: "This invitation is invalid or expired."
+    email_mismatch: "Sign in with the email address that received this invitation."
+    fields:
+      email: "Email address"
+      role: "Role"
+    actions:
+      invite: "Create invitation"
+      revoke: "Revoke invitation"
+      accept_link: "Open acceptance link"
+  activerecord:
+    errors:
+      models:
+        membership:
+          attributes:
+            role:
+              last_owner: "cannot be changed because the organization must retain an owner"
+            base:
+              last_owner: "The last owner cannot be removed"
