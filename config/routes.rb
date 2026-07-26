@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resource :session, only: %i[new create destroy]
   resource :locale_preference, only: :update
   resources :passwords, param: :token, only: %i[new create edit update]
-  resources :organizations
+  resources :organizations do
+    resources :memberships, only: %i[update destroy]
+    resources :organization_invitations, only: %i[create destroy]
+  end
+  get "organization_invitations/:token/accept", to: "organization_invitations#accept", as: :accept_organization_invitation
 
   get "component_showcase", to: "component_showcase#show", as: :component_showcase
   get "health", to: "health#show", as: :health
