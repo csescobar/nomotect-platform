@@ -15,7 +15,13 @@ module RepositoryIntelligence
       end
 
       def available?
-        system("command", "-v", command, out: File::NULL, err: File::NULL)
+        executable = Pathname(command)
+        return executable.file? && executable.executable? if executable.absolute? || command.include?(File::SEPARATOR)
+
+        ENV.fetch("PATH", "").split(File::PATH_SEPARATOR).any? do |directory|
+          candidate = File.join(directory, command)
+          File.file?(candidate) && File.executable?(candidate)
+        end
       end
 
       def status
