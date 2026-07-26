@@ -2,8 +2,10 @@ class GridsController < ApplicationController
   def show
     @definition = GridEngine::Catalog.fetch(params[:id])
     @saved_views = Current.user.grid_saved_views.for_grid(@definition.key)
+    requested_query = permitted_query.to_h
     @selected_view = @saved_views.find_by(id: params[:view_id])
-    @query_params = @selected_view&.query.presence || permitted_query.to_h
+    @selected_view ||= @saved_views.find_by(default: true) if params[:view_id].blank? && requested_query.empty?
+    @query_params = @selected_view&.query.presence || requested_query
     @preferences = @selected_view&.preferences.presence || {}
     @ast = GridEngine::Query::Parser.new(@definition).parse(@query_params)
     @result = GridEngine::ActiveRecordAdapter.new(@definition).call(@ast, scope: grid_scope)
