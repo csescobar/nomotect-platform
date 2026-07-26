@@ -66,6 +66,19 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 **Delivery evidence:** PRs #5 through #10.
 
+### Planned post-baseline refinement
+
+This refinement does not reopen the delivered `v0.2.0` baseline. It improves the authoring and interoperability contract of the existing design-token compiler.
+
+- [ ] Make YAML the canonical, human-authored source for design-system settings and tokens.
+- [ ] Load YAML through a safe parser with aliases disabled unless explicitly required.
+- [ ] Validate normalized token data against a strict schema before generation.
+- [ ] Treat JSON as a deterministic generated interoperability artifact rather than a hand-edited source.
+- [ ] Generate browser-facing CSS custom properties and server-facing frozen Ruby structures from the same validated token model.
+- [ ] Add CI drift checks so generated JSON, CSS and Ruby outputs cannot diverge from the YAML source.
+
+**Target architecture:** YAML authoring source → safe loading and schema validation → deterministic JSON, CSS and Ruby outputs.
+
 ## Epic 3 — Grid Engine
 
 **Status:** ⏳ Planned — next implementation epic
