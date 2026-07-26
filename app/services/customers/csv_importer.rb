@@ -4,9 +4,10 @@ module Customers
   class CsvImporter
     def self.call(organization:, requested_by:, csv:)
       run = ImportRun.create!(organization: organization, requested_by: requested_by, kind: "customers", status: "processing")
+      operation = Customers::Create.new(actor: requested_by)
 
       CSV.parse(csv, headers: true).each do |row|
-        organization.customers.create!(row.to_h.slice("name", "email_address", "status", "notes"))
+        operation.call(organization: organization, attributes: row.to_h.slice("name", "email_address", "status", "notes"))
         run.increment!(:processed_rows)
       rescue ActiveRecord::RecordInvalid => error
         run.increment!(:failed_rows)
