@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resource :session, only: %i[new create destroy]
   resource :locale_preference, only: :update
   resource :tenant_selection, only: :update
+  resources :privacy_requests, only: %i[index create]
   resources :passwords, param: :token, only: %i[new create edit update]
   resources :organizations do
     resources :memberships, only: %i[update destroy]
