@@ -37,13 +37,19 @@ class GridSavedViewsController < ApplicationController
   end
 
   def saved_view_params
-    raw = params.require(:grid_saved_view).permit(:name, :default, query: {}, preferences: {})
-    raw[:query] = normalize_object(raw[:query])
-    raw[:preferences] = normalize_object(raw[:preferences])
-    raw
+    raw = params.require(:grid_saved_view).permit(:name, :default, :query_json, :preferences_json)
+    {
+      name: raw[:name],
+      default: ActiveModel::Type::Boolean.new.cast(raw[:default]),
+      query: parse_json_object(raw[:query_json]),
+      preferences: parse_json_object(raw[:preferences_json])
+    }
   end
 
-  def normalize_object(value)
-    value.respond_to?(:to_h) ? value.to_h : {}
+  def parse_json_object(value)
+    parsed = JSON.parse(value.presence || "{}")
+    parsed.is_a?(Hash) ? parsed : {}
+  rescue JSON::ParserError
+    {}
   end
 end
