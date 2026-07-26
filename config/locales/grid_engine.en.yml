@@ -1,4 +1,6 @@
 en:
+  layout:
+    grid_engine: "Grid Engine"
   grid_engine:
     organizations:
       title: "Organizations grid"
