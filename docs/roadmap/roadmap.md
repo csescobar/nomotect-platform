@@ -171,10 +171,35 @@ The early organization and membership delivery does not mark Epic 6 complete and
 
 **Status:** ⏳ Planned
 
-- [ ] Extract proven modules into versioned gems where justified
-- [ ] Compatibility and upgrade tooling
-- [ ] Automated changelogs and releases
-- [ ] Separate commercial enterprise repository and integration contracts
+- [ ] Establish a root `VERSION` file as the canonical released project version.
+- [ ] Add per-PR YAML change fragments with `none`, `patch`, `minor` or `major` release impact.
+- [ ] Require release-impact declarations and validate fragment structure in CI.
+- [ ] Generate and maintain `CHANGELOG.md` from accepted change fragments using Added, Changed, Deprecated, Removed, Fixed and Security sections.
+- [ ] Reconstruct the historical changelog from merged PRs and release evidence after the scheduled Epic 4–8 implementation pipeline is complete.
+- [ ] Generate GitHub release notes from the same normalized release metadata.
+- [ ] Add release preparation automation that updates `VERSION`, consumes fragments, updates the changelog and opens a release PR.
+- [ ] Verify consistency between `VERSION`, Git tags, release notes, SBOM and provenance metadata.
+- [ ] Extract proven modules into versioned gems where justified.
+- [ ] Add compatibility and upgrade tooling.
+- [ ] Separate commercial enterprise repository and integration contracts.
+
+**Exit criteria:** release engineering and distribution capabilities are implemented and CI is green. Completing Epic 9 does not authorize a stable `v1.0.0` release.
+
+## Epic 10 — Framework Validation and Release Readiness
+
+**Status:** ⏳ Planned
+
+- [ ] Publish one or more pre-1.0 release candidates, such as `v0.9.0` and `v1.0.0-rc.1`.
+- [ ] Build at least one representative application from scratch using only the documented framework contracts.
+- [ ] Upgrade an existing sample application across at least one framework release candidate.
+- [ ] Validate installation, configuration, generators, design-system customization, grid usage, domain conventions, enterprise services and multi-tenant behavior.
+- [ ] Exercise production-like deployment, background jobs, files, exports, observability, backup and recovery workflows.
+- [ ] Run accessibility, security, privacy, performance, compatibility and cross-tenant leakage validation.
+- [ ] Collect defects, usability gaps, missing documentation and migration friction discovered through real framework usage.
+- [ ] Resolve or explicitly accept all release-blocking findings and publish validation evidence.
+- [ ] Confirm public contracts, support policy, compatibility matrix, upgrade policy and deprecation process.
+
+**`v1.0.0` release gate:** all Epic 10 validation evidence is complete; no unresolved critical or high-severity release blockers remain; the reference and validation applications can be created, operated and upgraded using published documentation; and the stable public contracts are approved.
 
 ## Release targets
 
@@ -182,4 +207,6 @@ The early organization and membership delivery does not mark Epic 6 complete and
 - ✅ `v0.2.0`: design system and i18n baseline delivered
 - ⏳ `v0.3.0`: grid engine baseline
 - ⏳ `v0.4.0`: reference application and domain framework
-- ⏳ `v1.0.0`: stable documented contracts with upgrade policy and production evidence
+- ⏳ `v0.9.0`: feature-complete pre-release after Epic 9
+- ⏳ `v1.0.0-rc.1`: validation candidate for Epic 10
+- ⏳ `v1.0.0`: stable documented contracts released only after the Epic 10 validation gate passes
