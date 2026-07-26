@@ -3,6 +3,7 @@
 require_relative "repository_intelligence/query_engine"
 require_relative "repository_intelligence/capability_registry"
 require_relative "repository_intelligence/event_bus"
+require_relative "repository_intelligence/playbook_executor"
 
 module RepositoryIntelligence
   class << self
@@ -16,6 +17,8 @@ module RepositoryIntelligence
       @validator = validator
       @event_bus = event_bus
       @query_engine = QueryEngine.new(graph:, contracts:, playbooks:)
+      @playbook_executor = PlaybookExecutor.new(api: self)
+      @executions = {}
       register_default_capabilities
       self
     end
@@ -86,6 +89,32 @@ module RepositoryIntelligence
       query_engine.statistics
     end
 
+    def validate_playbook(identifier)
+      definition = identifier.is_a?(Hash) ? identifier : playbook(identifier)
+      raise KeyError, "Unknown playbook: #{identifier}" unless definition
+
+      playbook_executor.validate(definition)
+    end
+
+    def execute_playbook(identifier, inputs: {})
+      definition = identifier.is_a?(Hash) ? identifier : playbook(identifier)
+      raise KeyError, "Unknown playbook: #{identifier}" unless definition
+
+      execution = playbook_executor.execute(definition, inputs:)
+      @executions[execution.id] = execution
+      execution
+    end
+
+    def playbook_execution(id)
+      require_configuration!
+      @executions.fetch(id)
+    end
+
+    def playbook_executions
+      require_configuration!
+      @executions.values.sort_by(&:started_at)
+    end
+
     def generate!
       require_configuration!
       raise "generation is unavailable" unless @generator
@@ -119,13 +148,13 @@ module RepositoryIntelligence
 
     private
 
-    attr_reader :query_engine, :event_bus
+    attr_reader :query_engine, :event_bus, :playbook_executor
 
     def register_default_capabilities
       @capability_registry = CapabilityRegistry.new
         .register(:graph, description: "Normalized repository graph queries", public_methods: %i[graph search describe_module impact_analysis dependency_path statistics])
         .register(:contracts, description: "Machine-readable module and invariant contracts", public_methods: %i[contracts contract invariants])
-        .register(:playbooks, description: "Versioned cross-vendor engineering playbooks", public_methods: %i[playbooks playbook])
+        .register(:playbooks, description: "Versioned executable engineering playbooks", public_methods: %i[playbooks playbook validate_playbook execute_playbook playbook_execution playbook_executions])
         .register(:generation, description: "Deterministic AI artifact generation", public_methods: %i[generate!])
         .register(:validation, description: "Repository intelligence drift and quality validation", public_methods: %i[validate! readiness])
         .register(:events, description: "Internal repository intelligence lifecycle events", public_methods: %i[subscribe publish])
