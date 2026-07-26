@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "open3"
+require "pathname"
+require_relative "../lib/repository_intelligence/manifest_generator"
+require_relative "../lib/repository_intelligence/providers/null_provider"
+require_relative "../lib/repository_intelligence/providers/command_provider"
+require_relative "../lib/repository_intelligence/platform"
+require_relative "../lib/repository_intelligence/graph_exports"
+require_relative "../lib/repository_intelligence/graph_validator"
+require_relative "../lib/repository_intelligence/mcp_server"
+
+root = File.expand_path("..", __dir__)
+commit = ENV["GITHUB_SHA"].to_s
+commit = Open3.capture2("git", "rev-parse", "HEAD", chdir: root).first.strip if commit.empty?
+command = ARGV.shift || "generate"
+manifest = RepositoryIntelligence::ManifestGenerator.new(repository_path: root, repository_commit: commit).generate
+provider = case ENV.fetch("CODE_GRAPH_PROVIDER", "null")
+           when "codebase_memory" then RepositoryIntelligence::Providers::CodebaseMemoryProvider.new
+           when "gitnexus" then RepositoryIntelligence::Providers::GitNexusProvider.new
+           else RepositoryIntelligence::Providers::NullProvider.new
+           end
+provider_result = provider.index(repository_path: root, repository_commit: commit)
+graph = RepositoryIntelligence::GovernanceScanner.new(repository_path: root, manifest:, provider_result:).scan
+contracts = RepositoryIntelligence::ContractRegistry.new(File.join(root, "config/ai/contracts"))
+playbooks = RepositoryIntelligence::PlaybookRegistry.new(File.join(root, "config/ai/playbooks"))
+graph_errors = RepositoryIntelligence::GraphValidator.new(graph).validate
+report = RepositoryIntelligence::ReadinessReport.new(
+  manifest:, graph:, contract_errors: contracts.validate + graph_errors, playbook_errors: playbooks.validate,
+  indexed_commit: provider_result.repository_commit, current_commit: commit
+).to_h.merge(provider: provider.status)
+
+case command
+when "generate"
+  output = Pathname(root).join("docs/ai/generated")
+  writer = RepositoryIntelligence::SnapshotWriter.new(output_directory: output)
+  exports = RepositoryIntelligence::GraphExports.new(graph)
+  writer.write("architecture-manifest", manifest)
+  writer.write("repository-graph", graph.to_h.merge(repository_commit: commit))
+  writer.write("repository-graph-jsonld", exports.json_ld)
+  writer.write("contracts", contracts.load)
+  writer.write("readiness-report", report)
+  output.join("repository-graph.mmd").write(exports.mermaid)
+  output.join("repository-graph.dot").write(exports.dot)
+  abort JSON.pretty_generate(report) unless report.fetch(:status) == "ready"
+when "validate"
+  abort JSON.pretty_generate(report) unless report.fetch(:status) == "ready"
+  puts JSON.generate(report)
+when "mcp"
+  RepositoryIntelligence::McpServer.new(
+    manifest:, graph:, contracts: contracts.load, playbooks: playbooks.load, readiness: report
+  ).run
+else
+  abort "Usage: bin/repository-intelligence [generate|validate|mcp]"
+end
