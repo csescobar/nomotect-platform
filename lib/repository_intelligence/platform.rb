@@ -27,7 +27,7 @@ module RepositoryIntelligence
 
     def impact(node_id, depth: 2)
       visited = { node_id => 0 }
-      queue = [node_id]
+      queue = [ node_id ]
       until queue.empty?
         current = queue.shift
         next if visited.fetch(current) >= depth
@@ -47,7 +47,7 @@ module RepositoryIntelligence
       {
         schema_version: "1.0",
         nodes: nodes.values.sort_by(&:id).map(&:to_h),
-        edges: edges.sort_by { |edge| [edge.from, edge.type, edge.to] }.map(&:to_h)
+        edges: edges.sort_by { |edge| [ edge.from, edge.type, edge.to ] }.map(&:to_h)
       }
     end
   end
@@ -73,7 +73,7 @@ module RepositoryIntelligence
 
       manifest.fetch(:files).each do |file|
         path = file.fetch(:path)
-        type, match = SOURCE_PATTERNS.filter_map { |kind, pattern| [kind, pattern.match(path)] if pattern.match?(path) }.first
+        type, match = SOURCE_PATTERNS.filter_map { |kind, pattern| [ kind, pattern.match(path) ] if pattern.match?(path) }.first
         next unless type
 
         name = match[1].split("/").map { |part| part.split("_").map(&:capitalize).join }.join("::")
