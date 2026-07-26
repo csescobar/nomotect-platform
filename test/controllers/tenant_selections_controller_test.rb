@@ -12,11 +12,13 @@ class TenantSelectionsControllerTest < ActionDispatch::IntegrationTest
     Membership.create!(organization: @second, user: @user, role: "member")
 
     post session_path, params: { email_address: @user.email_address, password: @password }
+    assert_response :redirect, response.body
   end
 
   test "selects only an organization belonging to the signed-in user" do
     patch tenant_selection_path, params: { organization_id: @second.id }
 
+    assert_response :redirect, response.body
     assert_redirected_to organization_path(@second)
     follow_redirect!
     assert_response :success
@@ -25,16 +27,16 @@ class TenantSelectionsControllerTest < ActionDispatch::IntegrationTest
   test "rejects cross-tenant selection" do
     patch tenant_selection_path, params: { organization_id: @foreign.id }
 
-    assert_response :not_found
+    assert_response :not_found, response.body
   end
 
   test "rejects a selected tenant after membership removal" do
     patch tenant_selection_path, params: { organization_id: @second.id }
-    assert_response :redirect
+    assert_response :redirect, response.body
 
     @second.memberships.find_by!(user: @user).destroy!
     get root_path
 
-    assert_response :not_found
+    assert_response :not_found, response.body
   end
 end
