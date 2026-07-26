@@ -93,7 +93,7 @@ module RepositoryIntelligence
 
     def module_context(name, nodes)
       paths = nodes.filter_map(&:path).sort
-      related_edges = graph.edges.select { |edge| nodes.any? { |node| [edge.from, edge.to].include?(node.id) } }
+      related_edges = graph.edges.select { |edge| nodes.any? { |node| [ edge.from, edge.to ].include?(node.id) } }
       contract = contracts.find { |item| item.fetch("id", "").casecmp?(slug(name)) }
       <<~MARKDOWN
         # #{name} AI Context
@@ -178,7 +178,7 @@ module RepositoryIntelligence
         generated_files: files.size,
         public_nodes:,
         documented_nodes:,
-        findings: score == 100 ? [] : ["#{public_nodes - documented_nodes} public nodes lack explicit documentation edges"]
+        findings: score == 100 ? [] : [ "#{public_nodes - documented_nodes} public nodes lack explicit documentation edges" ]
       }
     end
 
