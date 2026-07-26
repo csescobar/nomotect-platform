@@ -11,6 +11,7 @@ require_relative "../lib/repository_intelligence/graph_exports"
 require_relative "../lib/repository_intelligence/graph_validator"
 require_relative "../lib/repository_intelligence/sqlite_graph_store"
 require_relative "../lib/repository_intelligence/snapshot_drift"
+require_relative "../lib/repository_intelligence/ai_artifact_generator"
 require_relative "../lib/repository_intelligence/mcp_server"
 
 root = File.expand_path("..", __dir__)
@@ -34,8 +35,12 @@ report = RepositoryIntelligence::ReadinessReport.new(
 ).to_h.merge(provider: provider.status)
 
 output = Pathname(root).join("docs/ai/generated")
+ai_output = output.join("contexts")
 graph_payload = graph.to_h.merge(repository_commit: commit)
 store = RepositoryIntelligence::SqliteGraphStore.new(path: Pathname(root).join("tmp/ai/repository-graph.sqlite3"))
+ai_artifacts = RepositoryIntelligence::AiArtifactGenerator.new(
+  repository_path: root, graph:, contracts: contracts.load, output_directory: ai_output
+)
 
 case command
 when "generate"
@@ -48,6 +53,7 @@ when "generate"
   writer.write("readiness-report", report)
   output.join("repository-graph.mmd").write(exports.mermaid)
   output.join("repository-graph.dot").write(exports.dot)
+  ai_artifacts.write
   store.replace(graph:, repository_commit: commit, provider: provider_result.provider) if store.available?
   abort JSON.pretty_generate(report) unless report.fetch(:status) == "ready"
 when "refresh"
@@ -55,13 +61,14 @@ when "refresh"
 
   changed = ARGV.empty? ? manifest.fetch(:files).map { |file| file.fetch(:path) } : ARGV
   store.replace_sources(graph:, source_paths: changed, repository_commit: commit, provider: provider_result.provider)
+  ai_artifacts.write
   puts JSON.generate(status: "refreshed", changed_sources: changed.sort, metadata: store.metadata)
 when "validate"
   drift = RepositoryIntelligence::SnapshotDrift.new(
     snapshot_path: output.join("repository-graph.json"),
     checksum_path: output.join("repository-graph.json.sha256")
   ).validate(graph_payload)
-  findings = report.fetch(:findings) + drift.findings
+  findings = report.fetch(:findings) + drift.findings + ai_artifacts.validate
   validated = report.merge(status: findings.empty? ? "ready" : "not_ready", findings:, snapshot: drift.to_h)
   abort JSON.pretty_generate(validated) unless validated.fetch(:status) == "ready"
 
