@@ -1,4 +1,6 @@
 pt-BR:
+  layout:
+    grid_engine: "Motor de grades"
   grid_engine:
     organizations:
       title: "Grade de organizações"
