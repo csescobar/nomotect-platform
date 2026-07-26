@@ -3,7 +3,11 @@ class OrganizationInvitationsController < ApplicationController
 
   def create
     authorize!(@organization, :manage_members?)
-    @invitation = @organization.organization_invitations.new(invitation_params.merge(invited_by: Current.user))
+    @invitation = @organization.organization_invitations.new(
+      email_address: invitation_params[:email_address],
+      role: requested_role,
+      invited_by: Current.user
+    )
 
     if @invitation.save
       redirect_to @organization, notice: t("organization_invitations.created")
@@ -37,7 +41,14 @@ class OrganizationInvitationsController < ApplicationController
   end
 
   def invitation_params
-    params.require(:organization_invitation).permit(:email_address, :role)
+    params.require(:organization_invitation).permit(:email_address)
+  end
+
+  def requested_role
+    role = params.require(:organization_invitation).fetch(:role)
+    return role if Membership::MANAGEABLE_ROLES.include?(role)
+
+    raise ActionController::BadRequest, "Unsupported invitation role"
   end
 
   def load_organization_members
