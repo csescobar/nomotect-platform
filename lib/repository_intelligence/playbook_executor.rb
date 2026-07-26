@@ -123,7 +123,7 @@ module RepositoryIntelligence
 
     def interpolate(value, context)
       case value
-      when Hash then value.to_h { |key, item| [key, interpolate(item, context)] }
+      when Hash then value.to_h { |key, item| [ key, interpolate(item, context) ] }
       when Array then value.map { |item| interpolate(item, context) }
       when String then value.gsub(/\{\{([^}]+)\}\}/) { dig_context(context, Regexp.last_match(1).strip).to_s }
       else value
@@ -146,10 +146,16 @@ module RepositoryIntelligence
           result&.status == "completed" && Array(result.output).empty?
         when "repository_ready"
           result = results.reverse.find { |item| item.operation == "repository.readiness" }
-          result&.status == "completed" && result.output&.fetch(:status, result.output&.fetch("status", nil)) == "ready"
+          result&.status == "completed" && readiness_status(result.output) == "ready"
         else false
         end
       end
+    end
+
+    def readiness_status(output)
+      return unless output.respond_to?(:fetch)
+
+      output.fetch(:status) { output.fetch("status", nil) }
     end
 
     def elapsed_ms(started)
