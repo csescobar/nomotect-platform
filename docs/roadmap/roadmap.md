@@ -122,15 +122,13 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 - [x] Workflow and state transitions
 - [x] Integrations, webhooks and feature flags
 
-**Delivery evidence:** Epic 5 stacked draft PR.
+**Delivery evidence:** PR #18.
 
 **Quality evidence:** tenant-scoped service contracts, safe webhook delivery, encrypted webhook secrets, deterministic exports, tracked imports, structured instrumentation, AI context, and automated tests.
 
 ## Epic 6 — Multi-Tenant Platform
 
-**Status:** ◐ Partially delivered ahead of sequence — next implementation epic
-
-### Delivered
+**Status:** ✅ Complete
 
 - [x] Organization workspace model
 - [x] Membership-based access boundary
@@ -141,23 +139,20 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 - [x] Role administration and member removal
 - [x] Final-owner protection
 - [x] English and Brazilian Portuguese organization administration copy
+- [x] Active tenant context and tenant selection
+- [x] Tenant isolation guarantees across domain queries
+- [x] Tenant-specific permissions, themes and localization
+- [x] Tenant-safe background jobs, files, exports and audit
+- [x] Cross-tenant leakage tests
+- [x] Ownership-transfer workflow and confirmation
 
-**Delivery evidence:** PRs #11 and #12.
+**Delivery evidence:** PRs #11, #12, #20 and #22.
 
-### Remaining
-
-- [ ] Active tenant context and tenant selection
-- [ ] Tenant isolation guarantees across domain queries
-- [ ] Tenant-specific permissions, themes and localization
-- [ ] Tenant-safe background jobs, files, exports and audit
-- [ ] Cross-tenant leakage tests
-- [ ] Ownership-transfer workflow and confirmation
-
-The early organization and membership delivery does not mark Epic 6 complete.
+**Quality evidence:** tenant-bound request context, persisted and authenticated tenant selection, fail-closed stale-membership handling, tenant-safe Enterprise Services, ownership-transfer safeguards, cross-tenant regression coverage, English and Brazilian Portuguese copy, Multi-Tenant AI context, architecture documentation, and a fully green final CI run for PR #22.
 
 ## Epic 7 — Security and Privacy
 
-**Status:** ⏳ Planned
+**Status:** 🚧 In progress
 
 - [ ] Privacy and LGPD workflows
 - [ ] Secure headers and CSP
@@ -165,6 +160,8 @@ The early organization and membership delivery does not mark Epic 6 complete.
 - [ ] Secrets and key management
 - [ ] Dependency, SBOM and provenance automation
 - [ ] Threat models and security test suites
+
+**Active implementation evidence:** draft PR #21 currently contains the Epic 7 gap audit. None of the Epic 7 capabilities are complete until implementation, security-focused tests and final green CI evidence are added.
 
 ## Epic 8 — AI-Native Infrastructure
 
