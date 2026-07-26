@@ -8,6 +8,10 @@ class EnterpriseServicesTest < ActiveSupport::TestCase
     @organization = Organization.create!(name: "Enterprise #{suffix}")
     @user = User.create!(email_address: "enterprise-#{suffix}@example.com", password: "correct horse battery staple")
     Membership.create!(organization: @organization, user: @user, role: "owner")
+
+    @other_organization = Organization.create!(name: "Other #{suffix}")
+    @other_user = User.create!(email_address: "other-#{suffix}@example.com", password: "correct horse battery staple")
+    Membership.create!(organization: @other_organization, user: @other_user, role: "owner")
   end
 
   test "idempotent execution returns the persisted result" do
@@ -39,6 +43,16 @@ class EnterpriseServicesTest < ActiveSupport::TestCase
     end
   end
 
+  test "notification dispatcher rejects a recipient from another tenant" do
+    assert_raises TenantBoundary::Violation do
+      NotificationDispatcher.call(
+        organization: @organization,
+        recipient: @other_user,
+        kind: "customer.updated"
+      )
+    end
+  end
+
   test "stored file registry calculates immutable metadata" do
     stored_file = StoredFileRegistry.call(
       organization: @organization,
@@ -51,6 +65,18 @@ class EnterpriseServicesTest < ActiveSupport::TestCase
     assert_equal @organization, stored_file.organization
     assert_equal 9, stored_file.byte_size
     assert_equal Digest::SHA256.hexdigest("name\nAda\n"), stored_file.checksum
+  end
+
+  test "stored file registry rejects an uploader from another tenant" do
+    assert_raises TenantBoundary::Violation do
+      StoredFileRegistry.call(
+        organization: @organization,
+        uploaded_by: @other_user,
+        name: "customers.csv",
+        content_type: "text/csv",
+        bytes: "name\nAda\n"
+      )
+    end
   end
 
   test "customer import tracks row failures and export remains tenant scoped" do
@@ -68,6 +94,20 @@ class EnterpriseServicesTest < ActiveSupport::TestCase
     assert_equal "failed", run.status
     assert_includes exported, "Ada"
     assert_not_includes exported, "invalid@example.com"
+  end
+
+  test "customer imports and exports reject users from another tenant" do
+    assert_raises TenantBoundary::Violation do
+      Customers::CsvImporter.call(
+        organization: @organization,
+        requested_by: @other_user,
+        csv: "name,email_address,status\nAda,ada@example.com,active\n"
+      )
+    end
+
+    assert_raises TenantBoundary::Violation do
+      Customers::CsvExporter.call(user: @other_user, organization: @organization)
+    end
   end
 
   test "workflow transition validates the transition map and emits an event" do

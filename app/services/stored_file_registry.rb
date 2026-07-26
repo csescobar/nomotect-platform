@@ -2,6 +2,8 @@ require "digest"
 
 class StoredFileRegistry
   def self.call(organization:, uploaded_by:, name:, content_type:, bytes:)
+    TenantBoundary.assert_membership!(organization: organization, user: uploaded_by)
+
     storage_key = [ organization.id, SecureRandom.uuid ].join("/")
     EnterpriseStorage.write(storage_key, bytes)
 
