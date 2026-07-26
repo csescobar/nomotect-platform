@@ -24,7 +24,7 @@ class GridsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     payload = response.parsed_body
     assert_equal 1, payload.fetch("last_page")
-    assert_equal @visible.id, payload.fetch("data").first.fetch("id")
+    assert_equal @visible.name, payload.fetch("data").first.fetch("name")
   end
 
   test "exports only records in the authenticated scope" do
