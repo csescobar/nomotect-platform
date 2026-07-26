@@ -3,6 +3,7 @@
 
 require "open3"
 require "pathname"
+require_relative "../lib/repository_intelligence"
 require_relative "../lib/repository_intelligence/manifest_generator"
 require_relative "../lib/repository_intelligence/providers/null_provider"
 require_relative "../lib/repository_intelligence/providers/command_provider"
@@ -41,6 +42,18 @@ store = RepositoryIntelligence::SqliteGraphStore.new(path: Pathname(root).join("
 ai_artifacts = RepositoryIntelligence::AiArtifactGenerator.new(
   repository_path: root, graph:, contracts: contracts.load, output_directory: ai_output
 )
+validation = lambda do
+  drift = RepositoryIntelligence::SnapshotDrift.new(
+    snapshot_path: output.join("repository-graph.json"),
+    checksum_path: output.join("repository-graph.json.sha256")
+  ).validate(graph_payload)
+  report.fetch(:findings) + drift.findings + ai_artifacts.validate
+end
+
+RepositoryIntelligence.configure(
+  graph:, contracts: contracts.load, playbooks: playbooks.load, manifest:, readiness: report,
+  generator: ai_artifacts, validator: validation
+)
 
 case command
 when "generate"
@@ -53,7 +66,7 @@ when "generate"
   writer.write("readiness-report", report)
   output.join("repository-graph.mmd").write(exports.mermaid)
   output.join("repository-graph.dot").write(exports.dot)
-  ai_artifacts.write
+  RepositoryIntelligence.generate!
   store.replace(graph:, repository_commit: commit, provider: provider_result.provider) if store.available?
   abort JSON.pretty_generate(report) unless report.fetch(:status) == "ready"
 when "refresh"
@@ -61,22 +74,27 @@ when "refresh"
 
   changed = ARGV.empty? ? manifest.fetch(:files).map { |file| file.fetch(:path) } : ARGV
   store.replace_sources(graph:, source_paths: changed, repository_commit: commit, provider: provider_result.provider)
-  ai_artifacts.write
+  RepositoryIntelligence.generate!
+  RepositoryIntelligence.publish(:graph_updated, changed_sources: changed.sort, repository_commit: commit)
   puts JSON.generate(status: "refreshed", changed_sources: changed.sort, metadata: store.metadata)
 when "validate"
-  drift = RepositoryIntelligence::SnapshotDrift.new(
-    snapshot_path: output.join("repository-graph.json"),
-    checksum_path: output.join("repository-graph.json.sha256")
-  ).validate(graph_payload)
-  findings = report.fetch(:findings) + drift.findings + ai_artifacts.validate
-  validated = report.merge(status: findings.empty? ? "ready" : "not_ready", findings:, snapshot: drift.to_h)
+  findings = RepositoryIntelligence.validate!
+  validated = report.merge(status: findings.empty? ? "ready" : "not_ready", findings:)
   abort JSON.pretty_generate(validated) unless validated.fetch(:status) == "ready"
 
   puts JSON.generate(validated)
+when "query"
+  operation = ARGV.shift || "statistics"
+  result = case operation
+           when "search" then RepositoryIntelligence.search(query: ARGV.shift, type: ARGV.shift)
+           when "describe" then RepositoryIntelligence.describe_module(ARGV.fetch(0))
+           when "impact" then RepositoryIntelligence.impact_analysis(ARGV.fetch(0), depth: ARGV.fetch(1, 2))
+           when "path" then RepositoryIntelligence.dependency_path(from: ARGV.fetch(0), to: ARGV.fetch(1))
+           else RepositoryIntelligence.statistics
+           end
+  puts JSON.pretty_generate(result)
 when "mcp"
-  RepositoryIntelligence::McpServer.new(
-    manifest:, graph:, contracts: contracts.load, playbooks: playbooks.load, readiness: report
-  ).run
+  RepositoryIntelligence::McpServer.new(intelligence: RepositoryIntelligence, playbooks: playbooks.load).run
 else
-  abort "Usage: bin/repository-intelligence [generate|refresh [paths...]|validate|mcp]"
+  abort "Usage: bin/repository-intelligence [generate|refresh [paths...]|validate|query [operation]|mcp]"
 end

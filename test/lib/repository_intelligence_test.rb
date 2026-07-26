@@ -3,6 +3,7 @@
 require "test_helper"
 require "stringio"
 require "tmpdir"
+require_relative "../../lib/repository_intelligence"
 require_relative "../../lib/repository_intelligence/code_graph_provider"
 require_relative "../../lib/repository_intelligence/providers/null_provider"
 require_relative "../../lib/repository_intelligence/providers/command_provider"
@@ -27,6 +28,38 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
     assert graph.nodes.key?("test:Models::Customer")
     assert_operator graph.impact("model:Customer", depth: 2).size, :>=, 1
     assert_empty RepositoryIntelligence::GraphValidator.new(graph).validate
+  end
+
+  test "exposes one canonical query API and capability registry" do
+    graph = RepositoryIntelligence::GovernanceGraph.new
+    graph.add_node(RepositoryIntelligence::Node.new(id: "model:Customer", type: "model", name: "Customer", path: "app/models/customer.rb", properties: {}))
+    graph.add_node(RepositoryIntelligence::Node.new(id: "job:CustomerSync", type: "job", name: "CustomerSync", path: "app/jobs/customer_sync_job.rb", properties: {}))
+    graph.add_edge(RepositoryIntelligence::Edge.new(from: "job:CustomerSync", to: "model:Customer", type: "USES", properties: {}))
+    contracts = [ { "id" => "customer", "version" => 1, "owns" => [ "Customer" ], "invariants" => [ "tenant boundary is required" ] } ]
+    playbooks = [ { "id" => "implement-feature", "title" => "Implement feature" } ]
+
+    RepositoryIntelligence.configure(
+      graph:, contracts:, playbooks:, manifest: { files: [] }, readiness: { status: "ready" }
+    )
+
+    assert_equal "Customer", RepositoryIntelligence.describe_module("Customer").dig(:node, :name)
+    assert_equal 1, RepositoryIntelligence.search(type: :job).size
+    assert_equal [ "job:CustomerSync", "model:Customer" ], RepositoryIntelligence.dependency_path(from: "CustomerSync", to: "Customer")
+    assert_equal "customer", RepositoryIntelligence.contract("Customer").fetch("id")
+    assert_equal "implement-feature", RepositoryIntelligence.playbook("implement_feature").fetch("id")
+    assert RepositoryIntelligence.capabilities.key?(:graph)
+    assert_equal 2, RepositoryIntelligence.statistics.fetch(:nodes)
+  end
+
+  test "publishes lifecycle events through the facade" do
+    graph = RepositoryIntelligence::GovernanceGraph.new
+    RepositoryIntelligence.configure(graph:, contracts: [], playbooks: [])
+    events = []
+    RepositoryIntelligence.subscribe(:graph_updated) { |event| events << event.payload }
+
+    RepositoryIntelligence.publish(:graph_updated, repository_commit: "abc")
+
+    assert_equal "abc", events.first.fetch(:repository_commit)
   end
 
   test "exports portable graph representations" do
@@ -71,18 +104,20 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
     end
   end
 
-  test "serves MCP resources and bounded impact tools" do
+  test "serves MCP resources and shared query tools" do
     graph = RepositoryIntelligence::GovernanceGraph.new
     graph.add_node(RepositoryIntelligence::Node.new(id: "module:test", type: "module", name: "Test", path: nil, properties: {}))
+    RepositoryIntelligence.configure(
+      graph:, contracts: [], playbooks: [], manifest: { files: [] }, readiness: { status: "ready" }
+    )
     server = RepositoryIntelligence::McpServer.new(
-      manifest: { files: [] }, graph:, contracts: [], playbooks: [], readiness: { status: "ready" },
-      input: StringIO.new, output: StringIO.new
+      intelligence: RepositoryIntelligence, playbooks: [], input: StringIO.new, output: StringIO.new
     )
 
     initialized = server.handle("jsonrpc" => "2.0", "id" => 1, "method" => "initialize")
     described = server.handle(
       "jsonrpc" => "2.0", "id" => 2, "method" => "tools/call",
-      "params" => { "name" => "describe_node", "arguments" => { "id" => "module:test" } }
+      "params" => { "name" => "describe_module", "arguments" => { "id" => "module:test" } }
     )
 
     assert_equal "2025-06-18", initialized.dig(:result, :protocolVersion)
