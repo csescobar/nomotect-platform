@@ -8,6 +8,11 @@ en:
     dark: Dark
   tenant_selection:
     updated: Active organization updated.
+  privacy_requests:
+    rate_limited: Too many privacy requests. Please try again later.
+    accepted: Your privacy request was accepted for processing.
+    export: Export my data
+    anonymize: Anonymize my personal data
   authentication:
     required: Please sign in to continue.
     sign_in: Sign in
