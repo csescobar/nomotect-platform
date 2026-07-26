@@ -1,6 +1,7 @@
 <% content_for :title, @organization.name %>
 
 <%= render Ui::Layout::PageHeaderComponent.new(title: @organization.name, description: t("organizations.show.description")) do %>
+  <%= link_to t("customers.index.title", organization: @organization.name), organization_customers_path(@organization), class: "button button--primary" %>
   <% if @membership.admin? %>
     <%= link_to t("organizations.actions.edit"), edit_organization_path(@organization), class: "button button--secondary" %>
   <% end %>
