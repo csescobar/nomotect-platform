@@ -81,21 +81,23 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 
 ## Epic 3 — Grid Engine
 
-**Status:** ⏳ Planned — next implementation epic
+**Status:** ✅ Complete
 
-- [ ] Grid DSL
-- [ ] Type, operator, parser and formatter registries
-- [ ] Query AST and validation
-- [ ] Active Record and Arel adapters
-- [ ] Tabulator adapter
-- [ ] HTML and Turbo fallback
-- [ ] Saved views, export and column personalization
+- [x] Grid DSL
+- [x] Type, operator, parser and formatter registries
+- [x] Query AST and validation
+- [x] Active Record and Arel adapters
+- [x] Tabulator adapter
+- [x] HTML and Turbo fallback
+- [x] Saved views, export and column personalization
 
-**Target release:** `v0.3.0`.
+**Delivery evidence:** PR #14.
+
+**Target release:** `v0.3.0` baseline delivered.
 
 ## Epic 4 — Domain Framework and Reference Application
 
-**Status:** ⏳ Planned
+**Status:** ⏳ Planned — next implementation epic
 
 - [ ] Operations, queries, policies and domain events
 - [ ] Rich domain model conventions
@@ -143,7 +145,7 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 - [ ] Cross-tenant leakage tests
 - [ ] Ownership-transfer workflow and confirmation
 
-The early organization and membership delivery does not mark Epic 6 complete and does not replace Epic 3 as the next roadmap target.
+The early organization and membership delivery does not mark Epic 6 complete.
 
 ## Epic 7 — Security and Privacy
 
@@ -205,7 +207,7 @@ The early organization and membership delivery does not mark Epic 6 complete and
 
 - ✅ `v0.1.0`: executable platform core baseline delivered
 - ✅ `v0.2.0`: design system and i18n baseline delivered
-- ⏳ `v0.3.0`: grid engine baseline
+- ✅ `v0.3.0`: grid engine baseline delivered
 - ⏳ `v0.4.0`: reference application and domain framework
 - ⏳ `v0.9.0`: feature-complete pre-release after Epic 9
 - ⏳ `v1.0.0-rc.1`: validation candidate for Epic 10
