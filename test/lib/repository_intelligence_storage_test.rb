@@ -34,7 +34,7 @@ class RepositoryIntelligenceStorageTest < ActiveSupport::TestCase
       File.write("#{snapshot}.sha256", "#{Digest::SHA256.hexdigest(json)}  graph.json\n")
 
       fresh = RepositoryIntelligence::SnapshotDrift.new(snapshot_path: snapshot).validate(payload)
-      stale = RepositoryIntelligence::SnapshotDrift.new(snapshot_path: snapshot).validate(payload.merge(nodes: [{ id: "changed" }]))
+      stale = RepositoryIntelligence::SnapshotDrift.new(snapshot_path: snapshot).validate(payload.merge(nodes: [ { id: "changed" } ]))
 
       assert fresh.fresh
       assert_not stale.fresh
