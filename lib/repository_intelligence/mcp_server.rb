@@ -7,12 +7,9 @@ module RepositoryIntelligence
   class McpServer
     PROTOCOL_VERSION = "2025-06-18"
 
-    def initialize(manifest:, graph:, contracts:, playbooks:, readiness:, input: $stdin, output: $stdout)
-      @manifest = manifest
-      @graph = graph
-      @contracts = contracts
+    def initialize(intelligence: RepositoryIntelligence, playbooks:, input: $stdin, output: $stdout)
+      @intelligence = intelligence
       @playbooks = playbooks
-      @readiness = readiness
       @input = input
       @output = output
     end
@@ -40,7 +37,7 @@ module RepositoryIntelligence
         when "prompts/get"
           {
             description: "Executable repository playbook",
-            messages: [ { role: "user", content: { type: "text", text: YAML.dump(fetch_playbook(request.dig("params", "name"))) } } ]
+            messages: [ { role: "user", content: { type: "text", text: YAML.dump(intelligence.playbook(request.dig("params", "name"))) } } ]
           }
         else
           return error_response(request["id"], -32601, "Method not found")
@@ -54,7 +51,7 @@ module RepositoryIntelligence
 
     private
 
-    attr_reader :manifest, :graph, :contracts, :playbooks, :readiness, :input, :output
+    attr_reader :intelligence, :playbooks, :input, :output
 
     def initialize_result
       {
@@ -65,7 +62,7 @@ module RepositoryIntelligence
     end
 
     def resources
-      %w[platform://manifest platform://graph platform://contracts platform://readiness].map do |uri|
+      %w[platform://manifest platform://graph platform://capabilities platform://readiness].map do |uri|
         { uri:, name: uri.delete_prefix("platform://") }
       end
     end
@@ -73,10 +70,10 @@ module RepositoryIntelligence
     def read_resource(uri)
       payload =
         case uri
-        when "platform://manifest" then manifest
-        when "platform://graph" then graph.to_h
-        when "platform://contracts" then contracts
-        when "platform://readiness" then readiness
+        when "platform://manifest" then intelligence.manifest
+        when "platform://graph" then intelligence.graph.to_h
+        when "platform://capabilities" then intelligence.capabilities
+        when "platform://readiness" then intelligence.readiness
         else raise ArgumentError, "Unknown resource"
         end
       { contents: [ { uri:, mimeType: "application/json", text: JSON.pretty_generate(payload) } ] }
@@ -84,9 +81,12 @@ module RepositoryIntelligence
 
     def tools
       [
-        { name: "describe_node", description: "Describe one graph node", inputSchema: object_schema("id") },
-        { name: "impact_analysis", description: "Traverse bounded graph impact", inputSchema: object_schema("id", depth: { type: "integer", minimum: 1, maximum: 5 }) },
-        { name: "readiness_report", description: "Return repository readiness", inputSchema: { type: "object", additionalProperties: false } }
+        { name: "describe_module", description: "Describe one repository node or module", inputSchema: object_schema("id") },
+        { name: "search", description: "Search normalized repository nodes", inputSchema: search_schema },
+        { name: "impact_analysis", description: "Traverse bounded cross-layer impact", inputSchema: object_schema("id", depth: { type: "integer", minimum: 1, maximum: 5 }) },
+        { name: "dependency_path", description: "Find a directed dependency path", inputSchema: dependency_schema },
+        { name: "graph_statistics", description: "Return normalized graph statistics", inputSchema: empty_schema },
+        { name: "readiness_report", description: "Return repository readiness", inputSchema: empty_schema }
       ]
     end
 
@@ -94,9 +94,12 @@ module RepositoryIntelligence
       arguments = params.fetch("arguments", {})
       payload =
         case params.fetch("name")
-        when "describe_node" then graph.nodes.fetch(arguments.fetch("id")).to_h
-        when "impact_analysis" then graph.impact(arguments.fetch("id"), depth: [ arguments.fetch("depth", 2).to_i, 5 ].min).map(&:to_h)
-        when "readiness_report" then readiness
+        when "describe_module" then intelligence.describe_module(arguments.fetch("id"))
+        when "search" then intelligence.search(query: arguments["query"], type: arguments["type"], limit: arguments.fetch("limit", 50))
+        when "impact_analysis" then intelligence.impact_analysis(arguments.fetch("id"), depth: arguments.fetch("depth", 2))
+        when "dependency_path" then intelligence.dependency_path(from: arguments.fetch("from"), to: arguments.fetch("to"), max_depth: arguments.fetch("max_depth", 6))
+        when "graph_statistics" then intelligence.statistics
+        when "readiness_report" then intelligence.readiness
         else raise ArgumentError, "Unknown tool"
         end
       { content: [ { type: "text", text: JSON.pretty_generate(payload) } ] }
@@ -106,8 +109,25 @@ module RepositoryIntelligence
       { type: "object", properties: { required => { type: "string" } }.merge(properties), required: [ required ], additionalProperties: false }
     end
 
-    def fetch_playbook(name)
-      playbooks.find { |playbook| playbook.fetch("id") == name } || raise(ArgumentError, "Unknown prompt")
+    def search_schema
+      {
+        type: "object",
+        properties: { query: { type: "string" }, type: { type: "string" }, limit: { type: "integer", minimum: 1, maximum: 200 } },
+        additionalProperties: false
+      }
+    end
+
+    def dependency_schema
+      {
+        type: "object",
+        properties: { from: { type: "string" }, to: { type: "string" }, max_depth: { type: "integer", minimum: 1, maximum: 10 } },
+        required: %w[from to],
+        additionalProperties: false
+      }
+    end
+
+    def empty_schema
+      { type: "object", additionalProperties: false }
     end
 
     def error_response(id, code, message)
