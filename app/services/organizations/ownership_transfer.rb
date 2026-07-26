@@ -34,7 +34,9 @@ module Organizations
           payload: {
             previous_owner_id: actor.id,
             new_owner_id: target_user.id
-          }
+          },
+          request_id: Current.request_id,
+          occurred_at: Time.current
         )
 
         target_membership
