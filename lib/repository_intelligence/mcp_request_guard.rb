@@ -19,7 +19,7 @@ module RepositoryIntelligence
       @request_count += 1
       started_at = monotonic_time
       result = Timeout.timeout(timeout_seconds) { yield }
-      [result, elapsed_ms(started_at)]
+      [ result, elapsed_ms(started_at) ]
     rescue Timeout::Error
       raise LimitExceeded, "MCP request exceeded #{timeout_seconds} seconds"
     end
