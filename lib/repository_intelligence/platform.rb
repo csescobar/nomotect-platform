@@ -93,12 +93,14 @@ module RepositoryIntelligence
     def link_tests(graph, test_id, name)
       target = name.sub(/Test\z/, "")
       graph.nodes.each_value do |node|
+        next if node.id == test_id
         graph.add_edge(Edge.new(from: node.id, to: test_id, type: "TESTED_BY", properties: {})) if target.include?(node.name.split("::").last)
       end
     end
 
     def link_docs(graph, document_id, path)
       graph.nodes.each_value do |node|
+        next if node.id == document_id
         next unless path.downcase.include?(node.name.split("::").last.downcase)
         graph.add_edge(Edge.new(from: node.id, to: document_id, type: "DOCUMENTED_BY", properties: {}))
       end
