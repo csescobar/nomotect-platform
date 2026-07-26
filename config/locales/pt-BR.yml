@@ -8,6 +8,11 @@ pt-BR:
     dark: Escuro
   tenant_selection:
     updated: Organização ativa atualizada.
+  privacy_requests:
+    rate_limited: Muitas solicitações de privacidade. Tente novamente mais tarde.
+    accepted: Sua solicitação de privacidade foi aceita para processamento.
+    export: Exportar meus dados
+    anonymize: Anonimizar meus dados pessoais
   authentication:
     required: Entre na sua conta para continuar.
     sign_in: Entrar
