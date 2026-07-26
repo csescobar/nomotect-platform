@@ -2,6 +2,7 @@
 
 require "json"
 require "open3"
+require "pathname"
 require_relative "../code_graph_provider"
 
 module RepositoryIntelligence
