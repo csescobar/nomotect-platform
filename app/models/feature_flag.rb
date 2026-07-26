@@ -1,0 +1,11 @@
+class FeatureFlag < ApplicationRecord
+  belongs_to :organization, optional: true
+
+  validates :key, presence: true, uniqueness: { scope: :organization_id }
+
+  def self.active_for?(key, organization: nil)
+    scoped = find_by(key: key, organization: organization)
+    global = find_by(key: key, organization: nil)
+    scoped&.enabled? || global&.enabled? || false
+  end
+end
