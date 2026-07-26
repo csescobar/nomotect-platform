@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rails-hotwire-platform.example/schemas/playbook.schema.json",
+  "title": "Repository Intelligence Playbook",
+  "type": "object",
+  "required": ["id", "version", "title", "inputs", "steps", "completion_gate"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "version": {"type": "integer", "minimum": 1},
+    "title": {"type": "string", "minLength": 1},
+    "inputs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "steps": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "completion_gate": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  }
+}
