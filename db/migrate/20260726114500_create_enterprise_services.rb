@@ -39,7 +39,7 @@ class CreateEnterpriseServices < ActiveRecord::Migration[8.1]
       t.string :status, null: false, default: "pending"
       t.integer :processed_rows, null: false, default: 0
       t.integer :failed_rows, null: false, default: 0
-      t.jsonb :errors, null: false, default: []
+      t.jsonb :error_details, null: false, default: []
       t.timestamps
     end
 
