@@ -5,7 +5,8 @@ class FeatureFlag < ApplicationRecord
 
   def self.active_for?(key, organization: nil)
     scoped = find_by(key: key, organization: organization)
-    global = find_by(key: key, organization: nil)
-    scoped&.enabled? || global&.enabled? || false
+    return scoped.enabled? if scoped
+
+    find_by(key: key, organization: nil)&.enabled? || false
   end
 end
