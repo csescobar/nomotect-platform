@@ -77,6 +77,15 @@ bash bin/ci
 
 Read the [Platform Core AI Context](docs/modules/platform-core/AI_CONTEXT.md) for invariants, review boundaries and known limitations.
 
+## Current development status
+
+- ✅ Epics 0–6 are complete, covering project foundation, platform core, design system and internationalization, grid engine, domain framework and reference application, Enterprise Services, and the Multi-Tenant Platform.
+- 🚧 Epic 7 — Security and Privacy is in progress. Draft PR #21 currently contains the implementation gap audit; its roadmap capabilities remain incomplete until code, security-focused tests and final green CI evidence are delivered.
+- ◐ Epic 8 — AI-Native Infrastructure is partially delivered through the initial module AI contexts.
+- ⏳ Epics 9 and 10 remain planned for distribution, release engineering, framework validation and stable-release readiness.
+
+The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and traceability source.
+
 ## Documentation
 
 ### Foundation
@@ -142,10 +151,6 @@ The community platform is distributed under Apache License 2.0. A future `rails-
 ## Contribution workflow
 
 The `main` branch is protected. Changes are developed on focused branches and submitted through pull requests. Squash merge is the preferred strategy.
-
-## Status
-
-Epic 0 established the project constitution, legal identity, architecture and governance. Epic 1 introduces the executable Rails platform core and targets the first `v0.1.0` development baseline.
 
 ## License
 
