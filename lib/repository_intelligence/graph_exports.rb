@@ -35,10 +35,10 @@ module RepositoryIntelligence
     def dot
       lines = [ "digraph repository {" ]
       graph.nodes.values.sort_by(&:id).each do |node|
-        lines << %(  "#{escape(node.id)}" [label="#{escape(node.name)}"];) 
+        lines << %(  "#{escape(node.id)}" [label="#{escape(node.name)}"];)
       end
       graph.edges.sort_by { |edge| [ edge.from, edge.type, edge.to ] }.each do |edge|
-        lines << %(  "#{escape(edge.from)}" -> "#{escape(edge.to)}" [label="#{escape(edge.type)}"];) 
+        lines << %(  "#{escape(edge.from)}" -> "#{escape(edge.to)}" [label="#{escape(edge.type)}"];)
       end
       lines << "}"
       lines.join("\n") << "\n"
