@@ -9,7 +9,11 @@ module RepositoryIntelligence
     end
 
     def register(name, description:, public_methods:)
-      capabilities[name.to_sym] = Capability.new(name: name.to_sym, description:, public_methods: Array(public_methods).map(&:to_sym).freeze)
+      capabilities[name.to_sym] = Capability.new(
+        name: name.to_sym,
+        description:,
+        public_methods: Array(public_methods).map(&:to_sym).freeze
+      )
       self
     end
 
@@ -22,7 +26,9 @@ module RepositoryIntelligence
     end
 
     def to_h
-      all.to_h { |capability| [capability.name, { description: capability.description, public_methods: capability.public_methods }] }
+      all.to_h do |capability|
+        [ capability.name, { description: capability.description, public_methods: capability.public_methods } ]
+      end
     end
 
     private
