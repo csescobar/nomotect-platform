@@ -28,16 +28,19 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
 
   test "validates contracts and playbooks" do
     Dir.mktmpdir do |directory|
-      File.write(File.join(directory, "contract.yml"), YAML.dump(
+      contracts = File.join(directory, "contracts")
+      playbooks = File.join(directory, "playbooks")
+      FileUtils.mkdir_p([ contracts, playbooks ])
+      File.write(File.join(contracts, "contract.yml"), YAML.dump(
         "id" => "test", "version" => 1, "owns" => [], "may_use" => [], "cannot_use" => [],
         "invariants" => [], "required_tests" => []
       ))
-      File.write(File.join(directory, "playbook.yml"), YAML.dump(
+      File.write(File.join(playbooks, "playbook.yml"), YAML.dump(
         "id" => "review", "version" => 1, "title" => "Review", "inputs" => [], "steps" => [], "completion_gate" => []
       ))
 
-      assert_empty RepositoryIntelligence::ContractRegistry.new(directory).validate
-      assert_empty RepositoryIntelligence::PlaybookRegistry.new(directory).validate
+      assert_empty RepositoryIntelligence::ContractRegistry.new(contracts).validate
+      assert_empty RepositoryIntelligence::PlaybookRegistry.new(playbooks).validate
     end
   end
 
