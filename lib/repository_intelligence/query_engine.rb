@@ -21,8 +21,8 @@ module RepositoryIntelligence
       normalized = query.to_s.downcase
       graph.nodes.values.select do |node|
         (type.nil? || node.type == type.to_s) &&
-          (normalized.empty? || [node.id, node.name, node.path].compact.any? { |value| value.downcase.include?(normalized) })
-      end.sort_by(&:id).first([[limit.to_i, 1].max, 200].min).map(&:to_h)
+          (normalized.empty? || [ node.id, node.name, node.path ].compact.any? { |value| value.downcase.include?(normalized) })
+      end.sort_by(&:id).first([ [ limit.to_i, 1 ].max, 200 ].min).map(&:to_h)
     end
 
     def impact_analysis(identifier, depth: 2)
@@ -33,7 +33,7 @@ module RepositoryIntelligence
     def dependency_path(from:, to:, max_depth: 6)
       start = resolve_node(from).id
       target = resolve_node(to).id
-      queue = [[start]]
+      queue = [ [ start ] ]
       visited = { start => true }
 
       until queue.empty?
@@ -45,7 +45,7 @@ module RepositoryIntelligence
           next if visited[neighbor]
 
           visited[neighbor] = true
-          queue << path + [neighbor]
+          queue << path + [ neighbor ]
         end
       end
       []
@@ -101,7 +101,7 @@ module RepositoryIntelligence
     end
 
     def bounded_depth(depth)
-      [[depth.to_i, 1].max, 10].min
+      [ [ depth.to_i, 1 ].max, 10 ].min
     end
   end
 end
