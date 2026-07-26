@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+require "bundler"
+require "digest"
+require "json"
+require "fileutils"
+
+lockfile = Bundler::LockfileParser.new(Bundler.read_file("Gemfile.lock"))
+components = lockfile.specs.sort_by(&:name).map do |spec|
+  {
+    type: "library",
+    name: spec.name,
+    version: spec.version.to_s,
+    purl: "pkg:gem/#{spec.name}@#{spec.version}"
+  }
+end
+
+bom = {
+  bomFormat: "CycloneDX",
+  specVersion: "1.5",
+  serialNumber: "urn:uuid:#{Digest::SHA256.hexdigest(ENV.fetch('GITHUB_SHA', 'local'))[0, 32]}",
+  version: 1,
+  metadata: { timestamp: Time.now.utc.iso8601, properties: [{ name: "source.commit", value: ENV.fetch("GITHUB_SHA", "local") }] },
+  components: components
+}
+
+FileUtils.mkdir_p("tmp/ci")
+json = JSON.pretty_generate(bom)
+File.write("tmp/ci/sbom.cdx.json", json)
+File.write("tmp/ci/sbom.cdx.json.sha256", "#{Digest::SHA256.hexdigest(json)}  sbom.cdx.json\n")
