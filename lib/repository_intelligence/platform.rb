@@ -6,6 +6,7 @@ require "pathname"
 require "yaml"
 
 module RepositoryIntelligence
+  Platform = self
   Node = Data.define(:id, :type, :name, :path, :properties)
   Edge = Data.define(:from, :to, :type, :properties)
 
