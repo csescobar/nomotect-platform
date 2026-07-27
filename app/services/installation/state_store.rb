@@ -46,7 +46,7 @@ module Installation
     private
 
     def default_path
-      Rails.root.join("var/installation/state.#{Rails.env}.json")
+      Pathname(ENV.fetch("INSTALLATION_STATE_PATH", Rails.root.join("var/installation/state.#{Rails.env}.json").to_s))
     end
 
     def default_state

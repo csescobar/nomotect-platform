@@ -60,6 +60,70 @@
 
         <%= submit_tag "Save appearance and continue", class: "button button--primary" %>
       <% end %>
+    <% elsif @step.name == "database" %>
+      <p>Administrative credentials are used only for this request and are never persisted or shown in progress output.</p>
+
+      <%= form_with url: installation_step_path("database"), method: :patch, class: "showcase__form" do %>
+        <div class="showcase__grid">
+          <div class="ui-field">
+            <%= label_tag "database_host", "Host", class: "ui-field__label" %>
+            <%= text_field_tag "database[host]", @database["host"], required: true, class: "ui-input", autocomplete: "off" %>
+          </div>
+          <div class="ui-field">
+            <%= label_tag "database_port", "Port", class: "ui-field__label" %>
+            <%= number_field_tag "database[port]", @database["port"], min: 1, max: 65_535, required: true, class: "ui-input" %>
+          </div>
+          <div class="ui-field">
+            <%= label_tag "database_maintenance_database", "Maintenance database", class: "ui-field__label" %>
+            <%= text_field_tag "database[maintenance_database]", @database["maintenance_database"], required: true, class: "ui-input", autocomplete: "off" %>
+          </div>
+          <div class="ui-field">
+            <%= label_tag "database_sslmode", "SSL mode", class: "ui-field__label" %>
+            <%= select_tag "database[sslmode]", options_for_select(Installation::DatabaseConfiguration::SSL_MODES, @database["sslmode"]), class: "ui-input" %>
+          </div>
+          <div class="ui-field">
+            <%= label_tag "database_admin_username", "Administrative username", class: "ui-field__label" %>
+            <%= text_field_tag "database[admin_username]", nil, required: true, class: "ui-input", autocomplete: "off" %>
+          </div>
+          <div class="ui-field">
+            <%= label_tag "database_admin_password", "Administrative password", class: "ui-field__label" %>
+            <%= password_field_tag "database[admin_password]", nil, required: true, class: "ui-input", autocomplete: "new-password" %>
+          </div>
+          <div class="ui-field">
+            <%= label_tag "database_application_database", "Application database", class: "ui-field__label" %>
+            <%= text_field_tag "database[application_database]", @database["application_database"], required: true, pattern: "[a-z][a-z0-9_]{0,62}", class: "ui-input" %>
+          </div>
+          <div class="ui-field">
+            <%= label_tag "database_application_username", "Application role", class: "ui-field__label" %>
+            <%= text_field_tag "database[application_username]", @database["application_username"], required: true, pattern: "[a-z][a-z0-9_]{0,62}", class: "ui-input" %>
+          </div>
+        </div>
+
+        <div class="showcase__actions">
+          <%= submit_tag "Test connection", class: "button button--secondary" %>
+          <%= submit_tag "Provision database", class: "button button--primary" %>
+        </div>
+      <% end %>
+
+      <% if @progress.present? %>
+        <section aria-label="Provisioning progress">
+          <h2>Progress</h2>
+          <ol>
+            <% @progress.each do |event| %>
+              <li><strong><%= event["status"].humanize %>:</strong> <%= event["message"] %></li>
+            <% end %>
+          </ol>
+        </section>
+      <% end %>
+    <% elsif @step.name == "provisioning" %>
+      <p>The database and runtime role are ready. Database migrations are intentionally deferred to the next focused delivery.</p>
+      <% if @progress.present? %>
+        <ol>
+          <% @progress.each do |event| %>
+            <li><strong><%= event["status"].humanize %>:</strong> <%= event["message"] %></li>
+          <% end %>
+        </ol>
+      <% end %>
     <% else %>
       <p>This step is registered and will be implemented in the next focused delivery.</p>
     <% end %>
