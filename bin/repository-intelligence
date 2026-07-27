@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require "json"
 require "open3"
 require "pathname"
 require_relative "../lib/repository_intelligence"
@@ -14,6 +15,7 @@ require_relative "../lib/repository_intelligence/sqlite_graph_store"
 require_relative "../lib/repository_intelligence/snapshot_drift"
 require_relative "../lib/repository_intelligence/ai_artifact_generator"
 require_relative "../lib/repository_intelligence/mcp_server"
+require_relative "../lib/repository_intelligence/mcp_playbook_tools"
 
 root = File.expand_path("..", __dir__)
 commit = ENV["GITHUB_SHA"].to_s
@@ -34,7 +36,6 @@ report = RepositoryIntelligence::ReadinessReport.new(
   manifest:, graph:, contract_errors: contracts.validate + graph_errors, playbook_errors: playbooks.validate,
   indexed_commit: provider_result.repository_commit, current_commit: commit
 ).to_h.merge(provider: provider.status)
-
 output = Pathname(root).join("docs/ai/generated")
 ai_output = output.join("contexts")
 graph_payload = graph.to_h.merge(repository_commit: commit)
@@ -44,17 +45,14 @@ ai_artifacts = RepositoryIntelligence::AiArtifactGenerator.new(
 )
 validation = lambda do
   drift = RepositoryIntelligence::SnapshotDrift.new(
-    snapshot_path: output.join("repository-graph.json"),
-    checksum_path: output.join("repository-graph.json.sha256")
+    snapshot_path: output.join("repository-graph.json"), checksum_path: output.join("repository-graph.json.sha256")
   ).validate(graph_payload)
   report.fetch(:findings) + drift.findings + ai_artifacts.validate
 end
-
 RepositoryIntelligence.configure(
   graph:, contracts: contracts.load, playbooks: playbooks.load, manifest:, readiness: report,
   generator: ai_artifacts, validator: validation
 )
-
 case command
 when "generate"
   writer = RepositoryIntelligence::SnapshotWriter.new(output_directory: output)
@@ -71,7 +69,6 @@ when "generate"
   abort JSON.pretty_generate(report) unless report.fetch(:status) == "ready"
 when "refresh"
   abort "sqlite3 command is required for refresh" unless store.available?
-
   changed = ARGV.empty? ? manifest.fetch(:files).map { |file| file.fetch(:path) } : ARGV
   store.replace_sources(graph:, source_paths: changed, repository_commit: commit, provider: provider_result.provider)
   RepositoryIntelligence.generate!
@@ -81,7 +78,6 @@ when "validate"
   findings = RepositoryIntelligence.validate!
   validated = report.merge(status: findings.empty? ? "ready" : "not_ready", findings:)
   abort JSON.pretty_generate(validated) unless validated.fetch(:status) == "ready"
-
   puts JSON.generate(validated)
 when "query"
   operation = ARGV.shift || "statistics"
@@ -93,14 +89,23 @@ when "query"
            else RepositoryIntelligence.statistics
            end
   puts JSON.pretty_generate(result)
+when "playbook"
+  operation = ARGV.shift || "list"
+  result = case operation
+           when "list" then RepositoryIntelligence.playbooks
+           when "validate" then RepositoryIntelligence.validate_playbook(ARGV.fetch(0))
+           when "execute"
+             inputs = ARGV[1] ? JSON.parse(ARGV[1]) : {}
+             RepositoryIntelligence.execute_playbook(ARGV.fetch(0), inputs:).to_h
+           when "status" then RepositoryIntelligence.playbook_execution(ARGV.fetch(0)).to_h
+           else abort "Usage: ... playbook [list|validate ID|execute ID [JSON]|status EXECUTION_ID]"
+           end
+  puts JSON.pretty_generate(result)
 when "mcp"
   RepositoryIntelligence::McpServer.new(
-    intelligence: RepositoryIntelligence,
-    playbooks: playbooks.load,
-    provider_status: provider.status,
-    artifact_directory: output,
-    allow_writes: ENV["MCP_ALLOW_WRITES"] == "true"
+    intelligence: RepositoryIntelligence, playbooks: playbooks.load, provider_status: provider.status,
+    artifact_directory: output, allow_writes: ENV["MCP_ALLOW_WRITES"] == "true"
   ).run
 else
-  abort "Usage: bin/repository-intelligence [generate|refresh [paths...]|validate|query [operation]|mcp]"
+  abort "Usage: bin/repository-intelligence [generate|refresh|validate|query|playbook|mcp]"
 end
