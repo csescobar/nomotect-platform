@@ -1,0 +1,35 @@
+name: Update PR49 roadmap
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/update-pr49-roadmap.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Complete Phase 2 traceability
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('docs/roadmap/roadmap.md')
+          text = path.read_text()
+          text = text.replace('**Status:** 🚧 In progress — Phase 2', '**Status:** 🚧 In progress — Phase 3', 1)
+          text = text.replace('### Phase 2 — Packaging and Distribution\n\n**Status:** 🚧 In progress', '### Phase 2 — Packaging and Distribution\n\n**Status:** ✅ Complete')
+          text = text.replace('- [ ] Publish versioned OCI images with non-root execution, health checks and explicit persistence boundaries.', '- [x] Publish versioned OCI images with non-root execution, health checks and explicit persistence boundaries.')
+          text = text.replace('PR #48 adds the committed dependency lock and reproducible OCI packaging certification.', 'PR #48 added the committed dependency lock and reproducible OCI packaging certification; PR #49 adds repository-derived OCI identity and certified multi-platform GHCR publication.')
+          path.write_text(text)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/roadmap/roadmap.md
+          git commit -m "docs: complete Epic 9 packaging phase"
+          git push origin HEAD:${{ github.head_ref }}
