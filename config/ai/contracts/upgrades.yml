@@ -11,6 +11,8 @@ owns:
   - execution_safety_gate
   - resumable_upgrade_execution
   - upgrade_operation_registry
+  - post_upgrade_verification
+  - replay_safe_upgrade_history
 may_use:
   - installation_state
   - deployment_manifest
@@ -30,3 +32,4 @@ required_tests:
   - upgrades_inspector_test
   - upgrades_backup_and_maintenance_test
   - upgrades_executor_test
+  - upgrades_post_upgrade_verifier_test

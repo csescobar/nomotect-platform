@@ -277,10 +277,10 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 - [x] Detect source version, target version, migrations, contract changes and operator actions.
 - [x] Require and verify pre-upgrade backup evidence where supported.
 - [x] Run registered database, configuration and generated-artifact operations with structured progress.
-- [ ] Record upgrade history and post-upgrade validation evidence.
+- [x] Record upgrade history and post-upgrade validation evidence.
 - [ ] Produce rollback or forward-recovery guidance.
 
-**Delivery evidence:** PRs #50–#52 deliver contracts, preflight, backup evidence and maintenance safety. PR #53 adds the exclusive, resumable registered-operation execution engine.
+**Delivery evidence:** PRs #50–#52 deliver contracts, preflight, backup evidence and maintenance safety. PR #53 adds the exclusive, resumable registered-operation execution engine. PR #54 adds post-upgrade verification, manifest-digest history and replay prevention.
 
 ### Phase 4 — Release Engineering
 
