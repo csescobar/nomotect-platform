@@ -4,14 +4,12 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @previous = ENV["INSTALLATION_ENABLED"]
     ENV["INSTALLATION_ENABLED"] = "true"
-    state_path.delete if state_path.exist?
-    appearance_path.delete if appearance_path.exist?
+    installation_paths.each { |path| path.delete if path.exist? }
   end
 
   teardown do
     ENV["INSTALLATION_ENABLED"] = @previous
-    state_path.delete if state_path.exist?
-    appearance_path.delete if appearance_path.exist?
+    installation_paths.each { |path| path.delete if path.exist? }
   end
 
   test "redirects normal requests to the active installation step" do
@@ -40,6 +38,29 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to installation_step_path("database")
     assert_equal "database", Installation::StateStore.new.read.fetch("state")
     assert_equal "Acme Platform", Installation::AppearanceStore.new.read.fetch("application_name")
+  end
+
+  test "renders database fields without persisted administrative credentials" do
+    Installation::StateStore.new.write!(
+      state: "database",
+      metadata: {
+        "database" => {
+          "host" => "db.internal",
+          "port" => 5433,
+          "maintenance_database" => "postgres",
+          "application_database" => "acme_platform",
+          "application_username" => "acme_runtime",
+          "sslmode" => "require"
+        }
+      }
+    )
+
+    get installation_step_path("database")
+
+    assert_response :success
+    assert_select "input[name='database[host]'][value='db.internal']"
+    assert_select "input[name='database[admin_password]'][value='']"
+    assert_select "input[name='database[application_database]'][value='acme_platform']"
   end
 
   test "rejects an unsupported default locale" do
@@ -75,11 +96,12 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
     css_select("input[name='authenticity_token']").first["value"]
   end
 
-  def state_path
-    Rails.root.join("var/installation/state.test.json")
-  end
-
-  def appearance_path
-    Rails.root.join("var/installation/appearance.test.json")
+  def installation_paths
+    [
+      Rails.root.join("var/installation/state.test.json"),
+      Rails.root.join("var/installation/appearance.test.json"),
+      Rails.root.join("var/installation/progress.test.json"),
+      Rails.root.join("var/installation/runtime.test.env")
+    ]
   end
 end
