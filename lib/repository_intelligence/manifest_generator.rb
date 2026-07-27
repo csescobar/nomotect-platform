@@ -8,6 +8,7 @@ module RepositoryIntelligence
   class ManifestGenerator
     DEFAULT_ROOTS = %w[app config db docs lib test].freeze
     IGNORED_SEGMENTS = %w[.git log node_modules storage tmp vendor].freeze
+    IGNORED_PREFIXES = %w[docs/ai/generated].freeze
 
     def initialize(repository_path:, repository_commit:, roots: DEFAULT_ROOTS)
       @repository_path = Pathname(repository_path).realpath
@@ -29,7 +30,7 @@ module RepositoryIntelligence
         schema_version: "1.0",
         repository_commit: repository_commit,
         generation_command: "ruby bin/repository-intelligence generate",
-        files: files
+        files:
       }
     end
 
@@ -62,7 +63,9 @@ module RepositoryIntelligence
     end
 
     def ignored?(path)
-      path.relative_path_from(repository_path).each_filename.any? { |segment| IGNORED_SEGMENTS.include?(segment) }
+      relative = path.relative_path_from(repository_path).to_s
+      IGNORED_PREFIXES.any? { |prefix| relative == prefix || relative.start_with?("#{prefix}/") } ||
+        path.relative_path_from(repository_path).each_filename.any? { |segment| IGNORED_SEGMENTS.include?(segment) }
     end
 
     def classify(relative)

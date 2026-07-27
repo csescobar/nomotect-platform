@@ -46,12 +46,22 @@ jobs:
       - name: Generate repository intelligence evidence
         run: ruby bin/repository-intelligence generate
 
+      - name: Certify Epic 8 repository intelligence
+        run: bash bin/repository-intelligence-certify
+
       - name: Upload repository intelligence evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: repository-intelligence
-          path: docs/ai/generated/
+          path: |
+            docs/ai/generated/
+            tmp/ci/repository-health.json
+            tmp/ci/repository-readiness.json
+            tmp/ci/first-generation.sha256
+            tmp/ci/second-generation.sha256
+            tmp/ci/mcp-certification-responses.json
+            tmp/ci/repository-intelligence-certification.log
           if-no-files-found: error
 
       - name: Lint
