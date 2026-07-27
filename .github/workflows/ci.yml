@@ -120,7 +120,10 @@ jobs:
           docker compose -f compose.production.yaml config --quiet
 
       - name: Build production image
-        run: docker build --tag rails-hotwire-platform:ci .
+        run: |
+          set -o pipefail
+          mkdir -p tmp/ci
+          docker build --progress=plain --tag rails-hotwire-platform:ci . 2>&1 | tee tmp/ci/container-build.log
 
       - name: Verify non-root runtime and configuration guard
         run: |
@@ -129,3 +132,11 @@ jobs:
             echo "container unexpectedly started without required environment" >&2
             exit 1
           fi
+
+      - name: Upload packaging evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: packaging-evidence
+          path: tmp/ci/container-build.log
+          if-no-files-found: error
