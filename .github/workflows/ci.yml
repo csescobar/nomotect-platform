@@ -142,6 +142,25 @@ jobs:
           INSTALLATION_BOOTSTRAP_TOKEN: ci-bootstrap-token
         run: bash bin/kamal-validate
 
+      - name: Validate private VPS profile
+        env:
+          KAMAL_SERVER: 192.0.2.10
+          KAMAL_HOST: platform.example.com
+          KAMAL_REGISTRY_USERNAME: ci-operator
+          KAMAL_REGISTRY_PASSWORD: ci-registry-token
+          DATABASE_URL: postgresql://runtime:ci-password@database.example.com/platform
+          SECRET_KEY_BASE: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          INSTALLATION_BOOTSTRAP_TOKEN: ci-bootstrap-token
+          VPS_PREFLIGHT_SKIP_REMOTE: "true"
+        run: |
+          bash -n bin/vps-preflight
+          bash bin/vps-preflight
+
+      - name: Validate Render profile
+        run: |
+          ruby bin/render-validate
+          bash -n bin/render-start
+
       - name: Build production image
         run: |
           set -o pipefail
@@ -155,6 +174,14 @@ jobs:
             echo "container unexpectedly started without required environment" >&2
             exit 1
           fi
+
+      - name: Verify Render persistence adapter
+        run: |
+          docker run --rm \
+            --entrypoint bash \
+            -e RENDER_PERSISTENCE_ROOT=/rails/storage \
+            rails-hotwire-platform:ci \
+            bin/render-start bash -lc 'test -d /rails/storage && test -L /rails/var/installation && test -L /rails/public/installation/branding && test -d /rails/storage/installation && test -d /rails/storage/branding'
 
       - name: Build and verify development image
         run: |
