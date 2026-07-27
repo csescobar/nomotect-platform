@@ -31,7 +31,7 @@ The versioned `installed-platform-state` contract includes:
 - configured extension identifiers and versions;
 - supported repository contract versions.
 
-The detector reads the database migration catalog, installation state and generated files. It does not write to them. `PLATFORM_VERSION` is the current source-version input until Epic 9 Phase 4 establishes the canonical root `VERSION` file. Packaged environments may instead provide `SOURCE_VERSION` or `OCI_IMAGE_VERSION`.
+The detector reads the database migration catalog, installation state and generated files. It does not write to them. The canonical root `VERSION` file supplies the source version by default. Packaged environments may override the observation with `PLATFORM_VERSION`, `SOURCE_VERSION` or `OCI_IMAGE_VERSION`.
 
 Optional `DEPLOYMENT_CONTRACT_VERSION`, `DEPLOYMENT_PROFILE` and comma-separated `PLATFORM_EXTENSIONS=id@version` observations are included when present. Missing observations required by a target manifest are blockers.
 

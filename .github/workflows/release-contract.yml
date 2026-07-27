@@ -1,0 +1,61 @@
+name: Release contract
+
+on:
+  pull_request:
+    paths:
+      - VERSION
+      - changes/**
+      - app/services/releases/**
+      - lib/platform/version.rb
+      - config/ai/contracts/releases.yml
+      - config/ai/playbooks/release_readiness.yml
+      - config/ai/schemas/playbook.schema.json
+      - docs/contracts/change-fragment.schema.json
+      - docs/releases/**
+      - bin/release-contract-certify
+      - .github/workflows/release-contract.yml
+  push:
+    branches: [main]
+    paths:
+      - VERSION
+      - changes/**
+      - app/services/releases/**
+      - lib/platform/version.rb
+      - config/ai/contracts/releases.yml
+      - config/ai/playbooks/release_readiness.yml
+      - config/ai/schemas/playbook.schema.json
+      - docs/contracts/change-fragment.schema.json
+      - docs/releases/**
+      - bin/release-contract-certify
+      - .github/workflows/release-contract.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: rails_hotwire_platform_test
+        ports: [5432:5432]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/rails_hotwire_platform_test
+      SECRET_KEY_BASE: ci-secret-key-base
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - run: bash bin/release-contract-certify

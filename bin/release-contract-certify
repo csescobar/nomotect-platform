@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+test "$(tr -d '[:space:]' < VERSION)" = "0.8.0"
+ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
+  docs/contracts/change-fragment.schema.json \
+  config/ai/schemas/playbook.schema.json
+
+bundle exec rails test \
+  test/lib/platform/version_test.rb \
+  test/services/releases/change_fragment_test.rb \
+  test/services/releases/release_readiness_playbook_test.rb \
+  test/services/upgrades/installed_state_detector_test.rb \
+  test/controllers/health_controller_test.rb
+
+grep -q 'VERSION is the canonical platform version' config/ai/contracts/releases.yml
+grep -q 'repository.contract' config/ai/playbooks/release_readiness.yml
+grep -q 'publication belong to Epic 9 Phase 6' docs/releases/architecture.md
+
+printf 'Release contracts and playbook foundation certified\n'

@@ -65,7 +65,7 @@ module Upgrades
 
     def detected_version
       candidate = version || ENV.values_at("PLATFORM_VERSION", "SOURCE_VERSION", "OCI_IMAGE_VERSION").find(&:present?)
-      candidate && Version.new(candidate).to_s
+      Version.new(candidate || Platform::Version.current.to_s).to_s
     rescue ArgumentError
       nil
     end

@@ -1,0 +1,23 @@
+schema_version: 1
+id: 56-release-foundation
+category: feature
+summary: Establish the canonical platform version and release change-fragment contracts.
+release_impact: minor
+contracts:
+  - platform-version
+  - change-fragment
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Release metadata remains repository-local and contains no credentials.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
