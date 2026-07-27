@@ -5,84 +5,35 @@
 
     <% if @step.name == "appearance" %>
       <%= form_with url: installation_step_path("appearance"), method: :patch, multipart: true, class: "showcase__form" do %>
-        <div class="ui-field">
-          <%= label_tag "appearance_application_name", "Application name", class: "ui-field__label" %>
-          <%= text_field_tag "appearance[application_name]", @appearance["application_name"], required: true, class: "ui-input" %>
-        </div>
-        <div class="ui-field">
-          <%= label_tag "appearance_default_locale", "Default locale", class: "ui-field__label" %>
-          <%= select_tag "appearance[default_locale]", options_for_select(%w[en pt-BR], @appearance["default_locale"]), class: "ui-input" %>
-        </div>
-        <fieldset class="ui-field">
-          <legend class="ui-field__label">Supported locales</legend>
-          <% %w[en pt-BR].each do |locale| %>
-            <label class="ui-checkbox-field__label"><%= check_box_tag "appearance[supported_locales][]", locale, @appearance["supported_locales"].include?(locale) %> <%= locale %></label>
-          <% end %>
-        </fieldset>
-        <% if Installation::Configuration.token_editing_allowed? %>
-          <div class="ui-field">
-            <%= label_tag :token_yaml, "Design-system YAML", class: "ui-field__label" %>
-            <%= text_area_tag :token_yaml, @token_yaml, rows: 24, class: "ui-input ui-code", spellcheck: false %>
-          </div>
-        <% end %>
+        <div class="ui-field"><%= label_tag "appearance_application_name", "Application name", class: "ui-field__label" %><%= text_field_tag "appearance[application_name]", @appearance["application_name"], required: true, class: "ui-input" %></div>
+        <div class="ui-field"><%= label_tag "appearance_default_locale", "Default locale", class: "ui-field__label" %><%= select_tag "appearance[default_locale]", options_for_select(%w[en pt-BR], @appearance["default_locale"]), class: "ui-input" %></div>
+        <fieldset class="ui-field"><legend class="ui-field__label">Supported locales</legend><% %w[en pt-BR].each do |locale| %><label class="ui-checkbox-field__label"><%= check_box_tag "appearance[supported_locales][]", locale, @appearance["supported_locales"].include?(locale) %> <%= locale %></label><% end %></fieldset>
+        <% if Installation::Configuration.token_editing_allowed? %><div class="ui-field"><%= label_tag :token_yaml, "Design-system YAML", class: "ui-field__label" %><%= text_area_tag :token_yaml, @token_yaml, rows: 24, class: "ui-input ui-code", spellcheck: false %></div><% end %>
         <%= submit_tag "Save appearance and continue", class: "button button--primary" %>
       <% end %>
     <% elsif @step.name == "database" %>
       <p>Administrative credentials are request-scoped and never persisted.</p>
       <%= form_with url: installation_step_path("database"), method: :patch, class: "showcase__form" do %>
-        <% { host: "Host", port: "Port", maintenance_database: "Maintenance database", admin_username: "Administrative username", application_database: "Application database", application_username: "Application role" }.each do |field, label| %>
-          <div class="ui-field">
-            <%= label_tag "database_#{field}", label, class: "ui-field__label" %>
-            <%= text_field_tag "database[#{field}]", @database[field.to_s], required: true, class: "ui-input", autocomplete: "off" %>
-          </div>
-        <% end %>
-        <div class="ui-field">
-          <%= label_tag "database_admin_password", "Administrative password", class: "ui-field__label" %>
-          <%= password_field_tag "database[admin_password]", nil, required: true, class: "ui-input", autocomplete: "new-password" %>
-        </div>
-        <div class="ui-field">
-          <%= label_tag "database_sslmode", "SSL mode", class: "ui-field__label" %>
-          <%= select_tag "database[sslmode]", options_for_select(Installation::DatabaseConfiguration::SSL_MODES, @database["sslmode"]), class: "ui-input" %>
-        </div>
-        <%= submit_tag "Test connection", class: "button button--secondary" %>
-        <%= submit_tag "Provision database", class: "button button--primary" %>
+        <% { host: "Host", port: "Port", maintenance_database: "Maintenance database", admin_username: "Administrative username", application_database: "Application database", application_username: "Application role" }.each do |field, label| %><div class="ui-field"><%= label_tag "database_#{field}", label, class: "ui-field__label" %><%= text_field_tag "database[#{field}]", @database[field.to_s], required: true, class: "ui-input", autocomplete: "off" %></div><% end %>
+        <div class="ui-field"><%= label_tag "database_admin_password", "Administrative password", class: "ui-field__label" %><%= password_field_tag "database[admin_password]", nil, required: true, class: "ui-input", autocomplete: "new-password" %></div>
+        <div class="ui-field"><%= label_tag "database_sslmode", "SSL mode", class: "ui-field__label" %><%= select_tag "database[sslmode]", options_for_select(Installation::DatabaseConfiguration::SSL_MODES, @database["sslmode"]), class: "ui-input" %></div>
+        <%= submit_tag "Test connection", class: "button button--secondary" %><%= submit_tag "Provision database", class: "button button--primary" %>
       <% end %>
     <% elsif @step.name == "provisioning" %>
-      <p>The runtime role and database are ready. Run migrations to create and verify the application schema.</p>
-      <%= form_with url: installation_step_path("provisioning"), method: :patch do %>
-        <%= submit_tag "Run migrations", class: "button button--primary" %>
-      <% end %>
+      <p>The runtime role and database are ready. Run migrations to create and verify the application schema.</p><%= form_with url: installation_step_path("provisioning"), method: :patch do %><%= submit_tag "Run migrations", class: "button button--primary" %><% end %>
     <% elsif @step.name == "migrations" %>
       <p>Database migrations are running. Retry is safe if execution is interrupted.</p>
     <% elsif @step.name == "platform_owner" %>
-      <p>Create the first organization and its platform owner. The password is sent directly to the provisioned database and is never stored in installation state.</p>
+      <p>Create the global platform administrator and the initial tenant. The administrator also becomes owner of this first organization, but the global role is stored separately from tenant membership.</p>
       <%= form_with url: installation_step_path("platform-owner"), method: :patch, class: "showcase__form" do %>
-        <div class="ui-field">
-          <%= label_tag "platform_owner_organization_name", "Organization name", class: "ui-field__label" %>
-          <%= text_field_tag "platform_owner[organization_name]", nil, required: true, maxlength: 120, class: "ui-input", autocomplete: "organization" %>
-        </div>
-        <div class="ui-field">
-          <%= label_tag "platform_owner_email_address", "Owner email", class: "ui-field__label" %>
-          <%= email_field_tag "platform_owner[email_address]", nil, required: true, class: "ui-input", autocomplete: "email" %>
-        </div>
-        <div class="ui-field">
-          <%= label_tag "platform_owner_password", "Password", class: "ui-field__label" %>
-          <%= password_field_tag "platform_owner[password]", nil, required: true, minlength: 12, class: "ui-input", autocomplete: "new-password" %>
-        </div>
-        <div class="ui-field">
-          <%= label_tag "platform_owner_password_confirmation", "Confirm password", class: "ui-field__label" %>
-          <%= password_field_tag "platform_owner[password_confirmation]", nil, required: true, minlength: 12, class: "ui-input", autocomplete: "new-password" %>
-        </div>
-        <%= submit_tag "Create owner and complete installation", class: "button button--primary" %>
+        <div class="ui-field"><%= label_tag "platform_owner_organization_name", "Initial organization name", class: "ui-field__label" %><%= text_field_tag "platform_owner[organization_name]", nil, required: true, maxlength: 120, class: "ui-input", autocomplete: "organization" %></div>
+        <div class="ui-field"><%= label_tag "platform_owner_email_address", "Platform administrator email", class: "ui-field__label" %><%= email_field_tag "platform_owner[email_address]", nil, required: true, class: "ui-input", autocomplete: "email" %></div>
+        <div class="ui-field"><%= label_tag "platform_owner_password", "Password", class: "ui-field__label" %><%= password_field_tag "platform_owner[password]", nil, required: true, minlength: 12, class: "ui-input", autocomplete: "new-password" %></div>
+        <div class="ui-field"><%= label_tag "platform_owner_password_confirmation", "Confirm password", class: "ui-field__label" %><%= password_field_tag "platform_owner[password_confirmation]", nil, required: true, minlength: 12, class: "ui-input", autocomplete: "new-password" %></div>
+        <%= submit_tag "Create platform administrator and complete installation", class: "button button--primary" %>
       <% end %>
-    <% else %>
-      <p>Installation is complete.</p>
-    <% end %>
+    <% else %><p>Installation is complete.</p><% end %>
 
-    <% if @progress.present? %>
-      <section aria-label="Installation progress"><h2>Progress</h2><ol>
-        <% @progress.each do |event| %><li><strong><%= event["status"].humanize %>:</strong> <%= event["message"] %></li><% end %>
-      </ol></section>
-    <% end %>
+    <% if @progress.present? %><section aria-label="Installation progress"><h2>Progress</h2><ol><% @progress.each do |event| %><li><strong><%= event["status"].humanize %>:</strong> <%= event["message"] %></li><% end %></ol></section><% end %>
   </section>
 </main>
