@@ -19,6 +19,7 @@ tar \
   -C "$ROOT" -cf - . | tar -C "$WORKDIR" -xf -
 
 cd "$WORKDIR"
+rm -rf docs/ai/generated tmp/ai
 mkdir -p tmp/ci
 
 echo "[certification] generating from a clean worktree"
