@@ -12,9 +12,11 @@ module Installation
       return update_appearance if @step.name == "appearance"
       return test_database if @step.name == "database" && params[:commit] == "Test connection"
       return provision_database if @step.name == "database"
+      return run_migrations if @step.name == "provisioning"
 
       head :method_not_allowed
-    rescue ArgumentError, DatabaseConnector::ConnectionError, ExecutionLock::AlreadyLocked => error
+    rescue ArgumentError, DatabaseConnector::ConnectionError, ExecutionLock::AlreadyLocked,
+      MigrationRunner::VerificationError => error
       load_step
       flash.now[:alert] = error.message
       render :show, status: :unprocessable_entity
@@ -50,10 +52,20 @@ module Installation
       redirect_to installation_step_path("provisioning"), notice: "Database provisioned."
     end
 
+    def run_migrations
+      transition_to!("migrations", "migrations_started" => true)
+      result = ExecutionLock.new.synchronize { MigrationRunner.new.run! }
+      transition_to!("platform_owner", "schema_version" => result.schema_version, "migrations_completed" => true)
+      redirect_to installation_step_path("platform-owner"), notice: "Database migrations completed."
+    rescue StandardError
+      restore_provisioning_state!
+      raise
+    end
+
     def load_step
       load_appearance if @step.name == "appearance"
       load_database if @step.name == "database"
-      @progress = ProgressStore.new.read if %w[database provisioning].include?(@step.name)
+      @progress = ProgressStore.new.read if %w[database provisioning migrations].include?(@step.name)
     end
 
     def load_appearance
@@ -106,10 +118,20 @@ module Installation
     end
 
     def advance_to_provisioning!
+      transition_to!("provisioning", "database_provisioned" => true)
+    end
+
+    def transition_to!(target, metadata)
       store = StateStore.new
       current = store.read
-      next_state = StateMachine.new(current.fetch("state")).transition_to("provisioning").state
-      store.write!(state: next_state, metadata: current.fetch("metadata", {}).merge("database_provisioned" => true))
+      next_state = StateMachine.new(current.fetch("state")).transition_to(target).state
+      store.write!(state: next_state, metadata: current.fetch("metadata", {}).merge(metadata))
+    end
+
+    def restore_provisioning_state!
+      store = StateStore.new
+      current = store.read
+      store.write!(state: "provisioning", metadata: current.fetch("metadata", {}).merge("migrations_failed" => true))
     end
 
     def normalized_step
