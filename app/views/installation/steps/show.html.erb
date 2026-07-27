@@ -54,8 +54,29 @@
       <% end %>
     <% elsif @step.name == "migrations" %>
       <p>Database migrations are running. Retry is safe if execution is interrupted.</p>
+    <% elsif @step.name == "platform_owner" %>
+      <p>Create the first organization and its platform owner. The password is sent directly to the provisioned database and is never stored in installation state.</p>
+      <%= form_with url: installation_step_path("platform-owner"), method: :patch, class: "showcase__form" do %>
+        <div class="ui-field">
+          <%= label_tag "platform_owner_organization_name", "Organization name", class: "ui-field__label" %>
+          <%= text_field_tag "platform_owner[organization_name]", nil, required: true, maxlength: 120, class: "ui-input", autocomplete: "organization" %>
+        </div>
+        <div class="ui-field">
+          <%= label_tag "platform_owner_email_address", "Owner email", class: "ui-field__label" %>
+          <%= email_field_tag "platform_owner[email_address]", nil, required: true, class: "ui-input", autocomplete: "email" %>
+        </div>
+        <div class="ui-field">
+          <%= label_tag "platform_owner_password", "Password", class: "ui-field__label" %>
+          <%= password_field_tag "platform_owner[password]", nil, required: true, minlength: 12, class: "ui-input", autocomplete: "new-password" %>
+        </div>
+        <div class="ui-field">
+          <%= label_tag "platform_owner_password_confirmation", "Confirm password", class: "ui-field__label" %>
+          <%= password_field_tag "platform_owner[password_confirmation]", nil, required: true, minlength: 12, class: "ui-input", autocomplete: "new-password" %>
+        </div>
+        <%= submit_tag "Create owner and complete installation", class: "button button--primary" %>
+      <% end %>
     <% else %>
-      <p>This step is registered and will be implemented in the next focused delivery.</p>
+      <p>Installation is complete.</p>
     <% end %>
 
     <% if @progress.present? %>
