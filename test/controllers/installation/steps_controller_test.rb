@@ -46,7 +46,7 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
       appearance: {
         application_name: "Acme Platform",
         default_locale: "pt-BR",
-        supported_locales: ["en"]
+        supported_locales: [ "en" ]
       }
     }
 
