@@ -71,6 +71,18 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
     assert_select "input[name='database[application_database]'][value='acme_platform']"
   end
 
+  test "renders platform owner fields without persisted passwords" do
+    Installation::StateStore.new.write!(state: "platform_owner")
+
+    get installation_step_path("platform-owner")
+
+    assert_response :success
+    assert_select "input[name='platform_owner[organization_name]']"
+    assert_select "input[name='platform_owner[email_address]']"
+    assert_select "input[name='platform_owner[password]']:not([value])"
+    assert_select "input[name='platform_owner[password_confirmation]']:not([value])"
+  end
+
   test "rejects an unsupported default locale" do
     patch installation_step_path("appearance"), params: {
       authenticity_token: form_authenticity_token,
