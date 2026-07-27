@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+persistence_root="${RENDER_PERSISTENCE_ROOT:-/rails/persistence}"
+storage_target="${persistence_root}/storage"
+installation_target="${persistence_root}/installation"
+
+mkdir -p "$storage_target" "$installation_target" /rails/var
+
+rm -rf /rails/storage /rails/var/installation
+ln -s "$storage_target" /rails/storage
+ln -s "$installation_target" /rails/var/installation
+
+exec bundle exec puma -C config/puma.rb
