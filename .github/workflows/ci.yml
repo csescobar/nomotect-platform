@@ -132,7 +132,7 @@ jobs:
           docker compose -f compose.yaml -f .devcontainer/compose.devcontainer.yaml config --quiet
 
       - name: Validate Kamal deployment contract
-        env: &deployment_contract
+        env:
           KAMAL_SERVER: 192.0.2.10
           KAMAL_HOST: platform.example.com
           KAMAL_REGISTRY_USERNAME: ci-operator
@@ -144,7 +144,13 @@ jobs:
 
       - name: Validate private VPS profile
         env:
-          <<: *deployment_contract
+          KAMAL_SERVER: 192.0.2.10
+          KAMAL_HOST: platform.example.com
+          KAMAL_REGISTRY_USERNAME: ci-operator
+          KAMAL_REGISTRY_PASSWORD: ci-registry-token
+          DATABASE_URL: postgresql://runtime:ci-password@database.example.com/platform
+          SECRET_KEY_BASE: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          INSTALLATION_BOOTSTRAP_TOKEN: ci-bootstrap-token
           VPS_PREFLIGHT_SKIP_REMOTE: "true"
         run: |
           bash -n bin/vps-preflight
