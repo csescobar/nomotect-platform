@@ -260,9 +260,9 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 - [x] Document and validate private VPS deployment through Kamal.
 - [x] Document and validate a selected hosted-platform profile through Render.com.
 - [x] Validate required environment variables, secrets, writable paths and external service dependencies before boot.
-- [ ] Keep packaging outputs reproducible and linked to source, SBOM and provenance metadata.
+- [x] Keep packaging outputs reproducible and linked to source, SBOM and provenance metadata.
 
-**Delivery evidence:** PR #44 delivered the container and Compose baseline; PR #45 added Dev Container and Codespaces support; PR #46 added the Kamal deployment profile and certification; PR #47 adds private VPS operational preflight and the Render.com Blueprint profile.
+**Delivery evidence:** PR #44 delivered the container and Compose baseline; PR #45 added Dev Container and Codespaces support; PR #46 added the Kamal deployment profile and certification; PR #47 added private VPS operational preflight and the Render.com Blueprint profile; PR #48 adds the committed dependency lock and reproducible OCI packaging certification.
 
 **Deliverables:** container definitions, compose profiles, development-container configuration, deployment examples, environment contract and packaging certification.
 
