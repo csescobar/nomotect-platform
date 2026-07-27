@@ -26,6 +26,33 @@ COPY . .
 RUN SECRET_KEY_BASE=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \
     bundle exec rails assets:precompile
 
+FROM base AS development
+
+ENV RAILS_ENV="development" \
+    BUNDLE_WITHOUT=""
+
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+      bash-completion \
+      build-essential \
+      git \
+      less \
+      libpq-dev \
+      pkg-config \
+      postgresql-client \
+      procps && \
+    rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+
+ARG DEV_UID=1000
+ARG DEV_GID=1000
+RUN groupadd --gid ${DEV_GID} vscode && \
+    useradd vscode --uid ${DEV_UID} --gid ${DEV_GID} --create-home --shell /bin/bash && \
+    mkdir -p /usr/local/bundle /rails && \
+    chown -R vscode:vscode /usr/local/bundle /rails
+
+USER vscode
+CMD ["sleep", "infinity"]
+
 FROM base
 
 ARG APP_UID=1000
