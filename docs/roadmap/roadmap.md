@@ -165,7 +165,7 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 ## Epic 9 — Distribution, Installation and Enterprise Extensions
 
-**Status:** 🚧 In progress — Phase 2 is next
+**Status:** 🚧 In progress — Phase 2
 
 **Objective:** transform the repository from a developer-oriented source project into a distributable, installable, upgradeable and professionally extensible platform while preserving a complete Apache-licensed community core.
 
@@ -250,16 +250,18 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 
 ### Phase 2 — Packaging and Distribution
 
-**Status:** ⏳ Planned — next active phase
+**Status:** 🚧 In progress
 
 **Objective:** provide supported, repeatable ways to start and deploy the platform without requiring intimate Rails repository knowledge.
 
-- [ ] Define supported Docker and Podman Compose development and production profiles.
+- [x] Define supported Docker and Podman Compose development and production profiles.
 - [ ] Publish versioned OCI images with non-root execution, health checks and explicit persistence boundaries.
-- [ ] Provide Dev Container and Codespaces configurations.
+- [x] Provide Dev Container and Codespaces configurations.
 - [ ] Document and validate deployment profiles for Kamal and selected hosted platforms where maintainable.
-- [ ] Validate required environment variables, secrets, writable paths and external service dependencies before boot.
+- [x] Validate required environment variables, secrets, writable paths and external service dependencies before boot.
 - [ ] Keep packaging outputs reproducible and linked to source, SBOM and provenance metadata.
+
+**Delivery evidence:** PR #44 delivered the container and Compose baseline; PR #45 adds Dev Container and Codespaces support.
 
 **Deliverables:** container definitions, compose profiles, development-container configuration, deployment examples, environment contract and packaging certification.
 
