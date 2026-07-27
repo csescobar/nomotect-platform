@@ -54,4 +54,10 @@ ruby -rjson -ropen3 -e '
   abort "write restriction failed" unless responses[7].dig("error", "message")&.include?("writes are disabled")
 '
 
+mkdir -p "$ROOT/tmp/ci"
+cp tmp/ci/repository-health.json "$ROOT/tmp/ci/"
+cp tmp/ci/repository-readiness.json "$ROOT/tmp/ci/"
+cp tmp/ci/first-generation.sha256 "$ROOT/tmp/ci/"
+cp tmp/ci/second-generation.sha256 "$ROOT/tmp/ci/"
+
 printf '%s\n' "Epic 8 Repository Intelligence certification passed."
