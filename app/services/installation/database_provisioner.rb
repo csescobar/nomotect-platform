@@ -38,7 +38,7 @@ module Installation
 
     def ensure_role!(connection, configuration, runtime_password)
       username = configuration.application_username
-      exists = connection.exec_params("SELECT 1 FROM pg_roles WHERE rolname = $1", [username]).ntuples.positive?
+      exists = connection.exec_params("SELECT 1 FROM pg_roles WHERE rolname = $1", [ username ]).ntuples.positive?
       quoted_username = connection.quote_ident(username)
       quoted_password = connection.escape_literal(runtime_password)
 
@@ -54,7 +54,7 @@ module Installation
     def ensure_database!(connection, configuration)
       database = configuration.application_database
       username = configuration.application_username
-      exists = connection.exec_params("SELECT 1 FROM pg_database WHERE datname = $1", [database]).ntuples.positive?
+      exists = connection.exec_params("SELECT 1 FROM pg_database WHERE datname = $1", [ database ]).ntuples.positive?
       quoted_database = connection.quote_ident(database)
       quoted_username = connection.quote_ident(username)
 
