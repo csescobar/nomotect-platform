@@ -257,11 +257,11 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 - [x] Define supported Docker and Podman Compose development and production profiles.
 - [ ] Publish versioned OCI images with non-root execution, health checks and explicit persistence boundaries.
 - [x] Provide Dev Container and Codespaces configurations.
-- [ ] Document and validate deployment profiles for Kamal and selected hosted platforms where maintainable.
+- [x] Document and validate deployment profiles for Kamal and selected hosted platforms where maintainable.
 - [x] Validate required environment variables, secrets, writable paths and external service dependencies before boot.
 - [ ] Keep packaging outputs reproducible and linked to source, SBOM and provenance metadata.
 
-**Delivery evidence:** PR #44 delivered the container and Compose baseline; PR #45 adds Dev Container and Codespaces support.
+**Delivery evidence:** PR #44 delivered the container and Compose baseline; PR #45 added Dev Container and Codespaces support; PR #46 adds the Kamal deployment profile and certification.
 
 **Deliverables:** container definitions, compose profiles, development-container configuration, deployment examples, environment contract and packaging certification.
 
