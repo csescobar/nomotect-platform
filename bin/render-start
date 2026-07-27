@@ -11,4 +11,8 @@ rm -rf /rails/storage /rails/var/installation
 ln -s "$storage_target" /rails/storage
 ln -s "$installation_target" /rails/var/installation
 
+if [[ $# -gt 0 ]]; then
+  exec "$@"
+fi
+
 exec bundle exec puma -C config/puma.rb
