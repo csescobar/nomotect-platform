@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :sessions, dependent: :destroy
   has_many :memberships, dependent: :destroy
   has_many :organizations, through: :memberships
+  has_one :platform_role, dependent: :destroy
   has_many :grid_saved_views, dependent: :destroy
   has_many :notifications, foreign_key: :recipient_id, dependent: :destroy, inverse_of: :recipient
   has_many :stored_files, foreign_key: :uploaded_by_id, dependent: :nullify, inverse_of: :uploaded_by
@@ -20,6 +21,8 @@ class User < ApplicationRecord
   generates_token_for :password_reset, expires_in: 20.minutes do
     password_salt&.last(10)
   end
+
+  def platform_admin? = platform_role&.platform_admin? || false
 
   private
 
