@@ -1,15 +1,21 @@
 require "test_helper"
 
 class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
+  ENV_KEYS = %w[INSTALLATION_ENABLED INSTALLATION_STATE_PATH INSTALLATION_APPEARANCE_PATH].freeze
+
   setup do
-    @previous = ENV["INSTALLATION_ENABLED"]
+    @previous_environment = ENV_KEYS.to_h { |key| [ key, ENV[key] ] }
     ENV["INSTALLATION_ENABLED"] = "true"
+    ENV["INSTALLATION_STATE_PATH"] = Rails.root.join("tmp/installation-state-#{Process.pid}.json").to_s
+    ENV["INSTALLATION_APPEARANCE_PATH"] = Rails.root.join("tmp/installation-appearance-#{Process.pid}.json").to_s
     installation_paths.each { |path| FileUtils.rm_f(path) }
   end
 
   teardown do
-    ENV["INSTALLATION_ENABLED"] = @previous
     installation_paths.each { |path| FileUtils.rm_f(path) }
+    @previous_environment.each do |key, value|
+      value.nil? ? ENV.delete(key) : ENV[key] = value
+    end
   end
 
   test "redirects normal requests to the active installation step" do
@@ -99,11 +105,6 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def installation_paths
-    [
-      Rails.root.join("var/installation/state.test.json"),
-      Rails.root.join("var/installation/appearance.test.json"),
-      Rails.root.join("var/installation/progress.test.json"),
-      Rails.root.join("var/installation/runtime.test.env")
-    ]
+    [ Pathname(ENV.fetch("INSTALLATION_STATE_PATH")), Pathname(ENV.fetch("INSTALLATION_APPEARANCE_PATH")) ]
   end
 end
