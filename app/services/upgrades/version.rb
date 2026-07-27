@@ -4,7 +4,7 @@ require "rubygems"
 
 module Upgrades
   class Version
-    PATTERN = /\A0|[1-9]\d*\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?\z/
+    PATTERN = /\A(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?\z/
 
     include Comparable
 
@@ -14,7 +14,7 @@ module Upgrades
       @value = String(value)
       raise ArgumentError, "invalid semantic version: #{@value}" unless PATTERN.match?(@value)
 
-      @gem_version = Gem::Version.new(@value.delete_prefix("v").split("+").first)
+      @gem_version = Gem::Version.new(@value.split("+").first)
     end
 
     def <=>(other)
