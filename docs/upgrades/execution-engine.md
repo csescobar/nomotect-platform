@@ -12,3 +12,7 @@ Recorded failures contain only the exception class. Messages, arguments,
 credentials and arbitrary command output are not persisted. Database,
 configuration and generated-artifact handlers are registered explicitly by the
 application; arbitrary shell execution remains prohibited.
+
+Failed operations also persist the stable `operation_failed` code. Recovery
+classification is derived separately by `Upgrades::RecoveryAdvisor`, so the
+executor remains focused on safe progress persistence and idempotent resume.

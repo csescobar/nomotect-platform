@@ -178,8 +178,10 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 - [x] Publish installation schemas and operator documentation.
 - [x] Register and validate Phase 1 installation contracts through Repository Intelligence and CI.
 - [x] Define shared compatibility, migration and deprecation rules for installation, deployment and upgrade contract versions.
-- [ ] Complete deployment-manifest, installed-capability and upgrade-history schemas.
-- [ ] Validate cross-contract references, supported versions and operational evidence for later Epic 9 phases.
+- [x] Complete and certify the upgrade-history and upgrade-recovery schemas.
+- [x] Validate cross-contract references, supported versions and operational evidence for Phases 1–3.
+- [ ] Complete deployment-manifest and installed-capability schemas in their owning later phases.
+- [ ] Extend cross-contract validation and operational evidence across the remaining Epic 9 phases.
 
 ### Phase 1 — First-Run Installation and Provisioning
 
@@ -270,7 +272,7 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 
 ### Phase 3 — Upgrade Framework
 
-**Status:** 🚧 In progress
+**Status:** ✅ Complete
 
 - [x] Versioned upgrade manifests and compatibility checks.
 - [x] Reuse the wizard engine concepts for locked, resumable upgrade flows.
@@ -278,9 +280,9 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 - [x] Require and verify pre-upgrade backup evidence where supported.
 - [x] Run registered database, configuration and generated-artifact operations with structured progress.
 - [x] Record upgrade history and post-upgrade validation evidence.
-- [ ] Produce rollback or forward-recovery guidance.
+- [x] Produce rollback or forward-recovery guidance.
 
-**Delivery evidence:** PRs #50–#52 deliver contracts, preflight, backup evidence and maintenance safety. PR #53 adds the exclusive, resumable registered-operation execution engine. PR #54 adds post-upgrade verification, manifest-digest history and replay prevention.
+**Delivery evidence:** PRs #50–#52 deliver contracts, preflight, backup evidence and maintenance safety. PR #53 adds the exclusive, resumable registered-operation execution engine. PR #54 adds post-upgrade verification, manifest-digest history and replay prevention. PR #55 adds deterministic recovery classification, operator guidance, rollback boundaries and end-to-end upgrade certification.
 
 ### Phase 4 — Release Engineering
 

@@ -22,3 +22,7 @@ History is stored under `var/upgrade/history.json`. The append operation checks
 the digest again so concurrent or accidental replay fails closed. Verification
 failures do not create a completed history record. Provider credentials,
 exception messages and secret values are never retained.
+
+When execution completed but these checks fail, the recovery advisor classifies
+the result as `forward_recovery`. Operators repair and reverify the target state
+without replaying operations already recorded as completed.
