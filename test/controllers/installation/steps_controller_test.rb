@@ -4,12 +4,12 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @previous = ENV["INSTALLATION_ENABLED"]
     ENV["INSTALLATION_ENABLED"] = "true"
-    installation_paths.each { |path| path.delete if path.exist? }
+    installation_paths.each { |path| FileUtils.rm_f(path) }
   end
 
   teardown do
     ENV["INSTALLATION_ENABLED"] = @previous
-    installation_paths.each { |path| path.delete if path.exist? }
+    installation_paths.each { |path| FileUtils.rm_f(path) }
   end
 
   test "redirects normal requests to the active installation step" do
@@ -59,7 +59,9 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "input[name='database[host]'][value='db.internal']"
-    assert_select "input[name='database[admin_password]'][value='']"
+    password_input = css_select("input[name='database[admin_password]']").first
+    assert password_input
+    assert password_input["value"].blank?
     assert_select "input[name='database[application_database]'][value='acme_platform']"
   end
 
