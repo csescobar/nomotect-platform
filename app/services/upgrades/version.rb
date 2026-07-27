@@ -22,7 +22,10 @@ module Upgrades
     end
 
     def satisfies?(requirement)
-      Gem::Requirement.new(String(requirement)).satisfied_by?(gem_version)
+      constraints = String(requirement).split(",").map(&:strip)
+      raise ArgumentError, "invalid version requirement: #{requirement}" if constraints.empty? || constraints.any?(&:empty?)
+
+      Gem::Requirement.new(*constraints).satisfied_by?(gem_version)
     rescue Gem::Requirement::BadRequirementError
       raise ArgumentError, "invalid version requirement: #{requirement}"
     end
