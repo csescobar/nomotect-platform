@@ -2,6 +2,66 @@
   <section class="card">
     <p>Epic 9 · First-Run Installation</p>
     <h1>Installation: <%= @step.name.humanize %></h1>
-    <p>The reusable installation framework is active. This step will be implemented in a focused follow-up.</p>
+
+    <% if @step.name == "appearance" %>
+      <%= form_with url: installation_step_path("appearance"), method: :patch, multipart: true, class: "showcase__form" do %>
+        <div class="ui-field">
+          <%= label_tag "appearance_application_name", "Application name", class: "ui-field__label" %>
+          <%= text_field_tag "appearance[application_name]", @appearance["application_name"], required: true, class: "ui-input" %>
+        </div>
+
+        <div class="ui-field">
+          <%= label_tag "appearance_default_locale", "Default locale", class: "ui-field__label" %>
+          <%= select_tag "appearance[default_locale]", options_for_select(%w[en pt-BR], @appearance["default_locale"]), class: "ui-input" %>
+        </div>
+
+        <fieldset class="ui-field">
+          <legend class="ui-field__label">Supported locales</legend>
+          <% %w[en pt-BR].each do |locale| %>
+            <label class="ui-checkbox-field__label">
+              <%= check_box_tag "appearance[supported_locales][]", locale, @appearance["supported_locales"].include?(locale) %>
+              <%= locale %>
+            </label>
+          <% end %>
+        </fieldset>
+
+        <div class="showcase__grid">
+          <% { logo: "Logo", compact_logo: "Compact logo", favicon: "Favicon" }.each do |role, label| %>
+            <div class="ui-field">
+              <%= label_tag "appearance_#{role}", label, class: "ui-field__label" %>
+              <%= file_field_tag "appearance[#{role}]", accept: ".png,.jpg,.jpeg,.svg,.ico", class: "ui-input" %>
+            </div>
+          <% end %>
+        </div>
+
+        <% if Installation::Configuration.token_editing_allowed? %>
+          <div class="ui-field">
+            <%= label_tag :token_yaml, "Design-system YAML", class: "ui-field__label" %>
+            <%= text_area_tag :token_yaml, @token_yaml, rows: 24, class: "ui-input ui-code", spellcheck: false %>
+            <p class="ui-field__help"><%= link_to "Export current YAML", export_installation_appearance_path %></p>
+          </div>
+        <% else %>
+          <p class="ui-alert">Full token editing is disabled in production. Branding and locale fields remain available.</p>
+        <% end %>
+
+        <section class="showcase" aria-label="Design preview">
+          <div class="showcase__section" data-theme="light">
+            <h2>Light preview</h2>
+            <p>Body text, <strong>emphasis</strong>, controls and code use semantic typography roles.</p>
+            <button class="button button--primary" type="button">Primary action</button>
+            <code class="ui-code">Customer.where(active: true)</code>
+          </div>
+          <div class="showcase__section" data-theme="dark">
+            <h2>Dark preview</h2>
+            <p>Changes are regenerated and applied after this step is saved.</p>
+            <input class="ui-input" value="Preview input" readonly>
+          </div>
+        </section>
+
+        <%= submit_tag "Save appearance and continue", class: "button button--primary" %>
+      <% end %>
+    <% else %>
+      <p>This step is registered and will be implemented in the next focused delivery.</p>
+    <% end %>
   </section>
 </main>
