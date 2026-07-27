@@ -49,7 +49,7 @@ module RepositoryIntelligence
         message: error.message, evidence: nil, remediation: "Inspect the validator failure and rerun repository health."
       )
       ValidationResult.new(id: id.to_s, category: definition.fetch(:category).to_s, status: "failed", score: 0,
-                           findings: [finding], evidence: nil)
+                           findings: [ finding ], evidence: nil)
     end
 
     def score_for(findings)
@@ -74,7 +74,7 @@ module RepositoryIntelligence
     def to_h
       grouped = results.group_by(&:category)
       categories = grouped.sort.to_h do |category, values|
-        [category, { score: average(values.map(&:score)), status: category_status(values), validators: values.map(&:id) }]
+        [ category, { score: average(values.map(&:score)), status: category_status(values), validators: values.map(&:id) } ]
       end
       score = average(results.map(&:score))
       {
