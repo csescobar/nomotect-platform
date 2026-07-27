@@ -16,6 +16,7 @@ require_relative "../lib/repository_intelligence/snapshot_drift"
 require_relative "../lib/repository_intelligence/ai_artifact_generator"
 require_relative "../lib/repository_intelligence/mcp_server"
 require_relative "../lib/repository_intelligence/mcp_playbook_tools"
+require_relative "../lib/repository_intelligence/mcp_health_tools"
 
 root = File.expand_path("..", __dir__)
 commit = ENV["GITHUB_SHA"].to_s
@@ -51,7 +52,8 @@ validation = lambda do
 end
 RepositoryIntelligence.configure(
   graph:, contracts: contracts.load, playbooks: playbooks.load, manifest:, readiness: report,
-  generator: ai_artifacts, validator: validation
+  generator: ai_artifacts, validator: validation, provider_status: provider.status,
+  artifact_validator: -> { ai_artifacts.validate }
 )
 case command
 when "generate"
@@ -79,6 +81,14 @@ when "validate"
   validated = report.merge(status: findings.empty? ? "ready" : "not_ready", findings:)
   abort JSON.pretty_generate(validated) unless validated.fetch(:status) == "ready"
   puts JSON.generate(validated)
+when "health"
+  puts JSON.pretty_generate(RepositoryIntelligence.health)
+when "readiness"
+  puts JSON.pretty_generate(RepositoryIntelligence.readiness_dashboard)
+when "validators"
+  id = ARGV.shift
+  results = id ? RepositoryIntelligence.validator_results(id) : RepositoryIntelligence.validator_results
+  puts JSON.pretty_generate(results.map(&:to_h))
 when "query"
   operation = ARGV.shift || "statistics"
   result = case operation
@@ -107,5 +117,5 @@ when "mcp"
     artifact_directory: output, allow_writes: ENV["MCP_ALLOW_WRITES"] == "true"
   ).run
 else
-  abort "Usage: bin/repository-intelligence [generate|refresh|validate|query|playbook|mcp]"
+  abort "Usage: bin/repository-intelligence [generate|refresh|validate|health|readiness|validators|query|playbook|mcp]"
 end
