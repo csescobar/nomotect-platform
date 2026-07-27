@@ -3,5 +3,3 @@ services:
     command: sleep infinity
     environment:
       CODESPACES: ${CODESPACES:-false}
-    volumes:
-      - ..:/rails:cached
