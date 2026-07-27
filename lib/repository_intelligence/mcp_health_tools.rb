@@ -17,15 +17,16 @@ module RepositoryIntelligence
       arguments = params.fetch("arguments", {})
       return super unless %w[repository_health validator_list validator_results remediation_plan readiness_dashboard].include?(name)
 
-      payload = case name
-                when "repository_health" then intelligence.health
-                when "validator_list" then intelligence.validator_list
-                when "validator_results" then intelligence.validator_results(arguments["id"]).map(&:to_h)
-                when "remediation_plan" then intelligence.remediation_plan
-                when "readiness_dashboard" then intelligence.readiness_dashboard
-                end
+      payload =
+        case name
+        when "repository_health" then intelligence.health
+        when "validator_list" then intelligence.validator_list
+        when "validator_results" then intelligence.validator_results(arguments["id"]).map(&:to_h)
+        when "remediation_plan" then intelligence.remediation_plan
+        when "readiness_dashboard" then intelligence.readiness_dashboard
+        end
       intelligence.publish(:mcp_tool_called, tool: name, read_only: true)
-      { content: [{ type: "text", text: JSON.pretty_generate(payload) }] }
+      { content: [ { type: "text", text: JSON.pretty_generate(payload) } ] }
     end
 
     private
