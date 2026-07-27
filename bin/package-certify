@@ -8,8 +8,8 @@ image_repeat="${REPEAT_IMAGE_NAME:-rails-hotwire-platform:ci-repeat}"
 source_version="${SOURCE_VERSION:-0.0.0-dev+${source_commit:0:12}}"
 
 mkdir -p tmp/ci
-
-bundle lock
+bundle check
+git diff --exit-code -- Gemfile.lock
 cp Gemfile.lock tmp/ci/Gemfile.lock.packaging
 
 build_image() {
@@ -18,11 +18,9 @@ build_image() {
   docker build \
     --no-cache \
     --provenance=false \
-    --build-arg BUNDLE_FROZEN=true \
     --build-arg OCI_REVISION="$source_commit" \
     --build-arg OCI_CREATED="$source_created" \
     --build-arg OCI_VERSION="$source_version" \
-    --build-arg SOURCE_DATE_EPOCH="${SOURCE_DATE_EPOCH:-0}" \
     --tag "$tag" . 2>&1 | tee "$log"
 }
 
@@ -33,9 +31,7 @@ payload_manifest() {
   local image="$1"
   docker run --rm --entrypoint bash "$image" -lc '
     set -euo pipefail
-    find /rails /usr/local/bundle -type f -print0 \
-      | sort -z \
-      | xargs -0 sha256sum
+    find /rails /usr/local/bundle -type f -print0 | sort -z | xargs -0 sha256sum
     dpkg-query -W -f="${Package}\t${Version}\n" | sort
   '
 }
@@ -80,7 +76,9 @@ docker run --rm --entrypoint bash "$image_primary" -lc '
   ! command -v make
   ! command -v pkg-config
   bundle check
-  test "$(bundle config get without | tail -n 1)" = "Set for your local app (/rails/.bundle/config): [:development, :test]" || bundle config get without | grep -q "development.*test"
+  ! bundle show debug >/dev/null 2>&1
+  ! bundle show capybara >/dev/null 2>&1
+  ! bundle show rubocop >/dev/null 2>&1
 '
 
 SOURCE_COMMIT="$source_commit" SOURCE_CREATED="$source_created" IMAGE_NAME="$image_primary" ruby bin/container-sbom
