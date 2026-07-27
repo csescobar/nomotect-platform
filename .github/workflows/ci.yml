@@ -11,7 +11,6 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-
     services:
       postgres:
         image: postgres:18
@@ -19,36 +18,32 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: rails_hotwire_platform_test
-        ports:
-          - 5432:5432
+        ports: [5432:5432]
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-
     env:
       RAILS_ENV: test
       DATABASE_URL: postgres://postgres:postgres@localhost:5432/rails_hotwire_platform_test
       SECRET_KEY_BASE: ci-secret-key-base
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-
+      - name: Verify dependency lock
+        run: |
+          bundle check
+          git diff --exit-code -- Gemfile.lock
       - name: Prepare database
         run: ruby bin/rails db:prepare
-
       - name: Generate repository intelligence evidence
         run: ruby bin/repository-intelligence generate
-
       - name: Certify Epic 8 repository intelligence
         run: bash bin/repository-intelligence-certify
-
       - name: Upload repository intelligence evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -63,10 +58,8 @@ jobs:
             tmp/ci/mcp-certification-responses.json
             tmp/ci/repository-intelligence-certification.log
           if-no-files-found: error
-
       - name: Lint
         run: bash bin/lint
-
       - name: Upload lint report
         if: always()
         uses: actions/upload-artifact@v4
@@ -74,14 +67,11 @@ jobs:
           name: rubocop-report
           path: tmp/rubocop.txt
           if-no-files-found: ignore
-
       - name: Security analysis
         run: bash bin/security
-
       - name: Generate SBOM and checksum
         if: always()
         run: ruby bin/sbom
-
       - name: Upload security reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -92,10 +82,8 @@ jobs:
             tmp/ci/sbom.cdx.json
             tmp/ci/sbom.cdx.json.sha256
           if-no-files-found: error
-
       - name: Test
         run: bash bin/test
-
       - name: Upload test report
         if: always()
         uses: actions/upload-artifact@v4
@@ -106,15 +94,12 @@ jobs:
 
   packaging:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-
       - name: Validate Compose profiles
         env:
           POSTGRES_PASSWORD: ci-postgres-password
@@ -123,14 +108,12 @@ jobs:
         run: |
           docker compose config --quiet
           docker compose -f compose.production.yaml config --quiet
-
       - name: Validate Dev Container contract
         run: |
           python -m json.tool .devcontainer/devcontainer.json >/dev/null
           bash -n .devcontainer/post-create.sh
           bash -n .devcontainer/post-start.sh
           docker compose -f compose.yaml -f .devcontainer/compose.devcontainer.yaml config --quiet
-
       - name: Validate Kamal deployment contract
         env:
           KAMAL_SERVER: 192.0.2.10
@@ -141,7 +124,6 @@ jobs:
           SECRET_KEY_BASE: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
           INSTALLATION_BOOTSTRAP_TOKEN: ci-bootstrap-token
         run: bash bin/kamal-validate
-
       - name: Validate private VPS profile
         env:
           KAMAL_SERVER: 192.0.2.10
@@ -155,41 +137,35 @@ jobs:
         run: |
           bash -n bin/vps-preflight
           bash bin/vps-preflight
-
       - name: Validate Render profile
         run: |
           ruby bin/render-validate
           bash -n bin/render-start
-
-      - name: Build production image
+      - name: Generate application SBOM
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: ruby bin/sbom
+      - name: Certify reproducible production packaging
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+          SOURCE_CREATED: 1970-01-01T00:00:00Z
+        run: bash bin/package-certify
+      - name: Verify configuration guard
         run: |
-          set -o pipefail
-          mkdir -p tmp/ci
-          docker build --progress=plain --tag rails-hotwire-platform:ci . 2>&1 | tee tmp/ci/container-build.log
-
-      - name: Verify non-root runtime and configuration guard
-        run: |
-          test "$(docker run --rm --entrypoint id rails-hotwire-platform:ci -u)" != "0"
           if docker run --rm rails-hotwire-platform:ci bundle exec ruby -e 'exit 0'; then
             echo "container unexpectedly started without required environment" >&2
             exit 1
           fi
-
       - name: Verify Render persistence adapter
         run: |
-          docker run --rm \
-            --entrypoint bash \
-            -e RENDER_PERSISTENCE_ROOT=/rails/storage \
-            rails-hotwire-platform:ci \
+          docker run --rm --entrypoint bash -e RENDER_PERSISTENCE_ROOT=/rails/storage rails-hotwire-platform:ci \
             bin/render-start bash -lc 'test -d /rails/storage && test -L /rails/var/installation && test -L /rails/public/installation/branding && test -d /rails/storage/installation && test -d /rails/storage/branding'
-
       - name: Build and verify development image
         run: |
           set -o pipefail
           docker build --progress=plain --target development --tag rails-hotwire-platform:devcontainer . 2>&1 | tee tmp/ci/devcontainer-build.log
           test "$(docker run --rm --entrypoint id rails-hotwire-platform:devcontainer -u)" != "0"
           docker run --rm --entrypoint ruby rails-hotwire-platform:devcontainer --version | grep '^ruby 4\.0\.5 '
-
       - name: Upload packaging evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -197,5 +173,16 @@ jobs:
           name: packaging-evidence
           path: |
             tmp/ci/container-build.log
+            tmp/ci/container-repeat-build.log
             tmp/ci/devcontainer-build.log
+            tmp/ci/Gemfile.lock.packaging
+            tmp/ci/payload-primary.txt
+            tmp/ci/payload-repeat.txt
+            tmp/ci/reproducibility.log
+            tmp/ci/container-sbom.cdx.json
+            tmp/ci/container-sbom.cdx.json.sha256
+            tmp/ci/packaging-manifest.json
+            tmp/ci/packaging-manifest.json.sha256
+            tmp/ci/sbom.cdx.json
+            tmp/ci/sbom.cdx.json.sha256
           if-no-files-found: error
