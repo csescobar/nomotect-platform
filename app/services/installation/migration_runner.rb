@@ -1,6 +1,6 @@
 module Installation
   class MigrationRunner
-    REQUIRED_TABLES = %w[users organizations memberships installation_records].freeze
+    REQUIRED_TABLES = %w[users organizations memberships platform_roles installation_records].freeze
 
     Connection = Class.new(ActiveRecord::Base) do
       self.abstract_class = true
