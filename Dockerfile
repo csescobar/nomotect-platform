@@ -5,7 +5,6 @@ FROM ruby:${RUBY_VERSION}-slim-bookworm AS base
 WORKDIR /rails
 
 ENV RAILS_ENV="production" \
-    BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development:test"
 
@@ -19,7 +18,7 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile ./
 RUN bundle install && \
     rm -rf /root/.bundle "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
 
