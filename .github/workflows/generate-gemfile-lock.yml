@@ -1,9 +1,11 @@
 name: Generate Gemfile.lock
 
 on:
-  push:
-    branches:
-      - build/epic-9-reproducible-oci-packaging
+  pull_request:
+    paths:
+      - Gemfile
+      - .ruby-version
+      - .github/workflows/generate-gemfile-lock.yml
 
 permissions:
   contents: read
