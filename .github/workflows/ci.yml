@@ -119,6 +119,13 @@ jobs:
           docker compose config --quiet
           docker compose -f compose.production.yaml config --quiet
 
+      - name: Validate Dev Container contract
+        run: |
+          python -m json.tool .devcontainer/devcontainer.json >/dev/null
+          bash -n .devcontainer/post-create.sh
+          bash -n .devcontainer/post-start.sh
+          docker compose -f compose.yaml -f .devcontainer/compose.devcontainer.yaml config --quiet
+
       - name: Build production image
         run: |
           set -o pipefail
@@ -133,10 +140,19 @@ jobs:
             exit 1
           fi
 
+      - name: Build and verify development image
+        run: |
+          set -o pipefail
+          docker build --progress=plain --target development --tag rails-hotwire-platform:devcontainer . 2>&1 | tee tmp/ci/devcontainer-build.log
+          test "$(docker run --rm --entrypoint id rails-hotwire-platform:devcontainer -u)" != "0"
+          test "$(docker run --rm --entrypoint ruby rails-hotwire-platform:devcontainer --version)" = "ruby 4.0.5 (2026-03-13 revision 8f43e4f708) +PRISM [x86_64-linux]" || docker run --rm --entrypoint ruby rails-hotwire-platform:devcontainer --version
+
       - name: Upload packaging evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: packaging-evidence
-          path: tmp/ci/container-build.log
+          path: |
+            tmp/ci/container-build.log
+            tmp/ci/devcontainer-build.log
           if-no-files-found: error
