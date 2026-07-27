@@ -3,12 +3,14 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 WORKDIR="$(mktemp -d)"
-trap 'rm -rf "$WORKDIR"' EXIT
+mkdir -p "$ROOT/tmp/ci"
+exec > >(tee "$ROOT/tmp/ci/repository-intelligence-certification.log") 2>&1
+trap 'status=$?; if [[ -d "$WORKDIR/tmp/ci" ]]; then cp -f "$WORKDIR"/tmp/ci/* "$ROOT/tmp/ci/" 2>/dev/null || true; fi; rm -rf "$WORKDIR"; exit $status' EXIT
 
 export GITHUB_SHA="${GITHUB_SHA:-$(git -C "$ROOT" rev-parse HEAD)}"
 export RAILS_ENV="${RAILS_ENV:-test}"
 
-# Simulate a clean checkout while reusing the already-installed bundle.
+echo "[certification] creating clean worktree"
 tar \
   --exclude=.git \
   --exclude=tmp \
@@ -19,16 +21,21 @@ tar \
 cd "$WORKDIR"
 mkdir -p tmp/ci
 
+echo "[certification] generating from a clean worktree"
 ruby bin/repository-intelligence generate
+echo "[certification] validating generated state"
 ruby bin/repository-intelligence validate
+echo "[certification] recording health and readiness"
 ruby bin/repository-intelligence health > tmp/ci/repository-health.json
 ruby bin/repository-intelligence readiness > tmp/ci/repository-readiness.json
 
+echo "[certification] checking deterministic regeneration"
 find docs/ai/generated -type f -print0 | sort -z | xargs -0 sha256sum > tmp/ci/first-generation.sha256
 ruby bin/repository-intelligence generate
 find docs/ai/generated -type f -print0 | sort -z | xargs -0 sha256sum > tmp/ci/second-generation.sha256
 diff -u tmp/ci/first-generation.sha256 tmp/ci/second-generation.sha256
 
+echo "[certification] executing MCP protocol journey"
 ruby -rjson -ropen3 -e '
   requests = [
     { jsonrpc: "2.0", id: 1, method: "initialize", params: {} },
@@ -41,8 +48,10 @@ ruby -rjson -ropen3 -e '
     { jsonrpc: "2.0", id: 8, method: "tools/call", params: { name: "generate_artifacts", arguments: {} } }
   ]
   stdout, stderr, status = Open3.capture3("ruby", "bin/repository-intelligence", "mcp", stdin_data: requests.map { |request| JSON.generate(request) }.join("\n") + "\n")
-  abort stderr unless status.success?
+  warn stderr unless stderr.empty?
+  abort "MCP process failed" unless status.success?
   responses = stdout.lines.map { |line| JSON.parse(line) }
+  File.write("tmp/ci/mcp-certification-responses.json", JSON.pretty_generate(responses) + "\n")
   abort "MCP response count mismatch" unless responses.size == requests.size
   abort "MCP initialize failed" unless responses[0].dig("result", "protocolVersion")
   abort "MCP resources missing" if responses[1].dig("result", "resources").to_a.empty?
@@ -54,10 +63,4 @@ ruby -rjson -ropen3 -e '
   abort "write restriction failed" unless responses[7].dig("error", "message")&.include?("writes are disabled")
 '
 
-mkdir -p "$ROOT/tmp/ci"
-cp tmp/ci/repository-health.json "$ROOT/tmp/ci/"
-cp tmp/ci/repository-readiness.json "$ROOT/tmp/ci/"
-cp tmp/ci/first-generation.sha256 "$ROOT/tmp/ci/"
-cp tmp/ci/second-generation.sha256 "$ROOT/tmp/ci/"
-
-printf '%s\n' "Epic 8 Repository Intelligence certification passed."
+echo "Epic 8 Repository Intelligence certification passed."
