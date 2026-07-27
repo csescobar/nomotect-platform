@@ -63,15 +63,15 @@ module RepositoryIntelligence
 
     def provider
       available = provider_status.fetch(:available, true)
-      findings = available ? [] : [finding("warning", "Configured code graph provider is unavailable", provider_status,
-                                          "Install the provider or select the deterministic null provider for CI.")]
+      findings = available ? [] : [ finding("warning", "Configured code graph provider is unavailable", provider_status,
+                                           "Install the provider or select the deterministic null provider for CI.") ]
       { findings:, evidence: provider_status }
     end
 
     def invariant_presence(kind)
       invariants = api.invariants(kind:)
-      findings = invariants.empty? ? [finding("warning", "No #{kind} invariants are registered", nil,
-                                                "Add the invariant to a machine-readable module contract.")] : []
+      findings = invariants.empty? ? [ finding("warning", "No #{kind} invariants are registered", nil,
+                                               "Add the invariant to a machine-readable module contract.") ] : []
       { findings:, evidence: { count: invariants.size } }
     end
 
