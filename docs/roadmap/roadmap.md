@@ -165,7 +165,7 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 ## Epic 9 — Distribution, Installation and Enterprise Extensions
 
-**Status:** 🚧 In progress — Phase 2
+**Status:** 🚧 In progress — Phase 3
 
 **Objective:** transform the repository from a developer-oriented source project into a distributable, installable, upgradeable and professionally extensible platform while preserving a complete Apache-licensed community core.
 
@@ -250,19 +250,19 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 
 ### Phase 2 — Packaging and Distribution
 
-**Status:** 🚧 In progress
+**Status:** ✅ Complete
 
 **Objective:** provide supported, repeatable ways to start and deploy the platform without requiring intimate Rails repository knowledge.
 
 - [x] Define supported Docker and Podman Compose development and production profiles.
-- [ ] Publish versioned OCI images with non-root execution, health checks and explicit persistence boundaries.
+- [x] Publish versioned OCI images with non-root execution, health checks and explicit persistence boundaries.
 - [x] Provide Dev Container and Codespaces configurations.
 - [x] Document and validate private VPS deployment through Kamal.
 - [x] Document and validate a selected hosted-platform profile through Render.com.
 - [x] Validate required environment variables, secrets, writable paths and external service dependencies before boot.
 - [x] Keep packaging outputs reproducible and linked to source, SBOM and provenance metadata.
 
-**Delivery evidence:** PR #44 delivered the container and Compose baseline; PR #45 added Dev Container and Codespaces support; PR #46 added the Kamal deployment profile and certification; PR #47 added private VPS operational preflight and the Render.com Blueprint profile; PR #48 adds the committed dependency lock and reproducible OCI packaging certification.
+**Delivery evidence:** PR #44 delivered the container and Compose baseline; PR #45 added Dev Container and Codespaces support; PR #46 added the Kamal deployment profile and certification; PR #47 added private VPS operational preflight and the Render.com Blueprint profile; PR #48 added the committed dependency lock and reproducible OCI packaging certification; PR #49 adds repository-derived OCI identity and certified multi-platform GHCR publication.
 
 **Deliverables:** container definitions, compose profiles, development-container configuration, deployment examples, environment contract and packaging certification.
 
