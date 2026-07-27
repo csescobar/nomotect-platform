@@ -21,7 +21,7 @@ services:
     maxShutdownDelaySeconds: 30
     disk:
       name: platform-persistence
-      mountPath: /rails/persistence
+      mountPath: /rails/storage
       sizeGB: 10
     envVars:
       - key: DATABASE_URL
@@ -43,4 +43,4 @@ services:
       - key: RUN_DB_PREPARE
         value: "false"
       - key: RENDER_PERSISTENCE_ROOT
-        value: /rails/persistence
+        value: /rails/storage
