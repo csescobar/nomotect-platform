@@ -22,6 +22,7 @@ conform to `docs/contracts/installed-platform-state.schema.json`.
 8. Require backup evidence before execution when the manifest declares it mandatory.
 9. Execute operations through the future upgrade wizard and operation registry.
 10. Persist credential-free upgrade history and post-upgrade validation evidence.
+11. Classify failures and produce read-only recovery guidance with stable codes.
 
 ## Manifest rules
 
@@ -64,6 +65,11 @@ Contract schema changes follow additive evolution within a supported version. Br
 A manifest may require backup evidence, but this foundation does not claim that a backup exists or is restorable. Later execution slices must verify provider-specific evidence before the first mutating operation.
 
 Database rollback is not assumed. Every manifest must distinguish reversible operations from operations that require forward recovery. Upgrade history supports a `recovery_required` terminal state for this boundary.
+
+Recovery guidance conforms to `docs/contracts/upgrade-recovery.schema.json`.
+It may recommend retry, forward recovery, or operator intervention, but it never
+mutates execution state or claims that a reversible declaration provides an
+automated rollback implementation.
 
 ## Security boundary
 

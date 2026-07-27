@@ -18,7 +18,13 @@ module Upgrades
           registry.execute(operation)
           record!(state, operation, "completed")
         rescue StandardError => error
-          record!(state, operation, "failed", error: error.class.name)
+          record!(
+            state,
+            operation,
+            "failed",
+            error: error.class.name,
+            failure_code: "operation_failed"
+          )
           raise OperationFailed, "upgrade operation failed"
         end
         state["status"] = "completed"
@@ -45,11 +51,12 @@ module Upgrades
       state["operations"].any? { |item| item["id"] == operation.fetch("id") && item["status"] == "completed" }
     end
 
-    def record!(state, operation, status, error: nil)
+    def record!(state, operation, status, error: nil, failure_code: nil)
       state["operations"].reject! { |item| item["id"] == operation.fetch("id") }
       state["operations"] << {
         "id" => operation.fetch("id"), "status" => status,
-        "occurred_at" => clock.call.iso8601, "error" => error
+        "occurred_at" => clock.call.iso8601, "error" => error,
+        "failure_code" => failure_code
       }
       state["status"] = status == "failed" ? "failed" : "running"
       store.write!(state)
