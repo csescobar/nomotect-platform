@@ -36,6 +36,7 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
       }
     }
 
+    assert_response :redirect, response.body
     assert_redirected_to installation_step_path("database")
     assert_equal "database", Installation::StateStore.new.read.fetch("state")
     assert_equal "Acme Platform", Installation::AppearanceStore.new.read.fetch("application_name")
