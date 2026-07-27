@@ -19,13 +19,13 @@ class RepositoryIntelligenceHealthTest < ActiveSupport::TestCase
     graph.add_edge(RepositoryIntelligence::Edge.new(
       from: "model:Customer", to: "document:Customer", type: "DOCUMENTED_BY", properties: {}
     ))
-    contracts = [{
-      "id" => "customer", "version" => 1, "owns" => ["Customer"],
-      "invariants" => ["security controls", "privacy controls", "tenant boundary"]
-    }]
-    playbooks = [{
+    contracts = [ {
+      "id" => "customer", "version" => 1, "owns" => [ "Customer" ],
+      "invariants" => [ "security controls", "privacy controls", "tenant boundary" ]
+    } ]
+    playbooks = [ {
       "id" => "review", "version" => 1, "title" => "Review", "steps" => [], "completion_gate" => []
-    }]
+    } ]
     RepositoryIntelligence.configure(
       graph:, contracts:, playbooks:, manifest: { files: [] }, readiness: { status: "ready" },
       provider_status: { available: true, provider: "fixture" }, artifact_validator: -> { [] }
@@ -45,7 +45,7 @@ class RepositoryIntelligenceHealthTest < ActiveSupport::TestCase
     RepositoryIntelligence.configure(
       graph: RepositoryIntelligence.graph, contracts: RepositoryIntelligence.contracts,
       playbooks: RepositoryIntelligence.playbooks, provider_status: { available: false },
-      artifact_validator: -> { ["stale generated artifact"] }
+      artifact_validator: -> { [ "stale generated artifact" ] }
     )
 
     health = RepositoryIntelligence.health
