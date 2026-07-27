@@ -177,7 +177,7 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 - [x] Exclude administrative credentials and runtime secrets from persisted installation metadata.
 - [x] Publish installation schemas and operator documentation.
 - [x] Register and validate Phase 1 installation contracts through Repository Intelligence and CI.
-- [ ] Define shared compatibility, migration and deprecation rules for installation, deployment and upgrade contract versions.
+- [x] Define shared compatibility, migration and deprecation rules for installation, deployment and upgrade contract versions.
 - [ ] Complete deployment-manifest, installed-capability and upgrade-history schemas.
 - [ ] Validate cross-contract references, supported versions and operational evidence for later Epic 9 phases.
 
@@ -272,13 +272,15 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 
 **Status:** ⏳ Planned
 
-- [ ] Versioned upgrade manifests and compatibility checks.
+- [x] Versioned upgrade manifests and compatibility checks.
 - [ ] Reuse the wizard engine for upgrade and recovery flows.
 - [ ] Detect source version, target version, migrations, contract changes and operator actions.
 - [ ] Require and verify pre-upgrade backup evidence where supported.
 - [ ] Run database, configuration and generated-artifact migrations with structured progress.
 - [ ] Record upgrade history and post-upgrade validation evidence.
 - [ ] Produce rollback or forward-recovery guidance.
+
+**Delivery evidence:** PR #50 adds the versioned upgrade-manifest and upgrade-history contracts, strict compatibility planning, architecture policy, tests and CI certification.
 
 ### Phase 4 — Release Engineering
 
