@@ -14,10 +14,12 @@ bundle exec rails test \
   test/services/upgrades/installed_state_detector_test.rb \
   test/services/upgrades/inspector_test.rb \
   test/services/upgrades/backup_and_maintenance_test.rb \
-  test/services/upgrades/executor_test.rb
+  test/services/upgrades/executor_test.rb \
+  test/services/upgrades/post_upgrade_verifier_test.rb
 
 grep -q 'additionalProperties": false' docs/contracts/upgrade-manifest.schema.json
 grep -q 'recovery_required' docs/contracts/upgrade-history.schema.json
+grep -q 'manifest_digest' docs/contracts/upgrade-history.schema.json
 grep -q 'pending_migrations' docs/contracts/installed-platform-state.schema.json
 grep -q 'does not execute arbitrary shell commands' docs/upgrades/architecture.md
 grep -q 'inspection and preflight are read-only' config/ai/contracts/upgrades.yml

@@ -4,10 +4,11 @@
   "title": "Upgrade History Record",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "upgrade_id", "source_version", "target_version", "status", "started_at", "operations", "evidence"],
+  "required": ["schema_version", "upgrade_id", "manifest_digest", "source_version", "target_version", "status", "started_at", "completed_at", "operations", "evidence"],
   "properties": {
     "schema_version": { "const": 1 },
     "upgrade_id": { "type": "string", "minLength": 1 },
+    "manifest_digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "source_version": { "type": "string", "minLength": 1 },
     "target_version": { "type": "string", "minLength": 1 },
     "status": { "enum": ["planned", "blocked", "running", "completed", "failed", "recovery_required"] },
@@ -28,8 +29,16 @@
     },
     "evidence": {
       "type": "object",
-      "additionalProperties": { "type": ["string", "number", "boolean", "null"] },
-      "description": "Credential-free operational evidence only"
+      "additionalProperties": false,
+      "required": ["database_schema", "installation_contract", "generated_artifacts_current", "application_healthy", "backup_evidence_ids"],
+      "properties": {
+        "database_schema": { "type": "string", "pattern": "^[0-9]+$" },
+        "installation_contract": { "type": "integer", "minimum": 1 },
+        "generated_artifacts_current": { "const": true },
+        "application_healthy": { "const": true },
+        "backup_evidence_ids": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+      },
+      "description": "Credential-free post-upgrade evidence only"
     }
   }
 }
