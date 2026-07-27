@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "installation", to: "installation/steps#show", defaults: { step: "appearance" }, as: :installation
+  get "installation/:step", to: "installation/steps#show", as: :installation_step
+
   resource :session, only: %i[new create destroy]
   resource :locale_preference, only: :update
   resource :tenant_selection, only: :update
