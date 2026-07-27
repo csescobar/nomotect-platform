@@ -4,5 +4,8 @@
 /storage/*
 /vendor/bundle
 /var/installation/*
+/.kamal/secrets
+/.kamal/secrets.*
+!/.kamal/secrets.example
 .env
 .DS_Store

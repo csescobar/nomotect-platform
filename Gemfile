@@ -21,6 +21,7 @@ group :development, :test do
   gem "brakeman", require: false
   gem "bundler-audit", require: false
   gem "rubocop-rails-omakase", require: false
+  gem "kamal", "~> 2.12", require: false
 end
 
 group :test do
