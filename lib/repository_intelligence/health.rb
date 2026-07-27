@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 module RepositoryIntelligence
+  module Health
+  end
+
   Finding = Data.define(:validator, :category, :severity, :message, :evidence, :remediation)
   ValidationResult = Data.define(:id, :category, :status, :score, :findings, :evidence)
 
