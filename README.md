@@ -80,11 +80,37 @@ bash bin/ci
 
 Read the [Platform Core AI Context](docs/modules/platform-core/AI_CONTEXT.md) and [Security and Privacy AI Context](docs/modules/security-privacy/AI_CONTEXT.md) for invariants, review boundaries and known limitations.
 
+## Repository Intelligence
+
+Epic 8 adds a provider-neutral Repository Intelligence platform over the source repository. The platform owns a normalized governance graph while replaceable integrations such as Codebase Memory and GitNexus may supply structural code intelligence.
+
+The canonical `RepositoryIntelligence` API powers:
+
+- deterministic manifests, graph snapshots, checksums, AI contexts and architecture reports;
+- a normalized SQLite graph store with bounded incremental refresh and drift detection;
+- machine-readable module contracts and executable engineering playbooks;
+- semantic repository queries, impact analysis and dependency traversal;
+- a read-only-by-default stdio MCP server with resources, tools, prompts, auditing, limits and explicit write capabilities;
+- typed validators, repository health, remediation guidance and readiness reporting;
+- clean-worktree certification covering deterministic regeneration, MCP journeys, provider failures, incremental equivalence and security boundaries.
+
+Useful commands include:
+
+```bash
+ruby bin/repository-intelligence generate
+ruby bin/repository-intelligence validate
+ruby bin/repository-intelligence health
+ruby bin/repository-intelligence readiness
+ruby bin/repository-intelligence query statistics
+ruby bin/repository-intelligence playbook list
+ruby bin/repository-intelligence mcp
+```
+
 ## Current development status
 
-- ✅ Epics 0–7 are complete, covering project foundation, platform core, design system and internationalization, grid engine, domain framework and reference application, Enterprise Services, the Multi-Tenant Platform, and Security and Privacy.
-- ◐ Epic 8 — AI-Native Infrastructure is partially delivered through the initial module AI contexts and is the next implementation epic.
-- ⏳ Epics 9 and 10 remain planned for distribution, release engineering, framework validation and stable-release readiness.
+- ✅ Epics 0–8 are complete, covering project foundation, platform core, design system and internationalization, grid engine, domain framework and reference application, Enterprise Services, the Multi-Tenant Platform, Security and Privacy, and the AI Platform with Repository Intelligence.
+- ⏳ Epic 9 — Distribution and Enterprise Extensions is the next planned epic, covering canonical versioning, change fragments, changelog and release automation, distribution, compatibility tooling and enterprise repository contracts.
+- ⏳ Epic 10 remains planned for framework validation, release candidates and the stable `v1.0.0` release gate.
 
 The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and traceability source.
 
@@ -108,6 +134,7 @@ The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and
 - [Dependency rules](docs/architecture/dependency-rules.md)
 - [Ubiquitous language](docs/architecture/ubiquitous-language.md)
 - [Engineering decision tree](docs/architecture/engineering-decision-tree.md)
+- [Federated Repository Intelligence ADR](docs/architecture/decisions/0003-federated-repository-intelligence.md)
 
 ### AI-native architecture
 
@@ -116,6 +143,9 @@ The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and
 - [Contribution boundaries](docs/ai/contribution-boundaries.md)
 - [Architecture manifest schema](docs/ai/architecture-manifest.schema.json)
 - [Agent command playbooks](docs/ai/commands/README.md)
+- [Repository Intelligence public API](docs/ai/repository-intelligence-api.md)
+- [Repository health and readiness](docs/ai/repository-health.md)
+- [Epic 8 delivery evidence](docs/ai/epic-8-delivery-evidence.md)
 - [AI-native roadmap](docs/ai/ai-first-roadmap.md)
 - [AI contribution principles](AI_PRINCIPLES.md)
 - [Agent instructions](AGENTS.md)
