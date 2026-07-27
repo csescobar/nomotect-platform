@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rails-application.example/schemas/upgrade-history-v1.json",
+  "title": "Upgrade History Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "upgrade_id", "source_version", "target_version", "status", "started_at", "operations", "evidence"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "upgrade_id": { "type": "string", "minLength": 1 },
+    "source_version": { "type": "string", "minLength": 1 },
+    "target_version": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["planned", "blocked", "running", "completed", "failed", "recovery_required"] },
+    "started_at": { "type": "string", "format": "date-time" },
+    "completed_at": { "type": ["string", "null"], "format": "date-time" },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "status"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["pending", "running", "completed", "failed", "skipped"] },
+          "message": { "type": "string" }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": { "type": ["string", "number", "boolean", "null"] },
+      "description": "Credential-free operational evidence only"
+    }
+  }
+}
