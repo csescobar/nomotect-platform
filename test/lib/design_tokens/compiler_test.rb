@@ -5,8 +5,26 @@ class DesignTokens::CompilerTest < ActiveSupport::TestCase
   test "compiles validated YAML and keeps every generated output current" do
     compiler = DesignTokens::Compiler.new
 
-    assert_includes compiler.compile, "[data-theme=\"dark\"]"
+    css = compiler.compile
+
+    assert_includes css, "[data-theme=\"dark\"]"
+    assert_includes css, "--font-family-body:"
+    assert_includes css, "--font-family-heading:"
+    assert_includes css, "--font-family-mono:"
+    assert_includes css, "--font-family-sans:"
+    assert_includes css, "--line-height-heading:"
+    assert_includes css, "--line-height-code:"
     assert compiler.current?
+  end
+
+  test "framework styles consume semantic typography roles" do
+    stylesheet = Rails.root.join("app/assets/stylesheets/application.css").read
+
+    assert_includes stylesheet, "font-family: var(--font-family-body)"
+    assert_includes stylesheet, "font-family: var(--font-family-heading)"
+    assert_includes stylesheet, "font-family: var(--font-family-mono)"
+    assert_includes stylesheet, "line-height: var(--line-height-heading)"
+    assert_includes stylesheet, "line-height: var(--line-height-code)"
   end
 
   test "rejects divergent theme keys" do
