@@ -1,5 +1,5 @@
 require "test_helper"
-require Rails.root.join("bin/validate-container-environment")
+require "container_environment_validator"
 
 class ContainerEnvironmentValidatorTest < ActiveSupport::TestCase
   test "accepts a valid production environment" do
