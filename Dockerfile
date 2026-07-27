@@ -1,5 +1,9 @@
 # syntax=docker/dockerfile:1.7
 ARG RUBY_VERSION=4.0.5
+ARG OCI_SOURCE=https://github.com/csescobar/rails-hotwire-platform
+ARG OCI_REVISION=unknown
+ARG OCI_CREATED=1970-01-01T00:00:00Z
+ARG OCI_VERSION=0.0.0-dev
 FROM ruby:${RUBY_VERSION}-slim-bookworm AS base
 
 WORKDIR /rails
@@ -18,8 +22,10 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
-COPY Gemfile ./
-RUN bundle install && \
+ARG BUNDLE_FROZEN=false
+COPY Gemfile* ./
+RUN bundle config set frozen "${BUNDLE_FROZEN}" && \
+    bundle install && \
     rm -rf /root/.bundle "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
 
 COPY . .
@@ -57,6 +63,10 @@ FROM base
 
 ARG APP_UID=1000
 ARG APP_GID=1000
+ARG OCI_SOURCE
+ARG OCI_REVISION
+ARG OCI_CREATED
+ARG OCI_VERSION
 RUN groupadd --system --gid ${APP_GID} rails && \
     useradd rails --uid ${APP_UID} --gid ${APP_GID} --create-home --shell /bin/bash
 
@@ -65,6 +75,15 @@ COPY --from=build --chown=rails:rails /rails /rails
 
 RUN mkdir -p log tmp/pids tmp/cache storage var/installation && \
     chown -R rails:rails log tmp storage var
+
+LABEL org.opencontainers.image.title="Rails Hotwire Platform" \
+      org.opencontainers.image.description="AI-native Rails and Hotwire platform baseline" \
+      org.opencontainers.image.source="${OCI_SOURCE}" \
+      org.opencontainers.image.revision="${OCI_REVISION}" \
+      org.opencontainers.image.created="${OCI_CREATED}" \
+      org.opencontainers.image.version="${OCI_VERSION}" \
+      org.opencontainers.image.licenses="Apache-2.0" \
+      io.railshotwireplatform.persistence="/rails/storage,/rails/var/installation"
 
 USER rails
 
