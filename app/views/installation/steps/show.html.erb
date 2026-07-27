@@ -9,123 +9,59 @@
           <%= label_tag "appearance_application_name", "Application name", class: "ui-field__label" %>
           <%= text_field_tag "appearance[application_name]", @appearance["application_name"], required: true, class: "ui-input" %>
         </div>
-
         <div class="ui-field">
           <%= label_tag "appearance_default_locale", "Default locale", class: "ui-field__label" %>
           <%= select_tag "appearance[default_locale]", options_for_select(%w[en pt-BR], @appearance["default_locale"]), class: "ui-input" %>
         </div>
-
         <fieldset class="ui-field">
           <legend class="ui-field__label">Supported locales</legend>
           <% %w[en pt-BR].each do |locale| %>
-            <label class="ui-checkbox-field__label">
-              <%= check_box_tag "appearance[supported_locales][]", locale, @appearance["supported_locales"].include?(locale) %>
-              <%= locale %>
-            </label>
+            <label class="ui-checkbox-field__label"><%= check_box_tag "appearance[supported_locales][]", locale, @appearance["supported_locales"].include?(locale) %> <%= locale %></label>
           <% end %>
         </fieldset>
-
-        <div class="showcase__grid">
-          <% { logo: "Logo", compact_logo: "Compact logo", favicon: "Favicon" }.each do |role, label| %>
-            <div class="ui-field">
-              <%= label_tag "appearance_#{role}", label, class: "ui-field__label" %>
-              <%= file_field_tag "appearance[#{role}]", accept: ".png,.jpg,.jpeg,.svg,.ico", class: "ui-input" %>
-            </div>
-          <% end %>
-        </div>
-
         <% if Installation::Configuration.token_editing_allowed? %>
           <div class="ui-field">
             <%= label_tag :token_yaml, "Design-system YAML", class: "ui-field__label" %>
             <%= text_area_tag :token_yaml, @token_yaml, rows: 24, class: "ui-input ui-code", spellcheck: false %>
-            <p class="ui-field__help"><%= link_to "Export current YAML", export_installation_appearance_path %></p>
           </div>
-        <% else %>
-          <p class="ui-alert">Full token editing is disabled in production. Branding and locale fields remain available.</p>
         <% end %>
-
-        <section class="showcase" aria-label="Design preview">
-          <div class="showcase__section" data-theme="light">
-            <h2>Light preview</h2>
-            <p>Body text, <strong>emphasis</strong>, controls and code use semantic typography roles.</p>
-            <button class="button button--primary" type="button">Primary action</button>
-            <code class="ui-code">Customer.where(active: true)</code>
-          </div>
-          <div class="showcase__section" data-theme="dark">
-            <h2>Dark preview</h2>
-            <p>Changes are regenerated and applied after this step is saved.</p>
-            <input class="ui-input" value="Preview input" readonly>
-          </div>
-        </section>
-
         <%= submit_tag "Save appearance and continue", class: "button button--primary" %>
       <% end %>
     <% elsif @step.name == "database" %>
-      <p>Administrative credentials are used only for this request and are never persisted or shown in progress output.</p>
-
+      <p>Administrative credentials are request-scoped and never persisted.</p>
       <%= form_with url: installation_step_path("database"), method: :patch, class: "showcase__form" do %>
-        <div class="showcase__grid">
+        <% { host: "Host", port: "Port", maintenance_database: "Maintenance database", admin_username: "Administrative username", application_database: "Application database", application_username: "Application role" }.each do |field, label| %>
           <div class="ui-field">
-            <%= label_tag "database_host", "Host", class: "ui-field__label" %>
-            <%= text_field_tag "database[host]", @database["host"], required: true, class: "ui-input", autocomplete: "off" %>
+            <%= label_tag "database_#{field}", label, class: "ui-field__label" %>
+            <%= text_field_tag "database[#{field}]", @database[field.to_s], required: true, class: "ui-input", autocomplete: "off" %>
           </div>
-          <div class="ui-field">
-            <%= label_tag "database_port", "Port", class: "ui-field__label" %>
-            <%= number_field_tag "database[port]", @database["port"], min: 1, max: 65_535, required: true, class: "ui-input" %>
-          </div>
-          <div class="ui-field">
-            <%= label_tag "database_maintenance_database", "Maintenance database", class: "ui-field__label" %>
-            <%= text_field_tag "database[maintenance_database]", @database["maintenance_database"], required: true, class: "ui-input", autocomplete: "off" %>
-          </div>
-          <div class="ui-field">
-            <%= label_tag "database_sslmode", "SSL mode", class: "ui-field__label" %>
-            <%= select_tag "database[sslmode]", options_for_select(Installation::DatabaseConfiguration::SSL_MODES, @database["sslmode"]), class: "ui-input" %>
-          </div>
-          <div class="ui-field">
-            <%= label_tag "database_admin_username", "Administrative username", class: "ui-field__label" %>
-            <%= text_field_tag "database[admin_username]", nil, required: true, class: "ui-input", autocomplete: "off" %>
-          </div>
-          <div class="ui-field">
-            <%= label_tag "database_admin_password", "Administrative password", class: "ui-field__label" %>
-            <%= password_field_tag "database[admin_password]", nil, required: true, class: "ui-input", autocomplete: "new-password" %>
-          </div>
-          <div class="ui-field">
-            <%= label_tag "database_application_database", "Application database", class: "ui-field__label" %>
-            <%= text_field_tag "database[application_database]", @database["application_database"], required: true, pattern: "[a-z][a-z0-9_]{0,62}", class: "ui-input" %>
-          </div>
-          <div class="ui-field">
-            <%= label_tag "database_application_username", "Application role", class: "ui-field__label" %>
-            <%= text_field_tag "database[application_username]", @database["application_username"], required: true, pattern: "[a-z][a-z0-9_]{0,62}", class: "ui-input" %>
-          </div>
+        <% end %>
+        <div class="ui-field">
+          <%= label_tag "database_admin_password", "Administrative password", class: "ui-field__label" %>
+          <%= password_field_tag "database[admin_password]", nil, required: true, class: "ui-input", autocomplete: "new-password" %>
         </div>
-
-        <div class="showcase__actions">
-          <%= submit_tag "Test connection", class: "button button--secondary" %>
-          <%= submit_tag "Provision database", class: "button button--primary" %>
+        <div class="ui-field">
+          <%= label_tag "database_sslmode", "SSL mode", class: "ui-field__label" %>
+          <%= select_tag "database[sslmode]", options_for_select(Installation::DatabaseConfiguration::SSL_MODES, @database["sslmode"]), class: "ui-input" %>
         </div>
-      <% end %>
-
-      <% if @progress.present? %>
-        <section aria-label="Provisioning progress">
-          <h2>Progress</h2>
-          <ol>
-            <% @progress.each do |event| %>
-              <li><strong><%= event["status"].humanize %>:</strong> <%= event["message"] %></li>
-            <% end %>
-          </ol>
-        </section>
+        <%= submit_tag "Test connection", class: "button button--secondary" %>
+        <%= submit_tag "Provision database", class: "button button--primary" %>
       <% end %>
     <% elsif @step.name == "provisioning" %>
-      <p>The database and runtime role are ready. Database migrations are intentionally deferred to the next focused delivery.</p>
-      <% if @progress.present? %>
-        <ol>
-          <% @progress.each do |event| %>
-            <li><strong><%= event["status"].humanize %>:</strong> <%= event["message"] %></li>
-          <% end %>
-        </ol>
+      <p>The runtime role and database are ready. Run migrations to create and verify the application schema.</p>
+      <%= form_with url: installation_step_path("provisioning"), method: :patch do %>
+        <%= submit_tag "Run migrations", class: "button button--primary" %>
       <% end %>
+    <% elsif @step.name == "migrations" %>
+      <p>Database migrations are running. Retry is safe if execution is interrupted.</p>
     <% else %>
       <p>This step is registered and will be implemented in the next focused delivery.</p>
+    <% end %>
+
+    <% if @progress.present? %>
+      <section aria-label="Installation progress"><h2>Progress</h2><ol>
+        <% @progress.each do |event| %><li><strong><%= event["status"].humanize %>:</strong> <%= event["message"] %></li><% end %>
+      </ol></section>
     <% end %>
   </section>
 </main>
