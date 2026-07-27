@@ -18,6 +18,10 @@ module Installation
       self.table_name = "memberships"
     end
 
+    PlatformRoleRecord = Class.new(Connection) do
+      self.table_name = "platform_roles"
+    end
+
     InstallationRecord = Class.new(Connection) do
       self.table_name = "installation_records"
     end
@@ -29,27 +33,28 @@ module Installation
 
     def create!(attributes)
       input = validate!(attributes)
-      progress.publish(event: :platform_owner, status: :started, message: "Creating initial platform owner and organization")
+      progress.publish(event: :platform_owner, status: :started, message: "Creating initial platform administrator and organization")
       Connection.establish_connection(configuration.to_h)
 
       result = Connection.transaction do
         user = find_or_create_user!(input)
+        platform_role = reconcile_platform_admin_role!(user)
         organization = find_or_create_organization!(input)
         membership = reconcile_owner_membership!(user, organization)
-        complete_installation_record!(user, organization)
-        Result.new(user.id, organization.id, membership.id)
+        complete_installation_record!(user, platform_role, organization, membership)
+        Result.new(user.id, platform_role.id, organization.id, membership.id)
       end
 
-      progress.publish(event: :platform_owner, status: :completed, message: "Initial platform owner and organization created")
+      progress.publish(event: :platform_owner, status: :completed, message: "Initial platform administrator and organization created")
       result
     rescue StandardError
-      progress.publish(event: :platform_owner, status: :failed, message: "Platform owner creation failed")
+      progress.publish(event: :platform_owner, status: :failed, message: "Platform administrator creation failed")
       raise
     ensure
       Connection.remove_connection
     end
 
-    Result = Data.define(:user_id, :organization_id, :membership_id)
+    Result = Data.define(:user_id, :platform_role_id, :organization_id, :membership_id)
 
     private
 
@@ -62,7 +67,7 @@ module Installation
       password = input[:password].to_s
       confirmation = input[:password_confirmation].to_s
 
-      raise ArgumentError, "A valid owner email address is required" unless URI::MailTo::EMAIL_REGEXP.match?(email)
+      raise ArgumentError, "A valid administrator email address is required" unless URI::MailTo::EMAIL_REGEXP.match?(email)
       raise ArgumentError, "Organization name is required" if name.blank?
       raise ArgumentError, "Password must contain at least 12 characters" if password.length < 12
       raise ArgumentError, "Password confirmation does not match" unless ActiveSupport::SecurityUtils.secure_compare(password, confirmation)
@@ -77,6 +82,13 @@ module Installation
       user.time_zone ||= Localization::SupportedLocales.fetch(user.locale).time_zone
       user.save!
       user
+    end
+
+    def reconcile_platform_admin_role!(user)
+      role = PlatformRoleRecord.find_or_initialize_by(user_id: user.id)
+      role.role = "platform_admin"
+      role.save!
+      role
     end
 
     def find_or_create_organization!(input)
@@ -97,12 +109,17 @@ module Installation
       membership
     end
 
-    def complete_installation_record!(user, organization)
+    def complete_installation_record!(user, platform_role, organization, membership)
       record = InstallationRecord.where(environment: Rails.env).order(id: :desc).first || InstallationRecord.new(environment: Rails.env)
       record.contract_version = 1
       record.schema_version ||= ActiveRecord::MigrationContext.new(Rails.root.join("db/migrate"), Connection.connection.schema_migration).current_version.to_s
       record.status = "completed"
-      record.metadata = { owner_user_id: user.id, organization_id: organization.id }
+      record.metadata = {
+        platform_admin_user_id: user.id,
+        platform_role_id: platform_role.id,
+        initial_organization_id: organization.id,
+        initial_owner_membership_id: membership.id
+      }
       record.save!
     end
   end
