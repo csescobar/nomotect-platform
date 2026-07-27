@@ -39,7 +39,7 @@ module Upgrades
           manifest: manifest,
           execution_state: execution_state,
           detector: fake(call: state),
-          artifact_regenerator: -> {},
+          artifact_regenerator: -> { },
           health_check: -> { true },
           history: history
         )
