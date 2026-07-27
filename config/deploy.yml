@@ -1,7 +1,7 @@
 # Kamal 2 deployment profile.
-# Required operator environment: KAMAL_SERVER, KAMAL_HOST, KAMAL_REGISTRY_USERNAME.
-service: rails-hotwire-platform
-image: <%= ENV.fetch("KAMAL_IMAGE", "rails-hotwire-platform") %>
+# Required operator environment: KAMAL_IMAGE, KAMAL_SERVER, KAMAL_HOST, KAMAL_REGISTRY_USERNAME.
+service: <%= ENV.fetch("KAMAL_SERVICE", "rails-application") %>
+image: <%= ENV.fetch("KAMAL_IMAGE") %>
 
 servers:
   web:
@@ -31,8 +31,8 @@ ssh:
   user: <%= ENV.fetch("KAMAL_SSH_USER", "deploy") %>
 
 volumes:
-  - <%= ENV.fetch("KAMAL_STORAGE_PATH", "/var/lib/rails-hotwire-platform/storage") %>:/rails/storage
-  - <%= ENV.fetch("KAMAL_INSTALLATION_PATH", "/var/lib/rails-hotwire-platform/installation") %>:/rails/var/installation
+  - <%= ENV.fetch("KAMAL_STORAGE_PATH", "/var/lib/rails-application/storage") %>:/rails/storage
+  - <%= ENV.fetch("KAMAL_INSTALLATION_PATH", "/var/lib/rails-application/installation") %>:/rails/var/installation
 
 env:
   clear:
@@ -51,7 +51,7 @@ drain_timeout: 30
 readiness_delay: 5
 
 labels:
-  org.opencontainers.image.source: <%= ENV.fetch("KAMAL_SOURCE", "https://github.com/csescobar/rails-hotwire-platform") %>
+  org.opencontainers.image.source: <%= ENV.fetch("KAMAL_SOURCE", "local://repository") %>
 
 boot:
   limit: 1

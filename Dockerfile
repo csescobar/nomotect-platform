@@ -1,9 +1,11 @@
 # syntax=docker/dockerfile:1.7
 ARG RUBY_VERSION=4.0.5
-ARG OCI_SOURCE=https://github.com/csescobar/rails-hotwire-platform
+ARG OCI_SOURCE=local://repository
 ARG OCI_REVISION=unknown
 ARG OCI_CREATED=1970-01-01T00:00:00Z
 ARG OCI_VERSION=0.0.0-dev
+ARG OCI_TITLE="Rails Application"
+ARG OCI_DESCRIPTION="Rails and Hotwire application container"
 FROM ruby:${RUBY_VERSION}-slim-bookworm AS base
 
 WORKDIR /rails
@@ -66,6 +68,8 @@ ARG OCI_SOURCE
 ARG OCI_REVISION
 ARG OCI_CREATED
 ARG OCI_VERSION
+ARG OCI_TITLE
+ARG OCI_DESCRIPTION
 RUN groupadd --system --gid ${APP_GID} rails && \
     useradd rails --uid ${APP_UID} --gid ${APP_GID} --create-home --shell /bin/bash
 
@@ -75,14 +79,14 @@ COPY --from=build --chown=rails:rails /rails /rails
 RUN mkdir -p log tmp/pids tmp/cache storage var/installation && \
     chown -R rails:rails log tmp storage var
 
-LABEL org.opencontainers.image.title="Rails Hotwire Platform" \
-      org.opencontainers.image.description="AI-native Rails and Hotwire platform baseline" \
+LABEL org.opencontainers.image.title="${OCI_TITLE}" \
+      org.opencontainers.image.description="${OCI_DESCRIPTION}" \
       org.opencontainers.image.source="${OCI_SOURCE}" \
       org.opencontainers.image.revision="${OCI_REVISION}" \
       org.opencontainers.image.created="${OCI_CREATED}" \
       org.opencontainers.image.version="${OCI_VERSION}" \
       org.opencontainers.image.licenses="Apache-2.0" \
-      io.railshotwireplatform.persistence="/rails/storage,/rails/var/installation"
+      io.rails-platform.persistence="/rails/storage,/rails/var/installation"
 
 USER rails
 

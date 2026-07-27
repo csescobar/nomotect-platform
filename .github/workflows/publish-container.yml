@@ -1,0 +1,140 @@
+name: Publish container image
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+
+concurrency:
+  group: publish-container-${{ github.event.workflow_run.head_sha || github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve publication identity
+        id: identity
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          WORKFLOW_RUN_SHA: ${{ github.event.workflow_run.head_sha }}
+          CURRENT_SHA: ${{ github.sha }}
+          SERVER_URL: ${{ github.server_url }}
+          REPOSITORY: ${{ github.repository }}
+          REPOSITORY_NAME: ${{ github.event.repository.name }}
+        run: |
+          set -euo pipefail
+          source_sha="$CURRENT_SHA"
+          if [[ "$EVENT_NAME" == "workflow_run" ]]; then
+            source_sha="$WORKFLOW_RUN_SHA"
+          fi
+          image_repository="${REPOSITORY,,}"
+          image_reference="ghcr.io/${image_repository}"
+          source_url="${SERVER_URL}/${REPOSITORY}"
+          short_sha="${source_sha:0:12}"
+          created="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          {
+            echo "source_sha=$source_sha"
+            echo "short_sha=$short_sha"
+            echo "image_reference=$image_reference"
+            echo "source_url=$source_url"
+            echo "created=$created"
+            echo "title=${REPOSITORY_NAME:-rails-application}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Check out certified source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.identity.outputs.source_sha }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and publish multi-platform image
+        id: build
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          pull: true
+          tags: |
+            ${{ steps.identity.outputs.image_reference }}:sha-${{ steps.identity.outputs.short_sha }}
+            ${{ steps.identity.outputs.image_reference }}:main
+          build-args: |
+            OCI_SOURCE=${{ steps.identity.outputs.source_url }}
+            OCI_REVISION=${{ steps.identity.outputs.source_sha }}
+            OCI_CREATED=${{ steps.identity.outputs.created }}
+            OCI_VERSION=0.0.0-dev+${{ steps.identity.outputs.short_sha }}
+            OCI_TITLE=${{ steps.identity.outputs.title }}
+            OCI_DESCRIPTION=Container image built from ${{ github.repository }}
+          provenance: mode=max
+          sbom: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Generate GitHub artifact attestation
+        if: github.event.repository.visibility == 'public' || vars.ENABLE_GITHUB_ATTESTATIONS == 'true'
+        uses: actions/attest@v4
+        with:
+          subject-name: ${{ steps.identity.outputs.image_reference }}
+          subject-digest: ${{ steps.build.outputs.digest }}
+          push-to-registry: true
+
+      - name: Verify published image by digest
+        env:
+          IMAGE_REFERENCE: ${{ steps.identity.outputs.image_reference }}
+          IMAGE_DIGEST: ${{ steps.build.outputs.digest }}
+          SOURCE_URL: ${{ steps.identity.outputs.source_url }}
+          SOURCE_SHA: ${{ steps.identity.outputs.source_sha }}
+        run: |
+          set -euo pipefail
+          docker buildx imagetools inspect "${IMAGE_REFERENCE}@${IMAGE_DIGEST}"
+          docker pull --platform linux/amd64 "${IMAGE_REFERENCE}@${IMAGE_DIGEST}"
+          test "$(docker image inspect --format '{{.Config.User}}' "${IMAGE_REFERENCE}@${IMAGE_DIGEST}")" = "rails"
+          test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.source"}}' "${IMAGE_REFERENCE}@${IMAGE_DIGEST}")" = "$SOURCE_URL"
+          test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.revision"}}' "${IMAGE_REFERENCE}@${IMAGE_DIGEST}")" = "$SOURCE_SHA"
+          test "$(docker image inspect --format '{{json .Config.Healthcheck.Test}}' "${IMAGE_REFERENCE}@${IMAGE_DIGEST}")" != "null"
+          test "$(docker run --rm --entrypoint id "${IMAGE_REFERENCE}@${IMAGE_DIGEST}" -u)" != "0"
+          mkdir -p tmp/ci
+          cat > tmp/ci/published-container.txt <<EVIDENCE
+          repository=${GITHUB_REPOSITORY}
+          source=${SOURCE_URL}
+          revision=${SOURCE_SHA}
+          image=${IMAGE_REFERENCE}
+          digest=${IMAGE_DIGEST}
+          immutable_reference=${IMAGE_REFERENCE}@${IMAGE_DIGEST}
+          commit_tag=${IMAGE_REFERENCE}:sha-${SOURCE_SHA:0:12}
+          moving_tag=${IMAGE_REFERENCE}:main
+          platforms=linux/amd64,linux/arm64
+          EVIDENCE
+
+      - name: Upload publication evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: container-publication-${{ steps.identity.outputs.short_sha }}
+          path: tmp/ci/published-container.txt
+          if-no-files-found: error

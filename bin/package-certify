@@ -3,9 +3,12 @@ set -euo pipefail
 
 source_commit="${SOURCE_COMMIT:-${GITHUB_SHA:-local}}"
 source_created="${SOURCE_CREATED:-1970-01-01T00:00:00Z}"
-image_primary="${IMAGE_NAME:-rails-hotwire-platform:ci}"
-image_repeat="${REPEAT_IMAGE_NAME:-rails-hotwire-platform:ci-repeat}"
+source_repository="${SOURCE_REPOSITORY_URL:-local://repository}"
+image_primary="${IMAGE_NAME:-rails-application:ci}"
+image_repeat="${REPEAT_IMAGE_NAME:-rails-application:ci-repeat}"
 source_version="${SOURCE_VERSION:-0.0.0-dev+${source_commit:0:12}}"
+oci_title="${OCI_TITLE:-Rails Application}"
+oci_description="${OCI_DESCRIPTION:-Rails and Hotwire application container}"
 
 mkdir -p tmp/ci
 bundle check
@@ -18,9 +21,12 @@ build_image() {
   docker build \
     --no-cache \
     --provenance=false \
+    --build-arg OCI_SOURCE="$source_repository" \
     --build-arg OCI_REVISION="$source_commit" \
     --build-arg OCI_CREATED="$source_created" \
     --build-arg OCI_VERSION="$source_version" \
+    --build-arg OCI_TITLE="$oci_title" \
+    --build-arg OCI_DESCRIPTION="$oci_description" \
     --tag "$tag" . 2>&1 | tee "$log"
 }
 
@@ -52,6 +58,7 @@ primary_id="$(docker image inspect --format '{{.Id}}' "$image_primary")"
 repeat_id="$(docker image inspect --format '{{.Id}}' "$image_repeat")"
 payload_sha="$(sha256sum tmp/ci/payload-primary.txt | cut -d' ' -f1)"
 {
+  echo "source_repository=$source_repository"
   echo "source_commit=$source_commit"
   echo "source_created=$source_created"
   echo "primary_image_id=$primary_id"
@@ -62,8 +69,7 @@ payload_sha="$(sha256sum tmp/ci/payload-primary.txt | cut -d' ' -f1)"
   echo "excluded_native_build_logs=gem_make.out,mkmf.log"
 } > tmp/ci/reproducibility.log
 
-expected_source="https://github.com/csescobar/rails-hotwire-platform"
-test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.source"}}' "$image_primary")" = "$expected_source"
+test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.source"}}' "$image_primary")" = "$source_repository"
 test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.revision"}}' "$image_primary")" = "$source_commit"
 test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.created"}}' "$image_primary")" = "$source_created"
 test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.licenses"}}' "$image_primary")" = "Apache-2.0"
@@ -86,7 +92,7 @@ docker run --rm --entrypoint bash "$image_primary" -lc '
   ! bundle show rubocop >/dev/null 2>&1
 '
 
-SOURCE_COMMIT="$source_commit" SOURCE_CREATED="$source_created" IMAGE_NAME="$image_primary" ruby bin/container-sbom
-SOURCE_COMMIT="$source_commit" SOURCE_CREATED="$source_created" IMAGE_NAME="$image_primary" ruby bin/packaging-manifest
+SOURCE_REPOSITORY_URL="$source_repository" SOURCE_COMMIT="$source_commit" SOURCE_CREATED="$source_created" IMAGE_NAME="$image_primary" ruby bin/container-sbom
+SOURCE_REPOSITORY_URL="$source_repository" SOURCE_COMMIT="$source_commit" SOURCE_CREATED="$source_created" IMAGE_NAME="$image_primary" ruby bin/packaging-manifest
 
 printf 'Reproducible packaging certification passed\n'
