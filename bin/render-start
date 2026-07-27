@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-persistence_root="${RENDER_PERSISTENCE_ROOT:-/rails/persistence}"
-storage_target="${persistence_root}/storage"
+persistence_root="${RENDER_PERSISTENCE_ROOT:-/rails/storage}"
 installation_target="${persistence_root}/installation"
+branding_target="${persistence_root}/branding"
 
-mkdir -p "$storage_target" "$installation_target" /rails/var
+mkdir -p "$persistence_root" "$installation_target" "$branding_target" /rails/var /rails/public/installation
 
-rm -rf /rails/storage /rails/var/installation
-ln -s "$storage_target" /rails/storage
+rm -rf /rails/var/installation /rails/public/installation/branding
 ln -s "$installation_target" /rails/var/installation
+ln -s "$branding_target" /rails/public/installation/branding
 
 if [[ $# -gt 0 ]]; then
   exec "$@"
