@@ -13,6 +13,7 @@ module Installation
       return test_database if @step.name == "database" && params[:commit] == "Test connection"
       return provision_database if @step.name == "database"
       return run_migrations if @step.name == "provisioning"
+      return complete_installation if @step.name == "platform_owner"
 
       head :method_not_allowed
     rescue ArgumentError, DatabaseConnector::ConnectionError, ExecutionLock::AlreadyLocked,
@@ -62,10 +63,17 @@ module Installation
       raise
     end
 
+    def complete_installation
+      ExecutionLock.new.synchronize { PlatformOwnerCreator.new.create!(platform_owner_attributes) }
+      transition_to!("completed", "platform_owner_created" => true, "completed_at" => Time.current.utc.iso8601)
+      session.delete(:installation_authorized)
+      redirect_to root_path, notice: "Installation completed. Sign in with the platform owner account."
+    end
+
     def load_step
       load_appearance if @step.name == "appearance"
       load_database if @step.name == "database"
-      @progress = ProgressStore.new.read if %w[database provisioning migrations].include?(@step.name)
+      @progress = ProgressStore.new.read if %w[database provisioning migrations platform_owner].include?(@step.name)
     end
 
     def load_appearance
@@ -87,6 +95,10 @@ module Installation
 
     def database_configuration
       DatabaseConfiguration.new(params.require(:database).permit(*DatabaseConfiguration::ATTRIBUTES))
+    end
+
+    def platform_owner_attributes
+      params.require(:platform_owner).permit(:email_address, :organization_name, :password, :password_confirmation)
     end
 
     def persist_database_metadata!(configuration)
