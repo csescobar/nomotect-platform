@@ -68,7 +68,11 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 ### Planned post-baseline refinement
 
-This refinement does not reopen the delivered `v0.2.0` baseline. It improves the authoring and interoperability contract of the existing design-token compiler.
+This refinement does not reopen the delivered `v0.2.0` baseline.
+
+**Existing audited baseline:** the current compiler reads manually authored `base.json`, `light.json` and `dark.json` token sources, validates matching light/dark semantic keys, deterministically generates browser-facing CSS custom properties, and fails CI when the generated CSS is stale.
+
+The following work replaces that authoring model with a validated, multi-output pipeline:
 
 - [ ] Make YAML the canonical, human-authored source for design-system settings and tokens.
 - [ ] Load YAML through a safe parser with aliases disabled unless explicitly required.
@@ -77,7 +81,7 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 - [ ] Generate browser-facing CSS custom properties and server-facing frozen Ruby structures from the same validated token model.
 - [ ] Add CI drift checks so generated JSON, CSS and Ruby outputs cannot diverge from the YAML source.
 
-**Target architecture:** YAML authoring source → safe loading and schema validation → deterministic JSON, CSS and Ruby outputs.
+**Target architecture:** YAML authoring source → safe loading and schema validation → normalized token model → deterministic JSON, CSS and frozen Ruby outputs.
 
 ## Epic 3 — Grid Engine
 
@@ -304,7 +308,7 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 
 - A general-purpose parser, complete language-level call graph and provider-native index are intentionally delegated to replaceable external providers.
 - Remote MCP transport remains deferred until authentication, authorization, deployment and operational contracts are designed.
-- Comprehensive public-API semantic-version breaking-change analysis, specialized i18n/design-system validators and broader multi-agent product workflows are outside the Epic 8 baseline. They may be considered in a separate future Repository Intelligence or Archontext roadmap and do not redefine Epic 9.
+- Comprehensive public-API semantic-version breaking-change analysis, specialized i18n/design-system validators and broader multi-agent product workflows are outside the Epic 8 baseline. They may be considered in a separate future product or Repository Intelligence roadmap and do not redefine Epic 9.
 
 **Target architecture:** source repository → external structural code-graph provider plus platform scanners → normalized governance graph → SQLite query store and deterministic committed snapshots → canonical `RepositoryIntelligence` façade → CLI, CI, generated documentation and MCP resources, tools and prompts.
 
@@ -318,6 +322,8 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 
 **Status:** ⏳ Planned
 
+### Release engineering and distribution
+
 - [ ] Establish a root `VERSION` file as the canonical released project version.
 - [ ] Add per-PR YAML change fragments with `none`, `patch`, `minor` or `major` release impact.
 - [ ] Require release-impact declarations and validate fragment structure in CI.
@@ -330,7 +336,37 @@ This refinement does not reopen the delivered `v0.2.0` baseline. It improves the
 - [ ] Add compatibility and upgrade tooling.
 - [ ] Separate commercial enterprise repository and integration contracts.
 
-**Exit criteria:** release engineering and distribution capabilities are implemented and CI is green. Completing Epic 9 does not authorize a stable `v1.0.0` release.
+### First-Run Installation and Provisioning
+
+- [ ] Detect incomplete installation independently for development and production environments.
+- [ ] Redirect all normal application requests to the current installation step until setup is complete, while preserving health checks and required static assets.
+- [ ] Open the local installation URL automatically from the development startup command where the operating environment supports it.
+- [ ] Protect production setup with a one-time, expiring bootstrap token, rate limits, secure cookies, CSRF protection and strict request-log redaction.
+- [ ] Allow development installations to import, export, edit and validate canonical design-system YAML tokens.
+- [ ] Provide light, dark and system-theme previews and apply the generated design system immediately after the appearance step is saved.
+- [ ] Support application name, logo, compact logo, favicon, default locale and supported-locale configuration.
+- [ ] Allow production deployments to disable full token editing while optionally retaining deployment-specific branding fields.
+- [ ] Test PostgreSQL connectivity through a temporary administrative connection that does not depend on the application Active Record database.
+- [ ] Collect the maintenance database, host, port, SSL mode and temporary administrative credentials without persisting or logging those credentials.
+- [ ] Provision the application database and application owner role with validated identifiers and minimum required privileges.
+- [ ] Support a future least-privilege split between database owner or migrator and runtime application roles.
+- [ ] Close the administrative connection and clear administrative credentials from process memory immediately after provisioning.
+- [ ] Persist only application database credentials through a pluggable secret-store contract suitable for local dotenv files, Rails credentials, container secrets or operator-managed environment variables.
+- [ ] Stream structured provisioning progress through the web interface without exposing connection strings, passwords or bootstrap tokens.
+- [ ] Make database creation, role creation, ownership assignment, secret persistence and migration execution idempotent and resumable.
+- [ ] Run migrations with the application or migration role and verify the resulting schema before account creation.
+- [ ] Create the initial platform owner with name, email, password, password confirmation, locale and time zone.
+- [ ] Create the initial organization and owner membership when required by the multi-tenant platform contract.
+- [ ] Record installation state before database availability in an environment-specific local marker and after migrations in a database-backed installation record.
+- [ ] Require both the local marker and database installation record so deleting one file cannot reopen an initialized production wizard.
+- [ ] Permanently invalidate the bootstrap token and deny all installation routes after successful completion.
+- [ ] Provide safe retry, manual-intervention and recovery states for interrupted provisioning.
+- [ ] Add clean-install, interrupted-install, concurrent-attempt, credential-redaction, traversal and production-like system tests.
+- [ ] Document email-address verification, email-change reconfirmation and resend controls as post-baseline authentication work; the bootstrap owner is trusted by the protected installation process.
+
+**Installation exit criteria:** a clean development checkout and a production-like deployment can reach the login screen through the protected wizard; generated design-system artifacts are deterministic; PostgreSQL is provisioned without retaining administrative credentials; migrations and initial-owner creation are resumable; concurrent setup is blocked; the completed wizard cannot be reopened; and installation security and recovery tests are green.
+
+**Epic 9 exit criteria:** release engineering, distribution, first-run installation and enterprise-extension capabilities are implemented and CI is green. Completing Epic 9 does not authorize a stable `v1.0.0` release.
 
 ## Epic 10 — Framework Validation and Release Readiness
 
