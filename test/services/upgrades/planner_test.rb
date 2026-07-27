@@ -57,11 +57,11 @@ module Upgrades
           "postgresql" => ">= 16.0.0, < 19.0.0",
           "contracts" => { "installation-state" => 1, "upgrade-history" => 1 }
         },
-        "backup" => { "required" => true, "evidence" => ["database_backup_id"] },
+        "backup" => { "required" => true, "evidence" => [ "database_backup_id" ] },
         "operations" => [
           { "id" => "verify-backup", "type" => "validation", "description" => "Verify backup evidence", "reversible" => true, "requires" => [] },
-          { "id" => "migrate", "type" => "database", "description" => "Run database migrations", "reversible" => false, "requires" => ["verify-backup"] },
-          { "id" => "validate", "type" => "validation", "description" => "Validate the upgraded application", "reversible" => true, "requires" => ["migrate"] }
+          { "id" => "migrate", "type" => "database", "description" => "Run database migrations", "reversible" => false, "requires" => [ "verify-backup" ] },
+          { "id" => "validate", "type" => "validation", "description" => "Validate the upgraded application", "reversible" => true, "requires" => [ "migrate" ] }
         ],
         "deprecations" => []
       }
