@@ -32,7 +32,7 @@ payload_manifest() {
   docker run --rm --entrypoint bash "$image" -lc '
     set -euo pipefail
     find /rails /usr/local/bundle -type f -print0 | sort -z | xargs -0 sha256sum
-    dpkg-query -W -f="${Package}\t${Version}\n" | sort
+    dpkg-query -W -f="\${Package}\t\${Version}\n" | sort
   '
 }
 
