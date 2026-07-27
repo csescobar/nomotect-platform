@@ -1,5 +1,6 @@
 module Installation
   class DatabaseConfiguration
+    SCHEMA_VERSION = 1
     SSL_MODES = %w[disable allow prefer require verify-ca verify-full].freeze
     IDENTIFIER = /\A[a-z][a-z0-9_]{0,62}\z/
 
@@ -39,6 +40,7 @@ module Installation
 
     def public_attributes
       {
+        "schema_version" => SCHEMA_VERSION,
         "host" => host,
         "port" => port,
         "maintenance_database" => maintenance_database,
