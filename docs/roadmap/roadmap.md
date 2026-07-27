@@ -76,6 +76,9 @@ This refinement does not reopen the delivered `v0.2.0` baseline.
 - [x] Treat JSON as a deterministic generated interoperability artifact rather than a hand-edited source.
 - [x] Generate browser-facing CSS custom properties and server-facing frozen Ruby structures from the same validated token model.
 - [x] Add CI drift checks so generated JSON, CSS and Ruby outputs cannot diverge from the YAML source.
+- [x] Define semantic typography roles for body, headings and code, including role-specific line heights.
+- [x] Preserve `font.family.sans` as a temporary compatibility alias for `font.family.body`.
+- [x] Migrate framework styles so controls inherit body typography, headings use the heading role and code-like elements use the monospace role.
 
 **Delivered architecture:** YAML authoring source → safe loading and schema validation → normalized token model → deterministic JSON, CSS and frozen Ruby outputs.
 
@@ -320,6 +323,8 @@ This refinement does not reopen the delivered `v0.2.0` baseline.
 
 **Status:** ⏳ Planned
 
+### Release engineering and distribution
+
 - [ ] Establish a root `VERSION` file as the canonical released project version.
 - [ ] Add per-PR YAML change fragments with `none`, `patch`, `minor` or `major` release impact.
 - [ ] Require release-impact declarations and validate fragment structure in CI.
@@ -334,35 +339,42 @@ This refinement does not reopen the delivered `v0.2.0` baseline.
 
 ### First-Run Installation and Provisioning
 
-- [ ] Detect incomplete installation independently for development and production.
-- [ ] Open the local installation URL automatically from the development launcher when practical.
-- [ ] Redirect all non-health and non-asset application requests to the active installation step until completion.
-- [ ] Protect production setup with a one-time, expiring bootstrap token, rate limiting and one concurrent installation session.
-- [ ] Import, export and validate the canonical design-system YAML configuration.
-- [ ] Provide structured token editing, light/dark/system preview and immediate application of newly generated design-system artifacts.
-- [ ] Configure the application name, default and supported locales, full logo, compact logo and favicon.
-- [ ] Allow production deployments to disable the complete token editor while optionally retaining limited branding configuration.
-- [ ] Test the PostgreSQL administrative connection without using the primary Active Record connection.
-- [ ] Provision the application database and owner role through a temporary direct PostgreSQL connection.
-- [ ] Support an optional least-privilege split between database migration ownership and application runtime access.
-- [ ] Never persist PostgreSQL administrative credentials and clear them after the temporary connection closes.
-- [ ] Redact database passwords, bootstrap tokens and connection strings from logs, audit events and error reports.
-- [ ] Persist only application database credentials through a pluggable secret-store contract suitable for local files, Rails credentials, container secrets or operator-managed environment variables.
-- [ ] Stream structured provisioning and migration progress to the browser through Turbo Streams.
-- [ ] Make role creation, database creation, ownership assignment, secret persistence and migrations idempotent and resumable.
-- [ ] Verify the migrated schema before allowing initial account creation.
-- [ ] Create the initial platform owner with name, email, password confirmation, locale and time zone.
-- [ ] Create the initial organization and owner membership atomically when required by the tenant contract.
-- [ ] Persist an environment-specific local installation marker before database availability and a database-backed installation record after migrations.
-- [ ] Require both local and database state checks so deleting one marker cannot reopen a completed production wizard.
-- [ ] Permanently disable installation routes and invalidate the bootstrap token after successful completion.
-- [ ] Provide retryable, manual-action and security-sensitive failure states with recovery guidance.
-- [ ] Add clean-install, interrupted-resume, concurrency, credential-redaction, route-lockout and production-like system tests.
-- [ ] Document email-address verification, email-change reconfirmation and resend controls as post-baseline authentication work; the bootstrap owner remains trusted by the protected installation process.
+- [ ] Detect incomplete installation independently for development and production environments.
+- [ ] Redirect all normal application requests to the current installation step until setup is complete, while preserving health checks and required static assets.
+- [ ] Open the local installation URL automatically from the development startup command where the operating environment supports it.
+- [ ] Protect production setup with a one-time, expiring bootstrap token, rate limits, secure cookies, CSRF protection and strict request-log redaction.
+- [ ] Allow development installations to import, export, edit and validate canonical design-system YAML tokens.
+- [ ] Configure body, heading and monospace font families, fallback stacks, role-specific weights and live previews for headings, body copy, controls, grids and code.
+- [ ] Validate that configured typography roles provide the required weights and safe fallback stacks.
+- [ ] Provide light, dark and system-theme previews and apply the generated design system immediately after the appearance step is saved.
+- [ ] Support application name, logo, compact logo, favicon, default locale and supported-locale configuration.
+- [ ] Support explicit font-delivery options: system stacks, self-hosted assets, approved external stylesheets and deployment-managed CDN URLs.
+- [ ] Generate validated `@font-face` and preload declarations for self-hosted fonts when enabled.
+- [ ] Enforce font file type, size, integrity, CSP, privacy, licensing-acknowledgment and performance policies.
+- [ ] Allow production deployments to disable full token editing while optionally retaining deployment-specific branding fields.
+- [ ] Test PostgreSQL connectivity through a temporary administrative connection that does not depend on the application Active Record database.
+- [ ] Collect the maintenance database, host, port, SSL mode and temporary administrative credentials without persisting or logging those credentials.
+- [ ] Provision the application database and application owner role with validated identifiers and minimum required privileges.
+- [ ] Support a future least-privilege split between database owner or migrator and runtime application roles.
+- [ ] Close the administrative connection and clear administrative credentials from process memory immediately after provisioning.
+- [ ] Persist only application database credentials through a pluggable secret-store contract suitable for local dotenv files, Rails credentials, container secrets or operator-managed environment variables.
+- [ ] Stream structured provisioning progress through the web interface without exposing connection strings, passwords or bootstrap tokens.
+- [ ] Make database creation, role creation, ownership assignment, secret persistence and migration execution idempotent and resumable.
+- [ ] Run migrations with the application or migration role and verify the resulting schema before account creation.
+- [ ] Create the initial platform owner with name, email, password, password confirmation, locale and time zone.
+- [ ] Create the initial organization and owner membership when required by the multi-tenant platform contract.
+- [ ] Record installation state before database availability in an environment-specific local marker and after migrations in a database-backed installation record.
+- [ ] Require both the local marker and database installation record so deleting one file cannot reopen an initialized production wizard.
+- [ ] Permanently invalidate the bootstrap token and deny all installation routes after successful completion.
+- [ ] Provide safe retry, manual-intervention and recovery states for interrupted provisioning.
+- [ ] Add clean-install, interrupted-install, concurrent-attempt, credential-redaction, traversal and production-like system tests.
+- [ ] Document email-address verification, email-change reconfirmation and resend controls as post-baseline authentication work; the bootstrap owner is trusted by the protected installation process.
 
-**First-run exit criteria:** a clean development checkout and production-like deployment can reach the login screen through the wizard; generated branding artifacts are deterministic; PostgreSQL administration credentials are never persisted or logged; interrupted provisioning resumes safely; the first platform owner can authenticate; concurrent or repeated setup is denied; and deleting only the local marker cannot reopen an initialized production system.
+**Deferred typography evolution:** token references, composite typography objects, responsive or fluid type scales, variable-font axes, per-component overrides and tenant-specific font assets remain future extensions unless required by the first-run implementation.
 
-**Exit criteria:** release engineering, first-run installation, distribution and enterprise-extension capabilities are implemented and CI is green. Completing Epic 9 does not authorize a stable `v1.0.0` release.
+**Installation exit criteria:** a clean development checkout and a production-like deployment can reach the login screen through the protected wizard; generated design-system artifacts are deterministic; PostgreSQL is provisioned without retaining administrative credentials; migrations and initial-owner creation are resumable; concurrent setup is blocked; the completed wizard cannot be reopened; and installation security and recovery tests are green.
+
+**Epic 9 exit criteria:** release engineering, distribution, first-run installation and enterprise-extension capabilities are implemented and CI is green. Completing Epic 9 does not authorize a stable `v1.0.0` release.
 
 ## Epic 10 — Framework Validation and Release Readiness
 
