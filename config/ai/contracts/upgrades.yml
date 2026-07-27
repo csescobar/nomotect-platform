@@ -9,6 +9,8 @@ owns:
   - backup_evidence
   - maintenance_control
   - execution_safety_gate
+  - resumable_upgrade_execution
+  - upgrade_operation_registry
 may_use:
   - installation_state
   - deployment_manifest
@@ -27,3 +29,4 @@ required_tests:
   - upgrades_installed_state_detector_test
   - upgrades_inspector_test
   - upgrades_backup_and_maintenance_test
+  - upgrades_executor_test
