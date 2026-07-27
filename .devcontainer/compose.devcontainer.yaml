@@ -1,0 +1,7 @@
+services:
+  web:
+    command: sleep infinity
+    environment:
+      CODESPACES: ${CODESPACES:-false}
+    volumes:
+      - ..:/rails:cached
