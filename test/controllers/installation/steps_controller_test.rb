@@ -4,12 +4,12 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @previous = ENV["INSTALLATION_ENABLED"]
     ENV["INSTALLATION_ENABLED"] = "true"
-    Rails.root.join("var/installation/state.test.json").delete if Rails.root.join("var/installation/state.test.json").exist?
+    state_path.delete if state_path.exist?
   end
 
   teardown do
     ENV["INSTALLATION_ENABLED"] = @previous
-    Rails.root.join("var/installation/state.test.json").delete if Rails.root.join("var/installation/state.test.json").exist?
+    state_path.delete if state_path.exist?
   end
 
   test "redirects normal requests to the active installation step" do
@@ -25,6 +25,12 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-installation-state='not_started']"
   end
 
+  test "preserves health endpoints while installation is incomplete" do
+    get health_path
+
+    assert_response :success
+  end
+
   test "completed state bypasses the installation gate" do
     Installation::StateStore.new.write!(state: "completed")
 
@@ -32,5 +38,11 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :redirect
     assert_not_equal "/installation/appearance", response.location
+  end
+
+  private
+
+  def state_path
+    Rails.root.join("var/installation/state.test.json")
   end
 end
