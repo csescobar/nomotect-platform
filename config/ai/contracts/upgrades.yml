@@ -6,6 +6,9 @@ owns:
   - upgrade_inspection
   - upgrade_preflight
   - upgrade_history
+  - backup_evidence
+  - maintenance_control
+  - execution_safety_gate
 may_use:
   - installation_state
   - deployment_manifest
@@ -23,3 +26,4 @@ invariants:
 required_tests:
   - upgrades_installed_state_detector_test
   - upgrades_inspector_test
+  - upgrades_backup_and_maintenance_test
