@@ -22,9 +22,8 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
-ARG BUNDLE_FROZEN=false
-COPY Gemfile* ./
-RUN bundle config set frozen "${BUNDLE_FROZEN}" && \
+COPY Gemfile Gemfile.lock ./
+RUN bundle config set frozen true && \
     bundle install && \
     rm -rf /root/.bundle "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
 
