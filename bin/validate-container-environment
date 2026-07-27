@@ -5,7 +5,6 @@ require "uri"
 
 class ContainerEnvironmentValidator
   REQUIRED = %w[DATABASE_URL SECRET_KEY_BASE].freeze
-  SENSITIVE = /(PASSWORD|SECRET|TOKEN|KEY|CREDENTIAL)/i
 
   def initialize(environment: ENV, output: $stderr)
     @environment = environment
@@ -54,4 +53,6 @@ class ContainerEnvironmentValidator
   end
 end
 
-exit(ContainerEnvironmentValidator.new.validate! ? 0 : 1)
+if $PROGRAM_NAME == __FILE__
+  exit(ContainerEnvironmentValidator.new.validate! ? 0 : 1)
+end
