@@ -6,7 +6,10 @@ on:
       - app/services/upgrades/**
       - test/services/upgrades/**
       - docs/contracts/upgrade-*.schema.json
+      - docs/contracts/installed-platform-state.schema.json
       - docs/upgrades/**
+      - config/ai/contracts/upgrades.yml
+      - bin/upgrade
       - bin/upgrade-contract-certify
       - .github/workflows/upgrade-contract.yml
   push:
@@ -15,7 +18,10 @@ on:
       - app/services/upgrades/**
       - test/services/upgrades/**
       - docs/contracts/upgrade-*.schema.json
+      - docs/contracts/installed-platform-state.schema.json
       - docs/upgrades/**
+      - config/ai/contracts/upgrades.yml
+      - bin/upgrade
       - bin/upgrade-contract-certify
       - .github/workflows/upgrade-contract.yml
 

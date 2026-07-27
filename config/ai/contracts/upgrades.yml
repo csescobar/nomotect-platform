@@ -1,0 +1,25 @@
+id: upgrades
+version: 1
+owns:
+  - upgrade_manifest
+  - installed_platform_state
+  - upgrade_inspection
+  - upgrade_preflight
+  - upgrade_history
+may_use:
+  - installation_state
+  - deployment_manifest
+  - database_schema
+  - generated_artifacts
+cannot_use:
+  - arbitrary_shell_execution
+  - secret_persistence
+  - state_mutation_during_inspection
+invariants:
+  - inspection and preflight are read-only
+  - compatibility evaluation fails closed when required observations are unavailable
+  - reports contain stable blocker and warning codes
+  - persisted operational evidence is credential-free
+required_tests:
+  - upgrades_installed_state_detector_test
+  - upgrades_inspector_test
