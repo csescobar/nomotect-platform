@@ -41,7 +41,7 @@ module Installation
     private
 
     def default_path
-      Rails.root.join("var/installation/appearance.#{Rails.env}.json")
+      Pathname(ENV.fetch("INSTALLATION_APPEARANCE_PATH", Rails.root.join("var/installation/appearance.#{Rails.env}.json").to_s))
     end
 
     def defaults
