@@ -60,6 +60,8 @@ jobs:
             tmp/ci/repository-readiness.json
             tmp/ci/first-generation.sha256
             tmp/ci/second-generation.sha256
+            tmp/ci/mcp-certification-responses.json
+            tmp/ci/repository-intelligence-certification.log
           if-no-files-found: error
 
       - name: Lint
