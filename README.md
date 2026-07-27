@@ -62,6 +62,8 @@ Run the complete local verification pipeline with:
 bash bin/ci
 ```
 
+The manual first-user procedure remains the current baseline until Epic 9 Phase 1 delivers the protected first-run installer.
+
 ## Platform core contracts
 
 - First-party session authentication and password reset
@@ -94,6 +96,14 @@ The canonical `RepositoryIntelligence` API powers:
 - typed validators, repository health, remediation guidance and readiness reporting;
 - clean-worktree certification covering deterministic regeneration, MCP journeys, provider failures, incremental equivalence and security boundaries.
 
+Epic 9 extends this governance model beyond source architecture. Repository Intelligence is planned to index and validate:
+
+- versioned installation-state and setup-configuration contracts;
+- upgrade plans, compatibility metadata and upgrade-history contracts;
+- deployment manifests, packaging profiles and required operational evidence;
+- references among design-system configuration, installed capabilities, releases and supported environments;
+- contract freshness, supported schema versions, missing ownership and operational documentation drift.
+
 Useful commands include:
 
 ```bash
@@ -106,11 +116,92 @@ ruby bin/repository-intelligence playbook list
 ruby bin/repository-intelligence mcp
 ```
 
+## Epic 9 architecture direction
+
+Epic 9 turns the repository into a platform that can be installed, packaged, upgraded, released, operated and extended through documented contracts.
+
+```text
+Browser or operator
+        │
+        ▼
+Installation Gate
+   ┌────┴───────────────┐
+   │                    │
+Installed          Not installed
+   │                    │
+   ▼                    ▼
+Rails application   Wizard Engine
+                         │
+             ┌───────────┼────────────┐
+             │           │            │
+        Appearance   Database   Platform Owner
+             │           │            │
+             └───────────┴────────────┘
+                         │
+                         ▼
+             Installation contracts
+                         │
+                         ▼
+              Repository Intelligence
+```
+
+The wizard engine is planned as reusable operational infrastructure for installation, upgrade, recovery and maintenance flows rather than as a one-off controller sequence.
+
+### First-run installation flow
+
+```text
+Application start
+        │
+        ▼
+Installation complete?
+   ┌────┴────┐
+   │         │
+  Yes        No
+   │         │
+   ▼         ▼
+Normal app   Protected installation session
+                 │
+                 ▼
+             Appearance
+                 │
+                 ▼
+        Database provisioning
+                 │
+                 ▼
+        Migrations and verification
+                 │
+                 ▼
+          Platform owner creation
+                 │
+                 ▼
+      Local + database completion evidence
+                 │
+                 ▼
+        Bootstrap token invalidated
+                 │
+                 ▼
+               Login
+```
+
 ## Current development status
 
 - ✅ Epics 0–8 are complete, covering project foundation, platform core, design system and internationalization, grid engine, domain framework and reference application, Enterprise Services, the Multi-Tenant Platform, Security and Privacy, and the AI Platform with Repository Intelligence.
-- ⏳ Epic 9 — Distribution and Enterprise Extensions is the next planned epic, covering canonical versioning, change fragments, changelog and release automation, distribution, compatibility tooling and enterprise repository contracts.
+- 🚧 **Epic 9 — Phase 1 is in progress.** Epic 9 covers First-Run Installation and Provisioning, Packaging and Distribution, the Upgrade Framework, Release Engineering, the Enterprise Extension Platform, Distribution Channels, Operational Readiness, Commercial Readiness, and Documentation and Operator Guides.
 - ⏳ Epic 10 remains planned for framework validation, release candidates and the stable `v1.0.0` release gate.
+
+### Epic 9 roadmap summary
+
+1. **First-Run Installation and Provisioning** — secure wizard, appearance, database provisioning, migrations and initial platform owner.
+2. **Packaging and Distribution** — supported containers, development environments and deployment profiles.
+3. **Upgrade Framework** — compatibility planning, resumable migrations, history and recovery guidance.
+4. **Release Engineering** — canonical versioning, change fragments, changelog, notes and release evidence.
+5. **Enterprise Extension Platform** — explicit external extension and compatibility contracts without community forks.
+6. **Distribution Channels** — verified release publication and provenance across supported channels.
+7. **Operational Readiness** — backup, restore, diagnostics, observability and support workflows.
+8. **Commercial Readiness** — neutral edition, entitlement and opt-in telemetry abstractions.
+9. **Documentation and Operator Guides** — tested installation, deployment, upgrade, recovery and extension documentation.
+
+Installation and upgrade contracts are cross-cutting: operational state, deployment manifests, compatibility metadata and evidence must be versioned, secret-free and validated by Repository Intelligence.
 
 The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and traceability source.
 
