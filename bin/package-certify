@@ -31,7 +31,9 @@ payload_manifest() {
   local image="$1"
   docker run --rm --entrypoint bash "$image" -lc '
     set -euo pipefail
-    find /rails /usr/local/bundle -type f -print0 | sort -z | xargs -0 sha256sum
+    find /rails /usr/local/bundle \
+      -path /rails/tmp/cache -prune -o \
+      -type f -print0 | sort -z | xargs -0 sha256sum
     dpkg-query -W -f="\${Package}\t\${Version}\n" | sort
   '
 }
@@ -55,6 +57,7 @@ payload_sha="$(sha256sum tmp/ci/payload-primary.txt | cut -d' ' -f1)"
   echo "repeat_image_id=$repeat_id"
   echo "normalized_payload_sha256=$payload_sha"
   echo "payload_equivalent=true"
+  echo "excluded_ephemeral_path=/rails/tmp/cache"
 } > tmp/ci/reproducibility.log
 
 expected_source="https://github.com/csescobar/rails-hotwire-platform"
