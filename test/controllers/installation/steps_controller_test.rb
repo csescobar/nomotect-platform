@@ -72,7 +72,7 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
 
   def form_authenticity_token
     get installation_path
-    css_select("input[name='authenticity_token']").first.fetch("value")
+    css_select("input[name='authenticity_token']").first["value"]
   end
 
   def state_path
