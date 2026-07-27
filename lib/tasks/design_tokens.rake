@@ -1,11 +1,13 @@
 namespace :design_tokens do
-  desc "Generate CSS from design token sources"
+  desc "Generate JSON, CSS and Ruby artifacts from the canonical YAML tokens"
   task generate: :environment do
     DesignTokens::Compiler.new.write!
   end
 
-  desc "Fail when design token sources and generated CSS diverge"
+  desc "Fail when generated design token artifacts diverge from YAML"
   task check: :environment do
-    abort "Generated design token CSS is stale. Run design_tokens:generate." unless DesignTokens::Compiler.new.current?
+    next if DesignTokens::Compiler.new.current?
+
+    abort "Generated design token artifacts are stale. Run design_tokens:generate."
   end
 end

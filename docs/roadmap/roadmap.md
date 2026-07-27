@@ -66,22 +66,23 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 **Delivery evidence:** PRs #5 through #10.
 
-### Planned post-baseline refinement
+### Post-baseline refinement
 
 This refinement does not reopen the delivered `v0.2.0` baseline.
 
-**Existing audited baseline:** the current compiler reads manually authored `base.json`, `light.json` and `dark.json` token sources, validates matching light/dark semantic keys, deterministically generates browser-facing CSS custom properties, and fails CI when the generated CSS is stale.
+- [x] Make YAML the canonical, human-authored source for design-system settings and tokens.
+- [x] Load YAML through a safe parser with aliases disabled.
+- [x] Validate normalized token data against a strict, versioned schema before generation.
+- [x] Treat JSON as a deterministic generated interoperability artifact rather than a hand-edited source.
+- [x] Generate browser-facing CSS custom properties and server-facing frozen Ruby structures from the same validated token model.
+- [x] Add CI drift checks so generated JSON, CSS and Ruby outputs cannot diverge from the YAML source.
+- [x] Define semantic typography roles for body, headings and code, including role-specific line heights.
+- [x] Preserve `font.family.sans` as a temporary compatibility alias for `font.family.body`.
+- [x] Migrate framework styles so controls inherit body typography, headings use the heading role and code-like elements use the monospace role.
 
-The following work replaces that authoring model with a validated, multi-output pipeline:
+**Delivered architecture:** YAML authoring source → safe loading and schema validation → normalized token model → deterministic JSON, CSS and frozen Ruby outputs.
 
-- [ ] Make YAML the canonical, human-authored source for design-system settings and tokens.
-- [ ] Load YAML through a safe parser with aliases disabled unless explicitly required.
-- [ ] Validate normalized token data against a strict schema before generation.
-- [ ] Treat JSON as a deterministic generated interoperability artifact rather than a hand-edited source.
-- [ ] Generate browser-facing CSS custom properties and server-facing frozen Ruby structures from the same validated token model.
-- [ ] Add CI drift checks so generated JSON, CSS and Ruby outputs cannot diverge from the YAML source.
-
-**Target architecture:** YAML authoring source → safe loading and schema validation → normalized token model → deterministic JSON, CSS and frozen Ruby outputs.
+**Delivery evidence:** Epic 2 design-token refinement PR.
 
 ## Epic 3 — Grid Engine
 
@@ -343,8 +344,13 @@ The following work replaces that authoring model with a validated, multi-output 
 - [ ] Open the local installation URL automatically from the development startup command where the operating environment supports it.
 - [ ] Protect production setup with a one-time, expiring bootstrap token, rate limits, secure cookies, CSRF protection and strict request-log redaction.
 - [ ] Allow development installations to import, export, edit and validate canonical design-system YAML tokens.
+- [ ] Configure body, heading and monospace font families, fallback stacks, role-specific weights and live previews for headings, body copy, controls, grids and code.
+- [ ] Validate that configured typography roles provide the required weights and safe fallback stacks.
 - [ ] Provide light, dark and system-theme previews and apply the generated design system immediately after the appearance step is saved.
 - [ ] Support application name, logo, compact logo, favicon, default locale and supported-locale configuration.
+- [ ] Support explicit font-delivery options: system stacks, self-hosted assets, approved external stylesheets and deployment-managed CDN URLs.
+- [ ] Generate validated `@font-face` and preload declarations for self-hosted fonts when enabled.
+- [ ] Enforce font file type, size, integrity, CSP, privacy, licensing-acknowledgment and performance policies.
 - [ ] Allow production deployments to disable full token editing while optionally retaining deployment-specific branding fields.
 - [ ] Test PostgreSQL connectivity through a temporary administrative connection that does not depend on the application Active Record database.
 - [ ] Collect the maintenance database, host, port, SSL mode and temporary administrative credentials without persisting or logging those credentials.
@@ -363,6 +369,8 @@ The following work replaces that authoring model with a validated, multi-output 
 - [ ] Provide safe retry, manual-intervention and recovery states for interrupted provisioning.
 - [ ] Add clean-install, interrupted-install, concurrent-attempt, credential-redaction, traversal and production-like system tests.
 - [ ] Document email-address verification, email-change reconfirmation and resend controls as post-baseline authentication work; the bootstrap owner is trusted by the protected installation process.
+
+**Deferred typography evolution:** token references, composite typography objects, responsive or fluid type scales, variable-font axes, per-component overrides and tenant-specific font assets remain future extensions unless required by the first-run implementation.
 
 **Installation exit criteria:** a clean development checkout and a production-like deployment can reach the login screen through the protected wizard; generated design-system artifacts are deterministic; PostgreSQL is provisioned without retaining administrative credentials; migrations and initial-owner creation are resumable; concurrent setup is blocked; the completed wizard cannot be reopened; and installation security and recovery tests are green.
 
