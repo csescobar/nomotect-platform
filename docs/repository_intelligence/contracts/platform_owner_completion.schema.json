@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rails-hotwire-platform.local/contracts/platform-owner-completion.schema.json",
+  "title": "Platform Owner Completion Contract",
+  "type": "object",
+  "required": ["contract_version", "status", "owner_user_id", "organization_id"],
+  "properties": {
+    "contract_version": { "const": 1 },
+    "status": { "const": "completed" },
+    "owner_user_id": { "type": ["integer", "string"] },
+    "organization_id": { "type": ["integer", "string"] }
+  },
+  "additionalProperties": false
+}
