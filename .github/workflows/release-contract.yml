@@ -58,4 +58,6 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+      - name: Prepare database
+        run: ruby bin/rails db:prepare
       - run: bash bin/release-contract-certify
