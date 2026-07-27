@@ -319,62 +319,230 @@ This refinement does not reopen the delivered `v0.2.0` baseline.
 
 **Exit criteria:** satisfied. Provider-specific indexes are replaceable and disposable; the normalized governance graph can be regenerated from source; MCP resources, tools and prompts operate through shared application services; generated artifacts match a clean CI rebuild; accepted deferrals are recorded; and the final certification run is fully green.
 
-## Epic 9 — Distribution and Enterprise Extensions
+## Epic 9 — Distribution, Installation and Enterprise Extensions
 
-**Status:** ⏳ Planned
+**Status:** 🚧 In progress — Phase 1
 
-### Release engineering and distribution
+**Objective:** transform the repository from a developer-oriented source project into a distributable, installable, upgradeable and professionally extensible platform while preserving a complete Apache-licensed community core.
+
+### Cross-cutting — Installation and Upgrade Contracts
+
+**Objective:** define machine-readable operational contracts that remain stable across installation, deployment and upgrade workflows.
+
+**Capabilities:**
+
+- [ ] Version installation-state, setup-configuration, design-system, deployment-manifest, installed-capability and upgrade-history schemas.
+- [ ] Store metadata required for validation without persisting administrative credentials or runtime secrets.
+- [ ] Define compatibility, migration and deprecation rules for operational contract versions.
+- [ ] Publish schemas and examples for humans, automation and external deployment tooling.
+- [ ] Register installation, upgrade and deployment contracts in the Repository Intelligence graph.
+- [ ] Validate contract structure, references, supported versions, drift and required evidence through Repository Intelligence and CI.
+
+**Deliverables:** versioned schemas, example manifests, validation rules, Repository Intelligence nodes and edges, CI evidence and compatibility documentation.
+
+**Definition of Done:** installation, upgrade and deployment artifacts have versioned schemas; invalid or stale contracts fail validation; secrets are excluded by contract; and Repository Intelligence can describe, locate and validate the artifacts.
+
+### Phase 1 — First-Run Installation and Provisioning
+
+**Objective:** provide a secure, resumable first-run experience that configures appearance, provisions PostgreSQL, creates the initial platform owner and permanently closes the installer after completion.
+
+**Capabilities:**
+
+- [ ] Implement a reusable wizard engine, installation namespace, step registry and explicit state machine suitable for future upgrade, recovery and maintenance flows.
+- [ ] Detect incomplete installation independently for development and production environments.
+- [ ] Redirect normal application requests to the active installation step while preserving health checks, required assets and protected installation routes.
+- [ ] Open the local installation URL from the development launcher when the operating environment supports it.
+- [ ] Protect production setup with a one-time expiring bootstrap token, rate limiting, secure cookies, CSRF protection, strict log redaction and a single concurrent installation lock.
+- [ ] Import, export, edit and validate canonical design-system YAML tokens in development installations.
+- [ ] Configure body, heading and monospace font families, fallback stacks, role-specific weights and live previews for headings, body copy, controls, grids and code.
+- [ ] Validate required font weights and safe fallback stacks.
+- [ ] Preview light, dark and system themes and apply generated design-system artifacts immediately after saving appearance settings.
+- [ ] Configure application name, logo, compact logo, favicon, default locale and supported locales.
+- [ ] Support system stacks, self-hosted assets, approved external stylesheets and deployment-managed CDN font URLs.
+- [ ] Generate validated `@font-face` and preload declarations for enabled self-hosted fonts.
+- [ ] Enforce font file type, size, integrity, CSP, privacy, licensing acknowledgement and performance policies.
+- [ ] Allow production deployments to disable full token editing while retaining explicitly permitted branding fields.
+- [ ] Test PostgreSQL connectivity through a temporary administrative connection independent of the application Active Record database.
+- [ ] Collect maintenance database, host, port, SSL mode and temporary administrative credentials without persisting or logging them.
+- [ ] Provision the application database and owner role with validated identifiers and minimum required privileges.
+- [ ] Preserve an extension point for separate database-owner or migrator and runtime application roles.
+- [ ] Close the administrative connection and clear administrative credentials from process memory immediately after provisioning.
+- [ ] Persist only application database credentials through a pluggable secret-store contract for local dotenv files, Rails credentials, container secrets or operator-managed environment variables.
+- [ ] Stream structured provisioning, migration and recovery progress without exposing connection strings, passwords or bootstrap tokens.
+- [ ] Make role creation, database creation, ownership assignment, secret persistence and migrations idempotent and resumable.
+- [ ] Run migrations with the application or migration role and verify the resulting schema.
+- [ ] Create the initial platform owner with name, email, password, password confirmation, locale and time zone.
+- [ ] Create the initial organization and owner membership required by the multi-tenant contract.
+- [ ] Record pre-database state in an environment-specific local marker and post-migration state in a database-backed installation record.
+- [ ] Require local and database completion evidence so deleting one file cannot reopen an initialized production wizard.
+- [ ] Permanently invalidate the bootstrap token and deny installation routes after successful completion.
+- [ ] Provide safe retry, manual-intervention and recovery states for interrupted provisioning.
+- [ ] Add clean-install, interrupted-install, concurrent-attempt, credential-redaction, traversal, replay and production-like system tests.
+- [ ] Record email-address verification, email-change reconfirmation and resend controls as post-baseline authentication work; trust the bootstrap owner through the protected installation process.
+
+**Deliverables:** installation architecture and security documentation; wizard and state-machine contracts; appearance, database and owner steps; secret-store and progress contracts; installation records; development launcher integration; recovery guidance; and certification evidence.
+
+**Dependencies:** Epic 2 design-token pipeline, Epic 6 multi-tenant ownership contracts, Epic 7 security controls and Epic 8 Repository Intelligence validation.
+
+**Definition of Done:** clean development and production-like deployments reach login through the protected wizard; appearance artifacts are deterministic; PostgreSQL is provisioned without retaining administrative credentials; migrations and owner creation resume safely; concurrent or replayed setup is blocked; completed installations cannot reopen the wizard; and security, recovery and end-to-end tests are green.
+
+**Deferred typography evolution:** token references, composite typography objects, responsive or fluid type scales, variable-font axes, per-component overrides and tenant-specific font assets remain future extensions unless required by the first-run implementation.
+
+### Phase 2 — Packaging and Distribution
+
+**Objective:** provide supported, repeatable ways to start and deploy the platform without requiring intimate Rails repository knowledge.
+
+**Capabilities:**
+
+- [ ] Define supported Docker and Podman Compose development and production profiles.
+- [ ] Publish versioned OCI images with non-root execution, health checks and explicit persistence boundaries.
+- [ ] Provide Dev Container and Codespaces configurations.
+- [ ] Document and validate deployment profiles for Kamal and selected hosted platforms where maintainable.
+- [ ] Validate required environment variables, secrets, writable paths and external service dependencies before boot.
+- [ ] Keep packaging outputs reproducible and linked to source, SBOM and provenance metadata.
+
+**Deliverables:** container definitions, compose profiles, development-container configuration, deployment examples, environment contract and packaging certification.
+
+**Dependencies:** Phase 1 installation contracts and Phase 4 canonical version metadata.
+
+**Definition of Done:** a clean environment can start a supported development or production-like distribution using published commands; images are versioned, non-root and reproducible; persistent data survives replacement; and packaging tests are green.
+
+### Phase 3 — Upgrade Framework
+
+**Objective:** make supported upgrades observable, repeatable and recoverable rather than undocumented migration events.
+
+**Capabilities:**
+
+- [ ] Introduce versioned upgrade manifests and compatibility checks.
+- [ ] Reuse the wizard engine for upgrade and recovery flows.
+- [ ] Detect source version, target version, required migrations, contract changes and operator actions.
+- [ ] Require pre-upgrade backups and verify backup evidence where supported.
+- [ ] Execute database, configuration and generated-artifact migrations with structured progress.
+- [ ] Record upgrade history and post-upgrade validation evidence.
+- [ ] Produce rollback or forward-recovery guidance for non-reversible changes.
+
+**Deliverables:** upgrade contract, planner, runner, history model, recovery guide, compatibility matrix and upgrade certification fixtures.
+
+**Dependencies:** Phase 1 wizard and operational contracts, Phase 4 release metadata and Phase 7 backup validation.
+
+**Definition of Done:** at least one representative supported-version upgrade succeeds from planning through validation; interrupted upgrades resume or fail safely; history and evidence are recorded; and incompatibilities are explained before destructive work begins.
+
+### Phase 4 — Release Engineering
+
+**Objective:** establish one deterministic source of truth for versioning, change impact, changelogs, release notes and release artifacts.
+
+**Capabilities:**
 
 - [ ] Establish a root `VERSION` file as the canonical released project version.
 - [ ] Add per-PR YAML change fragments with `none`, `patch`, `minor` or `major` release impact.
 - [ ] Require release-impact declarations and validate fragment structure in CI.
-- [ ] Generate and maintain `CHANGELOG.md` from accepted change fragments using Added, Changed, Deprecated, Removed, Fixed and Security sections.
-- [ ] Reconstruct the historical changelog from merged PRs and release evidence after the scheduled Epic 4–8 implementation pipeline is complete.
-- [ ] Generate GitHub release notes from the same normalized release metadata.
-- [ ] Add release preparation automation that updates `VERSION`, consumes fragments, updates the changelog and opens a release PR.
-- [ ] Verify consistency between `VERSION`, Git tags, release notes, SBOM and provenance metadata.
-- [ ] Extract proven modules into versioned gems where justified.
-- [ ] Add compatibility and upgrade tooling.
-- [ ] Separate commercial enterprise repository and integration contracts.
+- [ ] Generate and maintain `CHANGELOG.md` from accepted fragments using Added, Changed, Deprecated, Removed, Fixed and Security sections.
+- [ ] Reconstruct historical changelog entries from merged pull requests and release evidence.
+- [ ] Generate GitHub release notes, migration notes and upgrade guidance from normalized release metadata.
+- [ ] Add release preparation automation that updates `VERSION`, consumes fragments, updates documentation and opens a release pull request.
+- [ ] Verify consistency among `VERSION`, Git tags, release notes, compatibility data, SBOM and provenance metadata.
+- [ ] Detect public-contract and operational-contract changes that require release-impact escalation.
 
-### First-Run Installation and Provisioning
+**Deliverables:** version contract, change-fragment schema, changelog, release preparation workflow, release-evidence manifest and Repository Intelligence release queries.
 
-- [ ] Detect incomplete installation independently for development and production environments.
-- [ ] Redirect all normal application requests to the current installation step until setup is complete, while preserving health checks and required static assets.
-- [ ] Open the local installation URL automatically from the development startup command where the operating environment supports it.
-- [ ] Protect production setup with a one-time, expiring bootstrap token, rate limits, secure cookies, CSRF protection and strict request-log redaction.
-- [ ] Allow development installations to import, export, edit and validate canonical design-system YAML tokens.
-- [ ] Configure body, heading and monospace font families, fallback stacks, role-specific weights and live previews for headings, body copy, controls, grids and code.
-- [ ] Validate that configured typography roles provide the required weights and safe fallback stacks.
-- [ ] Provide light, dark and system-theme previews and apply the generated design system immediately after the appearance step is saved.
-- [ ] Support application name, logo, compact logo, favicon, default locale and supported-locale configuration.
-- [ ] Support explicit font-delivery options: system stacks, self-hosted assets, approved external stylesheets and deployment-managed CDN URLs.
-- [ ] Generate validated `@font-face` and preload declarations for self-hosted fonts when enabled.
-- [ ] Enforce font file type, size, integrity, CSP, privacy, licensing-acknowledgment and performance policies.
-- [ ] Allow production deployments to disable full token editing while optionally retaining deployment-specific branding fields.
-- [ ] Test PostgreSQL connectivity through a temporary administrative connection that does not depend on the application Active Record database.
-- [ ] Collect the maintenance database, host, port, SSL mode and temporary administrative credentials without persisting or logging those credentials.
-- [ ] Provision the application database and application owner role with validated identifiers and minimum required privileges.
-- [ ] Support a future least-privilege split between database owner or migrator and runtime application roles.
-- [ ] Close the administrative connection and clear administrative credentials from process memory immediately after provisioning.
-- [ ] Persist only application database credentials through a pluggable secret-store contract suitable for local dotenv files, Rails credentials, container secrets or operator-managed environment variables.
-- [ ] Stream structured provisioning progress through the web interface without exposing connection strings, passwords or bootstrap tokens.
-- [ ] Make database creation, role creation, ownership assignment, secret persistence and migration execution idempotent and resumable.
-- [ ] Run migrations with the application or migration role and verify the resulting schema before account creation.
-- [ ] Create the initial platform owner with name, email, password, password confirmation, locale and time zone.
-- [ ] Create the initial organization and owner membership when required by the multi-tenant platform contract.
-- [ ] Record installation state before database availability in an environment-specific local marker and after migrations in a database-backed installation record.
-- [ ] Require both the local marker and database installation record so deleting one file cannot reopen an initialized production wizard.
-- [ ] Permanently invalidate the bootstrap token and deny all installation routes after successful completion.
-- [ ] Provide safe retry, manual-intervention and recovery states for interrupted provisioning.
-- [ ] Add clean-install, interrupted-install, concurrent-attempt, credential-redaction, traversal and production-like system tests.
-- [ ] Document email-address verification, email-change reconfirmation and resend controls as post-baseline authentication work; the bootstrap owner is trusted by the protected installation process.
+**Dependencies:** Epic 8 Repository Intelligence and the cross-cutting operational contracts.
 
-**Deferred typography evolution:** token references, composite typography objects, responsive or fluid type scales, variable-font axes, per-component overrides and tenant-specific font assets remain future extensions unless required by the first-run implementation.
+**Definition of Done:** one command or workflow prepares a deterministic release pull request; CI rejects inconsistent version and release evidence; generated notes and changelog agree; and release metadata is queryable through Repository Intelligence.
 
-**Installation exit criteria:** a clean development checkout and a production-like deployment can reach the login screen through the protected wizard; generated design-system artifacts are deterministic; PostgreSQL is provisioned without retaining administrative credentials; migrations and initial-owner creation are resumable; concurrent setup is blocked; the completed wizard cannot be reopened; and installation security and recovery tests are green.
+### Phase 5 — Enterprise Extension Platform
 
-**Epic 9 exit criteria:** release engineering, distribution, first-run installation and enterprise-extension capabilities are implemented and CI is green. Completing Epic 9 does not authorize a stable `v1.0.0` release.
+**Objective:** allow separately licensed enterprise capabilities to integrate without forking, weakening or removing essential community functionality.
+
+**Capabilities:**
+
+- [ ] Define community and enterprise repository boundaries.
+- [ ] Introduce extension, capability and dependency contracts.
+- [ ] Validate compatible platform and extension versions before loading.
+- [ ] Provide explicit registration hooks instead of monkey patches or implicit constant replacement.
+- [ ] Isolate extension configuration, migrations, routes, assets and documentation.
+- [ ] Define fail-closed behavior when an extension is missing, incompatible or invalid.
+- [ ] Extract proven community modules into versioned gems only where independent distribution is justified.
+
+**Deliverables:** extension API, capability registry integration, compatibility contract, example extension, enterprise repository contract and isolation tests.
+
+**Dependencies:** Phase 3 compatibility tooling and Phase 4 canonical versioning.
+
+**Definition of Done:** an example external extension can register and operate through documented contracts without modifying community source; incompatible extensions are rejected safely; and the community edition remains complete and testable independently.
+
+### Phase 6 — Distribution Channels
+
+**Objective:** publish verified release artifacts through supported channels with consistent identity and provenance.
+
+**Capabilities:**
+
+- [ ] Publish GitHub Releases and GHCR images from approved release metadata.
+- [ ] Evaluate Docker Hub, RubyGems and Helm distribution only for artifacts with clear support and ownership contracts.
+- [ ] Sign or attest release artifacts where supported.
+- [ ] Publish checksums, SBOMs, provenance, compatibility data and upgrade notes beside each release.
+- [ ] Verify channel contents against the canonical release-evidence manifest.
+
+**Deliverables:** channel workflows, signed or attested artifacts, release index and verification documentation.
+
+**Dependencies:** Phases 2 and 4.
+
+**Definition of Done:** approved releases publish identical versioned artifacts and evidence to every supported channel; channel drift is detected; and consumers can verify artifact origin and integrity.
+
+### Phase 7 — Operational Readiness
+
+**Objective:** provide operators with tested backup, restore, diagnostics, observability and support workflows.
+
+**Capabilities:**
+
+- [ ] Define backup and restore contracts for PostgreSQL, uploaded files, generated configuration and installation metadata.
+- [ ] Validate restore procedures in production-like environments.
+- [ ] Provide diagnostic and support bundles with mandatory secret and personal-data redaction.
+- [ ] Expose installation, deployment, job, storage and integration health signals.
+- [ ] Document disaster-recovery objectives, failure modes and manual interventions.
+- [ ] Test rolling replacement, restart, backup, restore and degraded-dependency scenarios.
+
+**Deliverables:** operator runbooks, backup and restore tooling, support-bundle contract, health dashboard inputs and operational certification evidence.
+
+**Dependencies:** Phases 1–3 and existing observability, privacy and security contracts.
+
+**Definition of Done:** a production-like deployment can be backed up, destroyed and restored using documented workflows; diagnostics omit secrets and protected data; failure modes are observable; and recovery tests are green.
+
+### Phase 8 — Commercial Readiness
+
+**Objective:** prepare neutral extension points for commercial operation without embedding proprietary policy in the community core.
+
+**Capabilities:**
+
+- [ ] Define edition and entitlement abstractions without hard-coding a licensing vendor.
+- [ ] Define customer, support and installation identifiers with privacy and rotation rules.
+- [ ] Provide opt-in telemetry contracts with transparent collection, redaction and disablement behavior.
+- [ ] Define enterprise support metadata and diagnostic consent boundaries.
+- [ ] Ensure unavailable commercial services never disable essential community functionality.
+
+**Deliverables:** edition contract, entitlement interface, telemetry contract, privacy documentation and no-license community-mode tests.
+
+**Dependencies:** Phase 5 extension boundaries and Phase 7 operational diagnostics.
+
+**Definition of Done:** commercial integrations can consume stable neutral contracts externally; community operation requires no license service; telemetry is opt-in and inspectable; and privacy and security reviews are complete.
+
+### Phase 9 — Documentation and Operator Guides
+
+**Objective:** make installation, deployment, operation, extension and upgrade workflows usable without undocumented maintainer knowledge.
+
+**Capabilities:**
+
+- [ ] Publish administrator, installation, deployment, upgrade, recovery, operator and enterprise-extension guides.
+- [ ] Document supported environments, compatibility matrices and lifecycle policies.
+- [ ] Provide architecture, state-machine, sequence, security and recovery diagrams for operational flows.
+- [ ] Add copy-pasteable examples that are continuously tested where practical.
+- [ ] Connect every operational contract and guide to Repository Intelligence ownership and freshness checks.
+
+**Deliverables:** complete operational documentation set, tested examples, diagrams, troubleshooting index and documentation-readiness evidence.
+
+**Dependencies:** documentation follows the contracts and evidence delivered by Phases 1–8.
+
+**Definition of Done:** a new operator can install, deploy, upgrade, recover and diagnose a supported environment using published documentation; examples match current behavior; and Repository Intelligence reports no release-blocking documentation drift.
+
+**Epic 9 exit criteria:** all nine phases and cross-cutting contracts satisfy their Definitions of Done; installation, packaging, upgrades, releases, extensions, distribution and operations are supported by green production-like certification; Repository Intelligence validates operational contracts and manifests; and CI is green. Completing Epic 9 does not authorize a stable `v1.0.0` release.
 
 ## Epic 10 — Framework Validation and Release Readiness
 
