@@ -110,6 +110,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
       - name: Validate Compose profiles
         env:
           POSTGRES_PASSWORD: ci-postgres-password
@@ -125,6 +130,17 @@ jobs:
           bash -n .devcontainer/post-create.sh
           bash -n .devcontainer/post-start.sh
           docker compose -f compose.yaml -f .devcontainer/compose.devcontainer.yaml config --quiet
+
+      - name: Validate Kamal deployment contract
+        env:
+          KAMAL_SERVER: 192.0.2.10
+          KAMAL_HOST: platform.example.com
+          KAMAL_REGISTRY_USERNAME: ci-operator
+          KAMAL_REGISTRY_PASSWORD: ci-registry-token
+          DATABASE_URL: postgresql://runtime:ci-password@database.example.com/platform
+          SECRET_KEY_BASE: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          INSTALLATION_BOOTSTRAP_TOKEN: ci-bootstrap-token
+        run: bash bin/kamal-validate
 
       - name: Build production image
         run: |
