@@ -275,12 +275,12 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 - [x] Versioned upgrade manifests and compatibility checks.
 - [ ] Reuse the wizard engine for upgrade and recovery flows.
 - [x] Detect source version, target version, migrations, contract changes and operator actions.
-- [ ] Require and verify pre-upgrade backup evidence where supported.
+- [x] Require and verify pre-upgrade backup evidence where supported.
 - [ ] Run database, configuration and generated-artifact migrations with structured progress.
 - [ ] Record upgrade history and post-upgrade validation evidence.
 - [ ] Produce rollback or forward-recovery guidance.
 
-**Delivery evidence:** PR #50 adds the versioned upgrade-manifest and upgrade-history contracts, strict compatibility planning, architecture policy, tests and CI certification. PR #51 adds the read-only installed-state detector, inspection and preflight engine, stable readiness findings, operator CLI and Repository Intelligence contract.
+**Delivery evidence:** PR #50 adds the versioned upgrade-manifest and upgrade-history contracts and compatibility planning. PR #51 adds read-only inspection and preflight. PR #52 adds backup-evidence verification, maintenance controls and the fail-closed execution safety gate.
 
 ### Phase 4 — Release Engineering
 
