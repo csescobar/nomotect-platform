@@ -29,6 +29,7 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
 
   test "saves appearance and advances to database" do
     patch installation_step_path("appearance"), params: {
+      authenticity_token: form_authenticity_token,
       appearance: {
         application_name: "Acme Platform",
         default_locale: "en",
@@ -36,7 +37,6 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
       }
     }
 
-    assert_response :redirect, response.body
     assert_redirected_to installation_step_path("database")
     assert_equal "database", Installation::StateStore.new.read.fetch("state")
     assert_equal "Acme Platform", Installation::AppearanceStore.new.read.fetch("application_name")
@@ -44,6 +44,7 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
 
   test "rejects an unsupported default locale" do
     patch installation_step_path("appearance"), params: {
+      authenticity_token: form_authenticity_token,
       appearance: {
         application_name: "Acme Platform",
         default_locale: "pt-BR",
@@ -68,6 +69,11 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
   end
 
   private
+
+  def form_authenticity_token
+    get installation_path
+    css_select("input[name='authenticity_token']").first.fetch("value")
+  end
 
   def state_path
     Rails.root.join("var/installation/state.test.json")
