@@ -132,7 +132,7 @@ jobs:
           docker compose -f compose.yaml -f .devcontainer/compose.devcontainer.yaml config --quiet
 
       - name: Validate Kamal deployment contract
-        env:
+        env: &deployment_contract
           KAMAL_SERVER: 192.0.2.10
           KAMAL_HOST: platform.example.com
           KAMAL_REGISTRY_USERNAME: ci-operator
@@ -141,6 +141,19 @@ jobs:
           SECRET_KEY_BASE: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
           INSTALLATION_BOOTSTRAP_TOKEN: ci-bootstrap-token
         run: bash bin/kamal-validate
+
+      - name: Validate private VPS profile
+        env:
+          <<: *deployment_contract
+          VPS_PREFLIGHT_SKIP_REMOTE: "true"
+        run: |
+          bash -n bin/vps-preflight
+          bash bin/vps-preflight
+
+      - name: Validate Render profile
+        run: |
+          ruby bin/render-validate
+          bash -n bin/render-start
 
       - name: Build production image
         run: |
@@ -155,6 +168,14 @@ jobs:
             echo "container unexpectedly started without required environment" >&2
             exit 1
           fi
+
+      - name: Verify Render persistence adapter
+        run: |
+          docker run --rm \
+            --entrypoint bash \
+            -e RENDER_PERSISTENCE_ROOT=/tmp/render-persistence \
+            rails-hotwire-platform:ci \
+            bin/render-start bash -lc 'test -L /rails/storage && test -L /rails/var/installation && test -d /tmp/render-persistence/storage && test -d /tmp/render-persistence/installation'
 
       - name: Build and verify development image
         run: |
