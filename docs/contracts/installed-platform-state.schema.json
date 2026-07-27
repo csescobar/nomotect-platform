@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rails-hotwire-platform.example/schemas/installed-platform-state-v1.json",
+  "title": "Installed Platform State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "observed_at", "environment", "platform", "runtime", "contracts", "installation", "deployment", "database", "generated_artifacts", "extensions"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "observed_at": { "type": "string", "format": "date-time" },
+    "environment": { "type": "string", "minLength": 1 },
+    "platform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version"],
+      "properties": {
+        "version": {
+          "type": ["string", "null"],
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ruby", "rails", "postgresql"],
+      "properties": {
+        "ruby": { "$ref": "#/$defs/nullableVersion" },
+        "rails": { "$ref": "#/$defs/nullableVersion" },
+        "postgresql": { "$ref": "#/$defs/nullableVersion" }
+      }
+    },
+    "contracts": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 1 }
+    },
+    "installation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract_version", "state"],
+      "properties": {
+        "contract_version": { "type": ["integer", "null"], "minimum": 1 },
+        "state": { "type": "string", "minLength": 1 },
+        "error": { "type": "string" }
+      }
+    },
+    "deployment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract_version", "profile"],
+      "properties": {
+        "contract_version": { "type": ["integer", "null"], "minimum": 1 },
+        "profile": { "type": ["string", "null"] }
+      }
+    },
+    "database": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["available", "schema_version", "pending_migrations"],
+      "properties": {
+        "available": { "type": "boolean" },
+        "schema_version": { "type": ["string", "null"], "pattern": "^[0-9]+$" },
+        "pending_migrations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["version", "name"],
+            "properties": {
+              "version": { "type": "string", "pattern": "^[0-9]+$" },
+              "name": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "error": { "type": "string" }
+      }
+    },
+    "generated_artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current", "checks"],
+      "properties": {
+        "current": { "type": "boolean" },
+        "checks": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "version"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "version": { "type": ["string", "null"] }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nullableVersion": {
+      "type": ["string", "null"],
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+    }
+  }
+}

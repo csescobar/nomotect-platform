@@ -6,6 +6,10 @@ The upgrade framework converts an approved, versioned upgrade manifest into a de
 
 This foundation intentionally separates planning from execution. A manifest can be parsed, validated, and rejected without mutating the application, database, installation evidence, or persistent files.
 
+The read-only inspection and preflight interface is documented in
+[`inspection-and-preflight.md`](inspection-and-preflight.md). Its observations
+conform to `docs/contracts/installed-platform-state.schema.json`.
+
 ## Contract sequence
 
 1. Detect the installed platform version and installed contract versions.
@@ -51,7 +55,7 @@ Compatibility is fail-closed:
 - A target that is not newer than the installed version is rejected.
 - A supplied runtime version outside its declared requirement is rejected.
 - A supplied contract version that differs from the manifest requirement is rejected.
-- Missing runtime observations may be collected by later detection adapters, but execution must not begin until required observations are available.
+- Missing runtime or contract observations are preflight blockers. Execution must not begin until required observations are available.
 
 Contract schema changes follow additive evolution within a supported version. Breaking changes require a new contract version, an explicit migration operation, compatibility documentation, and a deprecation path where applicable.
 
