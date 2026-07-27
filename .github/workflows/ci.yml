@@ -179,9 +179,9 @@ jobs:
         run: |
           docker run --rm \
             --entrypoint bash \
-            -e RENDER_PERSISTENCE_ROOT=/tmp/render-persistence \
+            -e RENDER_PERSISTENCE_ROOT=/rails/storage \
             rails-hotwire-platform:ci \
-            bin/render-start bash -lc 'test -L /rails/storage && test -L /rails/var/installation && test -d /tmp/render-persistence/storage && test -d /tmp/render-persistence/installation'
+            bin/render-start bash -lc 'test -d /rails/storage && test -L /rails/var/installation && test -L /rails/public/installation/branding && test -d /rails/storage/installation && test -d /rails/storage/branding'
 
       - name: Build and verify development image
         run: |
