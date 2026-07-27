@@ -33,15 +33,15 @@ class RepositoryIntelligenceCertificationTest < ActiveSupport::TestCase
   end
 
   def configure_platform(graph: build_graph, provider_status: { available: true, provider: "fixture" })
-    contracts = [{
-      "id" => "customer", "version" => 1, "owns" => ["Customer"],
-      "invariants" => ["security control", "privacy control", "tenant boundary"]
-    }]
-    playbooks = [{
+    contracts = [ {
+      "id" => "customer", "version" => 1, "owns" => [ "Customer" ],
+      "invariants" => [ "security control", "privacy control", "tenant boundary" ]
+    } ]
+    playbooks = [ {
       "id" => "repository-readiness", "version" => 1, "title" => "Repository readiness",
-      "steps" => [{ "id" => "health", "tool" => "repository.readiness", "args" => {} }],
-      "completion_gate" => ["repository_ready"]
-    }]
+      "steps" => [ { "id" => "health", "tool" => "repository.readiness", "args" => {} } ],
+      "completion_gate" => [ "repository_ready" ]
+    } ]
     RepositoryIntelligence.configure(
       graph:, contracts:, playbooks:, manifest: { files: [] }, readiness: { status: "ready" },
       provider_status:, validator: -> { [] }, artifact_validator: -> { [] }
@@ -53,7 +53,7 @@ class RepositoryIntelligenceCertificationTest < ActiveSupport::TestCase
     original_statistics = RepositoryIntelligence.statistics
 
     unavailable = RepositoryIntelligence::Providers::CommandProvider.new(
-      command: "/missing/provider", provider_name: "fixture", index_arguments: ["index"]
+      command: "/missing/provider", provider_name: "fixture", index_arguments: [ "index" ]
     )
     assert_not unavailable.available?
     assert_raises(RuntimeError) { unavailable.index(repository_path: ".", repository_commit: "abc") }
@@ -92,7 +92,7 @@ class RepositoryIntelligenceCertificationTest < ActiveSupport::TestCase
       incremental = RepositoryIntelligence::SqliteGraphStore.new(path: incremental_path)
       incremental.replace(graph: original, repository_commit: "one", provider: "fixture")
       incremental.replace_sources(
-        graph: changed, source_paths: ["app/models/customer.rb"],
+        graph: changed, source_paths: [ "app/models/customer.rb" ],
         repository_commit: "two", provider: "fixture"
       )
       clean = RepositoryIntelligence::SqliteGraphStore.new(path: clean_path)
