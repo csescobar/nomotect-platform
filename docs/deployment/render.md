@@ -10,17 +10,18 @@ The Render profile provides a managed-platform alternative to the private VPS/Ka
 - one managed Render PostgreSQL database;
 - a `/health` service health check;
 - a pre-deploy database migration command;
-- one persistent disk mounted at `/rails/persistence`;
+- one persistent disk mounted at `/rails/storage`;
 - operator-supplied Rails and installer secrets.
 
-Render has an ephemeral root filesystem. The `bin/render-start` adapter divides the attached disk into two durable subdirectories and maps them to the application's existing paths:
+Render has an ephemeral root filesystem. The disk mounts directly at the application's upload path. The `bin/render-start` adapter creates durable subdirectories for installation state and installer branding, then links those writable application paths into the mounted storage tree:
 
 ```text
-/rails/persistence/storage      -> /rails/storage
-/rails/persistence/installation -> /rails/var/installation
+/rails/storage                         persistent disk root
+/rails/storage/installation            -> /rails/var/installation
+/rails/storage/branding                -> /rails/public/installation/branding
 ```
 
-This adapter is provider-specific. The application continues to use the same paths as Docker Compose and Kamal deployments.
+This adapter is provider-specific. The application continues to use the same public and installation paths as Docker Compose and Kamal deployments, while uploads already write directly to `/rails/storage`.
 
 ## Create the Blueprint
 
@@ -47,15 +48,15 @@ Render builds the production Docker image from the repository. Before each deplo
 bundle exec rails db:migrate
 ```
 
-The service then starts through `bin/render-start`, which prepares the persistent-disk mappings and launches Puma. The Docker entrypoint still performs the shared production environment validation.
+The service then starts through `bin/render-start`, which prepares the persistent paths and launches Puma. The Docker entrypoint still performs the shared production environment validation.
 
 On the first deployment, open the protected installer and complete the remaining appearance, provisioning-evidence, and platform-administrator steps. If migrations are already current, the installer verifies and records that state rather than requiring duplicate schema changes.
 
 ## Persistence and scaling boundary
 
-The Blueprint attaches a persistent disk because uploads and installation evidence must survive replacements. Render persistent disks are attached to a single service instance, so this baseline is intentionally a single-instance profile.
+The Blueprint attaches a persistent disk because uploads, installer branding, and installation evidence must survive replacements. Render persistent disks are attached to a single service instance, so this baseline is intentionally a single-instance profile.
 
-Before horizontally scaling the web service, move uploads to a shared object-storage adapter and ensure installation evidence no longer depends on a single attached disk. That extension is outside this Phase 2 baseline.
+Before horizontally scaling the web service, move uploads and installer branding to a shared object-storage adapter and ensure installation evidence no longer depends on a single attached disk. That extension is outside this Phase 2 baseline.
 
 ## Availability trade-off
 
