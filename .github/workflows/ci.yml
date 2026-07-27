@@ -145,7 +145,7 @@ jobs:
           set -o pipefail
           docker build --progress=plain --target development --tag rails-hotwire-platform:devcontainer . 2>&1 | tee tmp/ci/devcontainer-build.log
           test "$(docker run --rm --entrypoint id rails-hotwire-platform:devcontainer -u)" != "0"
-          test "$(docker run --rm --entrypoint ruby rails-hotwire-platform:devcontainer --version)" = "ruby 4.0.5 (2026-03-13 revision 8f43e4f708) +PRISM [x86_64-linux]" || docker run --rm --entrypoint ruby rails-hotwire-platform:devcontainer --version
+          docker run --rm --entrypoint ruby rails-hotwire-platform:devcontainer --version | grep '^ruby 4\.0\.5 '
 
       - name: Upload packaging evidence
         if: always()
