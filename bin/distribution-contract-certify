@@ -8,6 +8,7 @@ ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
 
 bundle exec rails test \
   test/services/distributions/channel_state_test.rb \
+  test/services/distributions/github_release_plan_test.rb \
   test/services/distributions/inspector_test.rb \
   test/services/distributions/manifest_test.rb
 ruby -Ilib -rrepository_intelligence/platform -e '
@@ -27,8 +28,12 @@ grep -q '`preflight` treats every missing' docs/distribution/inspection.md
 
 test -x bin/distribution-contract-certify
 test -x bin/distribution
+test -x bin/github-release-publish
 grep -q 'command == "publish"' bin/release
 ! grep -Eq 'contents: write|packages: write|id-token: write' \
   .github/workflows/distribution-contract.yml
+grep -q 'environment: release' .github/workflows/publish-github-release.yml
+grep -q 'contents: write' .github/workflows/publish-github-release.yml
+grep -q 'gh.*release.*create' bin/github-release-publish
 
 printf 'Distribution contracts and channel policy certified\n'

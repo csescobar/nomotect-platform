@@ -1,0 +1,24 @@
+schema_version: 1
+id: 69-github-release-publication
+category: feature
+summary: Add protected immutable GitHub Release publication.
+release_impact: minor
+contracts:
+  - distribution-github-release
+  - distribution-artifact-bundle
+  - distribution-approval
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Publication is restricted to an approved main commit and the protected release environment.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
