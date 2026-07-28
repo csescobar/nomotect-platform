@@ -3,6 +3,7 @@
 require "test_helper"
 require "fileutils"
 require "tmpdir"
+require_relative "../../support/extension_package_helper"
 
 module Extensions
   class InstalledStateTest < ActiveSupport::TestCase
