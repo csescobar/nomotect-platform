@@ -96,7 +96,7 @@ module Distributions
         match = /\A([a-f0-9]{64})  ([A-Za-z0-9][A-Za-z0-9._-]*)\n?\z/.match(line)
         raise InvalidBundle, "SHA256SUMS has an invalid entry" unless match
 
-        [match[2], match[1]]
+        [ match[2], match[1] ]
       end
     end
 
