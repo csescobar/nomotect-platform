@@ -20,6 +20,7 @@ may_use:
   - deployment_manifest
   - database_schema
   - generated_artifacts
+  - extension_installed_state
 cannot_use:
   - arbitrary_shell_execution
   - secret_persistence
@@ -28,6 +29,7 @@ cannot_use:
 invariants:
   - inspection and preflight are read-only
   - compatibility evaluation fails closed when required observations are unavailable
+  - pending extension migrations and incompatible extension state block preflight
   - reports contain stable blocker and warning codes
   - persisted operational evidence is credential-free
   - recovery guidance never mutates execution or installed state

@@ -28,12 +28,17 @@ The versioned `installed-platform-state` contract includes:
 - installation and optional deployment contract versions;
 - current database schema and pending source migrations;
 - generated design-token artifact freshness;
-- configured extension identifiers and versions;
+- structured enabled-extension versions, contracts, capabilities and component
+  summaries;
+- pending extension migrations and extension compatibility findings;
 - supported repository contract versions.
 
 The detector reads the database migration catalog, installation state and generated files. It does not write to them. The canonical root `VERSION` file supplies the source version by default. Packaged environments may override the observation with `PLATFORM_VERSION`, `SOURCE_VERSION` or `OCI_IMAGE_VERSION`.
 
-Optional `DEPLOYMENT_CONTRACT_VERSION`, `DEPLOYMENT_PROFILE` and comma-separated `PLATFORM_EXTENSIONS=id@version` observations are included when present. Missing observations required by a target manifest are blockers.
+Optional `DEPLOYMENT_CONTRACT_VERSION` and `DEPLOYMENT_PROFILE` observations are
+included when present. Extensions are discovered from the canonical
+`config/extensions.yml` configuration and installed Bundler specifications.
+Missing observations required by a target manifest are blockers.
 
 ## Readiness and failure codes
 
@@ -44,6 +49,8 @@ Preflight is fail-closed. Stable baseline codes include:
 - `installation_incomplete`;
 - `database_unavailable`;
 - `pending_source_migrations`;
+- `extension_state_incompatible`;
+- `pending_extension_migrations`;
 - `runtime_version_unavailable`;
 - `contract_state_unavailable`;
 - `compatibility_failed`;

@@ -33,6 +33,11 @@ Configuration and documentation require a non-null path. Migrations require at
 least one declared migration path. Registration must include every capability
 listed in `capabilities.provides`.
 
+Declared filesystem resources must exist in the installed package and resolve
+inside its real package root. A symbolic link cannot be used to expose an
+external configuration, migration or documentation path. Route, asset and
+migration namespaces must be unique to the extension's public identity.
+
 ## Loading contract
 
 The platform loads entrypoints only from a ready preflight report and follows

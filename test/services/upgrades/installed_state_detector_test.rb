@@ -29,9 +29,11 @@ module Upgrades
         connection: connection,
         migration_context: context,
         generated_artifacts_current: true,
+        extension_state_provider: -> { [] },
         clock: -> { Time.iso8601("2026-07-27T22:00:00Z") }
       ).call
 
+      assert_equal 2, state.fetch("schema_version")
       assert_equal "0.4.0", state.dig("platform", "version")
       assert_equal "18.4.0", state.dig("runtime", "postgresql")
       assert_equal "completed", state.dig("installation", "state")
@@ -52,7 +54,8 @@ module Upgrades
         installation_store: installation_store,
         connection: fake(database_version: "18.0"),
         migration_context: context,
-        generated_artifacts_current: true
+        generated_artifacts_current: true,
+        extension_state_provider: -> { [] }
       ).call
 
       assert_not state.dig("database", "available")
@@ -66,10 +69,41 @@ module Upgrades
         installation_store: installation_store,
         connection: fake(database_version: "18.0"),
         migration_context: context,
-        generated_artifacts_current: true
+        generated_artifacts_current: true,
+        extension_state_provider: -> { [] }
       ).call
 
       assert_equal "0.8.0", state.dig("platform", "version")
+    end
+
+    test "includes structured extension state from the extension provider" do
+      context = fake(current_version: 1, migrations_status: [])
+      installation_store = fake(read: { "schema_version" => 1, "state" => "completed" })
+      extension_state = [
+        {
+          "id" => "acme.audit",
+          "package" => "acme-audit",
+          "version" => "1.2.0",
+          "required" => true,
+          "contract_version" => 1,
+          "status" => "ready",
+          "finding_codes" => [],
+          "capabilities" => [],
+          "components" => {},
+          "pending_migrations" => []
+        }
+      ]
+
+      state = InstalledStateDetector.new(
+        installation_store: installation_store,
+        connection: fake(database_version: "18.0"),
+        migration_context: context,
+        generated_artifacts_current: true,
+        extension_state_provider: -> { extension_state }
+      ).call
+
+      assert_equal "acme.audit", state.dig("extensions", 0, "id")
+      assert_equal "ready", state.dig("extensions", 0, "status")
     end
 
     private

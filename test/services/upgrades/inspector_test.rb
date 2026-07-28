@@ -56,6 +56,34 @@ module Upgrades
       assert report.ready?
     end
 
+    test "blocks for incompatible extension state and pending extension migrations" do
+      state = installed_state
+      state["extensions"] = [
+        {
+          "id" => "acme.audit",
+          "status" => "blocked",
+          "finding_codes" => [ "extension_contract_incompatible" ],
+          "pending_migrations" => [
+            {
+              "namespace" => "acme.audit",
+              "version" => "20260728100000",
+              "name" => "Add audit event source"
+            }
+          ]
+        }
+      ]
+
+      report = Inspector.new(
+        manifest: manifest(backup_required: false),
+        detector: fake(call: state)
+      ).preflight
+
+      assert_equal "blocked", report.status
+      assert_includes report.blockers.pluck(:code), "extension_state_incompatible"
+      assert_includes report.blockers.pluck(:code), "pending_extension_migrations"
+      assert_nil report.plan
+    end
+
     private
 
     def fake(**methods)

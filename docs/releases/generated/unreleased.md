@@ -15,17 +15,20 @@
 - Define community boundaries and versioned external extension contracts. (`61-extension-contracts`)
 - Add read-only extension discovery and compatibility preflight. (`62-extension-preflight`)
 - Add trusted extension loading and explicit registration hooks. (`63-extension-loader`)
+- Isolate extension components and integrate extension state with upgrade preflight. (`64-extension-components`)
 
 ## Affected contracts
 
 - `change-fragment`
 - `changelog`
 - `extension-compatibility`
+- `extension-components`
 - `extension-configuration`
 - `extension-inspection`
 - `extension-loader`
 - `extension-manifest`
 - `extension-registration`
+- `installed-platform-state`
 - `platform-version`
 - `release-compatibility`
 - `release-consistency`
@@ -34,6 +37,7 @@
 - `release-notes`
 - `release-preparation`
 - `release-readiness`
+- `upgrade-preflight`
 
 ## Cross-cutting assessments
 
@@ -45,3 +49,4 @@
 - **Security — 61-extension-contracts:** Extension packages are declared trusted in-process code and are not loaded by this contract baseline.
 - **Security — 62-extension-preflight:** Preflight reads installed package metadata without executing extension entrypoints or changing state.
 - **Security — 63-extension-loader:** Only ready plans execute trusted entrypoints, and failures omit internal exception messages.
+- **Security — 64-extension-components:** Real-path validation rejects component resources that escape an installed package root.

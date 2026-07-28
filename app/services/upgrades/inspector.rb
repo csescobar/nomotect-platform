@@ -72,6 +72,29 @@ module Upgrades
         )
       end
 
+      state.fetch("extensions", []).each do |extension|
+        unless extension.fetch("status", "ready") == "ready"
+          findings << finding(
+            "extension_state_incompatible",
+            "An enabled extension is missing, incompatible or unavailable",
+            extension_id: extension.fetch("id"),
+            status: extension.fetch("status"),
+            finding_codes: extension.fetch("finding_codes", [])
+          )
+        end
+
+        extension.fetch("pending_migrations", []).then do |extension_migrations|
+          next if extension_migrations.empty?
+
+          findings << finding(
+            "pending_extension_migrations",
+            "An enabled extension has pending database migrations",
+            extension_id: extension.fetch("id"),
+            migrations: extension_migrations
+          )
+        end
+      end
+
       required_observations(state).each do |component|
         findings << finding("runtime_version_unavailable", "#{component} runtime version could not be detected", component: component)
       end

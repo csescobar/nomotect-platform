@@ -1,0 +1,24 @@
+schema_version: 1
+id: 64-extension-components
+category: feature
+summary: Isolate extension components and integrate extension state with upgrade preflight.
+release_impact: minor
+contracts:
+  - extension-components
+  - installed-platform-state
+  - upgrade-preflight
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes: Installed platform state advances to schema version 2.
+security:
+  impact: reviewed
+  notes: Real-path validation rejects component resources that escape an installed package root.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

@@ -2,7 +2,7 @@
 
 module Upgrades
   class InstalledStateDetector
-    SCHEMA_VERSION = 1
+    SCHEMA_VERSION = 2
     CONTRACT_VERSIONS = {
       "installation-state" => Installation::StateStore::SCHEMA_VERSION,
       "installation-record" => 1,
@@ -17,6 +17,7 @@ module Upgrades
       connection: nil,
       migration_context: nil,
       generated_artifacts_current: nil,
+      extension_state_provider: nil,
       clock: -> { Time.current.utc }
     )
       @version = version
@@ -25,6 +26,7 @@ module Upgrades
       @connection = connection
       @migration_context = migration_context
       @generated_artifacts_current = generated_artifacts_current
+      @extension_state_provider = extension_state_provider
       @clock = clock
     end
 
@@ -61,7 +63,7 @@ module Upgrades
     private
 
     attr_reader :version, :environment, :installation_store, :migration_context,
-      :generated_artifacts_current, :clock
+      :generated_artifacts_current, :extension_state_provider, :clock
 
     def detected_version
       candidate = version || ENV.values_at("PLATFORM_VERSION", "SOURCE_VERSION", "OCI_IMAGE_VERSION").find(&:present?)
@@ -128,12 +130,35 @@ module Upgrades
     end
 
     def installed_extensions
-      ENV.fetch("PLATFORM_EXTENSIONS", "").split(",").filter_map do |entry|
-        id, extension_version = entry.strip.split("@", 2)
-        next if id.blank?
+      return extension_state_provider.call if extension_state_provider
 
-        { "id" => id, "version" => extension_version.presence }
-      end
+      configuration = Extensions::Configuration.load(Rails.root.join("config/extensions.yml"))
+      report = Extensions::Inspector.new(
+        configuration: configuration,
+        platform_version: detected_version
+      ).preflight
+      Extensions::InstalledState.new(report:).call
+    rescue StandardError
+      [
+        {
+          "id" => "extension-state",
+          "package" => "extension-state",
+          "version" => nil,
+          "required" => true,
+          "contract_version" => nil,
+          "status" => "unavailable",
+          "finding_codes" => [ "extension_state_unavailable" ],
+          "capabilities" => [],
+          "components" => {
+            "configuration" => false,
+            "migrations" => { "namespace" => nil, "paths" => 0 },
+            "routes" => { "namespace" => nil },
+            "assets" => { "namespace" => nil },
+            "documentation" => false
+          },
+          "pending_migrations" => []
+        }
+      ]
     end
 
     def integer_environment(name)
