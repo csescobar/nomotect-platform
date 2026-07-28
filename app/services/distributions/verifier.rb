@@ -76,7 +76,7 @@ module Distributions
         state.immutable_reference.blank?
       return finding("image_digest_mismatch", "GHCR evidence resolves to another digest") if
         channel == "ghcr" && state.immutable_reference != ghcr_plan.immutable_reference
-      return finding("release_conflict", "GitHub Release evidence resolves to another release") if
+      finding("release_conflict", "GitHub Release evidence resolves to another release") if
         channel == "github_release" && state.immutable_reference != github_release_reference
     end
 
