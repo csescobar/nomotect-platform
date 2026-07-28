@@ -59,4 +59,4 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
           git fetch origin "$BASE_REF:refs/remotes/origin/$BASE_REF"
-          CHANGE_BASE="origin/$BASE_REF" ruby bin/change-fragment-validate
+          CHANGE_BASE="origin/$BASE_REF" bundle exec ruby bin/change-fragment-validate
