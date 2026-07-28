@@ -29,8 +29,8 @@
 - `extension-lifecycle`
 - `extension-loader`
 - `extension-manifest`
-- `extension-registration`
 - `extension-readiness`
+- `extension-registration`
 - `health`
 - `installed-platform-state`
 - `platform-version`

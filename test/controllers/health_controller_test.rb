@@ -22,7 +22,7 @@ class HealthControllerTest < ActionDispatch::IntegrationTest
       warning_codes: []
     }
 
-    Extensions::Runtime.stub(:readiness, readiness) do
+    with_runtime_method(:readiness, readiness) do
       get health_path
     end
 
@@ -32,11 +32,21 @@ class HealthControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "blocks normal traffic when the extension runtime is unavailable" do
-    Extensions::Runtime.stub(:traffic_allowed?, false) do
+    with_runtime_method(:traffic_allowed?, false) do
       get root_path
     end
 
     assert_response :service_unavailable
     assert_empty response.body
+  end
+
+  private
+
+  def with_runtime_method(name, value)
+    original = Extensions::Runtime.method(name)
+    Extensions::Runtime.define_singleton_method(name) { value }
+    yield
+  ensure
+    Extensions::Runtime.define_singleton_method(name, original)
   end
 end
