@@ -49,3 +49,7 @@ signature verification or package publication is part of this phase.
 Compatibility is evaluated across the complete enabled graph before loading.
 See [Extension Inspection and Preflight](inspection.md) for package discovery,
 stable blocker codes and the read-only operator commands.
+
+Compatible entrypoints use the explicit registration SDK described in
+[Extension Authoring](authoring.md). Registration is atomic and the registry is
+sealed after dependency-ordered loading.

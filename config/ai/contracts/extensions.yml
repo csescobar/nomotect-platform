@@ -12,6 +12,9 @@ owns:
   - extension_compatibility_preflight
   - extension_dependency_order
   - extension_inspection_report
+  - extension_registration_sdk
+  - extension_registry
+  - trusted_extension_loader
 may_use:
   - platform_version
   - repository_intelligence
@@ -25,6 +28,8 @@ cannot_use:
   - runtime_installation
   - hot_unloading
   - compatibility_override
+  - monkey_patch_registration
+  - global_mutation_outside_registration_context
 invariants:
   - the community core remains fully functional without extensions
   - enterprise implementations remain in separately licensed repositories
@@ -32,6 +37,10 @@ invariants:
   - the complete enabled extension graph is compatible before any entrypoint executes
   - inspection and preflight never require an extension entrypoint
   - compatible load order is deterministic and dependency-first
+  - only a ready preflight plan can reach extension entrypoint execution
+  - extension registration is explicit atomic and limited to manifest declarations
+  - the registry is sealed after successful dependency-ordered loading
+  - loader failures expose stable codes and exception classes without internal messages
   - extension configuration contains no credentials or runtime secrets
   - component paths remain inside the extension package root
   - extensions are trusted in-process code and are not security sandboxes
@@ -41,3 +50,5 @@ required_tests:
   - extensions_catalog_test
   - extensions_compatibility_planner_test
   - extensions_inspector_test
+  - extensions_registry_test
+  - extensions_loader_test

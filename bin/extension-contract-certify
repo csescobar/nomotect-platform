@@ -12,6 +12,8 @@ bundle exec rails test \
   test/services/extensions/catalog_test.rb \
   test/services/extensions/compatibility_planner_test.rb \
   test/services/extensions/inspector_test.rb \
+  test/services/extensions/registry_test.rb \
+  test/services/extensions/loader_test.rb \
   test/services/extensions/extension_readiness_playbook_test.rb
 
 preflight_output="$(bundle exec ruby bin/extensions preflight --platform-version 0.9.0 --format json)"
@@ -25,5 +27,7 @@ grep -q 'trusted code, not sandboxed plugins' docs/extensions/architecture.md
 grep -q 'core never references enterprise constants' \
   docs/decisions/0013-enterprise-extension-boundaries.md
 grep -q 'No extension entrypoint is required' docs/extensions/inspection.md
+grep -q 'Extensions.register' docs/extensions/authoring.md
+grep -q 'ready preflight report' app/services/extensions/loader.rb
 
 printf 'Extension platform contracts certified\n'
