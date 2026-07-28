@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Authentication
   include Authorization
   include InstallationGate
+  include ExtensionGate
 
   helper LocalizationHelper
 

@@ -1,0 +1,24 @@
+schema_version: 1
+id: 65-extension-lifecycle
+category: feature
+summary: Add fail-closed extension lifecycle and readiness controls.
+release_impact: minor
+contracts:
+  - extension-lifecycle
+  - extension-readiness
+  - health
+migration:
+  required: false
+  notes:
+upgrade:
+  required: true
+  notes: Restart all application and job processes after changing the configured extension set.
+security:
+  impact: reviewed
+  notes: Required failures deny normal traffic and health output exposes only stable codes and extension identifiers.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

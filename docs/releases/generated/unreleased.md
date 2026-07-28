@@ -16,6 +16,7 @@
 - Add read-only extension discovery and compatibility preflight. (`62-extension-preflight`)
 - Add trusted extension loading and explicit registration hooks. (`63-extension-loader`)
 - Isolate extension components and integrate extension state with upgrade preflight. (`64-extension-components`)
+- Add fail-closed extension lifecycle and readiness controls. (`65-extension-lifecycle`)
 
 ## Affected contracts
 
@@ -25,9 +26,12 @@
 - `extension-components`
 - `extension-configuration`
 - `extension-inspection`
+- `extension-lifecycle`
 - `extension-loader`
 - `extension-manifest`
+- `extension-readiness`
 - `extension-registration`
+- `health`
 - `installed-platform-state`
 - `platform-version`
 - `release-compatibility`
@@ -50,3 +54,4 @@
 - **Security — 62-extension-preflight:** Preflight reads installed package metadata without executing extension entrypoints or changing state.
 - **Security — 63-extension-loader:** Only ready plans execute trusted entrypoints, and failures omit internal exception messages.
 - **Security — 64-extension-components:** Real-path validation rejects component resources that escape an installed package root.
+- **Security — 65-extension-lifecycle:** Required failures deny normal traffic and health output exposes only stable codes and extension identifiers.
