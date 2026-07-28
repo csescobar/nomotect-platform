@@ -20,12 +20,16 @@
 - Certify the enterprise extension platform and publish lifecycle guides. (`66-extension-certification`)
 - Define versioned distribution contracts and supported channel policy. (`67-distribution-contracts`)
 - Add read-only distribution inspection and publication preflight. (`68-distribution-preflight`)
+- Add protected immutable GitHub Release publication. (`69-github-release-publication`)
 
 ## Affected contracts
 
 - `change-fragment`
 - `changelog`
+- `distribution-approval`
+- `distribution-artifact-bundle`
 - `distribution-channel-state`
+- `distribution-github-release`
 - `distribution-inspection`
 - `distribution-manifest`
 - `distribution-preflight`
@@ -70,3 +74,4 @@
 - **Security — 66-extension-certification:** Certification covers fail-closed loading, bounded real paths and secret-safe failure evidence.
 - **Security — 67-distribution-contracts:** The contract baseline is read-only, credential-free and excludes private enterprise artifacts.
 - **Security — 68-distribution-preflight:** Preflight is read-only, fail-closed and consumes credential-free channel observations.
+- **Security — 69-github-release-publication:** Publication is restricted to an approved main commit and the protected release environment.

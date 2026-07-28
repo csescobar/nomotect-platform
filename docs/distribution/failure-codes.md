@@ -35,6 +35,8 @@
 - `channel_partial` — remote channel state is incomplete.
 - `remote_state_unavailable` — a required read-only remote observation failed.
 - `publication_replay` — the immutable release was already verified.
+- `artifact_bundle_invalid` — a required release asset is missing, modified,
+  symbolic, outside the approved directory or absent from `SHA256SUMS`.
 
 Messages may include stable identifiers, versions and digests. They must not
 include credentials, authorization headers, secret values or proprietary

@@ -21,6 +21,7 @@ Required release impact: `minor`.
 - Certify the enterprise extension platform and publish lifecycle guides. (`66-extension-certification`)
 - Define versioned distribution contracts and supported channel policy. (`67-distribution-contracts`)
 - Add read-only distribution inspection and publication preflight. (`68-distribution-preflight`)
+- Add protected immutable GitHub Release publication. (`69-github-release-publication`)
 
 ## 0.8.0
 

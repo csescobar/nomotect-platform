@@ -1,0 +1,78 @@
+name: Publish GitHub Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: Approved main commit from the distribution manifest
+        required: true
+        type: string
+      artifact_run_id:
+        description: Successful workflow run containing distribution-bundle
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: publish-github-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    environment: release
+    runs-on: ubuntu-latest
+    env:
+      DISTRIBUTION_APPROVED: "true"
+      DISTRIBUTION_SOURCE_COMMIT: ${{ inputs.source_commit }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out approved source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_commit }}
+          fetch-depth: 0
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - name: Verify source is current main
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: |
+          git fetch origin main
+          test "$SOURCE_COMMIT" = "$(git rev-parse origin/main)"
+          test "$SOURCE_COMMIT" = "$(git rev-parse HEAD)"
+      - name: Verify artifact run identity
+        env:
+          ARTIFACT_RUN_ID: ${{ inputs.artifact_run_id }}
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: |
+          run_path="repos/${GITHUB_REPOSITORY}/actions/runs/${ARTIFACT_RUN_ID}"
+          test "$(gh api "$run_path" --jq .head_sha)" = "$SOURCE_COMMIT"
+          test "$(gh api "$run_path" --jq .head_branch)" = "main"
+          test "$(gh api "$run_path" --jq .conclusion)" = "success"
+      - name: Download approved distribution bundle
+        run: |
+          mkdir -p tmp/distribution
+          gh run download "${{ inputs.artifact_run_id }}" \
+            --name distribution-bundle \
+            --dir tmp/distribution
+      - name: Publish immutable GitHub Release
+        run: |
+          bundle exec ruby bin/github-release-publish apply \
+            --manifest tmp/distribution/distribution-manifest.json \
+            --artifact-directory tmp/distribution/artifacts \
+            --repository "$GITHUB_REPOSITORY"
+      - name: Preserve publication input
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-release-publication-input
+          path: |
+            tmp/distribution/distribution-manifest.json
+            tmp/distribution/artifacts/SHA256SUMS
+          if-no-files-found: error
