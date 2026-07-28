@@ -8,6 +8,7 @@ ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
 
 bundle exec rails test \
   test/services/distributions/channel_state_test.rb \
+  test/services/distributions/ghcr_promotion_plan_test.rb \
   test/services/distributions/github_release_plan_test.rb \
   test/services/distributions/inspector_test.rb \
   test/services/distributions/manifest_test.rb
@@ -28,6 +29,7 @@ grep -q '`preflight` treats every missing' docs/distribution/inspection.md
 
 test -x bin/distribution-contract-certify
 test -x bin/distribution
+test -x bin/ghcr-promote
 test -x bin/github-release-publish
 grep -q 'command == "publish"' bin/release
 ! grep -Eq 'contents: write|packages: write|id-token: write' \
@@ -35,5 +37,9 @@ grep -q 'command == "publish"' bin/release
 grep -q 'environment: release' .github/workflows/publish-github-release.yml
 grep -q 'contents: write' .github/workflows/publish-github-release.yml
 grep -q 'gh.*release.*create' bin/github-release-publish
+grep -q 'environment: release' .github/workflows/promote-ghcr-release.yml
+grep -q 'packages: write' .github/workflows/promote-ghcr-release.yml
+grep -q 'imagetools.*create' bin/ghcr-promote
+! grep -q ':latest' .github/workflows/promote-ghcr-release.yml
 
 printf 'Distribution contracts and channel policy certified\n'

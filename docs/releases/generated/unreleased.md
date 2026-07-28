@@ -21,6 +21,7 @@
 - Define versioned distribution contracts and supported channel policy. (`67-distribution-contracts`)
 - Add read-only distribution inspection and publication preflight. (`68-distribution-preflight`)
 - Add protected immutable GitHub Release publication. (`69-github-release-publication`)
+- Promote existing multi-platform images to semantic GHCR tags. (`70-ghcr-semantic-promotion`)
 
 ## Affected contracts
 
@@ -29,7 +30,9 @@
 - `distribution-approval`
 - `distribution-artifact-bundle`
 - `distribution-channel-state`
+- `distribution-ghcr-promotion`
 - `distribution-github-release`
+- `distribution-image-identity`
 - `distribution-inspection`
 - `distribution-manifest`
 - `distribution-preflight`
@@ -75,3 +78,4 @@
 - **Security — 67-distribution-contracts:** The contract baseline is read-only, credential-free and excludes private enterprise artifacts.
 - **Security — 68-distribution-preflight:** Preflight is read-only, fail-closed and consumes credential-free channel observations.
 - **Security — 69-github-release-publication:** Publication is restricted to an approved main commit and the protected release environment.
+- **Security — 70-ghcr-semantic-promotion:** Promotion is digest-bound, rebuild-free and excludes latest before the stable release gate.

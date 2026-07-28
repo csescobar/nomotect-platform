@@ -22,6 +22,7 @@ Required release impact: `minor`.
 - Define versioned distribution contracts and supported channel policy. (`67-distribution-contracts`)
 - Add read-only distribution inspection and publication preflight. (`68-distribution-preflight`)
 - Add protected immutable GitHub Release publication. (`69-github-release-publication`)
+- Promote existing multi-platform images to semantic GHCR tags. (`70-ghcr-semantic-promotion`)
 
 ## 0.8.0
 
