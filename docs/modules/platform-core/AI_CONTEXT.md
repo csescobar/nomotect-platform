@@ -10,7 +10,8 @@ Provide the executable Rails foundation shared by all future platform capabiliti
 - `ApplicationPolicy` is the base authorization contract.
 - `Current` carries request-scoped identity and correlation metadata.
 - `UI::ButtonComponent` validates the initial ViewComponent convention.
-- `/health` reports application and database readiness.
+- `/health` reports database and extension lifecycle readiness with stable,
+  credential-free codes.
 - `bin/setup`, `bin/dev`, `bin/test`, `bin/lint`, `bin/security` and `bin/ci` are stable developer entrypoints.
 
 ## Invariants
@@ -21,6 +22,7 @@ Provide the executable Rails foundation shared by all future platform capabiliti
 - Authorization denies access by default.
 - Request context is isolated with `ActiveSupport::CurrentAttributes`.
 - Health responses do not expose credentials or internal exception messages.
+- Normal application traffic is denied when required extension readiness fails.
 
 ## Allowed dependencies
 

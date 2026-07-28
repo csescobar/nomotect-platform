@@ -57,3 +57,6 @@ contain configuration or provider details.
 
 The SDK does not grant isolation. Registered providers execute as trusted
 in-process application code.
+
+Any entrypoint failure requires a process restart. The platform does not retry,
+reload or unload extension code inside the same Ruby process.

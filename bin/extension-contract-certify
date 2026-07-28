@@ -16,6 +16,8 @@ bundle exec rails test \
   test/services/extensions/loader_test.rb \
   test/services/extensions/component_resolver_test.rb \
   test/services/extensions/installed_state_test.rb \
+  test/services/extensions/lifecycle_test.rb \
+  test/controllers/health_controller_test.rb \
   test/services/extensions/extension_readiness_playbook_test.rb
 
 preflight_output="$(bundle exec ruby bin/extensions preflight --platform-version 0.9.0 --format json)"
@@ -32,5 +34,6 @@ grep -q 'No extension entrypoint is required' docs/extensions/inspection.md
 grep -q 'Extensions.register' docs/extensions/authoring.md
 grep -q 'ready preflight report' app/services/extensions/loader.rb
 grep -q 'inside the package root' app/services/extensions/component_resolver.rb
+grep -q 'restart_required' app/services/extensions/lifecycle.rb
 
 printf 'Extension platform contracts certified\n'

@@ -307,7 +307,7 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 - [x] Validate compatible platform and extension versions before loading.
 - [x] Provide explicit registration hooks instead of monkey patches.
 - [x] Isolate extension configuration, migrations, routes, assets and documentation.
-- [ ] Define fail-closed behavior for missing or incompatible extensions.
+- [x] Define fail-closed behavior for missing or incompatible extensions.
 
 ### Phase 6 — Distribution Channels
 

@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - app/services/extensions/**
+      - app/controllers/concerns/extension_gate.rb
+      - app/controllers/health_controller.rb
       - test/services/extensions/**
       - test/support/extension_package_helper.rb
       - test/integration/extension_framework_certification_test.rb
@@ -14,6 +16,7 @@ on:
       - config/ai/contracts/extensions.yml
       - config/ai/playbooks/extension_readiness.yml
       - config/extensions.yml
+      - config/initializers/extensions.rb
       - bin/extensions
       - bin/extension-contract-certify
       - .github/workflows/extension-contract.yml
@@ -21,6 +24,8 @@ on:
     branches: [main]
     paths:
       - app/services/extensions/**
+      - app/controllers/concerns/extension_gate.rb
+      - app/controllers/health_controller.rb
       - test/services/extensions/**
       - test/support/extension_package_helper.rb
       - test/integration/extension_framework_certification_test.rb
@@ -31,6 +36,7 @@ on:
       - config/ai/contracts/extensions.yml
       - config/ai/playbooks/extension_readiness.yml
       - config/extensions.yml
+      - config/initializers/extensions.rb
       - bin/extensions
       - bin/extension-contract-certify
       - .github/workflows/extension-contract.yml

@@ -17,6 +17,8 @@ owns:
   - trusted_extension_loader
   - extension_component_resolver
   - extension_installed_state
+  - extension_lifecycle
+  - extension_readiness_gate
 may_use:
   - platform_version
   - repository_intelligence
@@ -43,6 +45,9 @@ invariants:
   - extension registration is explicit atomic and limited to manifest declarations
   - the registry is sealed after successful dependency-ordered loading
   - loader failures expose stable codes and exception classes without internal messages
+  - required extension failures deny readiness and normal application traffic
+  - optional extensions are skipped only before execution and only for fully scoped findings
+  - any entrypoint failure requires process replacement before retry
   - extension configuration contains no credentials or runtime secrets
   - component paths remain inside the extension package root
   - component real paths cannot escape the package root through symbolic links
@@ -58,3 +63,5 @@ required_tests:
   - extensions_loader_test
   - extensions_component_resolver_test
   - extensions_installed_state_test
+  - extensions_lifecycle_test
+  - extension_health_controller_test

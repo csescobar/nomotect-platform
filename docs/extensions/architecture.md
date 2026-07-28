@@ -60,3 +60,10 @@ paths must be directories, and every resolved resource must remain below the
 package root even when a package contains symbolic links. Route, asset and
 migration namespaces remain extension-owned and explicit. See
 [Component Isolation and Upgrade State](components-and-upgrades.md).
+
+The runtime lifecycle starts once per process after Rails initialization. It
+loads only a ready plan, publishes bounded readiness state and never retries or
+unloads extension code in place. Required-extension failures keep normal
+traffic closed. Optional incompatibilities may be removed before any entrypoint
+executes when every related finding is scoped to that optional extension.
+Operational behavior is documented in [Extension Operations](operations.md).

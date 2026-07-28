@@ -1,11 +1,20 @@
 class HealthController < ActionController::Base
   def show
     ActiveRecord::Base.connection.select_value("SELECT 1")
+    extension_readiness = Extensions::Runtime.readiness
+    unless extension_readiness.fetch(:ready)
+      return render json: {
+        status: "unavailable",
+        service: "rails-hotwire-platform",
+        extensions: extension_readiness
+      }, status: :service_unavailable
+    end
 
     render json: {
       status: "ok",
       service: "rails-hotwire-platform",
       version: ENV.fetch("APP_VERSION", Platform::Version.current.to_s),
+      extensions: extension_readiness,
       timestamp: Time.current.utc.iso8601
     }
   rescue StandardError => error
