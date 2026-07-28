@@ -181,6 +181,12 @@ module Extensions
         value.is_a?(Integer) && value.positive?
     end
 
+    def integer_const!(object, key, expected)
+      return if object.fetch(key) == expected
+
+      raise InvalidManifest, "#{key} must be #{expected}"
+    end
+
     def requirement!(value, path)
       raise InvalidManifest, "#{path} must be a non-empty string" unless
         value.is_a?(String) && value.present?
