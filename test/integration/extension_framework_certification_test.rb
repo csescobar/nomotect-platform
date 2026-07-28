@@ -50,10 +50,10 @@ class ExtensionFrameworkCertificationTest < ActiveSupport::TestCase
   end
 
   test "certifies the extension-free community core" do
-    configuration = Extensions::Configuration.new(
+    configuration = Extensions::Configuration.new({
       "schema_version" => 1,
       "extensions" => []
-    )
+    })
     report = Extensions::Inspector.new(
       configuration:,
       catalog: Extensions::Catalog.new(configuration:, resolver: ->(_name) {}),
@@ -68,10 +68,10 @@ class ExtensionFrameworkCertificationTest < ActiveSupport::TestCase
   end
 
   test "certifies stable blockers for missing incompatible cyclic and duplicate packages" do
-    missing_configuration = Extensions::Configuration.new(
+    missing_configuration = Extensions::Configuration.new({
       "schema_version" => 1,
       "extensions" => [ extension_declaration("certification.missing") ]
-    )
+    })
     missing_report = Extensions::Inspector.new(
       configuration: missing_configuration,
       catalog: Extensions::Catalog.new(
@@ -204,10 +204,10 @@ class ExtensionFrameworkCertificationTest < ActiveSupport::TestCase
 
     Extensions::InspectionReport.new(
       mode: :preflight,
-      configuration: Extensions::Configuration.new(
+      configuration: Extensions::Configuration.new({
         "schema_version" => 1,
         "extensions" => [ package.declaration ]
-      ),
+      }),
       packages: [ package ],
       plan: result.plan
     )
