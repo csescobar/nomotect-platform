@@ -1,0 +1,32 @@
+id: extensions
+version: 1
+owns:
+  - community_enterprise_boundary
+  - extension_manifest
+  - extension_configuration
+  - extension_identity
+  - extension_capability
+  - extension_dependency
+  - extension_component_declaration
+may_use:
+  - platform_version
+  - repository_intelligence
+  - installed_platform_state
+  - upgrade_manifest
+cannot_use:
+  - proprietary_implementation_constants
+  - arbitrary_remote_download
+  - secret_persistence
+  - automatic_code_execution_before_validation
+  - runtime_installation
+  - hot_unloading
+invariants:
+  - the community core remains fully functional without extensions
+  - enterprise implementations remain in separately licensed repositories
+  - extension manifests are validated before entrypoint execution
+  - extension configuration contains no credentials or runtime secrets
+  - component paths remain inside the extension package root
+  - extensions are trusted in-process code and are not security sandboxes
+required_tests:
+  - extensions_manifest_test
+  - extensions_configuration_test

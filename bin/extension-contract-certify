@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
+  docs/contracts/extension-manifest.schema.json \
+  docs/contracts/extension-configuration.schema.json \
+  config/ai/schemas/playbook.schema.json
+
+bundle exec rails test \
+  test/services/extensions/manifest_test.rb \
+  test/services/extensions/configuration_test.rb \
+  test/services/extensions/extension_readiness_playbook_test.rb
+
+grep -q 'additionalProperties": false' docs/contracts/extension-manifest.schema.json
+grep -q 'trusted_in_process' docs/contracts/extension-manifest.schema.json
+grep -q 'community core remains fully functional' config/ai/contracts/extensions.yml
+grep -q 'repository.contract' config/ai/playbooks/extension_readiness.yml
+grep -q 'not a security sandbox' docs/extensions/architecture.md
+grep -q 'must not reference extension implementation constants' \
+  docs/decisions/0013-enterprise-extension-boundaries.md
+
+printf 'Extension platform contracts certified\n'
