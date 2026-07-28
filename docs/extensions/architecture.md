@@ -53,3 +53,10 @@ stable blocker codes and the read-only operator commands.
 Compatible entrypoints use the explicit registration SDK described in
 [Extension Authoring](authoring.md). Registration is atomic and the registry is
 sealed after dependency-ordered loading.
+
+Filesystem-backed components are resolved with real paths after compatibility
+preflight. Configuration schemas and documentation must be files, migration
+paths must be directories, and every resolved resource must remain below the
+package root even when a package contains symbolic links. Route, asset and
+migration namespaces remain extension-owned and explicit. See
+[Component Isolation and Upgrade State](components-and-upgrades.md).

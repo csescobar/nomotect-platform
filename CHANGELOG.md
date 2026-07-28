@@ -16,6 +16,7 @@ Required release impact: `minor`.
 - Define community boundaries and versioned external extension contracts. (`61-extension-contracts`)
 - Add read-only extension discovery and compatibility preflight. (`62-extension-preflight`)
 - Add trusted extension loading and explicit registration hooks. (`63-extension-loader`)
+- Isolate extension components and integrate extension state with upgrade preflight. (`64-extension-components`)
 
 ## 0.8.0
 
