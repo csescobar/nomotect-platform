@@ -27,7 +27,7 @@ module Extensions
     test "reports a missing configured package" do
       catalog = Catalog.new(
         configuration: Configuration.new(configuration_data),
-        resolver: ->(_package) {}
+        resolver: ->(_package) { nil }
       )
 
       result = catalog.discover
