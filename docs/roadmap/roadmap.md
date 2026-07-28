@@ -290,7 +290,7 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 
 - [x] Establish a root `VERSION` file as the canonical released project version.
 - [x] Add per-PR YAML change fragments with release-impact declarations.
-- [ ] Validate release-impact declarations in CI.
+- [x] Validate release-impact declarations in CI.
 - [ ] Generate and maintain `CHANGELOG.md`.
 - [ ] Generate release, migration and upgrade notes from normalized metadata.
 - [ ] Automate deterministic release-preparation pull requests.

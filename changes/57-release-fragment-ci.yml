@@ -1,0 +1,23 @@
+schema_version: 1
+id: 57-release-fragment-ci
+category: feature
+summary: Enforce normalized release-impact declarations for pull requests.
+release_impact: minor
+contracts:
+  - change-fragment
+  - release-readiness
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Validation uses bounded git arguments and reads repository metadata only.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
