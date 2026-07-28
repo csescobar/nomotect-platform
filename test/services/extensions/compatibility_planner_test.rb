@@ -125,7 +125,7 @@ module Extensions
       provides: [],
       requires: []
     )
-      manifest = Manifest.new(
+      manifest = Manifest.new({
         "schema_version" => 1,
         "extension" => {
           "id" => id,
@@ -144,7 +144,7 @@ module Extensions
           "documentation" => nil
         },
         "security" => { "trust" => "trusted_in_process" }
-      )
+      })
       Package.new(
         declaration: {
           "id" => id,

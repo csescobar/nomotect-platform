@@ -9,7 +9,7 @@ module Extensions
     end
 
     test "inspection reports discovery blockers without executing compatibility" do
-      configuration = Configuration.new("schema_version" => 1, "extensions" => [])
+      configuration = Configuration.new({ "schema_version" => 1, "extensions" => [] })
       discovery = Catalog::Result.new(
         packages: [],
         blockers: [
@@ -32,7 +32,7 @@ module Extensions
     end
 
     test "preflight produces an empty ready plan when no extensions are enabled" do
-      configuration = Configuration.new("schema_version" => 1, "extensions" => [])
+      configuration = Configuration.new({ "schema_version" => 1, "extensions" => [] })
       discovery = Catalog::Result.new(packages: [], blockers: [])
 
       report = Inspector.new(
