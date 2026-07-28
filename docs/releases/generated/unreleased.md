@@ -22,9 +22,11 @@
 - Add read-only distribution inspection and publication preflight. (`68-distribution-preflight`)
 - Add protected immutable GitHub Release publication. (`69-github-release-publication`)
 - Promote existing multi-platform images to semantic GHCR tags. (`70-ghcr-semantic-promotion`)
+- Attest release artifacts and verify canonical publication evidence. (`71-distribution-evidence`)
 
 ## Affected contracts
 
+- `artifact-attestation`
 - `change-fragment`
 - `changelog`
 - `distribution-approval`
@@ -36,6 +38,7 @@
 - `distribution-inspection`
 - `distribution-manifest`
 - `distribution-preflight`
+- `distribution-verification`
 - `extension-certification`
 - `extension-compatibility`
 - `extension-components`
@@ -79,3 +82,4 @@
 - **Security — 68-distribution-preflight:** Preflight is read-only, fail-closed and consumes credential-free channel observations.
 - **Security — 69-github-release-publication:** Publication is restricted to an approved main commit and the protected release environment.
 - **Security — 70-ghcr-semantic-promotion:** Promotion is digest-bound, rebuild-free and excludes latest before the stable release gate.
+- **Security — 71-distribution-evidence:** Verification is secret-free and artifact attestations bind the public bundle to the approved workflow.

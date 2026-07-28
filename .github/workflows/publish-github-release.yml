@@ -14,7 +14,9 @@ on:
 
 permissions:
   actions: read
+  attestations: write
   contents: write
+  id-token: write
 
 concurrency:
   group: publish-github-release
@@ -56,11 +58,23 @@ jobs:
           test "$(gh api "$run_path" --jq .head_branch)" = "main"
           test "$(gh api "$run_path" --jq .conclusion)" = "success"
       - name: Download approved distribution bundle
+        env:
+          ARTIFACT_RUN_ID: ${{ inputs.artifact_run_id }}
         run: |
           mkdir -p tmp/distribution
-          gh run download "${{ inputs.artifact_run_id }}" \
+          gh run download "$ARTIFACT_RUN_ID" \
             --name distribution-bundle \
             --dir tmp/distribution
+      - name: Plan immutable GitHub Release
+        run: |
+          bundle exec ruby bin/github-release-publish plan \
+            --manifest tmp/distribution/distribution-manifest.json \
+            --artifact-directory tmp/distribution/artifacts \
+            --repository "$GITHUB_REPOSITORY"
+      - name: Attest public release artifacts
+        uses: actions/attest@v4
+        with:
+          subject-path: tmp/distribution/artifacts/*
       - name: Publish immutable GitHub Release
         run: |
           bundle exec ruby bin/github-release-publish apply \

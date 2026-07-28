@@ -23,6 +23,7 @@ Required release impact: `minor`.
 - Add read-only distribution inspection and publication preflight. (`68-distribution-preflight`)
 - Add protected immutable GitHub Release publication. (`69-github-release-publication`)
 - Promote existing multi-platform images to semantic GHCR tags. (`70-ghcr-semantic-promotion`)
+- Attest release artifacts and verify canonical publication evidence. (`71-distribution-evidence`)
 
 ## 0.8.0
 
