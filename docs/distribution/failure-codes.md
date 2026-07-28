@@ -29,6 +29,8 @@
 - `tag_conflict` — the tag exists at a different commit.
 - `release_conflict` — an incompatible GitHub Release already exists.
 - `image_source_missing` — the commit-addressable GHCR image is unavailable.
+- `image_digest_mismatch` — the commit-addressable tag does not resolve to the
+  approved immutable digest.
 - `artifact_missing` — a required artifact is absent.
 - `artifact_digest_mismatch` — downloaded content does not match its checksum.
 - `evidence_incomplete` — publication evidence omits a required relationship.

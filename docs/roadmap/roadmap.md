@@ -327,6 +327,8 @@ operator lifecycle guides.
   read-only fail-closed preflight.
 - [x] Add protected, immutable GitHub Release publication from a certified
   artifact bundle.
+- [x] Add rebuild-free GHCR semantic promotion from the commit-addressable
+  multi-platform image.
 
 - [ ] Publish GitHub Releases and GHCR images from approved release metadata.
 - [ ] Evaluate additional channels only where support and ownership are explicit.
@@ -341,7 +343,9 @@ focused contract certification without publishing release state. PR #68 adds
 read-only distribution inspection, fail-closed preflight, stable findings,
 operator actions and human or JSON CLI reporting. PR #69 adds
 checksum-verified artifact planning and a protected GitHub Release workflow
-bound to the exact approved `main` commit.
+bound to the exact approved `main` commit. PR #70 adds digest-bound GHCR
+promotion for full and minor semantic tags without rebuilding or publishing
+`latest`.
 
 ### Phase 7 — Operational Readiness
 
