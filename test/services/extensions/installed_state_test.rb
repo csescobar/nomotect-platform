@@ -37,10 +37,10 @@ module Extensions
     end
 
     test "reports configured packages that discovery could not resolve" do
-      configuration = Configuration.new(
+      configuration = Configuration.new({
         "schema_version" => 1,
         "extensions" => [ extension_declaration("acme.missing") ]
-      )
+      })
       report = InspectionReport.new(
         mode: :preflight,
         configuration: configuration,
@@ -88,10 +88,10 @@ module Extensions
         FileUtils.mkdir_p(root.join("db/migrate"))
         package = extension_package("acme.audit", migration_paths: [ "db/migrate" ])
         package = Package.new(declaration: package.declaration, root:, manifest: package.manifest)
-        configuration = Configuration.new(
+        configuration = Configuration.new({
           "schema_version" => 1,
           "extensions" => [ package.declaration ]
-        )
+        })
         yield configuration, package
       end
     end
