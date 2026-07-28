@@ -1,0 +1,23 @@
+schema_version: 1
+id: 58-release-notes
+category: feature
+summary: Generate deterministic changelog, release, migration, and upgrade notes.
+release_impact: minor
+contracts:
+  - release-notes
+  - changelog
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Generated notes contain normalized repository metadata and no secrets.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

@@ -6,6 +6,10 @@ owns:
   - release_impact
   - release_readiness
   - pull_request_release_validation
+  - deterministic_changelog
+  - release_notes
+  - migration_notes
+  - upgrade_notes
 may_use:
   - repository_intelligence
   - upgrade_manifest
@@ -23,8 +27,10 @@ invariants:
   - behavior changes declare semantic release impact
   - migrations and required upgrade actions are explicit
   - release-relevant pull requests provide normalized change fragments
+  - generated release documents match normalized change fragments
   - release preparation requires maintainer approval
 required_tests:
   - platform_version_test
   - releases_change_fragment_test
   - releases_pull_request_validator_test
+  - releases_notes_generator_test
