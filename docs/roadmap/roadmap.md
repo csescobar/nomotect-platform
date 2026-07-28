@@ -305,7 +305,7 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 - [x] Define community and enterprise repository boundaries.
 - [x] Introduce extension, capability and dependency contracts.
 - [x] Validate compatible platform and extension versions before loading.
-- [ ] Provide explicit registration hooks instead of monkey patches.
+- [x] Provide explicit registration hooks instead of monkey patches.
 - [ ] Isolate extension configuration, migrations, routes, assets and documentation.
 - [ ] Define fail-closed behavior for missing or incompatible extensions.
 

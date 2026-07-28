@@ -14,6 +14,7 @@
 - Certify version consistency across release and supply-chain evidence. (`60-release-certification`)
 - Define community boundaries and versioned external extension contracts. (`61-extension-contracts`)
 - Add read-only extension discovery and compatibility preflight. (`62-extension-preflight`)
+- Add trusted extension loading and explicit registration hooks. (`63-extension-loader`)
 
 ## Affected contracts
 
@@ -22,7 +23,9 @@
 - `extension-compatibility`
 - `extension-configuration`
 - `extension-inspection`
+- `extension-loader`
 - `extension-manifest`
+- `extension-registration`
 - `platform-version`
 - `release-compatibility`
 - `release-consistency`
@@ -41,3 +44,4 @@
 - **Security — 60-release-certification:** Validation is read-only, bounds evidence paths, and reports no secret values.
 - **Security — 61-extension-contracts:** Extension packages are declared trusted in-process code and are not loaded by this contract baseline.
 - **Security — 62-extension-preflight:** Preflight reads installed package metadata without executing extension entrypoints or changing state.
+- **Security — 63-extension-loader:** Only ready plans execute trusted entrypoints, and failures omit internal exception messages.

@@ -5,6 +5,7 @@ on:
     paths:
       - app/services/extensions/**
       - test/services/extensions/**
+      - test/support/extension_package_helper.rb
       - test/integration/extension_framework_certification_test.rb
       - docs/contracts/extension-*.schema.json
       - docs/extensions/**
@@ -20,6 +21,7 @@ on:
     paths:
       - app/services/extensions/**
       - test/services/extensions/**
+      - test/support/extension_package_helper.rb
       - test/integration/extension_framework_certification_test.rb
       - docs/contracts/extension-*.schema.json
       - docs/extensions/**

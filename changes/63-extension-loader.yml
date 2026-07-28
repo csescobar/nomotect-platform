@@ -1,0 +1,23 @@
+schema_version: 1
+id: 63-extension-loader
+category: feature
+summary: Add trusted extension loading and explicit registration hooks.
+release_impact: minor
+contracts:
+  - extension-loader
+  - extension-registration
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Only ready plans execute trusted entrypoints, and failures omit internal exception messages.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
