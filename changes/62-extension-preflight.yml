@@ -1,0 +1,23 @@
+schema_version: 1
+id: 62-extension-preflight
+category: feature
+summary: Add read-only extension discovery and compatibility preflight.
+release_impact: minor
+contracts:
+  - extension-compatibility
+  - extension-inspection
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Preflight reads installed package metadata without executing extension entrypoints or changing state.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

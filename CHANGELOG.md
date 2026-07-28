@@ -14,6 +14,7 @@ Required release impact: `minor`.
 - Prepare deterministic, reviewable release pull requests. (`59-release-preparation`)
 - Certify version consistency across release and supply-chain evidence. (`60-release-certification`)
 - Define community boundaries and versioned external extension contracts. (`61-extension-contracts`)
+- Add read-only extension discovery and compatibility preflight. (`62-extension-preflight`)
 
 ## 0.8.0
 

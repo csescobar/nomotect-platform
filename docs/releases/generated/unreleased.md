@@ -13,12 +13,15 @@
 - Prepare deterministic, reviewable release pull requests. (`59-release-preparation`)
 - Certify version consistency across release and supply-chain evidence. (`60-release-certification`)
 - Define community boundaries and versioned external extension contracts. (`61-extension-contracts`)
+- Add read-only extension discovery and compatibility preflight. (`62-extension-preflight`)
 
 ## Affected contracts
 
 - `change-fragment`
 - `changelog`
+- `extension-compatibility`
 - `extension-configuration`
+- `extension-inspection`
 - `extension-manifest`
 - `platform-version`
 - `release-compatibility`
@@ -37,3 +40,4 @@
 - **Security — 59-release-preparation:** Automation has bounded repository permissions and cannot publish releases or images.
 - **Security — 60-release-certification:** Validation is read-only, bounds evidence paths, and reports no secret values.
 - **Security — 61-extension-contracts:** Extension packages are declared trusted in-process code and are not loaded by this contract baseline.
+- **Security — 62-extension-preflight:** Preflight reads installed package metadata without executing extension entrypoints or changing state.

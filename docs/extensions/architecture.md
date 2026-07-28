@@ -45,3 +45,7 @@ a malicious package after loading.
 
 No extension installation, download, license verification, entitlement,
 signature verification or package publication is part of this phase.
+
+Compatibility is evaluated across the complete enabled graph before loading.
+See [Extension Inspection and Preflight](inspection.md) for package discovery,
+stable blocker codes and the read-only operator commands.

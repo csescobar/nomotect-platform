@@ -60,7 +60,7 @@ module Extensions
       extension = object!(data.fetch("extension"), "extension")
       exact_keys!(extension, %w[id version contract_version entrypoint], "extension")
       identifier!(extension.fetch("id"), "extension.id")
-      Gem::Version.new(string!(extension, "version"))
+      Platform::Version.new(string!(extension, "version"))
       positive_integer!(extension.fetch("contract_version"), "extension.contract_version")
       entrypoint = string!(extension, "entrypoint")
       raise InvalidManifest, "extension.entrypoint is invalid" unless ENTRYPOINT.match?(entrypoint)

@@ -8,6 +8,10 @@ owns:
   - extension_capability
   - extension_dependency
   - extension_component_declaration
+  - extension_package_discovery
+  - extension_compatibility_preflight
+  - extension_dependency_order
+  - extension_inspection_report
 may_use:
   - platform_version
   - repository_intelligence
@@ -20,13 +24,20 @@ cannot_use:
   - automatic_code_execution_before_validation
   - runtime_installation
   - hot_unloading
+  - compatibility_override
 invariants:
   - the community core remains fully functional without extensions
   - enterprise implementations remain in separately licensed repositories
   - extension manifests are validated before entrypoint execution
+  - the complete enabled extension graph is compatible before any entrypoint executes
+  - inspection and preflight never require an extension entrypoint
+  - compatible load order is deterministic and dependency-first
   - extension configuration contains no credentials or runtime secrets
   - component paths remain inside the extension package root
   - extensions are trusted in-process code and are not security sandboxes
 required_tests:
   - extensions_manifest_test
   - extensions_configuration_test
+  - extensions_catalog_test
+  - extensions_compatibility_planner_test
+  - extensions_inspector_test

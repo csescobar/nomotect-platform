@@ -36,6 +36,14 @@ module Extensions
       assert_includes error.message, "ids must be unique"
     end
 
+    test "requires a semantic extension version" do
+      data = manifest_data
+      data["extension"]["version"] = "1"
+
+      error = assert_raises(Manifest::InvalidManifest) { Manifest.new(data) }
+      assert_includes error.message, "semantic versioning"
+    end
+
     private
 
     def manifest_data
