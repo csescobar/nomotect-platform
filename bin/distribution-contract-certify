@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
+  docs/contracts/channel-state.schema.json \
+  docs/contracts/distribution-manifest.schema.json \
+  docs/contracts/publication-evidence.schema.json
+
+bundle exec rails test test/services/distributions/manifest_test.rb
+ruby bin/repository-intelligence validate
+
+grep -q 'GitHub Releases and GHCR are the only supported baseline channels' \
+  config/ai/contracts/distributions.yml
+grep -q 'repository_context' docs/contracts/distribution-manifest.schema.json
+grep -q 'partially_published' docs/contracts/publication-evidence.schema.json
+grep -q 'enterprise repository' docs/distribution/architecture.md
+grep -q 'latest.*prohibited' docs/distribution/channel-policy.md
+
+test -x bin/distribution-contract-certify
+! grep -Eq 'contents: write|packages: write|id-token: write' \
+  .github/workflows/distribution-contract.yml
+
+printf 'Distribution contracts and channel policy certified\n'

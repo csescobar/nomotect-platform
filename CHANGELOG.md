@@ -19,6 +19,7 @@ Required release impact: `minor`.
 - Isolate extension components and integrate extension state with upgrade preflight. (`64-extension-components`)
 - Add fail-closed extension lifecycle and readiness controls. (`65-extension-lifecycle`)
 - Certify the enterprise extension platform and publish lifecycle guides. (`66-extension-certification`)
+- Define versioned distribution contracts and supported channel policy. (`67-distribution-contracts`)
 
 ## 0.8.0
 

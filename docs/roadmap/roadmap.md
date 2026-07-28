@@ -165,7 +165,7 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 ## Epic 9 — Distribution, Installation and Enterprise Extensions
 
-**Status:** 🚧 In progress — Phase 6 next
+**Status:** 🚧 In progress — Phase 6 distribution contracts
 
 **Objective:** transform the repository from a developer-oriented source project into a distributable, installable, upgradeable and professionally extensible platform while preserving a complete Apache-licensed community core.
 
@@ -319,13 +319,21 @@ operator lifecycle guides.
 
 ### Phase 6 — Distribution Channels
 
-**Status:** ⏳ Planned
+**Status:** 🚧 In progress
+
+- [x] Define versioned distribution-manifest, channel-state and
+  publication-evidence contracts.
 
 - [ ] Publish GitHub Releases and GHCR images from approved release metadata.
 - [ ] Evaluate additional channels only where support and ownership are explicit.
 - [ ] Sign or attest release artifacts where supported.
 - [ ] Publish checksums, SBOMs, provenance, compatibility data and upgrade notes.
 - [ ] Verify channel contents against canonical release evidence.
+
+**Delivery evidence:** PR #67 establishes the supported-channel boundary,
+repository-derived identity, immutable publication and recovery policy,
+credential-free evidence contracts, Repository Intelligence ownership and
+focused contract certification without publishing release state.
 
 ### Phase 7 — Operational Readiness
 
