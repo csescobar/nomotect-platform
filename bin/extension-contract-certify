@@ -15,8 +15,8 @@ grep -q 'additionalProperties": false' docs/contracts/extension-manifest.schema.
 grep -q 'trusted_in_process' docs/contracts/extension-manifest.schema.json
 grep -q 'community core remains fully functional' config/ai/contracts/extensions.yml
 grep -q 'repository.contract' config/ai/playbooks/extension_readiness.yml
-grep -q 'not a security sandbox' docs/extensions/architecture.md
-grep -q 'must not reference extension implementation constants' \
+grep -q 'trusted code, not sandboxed plugins' docs/extensions/architecture.md
+grep -q 'core never references enterprise constants' \
   docs/decisions/0013-enterprise-extension-boundaries.md
 
 printf 'Extension platform contracts certified\n'
