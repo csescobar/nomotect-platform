@@ -7,7 +7,12 @@ ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
   docs/contracts/publication-evidence.schema.json
 
 bundle exec rails test test/services/distributions/manifest_test.rb
-ruby bin/repository-intelligence validate
+ruby -Ilib -rrepository_intelligence/platform -e '
+  registry = RepositoryIntelligence::ContractRegistry.new("config/ai/contracts")
+  abort registry.validate.join("\n") unless registry.validate.empty?
+  abort "distribution contract is not registered" unless
+    registry.load.any? { |contract| contract.fetch("id") == "distributions" }
+'
 
 grep -q 'GitHub Releases and GHCR are the only supported baseline channels' \
   config/ai/contracts/distributions.yml
