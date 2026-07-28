@@ -59,6 +59,19 @@ module Upgrades
       assert_equal "ActiveRecord::ConnectionNotEstablished", state.dig("database", "error")
     end
 
+    test "uses the canonical repository version when no override is provided" do
+      context = fake(current_version: 1, migrations_status: [])
+      installation_store = fake(read: { "schema_version" => 1, "state" => "completed" })
+      state = InstalledStateDetector.new(
+        installation_store: installation_store,
+        connection: fake(database_version: "18.0"),
+        migration_context: context,
+        generated_artifacts_current: true
+      ).call
+
+      assert_equal "0.8.0", state.dig("platform", "version")
+    end
+
     private
 
     def fake(**methods)

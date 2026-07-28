@@ -1,0 +1,27 @@
+id: releases
+version: 1
+owns:
+  - platform_version
+  - change_fragment
+  - release_impact
+  - release_readiness
+may_use:
+  - repository_intelligence
+  - upgrade_manifest
+  - packaging_manifest
+  - sbom
+  - provenance
+cannot_use:
+  - arbitrary_shell_execution
+  - secret_persistence
+  - automatic_tag_publication
+  - automatic_release_publication
+invariants:
+  - VERSION is the canonical platform version
+  - release metadata is deterministic and credential-free
+  - behavior changes declare semantic release impact
+  - migrations and required upgrade actions are explicit
+  - release preparation requires maintainer approval
+required_tests:
+  - platform_version_test
+  - releases_change_fragment_test

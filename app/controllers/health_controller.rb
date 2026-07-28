@@ -5,7 +5,7 @@ class HealthController < ActionController::Base
     render json: {
       status: "ok",
       service: "rails-hotwire-platform",
-      version: ENV.fetch("APP_VERSION", "development"),
+      version: ENV.fetch("APP_VERSION", Platform::Version.current.to_s),
       timestamp: Time.current.utc.iso8601
     }
   rescue StandardError => error

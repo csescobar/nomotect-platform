@@ -286,10 +286,10 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 
 ### Phase 4 — Release Engineering
 
-**Status:** ⏳ Planned
+**Status:** 🚧 In progress
 
-- [ ] Establish a root `VERSION` file as the canonical released project version.
-- [ ] Add per-PR YAML change fragments with release-impact declarations.
+- [x] Establish a root `VERSION` file as the canonical released project version.
+- [x] Add per-PR YAML change fragments with release-impact declarations.
 - [ ] Validate release-impact declarations in CI.
 - [ ] Generate and maintain `CHANGELOG.md`.
 - [ ] Generate release, migration and upgrade notes from normalized metadata.

@@ -6,7 +6,7 @@ source_created="${SOURCE_CREATED:-1970-01-01T00:00:00Z}"
 source_repository="${SOURCE_REPOSITORY_URL:-local://repository}"
 image_primary="${IMAGE_NAME:-rails-application:ci}"
 image_repeat="${REPEAT_IMAGE_NAME:-rails-application:ci-repeat}"
-source_version="${SOURCE_VERSION:-0.0.0-dev+${source_commit:0:12}}"
+source_version="${SOURCE_VERSION:-$(tr -d '[:space:]' < VERSION)}"
 oci_title="${OCI_TITLE:-Rails Application}"
 oci_description="${OCI_DESCRIPTION:-Rails and Hotwire application container}"
 

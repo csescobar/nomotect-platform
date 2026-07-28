@@ -1,17 +1,24 @@
 id: release_readiness
-version: 1
+version: 2
 title: Assess repository readiness for a pre-release
 inputs:
   - target_version
+on_failure: stop
 steps:
-  - regenerate_repository_intelligence
-  - validate_contracts_and_playbooks
-  - inspect_architecture_and_documentation_drift
-  - verify_security_privacy_and_tenant_evidence
-  - verify_tests_sbom_and_provenance
-  - produce_readiness_report
+  - id: release_contract
+    tool: repository.contract
+    args:
+      id: releases
+    timeout_seconds: 5
+  - id: validation
+    tool: repository.validate
+    args: {}
+    timeout_seconds: 30
+  - id: readiness
+    tool: repository.readiness
+    args: {}
+    timeout_seconds: 5
 completion_gate:
+  - all_steps_pass
+  - validation_passes
   - repository_ready
-  - no_unresolved_high_severity_findings
-  - generated_artifacts_current
-  - final_ci_green
