@@ -190,6 +190,7 @@ jobs:
             tmp/ci/container-sbom.cdx.json.sha256
             tmp/ci/packaging-manifest.json
             tmp/ci/packaging-manifest.json.sha256
+            tmp/ci/release-provenance.json
             tmp/ci/sbom.cdx.json
             tmp/ci/sbom.cdx.json.sha256
           if-no-files-found: error

@@ -9,6 +9,7 @@ require "time"
 
 image = ENV.fetch("IMAGE_NAME", ARGV.fetch(0, "rails-hotwire-platform:ci"))
 source_commit = ENV.fetch("SOURCE_COMMIT", "local")
+source_version = ENV.fetch("SOURCE_VERSION") { File.read("VERSION").strip }
 output = ENV.fetch("CONTAINER_SBOM_PATH", "tmp/ci/container-sbom.cdx.json")
 
 run = lambda do |*command|
@@ -60,10 +61,11 @@ bom = {
     component: {
       type: "container",
       name: image,
-      version: source_commit
+      version: source_version
     },
     properties: [
       { name: "source.commit", value: source_commit },
+      { name: "platform.version", value: source_version },
       { name: "container.image", value: image }
     ]
   },

@@ -52,10 +52,11 @@ module Releases
     def apply!
       ensure_valid!
       release_documents = generator.release_documents(target_version.to_s)
-      metadata = release_metadata
+      compatibility = release_compatibility
+      metadata = release_metadata(compatibility)
       archive_fragments!
       root.join("VERSION").write("#{target_version}\n")
-      write_versioned_documents(release_documents, metadata)
+      write_versioned_documents(release_documents, metadata, compatibility)
       NotesGenerator.new(root:, current_version: target_version.to_s).write!
       plan_after_apply(metadata)
     end
@@ -92,22 +93,38 @@ module Releases
         "docs/releases/#{target_version}/release-notes.md",
         "docs/releases/#{target_version}/migration-notes.md",
         "docs/releases/#{target_version}/upgrade-notes.md",
+        "docs/releases/#{target_version}/compatibility.json",
         "docs/releases/#{target_version}/release-metadata.json",
         *fragment_paths
       ].sort
     end
 
-    def release_metadata
+    def release_metadata(compatibility)
       payload = {
         schema_version: 1,
         source_version: source_version.to_s,
         target_version: target_version.to_s,
         release_impact: generator.release_impact,
-        fragment_ids: fragments.map(&:id).sort
+        fragment_ids: fragments.map(&:id).sort,
+        compatibility_digest: Digest::SHA256.hexdigest(CanonicalJson.generate(compatibility))
       }
       normalized_fragments = fragments.sort_by(&:id).map(&:data)
-      payload[:fragment_digest] = Digest::SHA256.hexdigest(JSON.generate(normalized_fragments))
+      payload[:fragment_digest] = Digest::SHA256.hexdigest(CanonicalJson.generate(normalized_fragments))
       payload
+    end
+
+    def release_compatibility
+      {
+        schema_version: 1,
+        source_version: source_version.to_s,
+        platform_version: target_version.to_s,
+        contracts: {
+          change_fragment: ChangeFragment::SCHEMA_VERSION,
+          installed_platform_state: Upgrades::InstalledStateDetector::SCHEMA_VERSION,
+          release_metadata: 1,
+          upgrade_manifest: Upgrades::Manifest::SCHEMA_VERSION
+        }
+      }
     end
 
     def archive_fragments!
@@ -118,10 +135,11 @@ module Releases
       end
     end
 
-    def write_versioned_documents(documents, metadata)
+    def write_versioned_documents(documents, metadata, compatibility)
       directory = root.join("docs/releases", target_version.to_s)
       directory.mkpath
       documents.each { |name, content| directory.join(name).write(content) }
+      directory.join("compatibility.json").write("#{JSON.pretty_generate(compatibility)}\n")
       directory.join("release-metadata.json").write("#{JSON.pretty_generate(metadata)}\n")
     end
 

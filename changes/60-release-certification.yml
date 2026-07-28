@@ -1,0 +1,24 @@
+schema_version: 1
+id: 60-release-certification
+category: feature
+summary: Certify version consistency across release and supply-chain evidence.
+release_impact: minor
+contracts:
+  - release-compatibility
+  - release-evidence
+  - release-consistency
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Validation is read-only, bounds evidence paths, and reports no secret values.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

@@ -11,12 +11,16 @@
 - Enforce normalized release-impact declarations for pull requests. (`57-release-fragment-ci`)
 - Generate deterministic changelog, release, migration, and upgrade notes. (`58-release-notes`)
 - Prepare deterministic, reviewable release pull requests. (`59-release-preparation`)
+- Certify version consistency across release and supply-chain evidence. (`60-release-certification`)
 
 ## Affected contracts
 
 - `change-fragment`
 - `changelog`
 - `platform-version`
+- `release-compatibility`
+- `release-consistency`
+- `release-evidence`
 - `release-metadata`
 - `release-notes`
 - `release-preparation`
@@ -28,3 +32,4 @@
 - **Security — 57-release-fragment-ci:** Validation uses bounded git arguments and reads repository metadata only.
 - **Security — 58-release-notes:** Generated notes contain normalized repository metadata and no secrets.
 - **Security — 59-release-preparation:** Automation has bounded repository permissions and cannot publish releases or images.
+- **Security — 60-release-certification:** Validation is read-only, bounds evidence paths, and reports no secret values.
