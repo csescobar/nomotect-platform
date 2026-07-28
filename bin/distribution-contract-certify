@@ -23,7 +23,7 @@ grep -q 'repository_context' docs/contracts/distribution-manifest.schema.json
 grep -q 'partially_published' docs/contracts/publication-evidence.schema.json
 grep -q 'enterprise repository' docs/distribution/architecture.md
 grep -q 'latest.*prohibited' docs/distribution/channel-policy.md
-grep -q 'preflight.*blocker' docs/distribution/inspection.md
+grep -q '`preflight` treats every missing' docs/distribution/inspection.md
 
 test -x bin/distribution-contract-certify
 test -x bin/distribution
