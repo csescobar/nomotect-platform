@@ -1,6 +1,6 @@
 id: extension_readiness
-version: 1
-title: Assess repository readiness for external extensions
+version: 2
+title: Certify repository readiness for external extensions
 inputs:
   - platform_version
 on_failure: stop

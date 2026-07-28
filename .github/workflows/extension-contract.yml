@@ -9,6 +9,7 @@ on:
       - test/services/extensions/**
       - test/support/extension_package_helper.rb
       - test/integration/extension_framework_certification_test.rb
+      - test/fixtures/extensions/**
       - docs/contracts/extension-*.schema.json
       - docs/contracts/installed-platform-state.schema.json
       - docs/extensions/**
@@ -29,6 +30,7 @@ on:
       - test/services/extensions/**
       - test/support/extension_package_helper.rb
       - test/integration/extension_framework_certification_test.rb
+      - test/fixtures/extensions/**
       - docs/contracts/extension-*.schema.json
       - docs/contracts/installed-platform-state.schema.json
       - docs/extensions/**

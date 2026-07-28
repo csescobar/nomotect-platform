@@ -1,0 +1,24 @@
+schema_version: 1
+id: 66-extension-certification
+category: feature
+summary: Certify the enterprise extension platform and publish lifecycle guides.
+release_impact: minor
+contracts:
+  - extension-certification
+  - extension-documentation
+  - repository-intelligence
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Certification covers fail-closed loading, bounded real paths and secret-safe failure evidence.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
