@@ -1,0 +1,24 @@
+schema_version: 1
+id: 71-distribution-evidence
+category: feature
+summary: Attest release artifacts and verify canonical publication evidence.
+release_impact: minor
+contracts:
+  - publication-evidence
+  - distribution-verification
+  - artifact-attestation
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Verification is secret-free and artifact attestations bind the public bundle to the approved workflow.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

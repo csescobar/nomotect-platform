@@ -15,9 +15,11 @@ on:
       - bin/distribution
       - bin/github-release-publish
       - bin/ghcr-promote
+      - bin/distribution-verify
       - bin/release
       - .github/workflows/publish-github-release.yml
       - .github/workflows/promote-ghcr-release.yml
+      - .github/workflows/verify-distribution.yml
       - .github/workflows/distribution-contract.yml
   push:
     branches: [main]
@@ -34,9 +36,11 @@ on:
       - bin/distribution
       - bin/github-release-publish
       - bin/ghcr-promote
+      - bin/distribution-verify
       - bin/release
       - .github/workflows/publish-github-release.yml
       - .github/workflows/promote-ghcr-release.yml
+      - .github/workflows/verify-distribution.yml
       - .github/workflows/distribution-contract.yml
 
 permissions:

@@ -13,6 +13,8 @@ owns:
   - github_release_publication
   - distribution_artifact_bundle
   - ghcr_semantic_promotion
+  - distribution_verification
+  - artifact_attestation
 may_use:
   - platform_version
   - release_metadata
@@ -50,6 +52,9 @@ invariants:
   - GitHub Release publication requires the protected release environment
   - GHCR semantic tags resolve to the existing commit-addressable image digest
   - GHCR promotion performs no container rebuild and creates no latest tag
+  - release artifacts receive GitHub artifact attestations before publication
+  - post-publication verification is read-only and binds both channels to canonical release evidence
+  - verification evidence derives from a successful main run for the approved source commit
   - the complete Apache licensed community platform remains independently distributable
 required_tests:
   - distributions_manifest_test
@@ -57,4 +62,5 @@ required_tests:
   - distributions_inspector_test
   - distributions_github_release_plan_test
   - distributions_ghcr_promotion_plan_test
+  - distributions_verifier_test
   - distribution_contract_certification
