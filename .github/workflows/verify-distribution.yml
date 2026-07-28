@@ -54,6 +54,8 @@ jobs:
           test "$(jq -r .head_sha <<<"$run_json")" = "$APPROVED_COMMIT"
           test "$(jq -r .head_branch <<<"$run_json")" = "main"
           test "$(jq -r .conclusion <<<"$run_json")" = "success"
+          test "$(jq -r .name <<<"$run_json")" = "Observe Distribution"
+          test "$(jq -r .event <<<"$run_json")" = "workflow_dispatch"
       - name: Download credential-free verification input
         run: |
           mkdir -p tmp/distribution

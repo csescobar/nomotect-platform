@@ -25,6 +25,10 @@
 - Attest release artifacts and verify canonical publication evidence. (`71-distribution-evidence`)
 - Certify deterministic distribution preparation and the controlled publication playbook. (`72-distribution-certification`)
 
+### Fixed
+
+- Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
+
 ## Affected contracts
 
 - `artifact-attestation`
@@ -88,3 +92,4 @@
 - **Security — 70-ghcr-semantic-promotion:** Promotion is digest-bound, rebuild-free and excludes latest before the stable release gate.
 - **Security — 71-distribution-evidence:** Verification is secret-free and artifact attestations bind the public bundle to the approved workflow.
 - **Security — 72-distribution-certification:** Preparation consumes successful same-commit main evidence and performs no channel mutation.
+- **Security — 73-distribution-observation:** Observation uses read-only repository and package permissions and never persists credentials.

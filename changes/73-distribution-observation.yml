@@ -1,0 +1,24 @@
+schema_version: 1
+id: 73-distribution-observation
+category: fix
+summary: Produce credential-free channel observations for controlled distribution verification.
+release_impact: patch
+contracts:
+  - distribution-channel-state
+  - distribution-verification
+  - distribution-operations
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Observation uses read-only repository and package permissions and never persists credentials.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
