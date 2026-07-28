@@ -7,6 +7,7 @@ ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
   docs/contracts/publication-evidence.schema.json
 
 bundle exec rails test \
+  test/integration/distribution_certification_test.rb \
   test/services/distributions/channel_state_test.rb \
   test/services/distributions/ghcr_promotion_plan_test.rb \
   test/services/distributions/github_release_plan_test.rb \
@@ -30,6 +31,7 @@ grep -q '`preflight` treats every missing' docs/distribution/inspection.md
 
 test -x bin/distribution-contract-certify
 test -x bin/distribution
+test -x bin/distribution-bundle
 test -x bin/ghcr-promote
 test -x bin/github-release-publish
 test -x bin/distribution-verify
@@ -49,5 +51,15 @@ grep -q 'origin/main' .github/workflows/verify-distribution.yml
 grep -q 'conclusion.*success' .github/workflows/verify-distribution.yml
 ! grep -Eq 'contents: write|packages: write|id-token: write|attestations: write' \
   .github/workflows/verify-distribution.yml
+grep -q 'packaging-evidence' .github/workflows/prepare-distribution.yml
+grep -q 'distribution-bundle' .github/workflows/prepare-distribution.yml
+grep -q 'origin/main' .github/workflows/prepare-distribution.yml
+grep -q 'conclusion.*success' .github/workflows/prepare-distribution.yml
+grep -q 'name).*CI' .github/workflows/prepare-distribution.yml
+! grep -Eq 'contents: write|packages: write|id-token: write|attestations: write' \
+  .github/workflows/prepare-distribution.yml
+ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
+  docs/releases/0.8.0/compatibility.json \
+  docs/releases/0.8.0/release-metadata.json
 
 printf 'Distribution contracts and channel policy certified\n'

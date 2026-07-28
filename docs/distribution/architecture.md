@@ -24,9 +24,9 @@ evidence records immutable channel references and artifact checksums without
 credentials or workflow tokens. Channel-state observations provide the
 read-only input used by inspection and verification.
 
-The release image is never rebuilt while publishing a release. A later Phase 6
-slice must locate the existing commit-addressable multi-platform image and
-promote that exact manifest to semantic tags. This preserves the source,
+The release image is never rebuilt while publishing a release. Semantic
+promotion locates the existing commit-addressable multi-platform image and
+promotes that exact manifest to semantic tags. This preserves the source,
 packaging, SBOM and provenance relationship established in earlier phases.
 
 ## Authority boundary
@@ -36,9 +36,10 @@ Deterministic Ruby and shell commands remain the authority for parsing,
 planning and verification. The existing `release_readiness` playbook may
 coordinate read-only readiness checks, but it cannot merge, tag or publish.
 
-Publication will require explicit approval through a protected GitHub
-environment named `release`. This contract baseline has read-only workflow
-permissions and performs no publication.
+Publication requires explicit approval through a protected GitHub environment
+named `release`. Inspection and bundle preparation have read-only workflow
+permissions. Only the channel-specific workflows receive bounded write
+permissions after environment approval.
 
 ## Community and enterprise separation
 

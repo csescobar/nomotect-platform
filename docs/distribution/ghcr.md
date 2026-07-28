@@ -4,6 +4,10 @@ Release publication promotes the existing commit-addressable multi-platform
 image. It does not rebuild an image from a tag, release branch or downloaded
 source archive.
 
+Promotion consumes the same `distribution-bundle` run accepted by GitHub
+Release publication. The run must be a successful `Prepare Distribution`
+workflow dispatch for the exact approved current `main` commit.
+
 `bin/ghcr-promote plan` derives all identities from the active repository,
 approved source commit, manifest version and immutable `sha256` digest. For
 `0.8.0`, the only destination tags are `0.8.0` and `0.8`. The pre-stable

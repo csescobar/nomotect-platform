@@ -59,6 +59,8 @@ jobs:
           test "$(gh api "$run_path" --jq .head_sha)" = "$SOURCE_COMMIT"
           test "$(gh api "$run_path" --jq .head_branch)" = "main"
           test "$(gh api "$run_path" --jq .conclusion)" = "success"
+          test "$(gh api "$run_path" --jq .name)" = "Prepare Distribution"
+          test "$(gh api "$run_path" --jq .event)" = "workflow_dispatch"
           mkdir -p tmp/distribution
           gh run download "$ARTIFACT_RUN_ID" \
             --name distribution-bundle \

@@ -24,6 +24,7 @@ Required release impact: `minor`.
 - Add protected immutable GitHub Release publication. (`69-github-release-publication`)
 - Promote existing multi-platform images to semantic GHCR tags. (`70-ghcr-semantic-promotion`)
 - Attest release artifacts and verify canonical publication evidence. (`71-distribution-evidence`)
+- Certify deterministic distribution preparation and the controlled publication playbook. (`72-distribution-certification`)
 
 ## 0.8.0
 

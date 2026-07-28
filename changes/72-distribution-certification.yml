@@ -1,0 +1,24 @@
+schema_version: 1
+id: 72-distribution-certification
+category: feature
+summary: Certify deterministic distribution preparation and the controlled publication playbook.
+release_impact: minor
+contracts:
+  - distribution-bundle-preparation
+  - distribution-certification
+  - distribution-operations
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Preparation consumes successful same-commit main evidence and performs no channel mutation.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

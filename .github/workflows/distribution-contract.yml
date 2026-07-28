@@ -5,6 +5,7 @@ on:
     paths:
       - app/services/distributions/**
       - test/services/distributions/**
+      - test/integration/distribution_certification_test.rb
       - docs/contracts/distribution-manifest.schema.json
       - docs/contracts/publication-evidence.schema.json
       - docs/contracts/channel-state.schema.json
@@ -13,12 +14,14 @@ on:
       - config/ai/contracts/distributions.yml
       - bin/distribution-contract-certify
       - bin/distribution
+      - bin/distribution-bundle
       - bin/github-release-publish
       - bin/ghcr-promote
       - bin/distribution-verify
       - bin/release
       - .github/workflows/publish-github-release.yml
       - .github/workflows/promote-ghcr-release.yml
+      - .github/workflows/prepare-distribution.yml
       - .github/workflows/verify-distribution.yml
       - .github/workflows/distribution-contract.yml
   push:
@@ -26,6 +29,7 @@ on:
     paths:
       - app/services/distributions/**
       - test/services/distributions/**
+      - test/integration/distribution_certification_test.rb
       - docs/contracts/distribution-manifest.schema.json
       - docs/contracts/publication-evidence.schema.json
       - docs/contracts/channel-state.schema.json
@@ -34,12 +38,14 @@ on:
       - config/ai/contracts/distributions.yml
       - bin/distribution-contract-certify
       - bin/distribution
+      - bin/distribution-bundle
       - bin/github-release-publish
       - bin/ghcr-promote
       - bin/distribution-verify
       - bin/release
       - .github/workflows/publish-github-release.yml
       - .github/workflows/promote-ghcr-release.yml
+      - .github/workflows/prepare-distribution.yml
       - .github/workflows/verify-distribution.yml
       - .github/workflows/distribution-contract.yml
 
