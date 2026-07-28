@@ -8,6 +8,8 @@ owns:
   - publication_status
   - publication_failure_code
   - publication_recovery_policy
+  - distribution_inspection
+  - distribution_preflight
 may_use:
   - platform_version
   - release_metadata
@@ -38,7 +40,11 @@ invariants:
   - artifacts include checksums SBOMs provenance compatibility and operator notes
   - publication evidence contains no credentials tokens or proprietary artifacts
   - partial publication stops for operator review and resumes forward
+  - inspection and preflight are read-only and repeatable
+  - preflight blocks unavailable conflicting partial or replayed channel state
   - the complete Apache licensed community platform remains independently distributable
 required_tests:
   - distributions_manifest_test
+  - distributions_channel_state_test
+  - distributions_inspector_test
   - distribution_contract_certification

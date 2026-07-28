@@ -19,13 +19,16 @@
 - Add fail-closed extension lifecycle and readiness controls. (`65-extension-lifecycle`)
 - Certify the enterprise extension platform and publish lifecycle guides. (`66-extension-certification`)
 - Define versioned distribution contracts and supported channel policy. (`67-distribution-contracts`)
+- Add read-only distribution inspection and publication preflight. (`68-distribution-preflight`)
 
 ## Affected contracts
 
 - `change-fragment`
 - `changelog`
 - `distribution-channel-state`
+- `distribution-inspection`
 - `distribution-manifest`
+- `distribution-preflight`
 - `extension-certification`
 - `extension-compatibility`
 - `extension-components`
@@ -47,6 +50,7 @@
 - `release-metadata`
 - `release-notes`
 - `release-preparation`
+- `release-publication-cli`
 - `release-readiness`
 - `repository-intelligence`
 - `upgrade-preflight`
@@ -65,3 +69,4 @@
 - **Security — 65-extension-lifecycle:** Required failures deny normal traffic and health output exposes only stable codes and extension identifiers.
 - **Security — 66-extension-certification:** Certification covers fail-closed loading, bounded real paths and secret-safe failure evidence.
 - **Security — 67-distribution-contracts:** The contract baseline is read-only, credential-free and excludes private enterprise artifacts.
+- **Security — 68-distribution-preflight:** Preflight is read-only, fail-closed and consumes credential-free channel observations.

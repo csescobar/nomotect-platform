@@ -12,6 +12,8 @@ on:
       - docs/decisions/0014-supported-distribution-channels.md
       - config/ai/contracts/distributions.yml
       - bin/distribution-contract-certify
+      - bin/distribution
+      - bin/release
       - .github/workflows/distribution-contract.yml
   push:
     branches: [main]
@@ -25,6 +27,8 @@ on:
       - docs/decisions/0014-supported-distribution-channels.md
       - config/ai/contracts/distributions.yml
       - bin/distribution-contract-certify
+      - bin/distribution
+      - bin/release
       - .github/workflows/distribution-contract.yml
 
 permissions:

@@ -18,7 +18,14 @@
 - `approval_required` — the protected release environment has not approved the
   operation.
 - `source_not_main` — the source commit is not the approved `main` commit.
+- `source_commit_mismatch` — the observed source commit differs from the
+  manifest.
 - `release_metadata_mismatch` — release metadata does not match the manifest.
+- `compatibility_digest_mismatch` — compatibility data or metadata contains a
+  different digest.
+- `channel_repository_mismatch` — channel state belongs to another repository.
+- `channel_version_mismatch` — channel state belongs to another version.
+- `channel_tag_mismatch` — channel state belongs to another tag.
 - `tag_conflict` — the tag exists at a different commit.
 - `release_conflict` — an incompatible GitHub Release already exists.
 - `image_source_missing` — the commit-addressable GHCR image is unavailable.
