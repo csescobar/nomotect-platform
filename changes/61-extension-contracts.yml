@@ -1,0 +1,23 @@
+schema_version: 1
+id: 61-extension-contracts
+category: feature
+summary: Define community boundaries and versioned external extension contracts.
+release_impact: minor
+contracts:
+  - extension-configuration
+  - extension-manifest
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Extension packages are declared trusted in-process code and are not loaded by this contract baseline.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

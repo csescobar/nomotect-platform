@@ -300,10 +300,10 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 
 ### Phase 5 — Enterprise Extension Platform
 
-**Status:** ⏳ Planned
+**Status:** 🚧 In progress
 
-- [ ] Define community and enterprise repository boundaries.
-- [ ] Introduce extension, capability and dependency contracts.
+- [x] Define community and enterprise repository boundaries.
+- [x] Introduce extension, capability and dependency contracts.
 - [ ] Validate compatible platform and extension versions before loading.
 - [ ] Provide explicit registration hooks instead of monkey patches.
 - [ ] Isolate extension configuration, migrations, routes, assets and documentation.

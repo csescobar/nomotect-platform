@@ -42,3 +42,12 @@
 - ADR templates
 - Pull request templates
 - Security and privacy checklists
+
+## Extension platform
+
+- Versioned external extension manifests
+- Capability and dependency contracts
+- Compatibility inspection and fail-closed lifecycle
+- Explicit registration hooks
+- Isolated configuration, migrations, routes, assets and documentation
+- Repository Intelligence extension readiness
