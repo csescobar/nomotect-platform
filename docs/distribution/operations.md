@@ -25,7 +25,11 @@ identifier. The read-only workflow verifies both identities, assembles the
 versioned release documents and packaging evidence, validates canonical version
 and commit consistency, writes checksums and uploads `distribution-bundle`.
 
-Download the bundle and create credential-free channel observations. Run:
+Dispatch `Observe Distribution` with the same approved SHA, successful
+`Prepare Distribution` run identifier and immutable image digest. The read-only
+workflow uploads `distribution-verification-input` containing the approved
+bundle and normalized credential-free channel observations. Download that
+artifact and run:
 
 ```sh
 bin/distribution inspect \
@@ -65,8 +69,11 @@ and requires a fresh observation before continuing.
 
 ## Verify and retain evidence
 
-Observe both published channels and run `Verify Distribution` against the same
-approved SHA, bundle and immutable digest. Retain:
+After both publications succeed, dispatch `Observe Distribution` again with the
+same inputs. Run `Verify Distribution` with the approved SHA, the successful
+post-publication observation run identifier and immutable digest. The verifier
+accepts evidence only from a successful `Observe Distribution` run for current
+`main`. Retain:
 
 - the distribution manifest and checksummed artifact bundle;
 - the successful source CI and bundle-preparation run identifiers;

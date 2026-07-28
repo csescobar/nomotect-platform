@@ -1,0 +1,156 @@
+name: Observe Distribution
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: Approved main commit from the distribution manifest
+        required: true
+        type: string
+      artifact_run_id:
+        description: Successful Prepare Distribution run containing distribution-bundle
+        required: true
+        type: string
+      image_digest:
+        description: Approved immutable GHCR digest
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+  packages: read
+
+concurrency:
+  group: observe-distribution
+  cancel-in-progress: false
+
+jobs:
+  observe:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_commit }}
+          fetch-depth: 0
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - name: Verify approved source and bundle
+        env:
+          ARTIFACT_RUN_ID: ${{ inputs.artifact_run_id }}
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch origin main
+          test "$SOURCE_COMMIT" = "$GITHUB_SHA"
+          test "$SOURCE_COMMIT" = "$(git rev-parse HEAD)"
+          test "$SOURCE_COMMIT" = "$(git rev-parse origin/main)"
+          run_path="repos/${GITHUB_REPOSITORY}/actions/runs/${ARTIFACT_RUN_ID}"
+          test "$(gh api "$run_path" --jq .head_sha)" = "$SOURCE_COMMIT"
+          test "$(gh api "$run_path" --jq .head_branch)" = "main"
+          test "$(gh api "$run_path" --jq .conclusion)" = "success"
+          test "$(gh api "$run_path" --jq .name)" = "Prepare Distribution"
+          test "$(gh api "$run_path" --jq .event)" = "workflow_dispatch"
+          mkdir -p tmp/distribution
+          gh run download "$ARTIFACT_RUN_ID" \
+            --name distribution-bundle \
+            --dir tmp/distribution
+      - name: Observe GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p tmp/provider-observations
+          version="$(tr -d '[:space:]' < VERSION)"
+          release_url="https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/tags/v${version}"
+          tag_url="https://api.github.com/repos/${GITHUB_REPOSITORY}/git/ref/tags/v${version}"
+          release_code="$(curl --silent --show-error \
+            --output tmp/provider-observations/release.json \
+            --write-out '%{http_code}' \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            "$release_url")"
+          tag_code="$(curl --silent --show-error \
+            --output tmp/provider-observations/tag.json \
+            --write-out '%{http_code}' \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            "$tag_url")"
+          jq --null-input \
+            --argjson release_code "$release_code" \
+            --argjson tag_code "$tag_code" \
+            --slurpfile release tmp/provider-observations/release.json \
+            --slurpfile tag tmp/provider-observations/tag.json \
+            '{
+              release: {
+                status_code: $release_code,
+                target_commitish: (if $release_code == 200 then $release[0].target_commitish else null end),
+                html_url: (if $release_code == 200 then $release[0].html_url else null end)
+              },
+              tag: {
+                status_code: $tag_code,
+                target_commit: (if $tag_code == 200 then $tag[0].object.sha else null end)
+              }
+            }' > tmp/provider-observations/github.json
+      - name: Observe GHCR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          image="$(tr '[:upper:]' '[:lower:]' <<<"$GITHUB_REPOSITORY")"
+          registry_token="$(curl --fail --silent --show-error \
+            --user "${GITHUB_ACTOR}:${GH_TOKEN}" \
+            "https://ghcr.io/token?service=ghcr.io&scope=repository:${image}:pull" |
+            jq --raw-output .token)"
+          manifest_accept='application/vnd.oci.image.index.v1+json, application/vnd.docker.distribution.manifest.list.v2+json, application/vnd.oci.image.manifest.v1+json'
+          observe_tag() {
+            local name="$1"
+            local tag="$2"
+            local headers="tmp/provider-observations/${name}.headers"
+            local body="tmp/provider-observations/${name}.json"
+            local code
+            code="$(curl --silent --show-error \
+              --dump-header "$headers" \
+              --output "$body" \
+              --write-out '%{http_code}' \
+              --header "Accept: ${manifest_accept}" \
+              --header "Authorization: Bearer ${registry_token}" \
+              "https://ghcr.io/v2/${image}/manifests/${tag}")"
+            local digest
+            digest="$(awk 'BEGIN { IGNORECASE=1 } /^docker-content-digest:/ { gsub("\\r", "", $2); print $2 }' "$headers")"
+            jq --null-input \
+              --argjson status_code "$code" \
+              --arg digest "$digest" \
+              '{status_code: $status_code, digest: (if $digest == "" then null else $digest end)}'
+          }
+          version="$(tr -d '[:space:]' < VERSION)"
+          minor="${version%.*}"
+          commit_tag="sha-${GITHUB_SHA:0:12}"
+          jq --null-input \
+            --argjson commit_tag "$(observe_tag commit-tag "$commit_tag")" \
+            --argjson full_tag "$(observe_tag full-tag "$version")" \
+            --argjson minor_tag "$(observe_tag minor-tag "$minor")" \
+            '{
+              commit_tag: $commit_tag,
+              full_tag: $full_tag,
+              minor_tag: $minor_tag
+            }' > tmp/provider-observations/ghcr.json
+      - name: Normalize credential-free channel state
+        env:
+          IMAGE_DIGEST: ${{ inputs.image_digest }}
+        run: |
+          bundle exec ruby bin/distribution-observe \
+            --manifest tmp/distribution/distribution-manifest.json \
+            --repository "$GITHUB_REPOSITORY" \
+            --image-digest "$IMAGE_DIGEST" \
+            --github-observation tmp/provider-observations/github.json \
+            --ghcr-observation tmp/provider-observations/ghcr.json \
+            --output tmp/distribution
+          rm -rf tmp/provider-observations
+      - uses: actions/upload-artifact@v4
+        with:
+          name: distribution-verification-input
+          path: tmp/distribution
+          if-no-files-found: error
+          retention-days: 14

@@ -5,6 +5,13 @@ approved distribution manifest, checksum-verified public artifact bundle,
 immutable GHCR digest and credential-free observations of GitHub Releases and
 GHCR.
 
+`Observe Distribution` obtains provider state with read-only repository and
+package permissions, normalizes only public identifiers into the channel-state
+contract and discards raw responses before artifact upload. Run it once for
+preflight and again after publication. `Verify Distribution` accepts the
+post-publication artifact only when its run is successful, targets current
+`main` and uses the exact approved source commit.
+
 `bin/distribution-verify` fails closed unless both observations identify the
 active repository, manifest version, `vVERSION` tag and exact source commit.
 The GitHub Release reference must identify the canonical repository release

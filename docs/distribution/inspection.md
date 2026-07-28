@@ -26,7 +26,11 @@ bin/release publish preflight \
   --format json
 ```
 
-`bin/distribution` exposes the same interface for automation. Repository, source
+`Observe Distribution` is the baseline provider adapter for automation. It
+collects GitHub Releases and GHCR state with read-only permissions and emits
+the credential-free channel-state files consumed by these commands.
+
+`bin/distribution` exposes the same interface for policy automation. Repository, source
 commit and source branch default to `GITHUB_REPOSITORY`, `GITHUB_SHA` and
 `GITHUB_REF_NAME`. Local execution falls back to static `git` inspection for
 commit and branch. Explicit options are available for production-like fixtures.
@@ -49,9 +53,8 @@ and ready preflight are state-free and repeatable.
 
 Channel-state JSON follows
 [`channel-state.schema.json`](../contracts/channel-state.schema.json). The
-baseline deliberately separates observation collection from policy evaluation.
-Future provider adapters may collect GitHub state, but the deterministic engine
-continues consuming the same credential-free contract.
+baseline separates observation collection from policy evaluation. Additional
+provider adapters must continue emitting the same credential-free contract.
 
 Reports contain stable codes, identifiers and immutable references. They do not
 contain authorization headers, workflow tokens, private package contents or
