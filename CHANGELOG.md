@@ -26,6 +26,10 @@ Required release impact: `minor`.
 - Attest release artifacts and verify canonical publication evidence. (`71-distribution-evidence`)
 - Certify deterministic distribution preparation and the controlled publication playbook. (`72-distribution-certification`)
 
+### Fixed
+
+- Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
+
 ## 0.8.0
 
 - Completed the Epic 8 AI Platform and Repository Intelligence baseline.
