@@ -349,6 +349,17 @@ promotion for full and minor semantic tags without rebuilding or publishing
 verification that binds both supported channels and the public artifact set to
 canonical release evidence from the same successful `main` commit.
 
+**Delivery evidence:** PR #67 establishes the supported-channel boundary,
+repository-derived identity, immutable publication and recovery policy,
+credential-free evidence contracts, Repository Intelligence ownership and
+focused contract certification without publishing release state. PR #68 adds
+read-only distribution inspection, fail-closed preflight, stable findings,
+operator actions and human or JSON CLI reporting. PR #69 adds
+checksum-verified artifact planning and a protected GitHub Release workflow
+bound to the exact approved `main` commit. PR #70 adds digest-bound GHCR
+promotion for full and minor semantic tags without rebuilding or publishing
+`latest`.
+
 ### Phase 7 — Operational Readiness
 
 **Status:** ⏳ Planned
