@@ -47,5 +47,33 @@ module Releases
 
       assert_includes report.findings.pluck(:code), "migration_impact_missing"
     end
+
+    test "accepts a bounded deterministic release preparation" do
+      report = PullRequestValidator.new(
+        changed_paths: [
+          "VERSION",
+          "CHANGELOG.md",
+          "changes/archive/0.9.0/58-release-notes.yml",
+          "docs/releases/0.9.0/release-metadata.json"
+        ],
+        pull_request_number: 99
+      ).call
+
+      assert report.ready?, report.findings.inspect
+    end
+
+    test "does not exempt application changes in a release preparation" do
+      report = PullRequestValidator.new(
+        changed_paths: [
+          "VERSION",
+          "app/models/widget.rb",
+          "changes/archive/0.9.0/58-release-notes.yml",
+          "docs/releases/0.9.0/release-metadata.json"
+        ],
+        pull_request_number: 99
+      ).call
+
+      assert_includes report.findings.pluck(:code), "change_fragment_missing"
+    end
   end
 end

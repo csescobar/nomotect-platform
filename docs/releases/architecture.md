@@ -24,6 +24,19 @@ its actual base branch, including stacked pull requests.
 outputs are missing or stale. Ordering and grouping depend only on normalized
 fragment content, so regeneration is deterministic.
 
+`bin/release prepare TARGET_VERSION` is read-only and prints the proposed
+release-preparation plan. The explicit `--apply` flag updates `VERSION`,
+archives every consumed fragment under `changes/archive/TARGET_VERSION/`,
+creates versioned release, migration and upgrade notes, and records normalized
+release metadata with a fragment digest. The command then regenerates the
+unreleased documents from the remaining active fragment set.
+
+The manually dispatched `Prepare release` workflow runs the Repository
+Intelligence `release_readiness` playbook, applies the deterministic plan on a
+new branch, verifies generated documents, and opens a draft pull request for
+maintainer review. Its permissions are limited to repository content and pull
+requests. It has no tag, GitHub Release, registry, deployment or signing step.
+
 Repository Intelligence owns release-governance relationships and exposes the
 release-readiness playbook. Deterministic Ruby and shell commands remain the
 authority for validation and generation. MCP and external graph providers are

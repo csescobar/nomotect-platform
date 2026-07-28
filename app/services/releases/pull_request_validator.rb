@@ -28,7 +28,7 @@ module Releases
         nil
       end
 
-      if release_relevant_paths.any? && fragments.empty?
+      if release_relevant_paths.any? && fragments.empty? && !release_preparation?
         findings << finding(
           "change_fragment_missing",
           "Release-relevant pull requests must add or update a change fragment",
@@ -55,6 +55,7 @@ module Releases
     end
 
     def validate_identifiers(fragments, findings)
+      return if release_preparation?
       return if fragments.empty? && release_relevant_paths.empty?
       return if pull_request_number.blank?
       return if fragments.any? { |fragment| fragment.id.start_with?("#{pull_request_number}-") }
@@ -84,6 +85,19 @@ module Releases
         "contract_impact_missing",
         "Contract changes must name affected contracts and declare release impact"
       )
+    end
+
+    def release_preparation?
+      allowed = [
+        %r{\AVERSION\z},
+        %r{\ACHANGELOG\.md\z},
+        %r{\Achanges/},
+        %r{\Adocs/releases/}
+      ]
+      changed_paths.include?("VERSION") &&
+        changed_paths.any? { |path| %r{\Achanges/archive/[^/]+/[^/]+\.yml\z}.match?(path) } &&
+        changed_paths.any? { |path| %r{\Adocs/releases/[^/]+/release-metadata\.json\z}.match?(path) } &&
+        changed_paths.all? { |path| allowed.any? { |pattern| pattern.match?(path) } }
     end
 
     def finding(code, message, details = {})
