@@ -19,6 +19,11 @@ changes are exempt. Contract and database-migration changes require explicit
 contract and migration impact. Validation compares the pull request head with
 its actual base branch, including stacked pull requests.
 
+`bin/release-notes generate` renders `CHANGELOG.md` and the documents under
+`docs/releases/generated/`. `bin/release-notes verify` fails when committed
+outputs are missing or stale. Ordering and grouping depend only on normalized
+fragment content, so regeneration is deterministic.
+
 Repository Intelligence owns release-governance relationships and exposes the
 release-readiness playbook. Deterministic Ruby and shell commands remain the
 authority for validation and generation. MCP and external graph providers are
