@@ -2,18 +2,6 @@ name: Release contract
 
 on:
   pull_request:
-    paths:
-      - VERSION
-      - changes/**
-      - app/services/releases/**
-      - lib/platform/version.rb
-      - config/ai/contracts/releases.yml
-      - config/ai/playbooks/release_readiness.yml
-      - config/ai/schemas/playbook.schema.json
-      - docs/contracts/change-fragment.schema.json
-      - docs/releases/**
-      - bin/release-contract-certify
-      - .github/workflows/release-contract.yml
   push:
     branches: [main]
     paths:
@@ -54,6 +42,8 @@ jobs:
       SECRET_KEY_BASE: ci-secret-key-base
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
@@ -61,3 +51,12 @@ jobs:
       - name: Prepare database
         run: ruby bin/rails db:prepare
       - run: bash bin/release-contract-certify
+      - name: Validate pull request release impact
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          CHANGE_HEAD: ${{ github.event.pull_request.head.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          git fetch origin "$BASE_REF:refs/remotes/origin/$BASE_REF"
+          CHANGE_BASE="origin/$BASE_REF" ruby bin/change-fragment-validate

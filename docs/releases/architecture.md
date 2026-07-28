@@ -12,6 +12,13 @@ Fragments identify the changelog category, semantic-version impact, affected
 contracts, migration and upgrade actions, and security, privacy, and
 accessibility assessments.
 
+The Release contract workflow validates every pull request. Application,
+configuration, workflow, and executable-tool changes require a fragment whose
+identifier begins with the pull request number. Documentation and test-only
+changes are exempt. Contract and database-migration changes require explicit
+contract and migration impact. Validation compares the pull request head with
+its actual base branch, including stacked pull requests.
+
 Repository Intelligence owns release-governance relationships and exposes the
 release-readiness playbook. Deterministic Ruby and shell commands remain the
 authority for validation and generation. MCP and external graph providers are
