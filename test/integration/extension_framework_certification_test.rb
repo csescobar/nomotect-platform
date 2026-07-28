@@ -56,7 +56,7 @@ class ExtensionFrameworkCertificationTest < ActiveSupport::TestCase
     })
     report = Extensions::Inspector.new(
       configuration:,
-      catalog: Extensions::Catalog.new(configuration:, resolver: ->(_name) {}),
+      catalog: Extensions::Catalog.new(configuration:, resolver: ->(_name) { }),
       platform_version: "0.8.0"
     ).preflight
     result = Extensions::Loader.new(report:).call
@@ -76,7 +76,7 @@ class ExtensionFrameworkCertificationTest < ActiveSupport::TestCase
       configuration: missing_configuration,
       catalog: Extensions::Catalog.new(
         configuration: missing_configuration,
-        resolver: ->(_name) {}
+        resolver: ->(_name) { }
       ),
       platform_version: "0.8.0"
     ).preflight
