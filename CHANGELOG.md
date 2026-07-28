@@ -20,6 +20,7 @@ Required release impact: `minor`.
 - Add fail-closed extension lifecycle and readiness controls. (`65-extension-lifecycle`)
 - Certify the enterprise extension platform and publish lifecycle guides. (`66-extension-certification`)
 - Define versioned distribution contracts and supported channel policy. (`67-distribution-contracts`)
+- Add read-only distribution inspection and publication preflight. (`68-distribution-preflight`)
 
 ## 0.8.0
 

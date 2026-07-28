@@ -6,7 +6,10 @@ ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
   docs/contracts/distribution-manifest.schema.json \
   docs/contracts/publication-evidence.schema.json
 
-bundle exec rails test test/services/distributions/manifest_test.rb
+bundle exec rails test \
+  test/services/distributions/channel_state_test.rb \
+  test/services/distributions/inspector_test.rb \
+  test/services/distributions/manifest_test.rb
 ruby -Ilib -rrepository_intelligence/platform -e '
   registry = RepositoryIntelligence::ContractRegistry.new("config/ai/contracts")
   abort registry.validate.join("\n") unless registry.validate.empty?
@@ -20,8 +23,11 @@ grep -q 'repository_context' docs/contracts/distribution-manifest.schema.json
 grep -q 'partially_published' docs/contracts/publication-evidence.schema.json
 grep -q 'enterprise repository' docs/distribution/architecture.md
 grep -q 'latest.*prohibited' docs/distribution/channel-policy.md
+grep -q 'preflight.*blocker' docs/distribution/inspection.md
 
 test -x bin/distribution-contract-certify
+test -x bin/distribution
+grep -q 'command == "publish"' bin/release
 ! grep -Eq 'contents: write|packages: write|id-token: write' \
   .github/workflows/distribution-contract.yml
 

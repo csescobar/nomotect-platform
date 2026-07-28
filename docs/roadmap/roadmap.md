@@ -323,6 +323,8 @@ operator lifecycle guides.
 
 - [x] Define versioned distribution-manifest, channel-state and
   publication-evidence contracts.
+- [x] Inspect approved release inputs and channel observations through a
+  read-only fail-closed preflight.
 
 - [ ] Publish GitHub Releases and GHCR images from approved release metadata.
 - [ ] Evaluate additional channels only where support and ownership are explicit.
@@ -333,7 +335,9 @@ operator lifecycle guides.
 **Delivery evidence:** PR #67 establishes the supported-channel boundary,
 repository-derived identity, immutable publication and recovery policy,
 credential-free evidence contracts, Repository Intelligence ownership and
-focused contract certification without publishing release state.
+focused contract certification without publishing release state. PR #68 adds
+read-only distribution inspection, fail-closed preflight, stable findings,
+operator actions and human or JSON CLI reporting.
 
 ### Phase 7 — Operational Readiness
 

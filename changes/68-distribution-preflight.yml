@@ -1,0 +1,25 @@
+schema_version: 1
+id: 68-distribution-preflight
+category: feature
+summary: Add read-only distribution inspection and publication preflight.
+release_impact: minor
+contracts:
+  - distribution-inspection
+  - distribution-preflight
+  - distribution-channel-state
+  - release-publication-cli
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Preflight is read-only, fail-closed and consumes credential-free channel observations.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
