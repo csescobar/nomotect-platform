@@ -22,11 +22,14 @@ module Releases
     }.freeze
 
     def initialize(
-      fragments: ChangeCatalog.new.fragments,
+      fragments: nil,
+      released_fragments: nil,
       current_version: Platform::Version.current.to_s,
       root: Rails.root
     )
-      @fragments = fragments.sort_by(&:id)
+      catalog = ChangeCatalog.new(path: Pathname(root).join("changes"))
+      @fragments = (fragments || catalog.fragments).sort_by(&:id)
+      @released_fragments = released_fragments || catalog.released_fragments
       @current_version = current_version
       @root = Pathname(root)
     end
@@ -64,11 +67,9 @@ module Releases
 
         Required release impact: `#{highest_release_impact}`.
 
-        #{change_sections}
+        #{change_sections(fragments)}
 
-        ## 0.8.0
-
-        - Completed the Epic 8 AI Platform and Repository Intelligence baseline.
+        #{released_sections}
       MARKDOWN
     end
 
@@ -81,7 +82,7 @@ module Releases
 
         ## Changes
 
-        #{change_sections}
+        #{change_sections(fragments)}
 
         ## Affected contracts
 
@@ -109,22 +110,55 @@ module Releases
       )
     end
 
+    def release_documents(version)
+      {
+        "release-notes.md" => release_notes.sub(
+          "# Unreleased Release Notes",
+          "# #{version} Release Notes"
+        ),
+        "migration-notes.md" => migration_notes.sub(
+          "# Unreleased Migration Notes",
+          "# #{version} Migration Notes"
+        ),
+        "upgrade-notes.md" => upgrade_notes.sub(
+          "# Unreleased Upgrade Notes",
+          "# #{version} Upgrade Notes"
+        )
+      }
+    end
+
+    def release_impact = highest_release_impact
+
     private
 
-    attr_reader :fragments, :current_version, :root
+    attr_reader :fragments, :released_fragments, :current_version, :root
 
     def highest_release_impact
       fragments.map(&:release_impact).max_by { |impact| IMPACT_ORDER.index(impact) } || "none"
     end
 
-    def change_sections
-      grouped = fragments.group_by(&:category)
+    def change_sections(items)
+      return "- No changes declared." if items.empty?
+
+      grouped = items.group_by(&:category)
       CATEGORY_HEADINGS.filter_map do |category, heading|
         items = grouped.fetch(category, [])
         next if items.empty?
 
         "### #{heading}\n\n#{items.map { |fragment| "- #{fragment.summary} (`#{fragment.id}`)" }.join("\n")}"
       end.join("\n\n")
+    end
+
+    def released_sections
+      sections = released_fragments.sort_by do |version, _items|
+        Platform::Version.new(version)
+      end.reverse.map do |version, items|
+        "## #{version}\n\n#{change_sections(items)}"
+      end
+      unless released_fragments.key?("0.8.0")
+        sections << "## 0.8.0\n\n- Completed the Epic 8 AI Platform and Repository Intelligence baseline."
+      end
+      sections.join("\n\n")
     end
 
     def contract_lines

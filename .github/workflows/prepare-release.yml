@@ -1,0 +1,64 @@
+name: Prepare release
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_version:
+        description: Stable semantic version for the draft preparation PR
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: prepare-release
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      SECRET_KEY_BASE: release-preparation
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - name: Execute release-readiness playbook
+        env:
+          TARGET_VERSION: ${{ inputs.target_version }}
+        run: |
+          inputs="$(ruby -rjson -e 'puts JSON.generate(target_version: ENV.fetch("TARGET_VERSION"))')"
+          bundle exec ruby bin/repository-intelligence generate
+          bundle exec ruby bin/repository-intelligence playbook execute \
+            release_readiness \
+            "$inputs"
+      - name: Prepare deterministic release changes
+        run: bundle exec ruby bin/release prepare "${{ inputs.target_version }}" --apply
+      - name: Verify generated release documents
+        run: bundle exec ruby bin/release-notes verify
+      - name: Open draft release preparation pull request
+        env:
+          TARGET_VERSION: ${{ inputs.target_version }}
+        run: |
+          branch="release/prepare-v${TARGET_VERSION}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add VERSION CHANGELOG.md changes docs/releases
+          git commit -m "chore: prepare release v${TARGET_VERSION}"
+          git push origin "$branch"
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --draft \
+            --title "Prepare release v${TARGET_VERSION}" \
+            --body "Deterministic release-preparation output. No tag, release, or image is published by this PR."

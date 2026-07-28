@@ -13,10 +13,13 @@ on:
       - config/ai/playbooks/release_readiness.yml
       - config/ai/schemas/playbook.schema.json
       - docs/contracts/change-fragment.schema.json
+      - docs/contracts/release-metadata.schema.json
       - docs/releases/**
       - bin/release-contract-certify
+      - bin/release
       - bin/release-notes
       - CHANGELOG.md
+      - .github/workflows/prepare-release.yml
       - .github/workflows/release-contract.yml
 
 permissions:

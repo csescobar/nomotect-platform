@@ -1,0 +1,23 @@
+schema_version: 1
+id: 59-release-preparation
+category: feature
+summary: Prepare deterministic, reviewable release pull requests.
+release_impact: minor
+contracts:
+  - release-preparation
+  - release-metadata
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Automation has bounded repository permissions and cannot publish releases or images.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

@@ -165,7 +165,7 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 ## Epic 9 — Distribution, Installation and Enterprise Extensions
 
-**Status:** 🚧 In progress — Phase 3
+**Status:** 🚧 In progress — Phase 4
 
 **Objective:** transform the repository from a developer-oriented source project into a distributable, installable, upgradeable and professionally extensible platform while preserving a complete Apache-licensed community core.
 
@@ -293,7 +293,7 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 - [x] Validate release-impact declarations in CI.
 - [x] Generate and maintain `CHANGELOG.md`.
 - [x] Generate release, migration and upgrade notes from normalized metadata.
-- [ ] Automate deterministic release-preparation pull requests.
+- [x] Automate deterministic release-preparation pull requests.
 - [ ] Verify consistency among version, tags, release notes, compatibility data, SBOM and provenance.
 
 ### Phase 5 — Enterprise Extension Platform

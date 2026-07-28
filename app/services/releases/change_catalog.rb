@@ -7,18 +7,34 @@ module Releases
     end
 
     def fragments
-      return [] unless path.directory?
+      load_paths(path.glob("*.yml"))
+    end
 
-      loaded = path.glob("*.yml").sort.map { |file| ChangeFragment.load(file) }
-      duplicates = loaded.group_by(&:id).select { |_id, items| items.many? }.keys
-      raise DuplicateFragment, "duplicate change fragment ids: #{duplicates.join(', ')}" if duplicates.any?
+    def released_fragments
+      archive_path = path.join("archive")
+      return {} unless archive_path.directory?
 
-      loaded.freeze
+      groups = archive_path.children.select(&:directory?).sort.to_h do |directory|
+        Platform::Version.new(directory.basename.to_s)
+        [ directory.basename.to_s, load_paths(directory.glob("*.yml")) ]
+      end
+      duplicates = groups.values.flatten.group_by(&:id).select { |_id, items| items.many? }.keys
+      raise DuplicateFragment, "duplicate archived fragment ids: #{duplicates.join(', ')}" if duplicates.any?
+
+      groups.freeze
     end
 
     private
 
     attr_reader :path
+
+    def load_paths(paths)
+      loaded = paths.sort.map { |file| ChangeFragment.load(file) }
+      duplicates = loaded.group_by(&:id).select { |_id, items| items.many? }.keys
+      raise DuplicateFragment, "duplicate change fragment ids: #{duplicates.join(', ')}" if duplicates.any?
+
+      loaded.freeze
+    end
 
     class DuplicateFragment < StandardError; end
   end
