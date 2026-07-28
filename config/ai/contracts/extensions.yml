@@ -19,6 +19,9 @@ owns:
   - extension_installed_state
   - extension_lifecycle
   - extension_readiness_gate
+  - extension_certification_fixture
+  - extension_certification_matrix
+  - extension_lifecycle_documentation
 may_use:
   - platform_version
   - repository_intelligence
@@ -53,6 +56,8 @@ invariants:
   - component real paths cannot escape the package root through symbolic links
   - extension upgrade observations never execute entrypoints or migrations
   - extensions are trusted in-process code and are not security sandboxes
+  - production-like certification covers the extension-free core and adversarial extension states
+  - repeated preflight is equivalent and one loader instance executes each entrypoint at most once
 required_tests:
   - extensions_manifest_test
   - extensions_configuration_test
@@ -65,3 +70,5 @@ required_tests:
   - extensions_installed_state_test
   - extensions_lifecycle_test
   - extension_health_controller_test
+  - extension_framework_certification_test
+  - extension_readiness_playbook_test

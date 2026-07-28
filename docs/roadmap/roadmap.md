@@ -165,7 +165,7 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 ## Epic 9 — Distribution, Installation and Enterprise Extensions
 
-**Status:** 🚧 In progress — Phase 5 next
+**Status:** 🚧 In progress — Phase 6 next
 
 **Objective:** transform the repository from a developer-oriented source project into a distributable, installable, upgradeable and professionally extensible platform while preserving a complete Apache-licensed community core.
 
@@ -300,7 +300,7 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 
 ### Phase 5 — Enterprise Extension Platform
 
-**Status:** 🚧 In progress
+**Status:** ✅ Complete
 
 - [x] Define community and enterprise repository boundaries.
 - [x] Introduce extension, capability and dependency contracts.
@@ -308,6 +308,14 @@ The following items are not part of the completed Phase 1 baseline and remain fu
 - [x] Provide explicit registration hooks instead of monkey patches.
 - [x] Isolate extension configuration, migrations, routes, assets and documentation.
 - [x] Define fail-closed behavior for missing or incompatible extensions.
+
+**Delivery evidence:** PRs #61–#65 establish the community boundary,
+versioned package contracts, read-only compatibility preflight, deterministic
+registration and loading, component isolation, upgrade-state observations and
+fail-closed runtime readiness. PR #66 adds the production-like fixture,
+adversarial and extension-free certification matrix, Repository Intelligence
+evidence and the author, installation, deployment, upgrade, recovery and
+operator lifecycle guides.
 
 ### Phase 6 — Distribution Channels
 

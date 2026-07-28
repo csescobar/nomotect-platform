@@ -17,14 +17,17 @@
 - Add trusted extension loading and explicit registration hooks. (`63-extension-loader`)
 - Isolate extension components and integrate extension state with upgrade preflight. (`64-extension-components`)
 - Add fail-closed extension lifecycle and readiness controls. (`65-extension-lifecycle`)
+- Certify the enterprise extension platform and publish lifecycle guides. (`66-extension-certification`)
 
 ## Affected contracts
 
 - `change-fragment`
 - `changelog`
+- `extension-certification`
 - `extension-compatibility`
 - `extension-components`
 - `extension-configuration`
+- `extension-documentation`
 - `extension-inspection`
 - `extension-lifecycle`
 - `extension-loader`
@@ -41,6 +44,7 @@
 - `release-notes`
 - `release-preparation`
 - `release-readiness`
+- `repository-intelligence`
 - `upgrade-preflight`
 
 ## Cross-cutting assessments
@@ -55,3 +59,4 @@
 - **Security — 63-extension-loader:** Only ready plans execute trusted entrypoints, and failures omit internal exception messages.
 - **Security — 64-extension-components:** Real-path validation rejects component resources that escape an installed package root.
 - **Security — 65-extension-lifecycle:** Required failures deny normal traffic and health output exposes only stable codes and extension identifiers.
+- **Security — 66-extension-certification:** Certification covers fail-closed loading, bounded real paths and secret-safe failure evidence.
