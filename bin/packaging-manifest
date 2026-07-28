@@ -9,6 +9,7 @@ require "open3"
 image = ENV.fetch("IMAGE_NAME", ARGV.fetch(0, "rails-application:ci"))
 source_repository = ENV.fetch("SOURCE_REPOSITORY_URL", "local://repository")
 source_commit = ENV.fetch("SOURCE_COMMIT", "local")
+source_version = ENV.fetch("SOURCE_VERSION") { File.read("VERSION").strip }
 source_created = ENV.fetch("SOURCE_CREATED", "1970-01-01T00:00:00Z")
 output = ENV.fetch("PACKAGING_MANIFEST_PATH", "tmp/ci/packaging-manifest.json")
 
@@ -25,6 +26,7 @@ manifest = {
   source: {
     repository: source_repository,
     commit: source_commit,
+    version: source_version,
     created: source_created,
     dockerfile_sha256: checksum.call("Dockerfile"),
     dependency_lock_sha256: checksum.call("Gemfile.lock")

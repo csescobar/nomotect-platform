@@ -14,10 +14,15 @@ on:
       - config/ai/schemas/playbook.schema.json
       - docs/contracts/change-fragment.schema.json
       - docs/contracts/release-metadata.schema.json
+      - docs/contracts/release-compatibility.schema.json
+      - docs/contracts/release-evidence.schema.json
       - docs/releases/**
       - bin/release-contract-certify
       - bin/release
+      - bin/release-consistency
+      - bin/release-framework-certify
       - bin/release-notes
+      - bin/release-provenance
       - CHANGELOG.md
       - .github/workflows/prepare-release.yml
       - .github/workflows/release-contract.yml

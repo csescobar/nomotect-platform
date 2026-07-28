@@ -24,7 +24,8 @@ This behavior applies to:
 - new repositories populated from a local clone;
 - private application repositories.
 
-The active repository controls the package namespace, source label, revision label, title, and publication evidence.
+The active repository controls the package namespace, source label, revision
+label, canonical `VERSION` label, title, and publication evidence.
 
 ## Publication trigger
 
@@ -34,12 +35,13 @@ The publication job:
 
 1. resolves the current repository and certified source commit;
 2. converts the repository path to lowercase for OCI compatibility;
-3. builds `linux/amd64` and `linux/arm64` images;
-4. publishes immutable commit and moving `main` tags;
-5. attaches BuildKit SBOM and provenance attestations;
-6. optionally creates a GitHub artifact attestation;
-7. pulls the published image by digest and verifies its runtime contract;
-8. uploads publication evidence containing the image name, digest, tags, source, and platforms.
+3. reads the canonical platform version and applies it to the OCI version label;
+4. builds `linux/amd64` and `linux/arm64` images;
+5. publishes immutable commit and moving `main` tags;
+6. attaches BuildKit SBOM and provenance attestations;
+7. optionally creates a GitHub artifact attestation;
+8. pulls the published image by digest and verifies its runtime contract;
+9. uploads publication evidence containing the image name, digest, tags, source, and platforms.
 
 ## Permissions
 

@@ -7,6 +7,7 @@ on:
       - bin/container-publication-validate
       - bin/package-certify
       - bin/packaging-manifest
+      - bin/release-provenance
       - bin/kamal-validate
       - config/deploy.yml
       - .github/workflows/publish-container.yml
@@ -20,6 +21,7 @@ on:
       - bin/container-publication-validate
       - bin/package-certify
       - bin/packaging-manifest
+      - bin/release-provenance
       - bin/kamal-validate
       - config/deploy.yml
       - .github/workflows/publish-container.yml

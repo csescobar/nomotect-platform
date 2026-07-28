@@ -72,6 +72,7 @@ payload_sha="$(sha256sum tmp/ci/payload-primary.txt | cut -d' ' -f1)"
 test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.source"}}' "$image_primary")" = "$source_repository"
 test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.revision"}}' "$image_primary")" = "$source_commit"
 test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.created"}}' "$image_primary")" = "$source_created"
+test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.version"}}' "$image_primary")" = "$source_version"
 test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.licenses"}}' "$image_primary")" = "Apache-2.0"
 test "$(docker image inspect --format '{{.Config.User}}' "$image_primary")" = "rails"
 test "$(docker image inspect --format '{{json .Config.Healthcheck.Test}}' "$image_primary")" != "null"
@@ -92,7 +93,10 @@ docker run --rm --entrypoint bash "$image_primary" -lc '
   ! bundle show rubocop >/dev/null 2>&1
 '
 
-SOURCE_REPOSITORY_URL="$source_repository" SOURCE_COMMIT="$source_commit" SOURCE_CREATED="$source_created" IMAGE_NAME="$image_primary" ruby bin/container-sbom
-SOURCE_REPOSITORY_URL="$source_repository" SOURCE_COMMIT="$source_commit" SOURCE_CREATED="$source_created" IMAGE_NAME="$image_primary" ruby bin/packaging-manifest
+SOURCE_REPOSITORY_URL="$source_repository" SOURCE_COMMIT="$source_commit" SOURCE_CREATED="$source_created" \
+  SOURCE_VERSION="$source_version" IMAGE_NAME="$image_primary" ruby bin/container-sbom
+SOURCE_REPOSITORY_URL="$source_repository" SOURCE_COMMIT="$source_commit" SOURCE_CREATED="$source_created" \
+  SOURCE_VERSION="$source_version" IMAGE_NAME="$image_primary" ruby bin/packaging-manifest
+SOURCE_COMMIT="$source_commit" SOURCE_VERSION="$source_version" ruby bin/release-provenance
 
 printf 'Reproducible packaging certification passed\n'

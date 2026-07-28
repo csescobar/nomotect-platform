@@ -59,6 +59,10 @@ jobs:
         with:
           ref: ${{ steps.identity.outputs.source_sha }}
 
+      - name: Resolve platform version
+        id: version
+        run: echo "value=$(tr -d '[:space:]' < VERSION)" >> "$GITHUB_OUTPUT"
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -88,7 +92,7 @@ jobs:
             OCI_SOURCE=${{ steps.identity.outputs.source_url }}
             OCI_REVISION=${{ steps.identity.outputs.source_sha }}
             OCI_CREATED=${{ steps.identity.outputs.created }}
-            OCI_VERSION=0.0.0-dev+${{ steps.identity.outputs.short_sha }}
+            OCI_VERSION=${{ steps.version.outputs.value }}
             OCI_TITLE=${{ steps.identity.outputs.title }}
             OCI_DESCRIPTION=Container image built from ${{ github.repository }}
           provenance: mode=max
@@ -110,6 +114,7 @@ jobs:
           IMAGE_DIGEST: ${{ steps.build.outputs.digest }}
           SOURCE_URL: ${{ steps.identity.outputs.source_url }}
           SOURCE_SHA: ${{ steps.identity.outputs.source_sha }}
+          PLATFORM_VERSION: ${{ steps.version.outputs.value }}
         run: |
           set -euo pipefail
           docker buildx imagetools inspect "${IMAGE_REFERENCE}@${IMAGE_DIGEST}"
@@ -117,6 +122,7 @@ jobs:
           test "$(docker image inspect --format '{{.Config.User}}' "${IMAGE_REFERENCE}@${IMAGE_DIGEST}")" = "rails"
           test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.source"}}' "${IMAGE_REFERENCE}@${IMAGE_DIGEST}")" = "$SOURCE_URL"
           test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.revision"}}' "${IMAGE_REFERENCE}@${IMAGE_DIGEST}")" = "$SOURCE_SHA"
+          test "$(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.version"}}' "${IMAGE_REFERENCE}@${IMAGE_DIGEST}")" = "$PLATFORM_VERSION"
           test "$(docker image inspect --format '{{json .Config.Healthcheck.Test}}' "${IMAGE_REFERENCE}@${IMAGE_DIGEST}")" != "null"
           test "$(docker run --rm --entrypoint id "${IMAGE_REFERENCE}@${IMAGE_DIGEST}" -u)" != "0"
           mkdir -p tmp/ci

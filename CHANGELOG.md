@@ -12,6 +12,7 @@ Required release impact: `minor`.
 - Enforce normalized release-impact declarations for pull requests. (`57-release-fragment-ci`)
 - Generate deterministic changelog, release, migration, and upgrade notes. (`58-release-notes`)
 - Prepare deterministic, reviewable release pull requests. (`59-release-preparation`)
+- Certify version consistency across release and supply-chain evidence. (`60-release-certification`)
 
 ## 0.8.0
 

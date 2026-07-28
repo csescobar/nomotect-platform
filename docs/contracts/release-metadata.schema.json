@@ -10,7 +10,8 @@
     "target_version",
     "release_impact",
     "fragment_ids",
-    "fragment_digest"
+    "fragment_digest",
+    "compatibility_digest"
   ],
   "properties": {
     "schema_version": { "const": 1 },
@@ -23,6 +24,10 @@
       "uniqueItems": true
     },
     "fragment_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "compatibility_digest": {
       "type": "string",
       "pattern": "^[a-f0-9]{64}$"
     }

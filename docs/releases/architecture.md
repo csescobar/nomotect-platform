@@ -37,6 +37,19 @@ new branch, verifies generated documents, and opens a draft pull request for
 maintainer review. Its permissions are limited to repository content and pull
 requests. It has no tag, GitHub Release, registry, deployment or signing step.
 
+Preparation also writes versioned compatibility data and binds its digest into
+the release metadata. Application and container SBOMs, packaging manifests and
+OCI image labels now carry the canonical platform version.
+
+`bin/release-consistency RELEASE_EVIDENCE_JSON` is a read-only, fail-closed
+validation command. The evidence manifest names repository-local files for the
+versioned metadata, release notes, compatibility data, application and
+container SBOMs, packaging manifest and provenance statement. The command
+requires the tag, every embedded version and the compatibility digest to agree.
+It emits a versioned JSON report with stable finding codes and never publishes
+or changes release state. See
+[`consistency.md`](consistency.md) for the operator procedure.
+
 Repository Intelligence owns release-governance relationships and exposes the
 release-readiness playbook. Deterministic Ruby and shell commands remain the
 authority for validation and generation. MCP and external graph providers are
