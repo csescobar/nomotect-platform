@@ -18,11 +18,14 @@
 - Isolate extension components and integrate extension state with upgrade preflight. (`64-extension-components`)
 - Add fail-closed extension lifecycle and readiness controls. (`65-extension-lifecycle`)
 - Certify the enterprise extension platform and publish lifecycle guides. (`66-extension-certification`)
+- Define versioned distribution contracts and supported channel policy. (`67-distribution-contracts`)
 
 ## Affected contracts
 
 - `change-fragment`
 - `changelog`
+- `distribution-channel-state`
+- `distribution-manifest`
 - `extension-certification`
 - `extension-compatibility`
 - `extension-components`
@@ -37,6 +40,7 @@
 - `health`
 - `installed-platform-state`
 - `platform-version`
+- `publication-evidence`
 - `release-compatibility`
 - `release-consistency`
 - `release-evidence`
@@ -60,3 +64,4 @@
 - **Security — 64-extension-components:** Real-path validation rejects component resources that escape an installed package root.
 - **Security — 65-extension-lifecycle:** Required failures deny normal traffic and health output exposes only stable codes and extension identifiers.
 - **Security — 66-extension-certification:** Certification covers fail-closed loading, bounded real paths and secret-safe failure evidence.
+- **Security — 67-distribution-contracts:** The contract baseline is read-only, credential-free and excludes private enterprise artifacts.

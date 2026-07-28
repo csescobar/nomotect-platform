@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
+  docs/contracts/channel-state.schema.json \
+  docs/contracts/distribution-manifest.schema.json \
+  docs/contracts/publication-evidence.schema.json
+
+bundle exec rails test test/services/distributions/manifest_test.rb
+ruby -Ilib -rrepository_intelligence/platform -e '
+  registry = RepositoryIntelligence::ContractRegistry.new("config/ai/contracts")
+  abort registry.validate.join("\n") unless registry.validate.empty?
+  abort "distribution contract is not registered" unless
+    registry.load.any? { |contract| contract.fetch("id") == "distributions" }
+'
+
+grep -q 'GitHub Releases and GHCR are the only supported baseline channels' \
+  config/ai/contracts/distributions.yml
+grep -q 'repository_context' docs/contracts/distribution-manifest.schema.json
+grep -q 'partially_published' docs/contracts/publication-evidence.schema.json
+grep -q 'enterprise repository' docs/distribution/architecture.md
+grep -q 'latest.*prohibited' docs/distribution/channel-policy.md
+
+test -x bin/distribution-contract-certify
+! grep -Eq 'contents: write|packages: write|id-token: write' \
+  .github/workflows/distribution-contract.yml
+
+printf 'Distribution contracts and channel policy certified\n'

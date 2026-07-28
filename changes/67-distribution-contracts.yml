@@ -1,0 +1,25 @@
+schema_version: 1
+id: 67-distribution-contracts
+category: feature
+summary: Define versioned distribution contracts and supported channel policy.
+release_impact: minor
+contracts:
+  - distribution-manifest
+  - publication-evidence
+  - distribution-channel-state
+  - repository-intelligence
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: The contract baseline is read-only, credential-free and excludes private enterprise artifacts.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

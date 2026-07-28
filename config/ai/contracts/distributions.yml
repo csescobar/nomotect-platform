@@ -1,0 +1,44 @@
+id: distributions
+version: 1
+owns:
+  - distribution_manifest
+  - publication_evidence
+  - distribution_channel_state
+  - distribution_channel_policy
+  - publication_status
+  - publication_failure_code
+  - publication_recovery_policy
+may_use:
+  - platform_version
+  - release_metadata
+  - release_evidence
+  - release_consistency
+  - packaging_manifest
+  - sbom
+  - provenance
+  - repository_intelligence
+cannot_use:
+  - enterprise_repository_credentials
+  - proprietary_extension_artifacts
+  - arbitrary_distribution_channel
+  - automatic_publication_without_approval
+  - mutable_release_overwrite
+  - container_rebuild_during_release
+  - latest_tag_before_stable_release
+  - secret_persistence
+invariants:
+  - GitHub Releases and GHCR are the only supported baseline channels
+  - repository and package identity derive from the active GitHub repository context
+  - every publication binds one semantic version tag source commit and manifest digest
+  - GitHub Release and GHCR evidence refer to the same approved source commit
+  - semantic GHCR tags promote an existing commit-addressable image without rebuilding
+  - release publication requires approval through the protected release environment
+  - publication never overwrites an existing immutable tag release or image digest
+  - pre-stable releases never publish the latest image tag
+  - artifacts include checksums SBOMs provenance compatibility and operator notes
+  - publication evidence contains no credentials tokens or proprietary artifacts
+  - partial publication stops for operator review and resumes forward
+  - the complete Apache licensed community platform remains independently distributable
+required_tests:
+  - distributions_manifest_test
+  - distribution_contract_certification

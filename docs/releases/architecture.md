@@ -58,3 +58,9 @@ optional, read-only consumers and cannot merge, tag, or publish a release.
 Phase 4 prepares release evidence only. Tags, GitHub Releases, and release-image
 publication belong to Epic 9 Phase 6. The stable `v1.0.0` release remains gated
 by Epic 10.
+
+Phase 6 distribution contracts are documented under
+[`docs/distribution`](../distribution/architecture.md). They restrict the
+supported baseline to GitHub Releases and GHCR, derive identity from the active
+repository, require protected approval, prohibit immutable target overwrite and
+promote the existing commit-addressable image without rebuilding it.
