@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
 require "test_helper"
+require "tmpdir"
 
 module Distributions
   class GithubReleasePlanTest < ActiveSupport::TestCase
     setup do
-      @directory = Rails.root.join("tmp/test-distribution-bundle")
-      FileUtils.rm_rf(@directory)
-      @directory.mkpath
+      @directory = Pathname(Dir.mktmpdir("distribution-bundle-", Rails.root.join("tmp")))
       write_artifacts
     end
 
