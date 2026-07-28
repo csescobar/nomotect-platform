@@ -1,0 +1,77 @@
+name: Prepare Distribution
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: Approved current main commit
+        required: true
+        type: string
+      ci_run_id:
+        description: Successful main CI run containing packaging-evidence
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: prepare-distribution
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_commit }}
+          fetch-depth: 0
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - name: Verify approved main source and CI evidence
+        env:
+          APPROVED_COMMIT: ${{ inputs.source_commit }}
+          CI_RUN_ID: ${{ inputs.ci_run_id }}
+          DISPATCH_COMMIT: ${{ github.sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch origin main
+          test "$APPROVED_COMMIT" = "$DISPATCH_COMMIT"
+          test "$(git rev-parse HEAD)" = "$APPROVED_COMMIT"
+          test "$(git rev-parse origin/main)" = "$APPROVED_COMMIT"
+          run_path="repos/$GITHUB_REPOSITORY/actions/runs/$CI_RUN_ID"
+          test "$(gh api "$run_path" --jq .head_sha)" = "$APPROVED_COMMIT"
+          test "$(gh api "$run_path" --jq .head_branch)" = "main"
+          test "$(gh api "$run_path" --jq .conclusion)" = "success"
+          test "$(gh api "$run_path" --jq .name)" = "CI"
+          test "$(gh api "$run_path" --jq .event)" = "push"
+      - name: Download certified packaging evidence
+        env:
+          CI_RUN_ID: ${{ inputs.ci_run_id }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p tmp/distribution-input
+          gh run download "$CI_RUN_ID" \
+            --name packaging-evidence \
+            --dir tmp/distribution-input
+      - name: Build deterministic distribution bundle
+        env:
+          APPROVED_COMMIT: ${{ inputs.source_commit }}
+        run: |
+          version="$(tr -d '[:space:]' < VERSION)"
+          bundle exec ruby bin/distribution-bundle \
+            --release-directory "docs/releases/$version" \
+            --evidence-directory tmp/distribution-input \
+            --source-commit "$APPROVED_COMMIT" \
+            --output tmp/distribution
+      - uses: actions/upload-artifact@v4
+        with:
+          name: distribution-bundle
+          path: tmp/distribution
+          if-no-files-found: error
+          retention-days: 14

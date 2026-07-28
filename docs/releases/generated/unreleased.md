@@ -23,6 +23,7 @@
 - Add protected immutable GitHub Release publication. (`69-github-release-publication`)
 - Promote existing multi-platform images to semantic GHCR tags. (`70-ghcr-semantic-promotion`)
 - Attest release artifacts and verify canonical publication evidence. (`71-distribution-evidence`)
+- Certify deterministic distribution preparation and the controlled publication playbook. (`72-distribution-certification`)
 
 ## Affected contracts
 
@@ -31,12 +32,15 @@
 - `changelog`
 - `distribution-approval`
 - `distribution-artifact-bundle`
+- `distribution-bundle-preparation`
+- `distribution-certification`
 - `distribution-channel-state`
 - `distribution-ghcr-promotion`
 - `distribution-github-release`
 - `distribution-image-identity`
 - `distribution-inspection`
 - `distribution-manifest`
+- `distribution-operations`
 - `distribution-preflight`
 - `distribution-verification`
 - `extension-certification`
@@ -83,3 +87,4 @@
 - **Security — 69-github-release-publication:** Publication is restricted to an approved main commit and the protected release environment.
 - **Security — 70-ghcr-semantic-promotion:** Promotion is digest-bound, rebuild-free and excludes latest before the stable release gate.
 - **Security — 71-distribution-evidence:** Verification is secret-free and artifact attestations bind the public bundle to the approved workflow.
+- **Security — 72-distribution-certification:** Preparation consumes successful same-commit main evidence and performs no channel mutation.

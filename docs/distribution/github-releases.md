@@ -5,6 +5,12 @@ accepts an approved main commit and the run identifier of a previously
 certified `distribution-bundle`. It does not prepare or rebuild release
 artifacts.
 
+`Prepare Distribution` is the only baseline producer of that named bundle. It
+accepts a successful `main` CI run for the same current commit, downloads its
+packaging evidence and combines it with the approved versioned release
+documents. The workflow has read-only permissions and cannot create tags,
+releases or image aliases.
+
 The `release` environment must require maintainer approval. The publishing job
 receives `contents: write` only after that gate. It verifies that the requested
 commit is the current `main`, checks out that exact commit and downloads the

@@ -329,6 +329,8 @@ operator lifecycle guides.
   artifact bundle.
 - [x] Add rebuild-free GHCR semantic promotion from the commit-addressable
   multi-platform image.
+- [x] Assemble a deterministic distribution bundle from successful
+  same-commit `main` packaging evidence.
 
 - [ ] Publish GitHub Releases and GHCR images from approved release metadata.
 - [x] Evaluate additional channels only where support and ownership are explicit.
@@ -347,7 +349,10 @@ bound to the exact approved `main` commit. PR #70 adds digest-bound GHCR
 promotion for full and minor semantic tags without rebuilding or publishing
 `latest`. PR #71 adds artifact attestations and read-only post-publication
 verification that binds both supported channels and the public artifact set to
-canonical release evidence from the same successful `main` commit.
+canonical release evidence from the same successful `main` commit. PR #72 adds
+same-commit distribution-bundle preparation, the controlled `v0.8.0`
+publication playbook and production-like end-to-end certification. Public
+channel publication remains an explicit post-merge protected-environment gate.
 
 ### Phase 7 — Operational Readiness
 

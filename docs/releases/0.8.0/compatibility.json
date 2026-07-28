@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "source_version": "0.7.0",
+  "platform_version": "0.8.0",
+  "contracts": {
+    "change_fragment": 1,
+    "installed_platform_state": 1,
+    "release_metadata": 1,
+    "upgrade_manifest": 1
+  }
+}
