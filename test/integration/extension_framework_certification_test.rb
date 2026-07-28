@@ -8,7 +8,7 @@ require_relative "../support/extension_package_helper"
 class ExtensionFrameworkCertificationTest < ActiveSupport::TestCase
   include ExtensionPackageHelper
 
-  FIXTURE_ROOT = Rails.root.join("test/fixtures/extensions/certification-audit").freeze
+  FIXTURE_ROOT = Rails.root.join("test/support/extension_fixtures/certification-audit").freeze
 
   test "certifies a production-like package from discovery through deterministic loading" do
     configuration = fixture_configuration

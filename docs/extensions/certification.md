@@ -5,7 +5,8 @@ matrix to certify the extension platform from package discovery through
 readiness, loading and upgrade-state observation.
 
 The fixture at
-`test/fixtures/extensions/certification-audit/platform-extension.yml` models a
+`test/support/extension_fixtures/certification-audit/platform-extension.yml`
+models a
 separately installed gem. It includes a manifest, entrypoint, configuration
 schema, namespaced migration path and package-local documentation. It never
 performs network access and is loaded only after a ready preflight report.

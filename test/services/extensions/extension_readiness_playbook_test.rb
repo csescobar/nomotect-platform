@@ -22,7 +22,7 @@ module Extensions
         manifest: {
           files: [
             { path: "docs/contracts/extension-manifest.schema.json" },
-            { path: "test/fixtures/extensions/certification-audit/platform-extension.yml" },
+            { path: "test/support/extension_fixtures/certification-audit/platform-extension.yml" },
             { path: "docs/extensions/certification.md" }
           ]
         },

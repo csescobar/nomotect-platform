@@ -4,7 +4,7 @@ set -euo pipefail
 ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
   docs/contracts/extension-manifest.schema.json \
   docs/contracts/extension-configuration.schema.json \
-  test/fixtures/extensions/certification-audit/config/extension.schema.json \
+  test/support/extension_fixtures/certification-audit/config/extension.schema.json \
   config/ai/schemas/playbook.schema.json
 
 bundle exec rails test \
@@ -40,7 +40,7 @@ grep -q 'restart_required' app/services/extensions/lifecycle.rb
 grep -q 'extension_certification_matrix' config/ai/contracts/extensions.yml
 grep -q 'Replay and equivalence' docs/extensions/certification.md
 grep -q 'certification.audit' \
-  test/fixtures/extensions/certification-audit/platform-extension.yml
+  test/support/extension_fixtures/certification-audit/platform-extension.yml
 grep -q 'Install' docs/extensions/lifecycle-guide.md
 
 printf 'Extension platform contracts certified\n'
