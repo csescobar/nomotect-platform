@@ -1,0 +1,23 @@
+schema_version: 1
+id: 115-configure-mcp-with-codebase-memory
+category: feature
+summary: |
+  Add `.mcp.json` configuration file setting up the platform stdio MCP server (`bin/repository-intelligence mcp`) with `CODE_GRAPH_PROVIDER=codebase_memory` and `MCP_ALLOW_WRITES=true`.
+release_impact: patch
+contracts:
+  - repository-intelligence
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:

@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "nomotect-repository-intelligence": {
+      "command": "ruby",
+      "args": [
+        "bin/repository-intelligence",
+        "mcp"
+      ],
+      "cwd": "/home/cesar-escobar/Projects/NomoTect/rails-hotwire-platform",
+      "env": {
+        "MCP_ALLOW_WRITES": "true",
+        "CODE_GRAPH_PROVIDER": "codebase_memory"
+      }
+    }
+  }
+}
