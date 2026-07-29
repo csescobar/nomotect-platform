@@ -16,7 +16,11 @@ module Installation
       Connection.establish_connection(configuration.to_h)
       schema_migration = ActiveRecord::SchemaMigration.new(Connection.connection_pool)
       context = ActiveRecord::MigrationContext.new(Rails.root.join("db/migrate"), schema_migration)
-      context.migrate
+      begin
+        context.migrate
+      rescue ActiveRecord::StatementInvalid => error
+        raise unless all_required_tables_exist? && error.message.include?("already exists")
+      end
       verify_schema!
       record_evidence!
       progress.publish(event: :migrations, status: :completed, message: "Database migrations and schema verification completed")
@@ -33,6 +37,10 @@ module Installation
     private
 
     attr_reader :configuration, :progress
+
+    def all_required_tables_exist?
+      REQUIRED_TABLES.all? { |table| Connection.connection.data_source_exists?(table) }
+    end
 
     def verify_schema!
       missing = REQUIRED_TABLES.reject { |table| Connection.connection.data_source_exists?(table) }

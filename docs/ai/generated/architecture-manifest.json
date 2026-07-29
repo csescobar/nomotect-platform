@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "a65600f32f782094d264031dd07e55e1bddd603c",
+  "repository_commit": "fe3e70e9b34fa57140c81c500dc40b4fab7e449e",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -166,7 +166,7 @@
     {
       "path": "app/controllers/installation/steps_controller.rb",
       "kind": "controller",
-      "sha256": "ffffab6e50b05e957c1bcb622d7a19a4244b648b412d7fe37c584a18b2066c28"
+      "sha256": "1821e8cafccb51bea673a6d2a3cc3e73c3dfe8a0cae7460282f73b583f603757"
     },
     {
       "path": "app/controllers/locale_preferences_controller.rb",
@@ -686,7 +686,7 @@
     {
       "path": "app/services/installation/migration_runner.rb",
       "kind": "source",
-      "sha256": "8b7c7872a2a559f414d1da7c039d7cdf6089fbf4041bf3a06dd129c1cc52c39d"
+      "sha256": "b99dc03c8e699e8dc188df5013400abe45f3d065a9262ce82c0e2428a7e6b831"
     },
     {
       "path": "app/services/installation/platform_owner_creator.rb",
@@ -1966,7 +1966,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "67c71ad5452387c1ee6059e6ba3b8394dab9b20008efff043a9f807ab3a3ec78"
+      "sha256": "cda22dedd6abfc609cb3c490b6c876f9e9bc4b17095d927cf902dd7029946513"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
