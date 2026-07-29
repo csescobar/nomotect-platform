@@ -46,6 +46,23 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "Acme Platform", Installation::AppearanceStore.new.read.fetch("application_name")
   end
 
+  test "handles re-saving appearance when state is already database" do
+    Installation::StateStore.new.write!(state: "database")
+
+    patch installation_step_path("appearance"), params: {
+      authenticity_token: form_authenticity_token,
+      appearance: {
+        application_name: "Acme Platform Updated",
+        default_locale: "en",
+        supported_locales: %w[en pt-BR]
+      }
+    }
+
+    assert_redirected_to installation_step_path("database")
+    assert_equal "database", Installation::StateStore.new.read.fetch("state")
+    assert_equal "Acme Platform Updated", Installation::AppearanceStore.new.read.fetch("application_name")
+  end
+
   test "renders database fields without persisted administrative credentials" do
     Installation::StateStore.new.write!(
       state: "database",
