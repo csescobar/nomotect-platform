@@ -1,0 +1,23 @@
+schema_version: 1
+id: 75-developer-bootstrap-frictions
+category: fix
+summary: Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74).
+release_impact: patch
+contracts:
+  - developer-experience
+  - bootstrap-scripts
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Executable permissions on scripts and pre-flight PostgreSQL diagnostics enforce safe defaults.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
