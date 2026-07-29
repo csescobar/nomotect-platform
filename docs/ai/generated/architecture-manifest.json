@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "daead57cd66948fd640b2011c78df7f705016ccf",
+  "repository_commit": "1b3ebe0fabad6a3c3ccd490694718815870b8307",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "4d8b4ff7cbc8dac3079a61e3aaadfc02cbd48fc7dcbfc206e3da576896a59570"
+      "sha256": "144f7666074ab6fb93d3fbcff083ea68fb5fb2c1970e9ee92cfcb323942d7539"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
       "kind": "source",
-      "sha256": "2c565f7c91c177a1da73f94c015f430cd165627d3bdd11cf7c183629be0e7c4c"
+      "sha256": "020ddf8df38073cf1c96088f3c0081b7902b9835b1304d5e6b38f7b55619f1e7"
     },
     {
       "path": "app/components/application_component.rb",
@@ -76,7 +76,7 @@
     {
       "path": "app/components/ui/layout/application_shell_component.rb",
       "kind": "component",
-      "sha256": "fcc5c32ea87b194c6b645c4d56acf7a0c7f1f5e138dbc6064b0006ab04d2f0f2"
+      "sha256": "acf2dd6739d7e768a92c93706034fb5f1505ceeff4a824882b0ea73bc633d85e"
     },
     {
       "path": "app/components/ui/layout/breadcrumbs_component.rb",
@@ -161,12 +161,12 @@
     {
       "path": "app/controllers/installation/base_controller.rb",
       "kind": "controller",
-      "sha256": "488ded98889ba85c342b63b8ab6c9bc8697d65ce0cf8b6f27939da76ea6fb546"
+      "sha256": "6961d022d08dfa37072bd02c8729021de11af1fc47f6d930ea99a4ba1019d6b8"
     },
     {
       "path": "app/controllers/installation/steps_controller.rb",
       "kind": "controller",
-      "sha256": "1821e8cafccb51bea673a6d2a3cc3e73c3dfe8a0cae7460282f73b583f603757"
+      "sha256": "bf238d73d69e5e40fc84c584535022e7b9878095fdad6e4a79b5d2790ea607f6"
     },
     {
       "path": "app/controllers/locale_preferences_controller.rb",
@@ -216,7 +216,7 @@
     {
       "path": "app/helpers/application_helper.rb",
       "kind": "source",
-      "sha256": "f77fac5ea412dbed92c4524fe0ed180acb2b7239f84daf758da989032301f5c8"
+      "sha256": "4d2d7aae9c93e8d5723ccb5f5849e841f553fb2193bbdc6fde0e5d3a6bb19669"
     },
     {
       "path": "app/helpers/localization_helper.rb",
@@ -239,9 +239,19 @@
       "sha256": "f5f3ef90919ac7c3f68f547f4fe767fefcd4b02dad916cad7cea44cf14492205"
     },
     {
+      "path": "app/javascript/controllers/image_preview_controller.js",
+      "kind": "source",
+      "sha256": "663c9d32f06b4c9bc3ca08e50b99c2abdd899078a5eea8f4bb0ca4788280288b"
+    },
+    {
       "path": "app/javascript/controllers/index.js",
       "kind": "source",
       "sha256": "912dbf7d4a276489a11193ba8667f2c8e7b8c4ac686deccd753eac6e945761fd"
+    },
+    {
+      "path": "app/javascript/controllers/log_scroll_controller.js",
+      "kind": "source",
+      "sha256": "6b77bc16960552853e3ee7bb43cf8cec3d00a3402634f7be8e6c5ba631ecbac6"
     },
     {
       "path": "app/javascript/controllers/navigation_drawer_controller.js",
@@ -252,6 +262,11 @@
       "path": "app/javascript/controllers/theme_controller.js",
       "kind": "source",
       "sha256": "8095fb2884e4678b505510f495812a09629260465f8d6fc0f029ea28e6694b1d"
+    },
+    {
+      "path": "app/javascript/controllers/toast_controller.js",
+      "kind": "source",
+      "sha256": "7350c87d890904919680d9613aead6deac4e0387f2fff5c1cb24bb6122ba6e51"
     },
     {
       "path": "app/jobs/application_job.rb",
@@ -641,12 +656,12 @@
     {
       "path": "app/services/installation/appearance_store.rb",
       "kind": "source",
-      "sha256": "7f1125e19755857ee85b7af413ceed7803a4fbe516d7d6b971f0bc742d26036f"
+      "sha256": "c107ceada67b84a9f0b47e7f400d21dd39f9ec779ef9f16c5e5bd9961d35534e"
     },
     {
       "path": "app/services/installation/appearance_updater.rb",
       "kind": "source",
-      "sha256": "18d9217fe8cd3e5ce3d9c867234d8120f361f9c30b2720ea89efe783d389e3c5"
+      "sha256": "a832da08c5365dbd16dde7129990a1b25e1097e100315b28aecca186a9f212b9"
     },
     {
       "path": "app/services/installation/bootstrap_token.rb",
@@ -901,7 +916,7 @@
     {
       "path": "app/views/component_showcase/show.html.erb",
       "kind": "source",
-      "sha256": "facc303972280259aea54995ad3d784d57f6fc173e01f065e1f8f6bbe44e0e96"
+      "sha256": "669305db131103d8dd033c4750cf034257e8e15f7b5889e157cc8f667a01d7e3"
     },
     {
       "path": "app/views/customers/_form.html.erb",
@@ -939,14 +954,24 @@
       "sha256": "1cbb50b4e8d36fa6373c2317b2454ab796747258f748d19f2545da28d6288609"
     },
     {
+      "path": "app/views/installation/steps/_progress_log.html.erb",
+      "kind": "source",
+      "sha256": "caddf1f4f647c616d57b9bd3b895952d2cd22c26274f075a9fab1d8564abf06a"
+    },
+    {
       "path": "app/views/installation/steps/show.html.erb",
       "kind": "source",
-      "sha256": "5f869b3a082fc88a7b94d8c2f0c90f6a0a8447dca57475aada0a7f322c10ec11"
+      "sha256": "2a14e580d788eebdb3d7ccf0425810a39f9234b2310e70872a9753bfbd1e0628"
     },
     {
       "path": "app/views/layouts/application.html.erb",
       "kind": "source",
-      "sha256": "3ff4e75aca8acaa975c87efa2461857a4d589bdea59770fb14714153482869d9"
+      "sha256": "06af921d55026efeb4a7daa755958f548427e40a6db8801bb4e227c14a9294d4"
+    },
+    {
+      "path": "app/views/layouts/installation.html.erb",
+      "kind": "source",
+      "sha256": "6fad0dc51420c243d0bbcb52e91006b549e10151b21a8bc17803c2d82b6d546e"
     },
     {
       "path": "app/views/layouts/mailer.html.erb",
@@ -1101,17 +1126,17 @@
     {
       "path": "config/design_tokens/base.json",
       "kind": "source",
-      "sha256": "e69c0d64ce1e1a02af99e2e4107d05bd07d14ba7395af20b95bc30ada4f70cee"
+      "sha256": "cb3470b441d53d53172fc24c01d1c3f301eb23edfc33fd7d13a640df38940211"
     },
     {
       "path": "config/design_tokens/dark.json",
       "kind": "source",
-      "sha256": "c061ffa86c414e493e929302b328098b6047674aae4e11e992f3383839e213d9"
+      "sha256": "218b2b6e5a32106734011f0df81fdb72243e1c37522860c8ba0277b8d58a6a46"
     },
     {
       "path": "config/design_tokens/light.json",
       "kind": "source",
-      "sha256": "e53abc6b9eeb859de224c5502cf57d2c10f9ea7076b6cea02e46d5eb0772b159"
+      "sha256": "3b924b276d91972cb45cdf77f93a1f21e9451602c85ba28e2cf305dd4ee5cac2"
     },
     {
       "path": "config/design_tokens/tokens.schema.json",
@@ -1121,7 +1146,7 @@
     {
       "path": "config/design_tokens/tokens.yml",
       "kind": "source",
-      "sha256": "21e52e2a04d6bf740c5895630f399b22a8b7b13dfd48115e1b16ac887060145f"
+      "sha256": "62fab2a65de9d7e911c3092345a39c2336925157548f5c378164afc07189e12c"
     },
     {
       "path": "config/environment.rb",
@@ -1239,14 +1264,24 @@
       "sha256": "577602c73743548b7e74609af2d9cfa1aa3d0233fd05e75be3dee5baef2c5448"
     },
     {
+      "path": "config/locales/installation.en.yml",
+      "kind": "source",
+      "sha256": "804b7a5e6d7477d2ec67af0d689c8fc7e083cced3dd18f85b240e1c5abd350ef"
+    },
+    {
+      "path": "config/locales/installation.pt-BR.yml",
+      "kind": "source",
+      "sha256": "3c88d8a94b9b7a5116d86fd10cd2e14b37cc21ca837fd2d06b309f840c72974b"
+    },
+    {
       "path": "config/locales/layout.en.yml",
       "kind": "source",
-      "sha256": "e7f54369f9d8c1dfcf16b1f3ca1652d146b432462f35287b6c752d763b0bb2ba"
+      "sha256": "c420deacecbc9d0e3e0529be7b4d1d167bcbda728986e4c7322784be2165634e"
     },
     {
       "path": "config/locales/layout.pt-BR.yml",
       "kind": "source",
-      "sha256": "f9b59635ddbe4391c2bcd8f43fd674e5fbdaae14289727d7b078acbed3aef3d1"
+      "sha256": "a97f64ca161549e58748a49f8211844da4a685e803fba4ce8231c5bd44b853b9"
     },
     {
       "path": "config/locales/localization.en.yml",
@@ -1276,12 +1311,12 @@
     {
       "path": "config/locales/showcase.en.yml",
       "kind": "source",
-      "sha256": "f6308d7d9dbd0af74d8e78b9882dafbdc935beefe479e658082c82a29a45ab69"
+      "sha256": "2ae9bd672ff595b62a1420677489ddb0f7c1fa4c3e5e075d5ea1551828b5b586"
     },
     {
       "path": "config/locales/showcase.pt-BR.yml",
       "kind": "source",
-      "sha256": "e0835b98434e06cb6b1d863f637769344a888a26f7d3c365bd62d2bd63d901bf"
+      "sha256": "9f59f9f9c8c113b06a2e0c6bd503bff2148b14b19aaa41c590550cf3a896fbe7"
     },
     {
       "path": "config/puma.rb",
@@ -1976,7 +2011,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "fcd06ac03c586e095de6318dd941f6f1e76369ae49db2fd15b5fbfabd4a52b29"
+      "sha256": "a8d193299bcb246b29fe9c60c2f7541252c602a417a707478869251bdacc1b65"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2091,7 +2126,7 @@
     {
       "path": "lib/design_tokens/generated.rb",
       "kind": "source",
-      "sha256": "3fffa05ff62759c057a5fd8445c61e947e57314e7ec10a5cdf4f82cd1dcb46d5"
+      "sha256": "edb7d554c89a2897410ec81949e2b52f8ba6c0c602bc045a9d2a50da5b5c8121"
     },
     {
       "path": "lib/platform/json_log_formatter.rb",
@@ -2276,7 +2311,7 @@
     {
       "path": "test/controllers/installation/steps_controller_test.rb",
       "kind": "test",
-      "sha256": "09267308d8d5609fdd1f1080f63443f3a308146085b10b1ab7f04686ed88c82e"
+      "sha256": "05c4f0f89bcd9f7f06ac2d7e683792e7f35f8039e119d0f8f0315e1e6c6bfa2a"
     },
     {
       "path": "test/controllers/locale_preferences_controller_test.rb",

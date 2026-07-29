@@ -107,7 +107,7 @@ module Installation
     end
 
     def appearance_attributes
-      params.require(:appearance).permit(:application_name, :default_locale, supported_locales: [])
+      params.require(:appearance).permit(:application_name, :default_locale, :trademark_mode, supported_locales: [])
     end
 
     def appearance_uploads

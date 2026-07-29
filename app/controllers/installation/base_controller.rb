@@ -1,5 +1,6 @@
 module Installation
   class BaseController < ApplicationController
+    layout "installation"
     allow_unauthenticated_access
     skip_before_action :enforce_extension_readiness
 

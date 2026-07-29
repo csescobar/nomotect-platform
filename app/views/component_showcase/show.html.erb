@@ -3,6 +3,102 @@
 <div class="showcase">
   <%= render Ui::Layout::PageHeaderComponent.new(title: t("showcase.title"), description: t("showcase.description")) %>
 
+  <%# ── Typography ──────────────────────────────────────────── %>
+  <section class="showcase__section" aria-labelledby="showcase-typography">
+    <h2 id="showcase-typography"><%= t("showcase.sections.typography") %></h2>
+    <p class="showcase__section-desc"><%= t("showcase.typography_desc") %></p>
+    <div class="showcase__typo-scale">
+      <div class="showcase__typo-row">
+        <span class="showcase__typo-label">font-size-xxl</span>
+        <span style="font-size: var(--font-size-xxl); font-family: var(--font-family-heading); font-weight: var(--font-weight-bold);">Heading Display</span>
+      </div>
+      <div class="showcase__typo-row">
+        <span class="showcase__typo-label">font-size-xl</span>
+        <span style="font-size: var(--font-size-xl); font-family: var(--font-family-heading); font-weight: var(--font-weight-semibold);">Section Title</span>
+      </div>
+      <div class="showcase__typo-row">
+        <span class="showcase__typo-label">font-size-lg</span>
+        <span style="font-size: var(--font-size-lg);">Large Body Text</span>
+      </div>
+      <div class="showcase__typo-row">
+        <span class="showcase__typo-label">font-size-md</span>
+        <span style="font-size: var(--font-size-md);">Regular Body Text — the quick brown fox jumps over the lazy dog</span>
+      </div>
+      <div class="showcase__typo-row">
+        <span class="showcase__typo-label">font-size-sm</span>
+        <span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">Small / Help Text</span>
+      </div>
+      <div class="showcase__typo-row">
+        <span class="showcase__typo-label">font-size-xs</span>
+        <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">Extra-small / Label Text</span>
+      </div>
+      <div class="showcase__typo-row">
+        <span class="showcase__typo-label">font-family-mono</span>
+        <code style="font-size: var(--font-size-sm);">const greeting = "Hello, World!"</code>
+      </div>
+      <div class="showcase__typo-row">
+        <span class="showcase__typo-label">font-weight-bold</span>
+        <span style="font-weight: var(--font-weight-bold);">Bold weight text</span>
+      </div>
+      <div class="showcase__typo-row">
+        <span class="showcase__typo-label">font-weight-semibold</span>
+        <span style="font-weight: var(--font-weight-semibold);">Semibold weight text</span>
+      </div>
+    </div>
+  </section>
+
+  <%# ── Colors ─────────────────────────────────────────────── %>
+  <section class="showcase__section" aria-labelledby="showcase-colors">
+    <h2 id="showcase-colors"><%= t("showcase.sections.colors") %></h2>
+    <p class="showcase__section-desc"><%= t("showcase.colors_desc") %></p>
+    <div class="showcase__swatches">
+      <% [
+        ["background",    "var(--color-background)"],
+        ["surface",       "var(--color-surface)"],
+        ["surface-subtle","var(--color-surface-subtle)"],
+        ["text",          "var(--color-text)"],
+        ["text-muted",    "var(--color-text-muted)"],
+        ["border",        "var(--color-border)"],
+        ["primary",       "var(--color-primary)"],
+        ["on-primary",    "var(--color-on-primary)"],
+        ["success",       "var(--color-success)"],
+        ["on-success",    "var(--color-on-success)"],
+        ["warning",       "var(--color-warning)"],
+        ["on-warning",    "var(--color-on-warning)"],
+        ["danger",        "var(--color-danger)"],
+        ["on-danger",     "var(--color-on-danger)"],
+        ["focus",         "var(--color-focus)"],
+      ].each do |name, value| %>
+        <div class="showcase__swatch">
+          <div class="showcase__swatch-color" style="background: <%= value %>;"></div>
+          <span class="showcase__swatch-name"><%= name %></span>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <%# ── Spacing ─────────────────────────────────────────────── %>
+  <section class="showcase__section" aria-labelledby="showcase-spacing">
+    <h2 id="showcase-spacing"><%= t("showcase.sections.spacing") %></h2>
+    <p class="showcase__section-desc"><%= t("showcase.spacing_desc") %></p>
+    <div class="showcase__spacing-scale">
+      <% [
+        ["space-xs",  "var(--space-xs)",  "0.25rem"],
+        ["space-sm",  "var(--space-sm)",  "0.5rem"],
+        ["space-md",  "var(--space-md)",  "1rem"],
+        ["space-lg",  "var(--space-lg)",  "1.5rem"],
+        ["space-xl",  "var(--space-xl)",  "2rem"],
+        ["space-xxl", "var(--space-xxl)", "3rem"],
+      ].each do |name, value, size| %>
+        <div class="showcase__spacing-row">
+          <span class="showcase__spacing-label"><%= name %> — <%= size %></span>
+          <div class="showcase__spacing-bar" style="width: <%= value %>;"></div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <%# ── Buttons ─────────────────────────────────────────────── %>
   <section class="showcase__section" aria-labelledby="showcase-buttons">
     <h2 id="showcase-buttons"><%= t("showcase.sections.buttons") %></h2>
     <div class="showcase__row">
@@ -13,6 +109,7 @@
     </div>
   </section>
 
+  <%# ── Feedback ─────────────────────────────────────────────── %>
   <section class="showcase__section" aria-labelledby="showcase-feedback">
     <h2 id="showcase-feedback"><%= t("showcase.sections.feedback") %></h2>
     <div class="showcase__stack">
@@ -27,6 +124,7 @@
     </div>
   </section>
 
+  <%# ── Containers ──────────────────────────────────────────── %>
   <section class="showcase__section" aria-labelledby="showcase-containers">
     <h2 id="showcase-containers"><%= t("showcase.sections.containers") %></h2>
     <div class="showcase__grid">
@@ -42,6 +140,7 @@
     <% end %>
   </section>
 
+  <%# ── Forms ───────────────────────────────────────────────── %>
   <section class="showcase__section" aria-labelledby="showcase-forms">
     <h2 id="showcase-forms"><%= t("showcase.sections.forms") %></h2>
     <%= form_with scope: :showcase, url: component_showcase_path, method: :get, builder: Ui::FormBuilder, html: { class: "showcase__form" } do |form| %>
@@ -54,6 +153,7 @@
     <% end %>
   </section>
 
+  <%# ── Formatting ───────────────────────────────────────────── %>
   <section class="showcase__section" aria-labelledby="showcase-formatting">
     <h2 id="showcase-formatting"><%= t("showcase.sections.formatting") %></h2>
     <dl class="showcase__grid">

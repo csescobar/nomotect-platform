@@ -3,12 +3,16 @@
   "color.border": "#cbd5e1",
   "color.danger": "#b91c1c",
   "color.focus": "#2563eb",
+  "color.on-danger": "#ffffff",
   "color.on-primary": "#ffffff",
+  "color.on-success": "#ffffff",
+  "color.on-warning": "#ffffff",
   "color.primary": "#1d4ed8",
   "color.primary.hover": "#1e40af",
   "color.success": "#15803d",
   "color.surface": "#ffffff",
   "color.surface.subtle": "#f1f5f9",
   "color.text": "#0f172a",
-  "color.text.muted": "#475569"
+  "color.text.muted": "#475569",
+  "color.warning": "#b45309"
 }

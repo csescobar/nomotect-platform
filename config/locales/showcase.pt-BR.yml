@@ -10,7 +10,13 @@ pt-BR:
     empty_title: "Nenhum item ainda"
     empty_description: "Crie o primeiro item para começar."
     empty_action: "Criar item"
+    typography_desc: "A escala tipográfica usa duas famílias — Manrope para títulos, Inter para corpo — com tokens para cada tamanho e peso."
+    colors_desc: "Os tokens de cor semânticos alternam automaticamente entre os modos claro e escuro com base no tema ativo."
+    spacing_desc: "Espaçamento consistente construído a partir da escala de tokens garante ritmo visual em todos os componentes."
     sections:
+      typography: "Escala tipográfica"
+      colors: "Tokens de cor"
+      spacing: "Escala de espaçamento"
       buttons: "Botões"
       feedback: "Feedback e status"
       containers: "Contêineres e estados vazios"

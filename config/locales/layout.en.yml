@@ -7,3 +7,6 @@ en:
     breadcrumbs: Breadcrumbs
     account: Account
     dashboard: Dashboard
+    organizations: Organizations
+    grid_engine: Grid engine
+    close_notification: Close notification
