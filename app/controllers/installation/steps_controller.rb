@@ -40,9 +40,7 @@ module Installation
       configuration = database_configuration
       DatabaseConnector.new.test!(configuration)
       persist_database_metadata!(configuration)
-      load_database
-      flash.now[:notice] = "PostgreSQL connection succeeded."
-      render :show
+      redirect_to installation_step_path("database"), status: :see_other, notice: "PostgreSQL connection succeeded."
     end
 
     def provision_database

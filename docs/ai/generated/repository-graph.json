@@ -267,7 +267,7 @@
       "name": "Installation::Steps",
       "path": "app/controllers/installation/steps_controller.rb",
       "properties": {
-        "sha256": "a842f0089b37efcabe90b8fd161435c39eeb9d6af1d21ed2eadad16ea8b0b991",
+        "sha256": "ffffab6e50b05e957c1bcb622d7a19a4244b648b412d7fe37c584a18b2066c28",
         "source": "platform"
       }
     },
@@ -1357,7 +1357,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "8555761e4d76adf6441922896fc1116f6a07fa1db01ce18ba1a8eb2bbd4d5c6b",
+        "sha256": "e6ee0db60e5214998242dcbfe83e906f0cf3ac9a6be9e3c580d8b42de4ae80a1",
         "source": "platform"
       }
     },
@@ -3318,5 +3318,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "d01176b5e7a95a0da45c781fcf988651092855a8"
+  "repository_commit": "80546092881592d83c1d653866875fabff8305c3"
 }
