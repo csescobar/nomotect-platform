@@ -10,39 +10,39 @@
     <div class="showcase__typo-scale">
       <div class="showcase__typo-row">
         <span class="showcase__typo-label">font-size-xxl</span>
-        <span style="font-size: var(--font-size-xxl); font-family: var(--font-family-heading); font-weight: var(--font-weight-bold);">Heading Display</span>
+        <span class="showcase__typo--xxl">Heading Display</span>
       </div>
       <div class="showcase__typo-row">
         <span class="showcase__typo-label">font-size-xl</span>
-        <span style="font-size: var(--font-size-xl); font-family: var(--font-family-heading); font-weight: var(--font-weight-semibold);">Section Title</span>
+        <span class="showcase__typo--xl">Section Title</span>
       </div>
       <div class="showcase__typo-row">
         <span class="showcase__typo-label">font-size-lg</span>
-        <span style="font-size: var(--font-size-lg);">Large Body Text</span>
+        <span class="showcase__typo--lg">Large Body Text</span>
       </div>
       <div class="showcase__typo-row">
         <span class="showcase__typo-label">font-size-md</span>
-        <span style="font-size: var(--font-size-md);">Regular Body Text — the quick brown fox jumps over the lazy dog</span>
+        <span class="showcase__typo--md">Regular Body Text — the quick brown fox jumps over the lazy dog</span>
       </div>
       <div class="showcase__typo-row">
         <span class="showcase__typo-label">font-size-sm</span>
-        <span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">Small / Help Text</span>
+        <span class="showcase__typo--sm">Small / Help Text</span>
       </div>
       <div class="showcase__typo-row">
         <span class="showcase__typo-label">font-size-xs</span>
-        <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">Extra-small / Label Text</span>
+        <span class="showcase__typo--xs">Extra-small / Label Text</span>
       </div>
       <div class="showcase__typo-row">
         <span class="showcase__typo-label">font-family-mono</span>
-        <code style="font-size: var(--font-size-sm);">const greeting = "Hello, World!"</code>
+        <code class="showcase__typo--mono">const greeting = "Hello, World!"</code>
       </div>
       <div class="showcase__typo-row">
         <span class="showcase__typo-label">font-weight-bold</span>
-        <span style="font-weight: var(--font-weight-bold);">Bold weight text</span>
+        <span class="showcase__typo--bold">Bold weight text</span>
       </div>
       <div class="showcase__typo-row">
         <span class="showcase__typo-label">font-weight-semibold</span>
-        <span style="font-weight: var(--font-weight-semibold);">Semibold weight text</span>
+        <span class="showcase__typo--semibold">Semibold weight text</span>
       </div>
     </div>
   </section>
@@ -53,24 +53,12 @@
     <p class="showcase__section-desc"><%= t("showcase.colors_desc") %></p>
     <div class="showcase__swatches">
       <% [
-        ["background",    "var(--color-background)"],
-        ["surface",       "var(--color-surface)"],
-        ["surface-subtle","var(--color-surface-subtle)"],
-        ["text",          "var(--color-text)"],
-        ["text-muted",    "var(--color-text-muted)"],
-        ["border",        "var(--color-border)"],
-        ["primary",       "var(--color-primary)"],
-        ["on-primary",    "var(--color-on-primary)"],
-        ["success",       "var(--color-success)"],
-        ["on-success",    "var(--color-on-success)"],
-        ["warning",       "var(--color-warning)"],
-        ["on-warning",    "var(--color-on-warning)"],
-        ["danger",        "var(--color-danger)"],
-        ["on-danger",     "var(--color-on-danger)"],
-        ["focus",         "var(--color-focus)"],
-      ].each do |name, value| %>
+        "background", "surface", "surface-subtle", "text", "text-muted",
+        "border", "primary", "on-primary", "success", "on-success",
+        "warning", "on-warning", "danger", "on-danger", "focus"
+      ].each do |name| %>
         <div class="showcase__swatch">
-          <div class="showcase__swatch-color" style="background: <%= value %>;"></div>
+          <div class="showcase__swatch-color showcase__swatch-color--<%= name %>"></div>
           <span class="showcase__swatch-name"><%= name %></span>
         </div>
       <% end %>
@@ -83,16 +71,16 @@
     <p class="showcase__section-desc"><%= t("showcase.spacing_desc") %></p>
     <div class="showcase__spacing-scale">
       <% [
-        ["space-xs",  "var(--space-xs)",  "0.25rem"],
-        ["space-sm",  "var(--space-sm)",  "0.5rem"],
-        ["space-md",  "var(--space-md)",  "1rem"],
-        ["space-lg",  "var(--space-lg)",  "1.5rem"],
-        ["space-xl",  "var(--space-xl)",  "2rem"],
-        ["space-xxl", "var(--space-xxl)", "3rem"],
-      ].each do |name, value, size| %>
+        ["space-xs",  "0.25rem"],
+        ["space-sm",  "0.5rem"],
+        ["space-md",  "1rem"],
+        ["space-lg",  "1.5rem"],
+        ["space-xl",  "2rem"],
+        ["space-xxl", "3rem"],
+      ].each do |name, size| %>
         <div class="showcase__spacing-row">
           <span class="showcase__spacing-label"><%= name %> — <%= size %></span>
-          <div class="showcase__spacing-bar" style="width: <%= value %>;"></div>
+          <div class="showcase__spacing-bar showcase__spacing-bar--<%= name %>"></div>
         </div>
       <% end %>
     </div>

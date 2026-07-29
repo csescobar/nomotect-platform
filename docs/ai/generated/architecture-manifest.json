@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "8b15117e859b4b17de872209e4296632f2fca1fa",
+  "repository_commit": "120eaca8ec0595843a9f587163b8c1c8a9c93ae8",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "0471e87d80f5b932857526be5d5b8a7db4373e626d913001bb8998fa197d3e24"
+      "sha256": "301533919de13a996c1674a2c096e54ad771f517e7e2ca2cbcf4ed2562053df1"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
@@ -216,7 +216,7 @@
     {
       "path": "app/helpers/application_helper.rb",
       "kind": "source",
-      "sha256": "f9b167eb18cca64d33f465348a38dcf64afa230031375d8ad93d26f0a296ee21"
+      "sha256": "6aab0ebc4f7e5f6330f8fdeb9c3772737147665d0b30c43c49a2d6e42e05b39e"
     },
     {
       "path": "app/helpers/localization_helper.rb",
@@ -916,7 +916,7 @@
     {
       "path": "app/views/component_showcase/show.html.erb",
       "kind": "source",
-      "sha256": "669305db131103d8dd033c4750cf034257e8e15f7b5889e157cc8f667a01d7e3"
+      "sha256": "a1d47c68d693898aca75771c038d82284c63934d529f829d4a01d1e786e3377f"
     },
     {
       "path": "app/views/customers/_form.html.erb",
@@ -966,12 +966,12 @@
     {
       "path": "app/views/layouts/application.html.erb",
       "kind": "source",
-      "sha256": "938716591ac5751e0b56ed361db74198e6e9a6520b2b1c5d73c168bbe8f8e5da"
+      "sha256": "4d8ae2fb3377a20622f6549a8dc344649fdf8f1223ca053e2ead18692b603e38"
     },
     {
       "path": "app/views/layouts/installation.html.erb",
       "kind": "source",
-      "sha256": "1ceb0482e25074e6d3c2a279414f6de3c754b8dc5c88f1c33d95e2548728b45b"
+      "sha256": "d9682044755183ced978ce5a34a2cffc776a177e537a43875c456c2212e6b6eb"
     },
     {
       "path": "app/views/layouts/mailer.html.erb",
@@ -2011,7 +2011,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "45890d550c713e4936d068d33671d3027583330279488f1f3eb572bdd38b7069"
+      "sha256": "535b26b488ba596f1cb92494cdd7943188b81507a860dd4da72329d536b0810f"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
