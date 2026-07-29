@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "status": "ready",
+  "indexed_commit": "46684a750ce984173b835d78c0a1c2c086b9152d",
+  "current_commit": "46684a750ce984173b835d78c0a1c2c086b9152d",
+  "counts": {
+    "files": 524,
+    "nodes": 261,
+    "edges": 109
+  },
+  "findings": [],
+  "provider": {
+    "available": true,
+    "provider": "RepositoryIntelligence::Providers::NullProvider"
+  }
+}
