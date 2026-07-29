@@ -1,0 +1,27 @@
+schema_version: 1
+id: 114-fix-design-token-scales-and-danger-button
+category: fix
+summary: |
+  Fix design token scales, danger button contrast, and header logo sizing:
+  - Add missing `font.size.xxl` and `space.xxl` aliases alongside `2xl` keys in `tokens.yml` so showcase scale items render accurately
+  - Enhance `color.primary` in light theme (`#0284C7`) so primary actions stand out distinctly from default text (`#0F172A`)
+  - Fix danger button contrast with `#FFFFFF` text on `color.danger` and add hover states across all button variants
+  - Expand header logo height (`height: 3.5rem`, `max-width: 20rem`) for clear SVG lockup legibility
+release_impact: patch
+contracts:
+  - design-system
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Improved color contrast on danger buttons and semantic token hierarchy.

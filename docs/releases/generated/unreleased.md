@@ -60,6 +60,12 @@
  (`112-eliminate-csp-inline-styles-and-add-favicon-tag`)
 - Increase header brand logo height and max-width bounds (`height: 2.75rem`, `max-width: 16rem`) to ensure SVG horizontal lockups render with clear legibility and crisp visual scale across wizard and application shell headers.
  (`113-increase-header-logo-dimensions`)
+- Fix design token scales, danger button contrast, and header logo sizing:
+- Add missing `font.size.xxl` and `space.xxl` aliases alongside `2xl` keys in `tokens.yml` so showcase scale items render accurately
+- Enhance `color.primary` in light theme (`#0284C7`) so primary actions stand out distinctly from default text (`#0F172A`)
+- Fix danger button contrast with `#FFFFFF` text on `color.danger` and add hover states across all button variants
+- Expand header logo height (`height: 3.5rem`, `max-width: 20rem`) for clear SVG lockup legibility
+ (`114-fix-design-token-scales-and-danger-button`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
@@ -166,3 +172,4 @@
 - **Accessibility — 111-fix-wizard-test-connection-and-completion:** Reviewed with no additional action.
 - **Accessibility — 112-eliminate-csp-inline-styles-and-add-favicon-tag:** Reviewed with no additional action.
 - **Accessibility — 113-increase-header-logo-dimensions:** Reviewed with no additional action.
+- **Accessibility — 114-fix-design-token-scales-and-danger-button:** Improved color contrast on danger buttons and semantic token hierarchy.
