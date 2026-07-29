@@ -42,6 +42,10 @@ Required release impact: `minor`.
 - Prioritize user preferred locale over organization default locale in ApplicationController resolved_locale (#100). (`101-user-locale-precedence`)
 - Defer default database provisioning in bin/setup and bin/container-entrypoint when INSTALLATION_ENABLED is active (#91). (`103-setup-defer-database-provisioning`)
 - Disable active_record.migration_error in development when INSTALLATION_ENABLED is active so CheckPending middleware does not query a non-existent database before the wizard creates it. (`105-disable-migration-check-during-installation`)
+- Fix Turbo redirects and CSP image previews in First-Run Installation Wizard:
+- Added status: :see_other (303) across all wizard form action redirects so Turbo 8 follows step transitions
+- Updated CSP img_src to include :blob directive and switched image_preview_controller to FileReader data URLs
+ (`107-fix-wizard-redirection-and-csp-previews`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
