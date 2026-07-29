@@ -1,0 +1,26 @@
+schema_version: 1
+id: 112-eliminate-csp-inline-styles-and-add-favicon-tag
+category: fix
+summary: |
+  Eliminate inline style CSP violations in Component Showcase and add dynamic favicon tag:
+  - Replace all inline `style="..."` attributes in component showcase view with dedicated CSS utility classes
+  - Add `platform_favicon_tag` helper to render custom or fallback favicon links in application and installation layouts
+release_impact: patch
+contracts:
+  - design-system
+  - installation
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes: Complies strictly with Content Security Policy style-src directive without requiring unsafe-inline.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:

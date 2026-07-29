@@ -55,6 +55,10 @@ Required release impact: `minor`.
 - Add margin-bottom to wizard-card__actions to prevent action buttons from sticking to terminal logs
 - Boot extension runtime on demand after installation completes so root_path does not return 503
  (`111-fix-wizard-test-connection-and-completion`)
+- Eliminate inline style CSP violations in Component Showcase and add dynamic favicon tag:
+- Replace all inline `style="..."` attributes in component showcase view with dedicated CSS utility classes
+- Add `platform_favicon_tag` helper to render custom or fallback favicon links in application and installation layouts
+ (`112-eliminate-csp-inline-styles-and-add-favicon-tag`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
