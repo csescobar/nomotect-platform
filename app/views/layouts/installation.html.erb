@@ -19,7 +19,7 @@
   <body>
     <div class="wizard-layout">
       <header class="wizard-header">
-        <span class="wizard-header__brand"><%= platform_name %></span>
+        <span class="wizard-header__brand"><%= platform_brand_tag(css_class: "wizard-header") %></span>
         <div class="wizard-header__actions">
           <%= render Ui::ThemeSwitcherComponent.new %>
         </div>

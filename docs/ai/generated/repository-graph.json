@@ -127,7 +127,7 @@
       "name": "Ui::Layout::ApplicationShell",
       "path": "app/components/ui/layout/application_shell_component.rb",
       "properties": {
-        "sha256": "acf2dd6739d7e768a92c93706034fb5f1505ceeff4a824882b0ea73bc633d85e",
+        "sha256": "0e0ed4bd35c0366b60e6733e8f5778e6e85047b5a843627fa476a388a37a7ef3",
         "source": "platform"
       }
     },
@@ -1357,7 +1357,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "c87d592df02940ef57f4d13a2f2930b74fd75a32ba6ee673c31881534ec5cbd1",
+        "sha256": "d56aca2758dfe713bdfab782bfb2e86487060243a782ddcbdfe370c76ebff316",
         "source": "platform"
       }
     },
@@ -3318,5 +3318,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "62fd9a2c03e2f6ffb34e93e2ffac25757f08cb31"
+  "repository_commit": "17528643b163a2ab6c385bb02329fa092f82f29b"
 }

@@ -38,7 +38,7 @@
       <% end %>
     <% else %>
       <header class="app-header">
-        <strong><%= platform_name %></strong>
+        <span class="app-header__brand"><%= platform_brand_tag(css_class: "app-header") %></span>
         <div class="app-header__actions">
           <%= render Ui::ThemeSwitcherComponent.new %>
         </div>

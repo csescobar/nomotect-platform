@@ -29,7 +29,7 @@ module Ui
         tag.header(class: "application-shell__header") do
           safe_join([
             tag.button(I18n.t("layout.open_navigation"), type: "button", class: "navigation-toggle", aria: { expanded: false, controls: "application-sidebar" }, data: { navigation_drawer_target: "toggle", action: "navigation-drawer#toggle" }),
-            tag.strong(helpers.platform_name, class: "application-shell__brand"),
+            tag.span(helpers.platform_brand_tag(css_class: "application-shell"), class: "application-shell__brand"),
             tag.div(class: "application-shell__header-actions") do
               safe_join([
                 render(Ui::ThemeSwitcherComponent.new),

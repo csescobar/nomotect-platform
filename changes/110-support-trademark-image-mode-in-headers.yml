@@ -1,0 +1,24 @@
+schema_version: 1
+id: 110-support-trademark-image-mode-in-headers
+category: feature
+summary: |
+  Support trademark display modes (name_only, image_only, image_and_name) in wizard and application headers via platform_brand_tag helper, and improve DesignTokens::Compiler error messaging for partial YAML documents.
+release_impact: minor
+contracts:
+  - installation
+  - design-system
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Logo images rendered with descriptive alt text based on platform_name.

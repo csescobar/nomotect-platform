@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "62fd9a2c03e2f6ffb34e93e2ffac25757f08cb31",
+  "repository_commit": "17528643b163a2ab6c385bb02329fa092f82f29b",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "144f7666074ab6fb93d3fbcff083ea68fb5fb2c1970e9ee92cfcb323942d7539"
+      "sha256": "6c9bb61b63a56af4d08f6fbdb158bb3d58b3f47d58ff1c06165d024bdbb55ae8"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
       "kind": "source",
-      "sha256": "020ddf8df38073cf1c96088f3c0081b7902b9835b1304d5e6b38f7b55619f1e7"
+      "sha256": "702d209daff36a4241bce90a2e890a9c2f653f15268584470844763fd55f3e57"
     },
     {
       "path": "app/components/application_component.rb",
@@ -76,7 +76,7 @@
     {
       "path": "app/components/ui/layout/application_shell_component.rb",
       "kind": "component",
-      "sha256": "acf2dd6739d7e768a92c93706034fb5f1505ceeff4a824882b0ea73bc633d85e"
+      "sha256": "0e0ed4bd35c0366b60e6733e8f5778e6e85047b5a843627fa476a388a37a7ef3"
     },
     {
       "path": "app/components/ui/layout/breadcrumbs_component.rb",
@@ -216,7 +216,7 @@
     {
       "path": "app/helpers/application_helper.rb",
       "kind": "source",
-      "sha256": "4d2d7aae9c93e8d5723ccb5f5849e841f553fb2193bbdc6fde0e5d3a6bb19669"
+      "sha256": "f9b167eb18cca64d33f465348a38dcf64afa230031375d8ad93d26f0a296ee21"
     },
     {
       "path": "app/helpers/localization_helper.rb",
@@ -966,12 +966,12 @@
     {
       "path": "app/views/layouts/application.html.erb",
       "kind": "source",
-      "sha256": "06af921d55026efeb4a7daa755958f548427e40a6db8801bb4e227c14a9294d4"
+      "sha256": "938716591ac5751e0b56ed361db74198e6e9a6520b2b1c5d73c168bbe8f8e5da"
     },
     {
       "path": "app/views/layouts/installation.html.erb",
       "kind": "source",
-      "sha256": "6fad0dc51420c243d0bbcb52e91006b549e10151b21a8bc17803c2d82b6d546e"
+      "sha256": "1ceb0482e25074e6d3c2a279414f6de3c754b8dc5c88f1c33d95e2548728b45b"
     },
     {
       "path": "app/views/layouts/mailer.html.erb",
@@ -1126,17 +1126,17 @@
     {
       "path": "config/design_tokens/base.json",
       "kind": "source",
-      "sha256": "cb3470b441d53d53172fc24c01d1c3f301eb23edfc33fd7d13a640df38940211"
+      "sha256": "b83a0cdd936e918e67d4750d223f018455c8475533950d1111e47d0999a55513"
     },
     {
       "path": "config/design_tokens/dark.json",
       "kind": "source",
-      "sha256": "218b2b6e5a32106734011f0df81fdb72243e1c37522860c8ba0277b8d58a6a46"
+      "sha256": "9df5ef040e3aa731e6130f502ec0f94e1354c4cfd726e091ec59908bd19f09fe"
     },
     {
       "path": "config/design_tokens/light.json",
       "kind": "source",
-      "sha256": "3b924b276d91972cb45cdf77f93a1f21e9451602c85ba28e2cf305dd4ee5cac2"
+      "sha256": "9b36a7dc7ab6c08b1679906e1869b9f7d1a22c8d9624f1fdbb59feeb1f6769d1"
     },
     {
       "path": "config/design_tokens/tokens.schema.json",
@@ -1146,7 +1146,7 @@
     {
       "path": "config/design_tokens/tokens.yml",
       "kind": "source",
-      "sha256": "62fab2a65de9d7e911c3092345a39c2336925157548f5c378164afc07189e12c"
+      "sha256": "4aa58fb22f9ce04340dc073ab897eb09bb544e3ee37ce12582113573fb4ba0e1"
     },
     {
       "path": "config/environment.rb",
@@ -2011,7 +2011,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "c87d592df02940ef57f4d13a2f2930b74fd75a32ba6ee673c31881534ec5cbd1"
+      "sha256": "d56aca2758dfe713bdfab782bfb2e86487060243a782ddcbdfe370c76ebff316"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2121,12 +2121,12 @@
     {
       "path": "lib/design_tokens/compiler.rb",
       "kind": "source",
-      "sha256": "c2c79e08379cf7de37294da94b80ce02ed4a8cada8eda01a189a052e5073a093"
+      "sha256": "d36817219ebed82539b956e96b1f9177e8a552ba65cecbbe30cbe2277f5c3db8"
     },
     {
       "path": "lib/design_tokens/generated.rb",
       "kind": "source",
-      "sha256": "edb7d554c89a2897410ec81949e2b52f8ba6c0c602bc045a9d2a50da5b5c8121"
+      "sha256": "c9c8effa3c3f8df10c6a186a7fc707c7b744b1c388ae8292862006a8b66720bc"
     },
     {
       "path": "lib/platform/json_log_formatter.rb",
