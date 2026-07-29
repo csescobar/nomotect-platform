@@ -40,7 +40,9 @@ module Installation
       configuration = database_configuration
       DatabaseConnector.new.test!(configuration)
       persist_database_metadata!(configuration)
-      redirect_to installation_step_path("database"), status: :see_other, notice: "PostgreSQL connection succeeded."
+      @database = configuration.public_attributes.merge("admin_password" => params.dig(:database, :admin_password)).stringify_keys
+      flash.now[:notice] = "PostgreSQL connection succeeded."
+      render :show
     end
 
     def provision_database

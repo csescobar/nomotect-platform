@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "17528643b163a2ab6c385bb02329fa092f82f29b",
+  "repository_commit": "8b15117e859b4b17de872209e4296632f2fca1fa",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "6c9bb61b63a56af4d08f6fbdb158bb3d58b3f47d58ff1c06165d024bdbb55ae8"
+      "sha256": "0471e87d80f5b932857526be5d5b8a7db4373e626d913001bb8998fa197d3e24"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
@@ -126,7 +126,7 @@
     {
       "path": "app/controllers/concerns/extension_gate.rb",
       "kind": "controller",
-      "sha256": "19daf0e2a7d880ab34b29ff027ac9ea4dd2d2ec7d12579ce8c1b7d58df2897b9"
+      "sha256": "0e403b96bcd155aff9789b05fda6fc92f4f821baed180660a7f859eb1a308e0f"
     },
     {
       "path": "app/controllers/concerns/installation_gate.rb",
@@ -166,7 +166,7 @@
     {
       "path": "app/controllers/installation/steps_controller.rb",
       "kind": "controller",
-      "sha256": "54e38ca26aa424e3b91fe2a07d88aacb572d322bdb615a543aa218031b183a17"
+      "sha256": "551934030c455120dbbcd0f7c0d5f05b17306477ed1241c9e10d0ea0b9c942a0"
     },
     {
       "path": "app/controllers/locale_preferences_controller.rb",
@@ -2011,7 +2011,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "d56aca2758dfe713bdfab782bfb2e86487060243a782ddcbdfe370c76ebff316"
+      "sha256": "45890d550c713e4936d068d33671d3027583330279488f1f3eb572bdd38b7069"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",

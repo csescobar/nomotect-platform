@@ -185,7 +185,8 @@ input, select { width: 100%; min-height: var(--control-height); padding: var(--s
 .wizard-card__title { margin: 0; font-size: var(--font-size-xxl); font-family: var(--font-family-heading); }
 .wizard-card__subtitle { margin: var(--space-xs) 0 0; color: var(--color-text-muted); font-size: var(--font-size-sm); }
 .wizard-card__body { padding: var(--space-xl); }
-.wizard-card__actions { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+.wizard-card__actions { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; margin-bottom: var(--space-lg); }
+.wizard-card__actions:last-child { margin-bottom: 0; }
 
 /* Installation terminal log */
 .install-log { background: #0d1117; border-radius: var(--radius-md); overflow: hidden; border: 1px solid #30363d; }

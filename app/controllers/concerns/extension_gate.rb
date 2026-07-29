@@ -8,6 +8,11 @@ module ExtensionGate
   private
 
   def enforce_extension_readiness
-    head :service_unavailable unless Extensions::Runtime.traffic_allowed?
+    return if Installation::Configuration.enabled? && !Installation::StateStore.new.completed?
+
+    Extensions::Runtime.boot! unless Extensions::Runtime.ready?
+    return if Extensions::Runtime.traffic_allowed?
+
+    head :service_unavailable
   end
 end
