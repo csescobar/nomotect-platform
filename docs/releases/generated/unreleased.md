@@ -43,6 +43,7 @@
 
 ### Documentation
 
+- Clarify interactive web installation wizard flow and CLI setup options in Quick Start documentation (#77). (`102-docs-clarify-installation-wizard`)
 - Add validation findings documentation and bug report issue template (#74). (`76-validation-findings-docs`)
 
 ## Affected contracts
