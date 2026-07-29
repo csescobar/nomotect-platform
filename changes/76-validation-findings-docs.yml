@@ -1,6 +1,6 @@
 schema_version: 1
 id: 76-validation-findings-docs
-category: docs
+category: documentation
 summary: Add validation findings documentation and bug report issue template (#74).
 release_impact: none
 contracts: []

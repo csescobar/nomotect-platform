@@ -29,6 +29,10 @@
 
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 
+### Documentation
+
+- Add validation findings documentation and bug report issue template (#74). (`76-validation-findings-docs`)
+
 ## Affected contracts
 
 - `artifact-attestation`

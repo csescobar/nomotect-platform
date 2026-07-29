@@ -1,0 +1,50 @@
+# Generated Impact Index
+
+- `controller:Application`: component:Application, component:Ui::Layout::ApplicationShell, controller:Application, document:Design-system::Application-shell, job:Application, policy:Application, test:Components::Ui::Layout::ApplicationShellComponent
+- `controller:ComponentShowcase`: controller:ComponentShowcase, test:Controllers::ComponentShowcaseController
+- `controller:Customers`: controller:Customers, document:Distribution::Operations, document:Extensions::Operations, document:Modules::Customers::AiContext, model:Customer, policy:Customer, test:Controllers::CustomersController, test:Models::Customer, test:Operations::CustomersOperations
+- `controller:GridSavedViews`: controller:GridSavedViews
+- `controller:Grids`: controller:Grids, test:Controllers::GridsController
+- `controller:Health`: controller:Health, document:Ai::Repository-health, test:Controllers::HealthController, test:Lib::RepositoryIntelligenceHealth
+- `controller:Home`: controller:Home, test:Controllers::HomeController
+- `controller:Installation::Base`: component:Ui::Base, controller:Installation::Base, document:Installation::Database-provisioning, document:Packaging::Container-baseline, document:Security::Security-baseline
+- `controller:Installation::Steps`: controller:Installation::Steps, test:Controllers::Installation::StepsController
+- `controller:LocalePreferences`: controller:LocalePreferences, test:Controllers::LocalePreferencesController
+- `controller:Memberships`: controller:Memberships
+- `controller:OrganizationInvitations`: controller:OrganizationInvitations
+- `controller:Organizations`: controller:Organizations, document:Modules::Organizations::AiContext, model:Organization, policy:Organization, test:Controllers::OrganizationsController
+- `controller:Passwords`: controller:Passwords
+- `controller:PrivacyRequests`: controller:PrivacyRequests
+- `controller:Sessions`: controller:Sessions
+- `controller:TenantSelections`: controller:TenantSelections, test:Controllers::TenantSelectionsController
+- `job:Application`: component:Application, component:Ui::Layout::ApplicationShell, controller:Application, document:Design-system::Application-shell, job:Application, policy:Application, test:Components::Ui::Layout::ApplicationShellComponent
+- `job:CustomerExport`: job:CustomerExport
+- `job:CustomerImport`: job:CustomerImport
+- `job:NotificationDelivery`: job:NotificationDelivery
+- `job:PrivacyRequest`: job:PrivacyRequest
+- `job:RetentionEnforcement`: job:RetentionEnforcement
+- `job:WebhookDelivery`: job:WebhookDelivery
+- `model:ApplicationRecord`: model:ApplicationRecord
+- `model:Concerns::DomainModel`: model:Concerns::DomainModel
+- `model:Current`: model:Current
+- `model:Customer`: controller:Customers, document:Distribution::Operations, document:Extensions::Operations, document:Modules::Customers::AiContext, model:Customer, policy:Customer, test:Controllers::CustomersController, test:Models::Customer, test:Operations::CustomersOperations
+- `model:DomainEvent`: model:DomainEvent
+- `model:FeatureFlag`: model:FeatureFlag
+- `model:GridSavedView`: model:GridSavedView, test:Models::GridSavedView
+- `model:IdempotencyRecord`: model:IdempotencyRecord
+- `model:ImportRun`: model:ImportRun
+- `model:Membership`: model:Membership
+- `model:Notification`: model:Notification
+- `model:Organization`: controller:Organizations, document:Modules::Organizations::AiContext, model:Organization, model:OrganizationInvitation, policy:Organization, test:Controllers::OrganizationMemberAdministration, test:Controllers::OrganizationsController, test:Models::Organization, test:Models::OrganizationInvitation
+- `model:OrganizationInvitation`: model:Organization, model:OrganizationInvitation, policy:Organization, test:Models::OrganizationInvitation
+- `model:PlatformRole`: model:PlatformRole, test:Models::PlatformRole
+- `model:PrivacyPreference`: model:PrivacyPreference
+- `model:PrivacyRequest`: model:PrivacyRequest
+- `model:RetentionPolicy`: model:RetentionPolicy
+- `model:Session`: model:Session
+- `model:StoredFile`: model:StoredFile
+- `model:User`: document:Design-system::Localization, model:User, test:Models::User, test:Models::UserLocalization
+- `model:WebhookEndpoint`: model:WebhookEndpoint
+- `policy:Application`: component:Application, component:Ui::Layout::ApplicationShell, controller:Application, document:Design-system::Application-shell, job:Application, policy:Application, test:Components::Ui::Layout::ApplicationShellComponent
+- `policy:Customer`: controller:Customers, document:Distribution::Operations, document:Extensions::Operations, document:Modules::Customers::AiContext, model:Customer, policy:Customer, test:Controllers::CustomersController, test:Models::Customer, test:Operations::CustomersOperations
+- `policy:Organization`: controller:Organizations, document:Modules::Organizations::AiContext, model:Organization, model:OrganizationInvitation, policy:Organization, test:Controllers::OrganizationMemberAdministration, test:Controllers::OrganizationsController, test:Models::Organization, test:Models::OrganizationInvitation
