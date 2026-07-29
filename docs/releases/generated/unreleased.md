@@ -36,6 +36,7 @@
 - Handle pre-existing database tables gracefully in MigrationRunner and use 303 See Other redirect in StepsController (#87). (`88-installation-duplicate-table-resilience`)
 - Use DatabaseTasks.with_temporary_connection in MigrationRunner to target provisioned database (#89). (`90-installation-target-db-connection`)
 - Add runtime_database initializer so ActiveRecord::Base connects to provisioned database (#92). (`93-runtime-database-initializer`)
+- Replace inline event handler in LocaleSwitcherComponent with auto-submit Stimulus controller for strict CSP compliance (#94). (`95-locale-switcher-csp-fix`)
 
 ### Documentation
 
@@ -75,6 +76,7 @@
 - `health`
 - `installation-wizard`
 - `installed-platform-state`
+- `localization`
 - `platform-version`
 - `publication-evidence`
 - `release-compatibility`
@@ -111,3 +113,4 @@
 - **Security — 75-developer-bootstrap-frictions:** Executable permissions on scripts and pre-flight PostgreSQL diagnostics enforce safe defaults.
 - **Security — 80-installation-extension-gate-fix:** Bypasses extension readiness filter only for installation wizard controllers when installation is enabled.
 - **Security — 82-installation-idempotent-transitions:** Adds style-src to CSP nonce directives to support Turbo inline styles cleanly.
+- **Security — 95-locale-switcher-csp-fix:** Complies with strict CSP script-src directives by eliminating inline event handlers.

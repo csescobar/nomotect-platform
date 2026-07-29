@@ -194,7 +194,7 @@
       "name": "Ui::LocaleSwitcher",
       "path": "app/components/ui/locale_switcher_component.rb",
       "properties": {
-        "sha256": "3292e39ee27ae00a72ca0446d5fba5dbf84667b41f0e79631115c400d04754f2",
+        "sha256": "4ba59b8e5c1d473f7728fe4dd56544c093a0a8c8153c2fa6380df0abed6bae52",
         "source": "platform"
       },
       "@id": "component:Ui::LocaleSwitcher"
@@ -1844,7 +1844,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "375e229674a50646ed021a4a6600edcc9e9deb0437ad1b0748ce0f2cbedad71e",
+        "sha256": "7751aa366b8d1e4994c8fbede4b1b524fe1748fe9631ee26a8e80b3ea2fe81c2",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
