@@ -2,5 +2,5 @@
 set -euo pipefail
 
 mkdir -p tmp/ci
-bundle exec brakeman --no-pager --format json --output tmp/ci/brakeman.json
-bundle exec bundler-audit check --update
+bin/brakeman --no-pager --format json --output tmp/ci/brakeman.json
+bin/bundler-audit check --update

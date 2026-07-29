@@ -29,6 +29,7 @@ Required release impact: `minor`.
 ### Fixed
 
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
+- Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 
 ### Documentation
 

@@ -28,6 +28,7 @@
 ### Fixed
 
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
+- Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 
 ### Documentation
 
@@ -36,8 +37,10 @@
 ## Affected contracts
 
 - `artifact-attestation`
+- `bootstrap-scripts`
 - `change-fragment`
 - `changelog`
+- `developer-experience`
 - `distribution-approval`
 - `distribution-artifact-bundle`
 - `distribution-bundle-preparation`
@@ -97,3 +100,4 @@
 - **Security — 71-distribution-evidence:** Verification is secret-free and artifact attestations bind the public bundle to the approved workflow.
 - **Security — 72-distribution-certification:** Preparation consumes successful same-commit main evidence and performs no channel mutation.
 - **Security — 73-distribution-observation:** Observation uses read-only repository and package permissions and never persists credentials.
+- **Security — 75-developer-bootstrap-frictions:** Executable permissions on scripts and pre-flight PostgreSQL diagnostics enforce safe defaults.
