@@ -1,0 +1,22 @@
+schema_version: 1
+id: 109-install-custom-design-tokens
+category: feature
+summary: Update design tokens specification with Instrument Sans typography, IBM Plex Mono, new badge/risk/active color tokens, and extended font size and space scales (2xl, 3xl).
+release_impact: minor
+contracts:
+  - design-system
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:

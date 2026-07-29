@@ -79,6 +79,10 @@ module DesignTokens
         aliases: false
       )
 
+      unless document.is_a?(Hash) && document.key?("version") && document.key?("base") && document.key?("themes")
+        raise ArgumentError, "Design token YAML must include top-level 'version', 'base', and 'themes' sections."
+      end
+
       validate_against_schema!(document, JSON.parse(@root.join(SCHEMA).read))
       validate_theme_keys!(document.dig("themes", "light"), document.dig("themes", "dark"))
       document

@@ -18,6 +18,9 @@
 - 14 new design tokens (shadows, xxl sizes, radius-full, warning colors, transitions)
 - application.css fully tokenized — no hardcoded pixel values remaining
  (`104-improve-installation-wizard-ux`)
+- Update design tokens specification with Instrument Sans typography, IBM Plex Mono, new badge/risk/active color tokens, and extended font size and space scales (2xl, 3xl). (`109-install-custom-design-tokens`)
+- Support trademark display modes (name_only, image_only, image_and_name) in wizard and application headers via platform_brand_tag helper, and improve DesignTokens::Compiler error messaging for partial YAML documents.
+ (`110-support-trademark-image-mode-in-headers`)
 - Establish the canonical platform version and release change-fragment contracts. (`56-release-foundation`)
 - Enforce normalized release-impact declarations for pull requests. (`57-release-fragment-ci`)
 - Generate deterministic changelog, release, migration, and upgrade notes. (`58-release-notes`)
@@ -147,3 +150,5 @@
 - **Accessibility — 105-disable-migration-check-during-installation:** Reviewed with no additional action.
 - **Accessibility — 107-fix-wizard-redirection-and-csp-previews:** Reviewed with no additional action.
 - **Accessibility — 108-permit-branding-attributes-in-steps-controller:** Reviewed with no additional action.
+- **Accessibility — 109-install-custom-design-tokens:** Reviewed with no additional action.
+- **Accessibility — 110-support-trademark-image-mode-in-headers:** Logo images rendered with descriptive alt text based on platform_name.

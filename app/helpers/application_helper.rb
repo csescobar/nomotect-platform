@@ -1,13 +1,46 @@
 module ApplicationHelper
-  # Returns the configured platform name from the Installation AppearanceStore.
-  # Falls back to the I18n key "application.name" if the store is unavailable
-  # (e.g. before first-run installation completes).
-  # The result is memoized per request via @_platform_name.
-  def platform_name
-    @_platform_name ||= begin
-      Installation::AppearanceStore.new.read["application_name"].presence
+  # Returns the raw appearance configuration Hash from AppearanceStore.
+  def platform_appearance
+    @_platform_appearance ||= begin
+      Installation::AppearanceStore.new.read
     rescue StandardError
-      nil
-    end || I18n.t("application.name")
+      {}
+    end
+  end
+
+  # Returns the configured platform name from AppearanceStore,
+  # falling back to I18n.t("application.name").
+  def platform_name
+    @_platform_name ||= platform_appearance["application_name"].presence || I18n.t("application.name")
+  end
+
+  # Renders the trademark / brand element according to trademark_mode setting:
+  # - "name_only": platform name text
+  # - "image_only": logo image (if present), fallback to platform name text
+  # - "image_and_name": logo image + platform name text
+  def platform_brand_tag(css_class: "brand-mark")
+    appearance = platform_appearance
+    mode = appearance["trademark_mode"] || "name_only"
+    logo_path = appearance["logo_path"].presence
+
+    case mode
+    when "image_only"
+      if logo_path
+        image_tag(logo_path, alt: platform_name, class: "#{css_class}__logo")
+      else
+        tag.span(platform_name, class: "#{css_class}__name")
+      end
+    when "image_and_name"
+      if logo_path
+        safe_join([
+          image_tag(logo_path, alt: "", class: "#{css_class}__logo"),
+          tag.span(platform_name, class: "#{css_class}__name")
+        ], " ")
+      else
+        tag.span(platform_name, class: "#{css_class}__name")
+      end
+    else # name_only
+      tag.span(platform_name, class: "#{css_class}__name")
+    end
   end
 end
