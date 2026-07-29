@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "d9ab93f87204514f9847fdcb21a67609525f1333",
+  "repository_commit": "ed75d5b1c25e548167a5fdfb5108c380f88a34de",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -686,7 +686,7 @@
     {
       "path": "app/services/installation/migration_runner.rb",
       "kind": "source",
-      "sha256": "b99dc03c8e699e8dc188df5013400abe45f3d065a9262ce82c0e2428a7e6b831"
+      "sha256": "19966a87bc48dc6419330bc098bdee3db59b19828f562c8e3d1fb66b900025f8"
     },
     {
       "path": "app/services/installation/platform_owner_creator.rb",
@@ -1966,7 +1966,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "cda22dedd6abfc609cb3c490b6c876f9e9bc4b17095d927cf902dd7029946513"
+      "sha256": "fe468fdd13d02bde44b7b9dc08025b7a44665988c96668d723d97bb2569cc3e3"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",

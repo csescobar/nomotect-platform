@@ -1,0 +1,22 @@
+schema_version: 1
+id: 90-installation-target-db-connection
+category: fix
+summary: Use DatabaseTasks.with_temporary_connection in MigrationRunner to target provisioned database (#89).
+release_impact: patch
+contracts:
+  - installation-wizard
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
