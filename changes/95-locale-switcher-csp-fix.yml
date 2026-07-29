@@ -1,0 +1,22 @@
+schema_version: 1
+id: 95-locale-switcher-csp-fix
+category: fix
+summary: Replace inline event handler in LocaleSwitcherComponent with auto-submit Stimulus controller for strict CSP compliance (#94).
+release_impact: patch
+contracts:
+  - localization
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Complies with strict CSP script-src directives by eliminating inline event handlers.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
