@@ -1,0 +1,22 @@
+schema_version: 1
+id: 108-permit-branding-attributes-in-steps-controller
+category: fix
+summary: Permit logo, compact_logo, and favicon in Installation::StepsController#appearance_attributes to eliminate unpermitted parameters warnings during appearance updates.
+release_impact: patch
+contracts:
+  - installation
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:

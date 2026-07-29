@@ -45,6 +45,7 @@
 - Added status: :see_other (303) across all wizard form action redirects so Turbo 8 follows step transitions
 - Updated CSP img_src to include :blob directive and switched image_preview_controller to FileReader data URLs
  (`107-fix-wizard-redirection-and-csp-previews`)
+- Permit logo, compact_logo, and favicon in Installation::StepsController#appearance_attributes to eliminate unpermitted parameters warnings during appearance updates. (`108-permit-branding-attributes-in-steps-controller`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
@@ -145,3 +146,4 @@
 - **Accessibility — 104-improve-installation-wizard-ux:** Stepper uses semantic nav/aria-label. Toast region uses aria-live polite. Image previews have descriptive alt text.
 - **Accessibility — 105-disable-migration-check-during-installation:** Reviewed with no additional action.
 - **Accessibility — 107-fix-wizard-redirection-and-csp-previews:** Reviewed with no additional action.
+- **Accessibility — 108-permit-branding-attributes-in-steps-controller:** Reviewed with no additional action.
