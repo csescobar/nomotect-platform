@@ -1,0 +1,22 @@
+schema_version: 1
+id: 97-locale-preference-turbo-redirect
+category: fix
+summary: Use 303 See Other redirect in LocalePreferencesController update for Turbo 8 form compatibility (#96).
+release_impact: patch
+contracts:
+  - localization
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

@@ -277,7 +277,7 @@
       "name": "LocalePreferences",
       "path": "app/controllers/locale_preferences_controller.rb",
       "properties": {
-        "sha256": "d542595a8d207fe0e44feb9d4fdbb35993dbbf091b1a34de4b9e7cc23bc311f6",
+        "sha256": "7468981ec24548662ef5a98c81d75fecff8e6184009fcd13e55b574433521393",
         "source": "platform"
       }
     },
@@ -1357,7 +1357,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "7751aa366b8d1e4994c8fbede4b1b524fe1748fe9631ee26a8e80b3ea2fe81c2",
+        "sha256": "d89fafbf53e99dcbe521b8ff5da5aa8ce54ed083bef13392cc298a928fba21c3",
         "source": "platform"
       }
     },
@@ -3318,5 +3318,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "d3fde2d0376f0f32c39910575775ed30bfd6d96c"
+  "repository_commit": "9d70a39945d73070553d1e595d3b8a1ca5cd4157"
 }
