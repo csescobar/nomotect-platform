@@ -1844,7 +1844,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "1b7490980fdbc0987fce659f7246edc84c2e6b743da6652fa43351143102adff",
+        "sha256": "a5cf6c0a24be3fdd62f3c7a799646eae93a6069cb4772c16fa4e07403da445b9",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -1991,6 +1991,61 @@
         "source": "platform"
       },
       "@id": "document:Upgrades::Recovery-and-certification"
+    },
+    {
+      "id": "document:Validation::Findings::Bug-001-ruby-version-mismatch",
+      "type": "document",
+      "name": "Validation::Findings::Bug-001-ruby-version-mismatch",
+      "path": "docs/validation/findings/BUG-001-ruby-version-mismatch.md",
+      "properties": {
+        "sha256": "b7fdfd3c9898fd1f758c1c734cbe8207af2fd69b46754b5ad985531b392aee19",
+        "source": "platform"
+      },
+      "@id": "document:Validation::Findings::Bug-001-ruby-version-mismatch"
+    },
+    {
+      "id": "document:Validation::Findings::Bug-002-bin-ci-executable-permission",
+      "type": "document",
+      "name": "Validation::Findings::Bug-002-bin-ci-executable-permission",
+      "path": "docs/validation/findings/BUG-002-bin-ci-executable-permission.md",
+      "properties": {
+        "sha256": "b0864b478c1542cbb2e54918eeb7a28888e9246ec842361a097240938547082e",
+        "source": "platform"
+      },
+      "@id": "document:Validation::Findings::Bug-002-bin-ci-executable-permission"
+    },
+    {
+      "id": "document:Validation::Findings::Bug-003-postgresql-prerequisite-check",
+      "type": "document",
+      "name": "Validation::Findings::Bug-003-postgresql-prerequisite-check",
+      "path": "docs/validation/findings/BUG-003-postgresql-prerequisite-check.md",
+      "properties": {
+        "sha256": "5800071895bb72d01de3e19db074da0e1757f14edcd2be52f7be17381f931dfb",
+        "source": "platform"
+      },
+      "@id": "document:Validation::Findings::Bug-003-postgresql-prerequisite-check"
+    },
+    {
+      "id": "document:Validation::Findings::Issue-001-dx-bootstrap-frictions",
+      "type": "document",
+      "name": "Validation::Findings::Issue-001-dx-bootstrap-frictions",
+      "path": "docs/validation/findings/ISSUE-001-dx-bootstrap-frictions.md",
+      "properties": {
+        "sha256": "91d800042c2837dd0e68b70c644037535a2989e2c1f984348eb049fbf2d6b96e",
+        "source": "platform"
+      },
+      "@id": "document:Validation::Findings::Issue-001-dx-bootstrap-frictions"
+    },
+    {
+      "id": "document:Validation::Findings::Proposal-bootstrap-frictions",
+      "type": "document",
+      "name": "Validation::Findings::Proposal-bootstrap-frictions",
+      "path": "docs/validation/findings/PROPOSAL-BOOTSTRAP-FRICTIONS.md",
+      "properties": {
+        "sha256": "afe6ec15f22c2848c715f727d99c2cb9739ef0e905f89b3322ad4f445d426ea7",
+        "source": "platform"
+      },
+      "@id": "document:Validation::Findings::Proposal-bootstrap-frictions"
     },
     {
       "id": "test:Components::Ui::ButtonComponent",

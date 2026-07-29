@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "46684a750ce984173b835d78c0a1c2c086b9152d",
+  "repository_commit": "26cff1d2cfec77d28d39823dcca7ab566b2b1c4f",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -1349,11 +1349,6 @@
       "sha256": "4153d8597c5b9ebb0ddf518ad5ed0e926f97ce236fecfaf18cf1f13a2815ec74"
     },
     {
-      "path": "db/schema.rb",
-      "kind": "source",
-      "sha256": "c52ce3a910c9ca9f8cb745ac036358c70e1617d61ea6963ad890c06c6edacefe"
-    },
-    {
       "path": "db/seeds.rb",
       "kind": "source",
       "sha256": "217b16b847378a714ceb122e0e6412cf1185c5d6c86598c881c5d9a33315b0ca"
@@ -1966,7 +1961,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "1b7490980fdbc0987fce659f7246edc84c2e6b743da6652fa43351143102adff"
+      "sha256": "a5cf6c0a24be3fdd62f3c7a799646eae93a6069cb4772c16fa4e07403da445b9"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2037,6 +2032,31 @@
       "path": "docs/upgrades/recovery-and-certification.md",
       "kind": "documentation",
       "sha256": "e325947071070483ea9dc21846f8f9e95c01414afca19564e3fcdd27f3213229"
+    },
+    {
+      "path": "docs/validation/findings/BUG-001-ruby-version-mismatch.md",
+      "kind": "documentation",
+      "sha256": "b7fdfd3c9898fd1f758c1c734cbe8207af2fd69b46754b5ad985531b392aee19"
+    },
+    {
+      "path": "docs/validation/findings/BUG-002-bin-ci-executable-permission.md",
+      "kind": "documentation",
+      "sha256": "b0864b478c1542cbb2e54918eeb7a28888e9246ec842361a097240938547082e"
+    },
+    {
+      "path": "docs/validation/findings/BUG-003-postgresql-prerequisite-check.md",
+      "kind": "documentation",
+      "sha256": "5800071895bb72d01de3e19db074da0e1757f14edcd2be52f7be17381f931dfb"
+    },
+    {
+      "path": "docs/validation/findings/ISSUE-001-dx-bootstrap-frictions.md",
+      "kind": "documentation",
+      "sha256": "91d800042c2837dd0e68b70c644037535a2989e2c1f984348eb049fbf2d6b96e"
+    },
+    {
+      "path": "docs/validation/findings/PROPOSAL-BOOTSTRAP-FRICTIONS.md",
+      "kind": "documentation",
+      "sha256": "afe6ec15f22c2848c715f727d99c2cb9739ef0e905f89b3322ad4f445d426ea7"
     },
     {
       "path": "lib/accessibility/html_audit.rb",

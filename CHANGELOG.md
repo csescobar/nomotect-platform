@@ -31,6 +31,10 @@ Required release impact: `minor`.
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 
+### Documentation
+
+- Add validation findings documentation and bug report issue template (#74). (`76-validation-findings-docs`)
+
 ## 0.8.0
 
 - Completed the Epic 8 AI Platform and Repository Intelligence baseline.

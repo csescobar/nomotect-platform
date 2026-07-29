@@ -148,6 +148,11 @@ digraph repository {
   "document:Upgrades::Inspection-and-preflight" [label="Upgrades::Inspection-and-preflight"];
   "document:Upgrades::Post-upgrade-verification" [label="Upgrades::Post-upgrade-verification"];
   "document:Upgrades::Recovery-and-certification" [label="Upgrades::Recovery-and-certification"];
+  "document:Validation::Findings::Bug-001-ruby-version-mismatch" [label="Validation::Findings::Bug-001-ruby-version-mismatch"];
+  "document:Validation::Findings::Bug-002-bin-ci-executable-permission" [label="Validation::Findings::Bug-002-bin-ci-executable-permission"];
+  "document:Validation::Findings::Bug-003-postgresql-prerequisite-check" [label="Validation::Findings::Bug-003-postgresql-prerequisite-check"];
+  "document:Validation::Findings::Issue-001-dx-bootstrap-frictions" [label="Validation::Findings::Issue-001-dx-bootstrap-frictions"];
+  "document:Validation::Findings::Proposal-bootstrap-frictions" [label="Validation::Findings::Proposal-bootstrap-frictions"];
   "job:Application" [label="Application"];
   "job:CustomerExport" [label="CustomerExport"];
   "job:CustomerImport" [label="CustomerImport"];
