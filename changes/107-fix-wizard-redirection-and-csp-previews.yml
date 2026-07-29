@@ -1,0 +1,25 @@
+schema_version: 1
+id: 107-fix-wizard-redirection-and-csp-previews
+category: fix
+summary: |
+  Fix Turbo redirects and CSP image previews in First-Run Installation Wizard:
+  - Added status: :see_other (303) across all wizard form action redirects so Turbo 8 follows step transitions
+  - Updated CSP img_src to include :blob directive and switched image_preview_controller to FileReader data URLs
+release_impact: patch
+contracts:
+  - installation
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:

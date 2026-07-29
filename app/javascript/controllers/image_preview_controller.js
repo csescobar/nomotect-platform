@@ -14,10 +14,13 @@ export default class extends Controller {
   _updatePreview() {
     const file = this.inputTarget.files && this.inputTarget.files[0]
     if (file) {
-      const url = URL.createObjectURL(file)
-      this.imgTarget.src = url
-      this.imgTarget.alt = file.name
-      this.previewTarget.classList.remove("ui-image-preview--hidden")
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        this.imgTarget.src = e.target.result
+        this.imgTarget.alt = file.name
+        this.previewTarget.classList.remove("ui-image-preview--hidden")
+      }
+      reader.readAsDataURL(file)
     }
   }
 }

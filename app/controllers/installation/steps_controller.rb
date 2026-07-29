@@ -33,7 +33,7 @@ module Installation
     def update_appearance
       AppearanceUpdater.new.update!(appearance_attributes, uploads: appearance_uploads, token_yaml: params[:token_yaml])
       advance_to_database!
-      redirect_to installation_step_path("database"), notice: "Appearance saved."
+      redirect_to installation_step_path("database"), status: :see_other, notice: "Appearance saved."
     end
 
     def test_database
@@ -48,7 +48,7 @@ module Installation
       ExecutionLock.new.synchronize { DatabaseProvisioner.new.provision!(configuration) }
       persist_database_metadata!(configuration)
       advance_to_provisioning!
-      redirect_to installation_step_path("provisioning"), notice: "Database provisioned."
+      redirect_to installation_step_path("provisioning"), status: :see_other, notice: "Database provisioned."
     end
 
     def run_migrations
@@ -65,7 +65,7 @@ module Installation
       ExecutionLock.new.synchronize { PlatformOwnerCreator.new.create!(platform_owner_attributes) }
       transition_to!("completed", "platform_owner_created" => true, "completed_at" => Time.current.utc.iso8601)
       session.delete(:installation_authorized)
-      redirect_to root_path, notice: "Installation completed. Sign in with the platform owner account."
+      redirect_to root_path, status: :see_other, notice: "Installation completed. Sign in with the platform owner account."
     end
 
     def load_step

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "cd28300f1d636f81c997f4711eb99880950731de",
+  "repository_commit": "bb607885ed4fcd023f1233fa0dc19278bdaf9264",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -166,7 +166,7 @@
     {
       "path": "app/controllers/installation/steps_controller.rb",
       "kind": "controller",
-      "sha256": "bf238d73d69e5e40fc84c584535022e7b9878095fdad6e4a79b5d2790ea607f6"
+      "sha256": "e21e65028c4cddf43ba9d0bc68437549fbf86bae288003a14e6bc2d55e00b4a2"
     },
     {
       "path": "app/controllers/locale_preferences_controller.rb",
@@ -241,7 +241,7 @@
     {
       "path": "app/javascript/controllers/image_preview_controller.js",
       "kind": "source",
-      "sha256": "663c9d32f06b4c9bc3ca08e50b99c2abdd899078a5eea8f4bb0ca4788280288b"
+      "sha256": "cce1f369bb460dc343340c0723c96849218be95b908d34cb2636624263d3ee26"
     },
     {
       "path": "app/javascript/controllers/index.js",
@@ -1141,7 +1141,7 @@
     {
       "path": "config/design_tokens/tokens.schema.json",
       "kind": "source",
-      "sha256": "b01d6bb78bdc0df93b65dee02b41be1e52b765e4c722218ee417c5ad4bbfc3fb"
+      "sha256": "0ab3369b47c9ce3a8106123d491f5dfc75d0ae4a5d093105be5cbcc3810b486b"
     },
     {
       "path": "config/design_tokens/tokens.yml",
@@ -1181,7 +1181,7 @@
     {
       "path": "config/initializers/content_security_policy.rb",
       "kind": "source",
-      "sha256": "9d4270fafe28896fc9638ca11a14ebfe04e52cd1b64e6a7f2f9f74a2e018b20c"
+      "sha256": "b06f5ff8a5e2011a61b2d838a03ee7b71ba891e43bc9d16e831c3e0012da528f"
     },
     {
       "path": "config/initializers/enterprise_observability.rb",
@@ -2011,7 +2011,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "420ef80b81613dbd13c519e68dacfdadea3d81031889120c3cf1d7b05b275a5a"
+      "sha256": "0062586bd48d070a746433e0658ffbf210c833862994430cc233b52b4018b63f"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
