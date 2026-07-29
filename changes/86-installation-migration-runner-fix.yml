@@ -1,0 +1,22 @@
+schema_version: 1
+id: 86-installation-migration-runner-fix
+category: fix
+summary: Fix Rails 8.1 SchemaMigration compatibility in MigrationRunner (#85).
+release_impact: patch
+contracts:
+  - installation-wizard
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

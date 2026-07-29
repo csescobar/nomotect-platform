@@ -14,7 +14,8 @@ module Installation
     def run!
       progress.publish(event: :migrations, status: :started, message: "Preparing provisioned database migrations")
       Connection.establish_connection(configuration.to_h)
-      context = ActiveRecord::MigrationContext.new(Rails.root.join("db/migrate"), Connection.connection.schema_migration)
+      schema_migration = ActiveRecord::SchemaMigration.new(Connection.connection_pool)
+      context = ActiveRecord::MigrationContext.new(Rails.root.join("db/migrate"), schema_migration)
       context.migrate
       verify_schema!
       record_evidence!
@@ -42,7 +43,8 @@ module Installation
       connection = Connection.connection
       now = connection.quote(Time.current.utc)
       environment = connection.quote(Rails.env)
-      version = connection.quote(ActiveRecord::MigrationContext.new(Rails.root.join("db/migrate"), connection.schema_migration).current_version.to_s)
+      schema_migration = ActiveRecord::SchemaMigration.new(Connection.connection_pool)
+      version = connection.quote(ActiveRecord::MigrationContext.new(Rails.root.join("db/migrate"), schema_migration).current_version.to_s)
       connection.execute(<<~SQL.squish)
         INSERT INTO installation_records (environment, contract_version, schema_version, status, created_at, updated_at)
         VALUES (#{environment}, 1, #{version}, 'migrated', #{now}, #{now})
