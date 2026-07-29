@@ -1,0 +1,23 @@
+schema_version: 1
+id: 113-increase-header-logo-dimensions
+category: fix
+summary: |
+  Increase header brand logo height and max-width bounds (`height: 2.75rem`, `max-width: 16rem`) to ensure SVG horizontal lockups render with clear legibility and crisp visual scale across wizard and application shell headers.
+release_impact: patch
+contracts:
+  - design-system
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:

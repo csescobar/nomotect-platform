@@ -58,6 +58,8 @@
 - Replace all inline `style="..."` attributes in component showcase view with dedicated CSS utility classes
 - Add `platform_favicon_tag` helper to render custom or fallback favicon links in application and installation layouts
  (`112-eliminate-csp-inline-styles-and-add-favicon-tag`)
+- Increase header brand logo height and max-width bounds (`height: 2.75rem`, `max-width: 16rem`) to ensure SVG horizontal lockups render with clear legibility and crisp visual scale across wizard and application shell headers.
+ (`113-increase-header-logo-dimensions`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
@@ -163,3 +165,4 @@
 - **Accessibility — 110-support-trademark-image-mode-in-headers:** Logo images rendered with descriptive alt text based on platform_name.
 - **Accessibility — 111-fix-wizard-test-connection-and-completion:** Reviewed with no additional action.
 - **Accessibility — 112-eliminate-csp-inline-styles-and-add-favicon-tag:** Reviewed with no additional action.
+- **Accessibility — 113-increase-header-logo-dimensions:** Reviewed with no additional action.

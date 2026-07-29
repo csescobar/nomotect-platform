@@ -193,7 +193,7 @@ input, select { width: 100%; min-height: var(--control-height); padding: var(--s
 .wizard-layout { min-height: 100vh; display: flex; flex-direction: column; background: var(--color-background); }
 .wizard-header { display: flex; align-items: center; justify-content: space-between; padding: var(--space-md) var(--space-xl); background: var(--color-surface); border-bottom: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }
 .wizard-header__brand, .app-header__brand, .application-shell__brand { display: inline-flex; align-items: center; gap: var(--space-sm); font-weight: var(--font-weight-bold); font-size: var(--font-size-lg); color: var(--color-text); text-decoration: none; }
-.wizard-header__logo, .app-header__logo, .application-shell__logo { max-height: 2.25rem; max-width: 12rem; object-fit: contain; }
+.wizard-header__logo, .app-header__logo, .application-shell__logo { height: 2.75rem; max-height: 3.25rem; width: auto; max-width: 16rem; object-fit: contain; }
 .wizard-header__actions { display: flex; align-items: center; gap: var(--space-md); }
 .wizard-body { flex: 1; width: min(56rem, calc(100% - 2 * var(--space-lg))); margin: var(--space-xxl) auto; display: grid; gap: var(--space-xl); }
 

@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "120eaca8ec0595843a9f587163b8c1c8a9c93ae8",
+  "repository_commit": "83fdb8220eccc019e08df3cf8801f3a7d7a375f3",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "301533919de13a996c1674a2c096e54ad771f517e7e2ca2cbcf4ed2562053df1"
+      "sha256": "cc265fd62bf4cb57186e0ec36ddc3ca2d6882ac3dbc996f75f3720cb0a9ba6f3"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
@@ -2011,7 +2011,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "535b26b488ba596f1cb92494cdd7943188b81507a860dd4da72329d536b0810f"
+      "sha256": "4397c6dd16a39269f9ba5eaf40fdbe08f1bb6d08068e8c890955af7fdc92b5a0"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
