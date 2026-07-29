@@ -1,0 +1,26 @@
+schema_version: 1
+id: 99-global-turbo-303-redirects
+category: fix
+summary: Enforce HTTP 303 See Other status on all form redirects across platform controllers for Turbo 8 compatibility (#98).
+release_impact: patch
+contracts:
+  - authentication
+  - tenant-selection
+  - organization-management
+  - customer-management
+  - grid-engine
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

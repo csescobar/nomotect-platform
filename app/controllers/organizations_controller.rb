@@ -27,7 +27,7 @@ class OrganizationsController < ApplicationController
       @organization.memberships.create!(user: Current.user, role: "owner")
     end
 
-    redirect_to @organization, notice: t("organizations.created")
+    redirect_to @organization, status: :see_other, notice: t("organizations.created")
   rescue ActiveRecord::RecordInvalid
     render :new, status: :unprocessable_content
   end
@@ -40,7 +40,7 @@ class OrganizationsController < ApplicationController
     authorize!(@organization, :update?)
 
     if @organization.update(organization_params)
-      redirect_to @organization, notice: t("organizations.updated")
+      redirect_to @organization, status: :see_other, notice: t("organizations.updated")
     else
       render :edit, status: :unprocessable_content
     end
@@ -49,7 +49,7 @@ class OrganizationsController < ApplicationController
   def destroy
     authorize!(@organization, :destroy?)
     @organization.destroy!
-    redirect_to organizations_path, notice: t("organizations.destroyed")
+    redirect_to organizations_path, status: :see_other, notice: t("organizations.destroyed")
   end
 
   private

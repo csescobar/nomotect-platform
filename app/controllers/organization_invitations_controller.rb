@@ -10,7 +10,7 @@ class OrganizationInvitationsController < ApplicationController
     )
 
     if @invitation.save
-      redirect_to @organization, notice: t("organization_invitations.created")
+      redirect_to @organization, status: :see_other, notice: t("organization_invitations.created")
     else
       load_organization_members
       render "organizations/show", status: :unprocessable_content
@@ -21,17 +21,17 @@ class OrganizationInvitationsController < ApplicationController
     authorize!(@organization, :manage_members?)
     invitation = @organization.organization_invitations.pending.find(params[:id])
     invitation.revoke!
-    redirect_to @organization, notice: t("organization_invitations.revoked")
+    redirect_to @organization, status: :see_other, notice: t("organization_invitations.revoked")
   end
 
   def accept
     invitation = OrganizationInvitation.find_by_acceptance_token!(params[:token])
     invitation.accept!(Current.user)
-    redirect_to invitation.organization, notice: t("organization_invitations.accepted")
+    redirect_to invitation.organization, status: :see_other, notice: t("organization_invitations.accepted")
   rescue ActiveSupport::MessageVerifier::InvalidSignature, ActiveRecord::RecordNotFound
-    redirect_to organizations_path, alert: t("organization_invitations.invalid")
+    redirect_to organizations_path, status: :see_other, alert: t("organization_invitations.invalid")
   rescue ActiveRecord::RecordInvalid
-    redirect_to organizations_path, alert: t("organization_invitations.email_mismatch")
+    redirect_to organizations_path, status: :see_other, alert: t("organization_invitations.email_mismatch")
   end
 
   private
