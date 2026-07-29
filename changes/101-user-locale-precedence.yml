@@ -1,0 +1,22 @@
+schema_version: 1
+id: 101-user-locale-precedence
+category: fix
+summary: Prioritize user preferred locale over organization default locale in ApplicationController resolved_locale (#100).
+release_impact: patch
+contracts:
+  - localization
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
