@@ -40,6 +40,20 @@ Read the [platform vision](VISION.md) and [Engineering Constitution](ENGINEERING
 
 Prerequisites are Ruby 4.0.5 and PostgreSQL 18.
 
+### Option A: Interactive Web Installation Wizard (Recommended)
+
+Start the application with the First-Run Installation Wizard enabled:
+
+```bash
+INSTALLATION_ENABLED=true PGHOST=127.0.0.1 PGUSER=postgres PGPASSWORD=postgres bin/rails server
+```
+
+Navigating to `http://localhost:3000` will launch the guided setup wizard to configure Appearance, Database credentials, Database Provisioning & Migrations, and create the Platform Owner admin user.
+
+### Option B: CLI / Headless Setup
+
+For automated or headless environments:
+
 ```bash
 bash bin/setup
 bash bin/dev
@@ -56,13 +70,13 @@ User.create!(
 )
 ```
 
+### Verification
+
 Run the complete local verification pipeline with:
 
 ```bash
 bash bin/ci
 ```
-
-The manual first-user procedure remains the current baseline until Epic 9 Phase 1 delivers the protected first-run installer.
 
 ## Platform core contracts
 
