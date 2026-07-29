@@ -21,6 +21,8 @@
 - Update design tokens specification with Instrument Sans typography, IBM Plex Mono, new badge/risk/active color tokens, and extended font size and space scales (2xl, 3xl). (`109-install-custom-design-tokens`)
 - Support trademark display modes (name_only, image_only, image_and_name) in wizard and application headers via platform_brand_tag helper, and improve DesignTokens::Compiler error messaging for partial YAML documents.
  (`110-support-trademark-image-mode-in-headers`)
+- Add `.mcp.json` configuration file setting up the platform stdio MCP server (`bin/repository-intelligence mcp`) with `CODE_GRAPH_PROVIDER=codebase_memory` and `MCP_ALLOW_WRITES=true`.
+ (`115-configure-mcp-with-codebase-memory`)
 - Establish the canonical platform version and release change-fragment contracts. (`56-release-foundation`)
 - Enforce normalized release-impact declarations for pull requests. (`57-release-fragment-ci`)
 - Generate deterministic changelog, release, migration, and upgrade notes. (`58-release-notes`)
@@ -173,3 +175,4 @@
 - **Accessibility — 112-eliminate-csp-inline-styles-and-add-favicon-tag:** Reviewed with no additional action.
 - **Accessibility — 113-increase-header-logo-dimensions:** Reviewed with no additional action.
 - **Accessibility — 114-fix-design-token-scales-and-danger-button:** Improved color contrast on danger buttons and semantic token hierarchy.
+- **Accessibility — 115-configure-mcp-with-codebase-memory:** Reviewed with no additional action.
