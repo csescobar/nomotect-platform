@@ -124,6 +124,11 @@ module Installation
       store = StateStore.new
       current = store.read
       state = current.fetch("state")
+      if state == "database"
+        store.write!(state: "database", metadata: current.fetch("metadata", {}).merge("appearance_saved" => true))
+        return
+      end
+
       state = StateMachine.new(state).transition_to("appearance").state if state == "not_started"
       next_state = StateMachine.new(state).transition_to("database").state
       store.write!(state: next_state, metadata: current.fetch("metadata", {}).merge("appearance_saved" => true))
@@ -136,7 +141,8 @@ module Installation
     def transition_to!(target, metadata)
       store = StateStore.new
       current = store.read
-      next_state = StateMachine.new(current.fetch("state")).transition_to(target).state
+      state = current.fetch("state")
+      next_state = state == target ? target : StateMachine.new(state).transition_to(target).state
       store.write!(state: next_state, metadata: current.fetch("metadata", {}).merge(metadata))
     end
 
