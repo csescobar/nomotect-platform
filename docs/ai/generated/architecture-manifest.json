@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "83fdb8220eccc019e08df3cf8801f3a7d7a375f3",
+  "repository_commit": "766a2821767595055a3adcb173086d2830088c05",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "cc265fd62bf4cb57186e0ec36ddc3ca2d6882ac3dbc996f75f3720cb0a9ba6f3"
+      "sha256": "3c2beec8fa6cbafff579cf021c4cb45b18fc7dbc926fef1d1f9f5626a2f86d9f"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
       "kind": "source",
-      "sha256": "702d209daff36a4241bce90a2e890a9c2f653f15268584470844763fd55f3e57"
+      "sha256": "f1dd864bc08cc5fc8c0e22c45cc632aa1ad8ef805d6cc507a6d66e156e1292b2"
     },
     {
       "path": "app/components/application_component.rb",
@@ -1126,17 +1126,17 @@
     {
       "path": "config/design_tokens/base.json",
       "kind": "source",
-      "sha256": "b83a0cdd936e918e67d4750d223f018455c8475533950d1111e47d0999a55513"
+      "sha256": "e747fd35b2c7f8401470edea3955b1b9860bc75e8efee2bc3a22cfe0a65387c0"
     },
     {
       "path": "config/design_tokens/dark.json",
       "kind": "source",
-      "sha256": "9df5ef040e3aa731e6130f502ec0f94e1354c4cfd726e091ec59908bd19f09fe"
+      "sha256": "0810650322abe00e96c8f49db7efa4da25e491ea0540fee25772839dc9750e52"
     },
     {
       "path": "config/design_tokens/light.json",
       "kind": "source",
-      "sha256": "9b36a7dc7ab6c08b1679906e1869b9f7d1a22c8d9624f1fdbb59feeb1f6769d1"
+      "sha256": "94eac8edd425643bf237c1512220d4d4a0d7e2c71ad84f0da75aa7f9f174d89a"
     },
     {
       "path": "config/design_tokens/tokens.schema.json",
@@ -1146,7 +1146,7 @@
     {
       "path": "config/design_tokens/tokens.yml",
       "kind": "source",
-      "sha256": "4aa58fb22f9ce04340dc073ab897eb09bb544e3ee37ce12582113573fb4ba0e1"
+      "sha256": "cdfdcb72e0bb3572742de959cd253fe1c581db019f9a0daa049dcdca230de1f6"
     },
     {
       "path": "config/environment.rb",
@@ -2011,7 +2011,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "4397c6dd16a39269f9ba5eaf40fdbe08f1bb6d08068e8c890955af7fdc92b5a0"
+      "sha256": "35c067e33b121b1e88d95485a765c837798233e5c763b6701b8898591b19604f"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2126,7 +2126,7 @@
     {
       "path": "lib/design_tokens/generated.rb",
       "kind": "source",
-      "sha256": "c9c8effa3c3f8df10c6a186a7fc707c7b744b1c388ae8292862006a8b66720bc"
+      "sha256": "2f94e0659ae52f56aeda3861fc68270408cf868003f742aeb3d1c2ae424c458a"
     },
     {
       "path": "lib/platform/json_log_formatter.rb",
