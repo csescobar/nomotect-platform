@@ -55,7 +55,7 @@ module Installation
       transition_to!("migrations", "migrations_started" => true)
       result = ExecutionLock.new.synchronize { MigrationRunner.new.run! }
       transition_to!("platform_owner", "schema_version" => result.schema_version, "migrations_completed" => true)
-      redirect_to installation_step_path("platform-owner"), notice: "Database migrations completed."
+      redirect_to installation_step_path("platform-owner"), status: :see_other, notice: "Database migrations completed."
     rescue StandardError
       restore_provisioning_state!
       raise

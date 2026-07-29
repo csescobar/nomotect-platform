@@ -1,0 +1,22 @@
+schema_version: 1
+id: 88-installation-duplicate-table-resilience
+category: fix
+summary: Handle pre-existing database tables gracefully in MigrationRunner and use 303 See Other redirect in StepsController (#87).
+release_impact: patch
+contracts:
+  - installation-wizard
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
