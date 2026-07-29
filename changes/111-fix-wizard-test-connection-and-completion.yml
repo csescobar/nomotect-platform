@@ -1,0 +1,26 @@
+schema_version: 1
+id: 111-fix-wizard-test-connection-and-completion
+category: fix
+summary: |
+  Improve First-Run Installation Wizard UX and completion flow:
+  - Preserve typed database credentials (including passwords) and render in-place notice during Test connection
+  - Add margin-bottom to wizard-card__actions to prevent action buttons from sticking to terminal logs
+  - Boot extension runtime on demand after installation completes so root_path does not return 503
+release_impact: patch
+contracts:
+  - installation
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:
