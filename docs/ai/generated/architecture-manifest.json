@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "fe3e70e9b34fa57140c81c500dc40b4fab7e449e",
+  "repository_commit": "d9ab93f87204514f9847fdcb21a67609525f1333",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -11,7 +11,7 @@
     {
       "path": "app/assets/stylesheets/design_tokens.css",
       "kind": "source",
-      "sha256": "4b26e23059bd29d7de5206c29c2115a03a0710876fadeb147dec0d28ff081b18"
+      "sha256": "2c565f7c91c177a1da73f94c015f430cd165627d3bdd11cf7c183629be0e7c4c"
     },
     {
       "path": "app/components/application_component.rb",
@@ -1096,17 +1096,17 @@
     {
       "path": "config/design_tokens/base.json",
       "kind": "source",
-      "sha256": "3e392a1f301e7ab2fe9e7563dac1bb5c1d35256207a7a0a05237227eb9e7b4d1"
+      "sha256": "e69c0d64ce1e1a02af99e2e4107d05bd07d14ba7395af20b95bc30ada4f70cee"
     },
     {
       "path": "config/design_tokens/dark.json",
       "kind": "source",
-      "sha256": "d0213361250fa7b39f72d38311bb2ef6afee7a82bd612f929c979b899429836e"
+      "sha256": "c061ffa86c414e493e929302b328098b6047674aae4e11e992f3383839e213d9"
     },
     {
       "path": "config/design_tokens/light.json",
       "kind": "source",
-      "sha256": "17df0f03da1d70550a81dc5edcf3527edd16c627bfddb6457869efb2245e9699"
+      "sha256": "e53abc6b9eeb859de224c5502cf57d2c10f9ea7076b6cea02e46d5eb0772b159"
     },
     {
       "path": "config/design_tokens/tokens.schema.json",
@@ -1116,7 +1116,7 @@
     {
       "path": "config/design_tokens/tokens.yml",
       "kind": "source",
-      "sha256": "ac65eb9c4de68847fadafd2011f1c042c7f9c330162dd13480ff39f6cd339e7c"
+      "sha256": "21e52e2a04d6bf740c5895630f399b22a8b7b13dfd48115e1b16ac887060145f"
     },
     {
       "path": "config/environment.rb",
@@ -2081,7 +2081,7 @@
     {
       "path": "lib/design_tokens/generated.rb",
       "kind": "source",
-      "sha256": "6b793c9b2c393c2efefd1a6574668112dd1ade46cdcdc90577d92879d3c79045"
+      "sha256": "3fffa05ff62759c057a5fd8445c61e947e57314e7ec10a5cdf4f82cd1dcb46d5"
     },
     {
       "path": "lib/platform/json_log_formatter.rb",
