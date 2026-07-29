@@ -1,0 +1,22 @@
+schema_version: 1
+id: 93-runtime-database-initializer
+category: fix
+summary: Add runtime_database initializer so ActiveRecord::Base connects to provisioned database (#92).
+release_impact: patch
+contracts:
+  - installation-wizard
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

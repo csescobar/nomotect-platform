@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "ed75d5b1c25e548167a5fdfb5108c380f88a34de",
+  "repository_commit": "587ae30eecf233aae7229c2489b09d63f73293a8",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -1174,6 +1174,11 @@
       "sha256": "24ea33ca7737ef94da9467aba8e8d585bb4be7baf991ffce39ecb3e33938de37"
     },
     {
+      "path": "config/initializers/runtime_database.rb",
+      "kind": "source",
+      "sha256": "9826ec99802c6538d6588da57c696f771a5b5a1c2b0fcbb7c63cd1fad3a0dd9b"
+    },
+    {
       "path": "config/initializers/secret_validation.rb",
       "kind": "source",
       "sha256": "f9ae0247e1798526e7b34a265f27cf4f845048b6c2ce8abfaaaa2a13fa245ac6"
@@ -1966,7 +1971,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "fe468fdd13d02bde44b7b9dc08025b7a44665988c96668d723d97bb2569cc3e3"
+      "sha256": "375e229674a50646ed021a4a6600edcc9e9deb0437ad1b0748ce0f2cbedad71e"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
