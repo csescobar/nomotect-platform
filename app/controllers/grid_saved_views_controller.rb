@@ -5,23 +5,23 @@ class GridSavedViewsController < ApplicationController
   def create
     saved_view = Current.user.grid_saved_views.new(saved_view_params.merge(grid_key: @definition.key))
     if saved_view.save
-      redirect_to grid_path(@definition.key, view_id: saved_view.id), notice: t("grid_engine.saved_views.created")
+      redirect_to grid_path(@definition.key, view_id: saved_view.id), status: :see_other, notice: t("grid_engine.saved_views.created")
     else
-      redirect_to grid_path(@definition.key), alert: saved_view.errors.full_messages.to_sentence
+      redirect_to grid_path(@definition.key), status: :see_other, alert: saved_view.errors.full_messages.to_sentence
     end
   end
 
   def update
     if @saved_view.update(saved_view_params)
-      redirect_to grid_path(@definition.key, view_id: @saved_view.id), notice: t("grid_engine.saved_views.updated")
+      redirect_to grid_path(@definition.key, view_id: @saved_view.id), status: :see_other, notice: t("grid_engine.saved_views.updated")
     else
-      redirect_to grid_path(@definition.key), alert: @saved_view.errors.full_messages.to_sentence
+      redirect_to grid_path(@definition.key), status: :see_other, alert: @saved_view.errors.full_messages.to_sentence
     end
   end
 
   def destroy
     @saved_view.destroy!
-    redirect_to grid_path(@definition.key), notice: t("grid_engine.saved_views.destroyed")
+    redirect_to grid_path(@definition.key), status: :see_other, notice: t("grid_engine.saved_views.destroyed")
   end
 
   private

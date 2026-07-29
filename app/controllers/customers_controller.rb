@@ -21,7 +21,7 @@ class CustomersController < ApplicationController
     @customer = @organization.customers.new(customer_params)
     authorize!(@customer, :create?)
     result = Customers::Create.new.call(organization: @organization, attributes: customer_params)
-    redirect_to [ @organization, result.record ], notice: t("customers.created")
+    redirect_to [ @organization, result.record ], status: :see_other, notice: t("customers.created")
   rescue ActiveRecord::RecordInvalid => error
     @customer = error.record
     render :new, status: :unprocessable_content
@@ -34,7 +34,7 @@ class CustomersController < ApplicationController
   def update
     authorize!(@customer, :update?)
     result = Customers::Update.new.call(customer: @customer, attributes: customer_params)
-    redirect_to [ @organization, result.record ], notice: t("customers.updated")
+    redirect_to [ @organization, result.record ], status: :see_other, notice: t("customers.updated")
   rescue ActiveRecord::RecordInvalid => error
     @customer = error.record
     render :edit, status: :unprocessable_content
@@ -47,7 +47,7 @@ class CustomersController < ApplicationController
   def destroy
     authorize!(@customer, :destroy?)
     Customers::Destroy.new.call(customer: @customer)
-    redirect_to organization_customers_path(@organization), notice: t("customers.destroyed")
+    redirect_to organization_customers_path(@organization), status: :see_other, notice: t("customers.destroyed")
   end
 
   private

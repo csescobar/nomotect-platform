@@ -7,9 +7,9 @@ class MembershipsController < ApplicationController
     authorize_owner_change!
 
     if @membership.update(role: params.require(:membership).fetch(:role))
-      redirect_to @organization, notice: t("memberships.updated")
+      redirect_to @organization, status: :see_other, notice: t("memberships.updated")
     else
-      redirect_to @organization, alert: @membership.errors.full_messages.to_sentence
+      redirect_to @organization, status: :see_other, alert: @membership.errors.full_messages.to_sentence
     end
   end
 
@@ -18,9 +18,9 @@ class MembershipsController < ApplicationController
     authorize_owner_change!
 
     if @membership.destroy
-      redirect_to @organization, notice: t("memberships.destroyed")
+      redirect_to @organization, status: :see_other, notice: t("memberships.destroyed")
     else
-      redirect_to @organization, alert: @membership.errors.full_messages.to_sentence
+      redirect_to @organization, status: :see_other, alert: @membership.errors.full_messages.to_sentence
     end
   end
 

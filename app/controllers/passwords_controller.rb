@@ -10,7 +10,7 @@ class PasswordsController < ApplicationController
       PasswordsMailer.reset(user).deliver_later
     end
 
-    redirect_to new_session_path, notice: I18n.t("passwords.instructions_sent")
+    redirect_to new_session_path, status: :see_other, notice: I18n.t("passwords.instructions_sent")
   end
 
   def edit
@@ -19,9 +19,9 @@ class PasswordsController < ApplicationController
   def update
     if @user.update(password_params)
       @user.sessions.destroy_all
-      redirect_to new_session_path, notice: I18n.t("passwords.updated")
+      redirect_to new_session_path, status: :see_other, notice: I18n.t("passwords.updated")
     else
-      redirect_to edit_password_path(params[:token]), alert: @user.errors.full_messages.to_sentence
+      redirect_to edit_password_path(params[:token]), status: :see_other, alert: @user.errors.full_messages.to_sentence
     end
   end
 
@@ -30,7 +30,7 @@ class PasswordsController < ApplicationController
   def set_user_by_token
     @user = User.find_by_token_for!(:password_reset, params[:token])
   rescue ActiveSupport::MessageVerifier::InvalidSignature
-    redirect_to new_password_path, alert: I18n.t("passwords.invalid_token")
+    redirect_to new_password_path, status: :see_other, alert: I18n.t("passwords.invalid_token")
   end
 
   def password_params
