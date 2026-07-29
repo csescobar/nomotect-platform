@@ -1,0 +1,22 @@
+schema_version: 1
+id: 105-disable-migration-check-during-installation
+category: fix
+summary: Disable active_record.migration_error in development when INSTALLATION_ENABLED is active so CheckPending middleware does not query a non-existent database before the wizard creates it.
+release_impact: patch
+contracts:
+  - installation
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:
