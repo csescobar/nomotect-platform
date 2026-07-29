@@ -2,6 +2,13 @@
 set -euo pipefail
 
 bundle check || bundle install
+
+if command -v pg_isready >/dev/null 2>&1; then
+  if ! pg_isready -h "${PGHOST:-localhost}" -p "${PGPORT:-5432}" >/dev/null 2>&1; then
+    printf "\nWarning: PostgreSQL is unreachable on %s:%s. Ensure PostgreSQL 18 service is running.\n" "${PGHOST:-localhost}" "${PGPORT:-5432}"
+  fi
+fi
+
 ruby bin/rails db:prepare
 
 printf "\nPlatform setup complete.\n"

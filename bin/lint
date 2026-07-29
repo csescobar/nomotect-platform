@@ -2,4 +2,4 @@
 set -euo pipefail
 
 mkdir -p tmp
-bundle exec rubocop --format progress --format simple --out tmp/rubocop.txt "$@"
+bin/rubocop --format progress --format simple --out tmp/rubocop.txt "$@"
