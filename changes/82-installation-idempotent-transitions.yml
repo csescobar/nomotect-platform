@@ -1,0 +1,22 @@
+schema_version: 1
+id: 82-installation-idempotent-transitions
+category: fix
+summary: Make installation state transitions idempotent in StepsController and add style-src to CSP nonce directives (#81).
+release_impact: patch
+contracts:
+  - installation-wizard
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Adds style-src to CSP nonce directives to support Turbo inline styles cleanly.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
