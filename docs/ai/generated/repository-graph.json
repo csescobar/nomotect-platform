@@ -187,7 +187,7 @@
       "name": "Application",
       "path": "app/controllers/application_controller.rb",
       "properties": {
-        "sha256": "872afa190d6315f5f6875b0a51c059a9189dd5cbc28290c0114235a805dd6fe8",
+        "sha256": "b4688d367f57b14a69074eaf0bed6935a05188cc92ae6ee8d7e7120afe649903",
         "source": "platform"
       }
     },
@@ -1357,7 +1357,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "04c86af741da584ffc9e1f153536c0b3787ac4aaa25bf95ee1ba2c7a1585c922",
+        "sha256": "b6cef4fe7a8665e52d7abe338d98f4cb00ba0bc32b72d0533eda81b22367532d",
         "source": "platform"
       }
     },
@@ -3318,5 +3318,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "ed7e7ad95ed1c03091745d2ae7ff330e41ad4ecd"
+  "repository_commit": "c1a2049d4975836d80da85155648ee8d12c65943"
 }
