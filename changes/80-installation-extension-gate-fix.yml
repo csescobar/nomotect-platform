@@ -1,0 +1,22 @@
+schema_version: 1
+id: 80-installation-extension-gate-fix
+category: fix
+summary: Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79).
+release_impact: patch
+contracts:
+  - installation-wizard
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Bypasses extension readiness filter only for installation wizard controllers when installation is enabled.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

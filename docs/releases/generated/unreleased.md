@@ -29,6 +29,7 @@
 
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
+- Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
 
 ### Documentation
 
@@ -66,6 +67,7 @@
 - `extension-readiness`
 - `extension-registration`
 - `health`
+- `installation-wizard`
 - `installed-platform-state`
 - `platform-version`
 - `publication-evidence`
@@ -101,3 +103,4 @@
 - **Security — 72-distribution-certification:** Preparation consumes successful same-commit main evidence and performs no channel mutation.
 - **Security — 73-distribution-observation:** Observation uses read-only repository and package permissions and never persists credentials.
 - **Security — 75-developer-bootstrap-frictions:** Executable permissions on scripts and pre-flight PostgreSQL diagnostics enforce safe defaults.
+- **Security — 80-installation-extension-gate-fix:** Bypasses extension readiness filter only for installation wizard controllers when installation is enabled.

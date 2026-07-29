@@ -257,7 +257,7 @@
       "name": "Installation::Base",
       "path": "app/controllers/installation/base_controller.rb",
       "properties": {
-        "sha256": "9f3904023cdd110e05a7e266932345e8cf51fbc67121d0b64662777796111009",
+        "sha256": "488ded98889ba85c342b63b8ab6c9bc8697d65ce0cf8b6f27939da76ea6fb546",
         "source": "platform"
       }
     },
@@ -1357,7 +1357,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "a5cf6c0a24be3fdd62f3c7a799646eae93a6069cb4772c16fa4e07403da445b9",
+        "sha256": "20e0a79def9d84a9c3ea6c137365cac270e0844a5a88c09226d3a7884122b221",
         "source": "platform"
       }
     },
@@ -3318,5 +3318,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "26cff1d2cfec77d28d39823dcca7ab566b2b1c4f"
+  "repository_commit": "1a576cada841edf832c6bd5118fd9186dcb56b47"
 }

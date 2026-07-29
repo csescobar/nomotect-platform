@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "26cff1d2cfec77d28d39823dcca7ab566b2b1c4f",
+  "repository_commit": "1a576cada841edf832c6bd5118fd9186dcb56b47",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -161,7 +161,7 @@
     {
       "path": "app/controllers/installation/base_controller.rb",
       "kind": "controller",
-      "sha256": "9f3904023cdd110e05a7e266932345e8cf51fbc67121d0b64662777796111009"
+      "sha256": "488ded98889ba85c342b63b8ab6c9bc8697d65ce0cf8b6f27939da76ea6fb546"
     },
     {
       "path": "app/controllers/installation/steps_controller.rb",
@@ -1116,7 +1116,7 @@
     {
       "path": "config/design_tokens/tokens.yml",
       "kind": "source",
-      "sha256": "21e52e2a04d6bf740c5895630f399b22a8b7b13dfd48115e1b16ac887060145f"
+      "sha256": "849b6e7284c05f4776abf7ae075c2e42fb22b1e2f6edb38f37bd18dc37756a79"
     },
     {
       "path": "config/environment.rb",
@@ -1347,6 +1347,11 @@
       "path": "db/migrate/20260727170000_create_platform_roles.rb",
       "kind": "migration",
       "sha256": "4153d8597c5b9ebb0ddf518ad5ed0e926f97ce236fecfaf18cf1f13a2815ec74"
+    },
+    {
+      "path": "db/schema.rb",
+      "kind": "source",
+      "sha256": "c52ce3a910c9ca9f8cb745ac036358c70e1617d61ea6963ad890c06c6edacefe"
     },
     {
       "path": "db/seeds.rb",
@@ -1961,7 +1966,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "a5cf6c0a24be3fdd62f3c7a799646eae93a6069cb4772c16fa4e07403da445b9"
+      "sha256": "20e0a79def9d84a9c3ea6c137365cac270e0844a5a88c09226d3a7884122b221"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
