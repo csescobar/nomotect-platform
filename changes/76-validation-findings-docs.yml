@@ -1,0 +1,21 @@
+schema_version: 1
+id: 76-validation-findings-docs
+category: docs
+summary: Add validation findings documentation and bug report issue template (#74).
+release_impact: none
+contracts: []
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
