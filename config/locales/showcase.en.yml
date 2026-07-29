@@ -10,7 +10,13 @@ en:
     empty_title: "No items yet"
     empty_description: "Create the first item to begin."
     empty_action: "Create item"
+    typography_desc: "The type scale uses two families — Manrope for headings, Inter for body — with tokens for every size and weight."
+    colors_desc: "Semantic color tokens automatically switch between light and dark mode based on the active theme."
+    spacing_desc: "Consistent spacing built from the token scale ensures visual rhythm across all components."
     sections:
+      typography: "Typography scale"
+      colors: "Color tokens"
+      spacing: "Spacing scale"
       buttons: "Buttons"
       feedback: "Feedback and status"
       containers: "Containers and empty states"

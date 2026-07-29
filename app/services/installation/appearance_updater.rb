@@ -15,7 +15,8 @@ module Installation
       payload = current.merge(
         "application_name" => attributes[:application_name].to_s.strip,
         "default_locale" => attributes[:default_locale],
-        "supported_locales" => locales
+        "supported_locales" => locales,
+        "trademark_mode" => attributes[:trademark_mode].to_s.presence || "name_only"
       )
       raise ArgumentError, "Application name is required" if payload["application_name"].blank?
 

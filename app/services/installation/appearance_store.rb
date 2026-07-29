@@ -51,6 +51,7 @@ module Installation
         "application_name" => "Rails Hotwire Platform",
         "default_locale" => "en",
         "supported_locales" => %w[en pt-BR],
+        "trademark_mode" => "name_only",
         "logo_path" => nil,
         "compact_logo_path" => nil,
         "favicon_path" => nil

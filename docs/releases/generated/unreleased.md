@@ -7,6 +7,17 @@
 
 ### Added
 
+- Improve UX and layout of the First-Run Installation Wizard screens (#78):
+- Dedicated wizard layout with 5-step visual stepper
+- Toast notification system (Stimulus) replacing inline flash banners
+- Terminal-style installation progress log component
+- Branding upload fields (logo, compact logo, favicon) with Stimulus preview
+- Trademark display mode selector (name / image / both)
+- platform_name helper reads AppearanceStore instead of hardcoded locale key
+- Component showcase: typography, color swatches, and spacing scale sections
+- 14 new design tokens (shadows, xxl sizes, radius-full, warning colors, transitions)
+- application.css fully tokenized — no hardcoded pixel values remaining
+ (`104-improve-installation-wizard-ux`)
 - Establish the canonical platform version and release change-fragment contracts. (`56-release-foundation`)
 - Enforce normalized release-impact declarations for pull requests. (`57-release-fragment-ci`)
 - Generate deterministic changelog, release, migration, and upgrade notes. (`58-release-notes`)
@@ -55,6 +66,7 @@
 - `change-fragment`
 - `changelog`
 - `customer-management`
+- `design-system`
 - `developer-experience`
 - `distribution-approval`
 - `distribution-artifact-bundle`
@@ -125,3 +137,4 @@
 - **Security — 80-installation-extension-gate-fix:** Bypasses extension readiness filter only for installation wizard controllers when installation is enabled.
 - **Security — 82-installation-idempotent-transitions:** Adds style-src to CSP nonce directives to support Turbo inline styles cleanly.
 - **Security — 95-locale-switcher-csp-fix:** Complies with strict CSP script-src directives by eliminating inline event handlers.
+- **Accessibility — 104-improve-installation-wizard-ux:** Stepper uses semantic nav/aria-label. Toast region uses aria-live polite. Image previews have descriptive alt text.

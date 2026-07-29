@@ -1,0 +1,33 @@
+schema_version: 1
+id: 104-improve-installation-wizard-ux
+category: feature
+summary: |
+  Improve UX and layout of the First-Run Installation Wizard screens (#78):
+  - Dedicated wizard layout with 5-step visual stepper
+  - Toast notification system (Stimulus) replacing inline flash banners
+  - Terminal-style installation progress log component
+  - Branding upload fields (logo, compact logo, favicon) with Stimulus preview
+  - Trademark display mode selector (name / image / both)
+  - platform_name helper reads AppearanceStore instead of hardcoded locale key
+  - Component showcase: typography, color swatches, and spacing scale sections
+  - 14 new design tokens (shadows, xxl sizes, radius-full, warning colors, transitions)
+  - application.css fully tokenized — no hardcoded pixel values remaining
+release_impact: minor
+contracts:
+  - installation
+  - design-system
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: "Stepper uses semantic nav/aria-label. Toast region uses aria-live polite. Image previews have descriptive alt text."

@@ -150,7 +150,7 @@
       "name": "Ui::Layout::ApplicationShell",
       "path": "app/components/ui/layout/application_shell_component.rb",
       "properties": {
-        "sha256": "fcc5c32ea87b194c6b645c4d56acf7a0c7f1f5e138dbc6064b0006ab04d2f0f2",
+        "sha256": "acf2dd6739d7e768a92c93706034fb5f1505ceeff4a824882b0ea73bc633d85e",
         "source": "platform"
       },
       "@id": "component:Ui::Layout::ApplicationShell"
@@ -293,7 +293,7 @@
       "name": "Installation::Base",
       "path": "app/controllers/installation/base_controller.rb",
       "properties": {
-        "sha256": "488ded98889ba85c342b63b8ab6c9bc8697d65ce0cf8b6f27939da76ea6fb546",
+        "sha256": "6961d022d08dfa37072bd02c8729021de11af1fc47f6d930ea99a4ba1019d6b8",
         "source": "platform"
       },
       "@id": "controller:Installation::Base"
@@ -304,7 +304,7 @@
       "name": "Installation::Steps",
       "path": "app/controllers/installation/steps_controller.rb",
       "properties": {
-        "sha256": "1821e8cafccb51bea673a6d2a3cc3e73c3dfe8a0cae7460282f73b583f603757",
+        "sha256": "bf238d73d69e5e40fc84c584535022e7b9878095fdad6e4a79b5d2790ea607f6",
         "source": "platform"
       },
       "@id": "controller:Installation::Steps"
@@ -1844,7 +1844,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "fcd06ac03c586e095de6318dd941f6f1e76369ae49db2fd15b5fbfabd4a52b29",
+        "sha256": "a8d193299bcb246b29fe9c60c2f7541252c602a417a707478869251bdacc1b65",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -2174,7 +2174,7 @@
       "name": "Controllers::Installation::StepsController",
       "path": "test/controllers/installation/steps_controller_test.rb",
       "properties": {
-        "sha256": "09267308d8d5609fdd1f1080f63443f3a308146085b10b1ab7f04686ed88c82e",
+        "sha256": "05c4f0f89bcd9f7f06ac2d7e683792e7f35f8039e119d0f8f0315e1e6c6bfa2a",
         "source": "platform"
       },
       "@id": "test:Controllers::Installation::StepsController"

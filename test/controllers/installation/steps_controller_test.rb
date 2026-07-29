@@ -26,7 +26,7 @@ class Installation::StepsControllerTest < ActionDispatch::IntegrationTest
   test "renders the appearance form without authentication" do
     get installation_path
     assert_response :success
-    assert_select "[data-installation-state='not_started']"
+    assert_select ".wizard-card"
     assert_select "form"
     assert_select "textarea[name='token_yaml']"
   end

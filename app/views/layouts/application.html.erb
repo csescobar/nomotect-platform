@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
   <head>
-    <title><%= content_for(:title) || t("application.name") %></title>
+    <title><%= content_for(:title) || platform_name %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -34,25 +34,33 @@
         current_user: Current.user,
         account_actions: account_actions
       ) do %>
-        <% flash.each do |type, message| %>
-          <div class="flash flash--<%= type %>" role="status"><%= message %></div>
-        <% end %>
         <%= yield %>
       <% end %>
     <% else %>
       <header class="app-header">
-        <strong><%= t("application.name") %></strong>
+        <strong><%= platform_name %></strong>
         <div class="app-header__actions">
           <%= render Ui::ThemeSwitcherComponent.new %>
         </div>
       </header>
 
       <main class="app-main" id="main-content">
-        <% flash.each do |type, message| %>
-          <div class="flash flash--<%= type %>" role="status"><%= message %></div>
-        <% end %>
         <%= yield %>
       </main>
     <% end %>
+
+    <%# Toast notification region — rendered outside the shell so it floats over all content %>
+    <div class="toast-region" aria-live="polite" aria-atomic="false" id="toast-region">
+      <% flash.each do |type, message| %>
+        <div class="toast toast--<%= type %>" role="status"
+             data-controller="toast"
+             data-toast-duration-value="4000">
+          <span class="toast__message"><%= message %></span>
+          <button type="button" class="toast__close button button--ghost button--small"
+                  data-action="toast#dismiss"
+                  aria-label="<%= t("layout.close_notification") %>">&#x2715;</button>
+        </div>
+      <% end %>
+    </div>
   </body>
 </html>
