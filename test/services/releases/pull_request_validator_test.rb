@@ -25,13 +25,18 @@ module Releases
     end
 
     test "accepts a valid fragment matching the pull request" do
-      report = PullRequestValidator.new(
-        changed_paths: [
-          "app/services/releases/pull_request_validator.rb",
-          "changes/57-release-fragment-ci.yml"
-        ],
-        pull_request_number: 57
-      ).call
+      fragment = release_fragment_fixture("57-release-fragment-ci.yml")
+      report = File.stub(:file?, true) do
+        ChangeFragment.stub(:load, fragment) do
+          PullRequestValidator.new(
+            changed_paths: [
+              "app/services/releases/pull_request_validator.rb",
+              "changes/57-release-fragment-ci.yml"
+            ],
+            pull_request_number: 57
+          ).call
+        end
+      end
 
       assert report.ready?, report.findings.inspect
     end
@@ -74,6 +79,15 @@ module Releases
       ).call
 
       assert_includes report.findings.pluck(:code), "change_fragment_missing"
+    end
+
+    private
+
+    def release_fragment_fixture(name)
+      path = Rails.root.glob("changes/**/#{name}").first
+      raise "missing release test fixture #{name}" unless path
+
+      ChangeFragment.load(path)
     end
   end
 end
