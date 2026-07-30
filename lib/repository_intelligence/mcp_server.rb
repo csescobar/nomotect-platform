@@ -29,7 +29,10 @@ module RepositoryIntelligence
     def run
       input.each_line do |line|
         request = JSON.parse(line)
-        output.puts(JSON.generate(handle(request)))
+        response = handle(request)
+        next if response.nil?
+
+        output.puts(JSON.generate(response))
         output.flush
       rescue JSON::ParserError => error
         output.puts(JSON.generate(error_response(nil, -32700, error.message)))
@@ -38,6 +41,8 @@ module RepositoryIntelligence
 
     def handle(request)
       operation = operation_name(request)
+      return nil unless request.key?("id")
+
       result, duration_ms = guard.call { dispatch(request) }
       audit(request, operation:, status: "success", duration_ms:)
       { jsonrpc: "2.0", id: request["id"], result: }
@@ -60,13 +65,17 @@ module RepositoryIntelligence
     def dispatch(request)
       case request.fetch("method")
       when "initialize" then initialize_result
+      when "notifications/initialized", "initialized" then {}
+      when "ping" then {}
       when "resources/list" then { resources: resources }
       when "resources/read" then read_resource(request.dig("params", "uri"))
+      when "resources/templates/list" then { resourceTemplates: [] }
       when "tools/list" then { tools: tools }
       when "tools/call" then call_tool(request.fetch("params"))
       when "prompts/list" then { prompts: prompt_list }
       when "prompts/get" then prompt(request.dig("params", "name"))
-      else raise ArgumentError, "Method not found"
+      when "completion/complete" then { completion: { values: [] } }
+      else raise ArgumentError, "Method not found: #{request['method']}"
       end
     end
 

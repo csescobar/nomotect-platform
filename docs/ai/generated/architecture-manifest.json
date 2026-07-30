@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "e9c49428a3dcfd61bef688681c0583d59cd16276",
+  "repository_commit": "cc735b5915b5f02de460383fe8d23ab6b65a45fb",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -2011,7 +2011,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "a4c8473b86fa490b61c2c63e037eb0afaa3079422340f9d61b85076342b3147b"
+      "sha256": "6481966e154ff3ea653ff23bf49f1a6a7ab4df5607cd5bdd4a5c53fd4483bd72"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2211,7 +2211,7 @@
     {
       "path": "lib/repository_intelligence/mcp_server.rb",
       "kind": "source",
-      "sha256": "f2013ece044ff71a6cdf97da8d7b9ccac2d160e40e9110465517c19823da8736"
+      "sha256": "fcd41d5d89b4e853dc80f92c7e590ccb4a8bf17deedf6aba5d1b3bbae6acf53a"
     },
     {
       "path": "lib/repository_intelligence/platform.rb",
