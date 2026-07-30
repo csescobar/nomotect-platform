@@ -100,6 +100,7 @@ favicon, canonical metadata, social cards, sitemap and static export checks, and
 restrict theme selection to explicit light and dark modes.
  (`120-marketing-seo-foundation`)
 - Add Google Search Console ownership verification and align the static site with explicit light and dark theme modes. (`121-search-console-verification`)
+- Authenticate GitHub CLI operations in the controlled GHCR promotion workflow. (`122-fix-ghcr-promotion-token`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
@@ -184,6 +185,7 @@ restrict theme selection to explicit light and dark modes.
 ## Cross-cutting assessments
 
 - **Security — 114-locale-toast-compact-labels-security:** Rails 8.1.3.1 addresses CVE-2026-66066 (GHSA-xr9x-r78c-5hrm) — arbitrary file read and potential RCE in Active Storage variant processing. Upgrade immediately.
+- **Security — 122-fix-ghcr-promotion-token:** The workflow uses the ephemeral GitHub Actions token with existing least-privilege permissions and does not persist credentials.
 - **Security — 56-release-foundation:** Release metadata remains repository-local and contains no credentials.
 - **Security — 57-release-fragment-ci:** Validation uses bounded git arguments and reads repository metadata only.
 - **Security — 58-release-notes:** Generated notes contain normalized repository metadata and no secrets.
