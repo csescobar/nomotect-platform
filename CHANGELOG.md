@@ -102,6 +102,7 @@ restrict theme selection to explicit light and dark modes.
  (`120-marketing-seo-foundation`)
 - Add Google Search Console ownership verification and align the static site with explicit light and dark theme modes. (`121-search-console-verification`)
 - Authenticate GitHub CLI operations in the controlled GHCR promotion workflow. (`122-fix-ghcr-promotion-token`)
+- Keep prepared releases certifiable after version updates and fragment archival. (`124-release-preparation-certification`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
