@@ -76,7 +76,7 @@ module OperationalReadiness
         require_exact_keys!(component, COMPONENT_KEYS, "backup component")
         %w[id provider reference checksum].each { |key| require_present_string!(component, key) }
         raise InvalidManifest, "unsupported backup component kind" unless COMPONENT_KINDS.include?(component["kind"])
-        unless component["size_bytes"].is_a?(Integer) && component["size_bytes"].nonnegative?
+        unless component["size_bytes"].is_a?(Integer) && component["size_bytes"] >= 0
           raise InvalidManifest, "size_bytes must be a non-negative integer"
         end
       end
