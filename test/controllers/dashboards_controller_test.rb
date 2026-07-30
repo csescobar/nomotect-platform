@@ -33,6 +33,6 @@ class DashboardsControllerTest < ActionDispatch::IntegrationTest
       password: "a-secure-password"
     }
 
-    assert_redirected_to dashboard_url
+    assert_redirected_to root_url
   end
 end
