@@ -41,9 +41,12 @@ module Releases
 
     def copy_release_inputs(directory)
       FileUtils.mkdir_p(File.join(directory, "changes"))
-      FileUtils.cp(Rails.root.join("VERSION"), File.join(directory, "VERSION"))
-      Rails.root.glob("changes/*.yml").each do |fragment|
-        FileUtils.cp(fragment, File.join(directory, "changes", fragment.basename))
+      File.write(File.join(directory, "VERSION"), "0.8.0\n")
+      %w[56-release-foundation.yml 58-release-notes.yml].each do |name|
+        source = Rails.root.glob("changes/**/#{name}").first
+        raise "missing release test fixture #{name}" unless source
+
+        FileUtils.cp(source, File.join(directory, "changes", name))
       end
     end
   end
