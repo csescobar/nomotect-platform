@@ -210,8 +210,8 @@ Normal app   Protected installation session
 ## Current development status
 
 - ✅ Epics 0–8 are complete, covering project foundation, platform core, design system and internationalization, grid engine, domain framework and reference application, Enterprise Services, the Multi-Tenant Platform, Security and Privacy, and the AI Platform with Repository Intelligence.
-- ✅ **Epic 9 — Phase 5 is complete.** The enterprise extension platform now has production-like certification, explicit trusted loading, fail-closed readiness and lifecycle guides.
-- 🚧 **Epic 9 — Phase 6 is next.** Distribution channels will publish and verify approved release evidence without changing the Phase 5 extension trust boundary.
+- ✅ **Epic 9 — Phase 6 is complete.** GitHub Releases and GHCR semantic tags publish from the same approved commit, artifact bundle and immutable image digest, with post-publication observation and certification.
+- 🚧 **Epic 9 — Phase 7 is in progress.** Operational Readiness begins with credential-free backup and restore contracts before provider adapters and production-like recovery certification.
 - ⏳ Epic 10 remains planned for framework validation, release candidates and the stable `v1.0.0` release gate.
 
 ### Epic 9 roadmap summary
