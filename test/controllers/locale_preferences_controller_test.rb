@@ -14,12 +14,23 @@ class LocalePreferencesControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
   end
 
-  test "persists a supported locale" do
+  test "persists a supported locale for authenticated user" do
     token = Nokogiri::HTML(response.body).at_css("meta[name='csrf-token']")["content"]
     patch locale_preference_path, params: { authenticity_token: token, locale: "pt-BR" }, headers: { "HTTP_REFERER" => root_url }
 
     assert_redirected_to root_url
     assert_equal "pt-BR", @user.reload.locale
+  end
+
+  test "allows unauthenticated users to switch locale via session" do
+    delete session_path
+    get new_session_path
+    token = Nokogiri::HTML(response.body).at_css("input[name='authenticity_token']")["value"]
+
+    patch locale_preference_path, params: { authenticity_token: token, locale: "pt-BR" }, headers: { "HTTP_REFERER" => new_session_path }
+
+    assert_redirected_to new_session_path
+    assert_equal "pt-BR", session[:locale]
   end
 
   test "rejects unsupported locales" do

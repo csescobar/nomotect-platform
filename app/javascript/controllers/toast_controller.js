@@ -12,7 +12,11 @@ export default class extends Controller {
   }
 
   dismiss() {
-    this.element.classList.add("toast--dismissing")
-    this.element.addEventListener("animationend", () => this.element.remove(), { once: true })
+    if (this._timer) clearTimeout(this._timer)
+    this.element.style.opacity = "0"
+    this.element.style.transition = "opacity 150ms ease"
+    setTimeout(() => {
+      this.element.remove()
+    }, 150)
   }
 }

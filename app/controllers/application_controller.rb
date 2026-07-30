@@ -62,6 +62,9 @@ class ApplicationController < ActionController::Base
     requested = params[:locale].presence
     return requested if Localization::SupportedLocales.include?(requested)
 
+    session_locale = session[:locale].presence
+    return session_locale if Localization::SupportedLocales.include?(session_locale)
+
     preferred = Current.user&.locale.presence
     return preferred if Localization::SupportedLocales.include?(preferred)
 
