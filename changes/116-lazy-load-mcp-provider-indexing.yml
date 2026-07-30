@@ -1,0 +1,27 @@
+schema_version: 1
+id: 116-lazy-load-mcp-provider-indexing
+category: fix
+summary: |
+  Defer code graph provider indexing during MCP server initialization:
+  - Introduce `RepositoryIntelligence::LazyProviderResult` to wrap provider indexing in a lazy proxy.
+  - Update `GovernanceGraph` and `GovernanceScanner` to evaluate provider nodes and edges on demand when graph queries are executed.
+  - Pass `stdin_data: ""` to `Open3.capture2e` in `CommandProvider` so external subprocesses do not block on inherited stdio pipes.
+  - Fix command arguments for `CodebaseMemoryProvider` to `["cli", "index_repository"]`.
+release_impact: patch
+contracts:
+  - repository-intelligence
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:

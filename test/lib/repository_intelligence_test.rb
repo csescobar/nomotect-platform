@@ -153,4 +153,28 @@ class RepositoryIntelligenceTest < ActiveSupport::TestCase
     assert_equal(-32602, denied.dig(:error, :code))
     assert_equal(-32001, limited.dig(:error, :code))
   end
+
+  test "defers provider indexing until nodes or edges are accessed" do
+    indexed = false
+    mock_provider = Class.new(RepositoryIntelligence::CodeGraphProvider) do
+      define_method(:index) do |repository_path:, repository_commit:|
+        indexed = true
+        RepositoryIntelligence::CodeGraphProvider::Result.new(
+          provider: "mock", repository_commit:, nodes: [], edges: [], metadata: {}
+        )
+      end
+    end.new
+
+    lazy = RepositoryIntelligence::LazyProviderResult.new(
+      provider: mock_provider, repository_path: "/tmp", repository_commit: "commit123"
+    )
+
+    refute lazy.loaded?
+    refute indexed
+    assert_equal "commit123", lazy.repository_commit
+
+    assert_equal [], lazy.nodes
+    assert lazy.loaded?
+    assert indexed
+  end
 end

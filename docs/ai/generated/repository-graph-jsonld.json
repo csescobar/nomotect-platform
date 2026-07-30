@@ -194,7 +194,7 @@
       "name": "Ui::LocaleSwitcher",
       "path": "app/components/ui/locale_switcher_component.rb",
       "properties": {
-        "sha256": "4ba59b8e5c1d473f7728fe4dd56544c093a0a8c8153c2fa6380df0abed6bae52",
+        "sha256": "348d75b2257c1ed91f620408a18afdabe1ea5dc4fb1b33bf2030c3bc9f487582",
         "source": "platform"
       },
       "@id": "component:Ui::LocaleSwitcher"
@@ -205,7 +205,7 @@
       "name": "Ui::ThemeSwitcher",
       "path": "app/components/ui/theme_switcher_component.rb",
       "properties": {
-        "sha256": "0277643befbf0dbe07dbc0d87222b1290c6873617f42385bf8959e113114ac1c",
+        "sha256": "147d3196b96c422d747a0a4918e4094825072f4c32e06592fca28eda58beda38",
         "source": "platform"
       },
       "@id": "component:Ui::ThemeSwitcher"
@@ -216,7 +216,7 @@
       "name": "Application",
       "path": "app/controllers/application_controller.rb",
       "properties": {
-        "sha256": "b4688d367f57b14a69074eaf0bed6935a05188cc92ae6ee8d7e7120afe649903",
+        "sha256": "eb4d09a789bf00841041268a7c1b8d445ebc9a4c3a47fd8d4935b905a900c220",
         "source": "platform"
       },
       "@id": "controller:Application"
@@ -315,7 +315,7 @@
       "name": "LocalePreferences",
       "path": "app/controllers/locale_preferences_controller.rb",
       "properties": {
-        "sha256": "7468981ec24548662ef5a98c81d75fecff8e6184009fcd13e55b574433521393",
+        "sha256": "1db89640a3c128b9e26b204b0e94db1a31aa921507123ec9ae57ac6143f3c3fe",
         "source": "platform"
       },
       "@id": "controller:LocalePreferences"
@@ -1844,7 +1844,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "e75b73f63869251db7556677d2e9a31bd4e1e26a8281229c75816353ba112c10",
+        "sha256": "bff7cbcd3a437aa808d73a3e923c25da9d618c38a342f7e613d2455e52cf5037",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -2185,7 +2185,7 @@
       "name": "Controllers::LocalePreferencesController",
       "path": "test/controllers/locale_preferences_controller_test.rb",
       "properties": {
-        "sha256": "0619359b4bfdcf604d1c8bfd986ac62d2e26ad757d2e7c10c270c1d5da9e1ba9",
+        "sha256": "8583c6005dc3a3acde6f0b02634925f0cd9beef35e3b4a2e5a30cfa59ff808e8",
         "source": "platform"
       },
       "@id": "test:Controllers::LocalePreferencesController"
@@ -2405,7 +2405,7 @@
       "name": "Lib::RepositoryIntelligence",
       "path": "test/lib/repository_intelligence_test.rb",
       "properties": {
-        "sha256": "013da2f6417aca4ab7ceb26fee5e6b1ec6912820d15a62e3168848ff49f2a52b",
+        "sha256": "42f3d394fb3874987630691777acd3e123f64b1a15b4892465d356c65323b105",
         "source": "platform"
       },
       "@id": "test:Lib::RepositoryIntelligence"
