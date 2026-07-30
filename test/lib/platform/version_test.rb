@@ -4,7 +4,7 @@ require "test_helper"
 
 class PlatformVersionTest < ActiveSupport::TestCase
   test "reads the canonical repository version" do
-    assert_equal "0.8.0", Platform::Version.current.to_s
+    assert_equal Rails.root.join("VERSION").read.strip, Platform::Version.current.to_s
   end
 
   test "rejects non-semantic versions" do
