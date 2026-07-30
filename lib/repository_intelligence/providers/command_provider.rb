@@ -28,14 +28,14 @@ module RepositoryIntelligence
       def status
         return super unless available?
 
-        output, status = Open3.capture2e(command, *version_arguments)
+        output, status = Open3.capture2e(command, *version_arguments, stdin_data: "")
         { available: status.success?, provider: provider_name, version: output.strip }
       end
 
       def index(repository_path:, repository_commit:)
         raise "#{provider_name} is unavailable" unless available?
 
-        output, status = Open3.capture2e(command, *index_arguments, repository_path.to_s)
+        output, status = Open3.capture2e(command, *index_arguments, repository_path.to_s, stdin_data: "")
         raise "#{provider_name} indexing failed: #{output}" unless status.success?
 
         payload = parse_output(output)
@@ -61,7 +61,7 @@ module RepositoryIntelligence
 
     class CodebaseMemoryProvider < CommandProvider
       def initialize(command: ENV.fetch("CODEBASE_MEMORY_COMMAND", "codebase-memory-mcp"))
-        super(command:, provider_name: "codebase_memory", index_arguments: [ "index_repository", "--json" ])
+        super(command:, provider_name: "codebase_memory", index_arguments: [ "cli", "index_repository" ])
       end
     end
 

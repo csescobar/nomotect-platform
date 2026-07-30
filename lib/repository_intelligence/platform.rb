@@ -11,29 +11,40 @@ module RepositoryIntelligence
   Edge = Data.define(:from, :to, :type, :properties)
 
   class GovernanceGraph
-    attr_reader :nodes, :edges
-
-    def initialize
+    def initialize(lazy_provider: nil)
       @nodes = {}
       @edges = []
+      @lazy_provider = lazy_provider
+      @provider_loaded = false
     end
 
     def add_node(node)
-      nodes[node.id] = node
+      @nodes[node.id] = node
     end
 
     def add_edge(edge)
-      edges << edge unless edges.any? { |candidate| candidate == edge }
+      @edges << edge unless @edges.any? { |candidate| candidate == edge }
+    end
+
+    def nodes
+      ensure_provider_loaded!
+      @nodes
+    end
+
+    def edges
+      ensure_provider_loaded!
+      @edges
     end
 
     def impact(node_id, depth: 2)
+      ensure_provider_loaded!
       visited = { node_id => 0 }
       queue = [ node_id ]
       until queue.empty?
         current = queue.shift
         next if visited.fetch(current) >= depth
 
-        edges.select { |edge| edge.from == current || edge.to == current }.each do |edge|
+        @edges.select { |edge| edge.from == current || edge.to == current }.each do |edge|
           other = edge.from == current ? edge.to : edge.from
           next if visited.key?(other)
 
@@ -41,15 +52,34 @@ module RepositoryIntelligence
           queue << other
         end
       end
-      visited.keys.filter_map { |id| nodes[id] }
+      visited.keys.filter_map { |id| @nodes[id] }
     end
 
     def to_h
+      ensure_provider_loaded!
       {
         schema_version: "1.0",
-        nodes: nodes.values.sort_by(&:id).map(&:to_h),
-        edges: edges.sort_by { |edge| [ edge.from, edge.type, edge.to ] }.map(&:to_h)
+        nodes: @nodes.values.sort_by(&:id).map(&:to_h),
+        edges: @edges.sort_by { |edge| [ edge.from, edge.type, edge.to ] }.map(&:to_h)
       }
+    end
+
+    private
+
+    def ensure_provider_loaded!
+      return if @provider_loaded || @lazy_provider.nil?
+
+      @provider_loaded = true
+      Array(@lazy_provider.nodes).each do |node|
+        add_node(node.is_a?(Node) ? node : Node.new(**symbolize(node)))
+      end
+      Array(@lazy_provider.edges).each do |edge|
+        add_edge(edge.is_a?(Edge) ? edge : Edge.new(**symbolize(edge)))
+      end
+    end
+
+    def symbolize(hash)
+      hash.is_a?(Hash) ? hash.transform_keys(&:to_sym) : hash
     end
   end
 
@@ -68,9 +98,7 @@ module RepositoryIntelligence
     end
 
     def scan
-      graph = GovernanceGraph.new
-      Array(provider_result.nodes).each { |node| graph.add_node(Node.new(**symbolize(node))) }
-      Array(provider_result.edges).each { |edge| graph.add_edge(Edge.new(**symbolize(edge))) }
+      graph = GovernanceGraph.new(lazy_provider: provider_result)
 
       manifest.fetch(:files).each do |file|
         path = file.fetch(:path)

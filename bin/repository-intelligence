@@ -28,7 +28,9 @@ provider = case ENV.fetch("CODE_GRAPH_PROVIDER", "null")
            when "gitnexus" then RepositoryIntelligence::Providers::GitNexusProvider.new
            else RepositoryIntelligence::Providers::NullProvider.new
            end
-provider_result = provider.index(repository_path: root, repository_commit: commit)
+provider_result = RepositoryIntelligence::LazyProviderResult.new(
+  provider:, repository_path: root, repository_commit: commit
+)
 graph = RepositoryIntelligence::GovernanceScanner.new(repository_path: root, manifest:, provider_result:).scan
 contracts = RepositoryIntelligence::ContractRegistry.new(File.join(root, "config/ai/contracts"))
 playbooks = RepositoryIntelligence::PlaybookRegistry.new(File.join(root, "config/ai/playbooks"))

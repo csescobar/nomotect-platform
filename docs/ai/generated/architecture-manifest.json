@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "3f334273605320e1906b293649936fa5d9dbe1a4",
+  "repository_commit": "e9c49428a3dcfd61bef688681c0583d59cd16276",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -96,17 +96,17 @@
     {
       "path": "app/components/ui/locale_switcher_component.rb",
       "kind": "component",
-      "sha256": "4ba59b8e5c1d473f7728fe4dd56544c093a0a8c8153c2fa6380df0abed6bae52"
+      "sha256": "348d75b2257c1ed91f620408a18afdabe1ea5dc4fb1b33bf2030c3bc9f487582"
     },
     {
       "path": "app/components/ui/theme_switcher_component.rb",
       "kind": "component",
-      "sha256": "0277643befbf0dbe07dbc0d87222b1290c6873617f42385bf8959e113114ac1c"
+      "sha256": "147d3196b96c422d747a0a4918e4094825072f4c32e06592fca28eda58beda38"
     },
     {
       "path": "app/controllers/application_controller.rb",
       "kind": "controller",
-      "sha256": "b4688d367f57b14a69074eaf0bed6935a05188cc92ae6ee8d7e7120afe649903"
+      "sha256": "eb4d09a789bf00841041268a7c1b8d445ebc9a4c3a47fd8d4935b905a900c220"
     },
     {
       "path": "app/controllers/component_showcase_controller.rb",
@@ -171,7 +171,7 @@
     {
       "path": "app/controllers/locale_preferences_controller.rb",
       "kind": "controller",
-      "sha256": "7468981ec24548662ef5a98c81d75fecff8e6184009fcd13e55b574433521393"
+      "sha256": "1db89640a3c128b9e26b204b0e94db1a31aa921507123ec9ae57ac6143f3c3fe"
     },
     {
       "path": "app/controllers/memberships_controller.rb",
@@ -266,7 +266,7 @@
     {
       "path": "app/javascript/controllers/toast_controller.js",
       "kind": "source",
-      "sha256": "7350c87d890904919680d9613aead6deac4e0387f2fff5c1cb24bb6122ba6e51"
+      "sha256": "9d282cb55d378f57b4558853c439186d0999b798c9b522f7fff43bf85f788ba4"
     },
     {
       "path": "app/jobs/application_job.rb",
@@ -2011,7 +2011,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "e75b73f63869251db7556677d2e9a31bd4e1e26a8281229c75816353ba112c10"
+      "sha256": "a4c8473b86fa490b61c2c63e037eb0afaa3079422340f9d61b85076342b3147b"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2156,7 +2156,7 @@
     {
       "path": "lib/repository_intelligence/code_graph_provider.rb",
       "kind": "source",
-      "sha256": "ca1960f59ee05bcd596570f8d6770635def51d4506433744d2ffc066370125da"
+      "sha256": "ef19a4273297c404058322308b0cd196c0c13646e27fed303994cecaf9529acd"
     },
     {
       "path": "lib/repository_intelligence/default_validators.rb",
@@ -2216,7 +2216,7 @@
     {
       "path": "lib/repository_intelligence/platform.rb",
       "kind": "source",
-      "sha256": "690494a5ce7615d1a1ad911e637265411706e6e6698a2b17227ba836a6b0345b"
+      "sha256": "0ee25baa6425a01b6618cde5681e073458428109e3f08cfb1b2ebcdd3853a7c1"
     },
     {
       "path": "lib/repository_intelligence/playbook_executor.rb",
@@ -2226,7 +2226,7 @@
     {
       "path": "lib/repository_intelligence/providers/command_provider.rb",
       "kind": "source",
-      "sha256": "c7fabb8e78d1ec6a5b64ab3d8782a89637c46924278e188599ea8d60acbe2601"
+      "sha256": "42677f4d94423b0cba139141688521752d0167d39a4932a2c896392586d0e6b7"
     },
     {
       "path": "lib/repository_intelligence/providers/null_provider.rb",
@@ -2316,7 +2316,7 @@
     {
       "path": "test/controllers/locale_preferences_controller_test.rb",
       "kind": "test",
-      "sha256": "0619359b4bfdcf604d1c8bfd986ac62d2e26ad757d2e7c10c270c1d5da9e1ba9"
+      "sha256": "8583c6005dc3a3acde6f0b02634925f0cd9beef35e3b4a2e5a30cfa59ff808e8"
     },
     {
       "path": "test/controllers/organization_member_administration_test.rb",
@@ -2416,7 +2416,7 @@
     {
       "path": "test/lib/repository_intelligence_test.rb",
       "kind": "test",
-      "sha256": "013da2f6417aca4ab7ceb26fee5e6b1ec6912820d15a62e3168848ff49f2a52b"
+      "sha256": "42f3d394fb3874987630691777acd3e123f64b1a15b4892465d356c65323b105"
     },
     {
       "path": "test/models/customer_test.rb",
