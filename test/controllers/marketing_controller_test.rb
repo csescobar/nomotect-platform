@@ -20,6 +20,18 @@ class MarketingControllerTest < ActionDispatch::IntegrationTest
     assert_select "a", text: "Explorar a plataforma"
   end
 
+  test "renders crawlable discovery and social metadata" do
+    get marketing_path
+
+    assert_response :success
+    assert_select "link[rel='canonical'][href='http://www.example.com/marketing']", count: 1
+    assert_select "meta[name='robots'][content='index,follow,max-image-preview:large']", count: 1
+    assert_select "meta[property='og:type'][content='website']", count: 1
+    assert_select "meta[property='og:title'][content=?]", I18n.t("marketing.meta.title"), count: 1
+    assert_select "meta[name='twitter:card'][content='summary_large_image']", count: 1
+    assert_select "link[rel='icon'][href='/favicon.svg'][type='image/svg+xml']", count: 1
+  end
+
   test "does not render legacy public branding on landing page" do
     get marketing_path
 
