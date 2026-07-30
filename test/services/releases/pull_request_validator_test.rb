@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "test_helper"
-require "minitest/mock"
 
 module Releases
   class PullRequestValidatorTest < ActiveSupport::TestCase
@@ -26,9 +25,13 @@ module Releases
     end
 
     test "accepts a valid fragment matching the pull request" do
-      fragment = release_fragment_fixture("57-release-fragment-ci.yml")
-      report = File.stub(:file?, true) do
-        ChangeFragment.stub(:load, fragment) do
+      Dir.mktmpdir do |directory|
+        FileUtils.mkdir_p(File.join(directory, "changes"))
+        FileUtils.cp(
+          release_fragment_fixture("57-release-fragment-ci.yml"),
+          File.join(directory, "changes/57-release-fragment-ci.yml")
+        )
+        report = Dir.chdir(directory) do
           PullRequestValidator.new(
             changed_paths: [
               "app/services/releases/pull_request_validator.rb",
@@ -37,9 +40,9 @@ module Releases
             pull_request_number: 57
           ).call
         end
-      end
 
-      assert report.ready?, report.findings.inspect
+        assert report.ready?, report.findings.inspect
+      end
     end
 
     test "requires explicit migration impact" do
@@ -88,7 +91,7 @@ module Releases
       path = Rails.root.glob("changes/**/#{name}").first
       raise "missing release test fixture #{name}" unless path
 
-      ChangeFragment.load(path)
+      path
     end
   end
 end
