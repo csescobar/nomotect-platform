@@ -6,7 +6,7 @@ module Releases
   class NotesGeneratorTest < ActiveSupport::TestCase
     test "renders deterministic notes from sorted fragments" do
       generator = NotesGenerator.new(
-        fragments: ChangeCatalog.new.fragments.reverse,
+        fragments: release_test_fragments.reverse,
         current_version: "0.8.0"
       )
 
@@ -24,7 +24,7 @@ module Releases
     test "reports stale output without replacing it" do
       Dir.mktmpdir do |directory|
         generator = NotesGenerator.new(
-          fragments: ChangeCatalog.new.fragments,
+          fragments: release_test_fragments,
           current_version: "0.8.0",
           root: directory
         )
@@ -32,6 +32,17 @@ module Releases
         File.write(File.join(directory, "CHANGELOG.md"), "stale")
 
         assert_includes generator.validate, "stale generated release document: CHANGELOG.md"
+      end
+    end
+
+    private
+
+    def release_test_fragments
+      %w[56-release-foundation.yml 58-release-notes.yml].map do |name|
+        path = Rails.root.glob("changes/**/#{name}").first
+        raise "missing release test fixture #{name}" unless path
+
+        ChangeFragment.load(path)
       end
     end
   end
