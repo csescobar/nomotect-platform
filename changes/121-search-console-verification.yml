@@ -1,0 +1,22 @@
+schema_version: 1
+id: 121-search-console-verification
+category: fix
+summary: Add Google Search Console ownership verification and align the static site with explicit light and dark theme modes.
+release_impact: patch
+contracts:
+  - core
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: The change preserves the existing light and dark theme accessibility contracts.
