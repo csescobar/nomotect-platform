@@ -33,6 +33,7 @@ jobs:
     env:
       DISTRIBUTION_APPROVED: "true"
       DISTRIBUTION_SOURCE_COMMIT: ${{ inputs.source_commit }}
+      GH_TOKEN: ${{ github.token }}
     steps:
       - name: Check out approved source
         uses: actions/checkout@v4
