@@ -165,7 +165,7 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 ## Epic 9 — Distribution, Installation and Enterprise Extensions
 
-**Status:** 🚧 In progress — Phase 6 distribution contracts
+**Status:** 🚧 In progress — Phase 7 operational readiness
 
 **Objective:** transform the repository from a developer-oriented source project into a distributable, installable, upgradeable and professionally extensible platform while preserving a complete Apache-licensed community core.
 
@@ -319,7 +319,7 @@ operator lifecycle guides.
 
 ### Phase 6 — Distribution Channels
 
-**Status:** 🚧 In progress
+**Status:** ✅ Complete
 
 - [x] Define versioned distribution-manifest, channel-state and
   publication-evidence contracts.
@@ -332,7 +332,7 @@ operator lifecycle guides.
 - [x] Assemble a deterministic distribution bundle from successful
   same-commit `main` packaging evidence.
 
-- [ ] Publish GitHub Releases and GHCR images from approved release metadata.
+- [x] Publish GitHub Releases and GHCR images from approved release metadata.
 - [x] Evaluate additional channels only where support and ownership are explicit.
 - [x] Sign or attest release artifacts where supported.
 - [x] Publish checksums, SBOMs, provenance, compatibility data and upgrade notes.
@@ -354,11 +354,16 @@ same-commit distribution-bundle preparation, the controlled `v0.8.0`
 publication playbook and production-like end-to-end certification. Public
 channel publication remains an explicit post-merge protected-environment gate.
 
+**Publication evidence:** `v0.9.0` was published from approved commit
+`0900ffc434a3f46dfbabfb23c0a7ae18e59c187f`. GitHub Release publication,
+rebuild-free GHCR promotion, credential-free channel observation and canonical
+distribution verification completed successfully.
+
 ### Phase 7 — Operational Readiness
 
-**Status:** ⏳ Planned
+**Status:** 🚧 In progress
 
-- [ ] Define backup and restore contracts for PostgreSQL, files, generated configuration and installation metadata.
+- [x] Define backup and restore contracts for PostgreSQL, files, generated configuration and installation metadata.
 - [ ] Validate restore procedures in production-like environments.
 - [ ] Provide redacted diagnostic and support bundles.
 - [ ] Expose installation, deployment, job, storage and integration health signals.
@@ -408,6 +413,6 @@ channel publication remains an explicit post-merge protected-environment gate.
 - ✅ `v0.2.0`: design system and i18n baseline delivered
 - ✅ `v0.3.0`: grid engine baseline delivered
 - ✅ `v0.4.0`: reference application and domain framework baseline delivered
-- ⏳ `v0.9.0`: feature-complete pre-release after Epic 9
+- ✅ `v0.9.0`: distribution-channel pre-release published and certified during Epic 9
 - ⏳ `v1.0.0-rc.1`: validation candidate for Epic 10
 - ⏳ `v1.0.0`: stable documented contracts released only after the Epic 10 validation gate passes
