@@ -1,5 +1,16 @@
 graph TD
   n_component_Application["Application"]
+  n_component_Marketing__ApplicationCategory["Marketing::ApplicationCategory"]
+  n_component_Marketing__ArchitectureLayers["Marketing::ArchitectureLayers"]
+  n_component_Marketing__CallToAction["Marketing::CallToAction"]
+  n_component_Marketing__Capability["Marketing::Capability"]
+  n_component_Marketing__EngineeringFlow["Marketing::EngineeringFlow"]
+  n_component_Marketing__Footer["Marketing::Footer"]
+  n_component_Marketing__Header["Marketing::Header"]
+  n_component_Marketing__Hero["Marketing::Hero"]
+  n_component_Marketing__Lifecycle["Marketing::Lifecycle"]
+  n_component_Marketing__ProductPreview["Marketing::ProductPreview"]
+  n_component_Marketing__TechnologyStack["Marketing::TechnologyStack"]
   n_component_Ui__Alert["Ui::Alert"]
   n_component_Ui__Badge["Ui::Badge"]
   n_component_Ui__Base["Ui::Base"]
@@ -20,6 +31,7 @@ graph TD
   n_controller_Application["Application"]
   n_controller_ComponentShowcase["ComponentShowcase"]
   n_controller_Customers["Customers"]
+  n_controller_Dashboards["Dashboards"]
   n_controller_GridSavedViews["GridSavedViews"]
   n_controller_Grids["Grids"]
   n_controller_Health["Health"]
@@ -27,6 +39,7 @@ graph TD
   n_controller_Installation__Base["Installation::Base"]
   n_controller_Installation__Steps["Installation::Steps"]
   n_controller_LocalePreferences["LocalePreferences"]
+  n_controller_Marketing["Marketing"]
   n_controller_Memberships["Memberships"]
   n_controller_OrganizationInvitations["OrganizationInvitations"]
   n_controller_Organizations["Organizations"]
@@ -184,6 +197,7 @@ graph TD
   n_policy_Application["Application"]
   n_policy_Customer["Customer"]
   n_policy_Organization["Organization"]
+  n_test_Components__MarketingComponents["Components::MarketingComponents"]
   n_test_Components__Ui__ButtonComponent["Components::Ui::ButtonComponent"]
   n_test_Components__Ui__CoreComponents["Components::Ui::CoreComponents"]
   n_test_Components__Ui__Forms__FormComponents["Components::Ui::Forms::FormComponents"]
@@ -192,11 +206,13 @@ graph TD
   n_test_Components__Ui__ThemeSwitcherComponent["Components::Ui::ThemeSwitcherComponent"]
   n_test_Controllers__ComponentShowcaseController["Controllers::ComponentShowcaseController"]
   n_test_Controllers__CustomersController["Controllers::CustomersController"]
+  n_test_Controllers__DashboardsController["Controllers::DashboardsController"]
   n_test_Controllers__GridsController["Controllers::GridsController"]
   n_test_Controllers__HealthController["Controllers::HealthController"]
   n_test_Controllers__HomeController["Controllers::HomeController"]
   n_test_Controllers__Installation__StepsController["Controllers::Installation::StepsController"]
   n_test_Controllers__LocalePreferencesController["Controllers::LocalePreferencesController"]
+  n_test_Controllers__MarketingController["Controllers::MarketingController"]
   n_test_Controllers__OrganizationMemberAdministration["Controllers::OrganizationMemberAdministration"]
   n_test_Controllers__OrganizationsController["Controllers::OrganizationsController"]
   n_test_Controllers__TenantSelectionsController["Controllers::TenantSelectionsController"]
@@ -267,6 +283,9 @@ graph TD
   n_test_Services__Upgrades__Version["Services::Upgrades::Version"]
   n_component_Application -->|DOCUMENTED_BY| n_document_Design_system__Application_shell
   n_component_Application -->|TESTED_BY| n_test_Components__Ui__Layout__ApplicationShellComponent
+  n_component_Marketing__Header -->|TESTED_BY| n_test_Requests__SecurityHeaders
+  n_component_Marketing__Lifecycle -->|DOCUMENTED_BY| n_document_Extensions__Lifecycle_guide
+  n_component_Marketing__Lifecycle -->|TESTED_BY| n_test_Services__Extensions__Lifecycle
   n_component_Ui__Base -->|DOCUMENTED_BY| n_document_Installation__Database_provisioning
   n_component_Ui__Base -->|DOCUMENTED_BY| n_document_Packaging__Container_baseline
   n_component_Ui__Base -->|DOCUMENTED_BY| n_document_Security__Security_baseline
@@ -280,6 +299,7 @@ graph TD
   n_controller_Customers -->|DOCUMENTED_BY| n_document_Modules__Customers__AiContext
   n_controller_Customers -->|TESTED_BY| n_test_Controllers__CustomersController
   n_controller_Customers -->|TESTED_BY| n_test_Operations__CustomersOperations
+  n_controller_Dashboards -->|TESTED_BY| n_test_Controllers__DashboardsController
   n_controller_Grids -->|TESTED_BY| n_test_Controllers__GridsController
   n_controller_Health -->|DOCUMENTED_BY| n_document_Ai__Repository_health
   n_controller_Health -->|TESTED_BY| n_test_Controllers__HealthController
@@ -290,6 +310,8 @@ graph TD
   n_controller_Installation__Base -->|DOCUMENTED_BY| n_document_Security__Security_baseline
   n_controller_Installation__Steps -->|TESTED_BY| n_test_Controllers__Installation__StepsController
   n_controller_LocalePreferences -->|TESTED_BY| n_test_Controllers__LocalePreferencesController
+  n_controller_Marketing -->|TESTED_BY| n_test_Components__MarketingComponents
+  n_controller_Marketing -->|TESTED_BY| n_test_Controllers__MarketingController
   n_controller_Organizations -->|DOCUMENTED_BY| n_document_Modules__Organizations__AiContext
   n_controller_Organizations -->|TESTED_BY| n_test_Controllers__OrganizationsController
   n_controller_TenantSelections -->|TESTED_BY| n_test_Controllers__TenantSelectionsController

@@ -1,5 +1,16 @@
 digraph repository {
   "component:Application" [label="Application"];
+  "component:Marketing::ApplicationCategory" [label="Marketing::ApplicationCategory"];
+  "component:Marketing::ArchitectureLayers" [label="Marketing::ArchitectureLayers"];
+  "component:Marketing::CallToAction" [label="Marketing::CallToAction"];
+  "component:Marketing::Capability" [label="Marketing::Capability"];
+  "component:Marketing::EngineeringFlow" [label="Marketing::EngineeringFlow"];
+  "component:Marketing::Footer" [label="Marketing::Footer"];
+  "component:Marketing::Header" [label="Marketing::Header"];
+  "component:Marketing::Hero" [label="Marketing::Hero"];
+  "component:Marketing::Lifecycle" [label="Marketing::Lifecycle"];
+  "component:Marketing::ProductPreview" [label="Marketing::ProductPreview"];
+  "component:Marketing::TechnologyStack" [label="Marketing::TechnologyStack"];
   "component:Ui::Alert" [label="Ui::Alert"];
   "component:Ui::Badge" [label="Ui::Badge"];
   "component:Ui::Base" [label="Ui::Base"];
@@ -20,6 +31,7 @@ digraph repository {
   "controller:Application" [label="Application"];
   "controller:ComponentShowcase" [label="ComponentShowcase"];
   "controller:Customers" [label="Customers"];
+  "controller:Dashboards" [label="Dashboards"];
   "controller:GridSavedViews" [label="GridSavedViews"];
   "controller:Grids" [label="Grids"];
   "controller:Health" [label="Health"];
@@ -27,6 +39,7 @@ digraph repository {
   "controller:Installation::Base" [label="Installation::Base"];
   "controller:Installation::Steps" [label="Installation::Steps"];
   "controller:LocalePreferences" [label="LocalePreferences"];
+  "controller:Marketing" [label="Marketing"];
   "controller:Memberships" [label="Memberships"];
   "controller:OrganizationInvitations" [label="OrganizationInvitations"];
   "controller:Organizations" [label="Organizations"];
@@ -184,6 +197,7 @@ digraph repository {
   "policy:Application" [label="Application"];
   "policy:Customer" [label="Customer"];
   "policy:Organization" [label="Organization"];
+  "test:Components::MarketingComponents" [label="Components::MarketingComponents"];
   "test:Components::Ui::ButtonComponent" [label="Components::Ui::ButtonComponent"];
   "test:Components::Ui::CoreComponents" [label="Components::Ui::CoreComponents"];
   "test:Components::Ui::Forms::FormComponents" [label="Components::Ui::Forms::FormComponents"];
@@ -192,11 +206,13 @@ digraph repository {
   "test:Components::Ui::ThemeSwitcherComponent" [label="Components::Ui::ThemeSwitcherComponent"];
   "test:Controllers::ComponentShowcaseController" [label="Controllers::ComponentShowcaseController"];
   "test:Controllers::CustomersController" [label="Controllers::CustomersController"];
+  "test:Controllers::DashboardsController" [label="Controllers::DashboardsController"];
   "test:Controllers::GridsController" [label="Controllers::GridsController"];
   "test:Controllers::HealthController" [label="Controllers::HealthController"];
   "test:Controllers::HomeController" [label="Controllers::HomeController"];
   "test:Controllers::Installation::StepsController" [label="Controllers::Installation::StepsController"];
   "test:Controllers::LocalePreferencesController" [label="Controllers::LocalePreferencesController"];
+  "test:Controllers::MarketingController" [label="Controllers::MarketingController"];
   "test:Controllers::OrganizationMemberAdministration" [label="Controllers::OrganizationMemberAdministration"];
   "test:Controllers::OrganizationsController" [label="Controllers::OrganizationsController"];
   "test:Controllers::TenantSelectionsController" [label="Controllers::TenantSelectionsController"];
@@ -267,6 +283,9 @@ digraph repository {
   "test:Services::Upgrades::Version" [label="Services::Upgrades::Version"];
   "component:Application" -> "document:Design-system::Application-shell" [label="DOCUMENTED_BY"];
   "component:Application" -> "test:Components::Ui::Layout::ApplicationShellComponent" [label="TESTED_BY"];
+  "component:Marketing::Header" -> "test:Requests::SecurityHeaders" [label="TESTED_BY"];
+  "component:Marketing::Lifecycle" -> "document:Extensions::Lifecycle-guide" [label="DOCUMENTED_BY"];
+  "component:Marketing::Lifecycle" -> "test:Services::Extensions::Lifecycle" [label="TESTED_BY"];
   "component:Ui::Base" -> "document:Installation::Database-provisioning" [label="DOCUMENTED_BY"];
   "component:Ui::Base" -> "document:Packaging::Container-baseline" [label="DOCUMENTED_BY"];
   "component:Ui::Base" -> "document:Security::Security-baseline" [label="DOCUMENTED_BY"];
@@ -280,6 +299,7 @@ digraph repository {
   "controller:Customers" -> "document:Modules::Customers::AiContext" [label="DOCUMENTED_BY"];
   "controller:Customers" -> "test:Controllers::CustomersController" [label="TESTED_BY"];
   "controller:Customers" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
+  "controller:Dashboards" -> "test:Controllers::DashboardsController" [label="TESTED_BY"];
   "controller:Grids" -> "test:Controllers::GridsController" [label="TESTED_BY"];
   "controller:Health" -> "document:Ai::Repository-health" [label="DOCUMENTED_BY"];
   "controller:Health" -> "test:Controllers::HealthController" [label="TESTED_BY"];
@@ -290,6 +310,8 @@ digraph repository {
   "controller:Installation::Base" -> "document:Security::Security-baseline" [label="DOCUMENTED_BY"];
   "controller:Installation::Steps" -> "test:Controllers::Installation::StepsController" [label="TESTED_BY"];
   "controller:LocalePreferences" -> "test:Controllers::LocalePreferencesController" [label="TESTED_BY"];
+  "controller:Marketing" -> "test:Components::MarketingComponents" [label="TESTED_BY"];
+  "controller:Marketing" -> "test:Controllers::MarketingController" [label="TESTED_BY"];
   "controller:Organizations" -> "document:Modules::Organizations::AiContext" [label="DOCUMENTED_BY"];
   "controller:Organizations" -> "test:Controllers::OrganizationsController" [label="TESTED_BY"];
   "controller:TenantSelections" -> "test:Controllers::TenantSelectionsController" [label="TESTED_BY"];

@@ -4,13 +4,13 @@
 
 ## Composition
 
-- component: 18
-- controller: 17
+- component: 29
+- controller: 19
 - document: 119
 - job: 7
 - model: 21
 - policy: 3
-- test: 81
+- test: 84
 
 ## Diagram
 
@@ -27,6 +27,7 @@ graph LR
   customer_export[CustomerExport]
   customer_import[CustomerImport]
   customers[Customers]
+  dashboards[Dashboards]
   domain_event[DomainEvent]
   feature_flag[FeatureFlag]
   grid_saved_view[GridSavedView]
@@ -41,6 +42,7 @@ graph LR
   integration[Integration]
   lib[Lib]
   locale_preferences[LocalePreferences]
+  marketing[Marketing]
   membership[Membership]
   memberships[Memberships]
   models[Models]

@@ -3,6 +3,7 @@
 - `controller:Application`: component:Application, component:Ui::Layout::ApplicationShell, controller:Application, document:Design-system::Application-shell, job:Application, policy:Application, test:Components::Ui::Layout::ApplicationShellComponent
 - `controller:ComponentShowcase`: controller:ComponentShowcase, test:Controllers::ComponentShowcaseController
 - `controller:Customers`: controller:Customers, document:Distribution::Operations, document:Extensions::Operations, document:Modules::Customers::AiContext, model:Customer, policy:Customer, test:Controllers::CustomersController, test:Models::Customer, test:Operations::CustomersOperations
+- `controller:Dashboards`: controller:Dashboards, test:Controllers::DashboardsController
 - `controller:GridSavedViews`: controller:GridSavedViews
 - `controller:Grids`: controller:Grids, test:Controllers::GridsController
 - `controller:Health`: controller:Health, document:Ai::Repository-health, test:Controllers::HealthController, test:Lib::RepositoryIntelligenceHealth
@@ -10,6 +11,7 @@
 - `controller:Installation::Base`: component:Ui::Base, controller:Installation::Base, document:Installation::Database-provisioning, document:Packaging::Container-baseline, document:Security::Security-baseline
 - `controller:Installation::Steps`: controller:Installation::Steps, test:Controllers::Installation::StepsController
 - `controller:LocalePreferences`: controller:LocalePreferences, test:Controllers::LocalePreferencesController
+- `controller:Marketing`: controller:Marketing, test:Components::MarketingComponents, test:Controllers::MarketingController
 - `controller:Memberships`: controller:Memberships
 - `controller:OrganizationInvitations`: controller:OrganizationInvitations
 - `controller:Organizations`: controller:Organizations, document:Modules::Organizations::AiContext, model:Organization, policy:Organization, test:Controllers::OrganizationsController

@@ -1,8 +1,48 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "cc735b5915b5f02de460383fe8d23ab6b65a45fb",
+  "repository_commit": "5520bd6f917dd236342ffd981d9d44372b401d39",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
+    {
+      "path": "app/assets/fonts/IBMPlexMono-Regular.ttf",
+      "kind": "source",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46"
+    },
+    {
+      "path": "app/assets/fonts/InstrumentSans-Variable.ttf",
+      "kind": "source",
+      "sha256": "b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efdde389b33b1"
+    },
+    {
+      "path": "app/assets/fonts/OFL-IBMPlexMono.txt",
+      "kind": "source",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "path": "app/assets/fonts/OFL-InstrumentSans.txt",
+      "kind": "source",
+      "sha256": "9e27a72ed30eb49a08678f6a5d6ed98ec7ba5368f541637ee0683ec9134ef966"
+    },
+    {
+      "path": "app/assets/images/brand/NomoTect_Arc02_Master.svg",
+      "kind": "source",
+      "sha256": "3cb1db2133bb4126d937666e187e91b2050586ea20d3587a72eed49dc0ed401f"
+    },
+    {
+      "path": "app/assets/images/brand/NomoTect_Arc02_Micro.svg",
+      "kind": "source",
+      "sha256": "5c15a6e4deb7f972ec40b532c4e89321811c0e2604b145aa5432de0b691905f9"
+    },
+    {
+      "path": "app/assets/images/brand/NomoTect_Lockup_Horizontal.svg",
+      "kind": "source",
+      "sha256": "58042f9306e33581422ed78c0cb8c57e542adbc342a888a2b98751e6c788b144"
+    },
+    {
+      "path": "app/assets/images/brand/NomoTect_Lockup_Horizontal_Dark.svg",
+      "kind": "source",
+      "sha256": "e1da7b8938b3a0ff5e13a0088956fd8454183fb3b286553f6535d8744dc1bcf7"
+    },
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
@@ -14,9 +54,124 @@
       "sha256": "f1dd864bc08cc5fc8c0e22c45cc632aa1ad8ef805d6cc507a6d66e156e1292b2"
     },
     {
+      "path": "app/assets/stylesheets/marketing.css",
+      "kind": "source",
+      "sha256": "69d8400ca6f41dd280844e9cd02387317f763e9cba32fe737faa5b4f0747b847"
+    },
+    {
       "path": "app/components/application_component.rb",
       "kind": "component",
       "sha256": "bae1ce099d5b8dac42b5909f422a522e858abb13b96301b24eb20d2e439a9004"
+    },
+    {
+      "path": "app/components/marketing/application_category_component.html.erb",
+      "kind": "component",
+      "sha256": "bfa3b01fa21d77dd160074affa051e7094ca3cd722ec6d9ff34841ec5d17a7f4"
+    },
+    {
+      "path": "app/components/marketing/application_category_component.rb",
+      "kind": "component",
+      "sha256": "c8fc599df331e29b3f18d796ec09623728d415f76d1ca6292a9e10d642e50fc0"
+    },
+    {
+      "path": "app/components/marketing/architecture_layers_component.html.erb",
+      "kind": "component",
+      "sha256": "30cf84da76d0f56a37abcfd77d6335fcfc376390c108fa297a63893e060bd347"
+    },
+    {
+      "path": "app/components/marketing/architecture_layers_component.rb",
+      "kind": "component",
+      "sha256": "8c889800c2e8fce5c68dcd1eb0ce18d3b67f10c5ecc033891b4dc46882aeb965"
+    },
+    {
+      "path": "app/components/marketing/call_to_action_component.html.erb",
+      "kind": "component",
+      "sha256": "c26c26e653ff5a9e680466d9e0e135107206562d291fe2cc3e60202df01fe1d5"
+    },
+    {
+      "path": "app/components/marketing/call_to_action_component.rb",
+      "kind": "component",
+      "sha256": "4146863ad0343fdd763c13a0bd758912856457dd66c57d723f3ac9bb841fe444"
+    },
+    {
+      "path": "app/components/marketing/capability_component.html.erb",
+      "kind": "component",
+      "sha256": "89887caab5ec7ef3c05c0bd4defb361c139daf4a13bae020a6f4c7508ddec898"
+    },
+    {
+      "path": "app/components/marketing/capability_component.rb",
+      "kind": "component",
+      "sha256": "8d9c082bef091f6b75ac57b8ff4b60a2739cbe56a3e115e03f610f7919e76e7a"
+    },
+    {
+      "path": "app/components/marketing/engineering_flow_component.html.erb",
+      "kind": "component",
+      "sha256": "790be085057c291c837c27d310fb38de0c38287ff41b939270f70eb9c914b2bd"
+    },
+    {
+      "path": "app/components/marketing/engineering_flow_component.rb",
+      "kind": "component",
+      "sha256": "e48001a1a6cbeb09562858fa7736a83afea40971ffe85b2346aa05dafb91ee0e"
+    },
+    {
+      "path": "app/components/marketing/footer_component.html.erb",
+      "kind": "component",
+      "sha256": "15250963e2bc29339c2e08b5fb7224785a8cfe16c1b7e9188b5205a6cb0b1972"
+    },
+    {
+      "path": "app/components/marketing/footer_component.rb",
+      "kind": "component",
+      "sha256": "f678e8987c73884564d474504a1dc4d1102adb7482186aab6b8431daf79d40be"
+    },
+    {
+      "path": "app/components/marketing/header_component.html.erb",
+      "kind": "component",
+      "sha256": "9dc814d8aa28aa0e60a6fbd1116b92df6271b90cc2e9b7dcc10e026a765ca79b"
+    },
+    {
+      "path": "app/components/marketing/header_component.rb",
+      "kind": "component",
+      "sha256": "583067ce5833c48da5f99ead8bfaa657648be83696826cac3ca6fd266af399cf"
+    },
+    {
+      "path": "app/components/marketing/hero_component.html.erb",
+      "kind": "component",
+      "sha256": "7301f71646df9300cb73b0f1a088b642d61910a66e6188d074a9ceedd022fab4"
+    },
+    {
+      "path": "app/components/marketing/hero_component.rb",
+      "kind": "component",
+      "sha256": "7ea0a2401c1fd544d5e3d4be6b80e9ec0661b8a140c1957c2bf9d97c6f5555e2"
+    },
+    {
+      "path": "app/components/marketing/lifecycle_component.html.erb",
+      "kind": "component",
+      "sha256": "b0b6e59771641bca90b7df7ed22533a85ecd892d74fa16810e86fa5b693b39fb"
+    },
+    {
+      "path": "app/components/marketing/lifecycle_component.rb",
+      "kind": "component",
+      "sha256": "26657727efe071ebe06bad7c87fc6c1edaa56d22d7f7dc368d3c58d6b7b98b1f"
+    },
+    {
+      "path": "app/components/marketing/product_preview_component.html.erb",
+      "kind": "component",
+      "sha256": "285533ae58ee1a1bb53aecb61206680e81be82449ffccb94abb30b2c3539f72b"
+    },
+    {
+      "path": "app/components/marketing/product_preview_component.rb",
+      "kind": "component",
+      "sha256": "ce16a1a73240ee783cdcc0b046898e95eacb000a67a5752e38290901dc0dc4f4"
+    },
+    {
+      "path": "app/components/marketing/technology_stack_component.html.erb",
+      "kind": "component",
+      "sha256": "8986649c69cc72d9038975f9632657b76a576f4b134b3f4192ce4d951c8b14d4"
+    },
+    {
+      "path": "app/components/marketing/technology_stack_component.rb",
+      "kind": "component",
+      "sha256": "81506428e13793943106aa6497546b8d69413124b22050c9416ad1aa81b8fed9"
     },
     {
       "path": "app/components/ui/alert_component.rb",
@@ -139,6 +294,11 @@
       "sha256": "71a6bfc6ad263a28c8e792c94ae485db396cf60a0b1259d4592bc1ee4b60a87a"
     },
     {
+      "path": "app/controllers/dashboards_controller.rb",
+      "kind": "controller",
+      "sha256": "4295090d17fe8b5da4a73d4010e670aee4f5100400b9ace3c32c7d8ce802d32c"
+    },
+    {
       "path": "app/controllers/grid_saved_views_controller.rb",
       "kind": "controller",
       "sha256": "1db8fcfc2a55935d05dced0d037363c3dc803d73ed2be86a499181f000e490cf"
@@ -172,6 +332,11 @@
       "path": "app/controllers/locale_preferences_controller.rb",
       "kind": "controller",
       "sha256": "1db89640a3c128b9e26b204b0e94db1a31aa921507123ec9ae57ac6143f3c3fe"
+    },
+    {
+      "path": "app/controllers/marketing_controller.rb",
+      "kind": "controller",
+      "sha256": "d339e1f6e55667e247cd8dafd21381af6dbb1a82b20a696b61dfad5cf2e1d696"
     },
     {
       "path": "app/controllers/memberships_controller.rb",
@@ -252,6 +417,11 @@
       "path": "app/javascript/controllers/log_scroll_controller.js",
       "kind": "source",
       "sha256": "6b77bc16960552853e3ee7bb43cf8cec3d00a3402634f7be8e6c5ba631ecbac6"
+    },
+    {
+      "path": "app/javascript/controllers/marketing_nav_controller.js",
+      "kind": "source",
+      "sha256": "7e8743ca9db4a4c764bbbb9dd1a096122eea2f0c96a117fe03bb0637d1669607"
     },
     {
       "path": "app/javascript/controllers/navigation_drawer_controller.js",
@@ -944,6 +1114,11 @@
       "sha256": "557897f5c19c824e8771fc892e75df1165d52abd5a62d894cd50a2856f46aa43"
     },
     {
+      "path": "app/views/dashboards/show.html.erb",
+      "kind": "source",
+      "sha256": "d6d9d56809390931bc2243df1f06fd6fe5c5e24a7b8eb02cdf433e616a066e81"
+    },
+    {
       "path": "app/views/grids/show.html.erb",
       "kind": "source",
       "sha256": "bbbcfaa589298fbda3dd9b3a74b8e8d7f57784d3e9a7eafef705d5f44e3f033b"
@@ -977,6 +1152,16 @@
       "path": "app/views/layouts/mailer.html.erb",
       "kind": "source",
       "sha256": "8d24c84b27177a54f9f118e505d3016fc9609ba99ac3c608589028ccce2d654e"
+    },
+    {
+      "path": "app/views/layouts/marketing.html.erb",
+      "kind": "source",
+      "sha256": "b074c5ac2f75206bc4606a12e1be44593cc3782fe23c8e8998e8f4770734dead"
+    },
+    {
+      "path": "app/views/marketing/show.html.erb",
+      "kind": "source",
+      "sha256": "ef6f6cf975bc3548d9045a6c5bc82aa035e0f29123a56963224d1ef6b7535bc1"
     },
     {
       "path": "app/views/organizations/_form.html.erb",
@@ -1326,7 +1511,7 @@
     {
       "path": "config/routes.rb",
       "kind": "source",
-      "sha256": "35bf6a7aeeee081a6c2046b63ff3e4e5f5fc9a060dfa42a55e7784e69b2daf98"
+      "sha256": "b000265cb16a630a2fa92622f0da3ae70b6f3f4df218743057044706e009327d"
     },
     {
       "path": "config/storage.yml",
@@ -2011,7 +2196,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "6481966e154ff3ea653ff23bf49f1a6a7ab4df5607cd5bdd4a5c53fd4483bd72"
+      "sha256": "e76adaa23836fafb94e5fb94e9a95b96706b2f5151eb804c774d669681e73fa6"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2254,6 +2439,11 @@
       "sha256": "fd348d1d7a1a2c3bd46eadd5e77d62fb3d804aae8395ec9d192f94fd3f48d50f"
     },
     {
+      "path": "test/components/marketing_components_test.rb",
+      "kind": "test",
+      "sha256": "3a2efc1caf6c64b647f3953db9362e52ffc213545f5b5288fecea250a9d41e62"
+    },
+    {
       "path": "test/components/ui/button_component_test.rb",
       "kind": "test",
       "sha256": "8bb13fd11326e0e2509ae92e988eede71e09abbd7ab77ec169a485a4f4e47675"
@@ -2294,6 +2484,11 @@
       "sha256": "c38404dbdf61ffb88e5f0a8106c525db368eee9ac29554ce442ab3297c5353b4"
     },
     {
+      "path": "test/controllers/dashboards_controller_test.rb",
+      "kind": "test",
+      "sha256": "83964a4c450a94bae82c59e9bde4f22b14295861861e3a6882f5ec6d6b6755c4"
+    },
+    {
       "path": "test/controllers/grids_controller_test.rb",
       "kind": "test",
       "sha256": "48b8a6e586888e5a2335aec9b3da9b42650432216498d67df976e4684aebf618"
@@ -2317,6 +2512,11 @@
       "path": "test/controllers/locale_preferences_controller_test.rb",
       "kind": "test",
       "sha256": "8583c6005dc3a3acde6f0b02634925f0cd9beef35e3b4a2e5a30cfa59ff808e8"
+    },
+    {
+      "path": "test/controllers/marketing_controller_test.rb",
+      "kind": "test",
+      "sha256": "9bb21d02d6498b7d029149db2709901826a72c1507956e0607e4087354ecaaba"
     },
     {
       "path": "test/controllers/organization_member_administration_test.rb",

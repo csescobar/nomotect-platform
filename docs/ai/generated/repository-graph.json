@@ -12,6 +12,116 @@
       }
     },
     {
+      "id": "component:Marketing::ApplicationCategory",
+      "type": "component",
+      "name": "Marketing::ApplicationCategory",
+      "path": "app/components/marketing/application_category_component.rb",
+      "properties": {
+        "sha256": "c8fc599df331e29b3f18d796ec09623728d415f76d1ca6292a9e10d642e50fc0",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Marketing::ArchitectureLayers",
+      "type": "component",
+      "name": "Marketing::ArchitectureLayers",
+      "path": "app/components/marketing/architecture_layers_component.rb",
+      "properties": {
+        "sha256": "8c889800c2e8fce5c68dcd1eb0ce18d3b67f10c5ecc033891b4dc46882aeb965",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Marketing::CallToAction",
+      "type": "component",
+      "name": "Marketing::CallToAction",
+      "path": "app/components/marketing/call_to_action_component.rb",
+      "properties": {
+        "sha256": "4146863ad0343fdd763c13a0bd758912856457dd66c57d723f3ac9bb841fe444",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Marketing::Capability",
+      "type": "component",
+      "name": "Marketing::Capability",
+      "path": "app/components/marketing/capability_component.rb",
+      "properties": {
+        "sha256": "8d9c082bef091f6b75ac57b8ff4b60a2739cbe56a3e115e03f610f7919e76e7a",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Marketing::EngineeringFlow",
+      "type": "component",
+      "name": "Marketing::EngineeringFlow",
+      "path": "app/components/marketing/engineering_flow_component.rb",
+      "properties": {
+        "sha256": "e48001a1a6cbeb09562858fa7736a83afea40971ffe85b2346aa05dafb91ee0e",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Marketing::Footer",
+      "type": "component",
+      "name": "Marketing::Footer",
+      "path": "app/components/marketing/footer_component.rb",
+      "properties": {
+        "sha256": "f678e8987c73884564d474504a1dc4d1102adb7482186aab6b8431daf79d40be",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Marketing::Header",
+      "type": "component",
+      "name": "Marketing::Header",
+      "path": "app/components/marketing/header_component.rb",
+      "properties": {
+        "sha256": "583067ce5833c48da5f99ead8bfaa657648be83696826cac3ca6fd266af399cf",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Marketing::Hero",
+      "type": "component",
+      "name": "Marketing::Hero",
+      "path": "app/components/marketing/hero_component.rb",
+      "properties": {
+        "sha256": "7ea0a2401c1fd544d5e3d4be6b80e9ec0661b8a140c1957c2bf9d97c6f5555e2",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Marketing::Lifecycle",
+      "type": "component",
+      "name": "Marketing::Lifecycle",
+      "path": "app/components/marketing/lifecycle_component.rb",
+      "properties": {
+        "sha256": "26657727efe071ebe06bad7c87fc6c1edaa56d22d7f7dc368d3c58d6b7b98b1f",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Marketing::ProductPreview",
+      "type": "component",
+      "name": "Marketing::ProductPreview",
+      "path": "app/components/marketing/product_preview_component.rb",
+      "properties": {
+        "sha256": "ce16a1a73240ee783cdcc0b046898e95eacb000a67a5752e38290901dc0dc4f4",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Marketing::TechnologyStack",
+      "type": "component",
+      "name": "Marketing::TechnologyStack",
+      "path": "app/components/marketing/technology_stack_component.rb",
+      "properties": {
+        "sha256": "81506428e13793943106aa6497546b8d69413124b22050c9416ad1aa81b8fed9",
+        "source": "platform"
+      }
+    },
+    {
       "id": "component:Ui::Alert",
       "type": "component",
       "name": "Ui::Alert",
@@ -212,6 +322,16 @@
       }
     },
     {
+      "id": "controller:Dashboards",
+      "type": "controller",
+      "name": "Dashboards",
+      "path": "app/controllers/dashboards_controller.rb",
+      "properties": {
+        "sha256": "4295090d17fe8b5da4a73d4010e670aee4f5100400b9ace3c32c7d8ce802d32c",
+        "source": "platform"
+      }
+    },
+    {
       "id": "controller:GridSavedViews",
       "type": "controller",
       "name": "GridSavedViews",
@@ -278,6 +398,16 @@
       "path": "app/controllers/locale_preferences_controller.rb",
       "properties": {
         "sha256": "1db89640a3c128b9e26b204b0e94db1a31aa921507123ec9ae57ac6143f3c3fe",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "controller:Marketing",
+      "type": "controller",
+      "name": "Marketing",
+      "path": "app/controllers/marketing_controller.rb",
+      "properties": {
+        "sha256": "d339e1f6e55667e247cd8dafd21381af6dbb1a82b20a696b61dfad5cf2e1d696",
         "source": "platform"
       }
     },
@@ -1357,7 +1487,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "6481966e154ff3ea653ff23bf49f1a6a7ab4df5607cd5bdd4a5c53fd4483bd72",
+        "sha256": "e76adaa23836fafb94e5fb94e9a95b96706b2f5151eb804c774d669681e73fa6",
         "source": "platform"
       }
     },
@@ -1852,6 +1982,16 @@
       }
     },
     {
+      "id": "test:Components::MarketingComponents",
+      "type": "test",
+      "name": "Components::MarketingComponents",
+      "path": "test/components/marketing_components_test.rb",
+      "properties": {
+        "sha256": "3a2efc1caf6c64b647f3953db9362e52ffc213545f5b5288fecea250a9d41e62",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Components::Ui::ButtonComponent",
       "type": "test",
       "name": "Components::Ui::ButtonComponent",
@@ -1932,6 +2072,16 @@
       }
     },
     {
+      "id": "test:Controllers::DashboardsController",
+      "type": "test",
+      "name": "Controllers::DashboardsController",
+      "path": "test/controllers/dashboards_controller_test.rb",
+      "properties": {
+        "sha256": "83964a4c450a94bae82c59e9bde4f22b14295861861e3a6882f5ec6d6b6755c4",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Controllers::GridsController",
       "type": "test",
       "name": "Controllers::GridsController",
@@ -1978,6 +2128,16 @@
       "path": "test/controllers/locale_preferences_controller_test.rb",
       "properties": {
         "sha256": "8583c6005dc3a3acde6f0b02634925f0cd9beef35e3b4a2e5a30cfa59ff808e8",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Controllers::MarketingController",
+      "type": "test",
+      "name": "Controllers::MarketingController",
+      "path": "test/controllers/marketing_controller_test.rb",
+      "properties": {
+        "sha256": "9bb21d02d6498b7d029149db2709901826a72c1507956e0607e4087354ecaaba",
         "source": "platform"
       }
     },
@@ -2676,6 +2836,24 @@
       "properties": {}
     },
     {
+      "from": "component:Marketing::Header",
+      "to": "test:Requests::SecurityHeaders",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Marketing::Lifecycle",
+      "to": "document:Extensions::Lifecycle-guide",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Marketing::Lifecycle",
+      "to": "test:Services::Extensions::Lifecycle",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "component:Ui::Base",
       "to": "document:Installation::Database-provisioning",
       "type": "DOCUMENTED_BY",
@@ -2754,6 +2932,12 @@
       "properties": {}
     },
     {
+      "from": "controller:Dashboards",
+      "to": "test:Controllers::DashboardsController",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "controller:Grids",
       "to": "test:Controllers::GridsController",
       "type": "TESTED_BY",
@@ -2810,6 +2994,18 @@
     {
       "from": "controller:LocalePreferences",
       "to": "test:Controllers::LocalePreferencesController",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Marketing",
+      "to": "test:Components::MarketingComponents",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Marketing",
+      "to": "test:Controllers::MarketingController",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -3318,5 +3514,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "cc735b5915b5f02de460383fe8d23ab6b65a45fb"
+  "repository_commit": "5520bd6f917dd236342ffd981d9d44372b401d39"
 }

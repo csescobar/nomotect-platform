@@ -12,7 +12,7 @@
 
 ## Relationships
 
-
+- `component:Marketing::Header` —TESTED_BY→ `test:Requests::SecurityHeaders`
 
 ## Contract
 
