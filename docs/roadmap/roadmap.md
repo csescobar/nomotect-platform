@@ -364,7 +364,7 @@ distribution verification completed successfully.
 **Status:** 🚧 In progress
 
 - [x] Define backup and restore contracts for PostgreSQL, files, generated configuration and installation metadata.
-- [ ] Validate restore procedures in production-like environments.
+- [x] Validate restore procedures in production-like environments.
 - [ ] Provide redacted diagnostic and support bundles.
 - [ ] Expose installation, deployment, job, storage and integration health signals.
 - [ ] Document disaster-recovery objectives and manual interventions.

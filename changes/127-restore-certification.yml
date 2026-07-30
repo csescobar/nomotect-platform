@@ -1,0 +1,24 @@
+schema_version: 1
+id: 127-restore-certification
+category: feature
+summary: Certify production-like restore procedures with fail-closed safety, checksum and verification gates.
+release_impact: minor
+contracts:
+  - operational-readiness
+  - restore-execution
+  - restore-certification
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Restore execution requires maintenance mode, drained work, operator confirmation and valid component checksums.
+privacy:
+  impact: reviewed
+  notes: Certification uses credential-free metadata and temporary component media.
+accessibility:
+  impact: none
+  notes:

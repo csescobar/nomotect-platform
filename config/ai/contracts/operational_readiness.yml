@@ -3,6 +3,10 @@ version: 1
 owns:
   - operational_backup_manifest
   - restore_plan
+  - restore_safety_gate
+  - restore_adapter_registry
+  - restore_execution
+  - restore_certification
   - backup_component_inventory
   - restore_verification_requirements
 may_use:
@@ -23,7 +27,11 @@ invariants:
   - every component is checksum-bound
   - restore dependencies are explicit and ordered
   - restore execution requires a later provider adapter and operator-controlled safety gate
+  - restore execution requires maintenance mode, drained work and explicit operator confirmation
+  - every component checksum is verified before its adapter executes
+  - post-restore certification fails closed unless every required check passes
   - verification covers database schema, installation contract, generated artifacts and application health
 required_tests:
   - operational_backup_manifest_test
   - operational_restore_plan_test
+  - operational_restore_certification_test

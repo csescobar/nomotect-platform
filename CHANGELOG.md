@@ -9,6 +9,7 @@ Required release impact: `minor`.
 ### Added
 
 - Define credential-free backup manifests and ordered restore plans for Epic 9 operational readiness. (`126-operational-readiness-contracts`)
+- Certify production-like restore procedures with fail-closed safety, checksum and verification gates. (`127-restore-certification`)
 
 ## 0.9.0
 

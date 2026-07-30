@@ -24,9 +24,12 @@ A restore plan references one backup manifest and declares ordered,
 dependency-aware steps. Each step names the component, the intended provider
 adapter action and whether operator confirmation is required.
 
-Restore execution is intentionally unavailable in this slice. A later Phase 7
-task must introduce reviewed provider adapters, maintenance and concurrency
-safety, production-like restore execution, and evidence capture.
+Restore execution is mediated by an explicit provider/component adapter
+registry. Before any adapter runs, the safety gate requires a matching manifest,
+a `production-like` target, maintenance mode, drained requests and jobs, a
+complete component plan and operator confirmation for every protected step.
+Each component checksum is verified immediately before execution, and the
+ordered operation runs under the installation execution lock.
 
 ## Verification boundary
 
@@ -37,8 +40,19 @@ Every restore plan declares verification for:
 - generated artifacts;
 - application health.
 
-Future certification must fail closed when a component, checksum, dependency or
-required verification result is unavailable.
+Certification fails closed when a component, adapter, checksum, dependency or
+required verification result is unavailable. The production-like certification
+uses temporary component media and target storage; it exercises the same safety,
+ordering, checksum and verification services without claiming support for a
+specific PostgreSQL or object-storage provider.
+
+Run the focused certification with:
+
+```bash
+bundle exec rails test \
+  test/services/operational_readiness \
+  test/integration/operational_restore_certification_test.rb
+```
 
 ## Security and privacy
 
