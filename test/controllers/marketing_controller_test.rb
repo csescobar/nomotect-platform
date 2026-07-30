@@ -26,6 +26,7 @@ class MarketingControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "link[rel='canonical'][href='http://www.example.com/marketing']", count: 1
     assert_select "meta[name='robots'][content='index,follow,max-image-preview:large']", count: 1
+    assert_select "meta[name='google-site-verification'][content='6UWm4w467BVq1xz_vHgalqyWI6kIasR1itiYNhD6XvQ']", count: 1
     assert_select "meta[property='og:type'][content='website']", count: 1
     assert_select "meta[property='og:title'][content=?]", I18n.t("marketing.meta.title"), count: 1
     assert_select "meta[name='twitter:card'][content='summary_large_image']", count: 1
