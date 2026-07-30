@@ -97,7 +97,8 @@ add compact switcher labels, and patch Rails to 8.1.3.1 (CVE-2026-66066):
 - Ensure digested CSS, JS, and SVG brand assets are packaged into `public_site/assets/` for 200 OK resolution on GitHub Pages.
  (`118-fix-github-pages-relative-asset-paths`)
 - Establish the public NomoTect landing page discovery baseline with the official
-favicon, canonical metadata, social cards, sitemap and static export checks.
+favicon, canonical metadata, social cards, sitemap and static export checks, and
+restrict theme selection to explicit light and dark modes.
  (`120-marketing-seo-foundation`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
