@@ -9,3 +9,4 @@
 !/.kamal/secrets.example
 .env
 .DS_Store
+/public_site

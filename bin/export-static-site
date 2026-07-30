@@ -1,0 +1,81 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "fileutils"
+require "pathname"
+require_relative "../config/environment"
+
+root = Pathname.new(File.expand_path("..", __dir__))
+output_dir = root.join("public_site")
+FileUtils.rm_rf(output_dir)
+FileUtils.mkdir_p(output_dir.join("assets/brand"))
+FileUtils.mkdir_p(output_dir.join("assets/fonts"))
+
+# Copy assets
+FileUtils.cp(root.join("app/assets/stylesheets/design_tokens.css"), output_dir.join("assets/design_tokens.css"))
+FileUtils.cp(root.join("app/assets/stylesheets/application.css"), output_dir.join("assets/application.css"))
+FileUtils.cp(root.join("app/assets/stylesheets/marketing.css"), output_dir.join("assets/marketing.css"))
+FileUtils.cp_r(Dir.glob(root.join("app/assets/images/brand/*")), output_dir.join("assets/brand"))
+FileUtils.cp_r(Dir.glob(root.join("app/assets/fonts/*")), output_dir.join("assets/fonts"))
+FileUtils.cp(root.join("public/favicon.svg"), output_dir.join("favicon.svg")) if root.join("public/favicon.svg").exist?
+
+# Render marketing page HTML with show_auth: false (no sign in button)
+controller = MarketingController.new
+controller.instance_variable_set(:@show_auth, false)
+html = MarketingController.renderer.render(
+  template: "marketing/show",
+  layout: "marketing",
+  assigns: { show_auth: false }
+)
+
+# Clean up digested asset filenames in HTML to match copied un-digested assets
+html.gsub!(%r{src="/assets/brand/([^"-]+)(?:-[a-f0-9]+)?\.svg"}, 'src="./assets/brand/\1.svg"')
+html.gsub!(%r{href="/assets/design_tokens\.css[^"]*"}, 'href="./assets/design_tokens.css"')
+html.gsub!(%r{href="/assets/application\.css[^"]*"}, 'href="./assets/application.css"')
+html.gsub!(%r{href="/assets/marketing\.css[^"]*"}, 'href="./assets/marketing.css"')
+html.gsub!(%r{href="/favicon\.svg[^"]*"}, 'href="./favicon.svg"')
+html.gsub!(%r{href="/"(?=[\s>])}, 'href="#"')
+html.gsub!(%r{<form[^>]*locale-switcher[^>]*>.*?</form>}m, '')
+
+# Inject static script for theme switching and mobile navigation toggle
+script = <<~HTML
+  <script>
+    (function() {
+      const STORAGE_KEY = "rails-hotwire-platform-theme";
+      const ALLOWED = ["system", "light", "dark"];
+      function apply(pref) {
+        const theme = ALLOWED.includes(pref) ? pref : "system";
+        localStorage.setItem(STORAGE_KEY, theme);
+        if (theme === "system") {
+          document.documentElement.removeAttribute("data-theme");
+        } else {
+          document.documentElement.dataset.theme = theme;
+        }
+      }
+      const initialPref = localStorage.getItem(STORAGE_KEY) || "system";
+      apply(initialPref);
+
+      document.addEventListener("DOMContentLoaded", function() {
+        const select = document.getElementById("theme-preference");
+        if (select) {
+          select.value = initialPref;
+          select.addEventListener("change", function(e) { apply(e.target.value); });
+        }
+        const toggle = document.querySelector('[data-action="marketing-nav#toggle"]');
+        const menu = document.querySelector('[data-marketing-nav-target="menu"]');
+        if (toggle && menu) {
+          toggle.addEventListener("click", function() {
+            const exp = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", !exp);
+            menu.classList.toggle("is-active");
+          });
+        }
+      });
+    })();
+  </script>
+HTML
+
+html.sub!("</head>", "#{script}\n</head>")
+
+output_dir.join("index.html").write(html)
+puts "Exported static site to #{output_dir}"

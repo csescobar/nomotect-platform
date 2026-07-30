@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <title><%= content_for(:title) || t("marketing.meta.title") %></title>
+    <meta name="description" content="<%= content_for(:meta_description) || t("marketing.meta.description") %>">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= platform_favicon_tag %>
+    <script nonce="<%= content_security_policy_nonce %>">
+      (() => {
+        const preference = localStorage.getItem("rails-hotwire-platform-theme");
+        if (preference === "light" || preference === "dark") {
+          document.documentElement.dataset.theme = preference;
+        }
+      })();
+    </script>
+    <%= stylesheet_link_tag "design_tokens", "application", "marketing", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="marketing-body">
+    <a href="#main-content" class="skip-link"><%= t("layout.skip_to_content") %></a>
+
+    <%= yield %>
+
+    <div class="toast-region" aria-live="polite" aria-atomic="false" id="toast-region">
+      <% flash.each do |type, message| %>
+        <div class="toast toast--<%= type %>" role="status"
+             data-controller="toast"
+             data-toast-duration-value="4000">
+          <span class="toast__message"><%= message %></span>
+          <button type="button" class="toast__close button button--ghost button--small"
+                  data-action="toast#dismiss"
+                  aria-label="<%= t("layout.close_notification") %>">&#x2715;</button>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>

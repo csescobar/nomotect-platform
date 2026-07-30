@@ -52,6 +52,7 @@
 
 - `document:Distribution::Ghcr` —TESTED_BY→ `test:Services::Distributions::GhcrPromotionPlan`
 - `test:Services::Distributions::Inspector` —TESTED_BY→ `test:Services::Extensions::Inspector`
+- `component:Marketing::Lifecycle` —TESTED_BY→ `test:Services::Extensions::Lifecycle`
 - `test:Services::Distributions::Manifest` —TESTED_BY→ `test:Services::Extensions::Manifest`
 - `test:Services::Extensions::Configuration` —TESTED_BY→ `test:Services::Installation::DatabaseConfiguration`
 - `test:Services::Extensions::Configuration` —TESTED_BY→ `test:Services::Installation::RuntimeDatabaseConfiguration`

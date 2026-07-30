@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     resources :grid_saved_views, only: %i[create update destroy]
   end
 
+  get "marketing", to: "marketing#show", as: :marketing
+  resource :dashboard, only: :show
+
   get "component_showcase", to: "component_showcase#show", as: :component_showcase
   get "health", to: "health#show", as: :health
   get "up", to: "rails/health#show", as: :rails_health_check

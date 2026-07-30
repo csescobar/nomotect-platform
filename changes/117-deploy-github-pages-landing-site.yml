@@ -1,0 +1,23 @@
+schema_version: 1
+id: 117-deploy-github-pages-landing-site
+category: feature
+summary: |
+  Add automated static site exporter (`bin/export-static-site`) and GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) to deploy the isolated NomoTect landing page to GitHub Pages (`https://csescobar.github.io/rails-hotwire-platform/`) with sign in button removed.
+release_impact: patch
+contracts:
+  - core
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:
