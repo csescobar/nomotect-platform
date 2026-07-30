@@ -1,0 +1,33 @@
+schema_version: 1
+id: 114-locale-toast-compact-labels-security
+category: fix
+summary: |
+  Allow unauthenticated locale preference updates, fix toast auto-dismiss,
+  add compact switcher labels, and patch Rails to 8.1.3.1 (CVE-2026-66066):
+  - Unauthenticated visitors can POST /locale_preferences to switch locale
+    without being redirected to sign-in; preference is persisted in the session.
+  - Toast controller updated to explicit opacity transitions and manual
+    removeEventListener cleanup for reliable auto-dismiss and close behaviour.
+  - LocaleSwitcherComponent and ThemeSwitcherComponent gain a `show_label`
+    parameter (default true) enabling compact header action bar layouts.
+  - Rails bumped from 8.1.3 to 8.1.3.1 to address GHSA-xr9x-r78c-5hrm
+    (arbitrary file read / RCE in Active Storage variant processing).
+release_impact: patch
+contracts:
+  - core
+  - security
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: action_required
+  notes: Rails 8.1.3.1 addresses CVE-2026-66066 (GHSA-xr9x-r78c-5hrm) — arbitrary file read and potential RCE in Active Storage variant processing. Upgrade immediately.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

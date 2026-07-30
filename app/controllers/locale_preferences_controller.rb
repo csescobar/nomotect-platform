@@ -1,4 +1,6 @@
 class LocalePreferencesController < ApplicationController
+  allow_unauthenticated_access
+
   def update
     locale = params.require(:locale)
 
@@ -7,8 +9,10 @@ class LocalePreferencesController < ApplicationController
       return
     end
 
-    Current.user.update!(locale: locale)
-    locale_name = Localization::SupportedLocales.fetch(locale).label
-    redirect_back fallback_location: root_path, status: :see_other, notice: I18n.t("localization.updated", locale_name: locale_name)
+    session[:locale] = locale
+    resume_session
+    Current.user&.update!(locale: locale)
+
+    redirect_back fallback_location: root_path, status: :see_other
   end
 end

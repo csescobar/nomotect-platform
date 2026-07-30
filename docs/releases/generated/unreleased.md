@@ -68,6 +68,17 @@
 - Fix danger button contrast with `#FFFFFF` text on `color.danger` and add hover states across all button variants
 - Expand header logo height (`height: 3.5rem`, `max-width: 20rem`) for clear SVG lockup legibility
  (`114-fix-design-token-scales-and-danger-button`)
+- Allow unauthenticated locale preference updates, fix toast auto-dismiss,
+add compact switcher labels, and patch Rails to 8.1.3.1 (CVE-2026-66066):
+- Unauthenticated visitors can POST /locale_preferences to switch locale
+  without being redirected to sign-in; preference is persisted in the session.
+- Toast controller updated to explicit opacity transitions and manual
+  removeEventListener cleanup for reliable auto-dismiss and close behaviour.
+- LocaleSwitcherComponent and ThemeSwitcherComponent gain a `show_label`
+  parameter (default true) enabling compact header action bar layouts.
+- Rails bumped from 8.1.3 to 8.1.3.1 to address GHSA-xr9x-r78c-5hrm
+  (arbitrary file read / RCE in Active Storage variant processing).
+ (`114-locale-toast-compact-labels-security`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
@@ -93,6 +104,7 @@
 - `bootstrap-scripts`
 - `change-fragment`
 - `changelog`
+- `core`
 - `customer-management`
 - `design-system`
 - `developer-experience`
@@ -138,11 +150,13 @@
 - `release-publication-cli`
 - `release-readiness`
 - `repository-intelligence`
+- `security`
 - `tenant-selection`
 - `upgrade-preflight`
 
 ## Cross-cutting assessments
 
+- **Security — 114-locale-toast-compact-labels-security:** Rails 8.1.3.1 addresses CVE-2026-66066 (GHSA-xr9x-r78c-5hrm) — arbitrary file read and potential RCE in Active Storage variant processing. Upgrade immediately.
 - **Security — 56-release-foundation:** Release metadata remains repository-local and contains no credentials.
 - **Security — 57-release-fragment-ci:** Validation uses bounded git arguments and reads repository metadata only.
 - **Security — 58-release-notes:** Generated notes contain normalized repository metadata and no secrets.
