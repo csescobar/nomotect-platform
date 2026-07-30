@@ -1,0 +1,27 @@
+schema_version: 1
+id: 119-nomotect-rebranding-and-documentation
+category: documentation
+summary: |
+  Update platform identity, agent control directives, and issue templates to NomoTect:
+  - Update `README.md` header, philosophy, and repository references.
+  - Add `docs/architecture/AGENTS.md` specifying `/core` (read-only) and `/installation` (read/write) boundaries.
+  - Update `AGENTS.md` and `.github/ISSUE_TEMPLATE/feature.md`.
+  - Execute global rebranding replacement of `rails-hotwire-platform` with `NomoTect` / `nomotect-platform` across configs and docs.
+release_impact: minor
+contracts:
+  - core
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:
