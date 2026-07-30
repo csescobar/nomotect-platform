@@ -170,6 +170,7 @@ restrict theme selection to explicit light and dark modes.
 - `organization-management`
 - `platform-version`
 - `publication-evidence`
+- `release-certification`
 - `release-compatibility`
 - `release-consistency`
 - `release-evidence`
