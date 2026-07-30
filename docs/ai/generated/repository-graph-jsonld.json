@@ -1987,7 +1987,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "e76adaa23836fafb94e5fb94e9a95b96706b2f5151eb804c774d669681e73fa6",
+        "sha256": "8b8051aef648f09a8cf1bb52a021cccddd9e05283da810a72e6478b205f9b72c",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -2295,7 +2295,7 @@
       "name": "Controllers::DashboardsController",
       "path": "test/controllers/dashboards_controller_test.rb",
       "properties": {
-        "sha256": "534db827d34d3382fc8ca1b6954eabc6ca54442659b60cdb88aba2d91755c514",
+        "sha256": "cdd64a679a07cb1885f2ec1d255382483a0850464e6573eaa332b0865870f0cc",
         "source": "platform"
       },
       "@id": "test:Controllers::DashboardsController"
