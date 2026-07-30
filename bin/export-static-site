@@ -8,16 +8,41 @@ require_relative "../config/environment"
 root = Pathname.new(File.expand_path("..", __dir__))
 output_dir = root.join("public_site")
 FileUtils.rm_rf(output_dir)
-FileUtils.mkdir_p(output_dir.join("assets/brand"))
-FileUtils.mkdir_p(output_dir.join("assets/fonts"))
+FileUtils.mkdir_p(output_dir.join("assets"))
 
-# Copy assets
-FileUtils.cp(root.join("app/assets/stylesheets/design_tokens.css"), output_dir.join("assets/design_tokens.css"))
-FileUtils.cp(root.join("app/assets/stylesheets/application.css"), output_dir.join("assets/application.css"))
-FileUtils.cp(root.join("app/assets/stylesheets/marketing.css"), output_dir.join("assets/marketing.css"))
-FileUtils.cp_r(Dir.glob(root.join("app/assets/images/brand/*")), output_dir.join("assets/brand"))
-FileUtils.cp_r(Dir.glob(root.join("app/assets/fonts/*")), output_dir.join("assets/fonts"))
-FileUtils.cp(root.join("public/favicon.svg"), output_dir.join("favicon.svg")) if root.join("public/favicon.svg").exist?
+# Run assets:precompile if needed to generate all digested assets in public/assets
+begin
+  require "rake"
+  Rails.application.load_tasks
+  Rake::Task["assets:precompile"].invoke
+rescue StandardError => e
+  warn "Precompile notice: #{e.message}"
+end
+
+# Copy digested public/assets into public_site/assets
+if root.join("public/assets").exist?
+  FileUtils.cp_r(Dir.glob(root.join("public/assets/*")), output_dir.join("assets"))
+end
+
+# Copy raw app/assets for fallback matching
+if root.join("app/assets/images/brand").exist?
+  FileUtils.mkdir_p(output_dir.join("assets/brand"))
+  FileUtils.cp_r(Dir.glob(root.join("app/assets/images/brand/*")), output_dir.join("assets/brand")) rescue nil
+end
+
+if root.join("app/assets/stylesheets").exist?
+  FileUtils.cp_r(Dir.glob(root.join("app/assets/stylesheets/*.css")), output_dir.join("assets")) rescue nil
+end
+
+if root.join("app/assets/fonts").exist?
+  FileUtils.mkdir_p(output_dir.join("assets/fonts"))
+  FileUtils.cp_r(Dir.glob(root.join("app/assets/fonts/*")), output_dir.join("assets/fonts")) rescue nil
+end
+
+# Copy favicon
+if root.join("public/favicon.svg").exist?
+  FileUtils.cp(root.join("public/favicon.svg"), output_dir.join("favicon.svg"))
+end
 
 # Render marketing page HTML with show_auth: false (no sign in button)
 controller = MarketingController.new
@@ -28,11 +53,10 @@ html = MarketingController.renderer.render(
   assigns: { show_auth: false }
 )
 
-# Clean up digested asset filenames in HTML to match copied un-digested assets
-html.gsub!(%r{src="/assets/brand/([^"-]+)(?:-[a-f0-9]+)?\.svg"}, 'src="./assets/brand/\1.svg"')
-html.gsub!(%r{href="/assets/design_tokens\.css[^"]*"}, 'href="./assets/design_tokens.css"')
-html.gsub!(%r{href="/assets/application\.css[^"]*"}, 'href="./assets/application.css"')
-html.gsub!(%r{href="/assets/marketing\.css[^"]*"}, 'href="./assets/marketing.css"')
+# Convert all absolute /assets/ links to relative ./assets/ links for GitHub Pages
+html.gsub!(%r{href="/assets/}, 'href="./assets/')
+html.gsub!(%r{src="/assets/}, 'src="./assets/')
+html.gsub!(%r{href="/installation/branding/favicon[^"]*"}, 'href="./favicon.svg"')
 html.gsub!(%r{href="/favicon\.svg[^"]*"}, 'href="./favicon.svg"')
 html.gsub!(%r{href="/"(?=[\s>])}, 'href="#"')
 html.gsub!(%r{<form[^>]*locale-switcher[^>]*>.*?</form>}m, '')

@@ -1,0 +1,25 @@
+schema_version: 1
+id: 118-fix-github-pages-relative-asset-paths
+category: fix
+summary: |
+  Fix GitHub Pages static asset resolution:
+  - Update `bin/export-static-site` to precompile assets and convert absolute `/assets/` paths to relative `./assets/` paths.
+  - Ensure digested CSS, JS, and SVG brand assets are packaged into `public_site/assets/` for 200 OK resolution on GitHub Pages.
+release_impact: patch
+contracts:
+  - core
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:
