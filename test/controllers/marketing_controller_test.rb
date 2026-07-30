@@ -2,7 +2,7 @@ require "test_helper"
 
 class MarketingControllerTest < ActionDispatch::IntegrationTest
   test "anonymous user can view public landing page in English" do
-    get root_path
+    get marketing_path
 
     assert_response :success
     assert_select "html[lang='en']"
@@ -12,7 +12,7 @@ class MarketingControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "anonymous user can view public landing page in Brazilian Portuguese" do
-    get root_path(locale: "pt-BR")
+    get marketing_path(locale: "pt-BR")
 
     assert_response :success
     assert_select "html[lang='pt-BR']"
@@ -21,7 +21,7 @@ class MarketingControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "does not render legacy public branding on landing page" do
-    get root_path
+    get marketing_path
 
     assert_response :success
     refute_includes response.body, "Rails Hotwire Platform"

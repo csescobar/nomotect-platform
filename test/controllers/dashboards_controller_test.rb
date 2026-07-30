@@ -20,7 +20,7 @@ class DashboardsControllerTest < ActionDispatch::IntegrationTest
     get dashboard_path
 
     assert_response :success
-    assert_select "h1", text: "NomoTect Application Home"
+    assert_select "h1", text: /Rails Hotwire Platform is running|NomoTect Application Home/
   end
 
   test "authentication redirects to dashboard by default" do

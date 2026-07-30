@@ -2295,7 +2295,7 @@
       "name": "Controllers::DashboardsController",
       "path": "test/controllers/dashboards_controller_test.rb",
       "properties": {
-        "sha256": "83964a4c450a94bae82c59e9bde4f22b14295861861e3a6882f5ec6d6b6755c4",
+        "sha256": "534db827d34d3382fc8ca1b6954eabc6ca54442659b60cdb88aba2d91755c514",
         "source": "platform"
       },
       "@id": "test:Controllers::DashboardsController"
@@ -2361,7 +2361,7 @@
       "name": "Controllers::MarketingController",
       "path": "test/controllers/marketing_controller_test.rb",
       "properties": {
-        "sha256": "9bb21d02d6498b7d029149db2709901826a72c1507956e0607e4087354ecaaba",
+        "sha256": "be8c5be5e7d7f6c152e90e1082b3b9bc6cbe17be904503c4ff9330f3e86136d4",
         "source": "platform"
       },
       "@id": "test:Controllers::MarketingController"
