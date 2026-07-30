@@ -4,9 +4,11 @@ All notable platform changes are generated from versioned change fragments.
 
 ## Unreleased
 
-Required release impact: `none`.
+Required release impact: `minor`.
 
-- No changes declared.
+### Added
+
+- Define credential-free backup manifests and ordered restore plans for Epic 9 operational readiness. (`126-operational-readiness-contracts`)
 
 ## 0.9.0
 

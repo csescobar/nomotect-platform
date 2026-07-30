@@ -1,0 +1,24 @@
+schema_version: 1
+id: 126-operational-readiness-contracts
+category: feature
+summary: Define credential-free backup manifests and ordered restore plans for Epic 9 operational readiness.
+release_impact: minor
+contracts:
+  - operational-readiness
+  - operational-backup-manifest
+  - restore-plan
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Backup and restore evidence rejects credential, password, secret, token and private-key fields.
+privacy:
+  impact: reviewed
+  notes: Operational evidence contains platform metadata and artifact references without persisted credentials.
+accessibility:
+  impact: none
+  notes:
