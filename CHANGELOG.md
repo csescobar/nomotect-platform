@@ -85,7 +85,7 @@ add compact switcher labels, and patch Rails to 8.1.3.1 (CVE-2026-66066):
 - Update `GovernanceGraph` and `GovernanceScanner` to evaluate provider nodes and edges on demand when graph queries are executed.
 - Pass `stdin_data: ""` to `Open3.capture2e` in `CommandProvider` so external subprocesses do not block on inherited stdio pipes.
 - Fix command arguments for `CodebaseMemoryProvider` to `["cli", "index_repository"]`.
- (`116-lazy-load-mcp-provider-indexing`)
+ (`115-lazy-load-mcp-provider-indexing`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)

@@ -1,5 +1,5 @@
 schema_version: 1
-id: 116-lazy-load-mcp-provider-indexing
+id: 115-lazy-load-mcp-provider-indexing
 category: fix
 summary: |
   Defer code graph provider indexing during MCP server initialization:
