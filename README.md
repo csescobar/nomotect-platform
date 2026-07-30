@@ -6,7 +6,7 @@ NomoTect is a governed application platform designed for enterprise-grade scalab
 
 ## Platform Philosophy
 
-- **Core:** Immutable governed governance and security modules.
+- **Core:** Stable governance and security modules protected by explicit platform contracts.
 - **Installation:** The specialized layer where features and business logic reside.
 - **Agentic Integration:** Human-AI synergy through repository-aware logic.
 
