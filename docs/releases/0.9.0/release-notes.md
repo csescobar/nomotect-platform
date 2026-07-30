@@ -1,14 +1,9 @@
-# Changelog
+# 0.9.0 Release Notes
 
-All notable platform changes are generated from versioned change fragments.
+- Current released version: `0.8.0`
+- Required release impact: `minor`
 
-## Unreleased
-
-Required release impact: `none`.
-
-- No changes declared.
-
-## 0.9.0
+## Changes
 
 ### Added
 
@@ -131,6 +126,106 @@ restrict theme selection to explicit light and dark modes.
  (`119-nomotect-rebranding-and-documentation`)
 - Add validation findings documentation and bug report issue template (#74). (`76-validation-findings-docs`)
 
-## 0.8.0
+## Affected contracts
 
-- Completed the Epic 8 AI Platform and Repository Intelligence baseline.
+- `artifact-attestation`
+- `authentication`
+- `bootstrap-scripts`
+- `change-fragment`
+- `changelog`
+- `core`
+- `customer-management`
+- `design-system`
+- `developer-experience`
+- `distribution-approval`
+- `distribution-artifact-bundle`
+- `distribution-bundle-preparation`
+- `distribution-certification`
+- `distribution-channel-state`
+- `distribution-ghcr-promotion`
+- `distribution-github-release`
+- `distribution-image-identity`
+- `distribution-inspection`
+- `distribution-manifest`
+- `distribution-operations`
+- `distribution-preflight`
+- `distribution-verification`
+- `extension-certification`
+- `extension-compatibility`
+- `extension-components`
+- `extension-configuration`
+- `extension-documentation`
+- `extension-inspection`
+- `extension-lifecycle`
+- `extension-loader`
+- `extension-manifest`
+- `extension-readiness`
+- `extension-registration`
+- `grid-engine`
+- `health`
+- `installation`
+- `installation-wizard`
+- `installed-platform-state`
+- `localization`
+- `organization-management`
+- `platform-version`
+- `publication-evidence`
+- `release-certification`
+- `release-compatibility`
+- `release-consistency`
+- `release-evidence`
+- `release-metadata`
+- `release-notes`
+- `release-preparation`
+- `release-publication-cli`
+- `release-readiness`
+- `repository-intelligence`
+- `security`
+- `tenant-selection`
+- `upgrade-preflight`
+
+## Cross-cutting assessments
+
+- **Security — 114-locale-toast-compact-labels-security:** Rails 8.1.3.1 addresses CVE-2026-66066 (GHSA-xr9x-r78c-5hrm) — arbitrary file read and potential RCE in Active Storage variant processing. Upgrade immediately.
+- **Security — 122-fix-ghcr-promotion-token:** The workflow uses the ephemeral GitHub Actions token with existing least-privilege permissions and does not persist credentials.
+- **Security — 124-release-preparation-certification:** Certification remains read-only and release fixtures contain repository metadata without credentials.
+- **Security — 56-release-foundation:** Release metadata remains repository-local and contains no credentials.
+- **Security — 57-release-fragment-ci:** Validation uses bounded git arguments and reads repository metadata only.
+- **Security — 58-release-notes:** Generated notes contain normalized repository metadata and no secrets.
+- **Security — 59-release-preparation:** Automation has bounded repository permissions and cannot publish releases or images.
+- **Security — 60-release-certification:** Validation is read-only, bounds evidence paths, and reports no secret values.
+- **Security — 61-extension-contracts:** Extension packages are declared trusted in-process code and are not loaded by this contract baseline.
+- **Security — 62-extension-preflight:** Preflight reads installed package metadata without executing extension entrypoints or changing state.
+- **Security — 63-extension-loader:** Only ready plans execute trusted entrypoints, and failures omit internal exception messages.
+- **Security — 64-extension-components:** Real-path validation rejects component resources that escape an installed package root.
+- **Security — 65-extension-lifecycle:** Required failures deny normal traffic and health output exposes only stable codes and extension identifiers.
+- **Security — 66-extension-certification:** Certification covers fail-closed loading, bounded real paths and secret-safe failure evidence.
+- **Security — 67-distribution-contracts:** The contract baseline is read-only, credential-free and excludes private enterprise artifacts.
+- **Security — 68-distribution-preflight:** Preflight is read-only, fail-closed and consumes credential-free channel observations.
+- **Security — 69-github-release-publication:** Publication is restricted to an approved main commit and the protected release environment.
+- **Security — 70-ghcr-semantic-promotion:** Promotion is digest-bound, rebuild-free and excludes latest before the stable release gate.
+- **Security — 71-distribution-evidence:** Verification is secret-free and artifact attestations bind the public bundle to the approved workflow.
+- **Security — 72-distribution-certification:** Preparation consumes successful same-commit main evidence and performs no channel mutation.
+- **Security — 73-distribution-observation:** Observation uses read-only repository and package permissions and never persists credentials.
+- **Security — 75-developer-bootstrap-frictions:** Executable permissions on scripts and pre-flight PostgreSQL diagnostics enforce safe defaults.
+- **Security — 80-installation-extension-gate-fix:** Bypasses extension readiness filter only for installation wizard controllers when installation is enabled.
+- **Security — 82-installation-idempotent-transitions:** Adds style-src to CSP nonce directives to support Turbo inline styles cleanly.
+- **Security — 95-locale-switcher-csp-fix:** Complies with strict CSP script-src directives by eliminating inline event handlers.
+- **Accessibility — 104-improve-installation-wizard-ux:** Stepper uses semantic nav/aria-label. Toast region uses aria-live polite. Image previews have descriptive alt text.
+- **Accessibility — 105-disable-migration-check-during-installation:** Reviewed with no additional action.
+- **Accessibility — 107-fix-wizard-redirection-and-csp-previews:** Reviewed with no additional action.
+- **Accessibility — 108-permit-branding-attributes-in-steps-controller:** Reviewed with no additional action.
+- **Accessibility — 109-install-custom-design-tokens:** Reviewed with no additional action.
+- **Accessibility — 110-support-trademark-image-mode-in-headers:** Logo images rendered with descriptive alt text based on platform_name.
+- **Accessibility — 111-fix-wizard-test-connection-and-completion:** Reviewed with no additional action.
+- **Accessibility — 112-eliminate-csp-inline-styles-and-add-favicon-tag:** Reviewed with no additional action.
+- **Accessibility — 113-increase-header-logo-dimensions:** Reviewed with no additional action.
+- **Accessibility — 114-fix-design-token-scales-and-danger-button:** Improved color contrast on danger buttons and semantic token hierarchy.
+- **Accessibility — 115-configure-mcp-with-codebase-memory:** Reviewed with no additional action.
+- **Accessibility — 115-lazy-load-mcp-provider-indexing:** Reviewed with no additional action.
+- **Accessibility — 116-mcp-jsonrpc-notifications-fix:** Reviewed with no additional action.
+- **Accessibility — 117-deploy-github-pages-landing-site:** Reviewed with no additional action.
+- **Accessibility — 118-fix-github-pages-relative-asset-paths:** Reviewed with no additional action.
+- **Accessibility — 119-nomotect-rebranding-and-documentation:** Reviewed with no additional action.
+- **Accessibility — 120-marketing-seo-foundation:** The favicon remains legible in both light and dark browser themes.
+- **Accessibility — 121-search-console-verification:** The change preserves the existing light and dark theme accessibility contracts.
