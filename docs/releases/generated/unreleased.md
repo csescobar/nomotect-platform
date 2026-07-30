@@ -111,6 +111,12 @@ add compact switcher labels, and patch Rails to 8.1.3.1 (CVE-2026-66066):
 ### Documentation
 
 - Clarify interactive web installation wizard flow and CLI setup options in Quick Start documentation (#77). (`102-docs-clarify-installation-wizard`)
+- Update platform identity, agent control directives, and issue templates to NomoTect:
+- Update `README.md` header, philosophy, and repository references.
+- Add `docs/architecture/AGENTS.md` specifying `/core` (read-only) and `/installation` (read/write) boundaries.
+- Update `AGENTS.md` and `.github/ISSUE_TEMPLATE/feature.md`.
+- Execute global rebranding replacement of `rails-hotwire-platform` with `NomoTect` / `nomotect-platform` across configs and docs.
+ (`119-nomotect-rebranding-and-documentation`)
 - Add validation findings documentation and bug report issue template (#74). (`76-validation-findings-docs`)
 
 ## Affected contracts
@@ -210,3 +216,4 @@ add compact switcher labels, and patch Rails to 8.1.3.1 (CVE-2026-66066):
 - **Accessibility — 116-mcp-jsonrpc-notifications-fix:** Reviewed with no additional action.
 - **Accessibility — 117-deploy-github-pages-landing-site:** Reviewed with no additional action.
 - **Accessibility — 118-fix-github-pages-relative-asset-paths:** Reviewed with no additional action.
+- **Accessibility — 119-nomotect-rebranding-and-documentation:** Reviewed with no additional action.
