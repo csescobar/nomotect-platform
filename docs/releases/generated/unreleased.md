@@ -99,6 +99,7 @@ add compact switcher labels, and patch Rails to 8.1.3.1 (CVE-2026-66066):
 favicon, canonical metadata, social cards, sitemap and static export checks, and
 restrict theme selection to explicit light and dark modes.
  (`120-marketing-seo-foundation`)
+- Add Google Search Console ownership verification and align the static site with explicit light and dark theme modes. (`121-search-console-verification`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
@@ -222,3 +223,4 @@ restrict theme selection to explicit light and dark modes.
 - **Accessibility — 118-fix-github-pages-relative-asset-paths:** Reviewed with no additional action.
 - **Accessibility — 119-nomotect-rebranding-and-documentation:** Reviewed with no additional action.
 - **Accessibility — 120-marketing-seo-foundation:** The favicon remains legible in both light and dark browser themes.
+- **Accessibility — 121-search-console-verification:** The change preserves the existing light and dark theme accessibility contracts.
