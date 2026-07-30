@@ -7,14 +7,14 @@ default: &default
 
 development:
   <<: *default
-  database: rails_hotwire_platform_development
+  database: nomotect_development
 
 
 test:
   <<: *default
-  database: rails_hotwire_platform_test
+  database: nomotect_test
 
 
 production:
   <<: *default
-  database: rails_hotwire_platform_production
+  database: nomotect_production

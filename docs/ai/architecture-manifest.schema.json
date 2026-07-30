@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/csescobar/rails-hotwire-platform/docs/ai/architecture-manifest.schema.json",
+  "$id": "https://github.com/csescobar/nomotect-platform/docs/ai/architecture-manifest.schema.json",
   "title": "Rails Hotwire Platform Architecture Manifest",
   "type": "object",
   "required": ["version", "modules"],

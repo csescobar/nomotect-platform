@@ -25,7 +25,7 @@ bom = {
     timestamp: Time.now.utc.iso8601,
     component: {
       type: "application",
-      name: "rails-hotwire-platform",
+      name: "nomotect-platform",
       version: platform_version
     },
     properties: [

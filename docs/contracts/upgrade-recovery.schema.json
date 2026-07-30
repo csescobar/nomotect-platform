@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/contracts/upgrade-recovery.schema.json",
+  "$id": "https://nomotect.example/contracts/upgrade-recovery.schema.json",
   "title": "Upgrade recovery guidance",
   "type": "object",
   "additionalProperties": false,

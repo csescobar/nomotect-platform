@@ -1,16 +1,23 @@
 ---
 name: Feature proposal
-about: Propose a platform capability
+about: Propose a NomoTect platform capability
 ---
+
+## Type of Request
+- [ ] Platform Core (Requires maintainer approval)
+- [ ] Installation Layer (Standard development)
 
 ## Problem
 
 ## Proposed capability
 
-## Domain and architecture impact
+## Architectural Impact
+Does this change require modifications to the `/core` namespace?
+If yes, provide the justification for the Core contract change.
 
 ## Security and privacy impact
 
 ## i18n and accessibility impact
 
 ## Acceptance criteria
+

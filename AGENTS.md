@@ -1,6 +1,6 @@
 # Agent Instructions
 
-These instructions define how agents work in this repository. All AI-assisted contributions must also comply with [AI_PRINCIPLES.md](AI_PRINCIPLES.md), [VISION.md](VISION.md) and the contracts under [`docs/ai`](docs/ai/README.md).
+These instructions define how agents work in NomoTect. All AI-assisted contributions must comply with the [NomoTect Agent Directive](docs/architecture/AGENTS.md), [AI_PRINCIPLES.md](AI_PRINCIPLES.md), [VISION.md](VISION.md) and the contracts under [`docs/ai`](docs/ai/README.md).
 
 ## Branch and pull request workflow
 

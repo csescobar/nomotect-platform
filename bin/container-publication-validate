@@ -21,7 +21,7 @@ for path in "${required_files[@]}"; do
   }
 done
 
-if grep -R -n -E 'ghcr\.io/csescobar/rails-hotwire-platform|https://github\.com/csescobar/rails-hotwire-platform' \
+if grep -R -n -E 'ghcr\.io/csescobar/nomotect-platform|https://github\.com/csescobar/nomotect-platform' \
   Dockerfile bin/package-certify bin/packaging-manifest config/deploy.yml "$workflow"; then
   echo "container publication error: container identity is coupled to the platform repository" >&2
   exit 1

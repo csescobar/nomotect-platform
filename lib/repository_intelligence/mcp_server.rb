@@ -82,7 +82,7 @@ module RepositoryIntelligence
     def initialize_result
       {
         protocolVersion: PROTOCOL_VERSION,
-        serverInfo: { name: "rails-hotwire-platform", version: "1.1" },
+        serverInfo: { name: "nomotect-platform", version: "1.1" },
         capabilities: { resources: {}, tools: {}, prompts: {} },
         instructions: "Read-only by default. Generated-file writes require explicit server capability."
       }

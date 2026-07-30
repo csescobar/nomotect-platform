@@ -28,9 +28,9 @@ A supported host should provide:
 Create the persistence paths before the first deployment:
 
 ```bash
-sudo mkdir -p /var/lib/rails-hotwire-platform/storage
-sudo mkdir -p /var/lib/rails-hotwire-platform/installation
-sudo chown -R deploy:deploy /var/lib/rails-hotwire-platform
+sudo mkdir -p /var/lib/nomotect-platform/storage
+sudo mkdir -p /var/lib/nomotect-platform/installation
+sudo chown -R deploy:deploy /var/lib/nomotect-platform
 ```
 
 Set `KAMAL_STORAGE_PATH` and `KAMAL_INSTALLATION_PATH` when different host paths are required.

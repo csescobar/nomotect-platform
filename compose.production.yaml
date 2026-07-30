@@ -1,15 +1,15 @@
-name: rails-hotwire-platform-production
+name: nomotect-platform-production
 
 services:
   postgres:
     image: postgres:18
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-rails_hotwire_platform_production}
+      POSTGRES_DB: ${POSTGRES_DB:-nomotect_production}
       POSTGRES_USER: ${POSTGRES_USER:-rails_runtime}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-rails_runtime} -d ${POSTGRES_DB:-rails_hotwire_platform_production}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-rails_runtime} -d ${POSTGRES_DB:-nomotect_production}"]
       interval: 10s
       timeout: 5s
       retries: 10
@@ -19,7 +19,7 @@ services:
   web:
     build:
       context: .
-    image: ${APP_IMAGE:-rails-hotwire-platform:local}
+    image: ${APP_IMAGE:-nomotect-platform:local}
     restart: unless-stopped
     environment:
       RAILS_ENV: production

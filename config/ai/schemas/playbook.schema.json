@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/schemas/playbook.schema.json",
+  "$id": "https://nomotect.example/schemas/playbook.schema.json",
   "title": "Repository Intelligence Playbook",
   "type": "object",
   "required": ["id", "version", "title", "inputs", "steps", "completion_gate"],

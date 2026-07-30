@@ -87,8 +87,8 @@ module Installation
         "host" => metadata.fetch("host", "localhost"),
         "port" => metadata.fetch("port", 5432),
         "maintenance_database" => metadata.fetch("maintenance_database", "postgres"),
-        "application_database" => metadata.fetch("application_database", "rails_hotwire_platform"),
-        "application_username" => metadata.fetch("application_username", "rails_hotwire_platform"),
+        "application_database" => metadata.fetch("application_database", "nomotect"),
+        "application_username" => metadata.fetch("application_username", "nomotect"),
         "sslmode" => metadata.fetch("sslmode", "prefer")
       }
     end

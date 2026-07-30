@@ -357,7 +357,7 @@
       "name": "Health",
       "path": "app/controllers/health_controller.rb",
       "properties": {
-        "sha256": "335977568dbbc9c5353b6287ac8774eefd20bd72070399f15182c174ebdb4f9b",
+        "sha256": "e5b146bf8204c5d877c3e39b6730c2406c0be1bd02163264481e63e92e1a713f",
         "source": "platform"
       }
     },
@@ -387,7 +387,7 @@
       "name": "Installation::Steps",
       "path": "app/controllers/installation/steps_controller.rb",
       "properties": {
-        "sha256": "551934030c455120dbbcd0f7c0d5f05b17306477ed1241c9e10d0ea0b9c942a0",
+        "sha256": "48f21b35796dc4a137d8743e732b86e349ac38cf35788f2b9ac02536a47dcb6a",
         "source": "platform"
       }
     },
@@ -588,6 +588,16 @@
       "path": "docs/ai/templates/AI_CONTEXT.md",
       "properties": {
         "sha256": "74d5c7fb1abd08260cfd5c835a1324e1fa8d4105860779c6e44f0cda83e32527",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Architecture::Agents",
+      "type": "document",
+      "name": "Architecture::Agents",
+      "path": "docs/architecture/AGENTS.md",
+      "properties": {
+        "sha256": "fe73c605eb91b39a0db4aa0def813eabdd78fac745e9947293742c63126617bf",
         "source": "platform"
       }
     },
@@ -857,7 +867,7 @@
       "name": "Deployment::Private-vps",
       "path": "docs/deployment/private-vps.md",
       "properties": {
-        "sha256": "eecd8666a6ffb544c9c2e1be71dd95e3e660a93cd2ba606327f7d7025a96239a",
+        "sha256": "ffbf90674b3b40037a833bb117b1e7bc6a8b2f4a94424e799fcf68416bff1d48",
         "source": "platform"
       }
     },
@@ -1417,7 +1427,7 @@
       "name": "Packaging::Container-baseline",
       "path": "docs/packaging/container-baseline.md",
       "properties": {
-        "sha256": "40701888c00a3d15091b583bb2dda560c01b2bb73d8f1330e699007ed2010e77",
+        "sha256": "becdd113b7da1190b005c8d8c1cc323364ec76f84a3e18ed96574c4769ad287a",
         "source": "platform"
       }
     },
@@ -1487,7 +1497,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "8b8051aef648f09a8cf1bb52a021cccddd9e05283da810a72e6478b205f9b72c",
+        "sha256": "773005717c981311dad43a5d7b55b9c0f66c617e5264a6ea9a64fcf72fdd5e56",
         "source": "platform"
       }
     },
@@ -1737,7 +1747,7 @@
       "name": "WebhookDelivery",
       "path": "app/jobs/webhook_delivery_job.rb",
       "properties": {
-        "sha256": "6286e63254a0d8827ba504cb60174de6bfafd57d45d7461f6bcd0a8a52c67306",
+        "sha256": "75a497a771adbbb66421583bfe527a7f52c6ea0ccf8911437f17aa988b8f2a94",
         "source": "platform"
       }
     },
@@ -3514,5 +3524,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "dc0716c1fbebd25e475eadbbfad3c6138f39ccb8"
+  "repository_commit": "2b9d450670bfd490d26c42a930364c6df19b67f1"
 }

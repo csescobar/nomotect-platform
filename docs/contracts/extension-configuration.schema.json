@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/contracts/extension-configuration.schema.json",
+  "$id": "https://nomotect.example/contracts/extension-configuration.schema.json",
   "title": "Platform Extension Configuration",
   "type": "object",
   "additionalProperties": false,

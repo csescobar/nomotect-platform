@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.local/contracts/platform-owner-completion.schema.json",
+  "$id": "https://nomotect.local/contracts/platform-owner-completion.schema.json",
   "title": "Platform Administrator Completion Contract",
   "type": "object",
   "required": [

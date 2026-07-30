@@ -65,7 +65,7 @@ html.gsub!(%r{<form[^>]*locale-switcher[^>]*>.*?</form>}m, '')
 script = <<~HTML
   <script>
     (function() {
-      const STORAGE_KEY = "rails-hotwire-platform-theme";
+      const STORAGE_KEY = "nomotect-theme";
       const ALLOWED = ["system", "light", "dark"];
       function apply(pref) {
         const theme = ALLOWED.includes(pref) ? pref : "system";

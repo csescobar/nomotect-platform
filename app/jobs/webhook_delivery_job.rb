@@ -19,7 +19,7 @@ class WebhookDeliveryJob < ApplicationJob
 
     request = Net::HTTP::Post.new(uri)
     request["Content-Type"] = "application/json"
-    request["User-Agent"] = "RailsHotwirePlatform-Webhooks"
+    request["User-Agent"] = "NomoTect-Webhooks"
     request["X-Platform-Event"] = event_type
     request["X-Platform-Signature"] = "sha256=#{signature}"
     request.body = body

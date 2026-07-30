@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "dc0716c1fbebd25e475eadbbfad3c6138f39ccb8",
+  "repository_commit": "2b9d450670bfd490d26c42a930364c6df19b67f1",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -86,7 +86,7 @@
     {
       "path": "app/components/marketing/call_to_action_component.html.erb",
       "kind": "component",
-      "sha256": "c26c26e653ff5a9e680466d9e0e135107206562d291fe2cc3e60202df01fe1d5"
+      "sha256": "727f18d4be72988011d1a28139b857c1e2112a02e3c47c94fc59b6a26d2d53b3"
     },
     {
       "path": "app/components/marketing/call_to_action_component.rb",
@@ -116,7 +116,7 @@
     {
       "path": "app/components/marketing/footer_component.html.erb",
       "kind": "component",
-      "sha256": "15250963e2bc29339c2e08b5fb7224785a8cfe16c1b7e9188b5205a6cb0b1972"
+      "sha256": "fdf7ffde77a8d297ed2a5ee862555830620097ec47764c7d1e73aa5487faf6af"
     },
     {
       "path": "app/components/marketing/footer_component.rb",
@@ -126,7 +126,7 @@
     {
       "path": "app/components/marketing/header_component.html.erb",
       "kind": "component",
-      "sha256": "9dc814d8aa28aa0e60a6fbd1116b92df6271b90cc2e9b7dcc10e026a765ca79b"
+      "sha256": "53117048610052b738771c3a27a630aaec1ceafb08f6ba7b3dd076d90d212cfc"
     },
     {
       "path": "app/components/marketing/header_component.rb",
@@ -136,7 +136,7 @@
     {
       "path": "app/components/marketing/hero_component.html.erb",
       "kind": "component",
-      "sha256": "7301f71646df9300cb73b0f1a088b642d61910a66e6188d074a9ceedd022fab4"
+      "sha256": "8e6c7b34d4658acce7835f2ebee9dd33aa32aa45c673816dc4b06863e475dd35"
     },
     {
       "path": "app/components/marketing/hero_component.rb",
@@ -311,7 +311,7 @@
     {
       "path": "app/controllers/health_controller.rb",
       "kind": "controller",
-      "sha256": "335977568dbbc9c5353b6287ac8774eefd20bd72070399f15182c174ebdb4f9b"
+      "sha256": "e5b146bf8204c5d877c3e39b6730c2406c0be1bd02163264481e63e92e1a713f"
     },
     {
       "path": "app/controllers/home_controller.rb",
@@ -326,7 +326,7 @@
     {
       "path": "app/controllers/installation/steps_controller.rb",
       "kind": "controller",
-      "sha256": "551934030c455120dbbcd0f7c0d5f05b17306477ed1241c9e10d0ea0b9c942a0"
+      "sha256": "48f21b35796dc4a137d8743e732b86e349ac38cf35788f2b9ac02536a47dcb6a"
     },
     {
       "path": "app/controllers/locale_preferences_controller.rb",
@@ -431,7 +431,7 @@
     {
       "path": "app/javascript/controllers/theme_controller.js",
       "kind": "source",
-      "sha256": "8095fb2884e4678b505510f495812a09629260465f8d6fc0f029ea28e6694b1d"
+      "sha256": "bebabceb8c176c0755b53c3dbce85b340a8ca414875a1552975897713c51666c"
     },
     {
       "path": "app/javascript/controllers/toast_controller.js",
@@ -471,7 +471,7 @@
     {
       "path": "app/jobs/webhook_delivery_job.rb",
       "kind": "job",
-      "sha256": "6286e63254a0d8827ba504cb60174de6bfafd57d45d7461f6bcd0a8a52c67306"
+      "sha256": "75a497a771adbbb66421583bfe527a7f52c6ea0ccf8911437f17aa988b8f2a94"
     },
     {
       "path": "app/lib/grid_engine/active_record_adapter.rb",
@@ -801,7 +801,7 @@
     {
       "path": "app/services/extensions/registration_context.rb",
       "kind": "source",
-      "sha256": "baecb96f3421dcf5f27ab019bfa7de112536754904370a8bbaf665f662d3f59e"
+      "sha256": "cb34935ce651b5eb05483217d5df7ecc638779992a9556016a15d64d91eb2fdd"
     },
     {
       "path": "app/services/extensions/registry.rb",
@@ -1141,12 +1141,12 @@
     {
       "path": "app/views/layouts/application.html.erb",
       "kind": "source",
-      "sha256": "4d8ae2fb3377a20622f6549a8dc344649fdf8f1223ca053e2ead18692b603e38"
+      "sha256": "c2628268a2afcd6615c8f9fc47c967d4824809e386ddb0ce6bc910e10105eee4"
     },
     {
       "path": "app/views/layouts/installation.html.erb",
       "kind": "source",
-      "sha256": "d9682044755183ced978ce5a34a2cffc776a177e537a43875c456c2212e6b6eb"
+      "sha256": "c98278d5235d7432035b3fed4b0762c3010981e92b296e5c254e9895737aa7b3"
     },
     {
       "path": "app/views/layouts/mailer.html.erb",
@@ -1156,7 +1156,7 @@
     {
       "path": "app/views/layouts/marketing.html.erb",
       "kind": "source",
-      "sha256": "b074c5ac2f75206bc4606a12e1be44593cc3782fe23c8e8998e8f4770734dead"
+      "sha256": "c36b867fbbb1b005a5a1ddeaa8c4f9468dde078c702222bb68c2fe69505d8267"
     },
     {
       "path": "app/views/marketing/show.html.erb",
@@ -1271,17 +1271,17 @@
     {
       "path": "config/ai/schemas/module-contract.schema.json",
       "kind": "source",
-      "sha256": "25ad7aee2f4df4127706e59c10a1c5b8305f21632f58483e931911c993e6c54b"
+      "sha256": "1a47a9ff751cace63b88dc6ab9111622d5d45dd066b07cdd01baae1fa36de15c"
     },
     {
       "path": "config/ai/schemas/playbook.schema.json",
       "kind": "source",
-      "sha256": "65614b40689093a148c611933d231921f57aff0da2f3d6c7d0e2b884b4e5e33c"
+      "sha256": "8a6457fd0f27278fec7b343b2dde4df767a7a13a64cdd2b06d8ce7e40a08eccc"
     },
     {
       "path": "config/application.rb",
       "kind": "source",
-      "sha256": "e78d96fa17a776178cbacc6824c18babb4e5b51914d3be765d73e217ec613e7d"
+      "sha256": "6e6650553664ad8b0eab42cf0a3f17783ccb9ec8d57003d28404451f894a3b07"
     },
     {
       "path": "config/boot.rb",
@@ -1296,7 +1296,7 @@
     {
       "path": "config/database.yml",
       "kind": "source",
-      "sha256": "f0b26fab729316cfba45c73036651cbeac4964671f8ace6fc90a4113c08480b4"
+      "sha256": "7d7bc4dec35216a77a493a07ba91b2133ef35fda7ca63c2df79599ffd839cdbd"
     },
     {
       "path": "config/deploy.yml",
@@ -1406,7 +1406,7 @@
     {
       "path": "config/initializers/session_store.rb",
       "kind": "source",
-      "sha256": "bb289e88aa02b0e84e60dc22ca5c3ccdc8f4250b32814f46b805e27c2f3d47c6"
+      "sha256": "69e74e2980264c22750caef21e781d8c828995d3aa1eeee218e671aa2836c9e1"
     },
     {
       "path": "config/initializers/structured_logging.rb",
@@ -1601,7 +1601,7 @@
     {
       "path": "docs/ai/architecture-manifest.schema.json",
       "kind": "documentation",
-      "sha256": "0c85923fb237ff0bfe98068897847aaac73f6d6aa030be2789e38cbb0b28d888"
+      "sha256": "c0ebcae85cbef5cd06f8d959039067a6a7ee9720682349fd76d0a450c023e2c5"
     },
     {
       "path": "docs/ai/commands/README.md",
@@ -1611,7 +1611,7 @@
     {
       "path": "docs/ai/contracts/database-provisioning.schema.json",
       "kind": "documentation",
-      "sha256": "148cc87f0f552a39cf3920d0630a183441d8f061f498d040dc88892388cbf86a"
+      "sha256": "e213652179447c7f8a8d6bddbb60bc61ebef62ad75d48670b989e52134e30560"
     },
     {
       "path": "docs/ai/contribution-boundaries.md",
@@ -1652,6 +1652,11 @@
       "path": "docs/ai/templates/AI_CONTEXT.md",
       "kind": "documentation",
       "sha256": "74d5c7fb1abd08260cfd5c835a1324e1fa8d4105860779c6e44f0cda83e32527"
+    },
+    {
+      "path": "docs/architecture/AGENTS.md",
+      "kind": "documentation",
+      "sha256": "fe73c605eb91b39a0db4aa0def813eabdd78fac745e9947293742c63126617bf"
     },
     {
       "path": "docs/architecture/architecture-principles.md",
@@ -1721,62 +1726,62 @@
     {
       "path": "docs/contracts/backup-evidence.schema.json",
       "kind": "documentation",
-      "sha256": "5ab3e0cf33b4293d3199b37833838d4d281041e38ef40b4c8a2c5bd695c3cb66"
+      "sha256": "a4b0f6c204e51274de28722b8918780b624f5db330f86218f7289dfe440ae7be"
     },
     {
       "path": "docs/contracts/change-fragment.schema.json",
       "kind": "documentation",
-      "sha256": "9a6a9e72b32698e61dd7b3a34cd1ac2a057627b38c6ec24377c5e10e41a3496c"
+      "sha256": "56d0f79887a3e624ceebbb81bed938dc2bcdb2085f5c5b567f1e79a76ab33cd7"
     },
     {
       "path": "docs/contracts/channel-state.schema.json",
       "kind": "documentation",
-      "sha256": "bd4655752c01177b4e6495104c7b1956e1a1b5e4f6359b9050b76a1fd9f391be"
+      "sha256": "abc59e8290b534f437ec07af3543622b1a797bebf6be07bc3251396fce87d378"
     },
     {
       "path": "docs/contracts/distribution-manifest.schema.json",
       "kind": "documentation",
-      "sha256": "b48d704493c569982ce6fee830e57b387b434091cc2038fbdc8a60111de8fa57"
+      "sha256": "9e28cb168dea4b03a261ac9d6818c04ddbeeabac628111d9101d7df4663e6edb"
     },
     {
       "path": "docs/contracts/extension-configuration.schema.json",
       "kind": "documentation",
-      "sha256": "e0dd1ace8d0a9774b79e8218f21efbe7ff7195ba66d54fa67a323d5a52ba382b"
+      "sha256": "bbbdc91cf93a9a14abcb5d1761c2bbcbefda318cfb107052c20f600bfcf57f32"
     },
     {
       "path": "docs/contracts/extension-manifest.schema.json",
       "kind": "documentation",
-      "sha256": "8bd435a66dd00c0a93bde88288734857d92ff23c4bdba4a82c1f3d506ede45b2"
+      "sha256": "1b3f453d059fd5e3600d73d98d287d82f4dbd81d467f08d85e51185f37d39e12"
     },
     {
       "path": "docs/contracts/installation-record.schema.json",
       "kind": "documentation",
-      "sha256": "a74e67947fbae96ccc718d0ceb621c7fbe9da5985e24c4cff8356ee483582a4e"
+      "sha256": "89e0a301c283c7c50e9b78035906fd1e5142731ed5e44facb9165063a25cf6c3"
     },
     {
       "path": "docs/contracts/installed-platform-state.schema.json",
       "kind": "documentation",
-      "sha256": "ce33b4b7e1dae44bea19d3de5c9a003955e75d8a92719286baaf875e5480637d"
+      "sha256": "4b4d25fe622bc9155aac836d6d3d939d4670d859e90373cfcbf0bdebade94786"
     },
     {
       "path": "docs/contracts/publication-evidence.schema.json",
       "kind": "documentation",
-      "sha256": "c7730aa072a5b70642eaa0f3944146d77c68f1911bab867b8377593de7424861"
+      "sha256": "4b3c394154c6e47d288de8f52389b4d3481cdbab75c8698067befeea7a88d78e"
     },
     {
       "path": "docs/contracts/release-compatibility.schema.json",
       "kind": "documentation",
-      "sha256": "37cd22c44ed1db0d2126ba67e46586196d56297d28f25d5d371490367403aa75"
+      "sha256": "26a4936fb5efd72de1f531079a1d65408f4048b84235fbe976d38767daff9734"
     },
     {
       "path": "docs/contracts/release-evidence.schema.json",
       "kind": "documentation",
-      "sha256": "b2f89994398a8d33db923052fe6b17ceec9d29e1575d4d2f0ce6d22103edc0c8"
+      "sha256": "35bfffecf848ebeefb8cf6c59d5b1486ebed105d661ee14049da674328368819"
     },
     {
       "path": "docs/contracts/release-metadata.schema.json",
       "kind": "documentation",
-      "sha256": "e2d232840d036cc4e1d229ebe9ba197951e1e2a83f27e1d3120a66a3984a4e24"
+      "sha256": "7c93c3ad2163d770bce80640ea98a995e590f4f6813b602ffd8fabcabc559385"
     },
     {
       "path": "docs/contracts/upgrade-history.schema.json",
@@ -1791,7 +1796,7 @@
     {
       "path": "docs/contracts/upgrade-recovery.schema.json",
       "kind": "documentation",
-      "sha256": "8c657c82db9c81de046cacc1f53af79cb376d5199b7da17cd5f781c8590a5298"
+      "sha256": "b4869d18da13e6afcd185ba840d5a953006022691b22a561b285557af08cc9ad"
     },
     {
       "path": "docs/decisions/0004-apache-2-license.md",
@@ -1861,7 +1866,7 @@
     {
       "path": "docs/deployment/private-vps.md",
       "kind": "documentation",
-      "sha256": "eecd8666a6ffb544c9c2e1be71dd95e3e660a93cd2ba606327f7d7025a96239a"
+      "sha256": "ffbf90674b3b40037a833bb117b1e7bc6a8b2f4a94424e799fcf68416bff1d48"
     },
     {
       "path": "docs/deployment/render.md",
@@ -2056,7 +2061,7 @@
     {
       "path": "docs/installation/installation-state.schema.json",
       "kind": "documentation",
-      "sha256": "c228045b8b29641868a01d3c2f2dadfedeb7f9d8d20252e13cbd0a93cef57581"
+      "sha256": "9327fd211fb56db316160886d57c94d7a7caa346cc9fb0a3c2c1d85175039619"
     },
     {
       "path": "docs/installation/migrations.md",
@@ -2151,7 +2156,7 @@
     {
       "path": "docs/packaging/container-baseline.md",
       "kind": "documentation",
-      "sha256": "40701888c00a3d15091b583bb2dda560c01b2bb73d8f1330e699007ed2010e77"
+      "sha256": "becdd113b7da1190b005c8d8c1cc323364ec76f84a3e18ed96574c4769ad287a"
     },
     {
       "path": "docs/releases/0.8.0/compatibility.json",
@@ -2196,7 +2201,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "8b8051aef648f09a8cf1bb52a021cccddd9e05283da810a72e6478b205f9b72c"
+      "sha256": "773005717c981311dad43a5d7b55b9c0f66c617e5264a6ea9a64fcf72fdd5e56"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2206,7 +2211,7 @@
     {
       "path": "docs/repository_intelligence/contracts/platform_owner_completion.schema.json",
       "kind": "documentation",
-      "sha256": "cee3626715be8d366c2ea9e39cd70425dd06b53c70e87eaa76837b3e4c670516"
+      "sha256": "0a201f17e91a152ca7fa854256887f7be6db75253103eb43c5eccb102add1ed8"
     },
     {
       "path": "docs/roadmap/roadmap.md",
@@ -2396,7 +2401,7 @@
     {
       "path": "lib/repository_intelligence/mcp_server.rb",
       "kind": "source",
-      "sha256": "fcd41d5d89b4e853dc80f92c7e590ccb4a8bf17deedf6aba5d1b3bbae6acf53a"
+      "sha256": "99358151c888016c1ef9641bf8e8b5b61df1ba3628f1e761410dfbbfa313b872"
     },
     {
       "path": "lib/repository_intelligence/platform.rb",

@@ -33,7 +33,7 @@ ssh_target="${ssh_user}@${KAMAL_SERVER}"
 ssh_options=(-o BatchMode=yes -o ConnectTimeout=10)
 
 ssh "${ssh_options[@]}" "$ssh_target" "docker version >/dev/null"
-ssh "${ssh_options[@]}" "$ssh_target" "test -w '${KAMAL_STORAGE_PATH:-/var/lib/rails-hotwire-platform/storage}'"
-ssh "${ssh_options[@]}" "$ssh_target" "test -w '${KAMAL_INSTALLATION_PATH:-/var/lib/rails-hotwire-platform/installation}'"
+ssh "${ssh_options[@]}" "$ssh_target" "test -w '${KAMAL_STORAGE_PATH:-/var/lib/nomotect-platform/storage}'"
+ssh "${ssh_options[@]}" "$ssh_target" "test -w '${KAMAL_INSTALLATION_PATH:-/var/lib/nomotect-platform/installation}'"
 
 printf 'Private VPS preflight passed for %s\n' "$KAMAL_SERVER"

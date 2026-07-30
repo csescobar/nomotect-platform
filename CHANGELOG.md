@@ -24,7 +24,7 @@ Required release impact: `minor`.
  (`110-support-trademark-image-mode-in-headers`)
 - Add `.mcp.json` configuration file setting up the platform stdio MCP server (`bin/repository-intelligence mcp`) with `CODE_GRAPH_PROVIDER=codebase_memory` and `MCP_ALLOW_WRITES=true`.
  (`115-configure-mcp-with-codebase-memory`)
-- Add automated static site exporter (`bin/export-static-site`) and GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) to deploy the isolated NomoTect landing page to GitHub Pages (`https://csescobar.github.io/rails-hotwire-platform/`) with sign in button removed.
+- Add automated static site exporter (`bin/export-static-site`) and GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) to deploy the isolated NomoTect landing page to GitHub Pages (`https://csescobar.github.io/nomotect-platform/`) with sign in button removed.
  (`117-deploy-github-pages-landing-site`)
 - Establish the canonical platform version and release change-fragment contracts. (`56-release-foundation`)
 - Enforce normalized release-impact declarations for pull requests. (`57-release-fragment-ci`)
@@ -112,6 +112,12 @@ add compact switcher labels, and patch Rails to 8.1.3.1 (CVE-2026-66066):
 ### Documentation
 
 - Clarify interactive web installation wizard flow and CLI setup options in Quick Start documentation (#77). (`102-docs-clarify-installation-wizard`)
+- Update platform identity, agent control directives, and issue templates to NomoTect:
+- Update `README.md` header, philosophy, and repository references.
+- Add `docs/architecture/AGENTS.md` specifying `/core` (read-only) and `/installation` (read/write) boundaries.
+- Update `AGENTS.md` and `.github/ISSUE_TEMPLATE/feature.md`.
+- Execute global rebranding replacement of `rails-hotwire-platform` with `NomoTect` / `nomotect-platform` across configs and docs.
+ (`119-nomotect-rebranding-and-documentation`)
 - Add validation findings documentation and bug report issue template (#74). (`76-validation-findings-docs`)
 
 ## 0.8.0
