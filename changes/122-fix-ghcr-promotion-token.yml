@@ -1,0 +1,23 @@
+schema_version: 1
+id: 122-fix-ghcr-promotion-token
+category: fix
+summary: Authenticate GitHub CLI operations in the controlled GHCR promotion workflow.
+release_impact: patch
+contracts:
+  - distribution-operations
+  - distribution-verification
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: The workflow uses the ephemeral GitHub Actions token with existing least-privilege permissions and does not persist credentials.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
