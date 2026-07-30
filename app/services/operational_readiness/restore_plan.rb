@@ -23,7 +23,10 @@ module OperationalReadiness
     end
 
     def backup_manifest_id = data.fetch("backup_manifest_id")
+    def id = data.fetch("id")
+    def target = data.fetch("target")
     def ordered_steps = data.fetch("ordered_steps")
+    def verification = data.fetch("verification")
 
     private
 
