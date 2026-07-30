@@ -300,7 +300,7 @@ The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and
 
 ## Repository strategy
 
-The community platform is distributed under Apache License 2.0. A future `rails-hotwire-enterprise` repository may provide separately licensed premium integrations and operational capabilities without removing essential functionality from the community core.
+The community platform is distributed under Apache License 2.0. A future `nomotect-enterprise` repository may provide separately licensed premium integrations and operational capabilities without removing essential functionality from the community core.
 
 ## Contribution workflow
 
