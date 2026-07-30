@@ -78,18 +78,14 @@ script = <<~HTML
   <script>
     (function() {
       const STORAGE_KEY = "nomotect-theme";
-      const ALLOWED = ["system", "light", "dark"];
+      const ALLOWED = ["light", "dark"];
       function apply(pref) {
-        const theme = ALLOWED.includes(pref) ? pref : "system";
+        const theme = ALLOWED.includes(pref) ? pref : "light";
         localStorage.setItem(STORAGE_KEY, theme);
-        if (theme === "system") {
-          document.documentElement.removeAttribute("data-theme");
-        } else {
-          document.documentElement.dataset.theme = theme;
-        }
+        document.documentElement.dataset.theme = theme;
+        return theme;
       }
-      const initialPref = localStorage.getItem(STORAGE_KEY) || "system";
-      apply(initialPref);
+      const initialPref = apply(localStorage.getItem(STORAGE_KEY) || "light");
 
       document.addEventListener("DOMContentLoaded", function() {
         const select = document.getElementById("theme-preference");
@@ -122,6 +118,7 @@ required_markup = [
   'href="./favicon.svg"',
   'rel="canonical"',
   'name="robots"',
+  'name="google-site-verification" content="6UWm4w467BVq1xz_vHgalqyWI6kIasR1itiYNhD6XvQ"',
   'property="og:title"',
   'name="twitter:card"'
 ]
