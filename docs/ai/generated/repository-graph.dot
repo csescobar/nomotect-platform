@@ -58,6 +58,7 @@ digraph repository {
   "document:Ai::Repository-health" [label="Ai::Repository-health"];
   "document:Ai::Repository-intelligence-api" [label="Ai::Repository-intelligence-api"];
   "document:Ai::Templates::AiContext" [label="Ai::Templates::AiContext"];
+  "document:Architecture::Agents" [label="Architecture::Agents"];
   "document:Architecture::Architecture-principles" [label="Architecture::Architecture-principles"];
   "document:Architecture::Decisions::0001-use-rails-hotwire" [label="Architecture::Decisions::0001-use-rails-hotwire"];
   "document:Architecture::Decisions::0002-use-modular-monolith" [label="Architecture::Decisions::0002-use-modular-monolith"];

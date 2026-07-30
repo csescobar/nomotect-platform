@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/contracts/publication-evidence.schema.json",
+  "$id": "https://nomotect.example/contracts/publication-evidence.schema.json",
   "title": "Credential-free distribution publication evidence",
   "type": "object",
   "additionalProperties": false,

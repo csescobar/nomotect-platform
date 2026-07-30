@@ -9,7 +9,7 @@
     <%= platform_favicon_tag %>
     <script nonce="<%= content_security_policy_nonce %>">
       (() => {
-        const preference = localStorage.getItem("rails-hotwire-platform-theme");
+        const preference = localStorage.getItem("nomotect-theme");
         if (preference === "light" || preference === "dark") {
           document.documentElement.dataset.theme = preference;
         }

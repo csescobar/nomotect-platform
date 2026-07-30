@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/schemas/module-contract.schema.json",
+  "$id": "https://nomotect.example/schemas/module-contract.schema.json",
   "title": "Repository Intelligence Module Contract",
   "type": "object",
   "required": ["id", "version", "owns", "may_use", "cannot_use", "invariants", "required_tests"],

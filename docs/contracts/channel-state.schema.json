@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/contracts/channel-state.schema.json",
+  "$id": "https://nomotect.example/contracts/channel-state.schema.json",
   "title": "Read-only distribution channel observation",
   "type": "object",
   "additionalProperties": false,

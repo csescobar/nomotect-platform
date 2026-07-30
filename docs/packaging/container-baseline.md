@@ -44,7 +44,7 @@ Provide secrets through the deployment environment rather than committing an `.e
 
 ```bash
 POSTGRES_PASSWORD=replace-me \
-DATABASE_URL=postgresql://rails_runtime:replace-me@postgres:5432/rails_hotwire_platform_production \
+DATABASE_URL=postgresql://rails_runtime:replace-me@postgres:5432/nomotect_production \
 SECRET_KEY_BASE="$(ruby -rsecurerandom -e 'print SecureRandom.hex(64)')" \
 docker compose -f compose.production.yaml up --build
 ```

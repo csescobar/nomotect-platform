@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/contracts/change-fragment.schema.json",
+  "$id": "https://nomotect.example/contracts/change-fragment.schema.json",
   "title": "Release change fragment",
   "type": "object",
   "additionalProperties": false,

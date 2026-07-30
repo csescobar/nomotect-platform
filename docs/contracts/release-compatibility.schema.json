@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/contracts/release-compatibility.schema.json",
+  "$id": "https://nomotect.example/contracts/release-compatibility.schema.json",
   "title": "Release compatibility data",
   "type": "object",
   "additionalProperties": false,

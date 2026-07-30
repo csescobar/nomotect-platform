@@ -2,7 +2,7 @@
 
 module Extensions
   class RegistrationContext
-    THREAD_KEY = :rails_hotwire_platform_extension_registration
+    THREAD_KEY = :nomotect_extension_registration
     Context = Data.define(:registry, :package)
 
     class << self

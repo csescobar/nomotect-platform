@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 
-const STORAGE_KEY = "rails-hotwire-platform-theme"
+const STORAGE_KEY = "nomotect-theme"
 const ALLOWED_THEMES = ["system", "light", "dark"]
 
 export default class extends Controller {

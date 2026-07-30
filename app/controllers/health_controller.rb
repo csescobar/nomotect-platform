@@ -5,14 +5,14 @@ class HealthController < ActionController::Base
     unless extension_readiness.fetch(:ready)
       return render json: {
         status: "unavailable",
-        service: "rails-hotwire-platform",
+        service: "nomotect-platform",
         extensions: extension_readiness
       }, status: :service_unavailable
     end
 
     render json: {
       status: "ok",
-      service: "rails-hotwire-platform",
+      service: "nomotect-platform",
       version: ENV.fetch("APP_VERSION", Platform::Version.current.to_s),
       extensions: extension_readiness,
       timestamp: Time.current.utc.iso8601

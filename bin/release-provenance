@@ -22,7 +22,7 @@ statement = {
   "predicateType" => "https://slsa.dev/provenance/v1",
   "predicate" => {
     "buildDefinition" => {
-      "buildType" => "https://rails-hotwire-platform.example/release-packaging/v1",
+      "buildType" => "https://nomotect.example/release-packaging/v1",
       "externalParameters" => {
         "platform_version" => version,
         "source_commit" => commit
@@ -39,7 +39,7 @@ statement = {
       ]
     },
     "runDetails" => {
-      "builder" => { "id" => "rails-hotwire-platform/package-certify" },
+      "builder" => { "id" => "nomotect-platform/package-certify" },
       "metadata" => { "invocationId" => commit }
     }
   }

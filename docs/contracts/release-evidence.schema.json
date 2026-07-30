@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/contracts/release-evidence.schema.json",
+  "$id": "https://nomotect.example/contracts/release-evidence.schema.json",
   "title": "Release consistency evidence input",
   "type": "object",
   "additionalProperties": false,

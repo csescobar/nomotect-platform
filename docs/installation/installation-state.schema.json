@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/schemas/installation-state-v1.json",
+  "$id": "https://nomotect.example/schemas/installation-state-v1.json",
   "title": "Installation State",
   "type": "object",
   "additionalProperties": false,

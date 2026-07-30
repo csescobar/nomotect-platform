@@ -1,14 +1,14 @@
-name: rails-hotwire-platform
+name: nomotect-platform
 
 services:
   postgres:
     image: postgres:18
     environment:
-      POSTGRES_DB: rails_hotwire_platform_development
+      POSTGRES_DB: nomotect_development
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d rails_hotwire_platform_development"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d nomotect_development"]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -24,7 +24,7 @@ services:
     command: bash -lc "bundle install && bundle exec rails db:prepare && bundle exec rails server -b 0.0.0.0"
     environment:
       RAILS_ENV: development
-      DATABASE_URL: postgres://postgres:postgres@postgres:5432/rails_hotwire_platform_development
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/nomotect_development
       SECRET_KEY_BASE: development-only-secret-key-base-development-only-secret-key-base
       INSTALLATION_ENABLED: "true"
     depends_on:

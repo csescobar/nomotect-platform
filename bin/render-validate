@@ -6,8 +6,8 @@ require "yaml"
 blueprint = YAML.safe_load_file("render.yaml", aliases: false)
 errors = []
 
-service = Array(blueprint["services"]).find { |candidate| candidate["name"] == "rails-hotwire-platform" }
-database = Array(blueprint["databases"]).find { |candidate| candidate["name"] == "rails-hotwire-platform-db" }
+service = Array(blueprint["services"]).find { |candidate| candidate["name"] == "nomotect-platform" }
+database = Array(blueprint["databases"]).find { |candidate| candidate["name"] == "nomotect-platform-db" }
 
 errors << "web service definition is missing" unless service
 errors << "PostgreSQL definition is missing" unless database
@@ -25,7 +25,7 @@ if service
   database_url = env_vars["DATABASE_URL"] || {}
   database_reference = database_url["fromDatabase"] || {}
   errors << "DATABASE_URL must reference Render Postgres" unless database_reference == {
-    "name" => "rails-hotwire-platform-db",
+    "name" => "nomotect-platform-db",
     "property" => "connectionString"
   }
 

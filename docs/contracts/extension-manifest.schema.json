@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/contracts/extension-manifest.schema.json",
+  "$id": "https://nomotect.example/contracts/extension-manifest.schema.json",
   "title": "Platform Extension Manifest",
   "type": "object",
   "additionalProperties": false,

@@ -1,6 +1,16 @@
-# Rails Hotwire Platform
+# NomoTect
 
-An **AI-Native Enterprise Engineering Platform** for building secure, governed, accessible and maintainable business applications with Ruby on Rails, Hotwire, ViewComponent, PostgreSQL and open-source tooling.
+Build with structure. Evolve with confidence.
+
+NomoTect is a governed application platform designed for enterprise-grade scalability. While built upon the foundations of modern Rails and Hotwire, NomoTect transcends a mere tech stack, providing a modular architecture, native security, and repository intelligence.
+
+## Platform Philosophy
+
+- **Core:** Immutable governed governance and security modules.
+- **Installation:** The specialized layer where features and business logic reside.
+- **Agentic Integration:** Human-AI synergy through repository-aware logic.
+
+> Legacy reference: Formerly known as `rails-hotwire-platform`.
 
 ## Vision
 

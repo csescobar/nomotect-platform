@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/schemas/database-provisioning.schema.json",
+  "$id": "https://nomotect.example/schemas/database-provisioning.schema.json",
   "title": "Database Provisioning Metadata",
   "type": "object",
   "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rails-hotwire-platform.example/schemas/backup-evidence-v1.json",
+  "$id": "https://nomotect.example/schemas/backup-evidence-v1.json",
   "title": "Backup Evidence",
   "type": "object",
   "additionalProperties": false,
