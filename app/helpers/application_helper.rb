@@ -44,10 +44,12 @@ module ApplicationHelper
     end
   end
 
-  # Renders the platform favicon tag based on AppearanceStore configuration
+  # Renders the platform favicon tag based on AppearanceStore configuration.
   def platform_favicon_tag
     appearance = platform_appearance
-    favicon_path = appearance["favicon_path"].presence || appearance["compact_logo_path"].presence || "/favicon.ico"
-    favicon_link_tag(favicon_path)
+    favicon_path = appearance["favicon_path"].presence || appearance["compact_logo_path"].presence || "/favicon.svg"
+    options = favicon_path.end_with?(".svg") ? { type: "image/svg+xml" } : {}
+
+    favicon_link_tag(favicon_path, **options)
   end
 end

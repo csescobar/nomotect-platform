@@ -1,0 +1,25 @@
+schema_version: 1
+id: 120-marketing-seo-foundation
+category: fix
+summary: |
+  Establish the public NomoTect landing page discovery baseline with the official
+  favicon, canonical metadata, social cards, sitemap and static export checks, and
+  restrict theme selection to explicit light and dark modes.
+release_impact: patch
+contracts:
+  - core
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: The favicon remains legible in both light and dark browser themes.

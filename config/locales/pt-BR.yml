@@ -140,7 +140,6 @@ pt-BR:
       copy: "© 2026 NomoTect. Evolução governada. Open-source sob a Licença Apache 2.0."
   theme:
     label: Tema
-    system: Sistema
     light: Claro
     dark: Escuro
   tenant_selection:

@@ -140,7 +140,6 @@ en:
       copy: "© 2026 NomoTect. Governed evolution. Open-source under the Apache License 2.0."
   theme:
     label: Theme
-    system: System
     light: Light
     dark: Dark
   tenant_selection:

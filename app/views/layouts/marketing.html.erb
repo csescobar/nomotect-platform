@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
   <head>
-    <title><%= content_for(:title) || t("marketing.meta.title") %></title>
-    <meta name="description" content="<%= content_for(:meta_description) || t("marketing.meta.description") %>">
+    <%
+      page_title = content_for(:title) || t("marketing.meta.title")
+      page_description = content_for(:meta_description) || t("marketing.meta.description")
+      public_site_url = "https://csescobar.github.io/nomotect-platform/"
+      page_url = @static_export ? public_site_url : request.original_url.split("?").first
+      open_graph_locale = I18n.locale.to_s == "pt-BR" ? "pt_BR" : "en_US"
+    %>
+    <title><%= page_title %></title>
+    <meta name="description" content="<%= page_description %>">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="theme-color" content="#0B1220">
+    <link rel="canonical" href="<%= page_url %>">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NomoTect">
+    <meta property="og:locale" content="<%= open_graph_locale %>">
+    <meta property="og:url" content="<%= page_url %>">
+    <meta property="og:title" content="<%= page_title %>">
+    <meta property="og:description" content="<%= page_description %>">
+    <% if @social_preview_url.present? %>
+      <meta property="og:image" content="<%= @social_preview_url %>">
+      <meta property="og:image:width" content="1280">
+      <meta property="og:image:height" content="640">
+      <meta property="og:image:alt" content="NomoTect — Build with structure. Evolve with confidence.">
+    <% end %>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= page_title %>">
+    <meta name="twitter:description" content="<%= page_description %>">
+    <% if @social_preview_url.present? %>
+      <meta name="twitter:image" content="<%= @social_preview_url %>">
+      <meta name="twitter:image:alt" content="NomoTect — Build with structure. Evolve with confidence.">
+    <% end %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= platform_favicon_tag %>

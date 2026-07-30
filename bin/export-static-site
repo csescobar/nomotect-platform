@@ -5,6 +5,8 @@ require "fileutils"
 require "pathname"
 require_relative "../config/environment"
 
+PUBLIC_SITE_URL = "https://csescobar.github.io/nomotect-platform/"
+
 root = Pathname.new(File.expand_path("..", __dir__))
 output_dir = root.join("public_site")
 FileUtils.rm_rf(output_dir)
@@ -39,27 +41,37 @@ if root.join("app/assets/fonts").exist?
   FileUtils.cp_r(Dir.glob(root.join("app/assets/fonts/*")), output_dir.join("assets/fonts")) rescue nil
 end
 
-# Copy favicon
-if root.join("public/favicon.svg").exist?
-  FileUtils.cp(root.join("public/favicon.svg"), output_dir.join("favicon.svg"))
+# Copy crawl and browser-discovery assets.
+%w[favicon.svg sitemap.xml robots.txt].each do |filename|
+  source = root.join("public", filename)
+  FileUtils.cp(source, output_dir.join(filename)) if source.exist?
+end
+
+social_preview_source = root.join("public/social-preview.png")
+social_preview_url = nil
+if social_preview_source.exist?
+  FileUtils.cp(social_preview_source, output_dir.join("social-preview.png"))
+  social_preview_url = "#{PUBLIC_SITE_URL}social-preview.png"
 end
 
 # Render marketing page HTML with show_auth: false (no sign in button)
-controller = MarketingController.new
-controller.instance_variable_set(:@show_auth, false)
 html = MarketingController.renderer.render(
   template: "marketing/show",
   layout: "marketing",
-  assigns: { show_auth: false }
+  assigns: {
+    show_auth: false,
+    static_export: true,
+    social_preview_url: social_preview_url
+  }
 )
 
-# Convert all absolute /assets/ links to relative ./assets/ links for GitHub Pages
+# Convert all absolute asset links to repository-relative GitHub Pages links.
 html.gsub!(%r{href="/assets/}, 'href="./assets/')
 html.gsub!(%r{src="/assets/}, 'src="./assets/')
 html.gsub!(%r{href="/installation/branding/favicon[^"]*"}, 'href="./favicon.svg"')
-html.gsub!(%r{href="/favicon\.svg[^"]*"}, 'href="./favicon.svg"')
+html.gsub!(%r{href="/favicon\.(?:ico|svg)[^"]*"}, 'href="./favicon.svg"')
 html.gsub!(%r{href="/"(?=[\s>])}, 'href="#"')
-html.gsub!(%r{<form[^>]*locale-switcher[^>]*>.*?</form>}m, '')
+html.gsub!(%r{<form[^>]*locale-switcher[^>]*>.*?</form>}m, "")
 
 # Inject static script for theme switching and mobile navigation toggle
 script = <<~HTML
@@ -100,6 +112,20 @@ script = <<~HTML
 HTML
 
 html.sub!("</head>", "#{script}\n</head>")
-
 output_dir.join("index.html").write(html)
+
+required_files = %w[index.html favicon.svg sitemap.xml robots.txt]
+missing_files = required_files.reject { |filename| output_dir.join(filename).exist? }
+raise "Static export missing required files: #{missing_files.join(", ")}" if missing_files.any?
+
+required_markup = [
+  'href="./favicon.svg"',
+  'rel="canonical"',
+  'name="robots"',
+  'property="og:title"',
+  'name="twitter:card"'
+]
+missing_markup = required_markup.reject { |fragment| html.include?(fragment) }
+raise "Static export missing required discovery metadata: #{missing_markup.join(", ")}" if missing_markup.any?
+
 puts "Exported static site to #{output_dir}"
