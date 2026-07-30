@@ -1,0 +1,29 @@
+id: operational_readiness
+version: 1
+owns:
+  - operational_backup_manifest
+  - restore_plan
+  - backup_component_inventory
+  - restore_verification_requirements
+may_use:
+  - platform_version
+  - database_schema
+  - installation_state
+  - generated_artifacts
+  - persistent_files
+  - backup_evidence
+cannot_use:
+  - persisted_credentials
+  - embedded_secrets
+  - automatic_destructive_restore
+  - provider_specific_assumptions
+invariants:
+  - operational manifests are credential-free
+  - every backup set covers PostgreSQL, persistent files, generated configuration and installation metadata
+  - every component is checksum-bound
+  - restore dependencies are explicit and ordered
+  - restore execution requires a later provider adapter and operator-controlled safety gate
+  - verification covers database schema, installation contract, generated artifacts and application health
+required_tests:
+  - operational_backup_manifest_test
+  - operational_restore_plan_test
