@@ -25,15 +25,24 @@ module Releases
     end
 
     test "accepts a valid fragment matching the pull request" do
-      report = PullRequestValidator.new(
-        changed_paths: [
-          "app/services/releases/pull_request_validator.rb",
-          "changes/57-release-fragment-ci.yml"
-        ],
-        pull_request_number: 57
-      ).call
+      Dir.mktmpdir do |directory|
+        FileUtils.mkdir_p(File.join(directory, "changes"))
+        FileUtils.cp(
+          release_fragment_fixture("57-release-fragment-ci.yml"),
+          File.join(directory, "changes/57-release-fragment-ci.yml")
+        )
+        report = Dir.chdir(directory) do
+          PullRequestValidator.new(
+            changed_paths: [
+              "app/services/releases/pull_request_validator.rb",
+              "changes/57-release-fragment-ci.yml"
+            ],
+            pull_request_number: 57
+          ).call
+        end
 
-      assert report.ready?, report.findings.inspect
+        assert report.ready?, report.findings.inspect
+      end
     end
 
     test "requires explicit migration impact" do
@@ -74,6 +83,15 @@ module Releases
       ).call
 
       assert_includes report.findings.pluck(:code), "change_fragment_missing"
+    end
+
+    private
+
+    def release_fragment_fixture(name)
+      path = Rails.root.glob("changes/**/#{name}").first
+      raise "missing release test fixture #{name}" unless path
+
+      path
     end
   end
 end

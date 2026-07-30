@@ -73,7 +73,7 @@ module Upgrades
         extension_state_provider: -> { [] }
       ).call
 
-      assert_equal "0.8.0", state.dig("platform", "version")
+      assert_equal Platform::Version.current.to_s, state.dig("platform", "version")
     end
 
     test "includes structured extension state from the extension provider" do

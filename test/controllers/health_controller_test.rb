@@ -6,7 +6,7 @@ class HealthControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_equal "ok", response.parsed_body.fetch("status")
-    assert_equal "0.8.0", response.parsed_body.fetch("version")
+    assert_equal Platform::Version.current.to_s, response.parsed_body.fetch("version")
     assert response.parsed_body.dig("extensions", "ready")
   end
 

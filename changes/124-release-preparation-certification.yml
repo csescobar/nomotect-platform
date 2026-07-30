@@ -1,0 +1,24 @@
+schema_version: 1
+id: 124-release-preparation-certification
+category: fix
+summary: Keep prepared releases certifiable after version updates and fragment archival.
+release_impact: patch
+contracts:
+  - platform-version
+  - release-preparation
+  - release-certification
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Certification remains read-only and release fixtures contain repository metadata without credentials.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
