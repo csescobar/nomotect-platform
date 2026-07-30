@@ -1,6 +1,6 @@
 module Ui
   class ThemeSwitcherComponent < ApplicationComponent
-    OPTIONS = %w[system light dark].freeze
+    OPTIONS = %w[light dark].freeze
 
     def initialize(show_label: true, **html_options)
       @show_label = show_label
