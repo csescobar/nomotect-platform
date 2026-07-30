@@ -85,6 +85,10 @@ add compact switcher labels, and patch Rails to 8.1.3.1 (CVE-2026-66066):
 - Pass `stdin_data: ""` to `Open3.capture2e` in `CommandProvider` so external subprocesses do not block on inherited stdio pipes.
 - Fix command arguments for `CodebaseMemoryProvider` to `["cli", "index_repository"]`.
  (`115-lazy-load-mcp-provider-indexing`)
+- Support standard JSON-RPC 2.0 notification handling and additional MCP methods in `McpServer`:
+- Ignore notifications without an `id` field (such as `notifications/initialized`), returning no stdout response.
+- Support `ping`, `notifications/initialized`, `resources/templates/list`, and `completion/complete` methods.
+ (`116-mcp-jsonrpc-notifications-fix`)
 - Produce credential-free channel observations for controlled distribution verification. (`73-distribution-observation`)
 - Resolve developer bootstrap, Ruby patch version constraint and script execution frictions (#74). (`75-developer-bootstrap-frictions`)
 - Bypass ExtensionGate readiness check in Installation::BaseController during First-Run Wizard (#79). (`80-installation-extension-gate-fix`)
@@ -197,3 +201,4 @@ add compact switcher labels, and patch Rails to 8.1.3.1 (CVE-2026-66066):
 - **Accessibility — 114-fix-design-token-scales-and-danger-button:** Improved color contrast on danger buttons and semantic token hierarchy.
 - **Accessibility — 115-configure-mcp-with-codebase-memory:** Reviewed with no additional action.
 - **Accessibility — 115-lazy-load-mcp-provider-indexing:** Reviewed with no additional action.
+- **Accessibility — 116-mcp-jsonrpc-notifications-fix:** Reviewed with no additional action.

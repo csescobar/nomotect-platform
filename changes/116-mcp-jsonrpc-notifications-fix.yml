@@ -1,0 +1,25 @@
+schema_version: 1
+id: 116-mcp-jsonrpc-notifications-fix
+category: fix
+summary: |
+  Support standard JSON-RPC 2.0 notification handling and additional MCP methods in `McpServer`:
+  - Ignore notifications without an `id` field (such as `notifications/initialized`), returning no stdout response.
+  - Support `ping`, `notifications/initialized`, `resources/templates/list`, and `completion/complete` methods.
+release_impact: patch
+contracts:
+  - repository-intelligence
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes:
