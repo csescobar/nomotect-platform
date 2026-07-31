@@ -5,6 +5,7 @@ owns:
   - public_contract_allowlist
   - required_capability_journeys
   - deterministic_fixture_evidence
+  - design_i18n_grid_journey
   - representative_application_findings
 may_use:
   - epic_10_validation
@@ -46,3 +47,4 @@ invariants:
   - representative application work cannot authorize publication
 required_tests:
   - representative_application_test
+  - representative_application_journey_test
