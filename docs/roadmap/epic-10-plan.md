@@ -104,6 +104,10 @@ extension points.
 workspace fixture, public-contract allowlist, forbidden dependencies, evidence
 boundary and required manual reviews are defined before implementation.
 
+**Foundation:** delivered by PR #148. Deterministic two-tenant fixture data,
+public-dependency validation, cross-tenant assignment rejection and evidence
+minimization are executable prerequisites for the capability journeys.
+
 ### Required capability journey
 
 - protected first-run installation and initial tenant;
