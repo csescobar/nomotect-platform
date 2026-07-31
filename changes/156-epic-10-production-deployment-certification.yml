@@ -1,0 +1,24 @@
+schema_version: 1
+id: 156-epic-10-production-deployment-certification
+category: feature
+summary: Certify production-like deployment, persistent services and operational evidence.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+  - operational-readiness
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Certification requires secret references, non-root runtime and credential-free evidence.
+privacy:
+  impact: reviewed
+  notes: Production data is forbidden and reports contain only stable operational outcomes.
+accessibility:
+  impact: none
+  notes:
