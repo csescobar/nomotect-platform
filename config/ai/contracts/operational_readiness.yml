@@ -15,6 +15,8 @@ owns:
   - health_provider_registry
   - operational_health_inspector
   - disaster_recovery_policy
+  - resilience_scenario_registry
+  - resilience_certification_report
   - backup_component_inventory
   - restore_verification_requirements
 may_use:
@@ -49,6 +51,8 @@ invariants:
   - operational health covers installation, deployment, jobs, storage and integrations
   - disaster recovery objectives, roles and scenarios are explicit
   - restore and return to service require human approval
+  - fault injection is limited to production-like temporary fixtures
+  - every required resilience scenario must pass before certification
   - verification covers database schema, installation contract, generated artifacts and application health
 required_tests:
   - operational_backup_manifest_test
@@ -60,3 +64,4 @@ required_tests:
   - operational_health_inspector_test
   - operational_health_certification_test
   - disaster_recovery_policy_test
+  - resilience_certification_test
