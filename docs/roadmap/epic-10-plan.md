@@ -149,6 +149,11 @@ instructions, and CI reproduces the core journey without private context.
 Prove that a representative installed application can move between at least two
 pre-1.0 candidate states safely.
 
+**Delivery evidence:** PR #153 defines deterministic `rc.1` and `rc.2` states
+and their governed manifest. PR #154 certifies controlled interruption,
+idempotent resume, backup requirements, incompatibility rejection and
+deterministic recovery guidance without authorizing publication.
+
 ### Deliverables
 
 - source and target RC fixtures;
