@@ -429,9 +429,11 @@ manual approvals and proposed focused-PR sequence are defined in the
 
 ### Phase 3 — Release-candidate upgrade journey
 
-- [ ] Upgrade the representative application across candidate states.
-- [ ] Validate compatibility, backup, resumability, history and recovery.
-- [ ] Reject incompatible or incomplete upgrade evidence fail closed.
+**Status:** ✅ Complete
+
+- [x] Upgrade the representative application across candidate states.
+- [x] Validate compatibility, backup, resumability, history and recovery.
+- [x] Reject incompatible or incomplete upgrade evidence fail closed.
 
 ### Phase 4 — Functional framework certification
 

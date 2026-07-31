@@ -1,0 +1,24 @@
+schema_version: 1
+id: 154-epic-10-rc-upgrade-certification
+category: feature
+summary: Certify resumable representative application RC upgrades and deterministic recovery guidance.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+  - upgrades
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Certification fails closed on incompatible inputs, missing backup requirements and incomplete recovery evidence.
+privacy:
+  impact: reviewed
+  notes: Reports contain operation identifiers and outcomes without credentials or tenant payloads.
+accessibility:
+  impact: none
+  notes:
