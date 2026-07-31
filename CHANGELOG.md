@@ -24,6 +24,7 @@ Required release impact: `minor`.
 
 - Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions. (`137-operator-guides`)
 - Define supported compatibility matrices, lifecycle policy and operational diagrams. (`138-compatibility-lifecycle-documentation`)
+- Add continuously tested extension, upgrade and backup manifest examples. (`139-tested-operational-examples`)
 
 ## 0.9.0
 

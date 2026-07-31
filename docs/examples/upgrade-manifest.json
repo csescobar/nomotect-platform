@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "id": "example-upgrade-0-9-1",
+  "source": {
+    "requirement": ">= 0.9.0, < 0.9.1"
+  },
+  "target": {
+    "version": "0.9.1"
+  },
+  "compatibility": {
+    "rails": "~> 8.1.0",
+    "ruby": "~> 4.0.0",
+    "postgresql": ">= 16.0.0, < 19.0.0",
+    "contracts": {
+      "installation-state": 1,
+      "upgrade-history": 1
+    }
+  },
+  "backup": {
+    "required": true,
+    "evidence": [
+      "database_backup_id",
+      "persistent_files_backup_id"
+    ]
+  },
+  "operations": [
+    {
+      "id": "verify-backup",
+      "type": "validation",
+      "description": "Verify required backup evidence before mutation",
+      "reversible": true,
+      "requires": []
+    },
+    {
+      "id": "migrate-database",
+      "type": "database",
+      "description": "Run registered database migrations",
+      "reversible": false,
+      "requires": [
+        "verify-backup"
+      ]
+    },
+    {
+      "id": "verify-platform",
+      "type": "validation",
+      "description": "Verify application, jobs, storage and integrations",
+      "reversible": true,
+      "requires": [
+        "migrate-database"
+      ]
+    }
+  ],
+  "deprecations": []
+}

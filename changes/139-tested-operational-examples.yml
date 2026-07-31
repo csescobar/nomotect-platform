@@ -1,0 +1,21 @@
+schema_version: 1
+id: 139-tested-operational-examples
+category: documentation
+summary: Add continuously tested extension, upgrade and backup manifest examples.
+release_impact: none
+contracts: []
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
