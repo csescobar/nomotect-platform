@@ -5,11 +5,13 @@ ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
   docs/contracts/epic-10-validation-plan.schema.json \
   docs/contracts/epic-10-finding.schema.json \
   docs/contracts/epic-10-certification.schema.json \
-  docs/contracts/epic-10-release-baseline.schema.json
+  docs/contracts/epic-10-release-baseline.schema.json \
+  docs/contracts/epic-10-rc-plan.schema.json
 
 bundle exec rails test \
   test/services/epic_10/contract_validator_test.rb \
-  test/services/epic_10/release_baseline_test.rb
+  test/services/epic_10/release_baseline_test.rb \
+  test/services/epic_10/rc_preparation_test.rb
 
 grep -q '"additionalProperties": false' docs/contracts/epic-10-validation-plan.schema.json
 grep -q '"critical", "high", "medium", "low"' docs/contracts/epic-10-finding.schema.json
@@ -18,5 +20,17 @@ grep -q 'critical and high findings cannot be accepted' app/services/epic_10/con
 grep -q 'must never publish or merge' docs/roadmap/epic-10-plan.md
 grep -q 'missing required runtimes' app/services/epic_10/release_baseline.rb
 grep -q 'manual_screen_reader_review' config/epic_10/release-baseline.yml
+grep -q 'publication.allowed: false' docs/validation/rc-preparation.md
+
+mkdir -p tmp/ci
+ruby bin/epic-10-rc-plan \
+  --target-version 1.0.0-rc.1 \
+  --source-commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \
+  > tmp/ci/epic-10-rc-plan.json
+ruby -rjson -e '
+  plan = JSON.parse(File.read("tmp/ci/epic-10-rc-plan.json"))
+  abort "RC plan may not publish" unless plan.dig("publication", "allowed") == false
+  abort "RC plan may not self-approve" unless plan.dig("approval", "approved") == false
+'
 
 printf 'Epic 10 validation contracts certified\n'
