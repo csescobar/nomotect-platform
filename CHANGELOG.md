@@ -14,6 +14,7 @@ Required release impact: `minor`.
 - Expose aggregated operational health signals for installation, deployment, jobs, storage and integrations. (`129-operational-health`)
 - Define operator-owned disaster recovery objectives, scenarios, approval gates and runbook guidance. (`130-disaster-recovery-policy`)
 - Certify restart, replacement, backup, restore and degraded-dependency resilience scenarios. (`131-resilience-certification`)
+- Add neutral community edition and entitlement abstractions that isolate optional commercial providers. (`132-neutral-entitlements`)
 
 ## 0.9.0
 
