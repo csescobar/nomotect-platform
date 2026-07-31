@@ -18,7 +18,9 @@ local boot is not a compatibility certification.
 | Extensions | Declared contract version that passes compatibility preflight | extension certification |
 | Distribution | GitHub Releases and GHCR channels | distribution certification evidence |
 
-The repository pins exact build inputs. Operators must not infer support for an
+The machine-readable [Epic 10 release baseline](../validation/release-baseline.md)
+records the exact current matrix, support level, manual-validation requirement
+and evidence paths. The repository pins exact build inputs. Operators must not infer support for an
 unlisted runtime, database, architecture or deployment service. Proposed matrix
 changes require their own change fragment and production-like certification.
 Compatibility evidence must be re-certified whenever a pull request changes its
@@ -143,5 +145,5 @@ flowchart TD
 
 Platform maintainers own this policy. Deployment, upgrade, extension, release and
 recovery changes must update it when they change a listed support boundary.
-Repository Intelligence freshness certification is introduced by the dedicated
-documentation-ownership task later in Phase 9.
+Repository Intelligence validates this document's ownership, source dependencies
+and review deadline.
