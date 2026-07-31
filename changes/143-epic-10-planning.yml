@@ -1,0 +1,21 @@
+schema_version: 1
+id: 143-epic-10-planning
+category: documentation
+summary: Define the dependency-ordered Epic 10 framework validation and release-readiness plan.
+release_impact: none
+contracts: []
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
