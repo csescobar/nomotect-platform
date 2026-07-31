@@ -18,6 +18,7 @@ owns:
   - accessibility_certification
   - security_privacy_isolation_certification
   - performance_compatibility_certification
+  - ai_readiness_certification
 may_use:
   - epic_10_validation
   - installation
@@ -71,3 +72,4 @@ required_tests:
   - accessibility_certification_test
   - security_privacy_isolation_certification_test
   - performance_compatibility_certification_test
+  - ai_readiness_certification_test

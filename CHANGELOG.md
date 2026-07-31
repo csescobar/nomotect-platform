@@ -37,6 +37,7 @@ Required release impact: `minor`.
 - Certify automated accessibility thresholds while preserving human screen-reader approval. (`158-epic-10-accessibility-certification`)
 - Certify security, privacy and tenant-isolation release thresholds. (`159-epic-10-security-privacy-isolation-certification`)
 - Certify deterministic performance budgets and the supported compatibility matrix. (`160-epic-10-performance-compatibility-certification`)
+- Certify a bounded contributor journey using repository-native guidance only. (`161-epic-10-ai-readiness-certification`)
 
 ### Documentation
 
