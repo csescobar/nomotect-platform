@@ -13,7 +13,7 @@ module CommercialReadiness
 
     test "explicit consent limits collection to selected categories" do
       policy = TelemetryPolicy.disabled.enable(
-        categories: ["capability_usage"],
+        categories: [ "capability_usage" ],
         at: Time.utc(2026, 7, 31, 10)
       )
 
@@ -29,7 +29,7 @@ module CommercialReadiness
     end
 
     test "envelopes transparently report fields removed by the allowlist" do
-      policy = TelemetryPolicy.disabled.enable(categories: ["operational_health"])
+      policy = TelemetryPolicy.disabled.enable(categories: [ "operational_health" ])
       envelope = TelemetryEnvelope.build(
         policy:,
         category: "operational_health",
@@ -50,10 +50,10 @@ module CommercialReadiness
 
     test "rejects unknown categories and categories retained while disabled" do
       assert_raises(TelemetryPolicy::InvalidPolicy) do
-        TelemetryPolicy.disabled.enable(categories: ["tenant_data"])
+        TelemetryPolicy.disabled.enable(categories: [ "tenant_data" ])
       end
       assert_raises(TelemetryPolicy::InvalidPolicy) do
-        TelemetryPolicy.new(TelemetryPolicy.disabled.data.merge("categories" => ["capability_usage"]))
+        TelemetryPolicy.new(TelemetryPolicy.disabled.data.merge("categories" => [ "capability_usage" ]))
       end
     end
   end
