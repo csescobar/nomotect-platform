@@ -23,7 +23,7 @@ grep -q 'manual_screen_reader_review' config/epic_10/release-baseline.yml
 grep -q 'publication.allowed: false' docs/validation/rc-preparation.md
 
 mkdir -p tmp/ci
-ruby bin/epic-10-rc-plan \
+bundle exec ruby bin/epic-10-rc-plan \
   --target-version 1.0.0-rc.1 \
   --source-commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa \
   > tmp/ci/epic-10-rc-plan.json
