@@ -1,0 +1,23 @@
+schema_version: 1
+id: 155-epic-10-functional-framework-certification
+category: feature
+summary: Certify integrated public functional contracts and governed negative-path findings.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Certification rejects missing negative evidence and unresolved critical or high blockers.
+privacy:
+  impact: reviewed
+  notes: Reports contain stable evidence identifiers without credentials or tenant payloads.
+accessibility:
+  impact: reviewed
+  notes: Design and localization evidence remains bound to Light/Dark and bilingual public journeys.

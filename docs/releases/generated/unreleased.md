@@ -30,6 +30,7 @@
 - Add fail-closed certification for the complete Epic 10 representative application. (`152-epic-10-representative-app-certification`)
 - Add deterministic representative application RC upgrade fixtures and a fail-closed manifest certification. (`153-epic-10-rc-upgrade-fixtures`)
 - Certify resumable representative application RC upgrades and deterministic recovery guidance. (`154-epic-10-rc-upgrade-certification`)
+- Certify integrated public functional contracts and governed negative-path findings. (`155-epic-10-functional-framework-certification`)
 
 ### Documentation
 
@@ -95,6 +96,7 @@
 - **Security — 152-epic-10-representative-app-certification:** Certification rejects missing evidence, requires a full source commit and cannot authorize publication.
 - **Security — 153-epic-10-rc-upgrade-fixtures:** Fixture validation rejects incomplete candidate state, incompatible manifests and missing backup evidence.
 - **Security — 154-epic-10-rc-upgrade-certification:** Certification fails closed on incompatible inputs, missing backup requirements and incomplete recovery evidence.
+- **Security — 155-epic-10-functional-framework-certification:** Certification rejects missing negative evidence and unresolved critical or high blockers.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -113,8 +115,10 @@
 - **Privacy — 152-epic-10-representative-app-certification:** The report contains stable identifiers and results without credentials or tenant payloads.
 - **Privacy — 153-epic-10-rc-upgrade-fixtures:** Candidate and upgrade evidence contains stable fixture metadata without credentials or tenant payloads.
 - **Privacy — 154-epic-10-rc-upgrade-certification:** Reports contain operation identifiers and outcomes without credentials or tenant payloads.
+- **Privacy — 155-epic-10-functional-framework-certification:** Reports contain stable evidence identifiers without credentials or tenant payloads.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.
 - **Accessibility — 149-epic-10-design-i18n-grid-journey:** The journey requires explicit Light/Dark rendering and bilingual labels while manual screen-reader review remains required.
 - **Accessibility — 152-epic-10-representative-app-certification:** Certification aggregates the required Light/Dark and bilingual journey while preserving manual review.
+- **Accessibility — 155-epic-10-functional-framework-certification:** Design and localization evidence remains bound to Light/Dark and bilingual public journeys.

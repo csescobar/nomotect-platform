@@ -437,9 +437,11 @@ manual approvals and proposed focused-PR sequence are defined in the
 
 ### Phase 4 — Functional framework certification
 
-- [ ] Certify integrated installation, configuration, design system, i18n,
+**Status:** ✅ Complete
+
+- [x] Certify integrated installation, configuration, design system, i18n,
   grid, domain, service, tenant, extension and Repository Intelligence paths.
-- [ ] Record negative-path findings as governed evidence.
+- [x] Record negative-path findings as governed evidence.
 
 ### Phase 5 — Production-like operations
 

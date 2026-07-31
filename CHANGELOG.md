@@ -31,6 +31,7 @@ Required release impact: `minor`.
 - Add fail-closed certification for the complete Epic 10 representative application. (`152-epic-10-representative-app-certification`)
 - Add deterministic representative application RC upgrade fixtures and a fail-closed manifest certification. (`153-epic-10-rc-upgrade-fixtures`)
 - Certify resumable representative application RC upgrades and deterministic recovery guidance. (`154-epic-10-rc-upgrade-certification`)
+- Certify integrated public functional contracts and governed negative-path findings. (`155-epic-10-functional-framework-certification`)
 
 ### Documentation
 
