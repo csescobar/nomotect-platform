@@ -100,3 +100,23 @@ ruby bin/support-bundle build --output var/support/support-bundle
 Operators must review the manifest and reports before transferring a bundle.
 Upload, telemetry, support consent and remote retention remain outside this
 Phase 7 capability.
+
+## Operational health
+
+The operational health snapshot separates process liveness from deeper
+readiness evidence. Explicit, isolated providers cover installation, deployment,
+jobs, storage and integrations. Each provider is time bounded and returns a
+stable code; timeouts and failures never expose raw exception messages.
+
+Required unhealthy dependencies make the aggregate unhealthy. Unknown required
+dependencies and any non-healthy optional dependency make it degraded. The
+snapshot is available as human-readable or JSON output and is automatically
+included as a redacted support-bundle report.
+
+```bash
+ruby bin/operational-health inspect
+ruby bin/operational-health inspect --format json
+```
+
+The baseline does not make external network calls, upload telemetry or treat an
+optional integration failure as process liveness failure.
