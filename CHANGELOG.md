@@ -28,6 +28,7 @@ Required release impact: `minor`.
 - Certify the representative Light/Dark, bilingual and governed grid journey. (`149-epic-10-design-i18n-grid-journey`)
 - Certify the representative domain lifecycle and tenant-safe enterprise-services journey. (`150-epic-10-domain-services-journey`)
 - Certify tenant isolation, community fallback and the sample-extension lifecycle. (`151-epic-10-multitenant-extension-journey`)
+- Add fail-closed certification for the complete Epic 10 representative application. (`152-epic-10-representative-app-certification`)
 
 ### Documentation
 

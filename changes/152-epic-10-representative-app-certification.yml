@@ -1,0 +1,23 @@
+schema_version: 1
+id: 152-epic-10-representative-app-certification
+category: feature
+summary: Add fail-closed certification for the complete Epic 10 representative application.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Certification rejects missing evidence, requires a full source commit and cannot authorize publication.
+privacy:
+  impact: reviewed
+  notes: The report contains stable identifiers and results without credentials or tenant payloads.
+accessibility:
+  impact: reviewed
+  notes: Certification aggregates the required Light/Dark and bilingual journey while preserving manual review.

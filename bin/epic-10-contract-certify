@@ -15,7 +15,8 @@ bundle exec rails test \
   test/services/epic_10/representative_application_test.rb \
   test/services/epic_10/representative_application_journey_test.rb \
   test/services/epic_10/domain_services_journey_test.rb \
-  test/services/epic_10/multitenant_extension_journey_test.rb
+  test/services/epic_10/multitenant_extension_journey_test.rb \
+  test/services/epic_10/representative_application_certification_test.rb
 
 grep -q '"additionalProperties": false' docs/contracts/epic-10-validation-plan.schema.json
 grep -q '"critical", "high", "medium", "low"' docs/contracts/epic-10-finding.schema.json
@@ -38,5 +39,7 @@ ruby -rjson -e '
   abort "RC plan may not publish" unless plan.dig("publication", "allowed") == false
   abort "RC plan may not self-approve" unless plan.dig("approval", "approved") == false
 '
+
+bundle exec ruby bin/epic-10-representative-app-certify aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa > tmp/ci/representative-application-certification.json
 
 printf 'Epic 10 validation contracts certified\n'

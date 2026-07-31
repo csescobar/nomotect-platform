@@ -420,10 +420,12 @@ manual approvals and proposed focused-PR sequence are defined in the
 
 ### Phase 2 — Representative application
 
-- [ ] Build a realistic application using only documented framework contracts.
-- [ ] Exercise installation, customization, domain, grid, services,
+**Status:** ✅ Complete
+
+- [x] Build a realistic application using only documented framework contracts.
+- [x] Exercise installation, customization, domain, grid, services,
   multi-tenant and extension journeys.
-- [ ] Certify clean-environment setup without private maintainer knowledge.
+- [x] Certify clean-environment setup without private maintainer knowledge.
 
 ### Phase 3 — Release-candidate upgrade journey
 
