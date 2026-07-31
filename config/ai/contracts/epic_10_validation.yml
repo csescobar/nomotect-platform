@@ -6,11 +6,14 @@ owns:
   - validation_certification
   - release_blocker_policy
   - expiring_risk_acceptance
+  - supported_environment_matrix
+  - measurable_release_thresholds
 may_use:
   - repository_intelligence
   - release_evidence
   - operational_readiness
   - compatibility_metadata
+  - runtime_and_packaging_evidence
 cannot_use:
   - automatic_release_publication
   - silent_risk_acceptance
@@ -23,5 +26,8 @@ invariants:
   - passed certification requires every recorded phase to be complete
   - passed certification rejects unresolved critical and high findings
   - certification evidence is bound to a full source commit
+  - supported environments cite repository evidence and declare manual validation
+  - every quality category defines measurable targets and required evidence
 required_tests:
   - epic_10_contract_validator_test
+  - epic_10_release_baseline_test
