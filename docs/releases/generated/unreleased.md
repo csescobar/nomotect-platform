@@ -13,9 +13,12 @@
 - Expose aggregated operational health signals for installation, deployment, jobs, storage and integrations. (`129-operational-health`)
 - Define operator-owned disaster recovery objectives, scenarios, approval gates and runbook guidance. (`130-disaster-recovery-policy`)
 - Certify restart, replacement, backup, restore and degraded-dependency resilience scenarios. (`131-resilience-certification`)
+- Add neutral community edition and entitlement abstractions that isolate optional commercial providers. (`132-neutral-entitlements`)
 
 ## Affected contracts
 
+- `commercial-readiness`
+- `community-edition`
 - `diagnostic-redaction`
 - `disaster-recovery-policy`
 - `operational-backup-manifest`
@@ -35,6 +38,7 @@
 - **Security — 129-operational-health:** Providers are time bounded and return redacted stable findings without raw exception messages.
 - **Security — 130-disaster-recovery-policy:** Restore and return to service remain human-approved.
 - **Security — 131-resilience-certification:** Fault injection is restricted to temporary production-like fixtures.
+- **Security — 132-neutral-entitlements:** Unknown or failing providers never grant optional capabilities or disable community capabilities.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
