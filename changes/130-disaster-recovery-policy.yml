@@ -1,0 +1,15 @@
+schema_version: 1
+id: 130-disaster-recovery-policy
+category: feature
+summary: Define operator-owned disaster recovery objectives, scenarios, approval gates and runbook guidance.
+release_impact: minor
+contracts:
+  - operational-readiness
+  - disaster-recovery-policy
+migration: { required: false, notes: }
+upgrade: { required: false, notes: }
+security:
+  impact: reviewed
+  notes: Restore and return to service remain human-approved.
+privacy: { impact: none, notes: }
+accessibility: { impact: none, notes: }
