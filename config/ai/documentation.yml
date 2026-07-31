@@ -147,5 +147,9 @@ documents:
       - representative_application
     source_paths:
       - config/ai/contracts/epic_10_validation.yml
+      - config/ai/contracts/representative_application.yml
       - config/epic_10/representative-application.yml
+      - app/services/epic_10/representative_application.rb
+      - test/fixtures/representative_application/foundation.yml
+      - test/services/epic_10/representative_application_test.rb
       - docs/roadmap/epic-10-plan.md
