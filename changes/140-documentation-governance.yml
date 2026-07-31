@@ -1,0 +1,15 @@
+schema_version: 1
+id: 140-documentation-governance
+category: feature
+summary: Govern operational documentation ownership, source dependencies and review freshness through Repository Intelligence.
+release_impact: minor
+contracts:
+  - documentation-governance
+  - repository-intelligence
+migration: { required: false, notes: }
+upgrade: { required: false, notes: }
+security:
+  impact: reviewed
+  notes: Bounded paths and explicit ownership prevent untracked or path-escaping documentation entries.
+privacy: { impact: none, notes: }
+accessibility: { impact: none, notes: }
