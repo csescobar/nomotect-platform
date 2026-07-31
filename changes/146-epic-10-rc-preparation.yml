@@ -1,0 +1,24 @@
+schema_version: 1
+id: 146-epic-10-rc-preparation
+category: feature
+summary: Add deterministic review-only planning for Epic 10 release candidates.
+release_impact: minor
+contracts:
+  - epic-10-rc-plan
+  - epic-10-validation
+  - releases
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: RC planning binds inputs to a full commit and cannot approve, tag or publish its own output.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

@@ -19,12 +19,16 @@ not publish a release candidate or claim that any Epic 10 phase is certified.
   full source commit.
 - `epic-10-release-baseline.schema.json` defines supported environments and
   measurable quality thresholds.
+- `epic-10-rc-plan.schema.json` defines deterministic review-only candidate
+  preparation.
 
 The Ruby validator enforces semantic rules that JSON Schema alone cannot
 express reliably, including unique identifiers and release-blocker policy.
 
 Read the [release baseline](release-baseline.md) for the current matrix, support
-levels, thresholds and manual validation boundary.
+levels, thresholds and manual validation boundary. The
+[RC preparation guide](rc-preparation.md) documents the review-only candidate
+plan, and the [threat model](threat-model.md) records its trust boundaries.
 
 ## Finding policy
 

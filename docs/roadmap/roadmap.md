@@ -406,7 +406,7 @@ manual approvals and proposed focused-PR sequence are defined in the
 
 ### Phase 1 — Validation architecture and RC baseline
 
-**Status:** 🚧 In progress
+**Status:** ✅ Complete
 
 - [x] Define versioned validation-plan, finding and certification contracts.
   Delivered by the strict JSON schemas, semantic `Epic10::ContractValidator`,
@@ -414,7 +414,9 @@ manual approvals and proposed focused-PR sequence are defined in the
 - [x] Approve the initial supported-environment matrix and measurable release thresholds.
   Delivered through the versioned release baseline, semantic validator, governed
   evidence references and focused contract tests.
-- [ ] Establish reproducible, protected `v1.0.0-rc.1` preparation.
+- [x] Establish reproducible, protected `v1.0.0-rc.1` preparation.
+  Delivered through a deterministic review-only plan bound to the exact commit,
+  baseline, changelog and change fragments. Planning cannot approve or publish.
 
 ### Phase 2 — Representative application
 

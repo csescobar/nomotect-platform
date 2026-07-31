@@ -11,6 +11,8 @@ on:
       - config/epic_10/**
       - config/ai/contracts/epic_10_validation.yml
       - bin/epic-10-contract-certify
+      - bin/epic-10-rc-plan
+      - bin/epic-10-rc-plan
       - .github/workflows/epic-10-validation-contract.yml
   push:
     branches: [main]
