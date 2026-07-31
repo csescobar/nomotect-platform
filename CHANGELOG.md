@@ -26,6 +26,7 @@ Required release impact: `minor`.
 - Add deterministic review-only planning for Epic 10 release candidates. (`146-epic-10-rc-preparation`)
 - Add a deterministic fail-closed foundation for the Epic 10 representative application. (`148-epic-10-representative-app-foundation`)
 - Certify the representative Light/Dark, bilingual and governed grid journey. (`149-epic-10-design-i18n-grid-journey`)
+- Certify the representative domain lifecycle and tenant-safe enterprise-services journey. (`150-epic-10-domain-services-journey`)
 
 ### Documentation
 

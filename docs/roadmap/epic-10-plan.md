@@ -112,6 +112,10 @@ minimization are executable prerequisites for the capability journeys.
 English/Brazilian Portuguese, typed grid operators, deterministic saved views
 and credential-free CSV export are governed and tested.
 
+**Domain and services journey:** delivered by PR #150. Policy-protected lifecycle
+transitions, queries, domain events, idempotent jobs, tenant-safe notifications
+and files, checksums, audit evidence and default-off flags are tested.
+
 ### Required capability journey
 
 - protected first-run installation and initial tenant;

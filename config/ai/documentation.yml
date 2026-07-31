@@ -155,4 +155,7 @@ documents:
       - app/services/epic_10/representative_application_journey.rb
       - test/support/representative_application/design_i18n_grid.yml
       - test/services/epic_10/representative_application_journey_test.rb
+      - app/services/epic_10/domain_services_journey.rb
+      - test/support/representative_application/domain_services.yml
+      - test/services/epic_10/domain_services_journey_test.rb
       - docs/roadmap/epic-10-plan.md
