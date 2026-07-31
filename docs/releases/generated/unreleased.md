@@ -19,6 +19,10 @@
 - Add explicit time-bounded diagnostic support consent and operator-reviewed share plans. (`135-support-consent`)
 - Certify that optional commercial integrations cannot disable essential community capabilities. (`136-commercial-readiness-certification`)
 
+### Documentation
+
+- Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions. (`137-operator-guides`)
+
 ## Affected contracts
 
 - `commercial-readiness`
