@@ -1,0 +1,23 @@
+schema_version: 1
+id: 161-epic-10-ai-readiness-certification
+category: feature
+summary: Certify a bounded contributor journey using repository-native guidance only.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: The journey enforces public contracts, bounded paths, protected-internal integrity and review-only publication.
+privacy:
+  impact: reviewed
+  notes: Certification evidence is deterministic and credential-free without production data or contributor content.
+accessibility:
+  impact: none
+  notes:
