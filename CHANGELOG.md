@@ -17,6 +17,7 @@ Required release impact: `minor`.
 - Add neutral community edition and entitlement abstractions that isolate optional commercial providers. (`132-neutral-entitlements`)
 - Add privacy-safe installation, customer and support identifiers with explicit rotation and disablement. (`133-support-identifiers`)
 - Add disabled-by-default telemetry contracts with explicit category consent and transparent redaction. (`134-opt-in-telemetry`)
+- Add explicit time-bounded diagnostic support consent and operator-reviewed share plans. (`135-support-consent`)
 
 ## 0.9.0
 
