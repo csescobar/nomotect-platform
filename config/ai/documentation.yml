@@ -138,3 +138,14 @@ documents:
       - app/services/epic_10/contract_validator.rb
       - app/services/epic_10/release_baseline.rb
       - app/services/epic_10/rc_preparation.rb
+  - path: docs/validation/representative-application.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - epic_10_validation
+      - representative_application
+    source_paths:
+      - config/ai/contracts/epic_10_validation.yml
+      - config/epic_10/representative-application.yml
+      - docs/roadmap/epic-10-plan.md
