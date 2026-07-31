@@ -42,7 +42,7 @@ module RepositoryIntelligence
     end
 
     def validate_schema(entries)
-      entries.flat_map.with_index do |entry, index|
+      entries.each_with_index.flat_map do |entry, index|
         validate_entry(entry, index)
       end
     end
@@ -94,7 +94,7 @@ module RepositoryIntelligence
     def validate_contracts(value, label)
       return [ "#{label} contracts must be a non-empty array" ] unless value.is_a?(Array) && value.any?
 
-      known = contracts.pluck("id")
+      known = contracts.map { |contract| contract.fetch("id") }
       unknown = value - known
       unknown.map { |contract| "#{label} references unknown contract #{contract}" }
     end
@@ -111,7 +111,7 @@ module RepositoryIntelligence
     end
 
     def bounded_path?(value)
-      return false unless value.is_a?(String) && value.present?
+      return false unless value.is_a?(String) && !value.empty?
 
       path = Pathname(value)
       !path.absolute? && !path.each_filename.include?("..") && path.cleanpath.to_s == value
