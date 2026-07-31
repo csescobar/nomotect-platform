@@ -33,6 +33,7 @@
 - Certify integrated public functional contracts and governed negative-path findings. (`155-epic-10-functional-framework-certification`)
 - Certify production-like deployment, persistent services and operational evidence. (`156-epic-10-production-deployment-certification`)
 - Certify operational resilience, degraded dependencies and verified recovery. (`157-epic-10-operational-resilience-certification`)
+- Certify automated accessibility thresholds while preserving human screen-reader approval. (`158-epic-10-accessibility-certification`)
 
 ### Documentation
 
@@ -122,9 +123,11 @@
 - **Privacy — 155-epic-10-functional-framework-certification:** Reports contain stable evidence identifiers without credentials or tenant payloads.
 - **Privacy — 156-epic-10-production-deployment-certification:** Production data is forbidden and reports contain only stable operational outcomes.
 - **Privacy — 157-epic-10-operational-resilience-certification:** Evidence is deterministic and credential-free with stable scenario identifiers only.
+- **Privacy — 158-epic-10-accessibility-certification:** Accessibility evidence contains stable results without credentials or user content.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.
 - **Accessibility — 149-epic-10-design-i18n-grid-journey:** The journey requires explicit Light/Dark rendering and bilingual labels while manual screen-reader review remains required.
 - **Accessibility — 152-epic-10-representative-app-certification:** Certification aggregates the required Light/Dark and bilingual journey while preserving manual review.
 - **Accessibility — 155-epic-10-functional-framework-certification:** Design and localization evidence remains bound to Light/Dark and bilingual public journeys.
+- **Accessibility — 158-epic-10-accessibility-certification:** Certification enforces zero critical violations and keyboard blockers while retaining human screen-reader review.
