@@ -17,30 +17,30 @@ module Epic10
       foundation = foundation_data
       foundation.fetch("service_requests").first["assignee_id"] = "aurora_owner"
 
-      error = assert_raises(InvalidFoundation) { build(foundation) }
+      error = assert_raises(RepresentativeApplication::InvalidFoundation) { build(foundation) }
       assert_includes error.message, "cross-tenant assignment"
     end
 
     test "rejects forbidden and undocumented dependencies" do
       foundation = foundation_data
       foundation["dependencies"] << "automatic_telemetry"
-      assert_raises(InvalidFoundation) { build(foundation) }
+      assert_raises(RepresentativeApplication::InvalidFoundation) { build(foundation) }
 
       foundation = foundation_data
       foundation["dependencies"] << "private_shortcut"
-      assert_raises(InvalidFoundation) { build(foundation) }
+      assert_raises(RepresentativeApplication::InvalidFoundation) { build(foundation) }
     end
 
     test "rejects incomplete or secret-bearing evidence declarations" do
       foundation = foundation_data
       foundation.fetch("evidence")["credential_free"] = false
 
-      error = assert_raises(InvalidFoundation) { build(foundation) }
+      error = assert_raises(RepresentativeApplication::InvalidFoundation) { build(foundation) }
       assert_includes error.message, "credential free"
 
       foundation = foundation_data
       foundation.fetch("evidence")["secret"] = "not-allowed"
-      assert_raises(InvalidFoundation) { build(foundation) }
+      assert_raises(RepresentativeApplication::InvalidFoundation) { build(foundation) }
     end
 
     private
