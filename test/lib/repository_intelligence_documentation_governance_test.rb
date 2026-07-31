@@ -2,6 +2,7 @@
 
 require "test_helper"
 require_relative "../../lib/repository_intelligence/documentation_governance"
+require_relative "../../lib/repository_intelligence/platform"
 
 class RepositoryIntelligenceDocumentationGovernanceTest < ActiveSupport::TestCase
   def setup
@@ -46,6 +47,17 @@ class RepositoryIntelligenceDocumentationGovernanceTest < ActiveSupport::TestCas
     assert findings.any? { |finding| finding.include?("bounded relative path") }
     assert findings.any? { |finding| finding.include?("GitHub owner") }
     assert_includes findings, "documentation catalog paths must be unique"
+  end
+
+  test "rejects unsupported catalog schema versions" do
+    governance = RepositoryIntelligence::DocumentationGovernance.new(
+      repository_path: Rails.root,
+      contracts: @contracts,
+      catalog: { "schema_version" => 2, "documents" => [ @entry ] },
+      today: Date.new(2026, 7, 31)
+    )
+
+    assert_equal [ "documentation catalog schema_version must be 1" ], governance.validate
   end
 
   test "certifies the repository documentation catalog" do
