@@ -10,20 +10,25 @@ module OperationalReadiness
       SECRET_KEY_BASE
     ].freeze
 
-    def initialize(installed_state: -> { Upgrades::InstalledStateDetector.new.call }, environment: ENV)
+    def initialize(installed_state: -> { Upgrades::InstalledStateDetector.new.call }, environment: ENV,
+      operational_health: -> {
+        OperationalHealthInspector.new(registry: DefaultHealthProviders.new.registry).call
+      })
       @installed_state = installed_state
       @environment = environment
+      @operational_health = operational_health
     end
 
     def registry
       DiagnosticCollectorRegistry.new
         .register("platform") { installed_state.call }
         .register("configuration") { configuration_presence }
+        .register("operational_health") { operational_health.call }
     end
 
     private
 
-    attr_reader :installed_state, :environment
+    attr_reader :installed_state, :environment, :operational_health
 
     def configuration_presence
       {

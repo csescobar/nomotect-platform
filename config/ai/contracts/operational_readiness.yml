@@ -11,6 +11,9 @@ owns:
   - diagnostic_redaction
   - diagnostic_collector_registry
   - support_bundle_builder
+  - operational_health_snapshot
+  - health_provider_registry
+  - operational_health_inspector
   - backup_component_inventory
   - restore_verification_requirements
 may_use:
@@ -39,6 +42,10 @@ invariants:
   - support bundle entries and total output are size bounded
   - support bundle files are checksum-bound and written with restricted permissions
   - support bundles are never uploaded automatically
+  - operational health providers are explicit, isolated and time bounded
+  - health findings use stable codes without raw exception messages
+  - required and optional dependencies affect aggregate health differently
+  - operational health covers installation, deployment, jobs, storage and integrations
   - verification covers database schema, installation contract, generated artifacts and application health
 required_tests:
   - operational_backup_manifest_test
@@ -47,3 +54,5 @@ required_tests:
   - diagnostic_redactor_test
   - support_bundle_builder_test
   - support_bundle_certification_test
+  - operational_health_inspector_test
+  - operational_health_certification_test
