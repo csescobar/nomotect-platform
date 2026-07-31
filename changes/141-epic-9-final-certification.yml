@@ -1,0 +1,15 @@
+schema_version: 1
+id: 141-epic-9-final-certification
+category: feature
+summary: Certify every Epic 9 phase and cross-cutting contract through an executable fail-closed completion gate.
+release_impact: minor
+contracts:
+  - epic-9-certification
+  - repository-intelligence
+migration: { required: false, notes: }
+upgrade: { required: false, notes: }
+security:
+  impact: reviewed
+  notes: Certification fails closed when required gates, evidence or authoritative roadmap completion are missing.
+privacy: { impact: none, notes: }
+accessibility: { impact: none, notes: }
