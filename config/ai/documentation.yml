@@ -1,0 +1,71 @@
+schema_version: 1
+documents:
+  - path: docs/operators/handbook.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - operational_readiness
+      - extensions
+      - upgrades
+      - distributions
+      - releases
+    source_paths:
+      - config/ai/contracts/operational_readiness.yml
+      - config/ai/contracts/extensions.yml
+      - config/ai/contracts/upgrades.yml
+      - config/ai/contracts/distributions.yml
+      - config/ai/contracts/releases.yml
+  - path: docs/operators/compatibility-and-lifecycle.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - extensions
+      - upgrades
+      - releases
+    source_paths:
+      - .ruby-version
+      - Gemfile.lock
+      - config/ai/contracts/extensions.yml
+      - config/ai/contracts/upgrades.yml
+      - config/ai/contracts/releases.yml
+  - path: docs/examples/README.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - operational_readiness
+      - extensions
+      - upgrades
+    source_paths:
+      - docs/examples/extension-manifest.yml
+      - docs/examples/upgrade-manifest.json
+      - docs/examples/backup-manifest.json
+  - path: docs/operations/disaster-recovery.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - operational_readiness
+    source_paths:
+      - config/ai/contracts/operational_readiness.yml
+      - config/operations/disaster-recovery.example.json
+  - path: docs/extensions/lifecycle-guide.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - extensions
+    source_paths:
+      - config/ai/contracts/extensions.yml
+      - docs/contracts/extension-manifest.schema.json
+  - path: docs/upgrades/architecture.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - upgrades
+    source_paths:
+      - config/ai/contracts/upgrades.yml
+      - docs/contracts/upgrade-manifest.schema.json
