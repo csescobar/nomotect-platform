@@ -35,7 +35,7 @@ module CommercialReadiness
     def validate!
       raise InvalidPolicy, "telemetry policy fields are invalid" unless data.is_a?(Hash) && data.keys.sort == FIELDS.sort
       raise InvalidPolicy, "unsupported telemetry policy schema" unless data["schema_version"] == SCHEMA_VERSION
-      raise InvalidPolicy, "enabled must be boolean" unless [true, false].include?(data["enabled"])
+      raise InvalidPolicy, "enabled must be boolean" unless [ true, false ].include?(data["enabled"])
       raise InvalidPolicy, "telemetry categories are invalid" unless data["categories"].is_a?(Array) && (data["categories"] - CATEGORIES).empty?
       raise InvalidPolicy, "disabled telemetry cannot retain categories" if !data["enabled"] && data["categories"].any?
     end
