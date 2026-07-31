@@ -96,6 +96,8 @@ documents:
       - docs/contracts/epic-10-certification.schema.json
       - app/services/epic_10/contract_validator.rb
       - app/services/epic_10/release_baseline.rb
+      - app/services/epic_10/rc_preparation.rb
+      - docs/contracts/epic-10-rc-plan.schema.json
       - config/epic_10/release-baseline.yml
       - docs/contracts/epic-10-release-baseline.schema.json
   - path: docs/validation/release-baseline.md
@@ -111,3 +113,28 @@ documents:
       - config/epic_10/release-baseline.yml
       - docs/contracts/epic-10-release-baseline.schema.json
       - app/services/epic_10/release_baseline.rb
+  - path: docs/validation/rc-preparation.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - epic_10_validation
+      - releases
+    source_paths:
+      - VERSION
+      - CHANGELOG.md
+      - config/epic_10/release-baseline.yml
+      - docs/contracts/epic-10-rc-plan.schema.json
+      - app/services/epic_10/rc_preparation.rb
+      - bin/epic-10-rc-plan
+  - path: docs/validation/threat-model.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - epic_10_validation
+    source_paths:
+      - config/ai/contracts/epic_10_validation.yml
+      - app/services/epic_10/contract_validator.rb
+      - app/services/epic_10/release_baseline.rb
+      - app/services/epic_10/rc_preparation.rb
