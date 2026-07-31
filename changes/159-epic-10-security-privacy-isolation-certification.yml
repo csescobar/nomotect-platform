@@ -1,0 +1,23 @@
+schema_version: 1
+id: 159-epic-10-security-privacy-isolation-certification
+category: feature
+summary: Certify security, privacy and tenant-isolation release thresholds.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Certification requires zero critical or high blockers, cross-tenant leaks and secret-bearing evidence.
+privacy:
+  impact: reviewed
+  notes: Minimization, redaction, retention and subject workflows are certified without personal data.
+accessibility:
+  impact: none
+  notes:
