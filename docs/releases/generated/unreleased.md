@@ -24,6 +24,7 @@
 - Define the supported-environment matrix and measurable release thresholds for Epic 10. (`145-epic-10-release-thresholds`)
 - Add deterministic review-only planning for Epic 10 release candidates. (`146-epic-10-rc-preparation`)
 - Add a deterministic fail-closed foundation for the Epic 10 representative application. (`148-epic-10-representative-app-foundation`)
+- Certify the representative Light/Dark, bilingual and governed grid journey. (`149-epic-10-design-i18n-grid-journey`)
 
 ### Documentation
 
@@ -81,6 +82,7 @@
 - **Security — 146-epic-10-rc-preparation:** RC planning binds inputs to a full commit and cannot approve, tag or publish its own output.
 - **Security — 147-epic-10-representative-app-architecture:** The fixture forbids undocumented internals, protected-core modification, credentials, production data and automatic publication.
 - **Security — 148-epic-10-representative-app-foundation:** The foundation rejects cross-tenant assignments, forbidden dependencies, undocumented contracts and unknown fields.
+- **Security — 149-epic-10-design-i18n-grid-journey:** Grid operators are allowlisted per column and exports must remain credential-free.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -93,6 +95,8 @@
 - **Privacy — 145-epic-10-release-thresholds:** Privacy thresholds reject secret-bearing evidence and unapproved personal-data flows.
 - **Privacy — 147-epic-10-representative-app-architecture:** Representative evidence is deterministic, credential-free and contains no personal data.
 - **Privacy — 148-epic-10-representative-app-foundation:** Fixture evidence must be deterministic, credential-free and personal-data-free.
+- **Privacy — 149-epic-10-design-i18n-grid-journey:** Journey evidence records contract outcomes without tenant payloads or credentials.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.
+- **Accessibility — 149-epic-10-design-i18n-grid-journey:** The journey requires explicit Light/Dark rendering and bilingual labels while manual screen-reader review remains required.

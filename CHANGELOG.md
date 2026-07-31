@@ -25,6 +25,7 @@ Required release impact: `minor`.
 - Define the supported-environment matrix and measurable release thresholds for Epic 10. (`145-epic-10-release-thresholds`)
 - Add deterministic review-only planning for Epic 10 release candidates. (`146-epic-10-rc-preparation`)
 - Add a deterministic fail-closed foundation for the Epic 10 representative application. (`148-epic-10-representative-app-foundation`)
+- Certify the representative Light/Dark, bilingual and governed grid journey. (`149-epic-10-design-i18n-grid-journey`)
 
 ### Documentation
 

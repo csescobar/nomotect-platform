@@ -108,6 +108,10 @@ boundary and required manual reviews are defined before implementation.
 public-dependency validation, cross-tenant assignment rejection and evidence
 minimization are executable prerequisites for the capability journeys.
 
+**Design, i18n and grid journey:** delivered by PR #149. Explicit Light/Dark,
+English/Brazilian Portuguese, typed grid operators, deterministic saved views
+and credential-free CSV export are governed and tested.
+
 ### Required capability journey
 
 - protected first-run installation and initial tenant;
