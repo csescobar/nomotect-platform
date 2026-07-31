@@ -7,6 +7,7 @@ owns:
   - deterministic_fixture_evidence
   - design_i18n_grid_journey
   - domain_services_journey
+  - multitenant_extension_journey
   - representative_application_findings
 may_use:
   - epic_10_validation
@@ -50,3 +51,4 @@ required_tests:
   - representative_application_test
   - representative_application_journey_test
   - domain_services_journey_test
+  - multitenant_extension_journey_test

@@ -1,0 +1,24 @@
+schema_version: 1
+id: 151-epic-10-multitenant-extension-journey
+category: feature
+summary: Certify tenant isolation, community fallback and the sample-extension lifecycle.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+  - extensions
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Cross-tenant access is denied, roles are least-privileged and extension failures remain isolated.
+privacy:
+  impact: reviewed
+  notes: Tenant-isolation evidence excludes tenant payloads and credentials.
+accessibility:
+  impact: none
+  notes:
