@@ -13,6 +13,7 @@ Required release impact: `minor`.
 - Add local redacted diagnostic support bundles with allowlisted collectors, checksums and size limits. (`128-diagnostic-support-bundles`)
 - Expose aggregated operational health signals for installation, deployment, jobs, storage and integrations. (`129-operational-health`)
 - Define operator-owned disaster recovery objectives, scenarios, approval gates and runbook guidance. (`130-disaster-recovery-policy`)
+- Certify restart, replacement, backup, restore and degraded-dependency resilience scenarios. (`131-resilience-certification`)
 
 ## 0.9.0
 
