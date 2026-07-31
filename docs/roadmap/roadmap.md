@@ -54,7 +54,7 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 **Status:** ✅ Complete
 
 - [x] Design token compiler
-- [x] Light, dark and system themes
+- [x] Explicit light and dark themes; legacy system preferences normalize to light
 - [x] Typography, icons and layouts
 - [x] Form builder and core inputs
 - [x] Buttons, cards, alerts, badges, dialogs and navigation
