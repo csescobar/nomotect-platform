@@ -136,12 +136,23 @@ The canonical `RepositoryIntelligence` API provides deterministic manifests and 
 
 Read the [Repository Intelligence public API](docs/ai/repository-intelligence-api.md), [repository health guide](docs/ai/repository-health.md) and [Platform Core AI Context](docs/modules/platform-core/AI_CONTEXT.md).
 
-## Epic status
+## Delivery history
 
-- ✅ **Epics 0–7:** foundation, platform core, design system and i18n, grid engine, domain framework, enterprise services, multi-tenancy, security and privacy.
-- ✅ **Epic 8:** provider-neutral AI platform and Repository Intelligence.
-- ✅ **Epic 9:** distribution, installation, packaging, upgrades, release engineering, enterprise extensions, publication, operational and commercial readiness, operator documentation and final certification.
-- ⏳ **Epic 10:** framework validation, release candidates and stable v1.0.0 release gate.
+The roadmap and merged delivery evidence show the platform's progression from governance foundation to a distributable and operable product:
+
+| Epic | Status | Delivered baseline | Primary evidence |
+| --- | --- | --- | --- |
+| **0 — Project Foundation** | ✅ Complete | Apache 2.0 identity, constitution, architecture and dependency rules, quality model, documentation governance, security disclosure and protected contribution workflow. | PR #3 |
+| **1 — Platform Core** | ✅ Complete | Rails/PostgreSQL scaffold, Hotwire and ViewComponent, authentication, deny-by-default authorization, request context, health, logging and CI security pipeline. | PR #4 |
+| **2 — Design System and i18n** | ✅ Complete | Compiled design tokens, typography, icons, layouts, form and navigation components, accessibility baseline, deterministic artifacts, English and Brazilian Portuguese. The current public selector contract is Light and Dark only. | PRs #5–#10 and later token/theme refinements |
+| **3 — Grid Engine** | ✅ Complete | Grid DSL, registries, query AST, Active Record/Arel and Tabulator adapters, HTML/Turbo fallback, saved views, export and column personalization. | PR #14 |
+| **4 — Domain Framework and Reference Application** | ✅ Complete | Operations, queries, policies, events, rich-domain conventions and a reference Customers capability with CRUD, audit, authorization, locking and system/security coverage. | PR #15 |
+| **5 — Enterprise Services** | ✅ Complete | Audit and observability, background jobs and idempotency, notifications, files, imports/exports, workflows, integrations, webhooks and feature flags. | PR #18 |
+| **6 — Multi-Tenant Platform** | ✅ Complete | Organizations, memberships and roles, invitations, tenant selection and context, isolation guarantees, tenant-safe services, ownership transfer and cross-tenant leakage tests. | PRs #11, #12, #20 and #22 |
+| **7 — Security and Privacy** | ✅ Complete | Privacy and LGPD workflows, CSP and secure headers, throttling, secret/key management, dependency and supply-chain automation, SBOM/provenance and threat/security suites. | PR #21 |
+| **8 — AI Platform and Repository Intelligence** | ✅ Complete | Provider-neutral repository scanning, governance graph and SQLite store, machine-readable contracts, generated evidence, playbooks, MCP, health/readiness and clean-worktree certification. | PRs #24, #26–#31 and #33–#34 |
+| **9 — Distribution, Installation and Enterprise Extensions** | ✅ Complete | Protected installation, packaging and deployment, upgrades and recovery, release engineering and publication, extension contracts, operational/commercial readiness, operator documentation and executable final certification. | PRs #37–#141; [certification](docs/certifications/epic-9.md) |
+| **10 — Framework Validation and Stable Release** | ⏳ Planned | Representative application validation, release candidates and the stable `v1.0.0` gate. | [Roadmap](docs/roadmap/roadmap.md) |
 
 Epic 9 completion does not itself authorize a stable release. The executable certification deliberately preserves Epic 10 as the stable-release gate.
 
