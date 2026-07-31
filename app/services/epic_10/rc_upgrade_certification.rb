@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "yaml"
+require "json"\nrequire "yaml"
 
 module Epic10
   class RcUpgradeCertification
@@ -97,12 +97,12 @@ module Epic10
     end
 
     def deep_copy(value)
-      Marshal.load(Marshal.dump(value))
+      JSON.parse(JSON.generate(value))
     end
 
     class MemoryStore
       def read = @state
-      def write!(payload) = (@state = Marshal.load(Marshal.dump(payload)))
+      def write!(payload) = (@state = JSON.parse(JSON.generate(payload)))
     end
 
     class PermitGate
