@@ -83,3 +83,15 @@ documents:
       - config/epic_9/certification.yml
       - lib/epic_9/certification.rb
       - docs/roadmap/roadmap.md
+  - path: docs/validation/architecture.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - epic_10_validation
+    source_paths:
+      - config/ai/contracts/epic_10_validation.yml
+      - docs/contracts/epic-10-validation-plan.schema.json
+      - docs/contracts/epic-10-finding.schema.json
+      - docs/contracts/epic-10-certification.schema.json
+      - app/services/epic_10/contract_validator.rb
