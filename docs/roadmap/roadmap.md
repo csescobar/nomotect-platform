@@ -165,13 +165,13 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 
 ## Epic 9 — Distribution, Installation and Enterprise Extensions
 
-**Status:** 🚧 In progress — Phase 7 operational readiness
+**Status:** ✅ Complete
 
 **Objective:** transform the repository from a developer-oriented source project into a distributable, installable, upgradeable and professionally extensible platform while preserving a complete Apache-licensed community core.
 
 ### Cross-cutting — Installation and Upgrade Contracts
 
-**Status:** ◐ Partially delivered
+**Status:** ✅ Complete
 
 - [x] Version installation-state and setup-configuration contracts used by Phase 1.
 - [x] Exclude administrative credentials and runtime secrets from persisted installation metadata.
@@ -180,8 +180,8 @@ Roadmap sequence remains authoritative even when a later capability is delivered
 - [x] Define shared compatibility, migration and deprecation rules for installation, deployment and upgrade contract versions.
 - [x] Complete and certify the upgrade-history and upgrade-recovery schemas.
 - [x] Validate cross-contract references, supported versions and operational evidence for Phases 1–3.
-- [ ] Complete deployment-manifest and installed-capability schemas in their owning later phases.
-- [ ] Extend cross-contract validation and operational evidence across the remaining Epic 9 phases.
+- [x] Complete deployment-manifest and installed-capability schemas in their owning later phases.
+- [x] Extend cross-contract validation and operational evidence across the remaining Epic 9 phases.
 
 ### Phase 1 — First-Run Installation and Provisioning
 
@@ -361,7 +361,7 @@ distribution verification completed successfully.
 
 ### Phase 7 — Operational Readiness
 
-**Status:** 🚧 In progress
+**Status:** ✅ Complete
 
 - [x] Define backup and restore contracts for PostgreSQL, files, generated configuration and installation metadata.
 - [x] Validate restore procedures in production-like environments.
@@ -382,7 +382,7 @@ distribution verification completed successfully.
 
 ### Phase 9 — Documentation and Operator Guides
 
-**Status:** ⏳ Planned
+**Status:** ✅ Complete
 
 - [x] Publish administrator, installation, deployment, upgrade, recovery, operator and extension guides.
 - [x] Document supported environments, compatibility matrices and lifecycle policies.
@@ -390,7 +390,7 @@ distribution verification completed successfully.
 - [x] Add continuously tested examples where practical.
 - [x] Connect operational contracts and guides to Repository Intelligence ownership and freshness checks.
 
-**Epic 9 exit criteria:** all phases and cross-cutting contracts satisfy their Definitions of Done; installation, packaging, upgrades, releases, extensions, distribution and operations are supported by green production-like certification; Repository Intelligence validates operational contracts and manifests; and CI is green. Completing Epic 9 does not authorize a stable `v1.0.0` release.
+**Epic 9 exit criteria:** satisfied. All phases and cross-cutting contracts meet their Definitions of Done; installation, packaging, upgrades, releases, extensions, distribution and operations have production-like certification; Repository Intelligence validates operational contracts, manifests and documentation governance; and the completion contract is executable through `bin/epic-9-certify`. Completing Epic 9 does not authorize a stable `v1.0.0` release.
 
 ## Epic 10 — Framework Validation and Release Readiness
 

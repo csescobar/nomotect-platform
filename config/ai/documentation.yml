@@ -69,3 +69,17 @@ documents:
     source_paths:
       - config/ai/contracts/upgrades.yml
       - docs/contracts/upgrade-manifest.schema.json
+  - path: docs/certifications/epic-9.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - operational_readiness
+      - extensions
+      - upgrades
+      - distributions
+      - releases
+    source_paths:
+      - config/epic_9/certification.yml
+      - lib/epic_9/certification.rb
+      - docs/roadmap/roadmap.md

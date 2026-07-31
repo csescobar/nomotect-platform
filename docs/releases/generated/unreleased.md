@@ -19,6 +19,7 @@
 - Add explicit time-bounded diagnostic support consent and operator-reviewed share plans. (`135-support-consent`)
 - Certify that optional commercial integrations cannot disable essential community capabilities. (`136-commercial-readiness-certification`)
 - Govern operational documentation ownership, source dependencies and review freshness through Repository Intelligence. (`140-documentation-governance`)
+- Certify every Epic 9 phase and cross-cutting contract through an executable fail-closed completion gate. (`141-epic-9-final-certification`)
 
 ### Documentation
 
@@ -34,6 +35,7 @@
 - `diagnostic-redaction`
 - `disaster-recovery-policy`
 - `documentation-governance`
+- `epic-9-certification`
 - `operational-backup-manifest`
 - `operational-health-snapshot`
 - `operational-readiness`
@@ -61,6 +63,7 @@
 - **Security — 135-support-consent:** Diagnostic sharing is scope limited, expires, revokes immediately and requires operator upload.
 - **Security — 136-commercial-readiness-certification:** Provider failures and unknown capabilities remain fail-closed without affecting community capabilities.
 - **Security — 140-documentation-governance:** Bounded paths and explicit ownership prevent untracked or path-escaping documentation entries.
+- **Security — 141-epic-9-final-certification:** Certification fails closed when required gates, evidence or authoritative roadmap completion are missing.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

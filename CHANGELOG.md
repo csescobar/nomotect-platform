@@ -20,6 +20,7 @@ Required release impact: `minor`.
 - Add explicit time-bounded diagnostic support consent and operator-reviewed share plans. (`135-support-consent`)
 - Certify that optional commercial integrations cannot disable essential community capabilities. (`136-commercial-readiness-certification`)
 - Govern operational documentation ownership, source dependencies and review freshness through Repository Intelligence. (`140-documentation-governance`)
+- Certify every Epic 9 phase and cross-cutting contract through an executable fail-closed completion gate. (`141-epic-9-final-certification`)
 
 ### Documentation
 
