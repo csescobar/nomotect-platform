@@ -367,7 +367,7 @@ distribution verification completed successfully.
 - [x] Validate restore procedures in production-like environments.
 - [x] Provide redacted diagnostic and support bundles.
 - [x] Expose installation, deployment, job, storage and integration health signals.
-- [ ] Document disaster-recovery objectives and manual interventions.
+- [x] Document disaster-recovery objectives and manual interventions.
 - [ ] Test restart, replacement, backup, restore and degraded-dependency scenarios.
 
 ### Phase 8 — Commercial Readiness

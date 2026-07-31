@@ -12,6 +12,7 @@ Required release impact: `minor`.
 - Certify production-like restore procedures with fail-closed safety, checksum and verification gates. (`127-restore-certification`)
 - Add local redacted diagnostic support bundles with allowlisted collectors, checksums and size limits. (`128-diagnostic-support-bundles`)
 - Expose aggregated operational health signals for installation, deployment, jobs, storage and integrations. (`129-operational-health`)
+- Define operator-owned disaster recovery objectives, scenarios, approval gates and runbook guidance. (`130-disaster-recovery-policy`)
 
 ## 0.9.0
 
