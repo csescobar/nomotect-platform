@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require "json"\nrequire "yaml"
+require "json"
+require "yaml"
 
 module Epic10
   class RcUpgradeCertification
