@@ -19,6 +19,7 @@ Required release impact: `minor`.
 - Add disabled-by-default telemetry contracts with explicit category consent and transparent redaction. (`134-opt-in-telemetry`)
 - Add explicit time-bounded diagnostic support consent and operator-reviewed share plans. (`135-support-consent`)
 - Certify that optional commercial integrations cannot disable essential community capabilities. (`136-commercial-readiness-certification`)
+- Govern operational documentation ownership, source dependencies and review freshness through Repository Intelligence. (`140-documentation-governance`)
 
 ### Documentation
 
