@@ -1,0 +1,15 @@
+schema_version: 1
+id: 131-resilience-certification
+category: feature
+summary: Certify restart, replacement, backup, restore and degraded-dependency resilience scenarios.
+release_impact: minor
+contracts:
+  - operational-readiness
+  - resilience-certification-report
+migration: { required: false, notes: }
+upgrade: { required: false, notes: }
+security:
+  impact: reviewed
+  notes: Fault injection is restricted to temporary production-like fixtures.
+privacy: { impact: none, notes: }
+accessibility: { impact: none, notes: }
