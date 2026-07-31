@@ -1,45 +1,34 @@
 # NomoTect
 
-Build with structure. Evolve with confidence.
+**Build with structure. Evolve with confidence.**
 
-NomoTect is a governed application platform designed for enterprise-grade scalability. While built upon the foundations of modern Rails and Hotwire, NomoTect transcends a mere tech stack, providing a modular architecture, native security, and repository intelligence.
+NomoTect is an open-source, AI-native, enterprise-ready governed application platform for building secure, accessible and maintainable applications with Ruby on Rails and Hotwire.
 
-## Platform Philosophy
+The Apache-licensed community platform provides a complete application foundation. Optional commercial services and extensions may integrate through explicit contracts without disabling or replacing essential community functionality.
 
-- **Core:** Stable governance and security modules protected by explicit platform contracts.
-- **Installation:** The specialized layer where features and business logic reside.
-- **Agentic Integration:** Human-AI synergy through repository-aware logic.
+## What NomoTect provides
 
-> Legacy reference: Formerly known as `rails-hotwire-platform`.
+- **Governed architecture:** explicit module boundaries, executable contracts, engineering playbooks and repository-native documentation.
+- **Application foundation:** authentication, deny-by-default authorization, multi-tenancy, auditability, background work, files, workflows, integrations and feature flags.
+- **Secure operations:** privacy workflows, CSP and security headers, abuse controls, secret validation, SBOMs, provenance and security automation.
+- **User experience:** Hotwire and ViewComponent, accessibility and internationalization in English and Brazilian Portuguese.
+- **Theme contract:** exactly two user-selectable themes—Light and Dark. Missing, invalid and legacy `system` preferences normalize to Light.
+- **Repository Intelligence:** deterministic architecture evidence, impact analysis, health and readiness reporting, executable playbooks and a read-only-by-default MCP server.
+- **Distribution and lifecycle:** protected first-run installation, containers, deployment profiles, upgrade and recovery contracts, release automation, extensions, operational readiness and certification.
 
-## Vision
+Read the [platform vision](VISION.md), [platform architecture](docs/architecture/platform-architecture.md) and [Engineering Constitution](ENGINEERING_CONSTITUTION.md).
 
-This project is not only a starter template. It is a reusable application platform that standardizes architecture, design systems, internationalization, advanced grids, security, governance, observability and developer experience.
+## Release and maturity
 
-AI-native means the repository is intentionally structured so humans and coding agents can understand, extend and validate it safely without depending on undocumented knowledge, proprietary memory tooling or a specific AI vendor. Human accountability and review remain mandatory.
+The current project version is **v0.9.0**. Epics 0 through 9 are complete and Epic 9 is executable-certified, but v0.9.0 remains a pre-stable release.
 
-Read the [platform vision](VISION.md) and [Engineering Constitution](ENGINEERING_CONSTITUTION.md).
-
-## Core principles
-
-- AI-native and repository-self-describing
-- Enterprise-ready from the first implementation
-- Frameworks as adapters rather than architecture
-- Secure and private by default
-- Server-rendered HTML with progressive enhancement
-- Rich domain models without coupling domain logic to Turbo
-- Modular monolith before distributed architecture
-- Open-source community core under Apache License 2.0
-- Design tokens instead of hard-coded styling
-- Internationalization and accessibility from the first feature
-- Auditable operations and explicit governance
+Epic 10 is the next delivery stage. It owns representative application validation, release candidates and the stable `v1.0.0` gate. See the [authoritative roadmap](docs/roadmap/roadmap.md) and [Epic 9 certification](docs/certifications/epic-9.md).
 
 ## Runtime baseline
 
 - Ruby 4.0.5
-- Rails 8.1.3
-- PostgreSQL 18.4
-- First-party Rails authentication
+- Rails 8.1.3.1
+- PostgreSQL 18
 - Hotwire: Turbo and Stimulus
 - ViewComponent
 - Importmap and Propshaft
@@ -48,85 +37,88 @@ Read the [platform vision](VISION.md) and [Engineering Constitution](ENGINEERING
 
 ## Quick start
 
-Prerequisites are Ruby 4.0.5 and PostgreSQL 18.
+### Docker Compose
 
-### Option A: Interactive Web Installation Wizard (Recommended)
-
-Start the application with the First-Run Installation Wizard enabled:
+Docker Compose is the shortest supported path for local evaluation:
 
 ```bash
-INSTALLATION_ENABLED=true PGHOST=127.0.0.1 PGUSER=postgres PGPASSWORD=postgres bin/rails server
+docker compose up --build
 ```
 
-Navigating to `http://localhost:3000` will launch the guided setup wizard to configure Appearance, Database credentials, Database Provisioning & Migrations, and create the Platform Owner admin user.
+Open `http://localhost:3000`. The development profile enables the protected first-run installation flow and starts PostgreSQL 18.
 
-### Option B: CLI / Headless Setup
+### Local Ruby and PostgreSQL
 
-For automated or headless environments:
+Install Ruby 4.0.5 and PostgreSQL 18, then run:
 
 ```bash
 bash bin/setup
 bash bin/dev
 ```
 
-Create the first user through the Rails console; the project intentionally ships without default credentials:
+For a new installation managed by the interactive wizard:
 
 ```bash
-ruby bin/rails console
-User.create!(
-  email_address: "admin@example.com",
-  password: "replace-with-a-long-password",
-  password_confirmation: "replace-with-a-long-password"
-)
+INSTALLATION_ENABLED=true \
+PGHOST=127.0.0.1 \
+PGUSER=postgres \
+PGPASSWORD=postgres \
+bash bin/setup
+
+INSTALLATION_ENABLED=true \
+PGHOST=127.0.0.1 \
+PGUSER=postgres \
+PGPASSWORD=postgres \
+bash bin/dev
 ```
 
-### Verification
+Open `http://localhost:3000` and follow the protected wizard. It configures appearance, provisions and verifies the database, creates the global platform administrator and initial organization owner, records completion evidence and closes installer access after completion.
 
-Run the complete local verification pipeline with:
+Do not use example or default credentials in deployed environments. Production installation requires an operator-provided bootstrap token and secret configuration.
+
+### Verify the repository
+
+Run the complete local verification pipeline:
 
 ```bash
 bash bin/ci
 ```
 
-## Platform core contracts
+Run the focused Epic 9 certification:
 
-- First-party session authentication and password reset
-- Deny-by-default authorization policy contract
-- Request-scoped identity and correlation context
-- Database-aware health endpoint at `/health`
-- Structured JSON logging option
-- Nonce-based CSP, secure response headers, secure cookies and scoped request throttling
-- Tenant-safe privacy export, anonymization, processing preferences and retention policies
-- Production secret validation, redaction rules and rotation runbooks
-- Deterministic CycloneDX SBOM and checksum generation in CI
-- ViewComponent base and first UI component
-- English and Brazilian Portuguese locale baseline
-- Stable developer commands under `bin/`
-- GitHub Actions quality and security pipeline
+```bash
+ruby bin/epic-9-certify
+```
 
-Read the [Platform Core AI Context](docs/modules/platform-core/AI_CONTEXT.md) and [Security and Privacy AI Context](docs/modules/security-privacy/AI_CONTEXT.md) for invariants, review boundaries and known limitations.
+## Supported distribution paths
+
+The repository certifies these delivery profiles in CI:
+
+- development and production [Docker Compose profiles](docs/installation/container-packaging.md);
+- [Dev Container and Codespaces](.devcontainer/devcontainer.json);
+- [Kamal](docs/deployment/kamal.md) and [private VPS](docs/deployment/private-vps.md);
+- [Render.com Blueprint](docs/deployment/render.md);
+- versioned OCI images with SBOM, checksum and provenance evidence;
+- GitHub Releases and GHCR publication from the same approved commit and immutable image digest.
+
+The [operator handbook](docs/operators/handbook.md) is the starting point for installation, deployment, upgrades, recovery, extensions, releases and routine operation.
+
+## Platform contracts
+
+NomoTect keeps platform behavior explicit and testable:
+
+- versioned installation state and secret-free setup metadata;
+- resumable upgrade plans, compatibility checks, backup evidence, history and recovery guidance;
+- deployment manifests, package profiles and operational evidence;
+- stable external extension contracts and compatibility certification;
+- neutral edition, entitlement and commercial-service interfaces;
+- opt-in telemetry and explicit support-consent boundaries;
+- backup, restore, redacted diagnostics, health and disaster-recovery certification;
+- documentation ownership, freshness validation and continuously tested examples.
+
+Repository Intelligence validates the relationships and freshness of these contracts. It does not require a proprietary AI provider.
 
 ## Repository Intelligence
-
-Epic 8 adds a provider-neutral Repository Intelligence platform over the source repository. The platform owns a normalized governance graph while replaceable integrations such as Codebase Memory and GitNexus may supply structural code intelligence.
-
-The canonical `RepositoryIntelligence` API powers:
-
-- deterministic manifests, graph snapshots, checksums, AI contexts and architecture reports;
-- a normalized SQLite graph store with bounded incremental refresh and drift detection;
-- machine-readable module contracts and executable engineering playbooks;
-- semantic repository queries, impact analysis and dependency traversal;
-- a read-only-by-default stdio MCP server with resources, tools, prompts, auditing, limits and explicit write capabilities;
-- typed validators, repository health, remediation guidance and readiness reporting;
-- clean-worktree certification covering deterministic regeneration, MCP journeys, provider failures, incremental equivalence and security boundaries.
-
-Epic 9 extends this governance model beyond source architecture. Repository Intelligence is planned to index and validate:
-
-- versioned installation-state and setup-configuration contracts;
-- upgrade plans, compatibility metadata and upgrade-history contracts;
-- deployment manifests, packaging profiles and required operational evidence;
-- references among design-system configuration, installed capabilities, releases and supported environments;
-- contract freshness, supported schema versions, missing ownership and operational documentation drift.
 
 Useful commands include:
 
@@ -140,107 +132,31 @@ ruby bin/repository-intelligence playbook list
 ruby bin/repository-intelligence mcp
 ```
 
-## Epic 9 architecture direction
+The canonical `RepositoryIntelligence` API provides deterministic manifests and graph snapshots, a normalized SQLite graph store, semantic queries and impact analysis, machine-readable module contracts, health and readiness reporting, and a read-only-by-default stdio MCP server.
 
-Epic 9 turns the repository into a platform that can be installed, packaged, upgraded, released, operated and extended through documented contracts.
+Read the [Repository Intelligence public API](docs/ai/repository-intelligence-api.md), [repository health guide](docs/ai/repository-health.md) and [Platform Core AI Context](docs/modules/platform-core/AI_CONTEXT.md).
 
-```text
-Browser or operator
-        │
-        ▼
-Installation Gate
-   ┌────┴───────────────┐
-   │                    │
-Installed          Not installed
-   │                    │
-   ▼                    ▼
-Rails application   Wizard Engine
-                         │
-             ┌───────────┼────────────┐
-             │           │            │
-        Appearance   Database   Platform Owner
-             │           │            │
-             └───────────┴────────────┘
-                         │
-                         ▼
-             Installation contracts
-                         │
-                         ▼
-              Repository Intelligence
-```
+## Epic status
 
-The wizard engine is planned as reusable operational infrastructure for installation, upgrade, recovery and maintenance flows rather than as a one-off controller sequence.
+- ✅ **Epics 0–7:** foundation, platform core, design system and i18n, grid engine, domain framework, enterprise services, multi-tenancy, security and privacy.
+- ✅ **Epic 8:** provider-neutral AI platform and Repository Intelligence.
+- ✅ **Epic 9:** distribution, installation, packaging, upgrades, release engineering, enterprise extensions, publication, operational and commercial readiness, operator documentation and final certification.
+- ⏳ **Epic 10:** framework validation, release candidates and stable v1.0.0 release gate.
 
-### First-run installation flow
-
-```text
-Application start
-        │
-        ▼
-Installation complete?
-   ┌────┴────┐
-   │         │
-  Yes        No
-   │         │
-   ▼         ▼
-Normal app   Protected installation session
-                 │
-                 ▼
-             Appearance
-                 │
-                 ▼
-        Database provisioning
-                 │
-                 ▼
-        Migrations and verification
-                 │
-                 ▼
-          Platform owner creation
-                 │
-                 ▼
-      Local + database completion evidence
-                 │
-                 ▼
-        Bootstrap token invalidated
-                 │
-                 ▼
-               Login
-```
-
-## Current development status
-
-- ✅ Epics 0–8 are complete, covering project foundation, platform core, design system and internationalization, grid engine, domain framework and reference application, Enterprise Services, the Multi-Tenant Platform, Security and Privacy, and the AI Platform with Repository Intelligence.
-- ✅ **Epic 9 — Phase 6 is complete.** GitHub Releases and GHCR semantic tags publish from the same approved commit, artifact bundle and immutable image digest, with post-publication observation and certification.
-- ✅ **Epic 9 — Phase 7 is complete.** Operational Readiness now covers backup, restore, redacted diagnostics, health signals, disaster recovery policy and production-like resilience certification.
-- ⏳ Epic 10 remains planned for framework validation, release candidates and the stable `v1.0.0` release gate.
-
-### Epic 9 roadmap summary
-
-1. **First-Run Installation and Provisioning** — secure wizard, appearance, database provisioning, migrations and initial platform owner.
-2. **Packaging and Distribution** — supported containers, development environments and deployment profiles.
-3. **Upgrade Framework** — compatibility planning, resumable migrations, history and recovery guidance.
-4. **Release Engineering** — canonical versioning, change fragments, changelog, notes and release evidence.
-5. **Enterprise Extension Platform** — explicit external extension and compatibility contracts without community forks.
-6. **Distribution Channels** — verified release publication and provenance across supported channels.
-7. **Operational Readiness** — backup, restore, diagnostics, observability and support workflows.
-8. **Commercial Readiness** — neutral edition, entitlement and opt-in telemetry abstractions.
-9. **Documentation and Operator Guides** — tested installation, deployment, upgrade, recovery and extension documentation.
-
-Installation and upgrade contracts are cross-cutting: operational state, deployment manifests, compatibility metadata and evidence must be versioned, secret-free and validated by Repository Intelligence.
-
-The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and traceability source.
+Epic 9 completion does not itself authorize a stable release. The executable certification deliberately preserves Epic 10 as the stable-release gate.
 
 ## Documentation
 
-### Foundation
+### Start here
 
-- [Engineering Constitution](ENGINEERING_CONSTITUTION.md)
-- [Architecture](ARCHITECTURE.md)
-- [Quality model](QUALITY.md)
-- [Security policy](SECURITY.md)
-- [Apache License 2.0](LICENSE)
+- [Operator handbook](docs/operators/handbook.md)
+- [Compatibility and lifecycle policy](docs/operators/compatibility-and-lifecycle.md)
+- [Epic roadmap](docs/roadmap/roadmap.md)
+- [Contributing guide](CONTRIBUTING.md)
+- [Release process](docs/governance/release-process.md)
+- [Versioning policy](docs/governance/versioning.md)
 
-### Architecture
+### Architecture and AI-native engineering
 
 - [Platform vision](VISION.md)
 - [Product vision](docs/architecture/product-vision.md)
@@ -248,39 +164,28 @@ The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and
 - [Module catalog](docs/architecture/module-catalog.md)
 - [Architecture principles](docs/architecture/architecture-principles.md)
 - [Dependency rules](docs/architecture/dependency-rules.md)
-- [Ubiquitous language](docs/architecture/ubiquitous-language.md)
-- [Engineering decision tree](docs/architecture/engineering-decision-tree.md)
-- [Federated Repository Intelligence ADR](docs/architecture/decisions/0003-federated-repository-intelligence.md)
-
-### AI-native architecture
-
 - [AI architecture overview](docs/ai/README.md)
 - [Module contract specification](docs/ai/module-contract-specification.md)
 - [Contribution boundaries](docs/ai/contribution-boundaries.md)
-- [Architecture manifest schema](docs/ai/architecture-manifest.schema.json)
 - [Agent command playbooks](docs/ai/commands/README.md)
-- [Repository Intelligence public API](docs/ai/repository-intelligence-api.md)
-- [Repository health and readiness](docs/ai/repository-health.md)
-- [Epic 8 delivery evidence](docs/ai/epic-8-delivery-evidence.md)
-- [AI-native roadmap](docs/ai/ai-first-roadmap.md)
 - [AI contribution principles](AI_PRINCIPLES.md)
 - [Agent instructions](AGENTS.md)
 
-### Platform capabilities
+### Platform, operations and extensions
 
 - [Design system](docs/design-system/overview.md)
 - [Grid architecture](docs/grid/architecture.md)
 - [Internationalization](docs/i18n/strategy.md)
 - [Security baseline](docs/security/security-baseline.md)
 - [Threat model](docs/security/threat-model.md)
-- [Epic 7 threat model](docs/security/epic-7-threat-model.md)
 - [Security operations and rotation](docs/security/security-operations.md)
-- [Security and Privacy AI Context](docs/modules/security-privacy/AI_CONTEXT.md)
+- [Privacy and LGPD](docs/governance/privacy-and-lgpd.md)
 - [Extension architecture](docs/extensions/architecture.md)
 - [Extension lifecycle guide](docs/extensions/lifecycle-guide.md)
 - [Extension platform certification](docs/extensions/certification.md)
+- [Epic 9 certification](docs/certifications/epic-9.md)
 
-### Governance and contribution
+### Governance
 
 - [Governance model](docs/governance/governance-model.md)
 - [Definition of Done](docs/governance/definition-of-done.md)
@@ -288,23 +193,16 @@ The [Epic roadmap](docs/roadmap/roadmap.md) is the canonical delivery status and
 - [RFC process](docs/governance/rfc-process.md)
 - [Platform maturity model](docs/governance/platform-maturity-model.md)
 - [Coding standards](docs/governance/coding-standards.md)
-- [Contribution model](docs/governance/contribution-model.md)
-- [Release process](docs/governance/release-process.md)
-- [Versioning policy](docs/governance/versioning.md)
-- [Privacy and LGPD](docs/governance/privacy-and-lgpd.md)
-- [Contributing guide](CONTRIBUTING.md)
-
-### Delivery
-
-- [Epic roadmap](docs/roadmap/roadmap.md)
+- [Quality model](QUALITY.md)
+- [Security policy](SECURITY.md)
 
 ## Repository strategy
 
-The community platform is distributed under Apache License 2.0. A future `nomotect-enterprise` repository may provide separately licensed premium integrations and operational capabilities without removing essential functionality from the community core.
+The community platform is distributed under the [Apache License 2.0](LICENSE). Organizations may build compatible commercial services or extensions under their own terms, subject to the license and trademarks. NomoTect's planned product family may also provide separately licensed offerings through the same public extension, entitlement, support and telemetry boundaries.
 
 ## Contribution workflow
 
-The `main` branch is protected. Changes are developed on focused branches and submitted through pull requests. Squash merge is the preferred strategy.
+The `main` branch is protected. Develop one focused change per branch, submit it through a pull request and satisfy the repository's release, test, lint, security, Repository Intelligence and relevant packaging contracts. Squash merge is the preferred strategy.
 
 ## License
 
