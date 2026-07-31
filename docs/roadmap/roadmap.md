@@ -385,8 +385,8 @@ distribution verification completed successfully.
 **Status:** ⏳ Planned
 
 - [x] Publish administrator, installation, deployment, upgrade, recovery, operator and extension guides.
-- [ ] Document supported environments, compatibility matrices and lifecycle policies.
-- [ ] Provide architecture, state-machine, sequence, security and recovery diagrams.
+- [x] Document supported environments, compatibility matrices and lifecycle policies.
+- [x] Provide architecture, state-machine, sequence, security and recovery diagrams.
 - [ ] Add continuously tested examples where practical.
 - [ ] Connect operational contracts and guides to Repository Intelligence ownership and freshness checks.
 
