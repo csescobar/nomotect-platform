@@ -49,8 +49,8 @@
 - `operational-health-snapshot`
 - `operational-readiness`
 - `releases`
-- `representative-application`
 - `repository-intelligence`
+- `representative-application`
 - `resilience-certification-report`
 - `restore-certification`
 - `restore-execution`
