@@ -384,7 +384,7 @@ distribution verification completed successfully.
 
 **Status:** ⏳ Planned
 
-- [ ] Publish administrator, installation, deployment, upgrade, recovery, operator and extension guides.
+- [x] Publish administrator, installation, deployment, upgrade, recovery, operator and extension guides.
 - [ ] Document supported environments, compatibility matrices and lifecycle policies.
 - [ ] Provide architecture, state-machine, sequence, security and recovery diagrams.
 - [ ] Add continuously tested examples where practical.
