@@ -17,7 +17,11 @@ module RepositoryIntelligence
     end
 
     def validate
-      document_entries = load_catalog.fetch("documents")
+      payload = load_catalog
+      return [ "documentation catalog must be an object" ] unless payload.is_a?(Hash)
+      return [ "documentation catalog schema_version must be 1" ] unless payload["schema_version"] == 1
+
+      document_entries = payload.fetch("documents")
       return [ "documentation catalog documents must be an array" ] unless document_entries.is_a?(Array)
 
       findings = validate_schema(document_entries)
@@ -35,10 +39,7 @@ module RepositoryIntelligence
     attr_reader :repository_path, :contracts, :catalog_path, :catalog, :today
 
     def load_catalog
-      payload = catalog || YAML.safe_load_file(catalog_path, aliases: false)
-      raise KeyError, "schema_version" unless payload["schema_version"] == 1
-
-      payload
+      catalog || YAML.safe_load_file(catalog_path, aliases: false)
     end
 
     def validate_schema(entries)
