@@ -15,6 +15,7 @@ owns:
   - functional_framework_certification
   - production_deployment_certification
   - operational_resilience_certification
+  - accessibility_certification
 may_use:
   - epic_10_validation
   - installation
@@ -65,3 +66,4 @@ required_tests:
   - functional_framework_certification_test
   - production_deployment_certification_test
   - operational_resilience_certification_test
+  - accessibility_certification_test
