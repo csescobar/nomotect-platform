@@ -34,6 +34,7 @@ Required release impact: `minor`.
 - Certify integrated public functional contracts and governed negative-path findings. (`155-epic-10-functional-framework-certification`)
 - Certify production-like deployment, persistent services and operational evidence. (`156-epic-10-production-deployment-certification`)
 - Certify operational resilience, degraded dependencies and verified recovery. (`157-epic-10-operational-resilience-certification`)
+- Certify automated accessibility thresholds while preserving human screen-reader approval. (`158-epic-10-accessibility-certification`)
 
 ### Documentation
 
