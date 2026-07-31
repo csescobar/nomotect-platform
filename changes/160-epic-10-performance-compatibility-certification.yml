@@ -1,0 +1,23 @@
+schema_version: 1
+id: 160-epic-10-performance-compatibility-certification
+category: feature
+summary: Certify deterministic performance budgets and the supported compatibility matrix.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Certification rejects invalid source commits, incomplete matrices and non-deterministic or credential-bearing evidence.
+privacy:
+  impact: reviewed
+  notes: Performance evidence contains aggregate measurements and environment identifiers without credentials or user content.
+accessibility:
+  impact: none
+  notes:

@@ -23,7 +23,8 @@ bundle exec rails test \
   test/services/epic_10/production_deployment_certification_test.rb \
   test/services/epic_10/operational_resilience_certification_test.rb \
   test/services/epic_10/accessibility_certification_test.rb \
-  test/services/epic_10/security_privacy_isolation_certification_test.rb
+  test/services/epic_10/security_privacy_isolation_certification_test.rb \
+  test/services/epic_10/performance_compatibility_certification_test.rb
 
 grep -q '"additionalProperties": false' docs/contracts/epic-10-validation-plan.schema.json
 grep -q '"critical", "high", "medium", "low"' docs/contracts/epic-10-finding.schema.json
@@ -54,5 +55,6 @@ bundle exec ruby bin/epic-10-production-deployment-certify aaaaaaaaaaaaaaaaaaaaa
 bundle exec ruby bin/epic-10-operational-resilience-certify aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa > tmp/ci/operational-resilience-certification.json
 bundle exec ruby bin/epic-10-accessibility-certify aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa > tmp/ci/accessibility-certification.json
 bundle exec ruby bin/epic-10-security-privacy-certify aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa > tmp/ci/security-privacy-isolation-certification.json
+bundle exec ruby bin/epic-10-performance-compatibility-certify aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa > tmp/ci/performance-compatibility-certification.json
 
 printf 'Epic 10 validation contracts certified\n'
