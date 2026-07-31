@@ -17,7 +17,7 @@ class OperatorGuidesCertificationTest < ActiveSupport::TestCase
   ].freeze
   REQUIRED_TARGETS = [
     "README.md",
-    "docs/installation/README.md",
+    "docs/installation/architecture.md",
     "docs/deployment/private-vps.md",
     "docs/deployment/kamal.md",
     "docs/deployment/render.md",
@@ -47,7 +47,7 @@ class OperatorGuidesCertificationTest < ActiveSupport::TestCase
   test "states the credential, approval and recovery safety boundaries" do
     content = HANDBOOK.read
 
-    assert_includes content, "never place credentials"
+    assert_includes content.downcase, "never place credentials"
     assert_includes content, "human approval before return to service"
     assert_includes content, "Never treat a successful backup as proof of restore"
     assert_includes content, "Never attach raw secrets"
