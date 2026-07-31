@@ -375,7 +375,7 @@ distribution verification completed successfully.
 **Status:** ⏳ Planned
 
 - [x] Define neutral edition and entitlement abstractions.
-- [ ] Define customer, support and installation identifiers with privacy and rotation rules.
+- [x] Define customer, support and installation identifiers with privacy and rotation rules.
 - [ ] Provide opt-in telemetry contracts with transparent redaction and disablement.
 - [ ] Define enterprise support metadata and diagnostic-consent boundaries.
 - [ ] Ensure unavailable commercial services never disable essential community functionality.

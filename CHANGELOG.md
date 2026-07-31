@@ -15,6 +15,7 @@ Required release impact: `minor`.
 - Define operator-owned disaster recovery objectives, scenarios, approval gates and runbook guidance. (`130-disaster-recovery-policy`)
 - Certify restart, replacement, backup, restore and degraded-dependency resilience scenarios. (`131-resilience-certification`)
 - Add neutral community edition and entitlement abstractions that isolate optional commercial providers. (`132-neutral-entitlements`)
+- Add privacy-safe installation, customer and support identifiers with explicit rotation and disablement. (`133-support-identifiers`)
 
 ## 0.9.0
 
