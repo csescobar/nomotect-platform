@@ -46,8 +46,9 @@ class OperatorGuidesCertificationTest < ActiveSupport::TestCase
 
   test "states the credential, approval and recovery safety boundaries" do
     content = HANDBOOK.read
+    normalized = content.downcase.gsub(/\\s+/, " ")
 
-    assert_includes content.downcase, "never place credentials"
+    assert_includes normalized, "never place credentials"
     assert_includes content, "human approval before return to service"
     assert_includes content, "Never treat a successful backup as proof of restore"
     assert_includes content, "Never attach raw secrets"
