@@ -31,6 +31,7 @@
 - Add deterministic representative application RC upgrade fixtures and a fail-closed manifest certification. (`153-epic-10-rc-upgrade-fixtures`)
 - Certify resumable representative application RC upgrades and deterministic recovery guidance. (`154-epic-10-rc-upgrade-certification`)
 - Certify integrated public functional contracts and governed negative-path findings. (`155-epic-10-functional-framework-certification`)
+- Certify production-like deployment, persistent services and operational evidence. (`156-epic-10-production-deployment-certification`)
 
 ### Documentation
 
@@ -97,6 +98,7 @@
 - **Security — 153-epic-10-rc-upgrade-fixtures:** Fixture validation rejects incomplete candidate state, incompatible manifests and missing backup evidence.
 - **Security — 154-epic-10-rc-upgrade-certification:** Certification fails closed on incompatible inputs, missing backup requirements and incomplete recovery evidence.
 - **Security — 155-epic-10-functional-framework-certification:** Certification rejects missing negative evidence and unresolved critical or high blockers.
+- **Security — 156-epic-10-production-deployment-certification:** Certification requires secret references, non-root runtime and credential-free evidence.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -116,6 +118,7 @@
 - **Privacy — 153-epic-10-rc-upgrade-fixtures:** Candidate and upgrade evidence contains stable fixture metadata without credentials or tenant payloads.
 - **Privacy — 154-epic-10-rc-upgrade-certification:** Reports contain operation identifiers and outcomes without credentials or tenant payloads.
 - **Privacy — 155-epic-10-functional-framework-certification:** Reports contain stable evidence identifiers without credentials or tenant payloads.
+- **Privacy — 156-epic-10-production-deployment-certification:** Production data is forbidden and reports contain only stable operational outcomes.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.
