@@ -4,14 +4,19 @@ set -euo pipefail
 ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
   docs/contracts/epic-10-validation-plan.schema.json \
   docs/contracts/epic-10-finding.schema.json \
-  docs/contracts/epic-10-certification.schema.json
+  docs/contracts/epic-10-certification.schema.json \
+  docs/contracts/epic-10-release-baseline.schema.json
 
-bundle exec rails test test/services/epic_10/contract_validator_test.rb
+bundle exec rails test \
+  test/services/epic_10/contract_validator_test.rb \
+  test/services/epic_10/release_baseline_test.rb
 
 grep -q '"additionalProperties": false' docs/contracts/epic-10-validation-plan.schema.json
 grep -q '"critical", "high", "medium", "low"' docs/contracts/epic-10-finding.schema.json
 grep -q 'passed certification requires every phase complete' app/services/epic_10/contract_validator.rb
 grep -q 'critical and high findings cannot be accepted' app/services/epic_10/contract_validator.rb
 grep -q 'must never publish or merge' docs/roadmap/epic-10-plan.md
+grep -q 'missing required runtimes' app/services/epic_10/release_baseline.rb
+grep -q 'manual_screen_reader_review' config/epic_10/release-baseline.yml
 
 printf 'Epic 10 validation contracts certified\n'
