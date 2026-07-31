@@ -43,7 +43,8 @@ module Epic10
     rescue RepresentativeApplication::InvalidFoundation,
       RepresentativeApplicationJourney::InvalidJourney,
       DomainServicesJourney::InvalidJourney,
-      MultitenantExtensionJourney::InvalidJourney => error
+      MultitenantExtensionJourney::InvalidJourney,
+      Errno::ENOENT => error
       invalid!(error.message)
     end
 
