@@ -9,18 +9,23 @@
 
 - Define credential-free backup manifests and ordered restore plans for Epic 9 operational readiness. (`126-operational-readiness-contracts`)
 - Certify production-like restore procedures with fail-closed safety, checksum and verification gates. (`127-restore-certification`)
+- Add local redacted diagnostic support bundles with allowlisted collectors, checksums and size limits. (`128-diagnostic-support-bundles`)
 
 ## Affected contracts
 
+- `diagnostic-redaction`
 - `operational-backup-manifest`
 - `operational-readiness`
 - `restore-certification`
 - `restore-execution`
 - `restore-plan`
+- `support-bundle-manifest`
 
 ## Cross-cutting assessments
 
 - **Security — 126-operational-readiness-contracts:** Backup and restore evidence rejects credential, password, secret, token and private-key fields.
 - **Security — 127-restore-certification:** Restore execution requires maintenance mode, drained work, operator confirmation and valid component checksums.
+- **Security — 128-diagnostic-support-bundles:** Diagnostic output is fail-closed, allowlisted, size bounded, checksum-bound and written with restricted permissions.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
+- **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

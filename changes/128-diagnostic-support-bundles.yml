@@ -1,0 +1,24 @@
+schema_version: 1
+id: 128-diagnostic-support-bundles
+category: feature
+summary: Add local redacted diagnostic support bundles with allowlisted collectors, checksums and size limits.
+release_impact: minor
+contracts:
+  - operational-readiness
+  - diagnostic-redaction
+  - support-bundle-manifest
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Diagnostic output is fail-closed, allowlisted, size bounded, checksum-bound and written with restricted permissions.
+privacy:
+  impact: reviewed
+  notes: Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
+accessibility:
+  impact: none
+  notes:
