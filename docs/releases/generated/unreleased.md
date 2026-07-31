@@ -22,6 +22,7 @@
 ### Documentation
 
 - Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions. (`137-operator-guides`)
+- Define supported compatibility matrices, lifecycle policy and operational diagrams. (`138-compatibility-lifecycle-documentation`)
 
 ## Affected contracts
 
