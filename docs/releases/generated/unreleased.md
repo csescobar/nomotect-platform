@@ -21,10 +21,10 @@
 - `operational-backup-manifest`
 - `operational-health-snapshot`
 - `operational-readiness`
+- `resilience-certification-report`
 - `restore-certification`
 - `restore-execution`
 - `restore-plan`
-- `resilience-certification-report`
 - `support-bundle-manifest`
 
 ## Cross-cutting assessments
