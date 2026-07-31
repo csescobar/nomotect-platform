@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "example-backup-20260731",
+  "captured_at": "2026-07-31T12:00:00Z",
+  "source": {
+    "platform_version": "0.9.0",
+    "source_commit": "0000000000000000000000000000000000000000",
+    "database_schema": "20260731120000",
+    "installation_contract": 1
+  },
+  "components": [
+    {
+      "id": "database",
+      "kind": "postgresql",
+      "provider": "operator",
+      "reference": "backup://example/postgresql",
+      "checksum": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 1024
+    },
+    {
+      "id": "uploads",
+      "kind": "persistent_files",
+      "provider": "operator",
+      "reference": "backup://example/persistent-files",
+      "checksum": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "size_bytes": 2048
+    },
+    {
+      "id": "generated-config",
+      "kind": "generated_configuration",
+      "provider": "operator",
+      "reference": "backup://example/generated-configuration",
+      "checksum": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "size_bytes": 512
+    },
+    {
+      "id": "installation-state",
+      "kind": "installation_metadata",
+      "provider": "operator",
+      "reference": "backup://example/installation-metadata",
+      "checksum": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "size_bytes": 256
+    }
+  ]
+}
