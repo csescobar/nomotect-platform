@@ -94,7 +94,7 @@ ruby bin/epic-9-certify
 
 The repository certifies these delivery profiles in CI:
 
-- development and production [Docker Compose profiles](docs/installation/container-packaging.md);
+- development and production [Docker Compose profiles](compose.yaml);
 - [Dev Container and Codespaces](.devcontainer/devcontainer.json);
 - [Kamal](docs/deployment/kamal.md) and [private VPS](docs/deployment/private-vps.md);
 - [Render.com Blueprint](docs/deployment/render.md);
@@ -190,7 +190,6 @@ Epic 9 completion does not itself authorize a stable release. The executable cer
 - [Security baseline](docs/security/security-baseline.md)
 - [Threat model](docs/security/threat-model.md)
 - [Security operations and rotation](docs/security/security-operations.md)
-- [Privacy and LGPD](docs/governance/privacy-and-lgpd.md)
 - [Extension architecture](docs/extensions/architecture.md)
 - [Extension lifecycle guide](docs/extensions/lifecycle-guide.md)
 - [Extension platform certification](docs/extensions/certification.md)
