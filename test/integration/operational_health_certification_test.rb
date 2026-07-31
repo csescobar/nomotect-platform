@@ -11,7 +11,7 @@ class OperationalHealthCertificationTest < ActiveSupport::TestCase
     }
     providers = OperationalReadiness::DefaultHealthProviders.new(installed_state: -> { state }).registry
 
-    assert_equal OperationalReadiness::HealthSignal::CATEGORIES.sort, providers.all.pluck(:category).sort
+    assert_equal OperationalReadiness::HealthSignal::CATEGORIES.sort, providers.all.map(&:category).sort
 
     health = {
       "schema_version" => 1,
