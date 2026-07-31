@@ -12,6 +12,7 @@
 - Add local redacted diagnostic support bundles with allowlisted collectors, checksums and size limits. (`128-diagnostic-support-bundles`)
 - Expose aggregated operational health signals for installation, deployment, jobs, storage and integrations. (`129-operational-health`)
 - Define operator-owned disaster recovery objectives, scenarios, approval gates and runbook guidance. (`130-disaster-recovery-policy`)
+- Certify restart, replacement, backup, restore and degraded-dependency resilience scenarios. (`131-resilience-certification`)
 
 ## Affected contracts
 
@@ -23,6 +24,7 @@
 - `restore-certification`
 - `restore-execution`
 - `restore-plan`
+- `resilience-certification-report`
 - `support-bundle-manifest`
 
 ## Cross-cutting assessments
@@ -32,6 +34,7 @@
 - **Security — 128-diagnostic-support-bundles:** Diagnostic output is fail-closed, allowlisted, size bounded, checksum-bound and written with restricted permissions.
 - **Security — 129-operational-health:** Providers are time bounded and return redacted stable findings without raw exception messages.
 - **Security — 130-disaster-recovery-policy:** Restore and return to service remain human-approved.
+- **Security — 131-resilience-certification:** Fault injection is restricted to temporary production-like fixtures.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
