@@ -394,7 +394,7 @@ distribution verification completed successfully.
 
 ## Epic 10 — Framework Validation and Release Readiness
 
-**Status:** ⏳ Planned
+**Status:** 🚧 In progress
 
 **Objective:** prove that NomoTect can be adopted, customized, operated and
 upgraded as a framework through documented public contracts, then govern the
@@ -406,7 +406,11 @@ manual approvals and proposed focused-PR sequence are defined in the
 
 ### Phase 1 — Validation architecture and RC baseline
 
-- [ ] Define versioned validation-plan, finding and certification contracts.
+**Status:** 🚧 In progress
+
+- [x] Define versioned validation-plan, finding and certification contracts.
+  Delivered by the strict JSON schemas, semantic `Epic10::ContractValidator`,
+  focused CI workflow and Repository Intelligence contract registration.
 - [ ] Approve supported environments and measurable release thresholds.
 - [ ] Establish reproducible, protected `v1.0.0-rc.1` preparation.
 

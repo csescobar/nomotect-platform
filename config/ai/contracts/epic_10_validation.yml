@@ -1,0 +1,27 @@
+id: epic_10_validation
+version: 1
+owns:
+  - validation_plan
+  - governed_finding
+  - validation_certification
+  - release_blocker_policy
+  - expiring_risk_acceptance
+may_use:
+  - repository_intelligence
+  - release_evidence
+  - operational_readiness
+  - compatibility_metadata
+cannot_use:
+  - automatic_release_publication
+  - silent_risk_acceptance
+  - secret_bearing_evidence
+  - undocumented_internal_contracts
+invariants:
+  - validation contracts reject unknown fields
+  - critical and high findings cannot be accepted as residual risk
+  - accepted findings require explicit human approval and expiry
+  - passed certification requires every recorded phase to be complete
+  - passed certification rejects unresolved critical and high findings
+  - certification evidence is bound to a full source commit
+required_tests:
+  - epic_10_contract_validator_test

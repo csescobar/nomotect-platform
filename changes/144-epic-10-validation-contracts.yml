@@ -1,0 +1,23 @@
+schema_version: 1
+id: 144-epic-10-validation-contracts
+category: feature
+summary: Define strict Epic 10 validation-plan, finding and certification contracts with fail-closed release-blocker rules.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - repository-intelligence
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Critical and high findings cannot be accepted, unknown fields are rejected and passing certification fails closed on blockers.
+privacy:
+  impact: reviewed
+  notes: Validation evidence is limited to stable identifiers and artifact references without credentials or personal data.
+accessibility:
+  impact: none
+  notes:

@@ -19,3 +19,9 @@
 docs/certifications/ @csescobar
 config/epic_9/ @csescobar
 lib/epic_9/ @csescobar
+
+# Epic 10 validation ownership.
+/app/services/epic_10/ @csescobar
+/config/ai/contracts/epic_10_validation.yml @csescobar
+/docs/validation/ @csescobar
+/test/services/epic_10/ @csescobar
