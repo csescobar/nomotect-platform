@@ -4,9 +4,11 @@
 require "json"
 require_relative "../config/environment"
 
-commit = ARGV.fetch(0) { abort "Usage: bin/epic-10-representative-app-certify SOURCE_COMMIT" }
-report = Epic10::RepresentativeApplicationCertification.new(source_commit: commit).call
-puts JSON.pretty_generate(report)
+begin
+  commit = ARGV.fetch(0) { abort "Usage: bin/epic-10-representative-app-certify SOURCE_COMMIT" }
+  report = Epic10::RepresentativeApplicationCertification.new(source_commit: commit).call
+  puts JSON.pretty_generate(report)
 rescue Epic10::RepresentativeApplicationCertification::InvalidCertification => error
   warn error.message
   exit 1
+end
