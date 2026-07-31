@@ -11,6 +11,7 @@ Required release impact: `minor`.
 - Define credential-free backup manifests and ordered restore plans for Epic 9 operational readiness. (`126-operational-readiness-contracts`)
 - Certify production-like restore procedures with fail-closed safety, checksum and verification gates. (`127-restore-certification`)
 - Add local redacted diagnostic support bundles with allowlisted collectors, checksums and size limits. (`128-diagnostic-support-bundles`)
+- Expose aggregated operational health signals for installation, deployment, jobs, storage and integrations. (`129-operational-health`)
 
 ## 0.9.0
 
