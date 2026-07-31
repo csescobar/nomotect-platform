@@ -1,0 +1,48 @@
+id: representative_application
+version: 1
+owns:
+  - representative_application_fixture
+  - public_contract_allowlist
+  - required_capability_journeys
+  - deterministic_fixture_evidence
+  - representative_application_findings
+may_use:
+  - epic_10_validation
+  - installation
+  - design_tokens
+  - themes
+  - internationalization
+  - domain_operations
+  - domain_queries
+  - authorization_policies
+  - domain_events
+  - grid
+  - saved_views
+  - exports
+  - background_jobs
+  - notifications
+  - files
+  - workflow
+  - audit
+  - multi_tenancy
+  - extensions
+  - operational_health
+cannot_use:
+  - undocumented_internal_contracts
+  - protected_core_modification
+  - mandatory_commercial_services
+  - automatic_telemetry
+  - maintainer_credentials
+  - production_data
+  - release_publication
+invariants:
+  - fixture journeys use documented public contracts only
+  - fixture operation remains community complete
+  - fixture evidence is deterministic and credential free
+  - tenant isolation is exercised with at least two organizations
+  - Light and Dark themes are required
+  - English and Brazilian Portuguese journeys are required
+  - automated certification does not replace required manual reviews
+  - representative application work cannot authorize publication
+required_tests:
+  - representative_application_contract_test
