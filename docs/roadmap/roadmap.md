@@ -372,13 +372,13 @@ distribution verification completed successfully.
 
 ### Phase 8 — Commercial Readiness
 
-**Status:** ⏳ Planned
+**Status:** ✅ Complete
 
 - [x] Define neutral edition and entitlement abstractions.
 - [x] Define customer, support and installation identifiers with privacy and rotation rules.
 - [x] Provide opt-in telemetry contracts with transparent redaction and disablement.
 - [x] Define enterprise support metadata and diagnostic-consent boundaries.
-- [ ] Ensure unavailable commercial services never disable essential community functionality.
+- [x] Ensure unavailable commercial services never disable essential community functionality.
 
 ### Phase 9 — Documentation and Operator Guides
 
