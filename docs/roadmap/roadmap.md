@@ -377,7 +377,7 @@ distribution verification completed successfully.
 - [x] Define neutral edition and entitlement abstractions.
 - [x] Define customer, support and installation identifiers with privacy and rotation rules.
 - [x] Provide opt-in telemetry contracts with transparent redaction and disablement.
-- [ ] Define enterprise support metadata and diagnostic-consent boundaries.
+- [x] Define enterprise support metadata and diagnostic-consent boundaries.
 - [ ] Ensure unavailable commercial services never disable essential community functionality.
 
 ### Phase 9 — Documentation and Operator Guides
