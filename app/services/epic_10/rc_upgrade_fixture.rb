@@ -54,11 +54,14 @@ module Epic10
     end
 
     def validate_transition!(source, target, manifest)
+      source_version = Upgrades::Version.new(source["candidate"])
+      target_version = Upgrades::Version.new(target["candidate"])
+
       raise InvalidFixture, "application identifiers differ" unless source["application_id"] == target["application_id"]
-      raise InvalidFixture, "manifest source does not match fixture" unless Gem::Requirement.new(manifest.source_requirement).satisfied_by?(Gem::Version.new(source["candidate"]))
-      raise InvalidFixture, "manifest target does not match fixture" unless manifest.target_version == Gem::Version.new(target["candidate"])
+      raise InvalidFixture, "manifest source does not match fixture" unless source_version.satisfies?(manifest.source_requirement)
+      raise InvalidFixture, "manifest target does not match fixture" unless manifest.target_version.to_s == target_version.to_s
       raise InvalidFixture, "pre-upgrade backup evidence is required" unless manifest.backup_required?
-      raise InvalidFixture, "candidate state must advance" unless Gem::Version.new(target["candidate"]) > Gem::Version.new(source["candidate"])
+      raise InvalidFixture, "candidate state must advance" unless target_version > source_version
     end
   end
 end
