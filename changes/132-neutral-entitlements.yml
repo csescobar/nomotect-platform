@@ -1,0 +1,15 @@
+schema_version: 1
+id: 132-neutral-entitlements
+category: feature
+summary: Add neutral community edition and entitlement abstractions that isolate optional commercial providers.
+release_impact: minor
+contracts:
+  - commercial-readiness
+  - community-edition
+migration: { required: false, notes: }
+upgrade: { required: false, notes: }
+security:
+  impact: reviewed
+  notes: Unknown or failing providers never grant optional capabilities or disable community capabilities.
+privacy: { impact: none, notes: }
+accessibility: { impact: none, notes: }
