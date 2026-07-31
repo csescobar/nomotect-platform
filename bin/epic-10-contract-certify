@@ -12,6 +12,6 @@ grep -q '"additionalProperties": false' docs/contracts/epic-10-validation-plan.s
 grep -q '"critical", "high", "medium", "low"' docs/contracts/epic-10-finding.schema.json
 grep -q 'passed certification requires every phase complete' app/services/epic_10/contract_validator.rb
 grep -q 'critical and high findings cannot be accepted' app/services/epic_10/contract_validator.rb
-grep -q 'must never publish automatically' docs/roadmap/epic-10-plan.md
+grep -q 'must never publish or merge' docs/roadmap/epic-10-plan.md
 
 printf 'Epic 10 validation contracts certified\n'
