@@ -1,0 +1,23 @@
+schema_version: 1
+id: 129-operational-health
+category: feature
+summary: Expose aggregated operational health signals for installation, deployment, jobs, storage and integrations.
+release_impact: minor
+contracts:
+  - operational-readiness
+  - operational-health-snapshot
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Providers are time bounded and return redacted stable findings without raw exception messages.
+privacy:
+  impact: reviewed
+  notes: Health snapshots contain operational metadata without tenant data, credentials or automatic telemetry.
+accessibility:
+  impact: none
+  notes:
