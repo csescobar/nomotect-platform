@@ -27,6 +27,7 @@ Required release impact: `minor`.
 - Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions. (`137-operator-guides`)
 - Define supported compatibility matrices, lifecycle policy and operational diagrams. (`138-compatibility-lifecycle-documentation`)
 - Add continuously tested extension, upgrade and backup manifest examples. (`139-tested-operational-examples`)
+- Reconcile the README with the complete Epic 0 through Epic 9 delivery history and current platform contracts. (`142-readme-epic-history`)
 
 ## 0.9.0
 
