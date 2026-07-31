@@ -18,6 +18,7 @@
 - Add disabled-by-default telemetry contracts with explicit category consent and transparent redaction. (`134-opt-in-telemetry`)
 - Add explicit time-bounded diagnostic support consent and operator-reviewed share plans. (`135-support-consent`)
 - Certify that optional commercial integrations cannot disable essential community capabilities. (`136-commercial-readiness-certification`)
+- Govern operational documentation ownership, source dependencies and review freshness through Repository Intelligence. (`140-documentation-governance`)
 
 ### Documentation
 
@@ -32,9 +33,11 @@
 - `community-edition`
 - `diagnostic-redaction`
 - `disaster-recovery-policy`
+- `documentation-governance`
 - `operational-backup-manifest`
 - `operational-health-snapshot`
 - `operational-readiness`
+- `repository-intelligence`
 - `resilience-certification-report`
 - `restore-certification`
 - `restore-execution`
@@ -57,6 +60,7 @@
 - **Security — 134-opt-in-telemetry:** Fixed category allowlists remove arbitrary fields and the core defines no automatic sender.
 - **Security — 135-support-consent:** Diagnostic sharing is scope limited, expires, revokes immediately and requires operator upload.
 - **Security — 136-commercial-readiness-certification:** Provider failures and unknown capabilities remain fail-closed without affecting community capabilities.
+- **Security — 140-documentation-governance:** Bounded paths and explicit ownership prevent untracked or path-escaping documentation entries.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
