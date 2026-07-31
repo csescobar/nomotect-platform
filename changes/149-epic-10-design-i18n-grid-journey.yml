@@ -1,0 +1,23 @@
+schema_version: 1
+id: 149-epic-10-design-i18n-grid-journey
+category: feature
+summary: Certify the representative Light/Dark, bilingual and governed grid journey.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Grid operators are allowlisted per column and exports must remain credential-free.
+privacy:
+  impact: reviewed
+  notes: Journey evidence records contract outcomes without tenant payloads or credentials.
+accessibility:
+  impact: reviewed
+  notes: The journey requires explicit Light/Dark rendering and bilingual labels while manual screen-reader review remains required.
