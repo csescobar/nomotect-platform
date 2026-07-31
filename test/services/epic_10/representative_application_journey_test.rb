@@ -35,7 +35,7 @@ module Epic10
 
     test "requires credential-free csv export and complete evidence" do
       data = journey_data
-      data.dig("grid", "export", "credential_free") = false
+      data.fetch("grid").fetch("export")["credential_free"] = false
       assert_raises(RepresentativeApplicationJourney::InvalidJourney) { build(data) }
 
       data = journey_data
