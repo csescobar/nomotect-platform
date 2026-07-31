@@ -7,6 +7,10 @@ owns:
   - restore_adapter_registry
   - restore_execution
   - restore_certification
+  - support_bundle_manifest
+  - diagnostic_redaction
+  - diagnostic_collector_registry
+  - support_bundle_builder
   - backup_component_inventory
   - restore_verification_requirements
 may_use:
@@ -30,8 +34,16 @@ invariants:
   - restore execution requires maintenance mode, drained work and explicit operator confirmation
   - every component checksum is verified before its adapter executes
   - post-restore certification fails closed unless every required check passes
+  - support bundles contain only explicitly registered structured collectors
+  - diagnostic values are redacted before they are written
+  - support bundle entries and total output are size bounded
+  - support bundle files are checksum-bound and written with restricted permissions
+  - support bundles are never uploaded automatically
   - verification covers database schema, installation contract, generated artifacts and application health
 required_tests:
   - operational_backup_manifest_test
   - operational_restore_plan_test
   - operational_restore_certification_test
+  - diagnostic_redactor_test
+  - support_bundle_builder_test
+  - support_bundle_certification_test
