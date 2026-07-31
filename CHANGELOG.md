@@ -8,8 +8,6 @@ Required release impact: `minor`.
 
 ### Added
 
-- Define strict Epic 10 validation-plan, finding and certification contracts with fail-closed release-blocker rules. (`144-epic-10-validation-contracts`)
-
 - Define credential-free backup manifests and ordered restore plans for Epic 9 operational readiness. (`126-operational-readiness-contracts`)
 - Certify production-like restore procedures with fail-closed safety, checksum and verification gates. (`127-restore-certification`)
 - Add local redacted diagnostic support bundles with allowlisted collectors, checksums and size limits. (`128-diagnostic-support-bundles`)
@@ -23,6 +21,7 @@ Required release impact: `minor`.
 - Certify that optional commercial integrations cannot disable essential community capabilities. (`136-commercial-readiness-certification`)
 - Govern operational documentation ownership, source dependencies and review freshness through Repository Intelligence. (`140-documentation-governance`)
 - Certify every Epic 9 phase and cross-cutting contract through an executable fail-closed completion gate. (`141-epic-9-final-certification`)
+- Define strict Epic 10 validation-plan, finding and certification contracts with fail-closed release-blocker rules. (`144-epic-10-validation-contracts`)
 
 ### Documentation
 
