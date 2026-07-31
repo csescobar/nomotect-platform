@@ -1,0 +1,56 @@
+name: Epic 10 validation contract
+
+on:
+  pull_request:
+    paths:
+      - app/services/epic_10/**
+      - test/services/epic_10/**
+      - docs/contracts/epic-10-*.schema.json
+      - docs/validation/**
+      - config/ai/contracts/epic_10_validation.yml
+      - bin/epic-10-contract-certify
+      - .github/workflows/epic-10-validation-contract.yml
+  push:
+    branches: [main]
+    paths:
+      - app/services/epic_10/**
+      - test/services/epic_10/**
+      - docs/contracts/epic-10-*.schema.json
+      - docs/validation/**
+      - config/ai/contracts/epic_10_validation.yml
+      - bin/epic-10-contract-certify
+      - .github/workflows/epic-10-validation-contract.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/nomotect_test
+      SECRET_KEY_BASE: ci-secret-key-base
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: nomotect_test
+        ports: [5432:5432]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - name: Prepare database
+        run: ruby bin/rails db:prepare
+      - name: Certify Epic 10 validation contracts
+        run: bash bin/epic-10-contract-certify
