@@ -10,18 +10,23 @@ owns:
   - measurable_release_thresholds
   - deterministic_rc_plan
   - protected_rc_approval_boundary
+  - representative_application_architecture
+  - representative_application_public_contract_boundary
 may_use:
   - repository_intelligence
   - release_evidence
   - operational_readiness
   - compatibility_metadata
   - runtime_and_packaging_evidence
+  - documented_platform_contracts
 cannot_use:
   - release_candidate_publication_during_planning
   - automatic_release_publication
   - silent_risk_acceptance
   - secret_bearing_evidence
   - undocumented_internal_contracts
+  - protected_core_modification
+  - mandatory_commercial_services
 invariants:
   - validation contracts reject unknown fields
   - critical and high findings cannot be accepted as residual risk
@@ -33,6 +38,9 @@ invariants:
   - every quality category defines measurable targets and required evidence
   - RC plans bind versioned inputs to a full source commit
   - RC planning cannot approve or publish its own output
+  - representative application journeys use documented public contracts only
+  - representative application evidence is deterministic and credential free
+  - representative application architecture cannot authorize publication
 required_tests:
   - epic_10_contract_validator_test
   - epic_10_release_baseline_test

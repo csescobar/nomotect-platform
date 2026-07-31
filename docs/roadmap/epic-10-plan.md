@@ -100,6 +100,10 @@ release thresholds before testing the framework.
 Build a realistic application using only documented NomoTect contracts and
 extension points.
 
+**Architecture baseline:** delivered by PR #147. The governed service-request
+workspace fixture, public-contract allowlist, forbidden dependencies, evidence
+boundary and required manual reviews are defined before implementation.
+
 ### Required capability journey
 
 - protected first-run installation and initial tenant;
