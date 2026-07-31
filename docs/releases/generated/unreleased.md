@@ -31,6 +31,7 @@
 - Add continuously tested extension, upgrade and backup manifest examples. (`139-tested-operational-examples`)
 - Reconcile the README with the complete Epic 0 through Epic 9 delivery history and current platform contracts. (`142-readme-epic-history`)
 - Define the dependency-ordered Epic 10 framework validation and release-readiness plan. (`143-epic-10-planning`)
+- Define the governed architecture and public-contract boundary for the Epic 10 representative application. (`147-epic-10-representative-app-architecture`)
 
 ## Affected contracts
 
@@ -48,6 +49,7 @@
 - `operational-health-snapshot`
 - `operational-readiness`
 - `releases`
+- `representative-application`
 - `repository-intelligence`
 - `resilience-certification-report`
 - `restore-certification`
@@ -76,6 +78,7 @@
 - **Security — 144-epic-10-validation-contracts:** Critical and high findings cannot be accepted, unknown fields are rejected and passing certification fails closed on blockers.
 - **Security — 145-epic-10-release-thresholds:** Release thresholds require zero unresolved critical or high findings and explicit supply-chain evidence.
 - **Security — 146-epic-10-rc-preparation:** RC planning binds inputs to a full commit and cannot approve, tag or publish its own output.
+- **Security — 147-epic-10-representative-app-architecture:** The fixture forbids undocumented internals, protected-core modification, credentials, production data and automatic publication.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -86,4 +89,6 @@
 - **Privacy — 136-commercial-readiness-certification:** Certification verifies support is absent and telemetry is disabled in the community baseline.
 - **Privacy — 144-epic-10-validation-contracts:** Validation evidence is limited to stable identifiers and artifact references without credentials or personal data.
 - **Privacy — 145-epic-10-release-thresholds:** Privacy thresholds reject secret-bearing evidence and unapproved personal-data flows.
+- **Privacy — 147-epic-10-representative-app-architecture:** Representative evidence is deterministic, credential-free and contains no personal data.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
+- **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
