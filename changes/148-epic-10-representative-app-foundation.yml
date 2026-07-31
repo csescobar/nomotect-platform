@@ -1,0 +1,23 @@
+schema_version: 1
+id: 148-epic-10-representative-app-foundation
+category: feature
+summary: Add a deterministic fail-closed foundation for the Epic 10 representative application.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: The foundation rejects cross-tenant assignments, forbidden dependencies, undocumented contracts and unknown fields.
+privacy:
+  impact: reviewed
+  notes: Fixture evidence must be deterministic, credential-free and personal-data-free.
+accessibility:
+  impact: reviewed
+  notes: The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.
