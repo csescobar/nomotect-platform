@@ -66,3 +66,37 @@ The contracts start at schema version 1. Changes that remove fields, component
 kinds or verification requirements require a new schema version and migration
 guidance. Existing upgrade backup evidence remains valid for upgrade safety but
 does not by itself prove that a complete Phase 7 backup set is restorable.
+
+## Diagnostic and support bundles
+
+Support bundles are generated locally from an explicit registry of structured
+collectors. The baseline includes installed platform state and configuration
+presence; it does not collect database rows, user uploads, Rails credentials,
+complete environment variables or unprocessed log files.
+
+Every collected value passes through the fail-closed diagnostic redactor before
+it is written. Redaction covers registered sensitive field names, authorization
+headers, credential-bearing connection URLs, private keys, JWTs, common access
+tokens and email addresses. Unsupported values or redaction failures abort the
+bundle without leaving partial output.
+
+Each report is JSON, size bounded, checksum-bound in the versioned manifest and
+written with mode `0600` inside a `0700` output directory. The manifest records
+redaction counts without preserving original values and fixes
+`automated_upload` to `false`.
+
+Inspect the manifest without writing diagnostic output:
+
+```bash
+ruby bin/support-bundle inspect
+```
+
+Generate a local bundle directory:
+
+```bash
+ruby bin/support-bundle build --output var/support/support-bundle
+```
+
+Operators must review the manifest and reports before transferring a bundle.
+Upload, telemetry, support consent and remote retention remain outside this
+Phase 7 capability.
