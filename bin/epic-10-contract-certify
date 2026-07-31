@@ -16,7 +16,8 @@ bundle exec rails test \
   test/services/epic_10/representative_application_journey_test.rb \
   test/services/epic_10/domain_services_journey_test.rb \
   test/services/epic_10/multitenant_extension_journey_test.rb \
-  test/services/epic_10/representative_application_certification_test.rb
+  test/services/epic_10/representative_application_certification_test.rb \
+  test/services/epic_10/rc_upgrade_fixture_test.rb
 
 grep -q '"additionalProperties": false' docs/contracts/epic-10-validation-plan.schema.json
 grep -q '"critical", "high", "medium", "low"' docs/contracts/epic-10-finding.schema.json

@@ -1,0 +1,24 @@
+schema_version: 1
+id: 153-epic-10-rc-upgrade-fixtures
+category: feature
+summary: Add deterministic representative application RC upgrade fixtures and a fail-closed manifest certification.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+  - upgrades
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Fixture validation rejects incomplete candidate state, incompatible manifests and missing backup evidence.
+privacy:
+  impact: reviewed
+  notes: Candidate and upgrade evidence contains stable fixture metadata without credentials or tenant payloads.
+accessibility:
+  impact: none
+  notes:

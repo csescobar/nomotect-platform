@@ -10,6 +10,7 @@ owns:
   - multitenant_extension_journey
   - representative_application_findings
   - representative_application_certification
+  - representative_application_rc_upgrade_fixtures
 may_use:
   - epic_10_validation
   - installation
@@ -31,6 +32,7 @@ may_use:
   - multi_tenancy
   - extensions
   - operational_health
+  - upgrades
 cannot_use:
   - undocumented_internal_contracts
   - protected_core_modification
@@ -54,3 +56,4 @@ required_tests:
   - domain_services_journey_test
   - multitenant_extension_journey_test
   - representative_application_certification_test
+  - rc_upgrade_fixture_test
