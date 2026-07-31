@@ -1,0 +1,21 @@
+schema_version: 1
+id: 138-compatibility-lifecycle-documentation
+category: documentation
+summary: Define supported compatibility matrices, lifecycle policy and operational diagrams.
+release_impact: none
+contracts: []
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
