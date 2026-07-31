@@ -38,7 +38,7 @@ automatic upload.
 
 ## Installation guide
 
-1. Review the [installation guide](../installation/README.md) and bootstrap-token
+1. Review the [installation architecture](../installation/architecture.md) and bootstrap-token
    boundary before exposing the installer.
 2. Supply database and secret-store credentials only to the active request.
 3. Complete provisioning, migrations, initial administrator and organization
