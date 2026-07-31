@@ -34,9 +34,13 @@ provider_result = RepositoryIntelligence::LazyProviderResult.new(
 graph = RepositoryIntelligence::GovernanceScanner.new(repository_path: root, manifest:, provider_result:).scan
 contracts = RepositoryIntelligence::ContractRegistry.new(File.join(root, "config/ai/contracts"))
 playbooks = RepositoryIntelligence::PlaybookRegistry.new(File.join(root, "config/ai/playbooks"))
+documentation = RepositoryIntelligence::DocumentationGovernance.new(
+  repository_path: root, contracts: contracts.load,
+  catalog_path: File.join(root, "config/ai/documentation.yml")
+)
 graph_errors = RepositoryIntelligence::GraphValidator.new(graph).validate
 report = RepositoryIntelligence::ReadinessReport.new(
-  manifest:, graph:, contract_errors: contracts.validate + graph_errors, playbook_errors: playbooks.validate,
+  manifest:, graph:, contract_errors: contracts.validate + graph_errors + documentation.validate, playbook_errors: playbooks.validate,
   indexed_commit: provider_result.repository_commit, current_commit: commit
 ).to_h.merge(provider: provider.status)
 output = Pathname(root).join("docs/ai/generated")
@@ -55,7 +59,7 @@ end
 RepositoryIntelligence.configure(
   graph:, contracts: contracts.load, playbooks: playbooks.load, manifest:, readiness: report,
   generator: ai_artifacts, validator: validation, provider_status: provider.status,
-  artifact_validator: -> { ai_artifacts.validate }
+  artifact_validator: -> { ai_artifacts.validate }, documentation_validator: -> { documentation.validate }
 )
 case command
 when "generate"

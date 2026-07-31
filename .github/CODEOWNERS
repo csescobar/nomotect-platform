@@ -6,3 +6,12 @@
 /ENGINEERING_CONSTITUTION.md @csescobar
 /ARCHITECTURE.md @csescobar
 /AI_PRINCIPLES.md @csescobar
+
+# Epic 9 operational documentation ownership.
+/config/ai/documentation.yml @csescobar
+/docs/contracts/ @csescobar
+/docs/examples/ @csescobar
+/docs/extensions/ @csescobar
+/docs/operations/ @csescobar
+/docs/operators/ @csescobar
+/docs/upgrades/ @csescobar

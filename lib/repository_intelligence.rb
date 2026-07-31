@@ -6,12 +6,13 @@ require_relative "repository_intelligence/event_bus"
 require_relative "repository_intelligence/playbook_executor"
 require_relative "repository_intelligence/health"
 require_relative "repository_intelligence/default_validators"
+require_relative "repository_intelligence/documentation_governance"
 
 module RepositoryIntelligence
   class << self
     def configure(
       graph:, contracts:, playbooks:, manifest: nil, readiness: nil, generator: nil, validator: nil,
-      provider_status: {}, artifact_validator: nil, event_bus: EventBus.new
+      provider_status: {}, artifact_validator: nil, documentation_validator: nil, event_bus: EventBus.new
     )
       @graph = graph
       @contracts = contracts
@@ -22,11 +23,12 @@ module RepositoryIntelligence
       @validator = validator
       @provider_status = provider_status
       @artifact_validator = artifact_validator
+      @documentation_validator = documentation_validator
       @event_bus = event_bus
       @query_engine = QueryEngine.new(graph:, contracts:, playbooks:)
       @playbook_executor = PlaybookExecutor.new(api: self)
       @executions = {}
-      @validator_registry = DefaultValidators.new(api: self, provider_status:, artifact_validator:).registry
+      @validator_registry = DefaultValidators.new(api: self, provider_status:, artifact_validator:, documentation_validator:).registry
       register_default_capabilities
       self
     end

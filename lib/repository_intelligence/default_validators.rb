@@ -2,10 +2,11 @@
 
 module RepositoryIntelligence
   class DefaultValidators
-    def initialize(api:, provider_status: {}, artifact_validator: nil)
+    def initialize(api:, provider_status: {}, artifact_validator: nil, documentation_validator: nil)
       @api = api
       @provider_status = provider_status
       @artifact_validator = artifact_validator
+      @documentation_validator = documentation_validator
     end
 
     def registry
@@ -14,6 +15,7 @@ module RepositoryIntelligence
         .register(:contracts, category: :contracts) { registry_validation(api.contracts, %w[id version owns invariants]) }
         .register(:playbooks, category: :playbooks) { registry_validation(api.playbooks, %w[id version title steps completion_gate]) }
         .register(:documentation, category: :documentation) { documentation }
+        .register(:documentation_governance, category: :documentation) { documentation_governance }
         .register(:contexts, category: :contexts) { artifact_sync }
         .register(:provider, category: :providers) { provider }
         .register(:security_invariants, category: :security) { invariant_presence("security") }
@@ -24,7 +26,7 @@ module RepositoryIntelligence
 
     private
 
-    attr_reader :api, :provider_status, :artifact_validator
+    attr_reader :api, :provider_status, :artifact_validator, :documentation_validator
 
     def graph_integrity
       findings = []
@@ -52,6 +54,13 @@ module RepositoryIntelligence
       end
       score = public_nodes.empty? ? 100 : (((public_nodes.size - missing.size).to_f / public_nodes.size) * 100).round
       { score:, findings:, evidence: { public_nodes: public_nodes.size, undocumented: missing.size } }
+    end
+
+    def documentation_governance
+      findings = Array(documentation_validator&.call).map do |message|
+        finding("error", message, nil, "Update documentation ownership, sources or review deadline.")
+      end
+      { findings:, evidence: { governed: documentation_validator ? true : false } }
     end
 
     def artifact_sync

@@ -38,6 +38,7 @@ class RepositoryIntelligenceHealthTest < ActiveSupport::TestCase
     assert_equal "healthy", health.fetch(:status)
     assert_equal 100, health.fetch(:score)
     assert_includes RepositoryIntelligence.validator_list, :graph_integrity
+    assert_includes RepositoryIntelligence.validator_list, :documentation_governance
     assert_empty RepositoryIntelligence.remediation_plan
   end
 
