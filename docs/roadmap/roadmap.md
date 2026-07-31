@@ -374,7 +374,7 @@ distribution verification completed successfully.
 
 **Status:** ⏳ Planned
 
-- [ ] Define neutral edition and entitlement abstractions.
+- [x] Define neutral edition and entitlement abstractions.
 - [ ] Define customer, support and installation identifiers with privacy and rotation rules.
 - [ ] Provide opt-in telemetry contracts with transparent redaction and disablement.
 - [ ] Define enterprise support metadata and diagnostic-consent boundaries.
