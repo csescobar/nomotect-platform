@@ -14,6 +14,7 @@
 - Define operator-owned disaster recovery objectives, scenarios, approval gates and runbook guidance. (`130-disaster-recovery-policy`)
 - Certify restart, replacement, backup, restore and degraded-dependency resilience scenarios. (`131-resilience-certification`)
 - Add neutral community edition and entitlement abstractions that isolate optional commercial providers. (`132-neutral-entitlements`)
+- Add privacy-safe installation, customer and support identifiers with explicit rotation and disablement. (`133-support-identifiers`)
 
 ## Affected contracts
 
@@ -29,6 +30,7 @@
 - `restore-execution`
 - `restore-plan`
 - `support-bundle-manifest`
+- `support-identity`
 
 ## Cross-cutting assessments
 
@@ -39,7 +41,9 @@
 - **Security — 130-disaster-recovery-policy:** Restore and return to service remain human-approved.
 - **Security — 131-resilience-certification:** Fault injection is restricted to temporary production-like fixtures.
 - **Security — 132-neutral-entitlements:** Unknown or failing providers never grant optional capabilities or disable community capabilities.
+- **Security — 133-support-identifiers:** Identity documents reject unknown fields and require opaque random UUIDs.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
 - **Privacy — 129-operational-health:** Health snapshots contain operational metadata without tenant data, credentials or automatic telemetry.
+- **Privacy — 133-support-identifiers:** Support and customer identifiers are opt-in, contain no personal data and are removed when support is disabled.
