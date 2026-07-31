@@ -1,0 +1,21 @@
+schema_version: 1
+id: 142-readme-epic-history
+category: documentation
+summary: Reconcile the README with the complete Epic 0 through Epic 9 delivery history and current platform contracts.
+release_impact: none
+contracts: []
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
