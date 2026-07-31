@@ -388,7 +388,7 @@ distribution verification completed successfully.
 - [x] Document supported environments, compatibility matrices and lifecycle policies.
 - [x] Provide architecture, state-machine, sequence, security and recovery diagrams.
 - [x] Add continuously tested examples where practical.
-- [ ] Connect operational contracts and guides to Repository Intelligence ownership and freshness checks.
+- [x] Connect operational contracts and guides to Repository Intelligence ownership and freshness checks.
 
 **Epic 9 exit criteria:** all phases and cross-cutting contracts satisfy their Definitions of Done; installation, packaging, upgrades, releases, extensions, distribution and operations are supported by green production-like certification; Repository Intelligence validates operational contracts and manifests; and CI is green. Completing Epic 9 does not authorize a stable `v1.0.0` release.
 
