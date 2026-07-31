@@ -18,6 +18,7 @@ Required release impact: `minor`.
 - Add privacy-safe installation, customer and support identifiers with explicit rotation and disablement. (`133-support-identifiers`)
 - Add disabled-by-default telemetry contracts with explicit category consent and transparent redaction. (`134-opt-in-telemetry`)
 - Add explicit time-bounded diagnostic support consent and operator-reviewed share plans. (`135-support-consent`)
+- Certify that optional commercial integrations cannot disable essential community capabilities. (`136-commercial-readiness-certification`)
 
 ## 0.9.0
 
