@@ -23,7 +23,16 @@ class SupportBundleCertificationTest < ActiveSupport::TestCase
       }
       registry = OperationalReadiness::DefaultDiagnosticCollectors.new(
         installed_state:,
-        environment:
+        environment:,
+        operational_health: -> {
+          {
+            "schema_version" => 1,
+            "observed_at" => "2026-07-31T00:00:00Z",
+            "status" => "healthy",
+            "summary" => { "healthy" => 5, "degraded" => 0, "unhealthy" => 0, "unknown" => 0 },
+            "signals" => []
+          }
+        }
       ).registry
       output = Pathname(directory).join("bundle")
       manifest = OperationalReadiness::SupportBundleBuilder.new(
@@ -41,7 +50,7 @@ class SupportBundleCertificationTest < ActiveSupport::TestCase
       refute_includes contents, "operator:private"
       refute_includes contents, "support@example.com"
       refute_includes contents, "private-value"
-      assert_equal %w[configuration platform], manifest.files.pluck("id")
+      assert_equal %w[configuration operational_health platform], manifest.files.pluck("id")
       assert_equal false, manifest.data.fetch("automated_upload")
     end
   end
