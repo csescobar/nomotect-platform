@@ -1,0 +1,23 @@
+schema_version: 1
+id: 158-epic-10-accessibility-certification
+category: feature
+summary: Certify automated accessibility thresholds while preserving human screen-reader approval.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: reviewed
+  notes: Accessibility evidence contains stable results without credentials or user content.
+accessibility:
+  impact: reviewed
+  notes: Certification enforces zero critical violations and keyboard blockers while retaining human screen-reader review.
