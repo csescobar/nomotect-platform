@@ -21,6 +21,8 @@ local boot is not a compatibility certification.
 The repository pins exact build inputs. Operators must not infer support for an
 unlisted runtime, database, architecture or deployment service. Proposed matrix
 changes require their own change fragment and production-like certification.
+Compatibility evidence must be re-certified whenever a pull request changes its
+base branch.
 
 ## Contract compatibility matrix
 
