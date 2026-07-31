@@ -22,6 +22,7 @@ Required release impact: `minor`.
 - Govern operational documentation ownership, source dependencies and review freshness through Repository Intelligence. (`140-documentation-governance`)
 - Certify every Epic 9 phase and cross-cutting contract through an executable fail-closed completion gate. (`141-epic-9-final-certification`)
 - Define strict Epic 10 validation-plan, finding and certification contracts with fail-closed release-blocker rules. (`144-epic-10-validation-contracts`)
+- Define the supported-environment matrix and measurable release thresholds for Epic 10. (`145-epic-10-release-thresholds`)
 
 ### Documentation
 

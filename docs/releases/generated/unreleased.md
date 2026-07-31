@@ -21,6 +21,7 @@
 - Govern operational documentation ownership, source dependencies and review freshness through Repository Intelligence. (`140-documentation-governance`)
 - Certify every Epic 9 phase and cross-cutting contract through an executable fail-closed completion gate. (`141-epic-9-final-certification`)
 - Define strict Epic 10 validation-plan, finding and certification contracts with fail-closed release-blocker rules. (`144-epic-10-validation-contracts`)
+- Define the supported-environment matrix and measurable release thresholds for Epic 10. (`145-epic-10-release-thresholds`)
 
 ### Documentation
 
@@ -38,6 +39,7 @@
 - `diagnostic-redaction`
 - `disaster-recovery-policy`
 - `documentation-governance`
+- `epic-10-release-baseline`
 - `epic-10-validation`
 - `epic-9-certification`
 - `operational-backup-manifest`
@@ -69,6 +71,7 @@
 - **Security — 140-documentation-governance:** Bounded paths and explicit ownership prevent untracked or path-escaping documentation entries.
 - **Security — 141-epic-9-final-certification:** Certification fails closed when required gates, evidence or authoritative roadmap completion are missing.
 - **Security — 144-epic-10-validation-contracts:** Critical and high findings cannot be accepted, unknown fields are rejected and passing certification fails closed on blockers.
+- **Security — 145-epic-10-release-thresholds:** Release thresholds require zero unresolved critical or high findings and explicit supply-chain evidence.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -78,3 +81,5 @@
 - **Privacy — 135-support-consent:** Consent is separate from telemetry and permits only redacted allowlisted artifacts.
 - **Privacy — 136-commercial-readiness-certification:** Certification verifies support is absent and telemetry is disabled in the community baseline.
 - **Privacy — 144-epic-10-validation-contracts:** Validation evidence is limited to stable identifiers and artifact references without credentials or personal data.
+- **Privacy — 145-epic-10-release-thresholds:** Privacy thresholds reject secret-bearing evidence and unapproved personal-data flows.
+- **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.

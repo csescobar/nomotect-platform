@@ -1,0 +1,23 @@
+schema_version: 1
+id: 145-epic-10-release-thresholds
+category: feature
+summary: Define the supported-environment matrix and measurable release thresholds for Epic 10.
+release_impact: minor
+contracts:
+  - epic-10-release-baseline
+  - epic-10-validation
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Release thresholds require zero unresolved critical or high findings and explicit supply-chain evidence.
+privacy:
+  impact: reviewed
+  notes: Privacy thresholds reject secret-bearing evidence and unapproved personal-data flows.
+accessibility:
+  impact: reviewed
+  notes: Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.

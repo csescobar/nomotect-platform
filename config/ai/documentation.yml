@@ -95,3 +95,19 @@ documents:
       - docs/contracts/epic-10-finding.schema.json
       - docs/contracts/epic-10-certification.schema.json
       - app/services/epic_10/contract_validator.rb
+      - app/services/epic_10/release_baseline.rb
+      - config/epic_10/release-baseline.yml
+      - docs/contracts/epic-10-release-baseline.schema.json
+  - path: docs/validation/release-baseline.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - epic_10_validation
+    source_paths:
+      - .ruby-version
+      - Gemfile.lock
+      - .github/workflows/ci.yml
+      - config/epic_10/release-baseline.yml
+      - docs/contracts/epic-10-release-baseline.schema.json
+      - app/services/epic_10/release_baseline.rb

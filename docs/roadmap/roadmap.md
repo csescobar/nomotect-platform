@@ -411,7 +411,9 @@ manual approvals and proposed focused-PR sequence are defined in the
 - [x] Define versioned validation-plan, finding and certification contracts.
   Delivered by the strict JSON schemas, semantic `Epic10::ContractValidator`,
   focused CI workflow and Repository Intelligence contract registration.
-- [ ] Approve supported environments and measurable release thresholds.
+- [x] Approve the initial supported-environment matrix and measurable release thresholds.
+  Delivered through the versioned release baseline, semantic validator, governed
+  evidence references and focused contract tests.
 - [ ] Establish reproducible, protected `v1.0.0-rc.1` preparation.
 
 ### Phase 2 — Representative application
