@@ -35,6 +35,7 @@ Required release impact: `minor`.
 - Certify production-like deployment, persistent services and operational evidence. (`156-epic-10-production-deployment-certification`)
 - Certify operational resilience, degraded dependencies and verified recovery. (`157-epic-10-operational-resilience-certification`)
 - Certify automated accessibility thresholds while preserving human screen-reader approval. (`158-epic-10-accessibility-certification`)
+- Certify security, privacy and tenant-isolation release thresholds. (`159-epic-10-security-privacy-isolation-certification`)
 
 ### Documentation
 

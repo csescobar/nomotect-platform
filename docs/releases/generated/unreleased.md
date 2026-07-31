@@ -34,6 +34,7 @@
 - Certify production-like deployment, persistent services and operational evidence. (`156-epic-10-production-deployment-certification`)
 - Certify operational resilience, degraded dependencies and verified recovery. (`157-epic-10-operational-resilience-certification`)
 - Certify automated accessibility thresholds while preserving human screen-reader approval. (`158-epic-10-accessibility-certification`)
+- Certify security, privacy and tenant-isolation release thresholds. (`159-epic-10-security-privacy-isolation-certification`)
 
 ### Documentation
 
@@ -102,6 +103,7 @@
 - **Security — 155-epic-10-functional-framework-certification:** Certification rejects missing negative evidence and unresolved critical or high blockers.
 - **Security — 156-epic-10-production-deployment-certification:** Certification requires secret references, non-root runtime and credential-free evidence.
 - **Security — 157-epic-10-operational-resilience-certification:** Recovery evidence is fail-closed, checksum-bound and forbids production data.
+- **Security — 159-epic-10-security-privacy-isolation-certification:** Certification requires zero critical or high blockers, cross-tenant leaks and secret-bearing evidence.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -124,6 +126,7 @@
 - **Privacy — 156-epic-10-production-deployment-certification:** Production data is forbidden and reports contain only stable operational outcomes.
 - **Privacy — 157-epic-10-operational-resilience-certification:** Evidence is deterministic and credential-free with stable scenario identifiers only.
 - **Privacy — 158-epic-10-accessibility-certification:** Accessibility evidence contains stable results without credentials or user content.
+- **Privacy — 159-epic-10-security-privacy-isolation-certification:** Minimization, redaction, retention and subject workflows are certified without personal data.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.
