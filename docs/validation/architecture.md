@@ -17,9 +17,14 @@ not publish a release candidate or claim that any Epic 10 phase is certified.
   evidence and optional risk acceptance.
 - `epic-10-certification.schema.json` binds phase and finding summaries to a
   full source commit.
+- `epic-10-release-baseline.schema.json` defines supported environments and
+  measurable quality thresholds.
 
 The Ruby validator enforces semantic rules that JSON Schema alone cannot
 express reliably, including unique identifiers and release-blocker policy.
+
+Read the [release baseline](release-baseline.md) for the current matrix, support
+levels, thresholds and manual validation boundary.
 
 ## Finding policy
 
