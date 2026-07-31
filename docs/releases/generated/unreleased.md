@@ -26,6 +26,7 @@
 - Add a deterministic fail-closed foundation for the Epic 10 representative application. (`148-epic-10-representative-app-foundation`)
 - Certify the representative Light/Dark, bilingual and governed grid journey. (`149-epic-10-design-i18n-grid-journey`)
 - Certify the representative domain lifecycle and tenant-safe enterprise-services journey. (`150-epic-10-domain-services-journey`)
+- Certify tenant isolation, community fallback and the sample-extension lifecycle. (`151-epic-10-multitenant-extension-journey`)
 
 ### Documentation
 
@@ -48,6 +49,7 @@
 - `epic-10-release-baseline`
 - `epic-10-validation`
 - `epic-9-certification`
+- `extensions`
 - `operational-backup-manifest`
 - `operational-health-snapshot`
 - `operational-readiness`
@@ -85,6 +87,7 @@
 - **Security — 148-epic-10-representative-app-foundation:** The foundation rejects cross-tenant assignments, forbidden dependencies, undocumented contracts and unknown fields.
 - **Security — 149-epic-10-design-i18n-grid-journey:** Grid operators are allowlisted per column and exports must remain credential-free.
 - **Security — 150-epic-10-domain-services-journey:** Policy-protected transitions, tenant-scoped services, checksums and fail-closed validation prevent bypass.
+- **Security — 151-epic-10-multitenant-extension-journey:** Cross-tenant access is denied, roles are least-privileged and extension failures remain isolated.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -99,6 +102,7 @@
 - **Privacy — 148-epic-10-representative-app-foundation:** Fixture evidence must be deterministic, credential-free and personal-data-free.
 - **Privacy — 149-epic-10-design-i18n-grid-journey:** Journey evidence records contract outcomes without tenant payloads or credentials.
 - **Privacy — 150-epic-10-domain-services-journey:** Evidence is limited to governed outcomes without tenant payloads or credentials.
+- **Privacy — 151-epic-10-multitenant-extension-journey:** Tenant-isolation evidence excludes tenant payloads and credentials.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.
