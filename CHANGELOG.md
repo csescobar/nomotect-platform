@@ -24,6 +24,7 @@ Required release impact: `minor`.
 - Define strict Epic 10 validation-plan, finding and certification contracts with fail-closed release-blocker rules. (`144-epic-10-validation-contracts`)
 - Define the supported-environment matrix and measurable release thresholds for Epic 10. (`145-epic-10-release-thresholds`)
 - Add deterministic review-only planning for Epic 10 release candidates. (`146-epic-10-rc-preparation`)
+- Add a deterministic fail-closed foundation for the Epic 10 representative application. (`148-epic-10-representative-app-foundation`)
 
 ### Documentation
 
