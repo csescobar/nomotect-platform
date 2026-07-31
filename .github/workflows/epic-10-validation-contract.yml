@@ -7,6 +7,8 @@ on:
       - test/services/epic_10/**
       - docs/contracts/epic-10-*.schema.json
       - docs/validation/**
+      - config/epic_10/**
+      - config/epic_10/**
       - config/ai/contracts/epic_10_validation.yml
       - bin/epic-10-contract-certify
       - .github/workflows/epic-10-validation-contract.yml
