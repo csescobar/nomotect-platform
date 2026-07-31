@@ -1,0 +1,24 @@
+schema_version: 1
+id: 157-epic-10-operational-resilience-certification
+category: feature
+summary: Certify operational resilience, degraded dependencies and verified recovery.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - operational-readiness
+  - representative-application
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Recovery evidence is fail-closed, checksum-bound and forbids production data.
+privacy:
+  impact: reviewed
+  notes: Evidence is deterministic and credential-free with stable scenario identifiers only.
+accessibility:
+  impact: none
+  notes:

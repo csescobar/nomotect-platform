@@ -445,9 +445,11 @@ manual approvals and proposed focused-PR sequence are defined in the
 
 ### Phase 5 — Production-like operations
 
-- [ ] Exercise supported deployment, jobs, files, exports and observability.
-- [ ] Certify restart, replacement, degraded dependencies, backup and recovery.
-- [ ] Preserve credential-free, reviewable operational evidence.
+**Status:** ✅ Complete
+
+- [x] Exercise supported deployment, jobs, files, exports and observability.
+- [x] Certify restart, replacement, degraded dependencies, backup and recovery.
+- [x] Preserve credential-free, reviewable operational evidence.
 
 ### Phase 6 — Cross-cutting quality certification
 

@@ -14,6 +14,7 @@ owns:
   - representative_application_rc_upgrade_certification
   - functional_framework_certification
   - production_deployment_certification
+  - operational_resilience_certification
 may_use:
   - epic_10_validation
   - installation
@@ -63,3 +64,4 @@ required_tests:
   - rc_upgrade_certification_test
   - functional_framework_certification_test
   - production_deployment_certification_test
+  - operational_resilience_certification_test

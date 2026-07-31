@@ -33,6 +33,7 @@ Required release impact: `minor`.
 - Certify resumable representative application RC upgrades and deterministic recovery guidance. (`154-epic-10-rc-upgrade-certification`)
 - Certify integrated public functional contracts and governed negative-path findings. (`155-epic-10-functional-framework-certification`)
 - Certify production-like deployment, persistent services and operational evidence. (`156-epic-10-production-deployment-certification`)
+- Certify operational resilience, degraded dependencies and verified recovery. (`157-epic-10-operational-resilience-certification`)
 
 ### Documentation
 
