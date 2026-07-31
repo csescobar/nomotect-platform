@@ -48,7 +48,7 @@ module Epic10
     def load_application
       RepresentativeApplication.load(
         architecture_path: Rails.root.join("config/epic_10/representative-application.yml"),
-        foundation_path: Rails.root.join("test/fixtures/representative_application/foundation.yml")
+        foundation_path: Rails.root.join("test/support/representative_application/foundation.yml")
       )
     end
 
@@ -57,7 +57,7 @@ module Epic10
     end
 
     def foundation_data
-      YAML.safe_load_file(Rails.root.join("test/fixtures/representative_application/foundation.yml"), aliases: false)
+      YAML.safe_load_file(Rails.root.join("test/support/representative_application/foundation.yml"), aliases: false)
     end
 
     def build(foundation)
