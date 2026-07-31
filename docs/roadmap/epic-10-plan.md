@@ -242,6 +242,11 @@ Measure the release candidate against explicit quality thresholds.
 - **AI readiness:** an unfamiliar contributor or agent completes a bounded
   change using repository-native guidance.
 
+**Automated delivery evidence:** accessibility through PR #158; security,
+privacy and tenant isolation through PR #159; performance and compatibility
+through PR #160; bounded AI-readiness contributor journey through PR #161.
+Required manual approvals remain explicit inputs to the stable-release gate.
+
 ### Exit criteria
 
 All mandatory suites pass, measurements record their environment, and every
