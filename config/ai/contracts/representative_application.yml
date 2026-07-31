@@ -45,4 +45,4 @@ invariants:
   - automated certification does not replace required manual reviews
   - representative application work cannot authorize publication
 required_tests:
-  - representative_application_contract_test
+  - representative_application_test
