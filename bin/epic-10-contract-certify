@@ -11,7 +11,8 @@ ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
 bundle exec rails test \
   test/services/epic_10/contract_validator_test.rb \
   test/services/epic_10/release_baseline_test.rb \
-  test/services/epic_10/rc_preparation_test.rb
+  test/services/epic_10/rc_preparation_test.rb \
+  test/services/epic_10/representative_application_test.rb
 
 grep -q '"additionalProperties": false' docs/contracts/epic-10-validation-plan.schema.json
 grep -q '"critical", "high", "medium", "low"' docs/contracts/epic-10-finding.schema.json
@@ -21,6 +22,8 @@ grep -q 'must never publish or merge' docs/roadmap/epic-10-plan.md
 grep -q 'missing required runtimes' app/services/epic_10/release_baseline.rb
 grep -q 'manual_screen_reader_review' config/epic_10/release-baseline.yml
 grep -q 'publication.allowed: false' docs/validation/rc-preparation.md
+grep -q 'cross-tenant assignment is forbidden' app/services/epic_10/representative_application.rb
+grep -q 'publication:' config/epic_10/representative-application.yml
 
 mkdir -p tmp/ci
 bundle exec ruby bin/epic-10-rc-plan \
