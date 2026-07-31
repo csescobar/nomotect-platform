@@ -1,0 +1,23 @@
+schema_version: 1
+id: 147-epic-10-representative-app-architecture
+category: documentation
+summary: Define the governed architecture and public-contract boundary for the Epic 10 representative application.
+release_impact: minor
+contracts:
+  - epic-10-validation
+  - representative-application
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: The fixture forbids undocumented internals, protected-core modification, credentials, production data and automatic publication.
+privacy:
+  impact: reviewed
+  notes: Representative evidence is deterministic, credential-free and contains no personal data.
+accessibility:
+  impact: reviewed
+  notes: The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
