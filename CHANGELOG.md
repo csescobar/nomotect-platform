@@ -16,6 +16,14 @@ Required release impact: `minor`.
 - Certify restart, replacement, backup, restore and degraded-dependency resilience scenarios. (`131-resilience-certification`)
 - Add neutral community edition and entitlement abstractions that isolate optional commercial providers. (`132-neutral-entitlements`)
 - Add privacy-safe installation, customer and support identifiers with explicit rotation and disablement. (`133-support-identifiers`)
+- Add disabled-by-default telemetry contracts with explicit category consent and transparent redaction. (`134-opt-in-telemetry`)
+- Add explicit time-bounded diagnostic support consent and operator-reviewed share plans. (`135-support-consent`)
+- Certify that optional commercial integrations cannot disable essential community capabilities. (`136-commercial-readiness-certification`)
+
+### Documentation
+
+- Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions. (`137-operator-guides`)
+- Define supported compatibility matrices, lifecycle policy and operational diagrams. (`138-compatibility-lifecycle-documentation`)
 
 ## 0.9.0
 

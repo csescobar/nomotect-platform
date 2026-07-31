@@ -1,0 +1,21 @@
+schema_version: 1
+id: 137-operator-guides
+category: documentation
+summary: Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions.
+release_impact: none
+contracts: []
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

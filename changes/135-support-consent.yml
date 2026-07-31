@@ -1,0 +1,17 @@
+schema_version: 1
+id: 135-support-consent
+category: feature
+summary: Add explicit time-bounded diagnostic support consent and operator-reviewed share plans.
+release_impact: minor
+contracts:
+  - commercial-readiness
+  - support-consent
+migration: { required: false, notes: }
+upgrade: { required: false, notes: }
+security:
+  impact: reviewed
+  notes: Diagnostic sharing is scope limited, expires, revokes immediately and requires operator upload.
+privacy:
+  impact: reviewed
+  notes: Consent is separate from telemetry and permits only redacted allowlisted artifacts.
+accessibility: { impact: none, notes: }

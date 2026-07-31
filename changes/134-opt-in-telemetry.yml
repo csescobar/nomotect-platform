@@ -1,0 +1,17 @@
+schema_version: 1
+id: 134-opt-in-telemetry
+category: feature
+summary: Add disabled-by-default telemetry contracts with explicit category consent and transparent redaction.
+release_impact: minor
+contracts:
+  - commercial-readiness
+  - telemetry-policy
+migration: { required: false, notes: }
+upgrade: { required: false, notes: }
+security:
+  impact: reviewed
+  notes: Fixed category allowlists remove arbitrary fields and the core defines no automatic sender.
+privacy:
+  impact: reviewed
+  notes: Telemetry is disabled by default, requires explicit category consent and reports removed field names without their values.
+accessibility: { impact: none, notes: }

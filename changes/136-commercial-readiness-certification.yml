@@ -1,0 +1,17 @@
+schema_version: 1
+id: 136-commercial-readiness-certification
+category: feature
+summary: Certify that optional commercial integrations cannot disable essential community capabilities.
+release_impact: minor
+contracts:
+  - commercial-readiness
+  - commercial-readiness-certification
+migration: { required: false, notes: }
+upgrade: { required: false, notes: }
+security:
+  impact: reviewed
+  notes: Provider failures and unknown capabilities remain fail-closed without affecting community capabilities.
+privacy:
+  impact: reviewed
+  notes: Certification verifies support is absent and telemetry is disabled in the community baseline.
+accessibility: { impact: none, notes: }

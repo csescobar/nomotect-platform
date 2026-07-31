@@ -372,21 +372,21 @@ distribution verification completed successfully.
 
 ### Phase 8 — Commercial Readiness
 
-**Status:** ⏳ Planned
+**Status:** ✅ Complete
 
 - [x] Define neutral edition and entitlement abstractions.
 - [x] Define customer, support and installation identifiers with privacy and rotation rules.
-- [ ] Provide opt-in telemetry contracts with transparent redaction and disablement.
-- [ ] Define enterprise support metadata and diagnostic-consent boundaries.
-- [ ] Ensure unavailable commercial services never disable essential community functionality.
+- [x] Provide opt-in telemetry contracts with transparent redaction and disablement.
+- [x] Define enterprise support metadata and diagnostic-consent boundaries.
+- [x] Ensure unavailable commercial services never disable essential community functionality.
 
 ### Phase 9 — Documentation and Operator Guides
 
 **Status:** ⏳ Planned
 
-- [ ] Publish administrator, installation, deployment, upgrade, recovery, operator and extension guides.
-- [ ] Document supported environments, compatibility matrices and lifecycle policies.
-- [ ] Provide architecture, state-machine, sequence, security and recovery diagrams.
+- [x] Publish administrator, installation, deployment, upgrade, recovery, operator and extension guides.
+- [x] Document supported environments, compatibility matrices and lifecycle policies.
+- [x] Provide architecture, state-machine, sequence, security and recovery diagrams.
 - [ ] Add continuously tested examples where practical.
 - [ ] Connect operational contracts and guides to Repository Intelligence ownership and freshness checks.
 

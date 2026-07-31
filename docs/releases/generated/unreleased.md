@@ -15,10 +15,19 @@
 - Certify restart, replacement, backup, restore and degraded-dependency resilience scenarios. (`131-resilience-certification`)
 - Add neutral community edition and entitlement abstractions that isolate optional commercial providers. (`132-neutral-entitlements`)
 - Add privacy-safe installation, customer and support identifiers with explicit rotation and disablement. (`133-support-identifiers`)
+- Add disabled-by-default telemetry contracts with explicit category consent and transparent redaction. (`134-opt-in-telemetry`)
+- Add explicit time-bounded diagnostic support consent and operator-reviewed share plans. (`135-support-consent`)
+- Certify that optional commercial integrations cannot disable essential community capabilities. (`136-commercial-readiness-certification`)
+
+### Documentation
+
+- Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions. (`137-operator-guides`)
+- Define supported compatibility matrices, lifecycle policy and operational diagrams. (`138-compatibility-lifecycle-documentation`)
 
 ## Affected contracts
 
 - `commercial-readiness`
+- `commercial-readiness-certification`
 - `community-edition`
 - `diagnostic-redaction`
 - `disaster-recovery-policy`
@@ -30,7 +39,9 @@
 - `restore-execution`
 - `restore-plan`
 - `support-bundle-manifest`
+- `support-consent`
 - `support-identity`
+- `telemetry-policy`
 
 ## Cross-cutting assessments
 
@@ -42,8 +53,14 @@
 - **Security — 131-resilience-certification:** Fault injection is restricted to temporary production-like fixtures.
 - **Security — 132-neutral-entitlements:** Unknown or failing providers never grant optional capabilities or disable community capabilities.
 - **Security — 133-support-identifiers:** Identity documents reject unknown fields and require opaque random UUIDs.
+- **Security — 134-opt-in-telemetry:** Fixed category allowlists remove arbitrary fields and the core defines no automatic sender.
+- **Security — 135-support-consent:** Diagnostic sharing is scope limited, expires, revokes immediately and requires operator upload.
+- **Security — 136-commercial-readiness-certification:** Provider failures and unknown capabilities remain fail-closed without affecting community capabilities.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
 - **Privacy — 129-operational-health:** Health snapshots contain operational metadata without tenant data, credentials or automatic telemetry.
 - **Privacy — 133-support-identifiers:** Support and customer identifiers are opt-in, contain no personal data and are removed when support is disabled.
+- **Privacy — 134-opt-in-telemetry:** Telemetry is disabled by default, requires explicit category consent and reports removed field names without their values.
+- **Privacy — 135-support-consent:** Consent is separate from telemetry and permits only redacted allowlisted artifacts.
+- **Privacy — 136-commercial-readiness-certification:** Certification verifies support is absent and telemetry is disabled in the community baseline.
