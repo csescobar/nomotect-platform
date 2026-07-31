@@ -1,7 +1,7 @@
 schema_version: 1
 id: service_request_workspace
 status: architecture_approved
-fixture_root: test/fixtures/representative_application
+fixture_root: test/support/representative_application
 evidence_root: tmp/epic_10/representative_application
 domain:
   name: service_requests
