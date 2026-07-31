@@ -16,6 +16,7 @@ owns:
   - production_deployment_certification
   - operational_resilience_certification
   - accessibility_certification
+  - security_privacy_isolation_certification
 may_use:
   - epic_10_validation
   - installation
@@ -67,3 +68,4 @@ required_tests:
   - production_deployment_certification_test
   - operational_resilience_certification_test
   - accessibility_certification_test
+  - security_privacy_isolation_certification_test
