@@ -396,16 +396,76 @@ distribution verification completed successfully.
 
 **Status:** ⏳ Planned
 
-- [ ] Publish one or more pre-1.0 release candidates.
-- [ ] Build at least one representative application using only documented framework contracts.
-- [ ] Upgrade a sample application across at least one release candidate.
-- [ ] Validate installation, configuration, design-system customization, grid usage, domain conventions, enterprise services and multi-tenant behavior.
-- [ ] Exercise production-like deployment, jobs, files, exports, observability, backup and recovery.
-- [ ] Run accessibility, security, privacy, performance, compatibility and cross-tenant leakage validation.
-- [ ] Resolve or explicitly accept all release-blocking findings.
-- [ ] Confirm public contracts, support policy, compatibility matrix, upgrade policy and deprecation process.
+**Objective:** prove that NomoTect can be adopted, customized, operated and
+upgraded as a framework through documented public contracts, then govern the
+release-candidate and stable-release decisions with executable evidence.
 
-**`v1.0.0` release gate:** all Epic 10 validation evidence is complete; no unresolved critical or high-severity release blockers remain; representative applications can be created, operated and upgraded using published documentation; and stable public contracts are approved.
+The detailed delivery architecture, dependency order, automation boundaries,
+manual approvals and proposed focused-PR sequence are defined in the
+[Epic 10 plan](epic-10-plan.md).
+
+### Phase 1 — Validation architecture and RC baseline
+
+- [ ] Define versioned validation-plan, finding and certification contracts.
+- [ ] Approve supported environments and measurable release thresholds.
+- [ ] Establish reproducible, protected `v1.0.0-rc.1` preparation.
+
+### Phase 2 — Representative application
+
+- [ ] Build a realistic application using only documented framework contracts.
+- [ ] Exercise installation, customization, domain, grid, services,
+  multi-tenant and extension journeys.
+- [ ] Certify clean-environment setup without private maintainer knowledge.
+
+### Phase 3 — Release-candidate upgrade journey
+
+- [ ] Upgrade the representative application across candidate states.
+- [ ] Validate compatibility, backup, resumability, history and recovery.
+- [ ] Reject incompatible or incomplete upgrade evidence fail closed.
+
+### Phase 4 — Functional framework certification
+
+- [ ] Certify integrated installation, configuration, design system, i18n,
+  grid, domain, service, tenant, extension and Repository Intelligence paths.
+- [ ] Record negative-path findings as governed evidence.
+
+### Phase 5 — Production-like operations
+
+- [ ] Exercise supported deployment, jobs, files, exports and observability.
+- [ ] Certify restart, replacement, degraded dependencies, backup and recovery.
+- [ ] Preserve credential-free, reviewable operational evidence.
+
+### Phase 6 — Cross-cutting quality certification
+
+- [ ] Run accessibility, security, privacy, performance, compatibility,
+  reliability and cross-tenant leakage validation.
+- [ ] Validate an unfamiliar contributor or agent journey from repository-native
+  guidance.
+- [ ] Convert every threshold breach into a governed finding.
+
+### Phase 7 — Findings resolution and contract freeze
+
+- [ ] Resolve or explicitly accept eligible findings through recorded policy.
+- [ ] Confirm public contracts, support, compatibility, upgrade and deprecation
+  boundaries.
+- [ ] Freeze the stable public surface and certify current documentation.
+
+### Phase 8 — Final certification and stable-release gate
+
+- [ ] Aggregate same-commit source, artifact, SBOM, provenance and validation
+  evidence.
+- [ ] Execute fail-closed Epic 10 and stable-readiness certification.
+- [ ] Require explicit maintainer approval before protected publication.
+
+**Epic 10 exit criteria:** every phase is complete and executable evidence is
+current; representative applications can be created, operated and upgraded from
+published documentation; no unresolved critical or high-severity release
+blocker remains; public contracts and lifecycle policies are approved; and the
+stable-readiness report is human-approved.
+
+**`v1.0.0` release gate:** Epic 10 certification may declare readiness but
+must never publish automatically. Stable publication remains a separate,
+protected and explicitly approved action.
 
 ## Release targets
 
