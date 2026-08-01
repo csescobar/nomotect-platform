@@ -34,8 +34,8 @@ class McpBootstrapTest < ActiveSupport::TestCase
   test "portable wrapper fails closed when writes are requested" do
     wrapper = ROOT.join("bin/nomotect-mcp").read
 
-    assert_includes wrapper, 'MCP_ALLOW_WRITES:-false'
-    assert_includes wrapper, 'export MCP_ALLOW_WRITES=false'
+    assert_includes wrapper, "MCP_ALLOW_WRITES:-false"
+    assert_includes wrapper, "export MCP_ALLOW_WRITES=false"
     assert_includes wrapper, '!= "false"'
   end
 end
