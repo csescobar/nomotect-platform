@@ -96,6 +96,9 @@ New product repositories start from the versioned, cross-platform
 [Application Starter](docs/distribution/application-starter.md), not by cloning
 the NomoTect contributor repository.
 
+Follow the [clean-starter onboarding checklist](docs/adoption/clean-starter-onboarding.md)
+for prerequisites, Repository Intelligence generation and troubleshooting.
+
 - [Download for Linux or macOS](https://github.com/csescobar/nomotect-platform/releases/latest/download/nomotect-starter.tar.gz)
 - [Download for Windows](https://github.com/csescobar/nomotect-platform/releases/latest/download/nomotect-starter.zip)
 - [Browse releases and checksums](https://github.com/csescobar/nomotect-platform/releases/latest)

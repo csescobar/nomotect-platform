@@ -53,6 +53,7 @@
 - Define the dependency-ordered Epic 10 framework validation and release-readiness plan. (`143-epic-10-planning`)
 - Define the governed architecture and public-contract boundary for the Epic 10 representative application. (`147-epic-10-representative-app-architecture`)
 - Define a standalone improvement roadmap from independent adoption-pilot findings. (`162-adoption-validation-improvement-roadmap`)
+- Align clean-starter setup, Grid Engine, notification and Repository Intelligence onboarding guidance. (`166-clean-starter-onboarding`)
 
 ## Affected contracts
 
@@ -62,10 +63,12 @@
 - `diagnostic-redaction`
 - `disaster-recovery-policy`
 - `distribution`
+- `enterprise_services`
 - `documentation-governance`
 - `epic-10-rc-plan`
 - `epic-10-release-baseline`
 - `epic-10-validation`
+- `grid_engine`
 - `epic-9-certification`
 - `extensions`
 - `operational-backup-manifest`
@@ -121,6 +124,7 @@
 - **Security — 163-antigravity-cli-mcp-bootstrap:** Personal absolute paths, shell-specific execution and implicit MCP write access are removed; the bootstrap fails closed with writes disabled.
 - **Security — 164-application-starter-distribution:** The starter uses a tracked-file allowlist, excludes platform history and rejects repeated initialization.
 - **Security — 165-publish-application-starter:** Starter archives are allowlisted, checksum-bound, attested and published only from the approved main commit.
+- **Security — 166-clean-starter-onboarding:** Notification guidance requires tenant membership checks, minimal payloads and policy authorization.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -149,6 +153,7 @@
 - **Privacy — 163-antigravity-cli-mcp-bootstrap:** Bootstrap configuration and evidence exclude credentials and personal paths.
 - **Privacy — 164-application-starter-distribution:** Starter provenance contains platform version and commit only; it contains no contributor identity or credentials.
 - **Privacy — 165-publish-application-starter:** Published starter provenance contains no credentials, personal paths or contributor identity.
+- **Privacy — 166-clean-starter-onboarding:** Notification payload guidance excludes credentials, secrets and unnecessary personal data.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.

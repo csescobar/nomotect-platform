@@ -7,6 +7,10 @@ if command -v pg_isready >/dev/null 2>&1; then
   if ! pg_isready -h "${PGHOST:-localhost}" -p "${PGPORT:-5432}" >/dev/null 2>&1; then
     printf "\nWarning: PostgreSQL is unreachable on %s:%s. Ensure PostgreSQL 18 service is running.\n" "${PGHOST:-localhost}" "${PGPORT:-5432}"
   fi
+else
+  printf "\nNotice: pg_isready is not installed; PostgreSQL preflight was skipped.\n"
+  printf "Install the PostgreSQL client tools, or use the documented Docker/WSL2 setup path.\n"
+  printf "Database provisioning will still attempt the configured DATABASE_URL.\n"
 fi
 
 if [[ "${INSTALLATION_ENABLED:-false}" == "true" ]]; then
