@@ -41,7 +41,7 @@ Required release impact: `minor`.
 
 ### Security
 
-- Add a portable, read-only MCP-first bootstrap for Antigravity CLI adoption. (`163-antigravity-cli-mcp-bootstrap`)
+- Define a cross-platform Application Starter and add a portable, read-only MCP-first bootstrap for Antigravity CLI adoption. (`163-antigravity-cli-mcp-bootstrap`)
 
 ### Documentation
 

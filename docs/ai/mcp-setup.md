@@ -18,8 +18,10 @@ two-session journey is completed and its evidence is approved.
 ## Security model
 
 The workspace configuration starts the repository-relative stdio server through
-`bin/nomotect-mcp`. The wrapper fails closed unless it is running in a NomoTect
-Git workspace and `MCP_ALLOW_WRITES=false`.
+`ruby bin/nomotect-mcp`. The wrapper identifies the application by the
+Repository Intelligence capability that the Application Starter preserves; it
+does not inspect the repository name, owner, remote or NomoTect development
+documentation. It fails closed unless `MCP_ALLOW_WRITES=false`.
 
 The bootstrap uses the deterministic `null` code-graph provider. External graph
 providers are optional and are not required to establish Repository Intelligence
@@ -39,7 +41,7 @@ Session A is limited to MCP setup. Follow `MCP_BOOTSTRAP.md` and run:
 ```bash
 ruby bin/repository-intelligence generate
 ruby bin/repository-intelligence validate
-bin/mcp-setup-certify
+ruby bin/mcp-setup-certify
 ```
 
 The certification writes machine-readable evidence to
@@ -114,7 +116,7 @@ or unbounded tool output.
 
 - If `/mcp` does not show the server, confirm that the new `agy` process started
   in the repository workspace and loaded `.agents/mcp_config.json`.
-- If the server fails to start, run `bin/nomotect-mcp` from the repository root
+- If the server fails to start, run `ruby bin/nomotect-mcp` from the repository root
   and resolve the reported Ruby or dependency error.
 - If Repository Intelligence validation reports drift, run generation and
   validation again before restarting the client.

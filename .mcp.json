@@ -1,10 +1,9 @@
 {
   "mcpServers": {
     "nomotect-repository-intelligence": {
-      "command": "bash",
+      "command": "ruby",
       "args": [
-        "-lc",
-        "exec \"$(git rev-parse --show-toplevel)/bin/nomotect-mcp\""
+        "bin/nomotect-mcp"
       ],
       "env": {
         "MCP_ALLOW_WRITES": "false",

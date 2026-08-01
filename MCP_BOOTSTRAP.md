@@ -2,19 +2,20 @@
 
 Stop broad repository discovery until this bootstrap has completed.
 
-This entrypoint is for an unfamiliar AI agent beginning a NomoTect adoption
-journey with Antigravity CLI (`agy`). During Session A, inspect only this file,
+This entrypoint is for an unfamiliar AI agent beginning an Application Starter
+adoption journey with Antigravity CLI (`agy`). During Session A, inspect only this file,
 `.agents/mcp_config.json`, `docs/ai/mcp-setup.md`, and the commands they name.
 
 ## Session A — configure and stop
 
-1. Confirm that Git, Bash, Ruby and Bundler are available.
+1. Confirm that Git, Ruby and Bundler are available. Bash is not required by the
+   MCP bootstrap on Windows.
 2. Run `bundle install` if the repository dependencies are not installed.
 3. Run `ruby bin/repository-intelligence generate`.
 4. Run `ruby bin/repository-intelligence validate`.
 5. Confirm that `.agents/mcp_config.json` exists and sets
    `MCP_ALLOW_WRITES=false`.
-6. Run `bin/mcp-setup-certify`.
+6. Run `ruby bin/mcp-setup-certify`.
 7. Report the result and ask the operator to exit and restart Antigravity CLI.
 8. Stop. Do not continue repository discovery in the current process.
 

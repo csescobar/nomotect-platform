@@ -15,8 +15,11 @@ class McpBootstrapTest < ActiveSupport::TestCase
 
       assert_equal "false", server.dig("env", "MCP_ALLOW_WRITES")
       assert_equal "null", server.dig("env", "CODE_GRAPH_PROVIDER")
+      assert_equal "ruby", server.fetch("command")
+      assert_equal [ "bin/nomotect-mcp" ], server.fetch("args")
       assert_includes serialized, "bin/nomotect-mcp"
       refute_match %r{/(home|Users)/}, serialized
+      refute_includes serialized, "bash"
     end
   end
 
@@ -34,8 +37,10 @@ class McpBootstrapTest < ActiveSupport::TestCase
   test "portable wrapper fails closed when writes are requested" do
     wrapper = ROOT.join("bin/nomotect-mcp").read
 
-    assert_includes wrapper, "MCP_ALLOW_WRITES:-false"
-    assert_includes wrapper, "export MCP_ALLOW_WRITES=false"
-    assert_includes wrapper, '!= "false"'
+    assert_includes wrapper, 'ENV["MCP_ALLOW_WRITES"] = "false"'
+    assert_includes wrapper, 'ENV.fetch("MCP_ALLOW_WRITES", "false") == "false"'
+    assert_includes wrapper, "Repository Intelligence runtime was not found"
+    refute_includes wrapper, "VISION.md"
+    refute_includes wrapper, "git rev-parse"
   end
 end

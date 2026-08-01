@@ -76,12 +76,47 @@ copied into NomoTect certification without same-commit, reproducible evidence.
 | AV-015 | Pilot UI retained the legacy Rails Hotwire Platform identity | Low / identity | Application shell |
 | AV-016 | Visual findings were not available to the pilot agent and were absent from its reports | Documentation / evidence | Revalidation |
 
-## Phase 0 — MCP-first agent bootstrap
+## Phase 0 — Application Starter and MCP-first agent bootstrap
 
 ### Objective
 
-Make MCP configuration, process restart and verified Repository Intelligence use
-a mandatory precondition for AI-assisted repository discovery.
+Publish a product-ready Application Starter and make MCP configuration, process
+restart and verified Repository Intelligence use a mandatory precondition for
+AI-assisted repository discovery. Product teams adopt the generated starter;
+they do not clone the NomoTect development repository.
+
+### Application Starter distribution
+
+The NomoTect development repository remains the contributor surface. CI must
+generate a separate, versioned Application Starter from a declarative allowlist
+so platform history and institutional material cannot drift into adopted
+products. A manually maintained copy of the application tree is prohibited.
+
+Each release must provide:
+
+- `nomotect-starter-vX.Y.Z.tar.gz` for Linux and macOS;
+- `nomotect-starter-vX.Y.Z.zip` for Windows;
+- `SHA256SUMS` and a machine-readable starter manifest;
+- a shared Ruby initializer with thin POSIX and PowerShell launchers;
+- provenance containing the NomoTect version and source commit without retaining
+  the platform repository's Git history.
+
+The starter must preserve runtime, governance, security, accessibility, i18n,
+upgrade, Repository Intelligence and MCP contracts. It must exclude NomoTect
+roadmaps, historical change fragments, platform marketing, contributor-only
+release workflows and other institutional material that does not belong to the
+new product.
+
+Initialization collects product name, organization and repository identity,
+creates product-owned metadata and starts a new changelog lineage. It must not
+perform a global replacement of the NomoTect name because platform provenance,
+compatibility identifiers, licensing and technical contracts remain valid.
+
+The starter and initializer are certified on Ubuntu, macOS and Windows. Windows
+certification covers ZIP extraction, PowerShell initialization, Git setup and
+the Antigravity CLI MCP bootstrap. Full application runtime support on Windows
+uses the separately documented Docker Desktop or WSL2 paths unless native
+Windows runtime certification is added explicitly.
 
 ### Initial certification target
 
@@ -98,7 +133,8 @@ before general project analysis. It should direct the agent to:
 1. inspect only the MCP bootstrap instructions and portable client template;
 2. install or verify runtime prerequisites;
 3. generate and validate Repository Intelligence artifacts;
-4. configure the current AI client with a repository-relative stdio command;
+4. configure the current AI client with a repository-relative,
+   shell-independent stdio command;
 5. keep `MCP_ALLOW_WRITES=false`;
 6. run an executable local MCP handshake certification;
 7. report that client configuration has changed;
@@ -166,7 +202,12 @@ implementation.
 
 ### Exit criteria
 
-- clean clone contains portable setup guidance;
+- generated Application Starter contains portable setup guidance;
+- TAR.GZ and ZIP starters contain equivalent, manifest-approved content;
+- initialization creates a product-owned repository without NomoTect's Git
+  history or institutional documentation;
+- starter initialization and MCP bootstrap are certified on Linux/macOS and
+  Windows;
 - an unfamiliar operator can configure a supported client;
 - assistant restart is explicitly requested and observed;
 - the restarted assistant invokes MCP before broad repository reading;
@@ -174,7 +215,7 @@ implementation.
 - read-only enforcement is certified;
 - no personal path, credential or implicit write permission exists.
 
-## Phase 1 — Clean-clone onboarding and documentation alignment
+## Phase 1 — Clean-starter onboarding and documentation alignment
 
 ### Scope
 
@@ -183,11 +224,12 @@ implementation.
 - explain when Repository Intelligence generation is required;
 - align Grid Engine examples with the implemented type registry;
 - document notification payloads and policy/view integration;
-- add a clean-clone adoption checklist and common failure modes.
+- add a clean-starter adoption checklist and common failure modes.
 
 ### Exit criteria
 
-A controlled clean-clone validation completes setup without requiring
+A controlled validation downloads a published Application Starter, initializes
+a new private Git repository and completes setup without requiring
 implementation-internal discovery or recovery from unexplained failures. This
 validation certifies the setup artifacts and harness; it is not the second
 independent adoption pilot.
