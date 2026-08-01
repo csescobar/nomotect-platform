@@ -44,10 +44,33 @@ class EnterpriseServicesTest < ActiveSupport::TestCase
   end
 
   test "notification dispatcher rejects a recipient from another tenant" do
+    initial_count = Notification.count
+
     assert_raises TenantBoundary::Violation do
       NotificationDispatcher.call(
         organization: @organization,
         recipient: @other_user,
+        kind: "customer.updated"
+      )
+    end
+
+    assert_equal initial_count, Notification.count
+    assert_no_enqueued_jobs only: NotificationDeliveryJob
+  end
+
+  test "notification dispatcher resolves recipient identifiers tenant first" do
+    notification = NotificationDispatcher.call(
+      organization: @organization,
+      recipient_id: @user.id,
+      kind: "customer.updated"
+    )
+
+    assert_equal @user, notification.recipient
+
+    assert_raises TenantBoundary::Violation do
+      NotificationDispatcher.call(
+        organization: @organization,
+        recipient_id: @other_user.id,
         kind: "customer.updated"
       )
     end

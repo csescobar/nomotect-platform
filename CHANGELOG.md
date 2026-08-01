@@ -44,6 +44,7 @@ Required release impact: `minor`.
 ### Security
 
 - Define a cross-platform Application Starter and add a portable, read-only MCP-first bootstrap for Antigravity CLI adoption. (`163-antigravity-cli-mcp-bootstrap`)
+- Add tenant-first recipient resolution and atomic cross-tenant notification rejection. (`167-tenant-recipient-assignment-safety`)
 
 ### Documentation
 

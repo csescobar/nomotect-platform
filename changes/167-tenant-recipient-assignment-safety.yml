@@ -1,0 +1,23 @@
+schema_version: 1
+id: 167-tenant-recipient-assignment-safety
+category: security
+summary: Add tenant-first recipient resolution and atomic cross-tenant notification rejection.
+release_impact: patch
+contracts:
+  - enterprise_services
+  - multi_tenant
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Recipient identifiers resolve through organization memberships before notification or assignment state is created.
+privacy:
+  impact: reviewed
+  notes: Rejected foreign identifiers are not persisted in notification payloads or delivery jobs.
+accessibility:
+  impact: none
+  notes:

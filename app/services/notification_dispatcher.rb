@@ -1,5 +1,6 @@
 class NotificationDispatcher
-  def self.call(organization:, recipient:, kind:, payload: {})
+  def self.call(organization:, kind:, payload: {}, recipient: nil, recipient_id: nil)
+    recipient = recipient_id ? TenantBoundary.resolve_member!(organization: organization, user_id: recipient_id) : recipient
     TenantBoundary.assert_membership!(organization: organization, user: recipient)
 
     notification = Notification.create!(
