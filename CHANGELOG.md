@@ -39,6 +39,10 @@ Required release impact: `minor`.
 - Certify deterministic performance budgets and the supported compatibility matrix. (`160-epic-10-performance-compatibility-certification`)
 - Certify a bounded contributor journey using repository-native guidance only. (`161-epic-10-ai-readiness-certification`)
 
+### Security
+
+- Add a portable, read-only MCP-first bootstrap for Antigravity CLI adoption. (`163-antigravity-cli-mcp-bootstrap`)
+
 ### Documentation
 
 - Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions. (`137-operator-guides`)
