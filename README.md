@@ -92,6 +92,10 @@ ruby bin/epic-9-certify
 
 ## Supported distribution paths
 
+New product repositories start from the versioned, cross-platform
+[Application Starter](docs/distribution/application-starter.md), not by cloning
+the NomoTect contributor repository.
+
 The repository certifies these delivery profiles in CI:
 
 - development and production [Docker Compose profiles](compose.yaml);
