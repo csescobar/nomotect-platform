@@ -2,6 +2,11 @@
 
 This directory defines the repository contracts that make Rails Hotwire Platform understandable and extensible without requiring proprietary memory systems or a specific coding agent.
 
+Agents beginning an adoption journey must complete the
+[Antigravity CLI MCP setup](mcp-setup.md) through the root-level
+[`MCP_BOOTSTRAP.md`](../../MCP_BOOTSTRAP.md) entrypoint before broad repository
+discovery.
+
 ## Artifacts
 
 - `module-contract-specification.md` — required human-readable contract for each platform module

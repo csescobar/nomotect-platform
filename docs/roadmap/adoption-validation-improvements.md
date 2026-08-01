@@ -83,6 +83,13 @@ copied into NomoTect certification without same-commit, reproducible evidence.
 Make MCP configuration, process restart and verified Repository Intelligence use
 a mandatory precondition for AI-assisted repository discovery.
 
+### Initial certification target
+
+Phase 0 initially targets Antigravity CLI (`agy`). Its workspace-local
+configuration is `.agents/mcp_config.json`. Antigravity IDE and all other clients
+remain `UNVERIFIED` until their own two-session journey is executed and approved.
+Configuration-format similarity is not certification evidence.
+
 ### Required bootstrap surface
 
 Provide a minimal, highly discoverable root-level entrypoint that can be read
@@ -102,7 +109,8 @@ Possible artifacts include:
 
 - `MCP_BOOTSTRAP.md` at the repository root;
 - `docs/ai/mcp-setup.md`;
-- portable `.mcp.json`;
+- portable `.agents/mcp_config.json` for Antigravity CLI and a safe generic
+  `.mcp.json` fallback;
 - `bin/mcp-setup-certify`;
 - client-specific examples clearly marked as verified or unverified.
 
@@ -179,8 +187,10 @@ implementation.
 
 ### Exit criteria
 
-A new contributor completes setup without discovering mandatory steps by reading
-implementation internals or recovering from unexplained failures.
+A controlled clean-clone validation completes setup without requiring
+implementation-internal discovery or recovery from unexplained failures. This
+validation certifies the setup artifacts and harness; it is not the second
+independent adoption pilot.
 
 ## Phase 2 — Tenant-safe application contracts
 
@@ -306,6 +316,11 @@ binding or execution evidence contradicts the repository state.
 ### Preconditions
 
 Phases 0 through 7 must be merged and certified before the second pilot begins.
+
+Unlike the controlled validation performed during Phases 0 through 7, Phase 8
+requires a new unfamiliar contributor or assistant, a new conversation and a new
+application repository. Only Phase 8 may claim a second independent adoption
+outcome.
 
 ### Isolation rules
 

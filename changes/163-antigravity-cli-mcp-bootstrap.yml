@@ -1,0 +1,22 @@
+schema_version: 1
+id: 163-antigravity-cli-mcp-bootstrap
+category: security
+summary: Add a portable, read-only MCP-first bootstrap for Antigravity CLI adoption.
+release_impact: none
+contracts:
+  - repository_intelligence
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: improved
+  notes: Personal absolute paths and implicit MCP write access are removed; the bootstrap fails closed with writes disabled.
+privacy:
+  impact: improved
+  notes: Bootstrap configuration and evidence exclude credentials and personal paths.
+accessibility:
+  impact: none
+  notes:
