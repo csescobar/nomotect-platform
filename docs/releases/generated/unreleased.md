@@ -63,14 +63,14 @@
 - `diagnostic-redaction`
 - `disaster-recovery-policy`
 - `distribution`
-- `enterprise_services`
 - `documentation-governance`
+- `enterprise_services`
 - `epic-10-rc-plan`
 - `epic-10-release-baseline`
 - `epic-10-validation`
-- `grid_engine`
 - `epic-9-certification`
 - `extensions`
+- `grid_engine`
 - `operational-backup-manifest`
 - `operational-health-snapshot`
 - `operational-readiness`
