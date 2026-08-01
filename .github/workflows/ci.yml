@@ -61,6 +61,8 @@ jobs:
             tmp/ci/mcp-bootstrap-certification.json
             tmp/ci/repository-intelligence-certification.log
           if-no-files-found: error
+
+
       - name: Lint
         run: bash bin/lint
       - name: Upload lint report
@@ -94,6 +96,31 @@ jobs:
           name: test-report
           path: tmp/ci/test-report.txt
           if-no-files-found: ignore
+
+  application-starter:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      STARTER_OUTPUT: ${{ runner.temp }}/nomotect-starter
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - name: Build starter distributions
+        run: ruby bin/application-starter-build --version 0.9.0 --source-commit ${{ github.sha }} --output "${{ env.STARTER_OUTPUT }}"
+      - name: Extract starter ZIP
+        run: ruby -rzip -e "Zip::File.open(File.join(ENV.fetch('STARTER_OUTPUT'), 'nomotect-starter-v0.9.0.zip')) { |archive| archive.each { |entry| entry.extract(File.join(ENV.fetch('STARTER_OUTPUT'), 'extracted', entry.name)) } }"
+      - name: Initialize product workspace
+        working-directory: ${{ runner.temp }}/nomotect-starter/extracted/nomotect-starter-v0.9.0
+        run: ruby bin/nomotect-init.rb --product-name "Starter Fixture" --organization "NomoTect CI" --repository starter-fixture
+      - name: Certify MCP bootstrap
+        working-directory: ${{ runner.temp }}/nomotect-starter/extracted/nomotect-starter-v0.9.0
+        run: ruby bin/mcp-setup-certify
 
   packaging:
     runs-on: ubuntu-latest
