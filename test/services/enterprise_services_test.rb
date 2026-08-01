@@ -91,14 +91,16 @@ class EnterpriseServicesTest < ActiveSupport::TestCase
   end
 
   test "stored file registry rejects an uploader from another tenant" do
-    assert_raises TenantBoundary::Violation do
-      StoredFileRegistry.call(
-        organization: @organization,
-        uploaded_by: @other_user,
-        name: "customers.csv",
-        content_type: "text/csv",
-        bytes: "name\nAda\n"
-      )
+    assert_no_difference "StoredFile.count" do
+      assert_raises TenantBoundary::Violation do
+        StoredFileRegistry.call(
+          organization: @organization,
+          uploaded_by: @other_user,
+          name: "customers.csv",
+          content_type: "text/csv",
+          bytes: "name\nAda\n"
+        )
+      end
     end
   end
 
