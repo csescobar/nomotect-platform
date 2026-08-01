@@ -70,6 +70,7 @@
 - `operational-readiness`
 - `releases`
 - `repository-intelligence`
+- `repository_intelligence`
 - `representative-application`
 - `resilience-certification-report`
 - `restore-certification`
