@@ -115,7 +115,7 @@
 - **Security — 160-epic-10-performance-compatibility-certification:** Certification rejects invalid source commits, incomplete matrices and non-deterministic or credential-bearing evidence.
 - **Security — 161-epic-10-ai-readiness-certification:** The journey enforces public contracts, bounded paths, protected-internal integrity and review-only publication.
 - **Security — 162-adoption-validation-improvement-roadmap:** The roadmap preserves read-only MCP defaults and fail-closed tenant and evidence requirements.
-- **Security — 163-antigravity-cli-mcp-bootstrap:** Personal absolute paths and implicit MCP write access are removed; the bootstrap fails closed with writes disabled.
+- **Security — 163-antigravity-cli-mcp-bootstrap:** Personal absolute paths, shell-specific execution and implicit MCP write access are removed; the bootstrap fails closed with writes disabled.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
