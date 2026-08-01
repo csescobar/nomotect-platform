@@ -54,6 +54,7 @@ Required release impact: `minor`.
 - Define the dependency-ordered Epic 10 framework validation and release-readiness plan. (`143-epic-10-planning`)
 - Define the governed architecture and public-contract boundary for the Epic 10 representative application. (`147-epic-10-representative-app-architecture`)
 - Define a standalone improvement roadmap from independent adoption-pilot findings. (`162-adoption-validation-improvement-roadmap`)
+- Align clean-starter setup, Grid Engine, notification and Repository Intelligence onboarding guidance. (`166-clean-starter-onboarding`)
 
 ## 0.9.0
 

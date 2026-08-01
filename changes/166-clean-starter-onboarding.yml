@@ -1,0 +1,25 @@
+schema_version: 1
+id: 166-clean-starter-onboarding
+category: documentation
+summary: Align clean-starter setup, Grid Engine, notification and Repository Intelligence onboarding guidance.
+release_impact: patch
+contracts:
+  - distribution
+  - enterprise_services
+  - grid_engine
+  - repository_intelligence
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Notification guidance requires tenant membership checks, minimal payloads and policy authorization.
+privacy:
+  impact: reviewed
+  notes: Notification payload guidance excludes credentials, secrets and unnecessary personal data.
+accessibility:
+  impact: none
+  notes:

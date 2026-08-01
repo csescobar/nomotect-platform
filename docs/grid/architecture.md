@@ -31,31 +31,28 @@ class CustomersGrid < ApplicationGrid
   model Customer
 
   column :name
-  column :email, type: :email
-  column :status, type: :enum, values: -> { Customer.statuses.keys }
-  column :credit_limit, type: :money
-  column :active
-  column :created_at
+  column :email, type: :string
+  column :status, type: :string
+  column :credit_limit, type: :decimal
+  column :active, type: :boolean
+  column :created_at, type: :datetime
 end
 ```
 
 ## Type registry
 
-Initial types:
+Currently registered types:
 
 - string
-- email
 - integer
 - decimal
-- money
-- percentage
 - boolean
 - date
 - datetime
-- enum
-- uuid
-- relation
-- actions
+
+`email`, `money`, `percentage`, `enum`, `uuid`, `relation` and `actions` are not
+registered types. Applications must use an existing type or add a reviewed
+registry extension before declaring one of those names.
 
 Each type defines default operators, parser, formatter, sorting behavior and filter editor.
 
