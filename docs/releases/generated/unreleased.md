@@ -37,6 +37,7 @@
 - Certify security, privacy and tenant-isolation release thresholds. (`159-epic-10-security-privacy-isolation-certification`)
 - Certify deterministic performance budgets and the supported compatibility matrix. (`160-epic-10-performance-compatibility-certification`)
 - Certify a bounded contributor journey using repository-native guidance only. (`161-epic-10-ai-readiness-certification`)
+- Add the cross-platform Application Starter distribution contract, archives and initializer. (`164-application-starter-distribution`)
 
 ### Security
 
@@ -59,6 +60,7 @@
 - `community-edition`
 - `diagnostic-redaction`
 - `disaster-recovery-policy`
+- `distribution`
 - `documentation-governance`
 - `epic-10-rc-plan`
 - `epic-10-release-baseline`
@@ -116,6 +118,7 @@
 - **Security — 161-epic-10-ai-readiness-certification:** The journey enforces public contracts, bounded paths, protected-internal integrity and review-only publication.
 - **Security — 162-adoption-validation-improvement-roadmap:** The roadmap preserves read-only MCP defaults and fail-closed tenant and evidence requirements.
 - **Security — 163-antigravity-cli-mcp-bootstrap:** Personal absolute paths, shell-specific execution and implicit MCP write access are removed; the bootstrap fails closed with writes disabled.
+- **Security — 164-application-starter-distribution:** The starter uses a tracked-file allowlist, excludes platform history and rejects repeated initialization.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -142,6 +145,7 @@
 - **Privacy — 160-epic-10-performance-compatibility-certification:** Performance evidence contains aggregate measurements and environment identifiers without credentials or user content.
 - **Privacy — 161-epic-10-ai-readiness-certification:** Certification evidence is deterministic and credential-free without production data or contributor content.
 - **Privacy — 163-antigravity-cli-mcp-bootstrap:** Bootstrap configuration and evidence exclude credentials and personal paths.
+- **Privacy — 164-application-starter-distribution:** Starter provenance contains platform version and commit only; it contains no contributor identity or credentials.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.

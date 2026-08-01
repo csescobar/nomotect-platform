@@ -38,6 +38,7 @@ Required release impact: `minor`.
 - Certify security, privacy and tenant-isolation release thresholds. (`159-epic-10-security-privacy-isolation-certification`)
 - Certify deterministic performance budgets and the supported compatibility matrix. (`160-epic-10-performance-compatibility-certification`)
 - Certify a bounded contributor journey using repository-native guidance only. (`161-epic-10-ai-readiness-certification`)
+- Add the cross-platform Application Starter distribution contract, archives and initializer. (`164-application-starter-distribution`)
 
 ### Security
 

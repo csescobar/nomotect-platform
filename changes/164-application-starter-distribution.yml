@@ -1,0 +1,23 @@
+schema_version: 1
+id: 164-application-starter-distribution
+category: added
+summary: Add the cross-platform Application Starter distribution contract, archives and initializer.
+release_impact: minor
+contracts:
+  - distribution
+  - repository_intelligence
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: The starter uses a tracked-file allowlist, excludes platform history and rejects repeated initialization.
+privacy:
+  impact: reviewed
+  notes: Starter provenance contains platform version and commit only; it contains no contributor identity or credentials.
+accessibility:
+  impact: none
+  notes:

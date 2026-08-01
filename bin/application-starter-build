@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "json"
+require "optparse"
+require_relative "../lib/application_starter"
+
+options = {}
+OptionParser.new do |parser|
+  parser.banner = "Usage: bin/application-starter-build --version VERSION --source-commit SHA --output PATH"
+  parser.on("--version VERSION") { |value| options[:version] = value }
+  parser.on("--source-commit SHA") { |value| options[:source_commit] = value }
+  parser.on("--output PATH") { |value| options[:output] = value }
+end.parse!
+
+abort "Missing required options" unless %i[version source_commit output].all? { |key| options[key] }
+puts JSON.pretty_generate(ApplicationStarter::Builder.new(root: File.expand_path("..", __dir__), **options).build!)
