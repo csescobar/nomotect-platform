@@ -24,6 +24,8 @@ with:
 - `release-notes.md`;
 - `migration-notes.md`;
 - `upgrade-notes.md`;
+- `nomotect-starter.tar.gz`;
+- `nomotect-starter.zip`;
 - `compatibility.json`;
 - `sbom.cdx.json`;
 - `container-sbom.cdx.json`;
@@ -39,6 +41,10 @@ bundle directory and every non-checksum artifact must match `SHA256SUMS`.
 environment marker and refuses an existing tag or release. It creates the
 release with `--target` bound to the manifest commit. Versions below `1.0.0`
 are published as prereleases.
+
+Starter asset names remain stable across immutable releases so the README can
+use GitHub's `/releases/latest/download/` URLs. The manifest inside each archive
+records the exact NomoTect version and source commit.
 
 If tag creation succeeds but asset upload does not complete, the operation
 stops for operator review. Neither the tag nor release is deleted or

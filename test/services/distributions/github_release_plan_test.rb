@@ -18,7 +18,7 @@ module Distributions
       assert_equal "v0.8.0", plan.tag
       assert_equal "a" * 40, plan.target_commit
       assert plan.prerelease?
-      assert_equal 9, plan.asset_paths.size
+      assert_equal 11, plan.asset_paths.size
       assert_equal Manifest::ARTIFACT_IDS, plan.artifacts.pluck(:id).sort
     end
 

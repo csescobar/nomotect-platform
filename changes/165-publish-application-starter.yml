@@ -1,0 +1,22 @@
+schema_version: 1
+id: 165-publish-application-starter
+category: feature
+summary: Publish certified Application Starter archives as immutable GitHub Release assets.
+release_impact: minor
+contracts:
+  - distribution
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Starter archives are allowlisted, checksum-bound, attested and published only from the approved main commit.
+privacy:
+  impact: reviewed
+  notes: Published starter provenance contains no credentials, personal paths or contributor identity.
+accessibility:
+  impact: none
+  notes:

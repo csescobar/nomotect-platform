@@ -18,7 +18,7 @@ module Distributions
       assert verifier.ready?
       assert_equal "published", evidence.fetch(:status)
       assert_equal %w[verified verified], evidence.fetch(:channels).pluck(:status)
-      assert_equal 9, evidence.fetch(:artifacts).size
+      assert_equal 11, evidence.fetch(:artifacts).size
       assert_match(/\A[a-f0-9]{64}\z/, evidence.dig(:source, :manifest_digest))
     end
 

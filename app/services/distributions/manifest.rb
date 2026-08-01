@@ -8,6 +8,8 @@ module Distributions
     CHANNEL_IDS = %w[ghcr github_release].freeze
     ARTIFACT_IDS = %w[
       application_sbom
+      application_starter_tar
+      application_starter_zip
       checksums
       compatibility
       container_sbom

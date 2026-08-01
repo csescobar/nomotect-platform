@@ -5,6 +5,7 @@ require "fileutils"
 require "json"
 require "pathname"
 require "tmpdir"
+require_relative "../../../lib/application_starter"
 
 module Distributions
   class BundleBuilder
@@ -165,9 +166,23 @@ module Distributions
     end
 
     def copy_artifacts!(destination)
+      copy_application_starter!(destination)
       ARTIFACT_SOURCES.each_value do |location, filename|
         source = location == :release ? release_path(filename) : evidence_path(filename)
         FileUtils.cp(source, destination.join(filename))
+      end
+    end
+
+    def copy_application_starter!(destination)
+      Dir.mktmpdir("nomotect-application-starter-") do |directory|
+        result = ApplicationStarter::Builder.new(
+          root: Rails.root,
+          output: directory,
+          version: JSON.parse(release_path("release-metadata.json").read).fetch("target_version"),
+          source_commit: source_commit
+        ).build!
+        FileUtils.cp(result.fetch(:tar), destination.join("nomotect-starter.tar.gz"))
+        FileUtils.cp(result.fetch(:zip), destination.join("nomotect-starter.zip"))
       end
     end
 
