@@ -44,6 +44,8 @@ jobs:
         run: ruby bin/repository-intelligence generate
       - name: Certify Epic 8 repository intelligence
         run: bash bin/repository-intelligence-certify
+      - name: Certify MCP-first bootstrap
+        run: bin/mcp-setup-certify
       - name: Upload repository intelligence evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -56,6 +58,7 @@ jobs:
             tmp/ci/first-generation.sha256
             tmp/ci/second-generation.sha256
             tmp/ci/mcp-certification-responses.json
+            tmp/ci/mcp-bootstrap-certification.json
             tmp/ci/repository-intelligence-certification.log
           if-no-files-found: error
       - name: Lint

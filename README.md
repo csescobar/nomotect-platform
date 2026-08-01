@@ -120,6 +120,11 @@ Repository Intelligence validates the relationships and freshness of these contr
 
 ## Repository Intelligence
 
+AI agents beginning an adoption journey must first follow the
+[MCP-first bootstrap](MCP_BOOTSTRAP.md). The initial certification target is
+Antigravity CLI (`agy`), using a workspace-local, read-only configuration and a
+mandatory client restart before repository discovery.
+
 Useful commands include:
 
 ```bash
