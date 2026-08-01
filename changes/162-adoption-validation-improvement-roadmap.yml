@@ -1,0 +1,21 @@
+schema_version: 1
+id: 162-adoption-validation-improvement-roadmap
+category: documentation
+summary: Define a standalone improvement roadmap from independent adoption-pilot findings.
+release_impact: none
+contracts: []
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: The roadmap preserves read-only MCP defaults and fail-closed tenant and evidence requirements.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: The roadmap separates automated browser evidence from manual keyboard, visual-focus and screen-reader review.

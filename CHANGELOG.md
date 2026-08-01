@@ -47,6 +47,7 @@ Required release impact: `minor`.
 - Reconcile the README with the complete Epic 0 through Epic 9 delivery history and current platform contracts. (`142-readme-epic-history`)
 - Define the dependency-ordered Epic 10 framework validation and release-readiness plan. (`143-epic-10-planning`)
 - Define the governed architecture and public-contract boundary for the Epic 10 representative application. (`147-epic-10-representative-app-architecture`)
+- Define a standalone improvement roadmap from independent adoption-pilot findings. (`162-adoption-validation-improvement-roadmap`)
 
 ## 0.9.0
 

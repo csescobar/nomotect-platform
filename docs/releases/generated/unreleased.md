@@ -46,6 +46,7 @@
 - Reconcile the README with the complete Epic 0 through Epic 9 delivery history and current platform contracts. (`142-readme-epic-history`)
 - Define the dependency-ordered Epic 10 framework validation and release-readiness plan. (`143-epic-10-planning`)
 - Define the governed architecture and public-contract boundary for the Epic 10 representative application. (`147-epic-10-representative-app-architecture`)
+- Define a standalone improvement roadmap from independent adoption-pilot findings. (`162-adoption-validation-improvement-roadmap`)
 
 ## Affected contracts
 
@@ -108,6 +109,7 @@
 - **Security — 159-epic-10-security-privacy-isolation-certification:** Certification requires zero critical or high blockers, cross-tenant leaks and secret-bearing evidence.
 - **Security — 160-epic-10-performance-compatibility-certification:** Certification rejects invalid source commits, incomplete matrices and non-deterministic or credential-bearing evidence.
 - **Security — 161-epic-10-ai-readiness-certification:** The journey enforces public contracts, bounded paths, protected-internal integrity and review-only publication.
+- **Security — 162-adoption-validation-improvement-roadmap:** The roadmap preserves read-only MCP defaults and fail-closed tenant and evidence requirements.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -140,3 +142,4 @@
 - **Accessibility — 152-epic-10-representative-app-certification:** Certification aggregates the required Light/Dark and bilingual journey while preserving manual review.
 - **Accessibility — 155-epic-10-functional-framework-certification:** Design and localization evidence remains bound to Light/Dark and bilingual public journeys.
 - **Accessibility — 158-epic-10-accessibility-certification:** Certification enforces zero critical violations and keyboard blockers while retaining human screen-reader review.
+- **Accessibility — 162-adoption-validation-improvement-roadmap:** The roadmap separates automated browser evidence from manual keyboard, visual-focus and screen-reader review.
