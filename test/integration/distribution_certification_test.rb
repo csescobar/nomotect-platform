@@ -46,7 +46,7 @@ class DistributionCertificationTest < ActiveSupport::TestCase
     )
 
     assert release_plan.prerelease?
-    assert_equal 9, release_plan.asset_paths.size
+    assert_equal 11, release_plan.asset_paths.size
     assert_equal %W[
       ghcr.io/owner/platform:0.8.0
       ghcr.io/owner/platform:0.8

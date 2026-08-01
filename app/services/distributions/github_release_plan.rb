@@ -7,6 +7,8 @@ module Distributions
   class GithubReleasePlan
     ARTIFACT_FILES = {
       "application_sbom" => "sbom.cdx.json",
+      "application_starter_tar" => "nomotect-starter.tar.gz",
+      "application_starter_zip" => "nomotect-starter.zip",
       "checksums" => "SHA256SUMS",
       "compatibility" => "compatibility.json",
       "container_sbom" => "container-sbom.cdx.json",

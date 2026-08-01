@@ -96,6 +96,10 @@ New product repositories start from the versioned, cross-platform
 [Application Starter](docs/distribution/application-starter.md), not by cloning
 the NomoTect contributor repository.
 
+- [Download for Linux or macOS](https://github.com/csescobar/nomotect-platform/releases/latest/download/nomotect-starter.tar.gz)
+- [Download for Windows](https://github.com/csescobar/nomotect-platform/releases/latest/download/nomotect-starter.zip)
+- [Browse releases and checksums](https://github.com/csescobar/nomotect-platform/releases/latest)
+
 The repository certifies these delivery profiles in CI:
 
 - development and production [Docker Compose profiles](compose.yaml);

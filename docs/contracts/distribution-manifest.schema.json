@@ -58,12 +58,14 @@
     },
     "artifacts": {
       "type": "array",
-      "minItems": 9,
-      "maxItems": 9,
+      "minItems": 11,
+      "maxItems": 11,
       "uniqueItems": true,
       "items": {
         "enum": [
           "application_sbom",
+          "application_starter_tar",
+          "application_starter_zip",
           "checksums",
           "compatibility",
           "container_sbom",
