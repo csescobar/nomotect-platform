@@ -1,6 +1,6 @@
 schema_version: 1
 id: 164-application-starter-distribution
-category: added
+category: feature
 summary: Add the cross-platform Application Starter distribution contract, archives and initializer.
 release_impact: minor
 contracts:

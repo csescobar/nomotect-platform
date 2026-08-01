@@ -5,6 +5,7 @@ require "fileutils"
 require "json"
 require "pathname"
 require "rubygems/package"
+require "stringio"
 require "yaml"
 require "zlib"
 require "zip"
@@ -75,15 +76,15 @@ module ApplicationStarter
       staging.join("application-starter-manifest.json").write(JSON.pretty_generate(manifest) + "\n")
     end
 
-    def write_tar(staging, destination)
-      Zlib::GzipWriter.open(destination.to_s) do |gzip|
-        Gem::Package::TarWriter.new(gzip) do |tar|
+  def write_tar(staging, destination)
+      buffer = StringIO.new("".b)
+      Gem::Package::TarWriter.new(buffer) do |tar|
           archive_files(staging).each do |path|
             relative = path.relative_path_from(staging.parent).to_s
             tar.add_file(relative, path.stat.mode) { |io| io.write(path.binread) }
           end
-        end
       end
+      Zlib::GzipWriter.open(destination.to_s) { |gzip| gzip.write(buffer.string) }
     end
 
     def write_zip(staging, destination)
