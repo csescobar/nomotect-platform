@@ -39,11 +39,6 @@ class GridsController < ApplicationController
   end
 
   def grid_scope
-    case @definition.key
-    when "organizations"
-      Current.user.organizations.distinct
-    else
-      raise KeyError, "Unscoped grid"
-    end
+    GridEngine::Catalog.scope_for(@definition.key, user: Current.user, organization: Current.organization)
   end
 end

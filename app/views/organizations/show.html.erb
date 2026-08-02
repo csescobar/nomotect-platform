@@ -17,7 +17,7 @@
 
         <% if @membership.admin? && membership.user != Current.user && (!membership.owner? || @membership.owner?) %>
           <div class="showcase__row">
-            <% available_roles = @membership.owner? ? Membership::ROLES : Membership::MANAGEABLE_ROLES %>
+            <% available_roles = @membership.owner? ? Membership.roles : Membership.manageable_roles %>
             <%= form_with model: [ @organization, membership ], method: :patch do |form| %>
               <%= form.select :role,
                 available_roles.map { |role| [ t("organizations.roles.#{role}"), role ] },
@@ -45,7 +45,7 @@
       <%= form.ui_error_summary %>
       <%= form.ui_email_field :email_address, label: t("organization_invitations.fields.email"), required: true %>
       <%= form.ui_select :role,
-        Membership::MANAGEABLE_ROLES.map { |role| [ t("organizations.roles.#{role}"), role ] },
+        Membership.manageable_roles.map { |role| [ t("organizations.roles.#{role}"), role ] },
         label: t("organization_invitations.fields.role") %>
       <%= form.ui_submit t("organization_invitations.actions.invite") %>
     <% end %>

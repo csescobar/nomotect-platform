@@ -46,7 +46,7 @@ class OrganizationInvitationsController < ApplicationController
 
   def requested_role
     role = params.require(:organization_invitation).fetch(:role)
-    return role if Membership::MANAGEABLE_ROLES.include?(role)
+    return role if Membership.manageable_roles.include?(role)
 
     raise ActionController::BadRequest, "Unsupported invitation role"
   end

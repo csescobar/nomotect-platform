@@ -36,7 +36,8 @@ The Grid Engine provides a framework-neutral, server-authoritative contract for 
 - `GridEngine::HtmlRenderer` provides the accessible no-JavaScript and Turbo fallback.
 - `GridEngine::CsvExporter` produces bounded exports from validated, authorized relations.
 - `GridSavedView` persists user-owned query and presentation preferences.
+- `GridEngine::Catalog.register` binds a definition to its authorized base-scope callable during application initialization.
 
 ## Extension guidance
 
-New grids must be registered in `GridEngine::Catalog`, declare every public column, and provide an explicitly authorized base relation in `GridsController#grid_scope`. Never infer a scope from the model class or accept model/attribute names from request parameters.
+Application grids must be registered in `application/config/grids.rb`, declare every public column, and provide an explicitly authorized base relation through the registration `scope`. The catalog is sealed after initialization. Never infer a scope from the model class or accept model/attribute names from request parameters.

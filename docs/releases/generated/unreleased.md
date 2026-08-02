@@ -40,6 +40,7 @@
 - Add the cross-platform Application Starter distribution contract, archives and initializer. (`164-application-starter-distribution`)
 - Publish certified Application Starter archives as immutable GitHub Release assets. (`165-publish-application-starter`)
 - Add the Rails application-layer bootstrap, tracked product skeleton and starter/CI integration. (`171-application-layer-bootstrap`)
+- Add sealed application-owned role and authorized Grid Engine registration surfaces. (`172-application-role-grid-registration`)
 
 ### Security
 
@@ -137,6 +138,7 @@
 - **Security — 169-tenant-safety-adversarial-certification:** Route, identifier, job and export manipulation fails at tenant-scoped resolution before protected reads or side effects.
 - **Security — 170-application-layer-boundary:** The decision preserves platform authorization and tenant contracts and requires reviewed allowlisted registration surfaces.
 - **Security — 171-application-layer-bootstrap:** Application paths are fixed and reviewed; route loading does not accept user-controlled paths or replace platform authorization.
+- **Security — 172-application-role-grid-registration:** Protected entries cannot be replaced, custom roles have explicit permissions and every grid requires an authorized scope before the registries are sealed.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -177,3 +179,4 @@
 - **Accessibility — 155-epic-10-functional-framework-certification:** Design and localization evidence remains bound to Light/Dark and bilingual public journeys.
 - **Accessibility — 158-epic-10-accessibility-certification:** Certification enforces zero critical violations and keyboard blockers while retaining human screen-reader review.
 - **Accessibility — 162-adoption-validation-improvement-roadmap:** The roadmap separates automated browser evidence from manual keyboard, visual-focus and screen-reader review.
+- **Accessibility — 172-application-role-grid-registration:** Application role labels remain localized, and views can mirror policy results through a shared helper without replacing server-side authorization.
