@@ -62,7 +62,7 @@ module Extensions
         outside.mkpath
         application_root.join("escaped").make_symlink(outside)
 
-        resolver = SpecificationResolver.new(application_root:)
+        resolver = Catalog::SpecificationResolver.new(application_root:)
 
         assert_nil resolver.call("escaped")
       end
