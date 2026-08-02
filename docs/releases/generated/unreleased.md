@@ -49,6 +49,7 @@
 
 ### Documentation
 
+- Define the application-owned source boundary and distinguish product development from platform contributions. (`170-application-layer-boundary`)
 - Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions. (`137-operator-guides`)
 - Define supported compatibility matrices, lifecycle policy and operational diagrams. (`138-compatibility-lifecycle-documentation`)
 - Add continuously tested extension, upgrade and backup manifest examples. (`139-tested-operational-examples`)
@@ -132,6 +133,7 @@
 - **Security — 167-tenant-recipient-assignment-safety:** Recipient identifiers resolve through organization memberships before notification or assignment state is created.
 - **Security — 168-tenant-stored-file-authorization:** File identifiers resolve through the owning organization and membership policy before storage bytes are read.
 - **Security — 169-tenant-safety-adversarial-certification:** Route, identifier, job and export manipulation fails at tenant-scoped resolution before protected reads or side effects.
+- **Security — 170-application-layer-boundary:** The decision preserves platform authorization and tenant contracts and requires reviewed allowlisted registration surfaces.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

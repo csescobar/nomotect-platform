@@ -50,6 +50,7 @@ Required release impact: `minor`.
 
 ### Documentation
 
+- Define the application-owned source boundary and distinguish product development from platform contributions. (`170-application-layer-boundary`)
 - Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions. (`137-operator-guides`)
 - Define supported compatibility matrices, lifecycle policy and operational diagrams. (`138-compatibility-lifecycle-documentation`)
 - Add continuously tested extension, upgrade and backup manifest examples. (`139-tested-operational-examples`)
