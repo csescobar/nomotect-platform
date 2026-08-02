@@ -46,6 +46,7 @@ Required release impact: `minor`.
 - Define a cross-platform Application Starter and add a portable, read-only MCP-first bootstrap for Antigravity CLI adoption. (`163-antigravity-cli-mcp-bootstrap`)
 - Add tenant-first recipient resolution and atomic cross-tenant notification rejection. (`167-tenant-recipient-assignment-safety`)
 - Enforce tenant-scoped attachment association and authorized downloads before storage access. (`168-tenant-stored-file-authorization`)
+- Certify adversarial tenant boundaries and reject invalid jobs before partial state is created. (`169-tenant-safety-adversarial-certification`)
 
 ### Documentation
 
