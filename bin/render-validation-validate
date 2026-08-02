@@ -20,6 +20,7 @@ if service
   errors << "visual-validation boot adapter is missing" unless service["dockerCommand"] == "bash bin/render-start bash bin/render-validation-boot"
   errors << "visual-validation profile must not attach a persistent disk" if service.key?("disk")
   errors << "visual-validation profile must not run paid pre-deploy commands" if service.key?("preDeployCommand")
+  errors << "visual-validation profile must not configure paid shutdown delay" if service.key?("maxShutdownDelaySeconds")
 
   env_vars = Array(service["envVars"]).to_h { |entry| [ entry["key"], entry ] }
   database_reference = env_vars.dig("DATABASE_URL", "fromDatabase")

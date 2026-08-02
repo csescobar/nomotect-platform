@@ -16,7 +16,6 @@ services:
     dockerContext: .
     dockerCommand: bash bin/render-start bash bin/render-validation-boot
     healthCheckPath: /health
-    maxShutdownDelaySeconds: 30
     envVars:
       - key: DATABASE_URL
         fromDatabase:

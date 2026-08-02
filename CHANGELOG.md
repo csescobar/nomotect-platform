@@ -50,6 +50,7 @@ Required release impact: `minor`.
 ### Fixed
 
 - Bind Phase 3 certification to real commits, loaded registration files and derived protected-core changes. (`175-fix-phase-3-certification-evidence`)
+- Remove the paid custom shutdown delay from the free Render validation profile. (`178-fix-free-render-shutdown`)
 
 ### Security
 

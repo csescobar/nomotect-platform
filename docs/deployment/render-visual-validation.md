@@ -84,8 +84,8 @@ bash -n bin/render-validation-boot
 ```
 
 The validator fails if either resource is not free, a persistent disk or paid
-pre-deploy command is added, secrets are committed, or the dedicated startup
-adapter is bypassed.
+pre-deploy command or custom shutdown delay is added, secrets are committed, or
+the dedicated startup adapter is bypassed.
 
 ## Known limitations
 
