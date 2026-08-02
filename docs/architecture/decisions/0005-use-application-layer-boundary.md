@@ -31,7 +31,7 @@ application/
 │   ├── locales/
 │   ├── grids.rb
 │   ├── roles.rb
-│   └── routes.rb
+│   └── routes/application.rb
 ├── db/migrate/
 ├── extensions/
 └── test/
@@ -63,7 +63,8 @@ Rejected as a universal rule because the ownership boundary can be enforced thro
 ## Consequences
 
 - The Application Starter must create and preserve the `/application` skeleton.
-- Rails bootstrap, routes, views, locales, migrations and tests must be extended in a later implementation PR.
+- Rails bootstrap, routes, views, locales, migrations and tests are integrated through explicit native Rails paths.
+- Rails bootstrap uses explicit native paths and a fixed `draw :application` route file; it does not scan arbitrary executable paths.
 - Roles and grids require explicit application-owned registration APIs.
 - Policies, helpers and operations can be product-owned without shared-core edits.
 - Repository Intelligence and CI must classify and validate the new boundary.
@@ -75,4 +76,4 @@ The boundary does not grant application code additional trust. Tenant scope, aut
 
 ## Migration and rollback
 
-This ADR changes documentation only. It does not enable `/application` loading and requires no data migration. The implementation will be delivered in separate reviewable changes. This decision can be rolled back before runtime adoption by reverting the ADR and directive updates.
+The boundary requires no data migration. Runtime adoption is delivered through separate reviewable changes. Before product migrations or source are added, the bootstrap can be rolled back by removing its Rails paths, route draw, CI target and tracked skeleton.

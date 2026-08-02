@@ -40,6 +40,7 @@ Required release impact: `minor`.
 - Certify a bounded contributor journey using repository-native guidance only. (`161-epic-10-ai-readiness-certification`)
 - Add the cross-platform Application Starter distribution contract, archives and initializer. (`164-application-starter-distribution`)
 - Publish certified Application Starter archives as immutable GitHub Release assets. (`165-publish-application-starter`)
+- Add the Rails application-layer bootstrap, tracked product skeleton and starter/CI integration. (`171-application-layer-bootstrap`)
 
 ### Security
 

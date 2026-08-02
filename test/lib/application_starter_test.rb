@@ -14,6 +14,7 @@ class ApplicationStarterTest < ActiveSupport::TestCase
 
     assert_includes serialized, "bin/**"
     assert_includes serialized, ".agents/**"
+    assert_includes serialized, "application/**"
     refute_includes serialized, "docs/roadmap/**"
     refute_includes serialized, "changes/**"
   end
@@ -33,6 +34,9 @@ class ApplicationStarterTest < ActiveSupport::TestCase
       assert entries.any? { |entry| entry.end_with?("/.mcp.json") }
       assert entries.any? { |entry| entry.end_with?("/bin/nomotect-init.ps1") }
       assert entries.any? { |entry| entry.end_with?("/application-starter-manifest.json") }
+      assert entries.any? { |entry| entry.end_with?("/application/config/routes/application.rb") }
+      assert entries.any? { |entry| entry.end_with?("/application/app/models/.keep") }
+      assert entries.any? { |entry| entry.end_with?("/application/test/.keep") }
       refute entries.any? { |entry| entry.include?("docs/roadmap/") }
       refute entries.any? { |entry| entry.include?("changes/") }
       refute entries.any? { |entry| entry.include?("NomoTect_Social_Preview") }
