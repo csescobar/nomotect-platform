@@ -1,0 +1,48 @@
+databases:
+  - name: nomotect-visual-validation-db
+    databaseName: nomotect_visual_validation
+    user: nomotect_validation
+    plan: free
+    region: oregon
+
+services:
+  - type: web
+    name: nomotect-visual-validation
+    runtime: docker
+    plan: free
+    region: oregon
+    autoDeployTrigger: checksPass
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    dockerCommand: bash bin/render-start bash bin/render-validation-boot
+    healthCheckPath: /health
+    maxShutdownDelaySeconds: 30
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: nomotect-visual-validation-db
+          property: connectionString
+      - key: SECRET_KEY_BASE
+        sync: false
+      - key: INSTALLATION_BOOTSTRAP_TOKEN
+        sync: false
+      - key: VISUAL_VALIDATION_EMAIL
+        sync: false
+      - key: VISUAL_VALIDATION_PASSWORD
+        sync: false
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_LOG_TO_STDOUT
+        value: "true"
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
+      - key: INSTALLATION_ENABLED
+        value: "true"
+      - key: RUN_DB_PREPARE
+        value: "false"
+      - key: RENDER_PERSISTENCE_ROOT
+        value: /rails/storage
+      - key: VISUAL_VALIDATION_ENABLED
+        value: "true"
+      - key: VISUAL_VALIDATION_ORGANIZATION
+        value: NomoTect Visual Validation

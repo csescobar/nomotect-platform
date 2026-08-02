@@ -1,0 +1,24 @@
+schema_version: 1
+id: 177-free-render-visual-validation
+category: feature
+summary: Add a disposable free Render profile with secure deterministic visual-validation data.
+release_impact: minor
+contracts:
+  - deployment
+  - design_system
+  - grid_engine
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Reviewer credentials remain operator-supplied secrets, and validation data preparation fails closed outside the explicit profile.
+privacy:
+  impact: reviewed
+  notes: The profile uses deterministic example.com records and forbids production or personal data.
+accessibility:
+  impact: reviewed
+  notes: The environment exposes Light/Dark and bilingual representative surfaces for manual visual and accessibility review.
