@@ -19,6 +19,11 @@ a third public mode.
   previews and window controls. They are still tokens so an application can
   replace the complete visual language without editing component CSS.
 
+The canonical YAML remains a flat map for installer and customization-file
+compatibility. Commented sections group related roles for authors. Token names
+describe purpose (`accent.primary`, `feedback`, `fixed-canvas`) and never a
+specific palette color such as blue or teal.
+
 ## Enforcement
 
 Run:

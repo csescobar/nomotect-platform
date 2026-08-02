@@ -52,6 +52,18 @@ class DesignTokens::CompilerTest < ActiveSupport::TestCase
     end
   end
 
+  test "rejects palette color names in the public token vocabulary" do
+    with_token_source(
+      light: { "color.accent.blue" => "#0000FF" },
+      dark: { "color.accent.blue" => "#60A5FA" }
+    ) do |compiler|
+      error = assert_raises(ArgumentError) { compiler.compile }
+
+      assert_includes error.message, "semantic roles, not colors"
+      assert_includes error.message, "color.accent.blue"
+    end
+  end
+
   test "rejects YAML aliases" do
     Dir.mktmpdir do |directory|
       root = Pathname(directory)
