@@ -33,3 +33,4 @@ required_tests:
   - application_registrations_test
   - application_extension_sample_test
   - application_layer_certification_test
+  - application_layer_contract_workflow
