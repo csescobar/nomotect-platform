@@ -10,6 +10,6 @@ Store theme values in a structured JSON source and compile them into CSS custom 
 
 ## Consequences
 
-- Light, dark and system themes share a stable semantic token model.
+- Light and dark themes share a stable semantic token model.
 - Components never depend directly on palette values.
 - Applications can replace branding without rewriting components.

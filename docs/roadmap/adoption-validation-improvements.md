@@ -279,7 +279,35 @@ Completed. The executable application-layer certification aggregates the
 bootstrap, role, authorized-grid, policy/view, community-fallback and extension
 preflight contracts without enabling product behavior in the starter defaults.
 
-## Phase 4 — Grid Engine enterprise UX
+## Phase 4 — Token integrity and Grid Engine enterprise UX
+
+### Phase 4A — Design-token integrity and theme substitution
+
+Before visual evidence is accepted, certify that the shared design system is
+actually controlled by its canonical tokens rather than merely resembling the
+default NomoTect theme.
+
+Scope:
+
+- remove public system-theme behavior so the supported selector remains Light
+  and Dark only;
+- inventory color, typography, spacing, radius, shadow and control-size usage;
+- replace unjustified presentation literals with semantic tokens;
+- explicitly model fixed-canvas and decorative values that must remain stable
+  across Light and Dark;
+- reject new stylesheet color literals in CI;
+- compile a deliberately different certification palette in tests and prove
+  that token substitution changes the generated theme contract;
+- review the authenticated shell, installer, Component Showcase, public pages
+  and Grid Engine composition against the substituted tokens.
+
+Exit criteria:
+
+The public runtime exposes only Light and Dark, non-generated stylesheets pass
+the token-consumption audit, and a certification-token substitution reaches
+every representative surface without application-specific CSS repairs.
+
+### Phase 4B — Grid Engine enterprise UX
 
 ### Scope
 

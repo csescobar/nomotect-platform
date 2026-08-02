@@ -14,6 +14,6 @@ Use native CSS backed by generated design tokens and CSS custom properties. Prop
 
 ## Consequences
 
-- Light, dark and system themes can share one component implementation.
+- Light and dark themes share one component implementation.
 - Applications may replace token values without rewriting components.
 - The full token compiler and showcase are delivered in Epic 2.

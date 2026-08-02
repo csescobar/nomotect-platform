@@ -218,8 +218,8 @@
   background: var(--color-surface-subtle);
 }
 .mkt-section--dark {
-  background: var(--color-surface-mockup-bg);
-  color: #F8FAFC;
+  background: var(--color-fixed-canvas);
+  color: var(--color-fixed-text);
 }
 .mkt-section-header {
   text-align: center;
@@ -228,7 +228,7 @@
   margin-bottom: var(--space-xl);
 }
 .mkt-section-header--dark .mkt-section-title {
-  color: #F8FAFC;
+  color: var(--color-fixed-text);
 }
 .mkt-section-title {
   font-size: clamp(1.5rem, 4vw, var(--font-size-xxl));
@@ -273,8 +273,8 @@
   border-radius: var(--radius-md);
   margin-bottom: var(--space-md);
 }
-.mkt-card__icon--teal { background: rgba(15, 118, 110, 0.1); color: var(--color-accent-teal); }
-.mkt-card__icon--blue { background: rgba(29, 78, 216, 0.1); color: var(--color-accent-blue); }
+.mkt-card__icon--teal { background: var(--color-accent-teal-subtle); color: var(--color-accent-teal); }
+.mkt-card__icon--blue { background: var(--color-accent-blue-subtle); color: var(--color-accent-blue); }
 .mkt-card__title {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
@@ -299,16 +299,16 @@
   align-items: center;
   padding: var(--space-sm) var(--space-md);
   background: var(--color-surface-mockup-nav);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid var(--color-fixed-overlay-strong);
 }
 .mkt-preview-controls {
   display: flex;
   gap: var(--space-xs);
 }
 .mkt-preview-dot { width: 12px; height: 12px; border-radius: 50%; }
-.mkt-preview-dot--red { background: #EF4444; }
-.mkt-preview-dot--yellow { background: #F59E0B; }
-.mkt-preview-dot--green { background: #10B981; }
+.mkt-preview-dot--red { background: var(--color-window-close); }
+.mkt-preview-dot--yellow { background: var(--color-window-minimize); }
+.mkt-preview-dot--green { background: var(--color-window-maximize); }
 
 .mkt-preview-titlebar {
   display: flex;
@@ -328,26 +328,26 @@
 }
 .mkt-preview-sidebar {
   background: var(--color-surface-mockup-nav);
-  border-right: 1px solid rgba(255,255,255,0.08);
+  border-right: 1px solid var(--color-fixed-overlay);
   padding: var(--space-md);
-  color: #F8FAFC;
+  color: var(--color-fixed-text);
 }
 .mkt-preview-org-select {
   padding: var(--space-sm);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid var(--color-fixed-overlay);
   margin-bottom: var(--space-md);
 }
 .mkt-preview-nav { display: flex; flex-direction: column; gap: var(--space-xs); }
 .mkt-preview-nav-item {
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-md);
-  color: #94A3B8;
+  color: var(--color-fixed-text-muted);
   text-decoration: none;
   font-size: var(--font-size-sm);
 }
 .mkt-preview-nav-item--active {
-  background: rgba(255,255,255,0.08);
-  color: #FFFFFF;
+  background: var(--color-fixed-overlay);
+  color: var(--color-fixed-text);
   font-weight: var(--font-weight-semibold);
 }
 .mkt-preview-main {
@@ -395,8 +395,8 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
 }
-.mkt-tag--success { background: rgba(22, 163, 74, 0.15); color: #16A34A; }
-.mkt-tag--warning { background: rgba(217, 119, 6, 0.15); color: #D97706; }
+.mkt-tag--success { background: var(--color-success-subtle); color: var(--color-success); }
+.mkt-tag--warning { background: var(--color-warning-subtle); color: var(--color-warning); }
 
 /* Engineering Flow */
 .mkt-flow {
@@ -473,18 +473,18 @@
 .mkt-lifecycle-item {
   flex: 1;
   min-width: 8.5rem;
-  background: #111827;
-  border: 1px solid #1E293B;
+  background: var(--color-fixed-surface);
+  border: 1px solid var(--color-fixed-border);
   border-radius: var(--radius-md);
   padding: var(--space-md);
   text-align: center;
 }
 .mkt-lifecycle-item__badge {
   font-size: 0.7rem;
-  color: #5EEAD4;
+  color: var(--color-accent-teal-light);
   margin-bottom: var(--space-xs);
 }
-.mkt-lifecycle-item__title { margin: 0; font-size: var(--font-size-sm); color: #F8FAFC; }
+.mkt-lifecycle-item__title { margin: 0; font-size: var(--font-size-sm); color: var(--color-fixed-text); }
 
 /* Technology Stack Box */
 .mkt-stack-box {

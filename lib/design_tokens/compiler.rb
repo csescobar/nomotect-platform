@@ -38,13 +38,6 @@ module DesignTokens
         #{declarations(base.merge(dark))}
           color-scheme: dark;
         }
-
-        @media (prefers-color-scheme: dark) {
-          :root:not([data-theme]) {
-        #{declarations(base.merge(dark), indent: 4)}
-            color-scheme: dark;
-          }
-        }
       CSS
     end
 

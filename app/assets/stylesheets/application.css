@@ -2,7 +2,7 @@
 * { box-sizing: border-box; }
 
 html { font-family: var(--font-family-body); }
-body { margin: 0; background: var(--color-background); color: var(--color-text); font-size: var(--font-size-md); line-height: var(--line-height-body); transition: background var(--transition-medium), color var(--transition-medium); }
+body { margin: 0; background: var(--color-background); color: var(--color-text); font-size: var(--font-size-md); line-height: var(--line-height-body); transition: background var(--transition-normal), color var(--transition-normal); }
 button, input, select, textarea { font: inherit; }
 h1, h2, h3, h4, h5, h6, .ui-heading { font-family: var(--font-family-heading); line-height: var(--line-height-heading); }
 code, pre, kbd, samp, .ui-code { font-family: var(--font-family-mono); line-height: var(--line-height-code); }
@@ -24,11 +24,11 @@ input, select { width: 100%; min-height: var(--control-height); padding: var(--s
 .button--small { min-height: 2rem; padding: var(--space-xs) var(--space-sm); font-size: var(--font-size-sm); }
 .button--large { min-height: 3.25rem; padding-inline: var(--space-lg); }
 .button--primary { background: var(--color-primary); color: var(--color-on-primary); }
-.button--primary:hover { background: var(--color-primary-hover, color-mix(in srgb, var(--color-primary) 85%, black)); }
+.button--primary:hover { background: var(--color-primary-hover); }
 .button--secondary { background: transparent; color: var(--color-text); border-color: var(--color-border); }
 .button--secondary:hover { background: var(--color-surface-subtle); border-color: var(--color-text-muted); }
-.button--danger { background: var(--color-danger); color: var(--color-on-danger, #ffffff); }
-.button--danger:hover { background: var(--color-danger-hover, color-mix(in srgb, var(--color-danger) 85%, black)); }
+.button--danger { background: var(--color-danger); color: var(--color-on-danger); }
+.button--danger:hover { background: var(--color-danger-hover); }
 .button--ghost { background: transparent; color: var(--color-primary); }
 .button--ghost:hover { background: var(--color-surface-subtle); }
 .button[disabled], .button[aria-disabled="true"] { cursor: not-allowed; opacity: 0.55; }
@@ -224,24 +224,24 @@ input, select { width: 100%; min-height: var(--control-height); padding: var(--s
 .wizard-card__actions:last-child { margin-bottom: 0; }
 
 /* Installation terminal log */
-.install-log { background: #0d1117; border-radius: var(--radius-md); overflow: hidden; border: 1px solid #30363d; }
-.install-log__header { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); background: #161b22; border-bottom: 1px solid #30363d; }
+.install-log { background: var(--color-terminal-background); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-terminal-border); }
+.install-log__header { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); background: var(--color-terminal-surface); border-bottom: 1px solid var(--color-terminal-border); }
 .install-log__dot { width: var(--space-sm); height: var(--space-sm); border-radius: var(--radius-full); }
-.install-log__dot--red { background: #ff5f57; }
-.install-log__dot--yellow { background: #ffbd2e; }
-.install-log__dot--green { background: #28ca41; }
-.install-log__title { font-size: var(--font-size-xs); color: #8b949e; font-family: var(--font-family-mono); margin: 0; flex: 1; text-align: center; }
+.install-log__dot--red { background: var(--color-window-close); }
+.install-log__dot--yellow { background: var(--color-window-minimize); }
+.install-log__dot--green { background: var(--color-window-maximize); }
+.install-log__title { font-size: var(--font-size-xs); color: var(--color-terminal-text-muted); font-family: var(--font-family-mono); margin: 0; flex: 1; text-align: center; }
 .install-log__body { padding: var(--space-md); max-height: 20rem; overflow-y: auto; display: flex; flex-direction: column; gap: var(--space-xs); scroll-behavior: smooth; }
 .install-log__entry { display: flex; align-items: flex-start; gap: var(--space-sm); font-family: var(--font-family-mono); font-size: var(--font-size-xs); line-height: var(--line-height-code); }
-.install-log__timestamp { color: #8b949e; flex-shrink: 0; }
+.install-log__timestamp { color: var(--color-terminal-text-muted); flex-shrink: 0; }
 .install-log__icon { flex-shrink: 0; width: 1rem; text-align: center; }
-.install-log__message { color: #c9d1d9; word-break: break-word; }
-.install-log__entry--ok   .install-log__icon { color: #3fb950; }
-.install-log__entry--ok   .install-log__message { color: #c9d1d9; }
-.install-log__entry--error .install-log__icon { color: #f85149; }
-.install-log__entry--error .install-log__message { color: #ffa198; }
-.install-log__entry--running .install-log__icon { color: #d29922; }
-.install-log__entry--info  .install-log__icon { color: #58a6ff; }
+.install-log__message { color: var(--color-terminal-text); word-break: break-word; }
+.install-log__entry--ok   .install-log__icon { color: var(--color-terminal-success); }
+.install-log__entry--ok   .install-log__message { color: var(--color-terminal-text); }
+.install-log__entry--error .install-log__icon { color: var(--color-terminal-danger); }
+.install-log__entry--error .install-log__message { color: var(--color-terminal-danger-text); }
+.install-log__entry--running .install-log__icon { color: var(--color-terminal-warning); }
+.install-log__entry--info  .install-log__icon { color: var(--color-terminal-info); }
 
 @media (max-width: 48rem) {
   .app-header { align-items: flex-start; flex-direction: column; }

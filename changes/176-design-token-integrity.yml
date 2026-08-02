@@ -1,0 +1,23 @@
+schema_version: 1
+id: 176-design-token-integrity
+category: feature
+summary: Enforce semantic token consumption and formalize Phase 4 theme-substitution certification.
+release_impact: minor
+contracts:
+  - design_system
+  - themes
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Light and Dark remain the only public themes, and token substitution remains subject to contrast and visual certification.
