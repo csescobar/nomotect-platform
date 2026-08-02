@@ -273,6 +273,12 @@ A representative application adds roles, grids, policies and one extension
 without editing protected internals, or the required review boundary is explicit
 before the edit occurs.
 
+### Certification status
+
+Completed. The executable application-layer certification aggregates the
+bootstrap, role, authorized-grid, policy/view, community-fallback and extension
+preflight contracts without enabling product behavior in the starter defaults.
+
 ## Phase 4 — Grid Engine enterprise UX
 
 ### Scope

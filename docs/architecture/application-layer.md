@@ -65,3 +65,9 @@ Controllers must continue to call `authorize!`. Application views may use the pu
 The Application Starter includes the tracked skeleton so a newly initialized private repository has the boundary before product development begins. Empty directories use `.keep` files and can be replaced by product source over time.
 
 The default CI entrypoint reaches application tests through `bin/test`. A product must not introduce a separate test command that bypasses platform security, release or Repository Intelligence checks.
+
+## Phase 3 certification
+
+`ApplicationLayer::Certification` aggregates the implemented bootstrap, role, authorized-grid, policy/view, community-fallback and extension-preflight evidence. The report is deterministic, credential-free, bound to a full source commit and unable to authorize publication.
+
+The certification verifies public contracts without activating the sample extension or adding product roles and grids to the starter defaults. Individual contract tests remain authoritative for runtime behavior and adversarial path checks.
