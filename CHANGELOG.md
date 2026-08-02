@@ -50,7 +50,6 @@ Required release impact: `minor`.
 
 ### Documentation
 
-- Define the application-owned source boundary and distinguish product development from platform contributions. (`170-application-layer-boundary`)
 - Publish a certified operator handbook spanning administration, installation, deployment, upgrades, recovery and extensions. (`137-operator-guides`)
 - Define supported compatibility matrices, lifecycle policy and operational diagrams. (`138-compatibility-lifecycle-documentation`)
 - Add continuously tested extension, upgrade and backup manifest examples. (`139-tested-operational-examples`)
@@ -59,6 +58,7 @@ Required release impact: `minor`.
 - Define the governed architecture and public-contract boundary for the Epic 10 representative application. (`147-epic-10-representative-app-architecture`)
 - Define a standalone improvement roadmap from independent adoption-pilot findings. (`162-adoption-validation-improvement-roadmap`)
 - Align clean-starter setup, Grid Engine, notification and Repository Intelligence onboarding guidance. (`166-clean-starter-onboarding`)
+- Define the application-owned source boundary and distinguish product development from platform contributions. (`170-application-layer-boundary`)
 
 ## 0.9.0
 
