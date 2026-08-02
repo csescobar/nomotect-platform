@@ -58,6 +58,7 @@ Required release impact: `minor`.
 - Define the governed architecture and public-contract boundary for the Epic 10 representative application. (`147-epic-10-representative-app-architecture`)
 - Define a standalone improvement roadmap from independent adoption-pilot findings. (`162-adoption-validation-improvement-roadmap`)
 - Align clean-starter setup, Grid Engine, notification and Repository Intelligence onboarding guidance. (`166-clean-starter-onboarding`)
+- Define the application-owned source boundary and distinguish product development from platform contributions. (`170-application-layer-boundary`)
 
 ## 0.9.0
 

@@ -57,9 +57,11 @@
 - Define the governed architecture and public-contract boundary for the Epic 10 representative application. (`147-epic-10-representative-app-architecture`)
 - Define a standalone improvement roadmap from independent adoption-pilot findings. (`162-adoption-validation-improvement-roadmap`)
 - Align clean-starter setup, Grid Engine, notification and Repository Intelligence onboarding guidance. (`166-clean-starter-onboarding`)
+- Define the application-owned source boundary and distinguish product development from platform contributions. (`170-application-layer-boundary`)
 
 ## Affected contracts
 
+- `architecture`
 - `commercial-readiness`
 - `commercial-readiness-certification`
 - `community-edition`
@@ -132,6 +134,7 @@
 - **Security — 167-tenant-recipient-assignment-safety:** Recipient identifiers resolve through organization memberships before notification or assignment state is created.
 - **Security — 168-tenant-stored-file-authorization:** File identifiers resolve through the owning organization and membership policy before storage bytes are read.
 - **Security — 169-tenant-safety-adversarial-certification:** Route, identifier, job and export manipulation fails at tenant-scoped resolution before protected reads or side effects.
+- **Security — 170-application-layer-boundary:** The decision preserves platform authorization and tenant contracts and requires reviewed allowlisted registration surfaces.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

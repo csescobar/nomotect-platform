@@ -252,6 +252,10 @@ closed through documented application-level contracts.
 
 ## Phase 3 — Application extension and registration surfaces
 
+### Architecture prerequisite
+
+ADR 0005 establishes `/application` as the product-owned layer and separates it from the first-run `Installation` namespace. Runtime bootstrap and registration surfaces must be reviewed and implemented before the representative application treats this boundary as available.
+
 ### Scope
 
 - provide application-owned role registration where feasible;
@@ -260,7 +264,8 @@ closed through documented application-level contracts.
 - create a continuously tested sample extension using actual discovery,
   compatibility, loading, failure isolation and disablement;
 - distinguish community fallback from extension-provided behavior;
-- define when a shared-core modification requires architecture review.
+- define when a shared-core modification requires architecture review;
+- create and certify the `/application` bootstrap, ownership and dependency boundary.
 
 ### Exit criteria
 

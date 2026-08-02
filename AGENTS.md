@@ -24,6 +24,9 @@ Repository-native contracts are the source of truth. External codebase-memory or
 
 ## Architecture
 
+- Determine the contribution mode before editing:
+  - **Platform contribution:** maintainers may change shared `app/`, `config/`, `lib/`, `test/` and documentation paths when the task explicitly evolves NomoTect and satisfies the applicable review boundary.
+  - **Application development:** product-specific code belongs under `/application` and must use documented platform contracts rather than editing shared internals.
 - Keep domain logic independent of Rails controllers, Turbo and HTML.
 - Controllers call application operations.
 - State changes use explicit domain methods.
@@ -31,6 +34,7 @@ Repository-native contracts are the source of truth. External codebase-memory or
 - Never construct SQL from client-provided identifiers.
 - Preserve module boundaries and avoid speculative abstractions.
 - Update module contracts when public APIs, invariants, dependencies or extension points change.
+- Do not confuse `/application` with the `Installation` namespace used by the first-run installer.
 
 ## Required validation
 

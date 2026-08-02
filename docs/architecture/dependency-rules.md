@@ -20,6 +20,14 @@ Prevent accidental coupling between platform modules and layers.
 - Circular module dependencies are prohibited.
 - Shared code must represent a stable platform concept, not merely duplicated convenience.
 
+## Application-layer rules
+
+- Product-specific source belongs under `/application`.
+- `/application` may depend on documented platform contracts.
+- Platform modules must not reference product-specific constants, files or database tables directly.
+- Discovery flows through reviewed bootstrap and registration APIs; it must not scan arbitrary Ruby constants or execute unvalidated paths.
+- The `Installation` namespace remains a platform provisioning capability and is not an application-layer alias.
+
 ## Enforcement roadmap
 
 Initially these rules are enforced by review and module contracts. Later phases will add automated dependency validation, architecture manifest checks and boundary tests.

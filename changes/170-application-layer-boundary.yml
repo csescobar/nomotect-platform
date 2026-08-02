@@ -1,0 +1,23 @@
+schema_version: 1
+id: 170-application-layer-boundary
+category: documentation
+summary: Define the application-owned source boundary and distinguish product development from platform contributions.
+release_impact: patch
+contracts:
+  - architecture
+  - repository_intelligence
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: The decision preserves platform authorization and tenant contracts and requires reviewed allowlisted registration surfaces.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
