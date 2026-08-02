@@ -71,3 +71,5 @@ The default CI entrypoint reaches application tests through `bin/test`. A produc
 `ApplicationLayer::Certification` aggregates the implemented bootstrap, role, authorized-grid, policy/view, community-fallback and extension-preflight evidence. The report is deterministic, credential-free, bound to a full source commit and unable to authorize publication.
 
 The certification verifies public contracts without activating the sample extension or adding product roles and grids to the starter defaults. Individual contract tests remain authoritative for runtime behavior and adversarial path checks.
+
+The workflow executes certification against the checked-out Git commit and its baseline, writes `tmp/ci/application-layer-certification.json`, records the fixed application registration files loaded during initialization and derives protected-core changes from the Git diff. Protected changes remain valid only when the report declares the architecture-review boundary; application-only adoption reports no protected paths.
