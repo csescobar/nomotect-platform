@@ -1,0 +1,24 @@
+schema_version: 1
+id: 172-application-role-grid-registration
+category: feature
+summary: Add sealed application-owned role and authorized Grid Engine registration surfaces.
+release_impact: minor
+contracts:
+  - architecture
+  - grid_engine
+  - multi_tenant
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Protected entries cannot be replaced, custom roles have explicit permissions and every grid requires an authorized scope before the registries are sealed.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Application role labels remain localized, and views can mirror policy results through a shared helper without replacing server-side authorization.

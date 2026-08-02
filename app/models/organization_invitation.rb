@@ -5,7 +5,7 @@ class OrganizationInvitation < ApplicationRecord
   normalizes :email_address, with: ->(email) { email.strip.downcase }
 
   validates :email_address, presence: true
-  validates :role, inclusion: { in: Membership::MANAGEABLE_ROLES }
+  validates :role, inclusion: { in: ->(_) { ApplicationRoles.manageable_keys } }
   validates :email_address, uniqueness: {
     scope: :organization_id,
     conditions: -> { where(accepted_at: nil, revoked_at: nil) }

@@ -1,20 +1,54 @@
 module GridEngine
   module Catalog
-    module_function
+    Entry = Data.define(:definition, :scope)
+    KEY = /\A[a-z][a-z0-9_]*\z/
 
-    def fetch(key)
-      definitions.fetch(key.to_s) { raise KeyError, "Unknown grid: #{key}" }
-    end
-
-    def definitions
-      {
-        "organizations" => Definition.new(key: :organizations, model_class: Organization) do
+    class Registry
+      def initialize
+        @entries = {}
+        @sealed = false
+        register("organizations", definition: Definition.new(key: :organizations, model_class: Organization) do
           column :name, type: :string, label: I18n.t("grid_engine.organizations.columns.name")
           column :slug, type: :string, label: I18n.t("grid_engine.organizations.columns.slug")
           column :created_at, type: :datetime, label: I18n.t("grid_engine.organizations.columns.created_at")
           sort :name
-        end
-      }.freeze
+        end, scope: ->(user:, **) { user.organizations.distinct })
+      end
+
+      def fetch(key)
+        @entries.fetch(key.to_s) { raise KeyError, "Unknown grid: #{key}" }
+      end
+
+      def register(key, definition:, scope:)
+        raise RuntimeError, "grid registry is sealed" if sealed?
+
+        key = key.to_s
+        raise ArgumentError, "invalid grid key" unless KEY.match?(key)
+        raise ArgumentError, "grid is already registered" if @entries.key?(key)
+        raise ArgumentError, "definition key mismatch" unless definition.key == key
+        raise ArgumentError, "scope must be callable" unless scope.respond_to?(:call)
+
+        @entries[key] = Entry.new(definition, scope).freeze
+      end
+
+      def sealed? = @sealed
+
+      def seal!
+        @entries.freeze
+        @sealed = true
+      end
     end
+
+    class << self
+      attr_reader :registry
+
+      def fetch(key) = registry.fetch(key).definition
+      def scope_for(key, **context) = registry.fetch(key).scope.call(**context)
+      def register(...) = registry.register(...)
+      def seal! = registry.seal!
+      def reset! = @registry = Registry.new
+    end
+
+    reset!
   end
 end
