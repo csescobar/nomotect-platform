@@ -18,7 +18,8 @@ Evaluate the complete compatibility graph:
 bin/extensions preflight
 ```
 
-Both commands use `config/extensions.yml` by default. Pass
+By default, both commands combine `config/extensions.yml` with
+`application/config/extensions.yml`. Pass
 `--configuration PATH`, `--platform-version VERSION` or
 `--format human|json` to select explicit inputs. The commands do not install
 packages, change configuration, run migrations or persist results. A blocked
@@ -51,6 +52,7 @@ Stable blocker codes include:
 - `capability_version_incompatible`;
 - `capability_provider_conflict`.
 
-Inspection trusts locally installed Bundler packages only for metadata access.
+Inspection trusts locally installed Bundler packages and explicitly configured
+packages below `application/extensions` only for metadata access.
 The later loader treats compatible extensions as trusted in-process Ruby code;
 this preflight is not a malware scanner or a package-signature verifier.

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "yaml"
+require "pathname"
 
 module Extensions
   class Configuration
@@ -11,6 +12,27 @@ module Extensions
 
     def self.load(path)
       new(YAML.safe_load_file(path, aliases: false), path:)
+    rescue Psych::Exception => error
+      raise InvalidConfiguration, "extension configuration is not valid YAML: #{error.message}"
+    end
+
+    def self.load_default(root: Rails.root)
+      load_many([
+        root.join("config/extensions.yml"),
+        root.join("application/config/extensions.yml")
+      ])
+    end
+
+    def self.load_many(paths)
+      existing = paths.map { |path| Pathname(path) }.select(&:file?)
+      extensions = existing.flat_map do |path|
+        data = YAML.safe_load_file(path, aliases: false)
+        new(data, path:).extensions.map(&:dup)
+      end
+      new(
+        { "schema_version" => SCHEMA_VERSION, "extensions" => extensions },
+        path: existing
+      )
     rescue Psych::Exception => error
       raise InvalidConfiguration, "extension configuration is not valid YAML: #{error.message}"
     end

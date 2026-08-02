@@ -7,7 +7,7 @@ module Extensions
         return result if @boot_attempted
 
         @boot_attempted = true
-        configuration ||= Configuration.load(Rails.root.join("config/extensions.yml"))
+        configuration ||= Configuration.load_default
         lifecycle_factory ||= ->(selected) { Lifecycle.new(configuration: selected) }
         @result = lifecycle_factory.call(configuration).call
         log_result

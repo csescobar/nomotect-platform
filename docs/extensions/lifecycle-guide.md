@@ -25,7 +25,8 @@ boundaries.
 1. Add the extension gem to the deployment bundle with automatic Bundler
    loading disabled.
 2. Build and deploy an artifact that contains the exact gem version.
-3. Add the package declaration to `config/extensions.yml`.
+3. Add an external platform package declaration to `config/extensions.yml`,
+   or an application-owned declaration to `application/config/extensions.yml`.
 4. Run `bin/extensions inspect` and then `bin/extensions preflight`.
 5. Do not start normal traffic unless preflight is ready.
 

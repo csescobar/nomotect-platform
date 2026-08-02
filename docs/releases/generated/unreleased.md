@@ -41,6 +41,7 @@
 - Publish certified Application Starter archives as immutable GitHub Release assets. (`165-publish-application-starter`)
 - Add the Rails application-layer bootstrap, tracked product skeleton and starter/CI integration. (`171-application-layer-bootstrap`)
 - Add sealed application-owned role and authorized Grid Engine registration surfaces. (`172-application-role-grid-registration`)
+- Add bounded application-owned extension packages and a continuously tested sample lifecycle. (`173-application-extension-sample`)
 
 ### Security
 
@@ -139,6 +140,7 @@
 - **Security — 170-application-layer-boundary:** The decision preserves platform authorization and tenant contracts and requires reviewed allowlisted registration surfaces.
 - **Security — 171-application-layer-bootstrap:** Application paths are fixed and reviewed; route loading does not accept user-controlled paths or replace platform authorization.
 - **Security — 172-application-role-grid-registration:** Protected entries cannot be replaced, custom roles have explicit permissions and every grid requires an authorized scope before the registries are sealed.
+- **Security — 173-application-extension-sample:** Local packages and entrypoints are real-path bounded to fixed application roots, declarations are explicit and compatibility runs before code execution.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

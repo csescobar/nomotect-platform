@@ -14,7 +14,7 @@ module Extensions
       end
     end
 
-    def initialize(report:, registry: Registry.new, requireer: ->(entrypoint) { Kernel.require(entrypoint) })
+    def initialize(report:, registry: Registry.new, requireer: nil)
       @report = report
       @registry = registry
       @requireer = requireer
@@ -58,7 +58,11 @@ module Extensions
 
     def load_package(package)
       RegistrationContext.activate(registry:, package:) do
-        requireer.call(package.manifest.entrypoint)
+        if requireer
+          requireer.call(package.manifest.entrypoint)
+        else
+          Kernel.require(package.entrypoint_path.to_s)
+        end
       end
       return if registry.registered?(package.id)
 

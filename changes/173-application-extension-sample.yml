@@ -1,0 +1,24 @@
+schema_version: 1
+id: 173-application-extension-sample
+category: feature
+summary: Add bounded application-owned extension packages and a continuously tested sample lifecycle.
+release_impact: minor
+contracts:
+  - architecture
+  - extensions
+  - distribution
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Local packages and entrypoints are real-path bounded to fixed application roots, declarations are explicit and compatibility runs before code execution.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

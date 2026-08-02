@@ -6,7 +6,7 @@ require "optparse"
 require_relative "../config/environment"
 
 options = {
-  configuration: Rails.root.join("config/extensions.yml").to_s,
+  configuration: nil,
   format: "human",
   platform_version: Platform::Version.current.to_s
 }
@@ -24,7 +24,11 @@ command = ARGV.shift
 abort parser.to_s unless %w[inspect preflight].include?(command) && ARGV.empty?
 
 begin
-  configuration = Extensions::Configuration.load(options.fetch(:configuration))
+  configuration = if options[:configuration]
+    Extensions::Configuration.load(options.fetch(:configuration))
+  else
+    Extensions::Configuration.load_default
+  end
   inspector = Extensions::Inspector.new(
     configuration:,
     platform_version: Platform::Version.new(options.fetch(:platform_version))

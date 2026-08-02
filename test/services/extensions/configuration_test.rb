@@ -27,6 +27,25 @@ module Extensions
       assert_includes error.message, "required extensions must be enabled"
     end
 
+    test "combines fixed configuration files and rejects duplicate declarations" do
+      Dir.mktmpdir do |directory|
+        root = Pathname(directory)
+        platform = root.join("platform.yml")
+        application = root.join("application.yml")
+        platform.write(YAML.dump(configuration_data))
+        application.write(YAML.dump({
+          "schema_version" => 1,
+          "extensions" => [ configuration_data.fetch("extensions").first ]
+        }))
+
+        error = assert_raises(Configuration::InvalidConfiguration) do
+          Configuration.load_many([ platform, application ])
+        end
+
+        assert_includes error.message, "ids must be unique"
+      end
+    end
+
     private
 
     def configuration_data

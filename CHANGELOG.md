@@ -42,6 +42,7 @@ Required release impact: `minor`.
 - Publish certified Application Starter archives as immutable GitHub Release assets. (`165-publish-application-starter`)
 - Add the Rails application-layer bootstrap, tracked product skeleton and starter/CI integration. (`171-application-layer-bootstrap`)
 - Add sealed application-owned role and authorized Grid Engine registration surfaces. (`172-application-role-grid-registration`)
+- Add bounded application-owned extension packages and a continuously tested sample lifecycle. (`173-application-extension-sample`)
 
 ### Security
 

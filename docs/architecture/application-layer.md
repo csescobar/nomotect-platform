@@ -39,6 +39,12 @@ Product grids are registered in `application/config/grids.rb`. A grid registrati
 
 Both files load once during initialization from fixed paths. The registries are sealed immediately afterward, so application requests cannot mutate authorization or grid behavior at runtime.
 
+## Application-owned extensions
+
+Product extension declarations belong in `application/config/extensions.yml`, and local packages belong in `application/extensions/<package>`. The runtime combines application declarations with the platform extension configuration, rejects duplicate identities and resolves local packages only inside the fixed application directory.
+
+The tracked `sample-audit` package is disabled by default. Its integration test exercises community fallback, discovery, compatibility preflight, loading and registration. It is an authoring example, not a production audit implementation.
+
 ## Policy and view integration
 
 Application policies belong in `application/app/policies` and may ask the tenant membership for an explicit permission:
@@ -59,7 +65,3 @@ Controllers must continue to call `authorize!`. Application views may use the pu
 The Application Starter includes the tracked skeleton so a newly initialized private repository has the boundary before product development begins. Empty directories use `.keep` files and can be replaced by product source over time.
 
 The default CI entrypoint reaches application tests through `bin/test`. A product must not introduce a separate test command that bypasses platform security, release or Repository Intelligence checks.
-
-## Not yet implemented
-
-The continuously tested real sample extension and its failure-isolation and disablement behavior remain later Phase 3 work.

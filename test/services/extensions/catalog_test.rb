@@ -53,6 +53,21 @@ module Extensions
       end
     end
 
+    test "application resolver rejects a package symlink outside its fixed root" do
+      Dir.mktmpdir do |directory|
+        root = Pathname(directory)
+        application_root = root.join("application/extensions")
+        outside = root.join("outside")
+        application_root.mkpath
+        outside.mkpath
+        application_root.join("escaped").make_symlink(outside)
+
+        resolver = SpecificationResolver.new(application_root:)
+
+        assert_nil resolver.call("escaped")
+      end
+    end
+
     private
 
     def configuration_data
