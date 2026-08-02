@@ -23,6 +23,7 @@ include:
   - Rakefile
   - SECURITY.md
   - VERSION
+  - application/**
   - app/**
   - bin/**
   - compose.production.yaml

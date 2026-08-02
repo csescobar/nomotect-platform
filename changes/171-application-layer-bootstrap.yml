@@ -1,0 +1,23 @@
+schema_version: 1
+id: 171-application-layer-bootstrap
+category: added
+summary: Add the Rails application-layer bootstrap, tracked product skeleton and starter/CI integration.
+release_impact: minor
+contracts:
+  - architecture
+  - distribution
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Application paths are fixed and reviewed; route loading does not accept user-controlled paths or replace platform authorization.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
