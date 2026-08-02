@@ -4,10 +4,14 @@ class StoredFilesController < ApplicationController
 
   def show
     authorize!(@stored_file, :show?)
+    download = StoredFiles::Download.new(actor: Current.user).call(
+      organization: @organization,
+      stored_file: @stored_file
+    )
 
-    send_data EnterpriseStorage.read(@stored_file.storage_key),
-      filename: @stored_file.name,
-      type: @stored_file.content_type,
+    send_data download.bytes,
+      filename: download.name,
+      type: download.content_type,
       disposition: "attachment"
   end
 

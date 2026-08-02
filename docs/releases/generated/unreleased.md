@@ -45,6 +45,7 @@
 - Define a cross-platform Application Starter and add a portable, read-only MCP-first bootstrap for Antigravity CLI adoption. (`163-antigravity-cli-mcp-bootstrap`)
 - Add tenant-first recipient resolution and atomic cross-tenant notification rejection. (`167-tenant-recipient-assignment-safety`)
 - Enforce tenant-scoped attachment association and authorized downloads before storage access. (`168-tenant-stored-file-authorization`)
+- Certify adversarial tenant boundaries and reject invalid jobs before partial state is created. (`169-tenant-safety-adversarial-certification`)
 
 ### Documentation
 
@@ -130,6 +131,7 @@
 - **Security — 166-clean-starter-onboarding:** Notification guidance requires tenant membership checks, minimal payloads and policy authorization.
 - **Security — 167-tenant-recipient-assignment-safety:** Recipient identifiers resolve through organization memberships before notification or assignment state is created.
 - **Security — 168-tenant-stored-file-authorization:** File identifiers resolve through the owning organization and membership policy before storage bytes are read.
+- **Security — 169-tenant-safety-adversarial-certification:** Route, identifier, job and export manipulation fails at tenant-scoped resolution before protected reads or side effects.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -161,6 +163,7 @@
 - **Privacy — 166-clean-starter-onboarding:** Notification payload guidance excludes credentials, secrets and unnecessary personal data.
 - **Privacy — 167-tenant-recipient-assignment-safety:** Rejected foreign identifiers are not persisted in notification payloads or delivery jobs.
 - **Privacy — 168-tenant-stored-file-authorization:** Rejected cross-tenant requests cannot read file bytes or expose storage keys.
+- **Privacy — 169-tenant-safety-adversarial-certification:** Rejected cross-tenant identifiers cannot expose stored bytes or persist notification, import, export, idempotency or audit state.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.

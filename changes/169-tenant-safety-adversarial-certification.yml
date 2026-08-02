@@ -1,0 +1,23 @@
+schema_version: 1
+id: 169-tenant-safety-adversarial-certification
+category: security
+summary: Certify adversarial tenant boundaries and reject invalid jobs before partial state is created.
+release_impact: patch
+contracts:
+  - enterprise_services
+  - multi_tenant
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Route, identifier, job and export manipulation fails at tenant-scoped resolution before protected reads or side effects.
+privacy:
+  impact: reviewed
+  notes: Rejected cross-tenant identifiers cannot expose stored bytes or persist notification, import, export, idempotency or audit state.
+accessibility:
+  impact: none
+  notes:

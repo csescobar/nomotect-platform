@@ -2,9 +2,10 @@ class CustomerExportJob < ApplicationJob
   queue_as :default
 
   def perform(organization_id:, requested_by_id:, idempotency_key:)
+    organization = Organization.find(organization_id)
+    user = TenantBoundary.resolve_member!(organization: organization, user_id: requested_by_id)
+
     IdempotentExecution.call(key: idempotency_key, scope: "customer-export:#{organization_id}") do
-      organization = Organization.find(organization_id)
-      user = User.find(requested_by_id)
       csv = Customers::CsvExporter.call(user: user, organization: organization)
       file = StoredFileRegistry.call(
         organization: organization,

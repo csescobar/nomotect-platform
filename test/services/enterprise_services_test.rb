@@ -104,6 +104,66 @@ class EnterpriseServicesTest < ActiveSupport::TestCase
     end
   end
 
+  test "stored file download operation rejects a foreign association before storage access" do
+    stored_file = StoredFileRegistry.call(
+      organization: @other_organization,
+      uploaded_by: @other_user,
+      name: "private.txt",
+      content_type: "text/plain",
+      bytes: "private"
+    )
+
+    EnterpriseStorage.stub(:read, ->(*) { flunk "unauthorized storage read" }) do
+      assert_raises TenantBoundary::Violation do
+        StoredFiles::Download.new(actor: @user).call(
+          organization: @organization,
+          stored_file: stored_file
+        )
+      end
+    end
+  ensure
+    EnterpriseStorage.delete(stored_file.storage_key) if stored_file
+  end
+
+  test "customer jobs reject foreign requester identifiers before idempotency or domain state" do
+    assert_no_difference [ "IdempotencyRecord.count", "StoredFile.count", "ImportRun.count", "DomainEvent.count" ] do
+      assert_raises TenantBoundary::Violation do
+        CustomerExportJob.perform_now(
+          organization_id: @organization.id,
+          requested_by_id: @other_user.id,
+          idempotency_key: "foreign-export"
+        )
+      end
+
+      assert_raises TenantBoundary::Violation do
+        CustomerImportJob.perform_now(
+          organization_id: @organization.id,
+          requested_by_id: @other_user.id,
+          csv: "name,email_address,status\nAda,ada@example.com,active\n",
+          idempotency_key: "foreign-import"
+        )
+      end
+    end
+  end
+
+  test "notification job rejects a cross-tenant identifier without mutating delivery state" do
+    notification = @other_organization.notifications.create!(
+      recipient: @other_user,
+      kind: "customer.updated",
+      status: "pending",
+      payload: {}
+    )
+
+    assert_no_difference [ "IdempotencyRecord.count", "DomainEvent.count" ] do
+      assert_raises ActiveRecord::RecordNotFound do
+        NotificationDeliveryJob.perform_now(@organization.id, notification.id)
+      end
+    end
+
+    assert_equal "pending", notification.reload.status
+    assert_nil notification.delivered_at
+  end
+
   test "customer import tracks row failures and export remains tenant scoped" do
     csv = <<~CSV
       name,email_address,status,notes
@@ -122,16 +182,18 @@ class EnterpriseServicesTest < ActiveSupport::TestCase
   end
 
   test "customer imports and exports reject users from another tenant" do
-    assert_raises TenantBoundary::Violation do
-      Customers::CsvImporter.call(
-        organization: @organization,
-        requested_by: @other_user,
-        csv: "name,email_address,status\nAda,ada@example.com,active\n"
-      )
-    end
+    assert_no_difference [ "ImportRun.count", "DomainEvent.count" ] do
+      assert_raises TenantBoundary::Violation do
+        Customers::CsvImporter.call(
+          organization: @organization,
+          requested_by: @other_user,
+          csv: "name,email_address,status\nAda,ada@example.com,active\n"
+        )
+      end
 
-    assert_raises TenantBoundary::Violation do
-      Customers::CsvExporter.call(user: @other_user, organization: @organization)
+      assert_raises TenantBoundary::Violation do
+        Customers::CsvExporter.call(user: @other_user, organization: @organization)
+      end
     end
   end
 

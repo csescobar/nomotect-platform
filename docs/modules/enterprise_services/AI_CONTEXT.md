@@ -11,6 +11,7 @@ Enterprise Services provide reusable infrastructure for audited business applica
 - `app/models/stored_file.rb`
 - `app/controllers/stored_files_controller.rb`
 - `app/policies/stored_file_policy.rb`
+- `app/operations/stored_files/download.rb`
 - `app/models/import_run.rb`
 - `app/models/webhook_endpoint.rb`
 - `app/models/feature_flag.rb`
@@ -24,6 +25,7 @@ Enterprise Services provide reusable infrastructure for audited business applica
 - `app/services/customers/csv_importer.rb`
 - `app/services/customers/csv_exporter.rb`
 - `docs/modules/enterprise_services/tenant-scoped-files.md`
+- `docs/modules/enterprise_services/tenant-safety-certification.md`
 - enterprise-service migrations, configuration, locales, and tests
 
 ## Public contracts
@@ -46,6 +48,7 @@ Enterprise Services provide reusable infrastructure for audited business applica
 - Never deliver webhooks to loopback, link-local, or private IP addresses.
 - Never log notification payload values, webhook secrets, uploaded bytes, or import row contents.
 - Keep jobs safe to retry and ensure side effects are guarded by idempotency where duplication is harmful.
+- Resolve tenant-owned requester and recipient identifiers before opening idempotent execution or creating delivery state.
 - Preserve tenant identifiers through jobs, files, imports, exports, notifications, and webhooks.
 
 ## Accessibility and localization

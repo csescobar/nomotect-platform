@@ -32,6 +32,6 @@ Never resolve a request with `StoredFile.find(params[:id])`. Parent-scoped looku
 
 ## Download
 
-The canonical download endpoint is `GET /organizations/:organization_id/stored_files/:id`. The controller performs association lookup and authorization before calling `EnterpriseStorage.read`. It returns the registered name and content type as an attachment.
+The canonical download endpoint is `GET /organizations/:organization_id/stored_files/:id`. The controller performs association lookup and policy authorization, then delegates byte retrieval to `StoredFiles::Download`. The operation repeats the tenant assertions before calling `EnterpriseStorage.read` and returns the registered name and content type with the bytes.
 
-Application modules should link to this endpoint instead of exposing storage keys or reading storage directly. Cross-tenant route manipulation returns `404`; a non-member request for a correctly associated file returns `403`. Neither path reads file bytes.
+Application modules should link to this endpoint instead of exposing storage keys or reading storage directly. Non-HTTP consumers must use the application operation rather than calling `EnterpriseStorage` themselves. Cross-tenant route manipulation returns `404`; a non-member request for a correctly associated file returns `403`. Neither path reads file bytes.
