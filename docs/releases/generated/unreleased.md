@@ -179,3 +179,4 @@
 - **Accessibility — 155-epic-10-functional-framework-certification:** Design and localization evidence remains bound to Light/Dark and bilingual public journeys.
 - **Accessibility — 158-epic-10-accessibility-certification:** Certification enforces zero critical violations and keyboard blockers while retaining human screen-reader review.
 - **Accessibility — 162-adoption-validation-improvement-roadmap:** The roadmap separates automated browser evidence from manual keyboard, visual-focus and screen-reader review.
+- **Accessibility — 172-application-role-grid-registration:** Application role labels remain localized, and views can mirror policy results through a shared helper without replacing server-side authorization.
