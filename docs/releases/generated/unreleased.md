@@ -61,6 +61,7 @@
 
 ## Affected contracts
 
+- `architecture`
 - `commercial-readiness`
 - `commercial-readiness-certification`
 - `community-edition`
