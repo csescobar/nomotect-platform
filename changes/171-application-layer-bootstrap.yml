@@ -1,6 +1,6 @@
 schema_version: 1
 id: 171-application-layer-bootstrap
-category: added
+category: feature
 summary: Add the Rails application-layer bootstrap, tracked product skeleton and starter/CI integration.
 release_impact: minor
 contracts:
