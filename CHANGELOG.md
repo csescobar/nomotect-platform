@@ -43,6 +43,7 @@ Required release impact: `minor`.
 - Add the Rails application-layer bootstrap, tracked product skeleton and starter/CI integration. (`171-application-layer-bootstrap`)
 - Add sealed application-owned role and authorized Grid Engine registration surfaces. (`172-application-role-grid-registration`)
 - Add bounded application-owned extension packages and a continuously tested sample lifecycle. (`173-application-extension-sample`)
+- Certify the complete Phase 3 application-layer adoption boundary with deterministic integrated evidence. (`174-application-layer-phase-3-certification`)
 
 ### Security
 

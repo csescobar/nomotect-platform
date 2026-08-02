@@ -1,0 +1,74 @@
+name: Application layer contract
+
+on:
+  pull_request:
+    paths:
+      - application/**
+      - app/lib/application_roles.rb
+      - app/lib/grid_engine/catalog.rb
+      - app/services/application_layer/**
+      - app/services/extensions/**
+      - app/controllers/concerns/authorization.rb
+      - config/initializers/application_registrations.rb
+      - config/ai/contracts/application_layer.yml
+      - docs/architecture/application-layer.md
+      - docs/roadmap/adoption-validation-improvements.md
+      - test/integration/application_layer_bootstrap_test.rb
+      - test/integration/application_extension_sample_test.rb
+      - test/lib/application_registrations_test.rb
+      - test/services/application_layer/**
+      - bin/application-layer-certify
+      - .github/workflows/application-layer-contract.yml
+  push:
+    branches: [main]
+    paths:
+      - application/**
+      - app/lib/application_roles.rb
+      - app/lib/grid_engine/catalog.rb
+      - app/services/application_layer/**
+      - app/services/extensions/**
+      - app/controllers/concerns/authorization.rb
+      - config/initializers/application_registrations.rb
+      - config/ai/contracts/application_layer.yml
+      - docs/architecture/application-layer.md
+      - docs/roadmap/adoption-validation-improvements.md
+      - test/integration/application_layer_bootstrap_test.rb
+      - test/integration/application_extension_sample_test.rb
+      - test/lib/application_registrations_test.rb
+      - test/services/application_layer/**
+      - bin/application-layer-certify
+      - .github/workflows/application-layer-contract.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/nomotect_test
+      SECRET_KEY_BASE: ci-secret-key-base
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: nomotect_test
+        ports: [5432:5432]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - name: Prepare database
+        run: ruby bin/rails db:prepare
+      - name: Certify application-layer contracts
+        run: bash bin/application-layer-certify

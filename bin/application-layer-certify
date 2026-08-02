@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+bundle exec rails test \
+  test/integration/application_layer_bootstrap_test.rb \
+  test/lib/application_registrations_test.rb \
+  test/integration/application_extension_sample_test.rb \
+  test/services/application_layer/certification_test.rb
+
+grep -q 'id: application_layer' config/ai/contracts/application_layer.yml
+grep -q 'Completed' docs/roadmap/adoption-validation-improvements.md
+grep -q 'Phase 3 certification' docs/architecture/application-layer.md
+
+printf 'Application layer Phase 3 contracts certified\n'

@@ -42,6 +42,7 @@
 - Add the Rails application-layer bootstrap, tracked product skeleton and starter/CI integration. (`171-application-layer-bootstrap`)
 - Add sealed application-owned role and authorized Grid Engine registration surfaces. (`172-application-role-grid-registration`)
 - Add bounded application-owned extension packages and a continuously tested sample lifecycle. (`173-application-extension-sample`)
+- Certify the complete Phase 3 application-layer adoption boundary with deterministic integrated evidence. (`174-application-layer-phase-3-certification`)
 
 ### Security
 
@@ -64,6 +65,7 @@
 
 ## Affected contracts
 
+- `application_layer`
 - `architecture`
 - `commercial-readiness`
 - `commercial-readiness-certification`
@@ -141,6 +143,7 @@
 - **Security — 171-application-layer-bootstrap:** Application paths are fixed and reviewed; route loading does not accept user-controlled paths or replace platform authorization.
 - **Security — 172-application-role-grid-registration:** Protected entries cannot be replaced, custom roles have explicit permissions and every grid requires an authorized scope before the registries are sealed.
 - **Security — 173-application-extension-sample:** Local packages and entrypoints are real-path bounded to fixed application roots, declarations are explicit and compatibility runs before code execution.
+- **Security — 174-application-layer-phase-3-certification:** Certification rejects protected-role replacement, unscoped grids, missing bounded extension evidence and non-canonical source commits.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -182,3 +185,4 @@
 - **Accessibility — 158-epic-10-accessibility-certification:** Certification enforces zero critical violations and keyboard blockers while retaining human screen-reader review.
 - **Accessibility — 162-adoption-validation-improvement-roadmap:** The roadmap separates automated browser evidence from manual keyboard, visual-focus and screen-reader review.
 - **Accessibility — 172-application-role-grid-registration:** Application role labels remain localized, and views can mirror policy results through a shared helper without replacing server-side authorization.
+- **Accessibility — 174-application-layer-phase-3-certification:** Certification verifies that policy results are available to views while preserving mandatory controller authorization.
