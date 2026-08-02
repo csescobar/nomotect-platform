@@ -132,7 +132,7 @@ module Upgrades
     def installed_extensions
       return extension_state_provider.call if extension_state_provider
 
-      configuration = Extensions::Configuration.load(Rails.root.join("config/extensions.yml"))
+      configuration = Extensions::Configuration.load_default
       report = Extensions::Inspector.new(
         configuration: configuration,
         platform_version: detected_version

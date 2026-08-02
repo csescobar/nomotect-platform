@@ -1,5 +1,10 @@
 # Extension Authoring
 
+Product-owned extensions live in `application/extensions/<package>` and are
+declared in `application/config/extensions.yml`. External extension gems remain
+supported through Bundler. Both package types use the same manifest,
+compatibility and registration contracts.
+
 An extension entrypoint registers only through the public SDK. It must not
 reopen platform classes, prepend modules into internal constants or mutate a
 global registry directly.
@@ -50,6 +55,9 @@ After all entrypoints register, the registry is sealed. Reusing the same loader
 returns its existing result and does not execute entrypoints again. Loading a
 fresh registry after Ruby has already required the entrypoint is unsupported;
 restart the process before retrying a failed or changed extension set.
+
+Entrypoints resolve to a real file below the package's `lib` directory. Missing
+files and symbolic-link escapes fail before registration.
 
 Loading failures use `extension_load_failed` and identify the extension and
 exception class. Original exception messages are not included because they may

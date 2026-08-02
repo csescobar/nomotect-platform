@@ -7,10 +7,11 @@ community repository.
 
 ## Package boundary
 
-Supported extensions are Bundler-installed gems declared with `require: false`.
-Each gem exposes a `platform-extension.yml` file that can be read without
-executing the extension entrypoint. Local package paths are supported only for
-development and certification.
+Supported external extensions are Bundler-installed gems declared with
+`require: false`. Application-owned packages may instead live under the fixed
+`application/extensions/<package>` boundary. Each package exposes a
+`platform-extension.yml` file that can be read without executing the extension
+entrypoint.
 
 The community repository owns:
 
@@ -35,6 +36,12 @@ The extension configuration identifies packages that an installation enables
 and whether each one is operationally required. Configuration is
 credential-free; extension secrets continue to use the platform secret-store
 boundary.
+
+The runtime combines the platform-owned `config/extensions.yml` declarations
+with product-owned `application/config/extensions.yml`. Duplicate ids or
+package names across those files fail closed. Configured local package names
+resolve only below `application/extensions`; arbitrary paths and path traversal
+are not accepted.
 
 ## Security boundary
 

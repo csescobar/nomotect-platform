@@ -13,8 +13,28 @@ module Extensions
     end
 
     class SpecificationResolver
+      Specification = Data.define(:full_gem_path)
+
+      def initialize(application_root: Rails.root.join("application/extensions"))
+        @application_root = Pathname(application_root)
+      end
+
       def call(package_name)
-        Gem.loaded_specs[package_name]
+        Gem.loaded_specs[package_name] || application_package(package_name)
+      end
+
+      private
+
+      attr_reader :application_root
+
+      def application_package(package_name)
+        root = application_root.realpath
+        package = root.join(package_name).realpath
+        return unless package.to_s.start_with?("#{root}/")
+
+        Specification.new(package.to_s)
+      rescue Errno::ENOENT
+        nil
       end
     end
 
