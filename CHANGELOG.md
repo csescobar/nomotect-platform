@@ -45,6 +45,10 @@ Required release impact: `minor`.
 - Add bounded application-owned extension packages and a continuously tested sample lifecycle. (`173-application-extension-sample`)
 - Certify the complete Phase 3 application-layer adoption boundary with deterministic integrated evidence. (`174-application-layer-phase-3-certification`)
 
+### Fixed
+
+- Bind Phase 3 certification to real commits, loaded registration files and derived protected-core changes. (`175-fix-phase-3-certification-evidence`)
+
 ### Security
 
 - Define a cross-platform Application Starter and add a portable, read-only MCP-first bootstrap for Antigravity CLI adoption. (`163-antigravity-cli-mcp-bootstrap`)

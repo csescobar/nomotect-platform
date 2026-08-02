@@ -1,0 +1,23 @@
+schema_version: 1
+id: 175-fix-phase-3-certification-evidence
+category: fix
+summary: Bind Phase 3 certification to real commits, loaded registration files and derived protected-core changes.
+release_impact: patch
+contracts:
+  - application_layer
+  - architecture
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Certification now verifies commit availability, records the actual diff boundary and fails when fixed application registration files were not loaded.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

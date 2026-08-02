@@ -44,6 +44,10 @@
 - Add bounded application-owned extension packages and a continuously tested sample lifecycle. (`173-application-extension-sample`)
 - Certify the complete Phase 3 application-layer adoption boundary with deterministic integrated evidence. (`174-application-layer-phase-3-certification`)
 
+### Fixed
+
+- Bind Phase 3 certification to real commits, loaded registration files and derived protected-core changes. (`175-fix-phase-3-certification-evidence`)
+
 ### Security
 
 - Define a cross-platform Application Starter and add a portable, read-only MCP-first bootstrap for Antigravity CLI adoption. (`163-antigravity-cli-mcp-bootstrap`)
@@ -144,6 +148,7 @@
 - **Security — 172-application-role-grid-registration:** Protected entries cannot be replaced, custom roles have explicit permissions and every grid requires an authorized scope before the registries are sealed.
 - **Security — 173-application-extension-sample:** Local packages and entrypoints are real-path bounded to fixed application roots, declarations are explicit and compatibility runs before code execution.
 - **Security — 174-application-layer-phase-3-certification:** Certification rejects protected-role replacement, unscoped grids, missing bounded extension evidence and non-canonical source commits.
+- **Security — 175-fix-phase-3-certification-evidence:** Certification now verifies commit availability, records the actual diff boundary and fails when fixed application registration files were not loaded.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

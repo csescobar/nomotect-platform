@@ -1,35 +1,60 @@
 # frozen_string_literal: true
 
 require "test_helper"
-require "fileutils"
-require "tmpdir"
 
 module ApplicationLayer
   class CertificationTest < ActiveSupport::TestCase
-    test "certifies every Phase 3 application boundary with deterministic evidence" do
-      report = Certification.new(source_commit: "a" * 40).call
-
-      assert_equal "passed", report.fetch("status")
-      assert_equal 3, report.fetch("phase")
-      assert_equal Certification::EVIDENCE, report.fetch("evidence")
-      assert_not report.fetch("protected_core_modified")
-      assert report.fetch("community_fallback")
-      assert_not report.fetch("extension_enabled_by_default")
-      assert report.fetch("credential_free")
-      assert_not report.dig("publication", "allowed")
+    FakeRepository = Data.define(:paths) do
+      def commit_exists?(_commit) = true
+      def changed_paths(_baseline, _source) = paths
     end
 
-    test "rejects invalid source identity and incomplete application evidence" do
+    test "binds evidence to commits and derives the protected review boundary" do
+      report = Certification.new(
+        source_commit: "a" * 40,
+        baseline_commit: "b" * 40,
+        repository: FakeRepository.new([ "application/config/roles.rb", "app/lib/application_roles.rb" ])
+      ).call
+
+      assert_equal "a" * 40, report.fetch("source_commit")
+      assert_equal "b" * 40, report.fetch("baseline_commit")
+      assert report.fetch("protected_core_modified")
+      assert_equal [ "app/lib/application_roles.rb" ], report.fetch("protected_core_paths")
+      assert_equal "architecture_review_required", report.fetch("review_boundary")
+      assert_equal Certification::REGISTRATION_FILES, report.fetch("loaded_registration_files")
+    end
+
+    test "reports an application-only adoption without protected changes" do
+      report = Certification.new(
+        source_commit: "c" * 40,
+        baseline_commit: "d" * 40,
+        repository: FakeRepository.new([ "application/config/grids.rb" ])
+      ).call
+
+      assert_not report.fetch("protected_core_modified")
+      assert_empty report.fetch("protected_core_paths")
+      assert_equal "application_only", report.fetch("review_boundary")
+    end
+
+    test "rejects unavailable commits and missing registration load evidence" do
+      unavailable = Data.define(:paths) do
+        def commit_exists?(_commit) = false
+      end.new([])
       assert_raises(Certification::InvalidCertification) do
-        Certification.new(source_commit: "main").call
+        Certification.new(source_commit: "e" * 40, baseline_commit: "f" * 40, repository: unavailable).call
       end
 
-      Dir.mktmpdir do |directory|
-        error = assert_raises(Certification::InvalidCertification) do
-          Certification.new(source_commit: "b" * 40, root: directory).call
-        end
-        assert_includes error.message, "missing application-layer evidence"
+      previous = Rails.application.config.x.application_registration_files
+      Rails.application.config.x.application_registration_files = []
+      assert_raises(Certification::InvalidCertification) do
+        Certification.new(
+          source_commit: "1" * 40,
+          baseline_commit: "2" * 40,
+          repository: FakeRepository.new([])
+        ).call
       end
+    ensure
+      Rails.application.config.x.application_registration_files = previous
     end
   end
 end
