@@ -44,6 +44,7 @@
 - Add bounded application-owned extension packages and a continuously tested sample lifecycle. (`173-application-extension-sample`)
 - Certify the complete Phase 3 application-layer adoption boundary with deterministic integrated evidence. (`174-application-layer-phase-3-certification`)
 - Enforce semantic token consumption and formalize Phase 4 theme-substitution certification. (`176-design-token-integrity`)
+- Add a disposable free Render profile with secure deterministic visual-validation data. (`177-free-render-visual-validation`)
 
 ### Fixed
 
@@ -75,6 +76,7 @@
 - `commercial-readiness`
 - `commercial-readiness-certification`
 - `community-edition`
+- `deployment`
 - `design_system`
 - `diagnostic-redaction`
 - `disaster-recovery-policy`
@@ -152,6 +154,7 @@
 - **Security — 173-application-extension-sample:** Local packages and entrypoints are real-path bounded to fixed application roots, declarations are explicit and compatibility runs before code execution.
 - **Security — 174-application-layer-phase-3-certification:** Certification rejects protected-role replacement, unscoped grids, missing bounded extension evidence and non-canonical source commits.
 - **Security — 175-fix-phase-3-certification-evidence:** Certification now verifies commit availability, records the actual diff boundary and fails when fixed application registration files were not loaded.
+- **Security — 177-free-render-visual-validation:** Reviewer credentials remain operator-supplied secrets, and validation data preparation fails closed outside the explicit profile.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -184,6 +187,7 @@
 - **Privacy — 167-tenant-recipient-assignment-safety:** Rejected foreign identifiers are not persisted in notification payloads or delivery jobs.
 - **Privacy — 168-tenant-stored-file-authorization:** Rejected cross-tenant requests cannot read file bytes or expose storage keys.
 - **Privacy — 169-tenant-safety-adversarial-certification:** Rejected cross-tenant identifiers cannot expose stored bytes or persist notification, import, export, idempotency or audit state.
+- **Privacy — 177-free-render-visual-validation:** The profile uses deterministic example.com records and forbids production or personal data.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.
@@ -195,3 +199,4 @@
 - **Accessibility — 172-application-role-grid-registration:** Application role labels remain localized, and views can mirror policy results through a shared helper without replacing server-side authorization.
 - **Accessibility — 174-application-layer-phase-3-certification:** Certification verifies that policy results are available to views while preserving mandatory controller authorization.
 - **Accessibility — 176-design-token-integrity:** Light and Dark remain the only public themes, and token substitution remains subject to contrast and visual certification.
+- **Accessibility — 177-free-render-visual-validation:** The environment exposes Light/Dark and bilingual representative surfaces for manual visual and accessibility review.

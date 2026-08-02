@@ -175,6 +175,8 @@ jobs:
         run: |
           ruby bin/render-validate
           bash -n bin/render-start
+          ruby bin/render-validation-validate
+          bash -n bin/render-validation-boot
       - name: Generate application SBOM
         env:
           GITHUB_SHA: ${{ github.sha }}
