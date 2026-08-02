@@ -4,7 +4,7 @@
 
 - Provide reusable, accessible and themeable UI components.
 - Keep visual styling independent from domain behavior.
-- Support light, dark and system themes.
+- Support explicit light and dark themes.
 - Allow applications to replace branding through design tokens.
 - Document every component in a built-in showcase.
 

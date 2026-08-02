@@ -25,6 +25,9 @@ The canonical design token source remains under `config/design_tokens/**` and is
 6. Components accept and safely merge standard, `data-*`, and `aria-*` attributes.
 7. Accessibility semantics are part of the public contract and require tests.
 8. Core server-rendered behavior must remain useful without JavaScript.
+9. Public theme selection is limited to explicit Light and Dark choices.
+10. Non-generated stylesheets must pass `bin/design-token-audit` and must not
+    contain color literals.
 
 ## Current components
 
@@ -53,6 +56,8 @@ The canonical design token source remains under `config/design_tokens/**` and is
 - Inline style attributes for normal component presentation.
 - JavaScript-only rendering for core content.
 - Editing generated design token CSS without updating the canonical JSON source.
+- Adding color literals to component or page stylesheets instead of extending
+  the canonical semantic-token vocabulary.
 
 ## Known limitations
 

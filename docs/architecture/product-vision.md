@@ -19,7 +19,7 @@ The platform is designed to reduce repeated infrastructure work while preserving
 
 - Provide secure defaults without hiding important behavior.
 - Support rich domain models and explicit application operations.
-- Offer a reusable design system with light, dark and system themes.
+- Offer a reusable design system with explicit light and dark themes.
 - Provide internationalization from the first implementation phase.
 - Deliver an advanced open-source grid with server-side query processing.
 - Include audit, privacy, observability and governance capabilities.

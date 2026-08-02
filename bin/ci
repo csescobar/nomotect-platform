@@ -2,6 +2,7 @@
 set -euo pipefail
 
 ruby bin/rails design_tokens:check
+ruby bin/design-token-audit
 ruby bin/repository-intelligence validate
 bash bin/lint
 bash bin/security

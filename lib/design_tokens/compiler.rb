@@ -3,6 +3,11 @@ require "yaml"
 
 module DesignTokens
   class Compiler
+    FORBIDDEN_COLOR_NAMES = %w[
+      aqua black blue brown cyan fuchsia gold gray green grey indigo lime
+      magenta maroon navy olive orange pink purple red silver teal violet
+      white yellow
+    ].freeze
     ROOT = Rails.root.join("config/design_tokens")
     SOURCE = "tokens.yml"
     SCHEMA = "tokens.schema.json"
@@ -37,13 +42,6 @@ module DesignTokens
         [data-theme="dark"] {
         #{declarations(base.merge(dark))}
           color-scheme: dark;
-        }
-
-        @media (prefers-color-scheme: dark) {
-          :root:not([data-theme]) {
-        #{declarations(base.merge(dark), indent: 4)}
-            color-scheme: dark;
-          }
         }
       CSS
     end
@@ -85,6 +83,7 @@ module DesignTokens
 
       validate_against_schema!(document, JSON.parse(@root.join(SCHEMA).read))
       validate_theme_keys!(document.dig("themes", "light"), document.dig("themes", "dark"))
+      validate_semantic_names!(document)
       document
     rescue Psych::Exception => error
       raise ArgumentError, "Invalid design token YAML: #{error.message}"
@@ -129,6 +128,17 @@ module DesignTokens
       return if light.keys.sort == dark.keys.sort
 
       raise ArgumentError, "Light and dark themes must define identical token keys"
+    end
+
+    def validate_semantic_names!(document)
+      keys = [document.fetch("base"), *document.fetch("themes").values].flat_map(&:keys)
+      invalid = keys.select do |key|
+        segments = key.split(/[.-]/)
+        (segments & FORBIDDEN_COLOR_NAMES).any?
+      end
+      return if invalid.empty?
+
+      raise ArgumentError, "Design token names must describe semantic roles, not colors: #{invalid.sort.join(', ')}"
     end
 
     def json_output(tokens)

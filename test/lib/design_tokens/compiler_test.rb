@@ -14,7 +14,23 @@ class DesignTokens::CompilerTest < ActiveSupport::TestCase
     assert_includes css, "--font-family-sans:"
     assert_includes css, "--line-height-heading:"
     assert_includes css, "--line-height-code:"
+    assert_includes css, "--radius-full:"
+    refute_includes css, "prefers-color-scheme"
     assert compiler.current?
+  end
+
+  test "a token substitution changes generated theme output without adding a public theme" do
+    with_token_source(
+      light: { "color.text" => "#7C2D12" },
+      dark: { "color.text" => "#FDE68A" }
+    ) do |compiler|
+      css = compiler.compile
+
+      assert_includes css, "--color-text: #7C2D12"
+      assert_includes css, "--color-text: #FDE68A"
+      assert_equal 1, css.scan(/\[data-theme="light"\]/).size
+      assert_equal 1, css.scan(/\[data-theme="dark"\]/).size
+    end
   end
 
   test "framework styles consume semantic typography roles" do
@@ -33,6 +49,18 @@ class DesignTokens::CompilerTest < ActiveSupport::TestCase
       dark: { "color.background" => "#000000" }
     ) do |compiler|
       assert_raises(ArgumentError) { compiler.compile }
+    end
+  end
+
+  test "rejects palette color names in the public token vocabulary" do
+    with_token_source(
+      light: { "color.accent.blue" => "#0000FF" },
+      dark: { "color.accent.blue" => "#60A5FA" }
+    ) do |compiler|
+      error = assert_raises(ArgumentError) { compiler.compile }
+
+      assert_includes error.message, "semantic roles, not colors"
+      assert_includes error.message, "color.accent.blue"
     end
   end
 
