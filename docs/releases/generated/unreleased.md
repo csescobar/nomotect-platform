@@ -43,6 +43,7 @@
 - Add sealed application-owned role and authorized Grid Engine registration surfaces. (`172-application-role-grid-registration`)
 - Add bounded application-owned extension packages and a continuously tested sample lifecycle. (`173-application-extension-sample`)
 - Certify the complete Phase 3 application-layer adoption boundary with deterministic integrated evidence. (`174-application-layer-phase-3-certification`)
+- Enforce semantic token consumption and formalize Phase 4 theme-substitution certification. (`176-design-token-integrity`)
 
 ### Fixed
 
@@ -74,6 +75,7 @@
 - `commercial-readiness`
 - `commercial-readiness-certification`
 - `community-edition`
+- `design_system`
 - `diagnostic-redaction`
 - `disaster-recovery-policy`
 - `distribution`
@@ -101,6 +103,7 @@
 - `support-consent`
 - `support-identity`
 - `telemetry-policy`
+- `themes`
 - `upgrades`
 
 ## Cross-cutting assessments
@@ -191,3 +194,4 @@
 - **Accessibility — 162-adoption-validation-improvement-roadmap:** The roadmap separates automated browser evidence from manual keyboard, visual-focus and screen-reader review.
 - **Accessibility — 172-application-role-grid-registration:** Application role labels remain localized, and views can mirror policy results through a shared helper without replacing server-side authorization.
 - **Accessibility — 174-application-layer-phase-3-certification:** Certification verifies that policy results are available to views while preserving mandatory controller authorization.
+- **Accessibility — 176-design-token-integrity:** Light and Dark remain the only public themes, and token substitution remains subject to contrast and visual certification.

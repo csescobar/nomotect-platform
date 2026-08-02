@@ -44,6 +44,7 @@ Required release impact: `minor`.
 - Add sealed application-owned role and authorized Grid Engine registration surfaces. (`172-application-role-grid-registration`)
 - Add bounded application-owned extension packages and a continuously tested sample lifecycle. (`173-application-extension-sample`)
 - Certify the complete Phase 3 application-layer adoption boundary with deterministic integrated evidence. (`174-application-layer-phase-3-certification`)
+- Enforce semantic token consumption and formalize Phase 4 theme-substitution certification. (`176-design-token-integrity`)
 
 ### Fixed
 
