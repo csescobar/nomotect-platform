@@ -311,8 +311,7 @@ a.button--primary:visited { color: var(--color-on-primary); }
   .showcase__section { padding: var(--space-md); }
   .showcase__typo-row { align-items: flex-start; flex-direction: column; gap: var(--space-xs); }
   .showcase__typo-label { width: auto; }
-  .grid-engine-table { min-width: 38rem; }
-  .responsive-data-table { display: block; min-width: 0; }
+  .grid-engine-table.responsive-data-table { display: block; min-width: 0; }
   .responsive-data-table thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
   .responsive-data-table tbody, .responsive-data-table tr, .responsive-data-table td { display: block; }
   .responsive-data-table tbody { padding: var(--space-sm); }
