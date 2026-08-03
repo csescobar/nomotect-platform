@@ -112,7 +112,7 @@ module Installation
     def complete_installation_record!(user, platform_role, organization, membership)
       record = InstallationRecord.where(environment: Rails.env).order(id: :desc).first || InstallationRecord.new(environment: Rails.env)
       record.contract_version = 1
-      record.schema_version ||= ActiveRecord::MigrationContext.new(Rails.root.join("db/migrate"), Connection.connection.schema_migration).current_version.to_s
+      record.schema_version ||= current_schema_version
       record.status = "completed"
       record.metadata = {
         platform_admin_user_id: user.id,
@@ -121,6 +121,11 @@ module Installation
         initial_owner_membership_id: membership.id
       }
       record.save!
+    end
+
+    def current_schema_version
+      schema_migration = ActiveRecord::SchemaMigration.new(Connection.connection_pool)
+      ActiveRecord::MigrationContext.new(Rails.root.join("db/migrate"), schema_migration).current_version.to_s
     end
   end
 end

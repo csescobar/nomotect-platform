@@ -1,0 +1,22 @@
+schema_version: 1
+id: 180-fix-platform-owner-schema-version
+category: fix
+summary: Read the installed schema version through the Rails 8.1 connection-pool migration context.
+release_impact: patch
+contracts:
+  - installation
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
