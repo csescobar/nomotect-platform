@@ -33,6 +33,7 @@ input, select { width: 100%; min-height: var(--control-height); padding: var(--s
 .button--danger:hover { background: var(--color-danger-hover); }
 .button--ghost { background: transparent; color: var(--color-primary); }
 .button--ghost:hover { background: var(--color-surface-subtle); }
+a.button--primary:visited { color: var(--color-on-primary); }
 .button[disabled], .button[aria-disabled="true"] { cursor: not-allowed; opacity: 0.55; }
 
 /* Flash / Toasts */
