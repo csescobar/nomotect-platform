@@ -57,6 +57,7 @@ Required release impact: `minor`.
 - Refine mobile data, form, detail and destructive-action components and apply contextual Grid Engine formatting. (`182-mobile-data-components`)
 - Preserve semantic button contrast when button links have been visited. (`183-fix-visited-button-contrast`)
 - Remove repeated stylesheet preload headers from Turbo-rendered layouts. (`184-remove-css-preload-warnings`)
+- Render Grid Engine tables with localized cell metadata for responsive mobile layouts. (`185-responsive-grid-rendering`)
 
 ### Security
 

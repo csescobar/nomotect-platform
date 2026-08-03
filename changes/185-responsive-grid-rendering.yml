@@ -1,0 +1,25 @@
+schema_version: 1
+id: 185-responsive-grid-rendering
+category: fix
+summary: Render Grid Engine tables with localized cell metadata for responsive mobile layouts.
+release_impact: patch
+contracts:
+  - accessibility
+  - design_system
+  - grid_engine
+  - localization
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: This rendering-only change does not alter grid authorization, tenant scoping, query validation or export behavior.
+privacy:
+  impact: reviewed
+  notes: This rendering-only change does not collect, persist or disclose user data.
+accessibility:
+  impact: reviewed
+  notes: Existing table headers remain available to assistive technology while localized data labels improve mobile presentation.

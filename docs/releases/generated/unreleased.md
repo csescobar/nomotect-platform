@@ -56,6 +56,7 @@
 - Refine mobile data, form, detail and destructive-action components and apply contextual Grid Engine formatting. (`182-mobile-data-components`)
 - Preserve semantic button contrast when button links have been visited. (`183-fix-visited-button-contrast`)
 - Remove repeated stylesheet preload headers from Turbo-rendered layouts. (`184-remove-css-preload-warnings`)
+- Render Grid Engine tables with localized cell metadata for responsive mobile layouts. (`185-responsive-grid-rendering`)
 
 ### Security
 
@@ -170,6 +171,7 @@
 - **Security — 182-mobile-data-components:** Destructive actions retain the existing authorization and confirmation boundaries while receiving a distinct visual container.
 - **Security — 183-fix-visited-button-contrast:** This stylesheet-only fix does not alter authorization, navigation targets or destructive-action behavior.
 - **Security — 184-remove-css-preload-warnings:** This layout metadata change does not alter request authorization, session handling or asset contents.
+- **Security — 185-responsive-grid-rendering:** This rendering-only change does not alter grid authorization, tenant scoping, query validation or export behavior.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -207,6 +209,7 @@
 - **Privacy — 182-mobile-data-components:** Responsive customer records present the same authorized fields without introducing new collection, persistence or disclosure.
 - **Privacy — 183-fix-visited-button-contrast:** This stylesheet-only fix does not collect, persist or disclose user data.
 - **Privacy — 184-remove-css-preload-warnings:** This layout metadata change does not collect, persist or disclose user data.
+- **Privacy — 185-responsive-grid-rendering:** This rendering-only change does not collect, persist or disclose user data.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.
@@ -223,3 +226,4 @@
 - **Accessibility — 182-mobile-data-components:** Mobile records expose visible field labels, danger zones are labelled sections, empty audit history has descriptive text and form controls reuse accessible field components.
 - **Accessibility — 183-fix-visited-button-contrast:** Visited links that are styled as buttons retain each variant's intended foreground contrast.
 - **Accessibility — 184-remove-css-preload-warnings:** Stylesheets continue to load normally; only the redundant HTTP preload hint is removed.
+- **Accessibility — 185-responsive-grid-rendering:** Existing table headers remain available to assistive technology while localized data labels improve mobile presentation.

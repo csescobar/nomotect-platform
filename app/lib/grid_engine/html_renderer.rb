@@ -12,7 +12,7 @@ module GridEngine
 
     def call
       tag.div(class: "grid-engine-table-wrap", tabindex: 0) do
-        tag.table(class: "grid-engine-table") do
+        tag.table(class: "grid-engine-table responsive-data-table") do
           safe_join([
             tag.thead { tag.tr { safe_join(visible_columns.map { |column| tag.th(label_for(column), scope: "col") }) } },
             tag.tbody { safe_join(@records.map { |record| row(record) }) }
@@ -28,7 +28,7 @@ module GridEngine
         safe_join(visible_columns.map do |column|
           value = record.public_send(column.attribute)
           formatted = value.nil? ? "" : Types.registry.fetch(column.type).format(value, locale: @locale)
-          tag.td(formatted)
+          tag.td(formatted, data: { label: label_for(column) })
         end)
       end
     end
