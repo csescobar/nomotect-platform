@@ -8,9 +8,9 @@ module GridEngine
         @entries = {}
         @sealed = false
         register("organizations", definition: Definition.new(key: :organizations, model_class: Organization) do
-          column :name, type: :string, label: I18n.t("grid_engine.organizations.columns.name")
-          column :slug, type: :string, label: I18n.t("grid_engine.organizations.columns.slug")
-          column :created_at, type: :datetime, label: I18n.t("grid_engine.organizations.columns.created_at")
+          column :name, type: :string
+          column :slug, type: :string
+          column :created_at, type: :datetime
           sort :name
         end, scope: ->(user:, **) { user.organizations.distinct })
       end

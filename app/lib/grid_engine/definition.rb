@@ -34,6 +34,10 @@ module GridEngine
       @columns.fetch(key.to_s) { raise KeyError, "Unknown grid column: #{key}" }
     end
 
+    def label_for(column, locale: I18n.locale)
+      column.label.presence || I18n.t("grid_engine.#{key}.columns.#{column.key}", locale: locale, default: column.key.humanize)
+    end
+
     private
 
     def freeze_definition

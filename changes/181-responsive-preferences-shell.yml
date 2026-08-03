@@ -1,0 +1,24 @@
+schema_version: 1
+id: 181-responsive-preferences-shell
+category: fix
+summary: Move personal display preferences into settings and make the application shell and data surfaces responsive.
+release_impact: patch
+contracts:
+  - accessibility
+  - design_system
+  - grid_engine
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Preferences remain scoped to the authenticated user or local device, and the account menu preserves existing session controls.
+privacy:
+  impact: reviewed
+  notes: The compact header no longer exposes the full account identifier on mobile viewports.
+accessibility:
+  impact: reviewed
+  notes: The mobile drawer provides labelled controls, escape-key closure, a backdrop, focus return and horizontal table containment.

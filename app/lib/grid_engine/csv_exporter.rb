@@ -12,7 +12,7 @@ module GridEngine
     def call(scope, columns: nil)
       selected = selected_columns(columns)
       CSV.generate(headers: true) do |csv|
-        csv << selected.map { |column| column.label || column.key.humanize }
+        csv << selected.map { |column| @definition.label_for(column, locale: @locale) }
         scope.limit(MAX_ROWS).find_each do |record|
           csv << selected.map { |column| format(record.public_send(column.attribute), column) }
         end

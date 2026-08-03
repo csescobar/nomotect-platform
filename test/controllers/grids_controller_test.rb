@@ -35,6 +35,24 @@ class GridsControllerTest < ActionDispatch::IntegrationTest
     assert_not_includes response.body, @hidden.name
   end
 
+  test "resolves column labels in the current request locale" do
+    @user.update!(locale: "pt-BR")
+    get grid_path("organizations")
+
+    assert_response :success
+    assert_select "th", text: "Nome"
+    assert_select "th", text: "Identificador"
+    assert_select "body", text: /Translation missing/, count: 0
+  end
+
+  test "exports localized column labels" do
+    @user.update!(locale: "pt-BR")
+    get grid_path("organizations", format: :csv)
+
+    assert_response :success
+    assert_includes response.body, "Nome,Identificador,Criada em"
+  end
+
   test "rejects unknown columns" do
     get grid_path("organizations"), params: {
       filters: [ { column: "password_digest", operator: "equals", value: "secret" } ]

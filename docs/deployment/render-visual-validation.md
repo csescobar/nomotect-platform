@@ -67,11 +67,13 @@ records instead of creating duplicates.
 After sign-in, review:
 
 - `/component_showcase` for isolated shared components;
+- `/preferences` for account-level theme and language controls;
 - `/organizations/:organization_id/customers` for CRUD composition;
 - `/grids/customers` for the default Grid Engine composition;
 - `/marketing` for public-page token coverage;
-- the application shell, locale switcher and Light/Dark selector around those
-  surfaces.
+- the compact account menu and responsive navigation drawer around those
+  surfaces;
+- Light and Dark rendering at desktop and mobile viewport widths.
 
 The exact organization identifier is visible in the post-login navigation.
 

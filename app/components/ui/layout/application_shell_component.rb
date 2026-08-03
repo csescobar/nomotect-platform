@@ -28,13 +28,11 @@ module Ui
       def header_markup
         tag.header(class: "application-shell__header") do
           safe_join([
-            tag.button(I18n.t("layout.open_navigation"), type: "button", class: "navigation-toggle", aria: { expanded: false, controls: "application-sidebar" }, data: { navigation_drawer_target: "toggle", action: "navigation-drawer#toggle" }),
+            tag.button("☰", type: "button", class: "navigation-toggle", aria: { label: I18n.t("layout.open_navigation"), expanded: false, controls: "application-sidebar" }, data: { navigation_drawer_target: "toggle", action: "navigation-drawer#toggle" }),
             tag.span(helpers.platform_brand_tag(css_class: "application-shell"), class: "application-shell__brand"),
             tag.div(class: "application-shell__header-actions") do
               safe_join([
-                render(Ui::ThemeSwitcherComponent.new),
-                account_markup,
-                @account_actions
+                account_markup
               ].compact)
             end
           ])
@@ -42,12 +40,15 @@ module Ui
       end
 
       def sidebar_markup
-        tag.aside(id: "application-sidebar", class: "application-shell__sidebar", data: { navigation_drawer_target: "drawer" }) do
-          safe_join([
-            tag.button(I18n.t("layout.close_navigation"), type: "button", class: "navigation-close", data: { action: "navigation-drawer#close" }),
-            render(NavigationComponent.new(items: @navigation_items, label: I18n.t("layout.primary_navigation")))
-          ])
-        end
+        safe_join([
+          tag.aside(id: "application-sidebar", class: "application-shell__sidebar", data: { navigation_drawer_target: "drawer" }) do
+            safe_join([
+              tag.button("×", type: "button", class: "navigation-close", aria: { label: I18n.t("layout.close_navigation") }, data: { action: "navigation-drawer#close" }),
+              render(NavigationComponent.new(items: @navigation_items, label: I18n.t("layout.primary_navigation")))
+            ])
+          end,
+          tag.button("", type: "button", class: "navigation-backdrop", aria: { label: I18n.t("layout.close_navigation") }, data: { navigation_drawer_target: "backdrop", action: "navigation-drawer#close" }, hidden: true)
+        ])
       end
 
       def main_markup
@@ -64,7 +65,17 @@ module Ui
         return unless @current_user
 
         label = @current_user.respond_to?(:email_address) ? @current_user.email_address : @current_user.to_s
-        tag.span(label, class: "application-shell__account", aria: { label: I18n.t("layout.account") })
+        tag.details(class: "account-menu") do
+          safe_join([
+            tag.summary(class: "account-menu__summary", aria: { label: I18n.t("layout.account") }) do
+              safe_join([
+                tag.span(label.first.upcase, class: "account-menu__avatar", aria: { hidden: true }),
+                tag.span(label, class: "application-shell__account")
+              ])
+            end,
+            tag.div(@account_actions, class: "account-menu__panel")
+          ])
+        end
       end
     end
   end

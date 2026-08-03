@@ -10,3 +10,13 @@ pt-BR:
     organizations: Organizações
     grid_engine: Motor de grid
     close_notification: Fechar notificação
+    component_showcase: Mostruário de componentes
+  preferences:
+    title: Configurações
+    description: Gerencie suas preferências pessoais de aparência e região.
+    appearance:
+      title: Aparência
+      description: Escolha o tema usado neste dispositivo.
+    regional:
+      title: Idioma e região
+      description: Escolha o idioma utilizado pela sua conta.
