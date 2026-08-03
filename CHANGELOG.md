@@ -206,4 +206,3 @@ restrict theme selection to explicit light and dark modes.
 ## 0.8.0
 
 - Completed the Epic 8 AI Platform and Repository Intelligence baseline.
-
