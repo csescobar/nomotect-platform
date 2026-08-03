@@ -230,4 +230,3 @@
 - **Accessibility — 183-fix-visited-button-contrast:** Visited links that are styled as buttons retain each variant's intended foreground contrast.
 - **Accessibility — 184-remove-css-preload-warnings:** Stylesheets continue to load normally; only the redundant HTTP preload hint is removed.
 - **Accessibility — 185-responsive-grid-rendering:** Existing table headers remain available to assistive technology while localized data labels improve mobile presentation.
-- **Accessibility — 186-align-application-starter-push-filter:** This CI scheduling change does not alter user-facing accessibility behavior.

@@ -20,5 +20,5 @@ privacy:
   impact: reviewed
   notes: This workflow trigger change does not collect, persist or disclose user data.
 accessibility:
-  impact: not_applicable
-  notes: This CI scheduling change does not alter user-facing accessibility behavior.
+  impact: none
+  notes:
