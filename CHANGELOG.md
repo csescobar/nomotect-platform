@@ -78,6 +78,7 @@ Required release impact: `minor`.
 - Define a standalone improvement roadmap from independent adoption-pilot findings. (`162-adoption-validation-improvement-roadmap`)
 - Align clean-starter setup, Grid Engine, notification and Repository Intelligence onboarding guidance. (`166-clean-starter-onboarding`)
 - Define the application-owned source boundary and distinguish product development from platform contributions. (`170-application-layer-boundary`)
+- Define the Phase 4B Grid Engine UX baseline and acceptance matrix. (`187-phase4b-grid-ux-baseline`)
 
 ## 0.9.0
 
@@ -205,3 +206,4 @@ restrict theme selection to explicit light and dark modes.
 ## 0.8.0
 
 - Completed the Epic 8 AI Platform and Repository Intelligence baseline.
+

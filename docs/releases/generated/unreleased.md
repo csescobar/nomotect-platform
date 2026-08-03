@@ -77,6 +77,7 @@
 - Define a standalone improvement roadmap from independent adoption-pilot findings. (`162-adoption-validation-improvement-roadmap`)
 - Align clean-starter setup, Grid Engine, notification and Repository Intelligence onboarding guidance. (`166-clean-starter-onboarding`)
 - Define the application-owned source boundary and distinguish product development from platform contributions. (`170-application-layer-boundary`)
+- Define the Phase 4B Grid Engine UX baseline and acceptance matrix. (`187-phase4b-grid-ux-baseline`)
 
 ## Affected contracts
 
@@ -231,3 +232,4 @@
 - **Accessibility — 183-fix-visited-button-contrast:** Visited links that are styled as buttons retain each variant's intended foreground contrast.
 - **Accessibility — 184-remove-css-preload-warnings:** Stylesheets continue to load normally; only the redundant HTTP preload hint is removed.
 - **Accessibility — 185-responsive-grid-rendering:** Existing table headers remain available to assistive technology while localized data labels improve mobile presentation.
+
