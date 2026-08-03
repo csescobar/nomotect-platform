@@ -1,0 +1,23 @@
+schema_version: 1
+id: 184-remove-css-preload-warnings
+category: fix
+summary: Remove repeated stylesheet preload headers from Turbo-rendered layouts.
+release_impact: patch
+contracts:
+  - accessibility
+  - design_system
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: This layout metadata change does not alter request authorization, session handling or asset contents.
+privacy:
+  impact: reviewed
+  notes: This layout metadata change does not collect, persist or disclose user data.
+accessibility:
+  impact: reviewed
+  notes: Stylesheets continue to load normally; only the redundant HTTP preload hint is removed.
