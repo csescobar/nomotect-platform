@@ -50,6 +50,7 @@
 
 - Bind Phase 3 certification to real commits, loaded registration files and derived protected-core changes. (`175-fix-phase-3-certification-evidence`)
 - Remove the paid custom shutdown delay from the free Render validation profile. (`178-fix-free-render-shutdown`)
+- Use the Rails DATABASE_URL connection when preparing the Render visual-validation owner. (`179-fix-render-validation-database`)
 
 ### Security
 
@@ -90,6 +91,7 @@
 - `epic-9-certification`
 - `extensions`
 - `grid_engine`
+- `installation`
 - `multi_tenant`
 - `operational-backup-manifest`
 - `operational-health-snapshot`
@@ -156,6 +158,7 @@
 - **Security — 174-application-layer-phase-3-certification:** Certification rejects protected-role replacement, unscoped grids, missing bounded extension evidence and non-canonical source commits.
 - **Security — 175-fix-phase-3-certification-evidence:** Certification now verifies commit availability, records the actual diff boundary and fails when fixed application registration files were not loaded.
 - **Security — 177-free-render-visual-validation:** Reviewer credentials remain operator-supplied secrets, and validation data preparation fails closed outside the explicit profile.
+- **Security — 179-fix-render-validation-database:** The validation profile continues to require operator-supplied credentials and does not persist database secrets to an installer file.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
