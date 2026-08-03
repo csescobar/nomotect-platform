@@ -1,0 +1,23 @@
+schema_version: 1
+id: 179-fix-render-validation-database
+category: fix
+summary: Use the Rails DATABASE_URL connection when preparing the Render visual-validation owner.
+release_impact: patch
+contracts:
+  - deployment
+  - installation
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: The validation profile continues to require operator-supplied credentials and does not persist database secrets to an installer file.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

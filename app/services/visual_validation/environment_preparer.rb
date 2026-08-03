@@ -2,6 +2,12 @@
 
 module VisualValidation
   class EnvironmentPreparer
+    class ActiveRecordDatabaseConfiguration
+      def to_h
+        ActiveRecord::Base.connection_db_config.configuration_hash
+      end
+    end
+
     CUSTOMERS = [
       [ "Aster Labs", "active" ],
       [ "Beacon Operations", "active" ],
@@ -17,8 +23,10 @@ module VisualValidation
       [ "Lumen Energy", "inactive" ]
     ].freeze
 
-    def initialize(owner_creator: Installation::PlatformOwnerCreator.new, environment: Rails.env.to_s)
-      @owner_creator = owner_creator
+    def initialize(owner_creator: nil, environment: Rails.env.to_s)
+      @owner_creator = owner_creator || Installation::PlatformOwnerCreator.new(
+        configuration: ActiveRecordDatabaseConfiguration.new
+      )
       @environment = environment.to_s
     end
 

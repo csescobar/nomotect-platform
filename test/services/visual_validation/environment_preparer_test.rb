@@ -61,6 +61,13 @@ module VisualValidation
       assert_equal "Visual-validation preparation is disabled", error.message
     end
 
+    test "uses the database connection already configured by Rails" do
+      configuration = EnvironmentPreparer::ActiveRecordDatabaseConfiguration.new.to_h
+
+      assert_equal ActiveRecord::Base.connection_db_config.configuration_hash, configuration
+      assert configuration[:database].present?
+    end
+
     private
 
     def paths

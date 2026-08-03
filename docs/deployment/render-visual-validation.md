@@ -54,7 +54,8 @@ environment and delete them with the Blueprint.
 1. fails unless `VISUAL_VALIDATION_ENABLED=true`;
 2. requires operator-supplied reviewer credentials;
 3. runs `rails db:prepare`;
-4. reconciles the reviewer, organization and deterministic customer records;
+4. reuses the Active Record connection established from `DATABASE_URL` and
+   reconciles the reviewer, organization and deterministic customer records;
 5. recreates completed installation state and validation appearance metadata;
 6. starts Puma.
 
