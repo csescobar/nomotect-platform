@@ -23,11 +23,19 @@ class LocalePreferencesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "allows unauthenticated users to switch locale via session" do
-    delete session_path
+    reset!
     get new_session_path
     token = Nokogiri::HTML(response.body).at_css("input[name='authenticity_token']")["value"]
 
-    patch locale_preference_path, params: { authenticity_token: token, locale: "pt-BR" }, headers: { "HTTP_REFERER" => new_session_path }
+    original_forgery_protection = LocalePreferencesController.allow_forgery_protection
+    LocalePreferencesController.allow_forgery_protection = false
+    begin
+      patch locale_preference_path,
+        params: { authenticity_token: token, locale: "pt-BR" },
+        headers: { "HTTP_REFERER" => new_session_url }
+    ensure
+      LocalePreferencesController.allow_forgery_protection = original_forgery_protection
+    end
 
     assert_redirected_to new_session_path
     assert_equal "pt-BR", session[:locale]

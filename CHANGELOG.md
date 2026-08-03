@@ -58,6 +58,7 @@ Required release impact: `minor`.
 - Preserve semantic button contrast when button links have been visited. (`183-fix-visited-button-contrast`)
 - Remove repeated stylesheet preload headers from Turbo-rendered layouts. (`184-remove-css-preload-warnings`)
 - Render Grid Engine tables with localized cell metadata for responsive mobile layouts. (`185-responsive-grid-rendering`)
+- Align Application Starter push triggers with its pull request path filter. (`186-align-application-starter-push-filter`)
 
 ### Security
 

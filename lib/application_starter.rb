@@ -56,7 +56,11 @@ module ApplicationStarter
 
     def included?(path) = @contract.fetch("include").any? { |pattern| match?(pattern, path) }
     def excluded?(path) = @contract.fetch("exclude").any? { |pattern| match?(pattern, path) }
-    def match?(pattern, path) = File.fnmatch?(pattern, path, File::FNM_PATHNAME | File::FNM_DOTMATCH)
+    def match?(pattern, path)
+      return path.start_with?(pattern.delete_suffix("**")) if pattern.end_with?("**")
+
+      File.fnmatch?(pattern, path, File::FNM_PATHNAME | File::FNM_DOTMATCH)
+    end
 
     def copy(relative, staging)
       destination = staging.join(relative)

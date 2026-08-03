@@ -1,0 +1,24 @@
+schema_version: 1
+id: 186-align-application-starter-push-filter
+category: fix
+summary: Align Application Starter push triggers with its pull request path filter.
+release_impact: patch
+contracts:
+  - releases
+  - distribution
+  - ci
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: This workflow trigger change does not alter starter contents, initialization behavior or authorization boundaries.
+privacy:
+  impact: reviewed
+  notes: This workflow trigger change does not collect, persist or disclose user data.
+accessibility:
+  impact: none
+  notes:

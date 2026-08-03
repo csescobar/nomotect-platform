@@ -7,7 +7,7 @@ class Ui::DangerZoneComponentTest < ViewComponent::TestCase
       title: "Danger zone",
       description: "This cannot be undone."
     ) do
-      tag.button("Delete", class: "button button--danger")
+      ApplicationController.helpers.tag.button("Delete", class: "button button--danger")
     end
 
     assert_selector "section.ui-danger-zone[aria-labelledby='record-danger-title']"
