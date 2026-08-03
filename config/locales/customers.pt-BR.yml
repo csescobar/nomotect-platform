@@ -29,12 +29,19 @@ pt-BR:
       inactive: "Inativo"
     actions:
       new: "Novo cliente"
+      view: "Ver clientes"
       save: "Salvar cliente"
       edit: "Editar cliente"
       delete: "Excluir cliente"
     audit:
       title: "Histórico de auditoria"
+      empty:
+        title: "Nenhum evento de auditoria"
+        description: "Os eventos de domínio deste cliente aparecerão aqui."
       events:
         customer_created: "Cliente criado"
         customer_updated: "Cliente atualizado"
         customer_deleted: "Cliente excluído"
+    danger_zone:
+      title: "Zona de perigo"
+      description: "A exclusão deste cliente é permanente e não pode ser desfeita."

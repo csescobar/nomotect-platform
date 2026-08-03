@@ -16,6 +16,7 @@ class GridsControllerTest < ActionDispatch::IntegrationTest
     assert_select "td", text: @visible.name
     assert_select "td", text: @hidden.name, count: 0
     assert_select "table.grid-engine-table"
+    assert_select "td", text: I18n.l(@visible.created_at, format: :short)
   end
 
   test "returns a Tabulator-compatible response" do
@@ -33,6 +34,7 @@ class GridsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_includes response.body, @visible.name
     assert_not_includes response.body, @hidden.name
+    assert_includes response.body, @visible.created_at.iso8601
   end
 
   test "resolves column labels in the current request locale" do

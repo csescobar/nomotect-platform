@@ -1,0 +1,25 @@
+schema_version: 1
+id: 182-mobile-data-components
+category: fix
+summary: Refine mobile data, form, detail and destructive-action components and apply contextual Grid Engine formatting.
+release_impact: patch
+contracts:
+  - accessibility
+  - design_system
+  - grid_engine
+  - localization
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Destructive actions retain the existing authorization and confirmation boundaries while receiving a distinct visual container.
+privacy:
+  impact: reviewed
+  notes: Responsive customer records present the same authorized fields without introducing new collection, persistence or disclosure.
+accessibility:
+  impact: reviewed
+  notes: Mobile records expose visible field labels, danger zones are labelled sections, empty audit history has descriptive text and form controls reuse accessible field components.

@@ -1,7 +1,7 @@
 <% content_for :title, @organization.name %>
 
 <%= render Ui::Layout::PageHeaderComponent.new(title: @organization.name, description: t("organizations.show.description")) do %>
-  <%= link_to t("customers.index.title", organization: @organization.name), organization_customers_path(@organization), class: "button button--primary" %>
+  <%= link_to t("customers.actions.view"), organization_customers_path(@organization), class: "button button--primary" %>
   <% if @membership.admin? %>
     <%= link_to t("organizations.actions.edit"), edit_organization_path(@organization), class: "button button--secondary" %>
   <% end %>
@@ -73,5 +73,7 @@
 <% end %>
 
 <% if @membership.owner? %>
-  <%= button_to t("organizations.actions.delete"), @organization, method: :delete, class: "button button--danger", data: { turbo_confirm: t("organizations.delete_confirmation") } %>
+  <%= render Ui::DangerZoneComponent.new(id: "organization-danger-zone", title: t("organizations.danger_zone.title"), description: t("organizations.danger_zone.description")) do %>
+    <%= button_to t("organizations.actions.delete"), @organization, method: :delete, class: "button button--danger", data: { turbo_confirm: t("organizations.delete_confirmation") } %>
+  <% end %>
 <% end %>

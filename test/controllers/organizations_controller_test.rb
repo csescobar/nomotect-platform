@@ -41,6 +41,17 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :forbidden
   end
 
+  test "organization page uses concise customer and danger-zone actions" do
+    organization = Organization.create!(name: "Acme")
+    organization.memberships.create!(user: @user, role: "owner")
+
+    get organization_path(organization)
+
+    assert_response :success
+    assert_select "a.button--primary", text: "View customers"
+    assert_select ".ui-danger-zone", text: /Delete organization/
+  end
+
   private
 
   def sign_in(user)

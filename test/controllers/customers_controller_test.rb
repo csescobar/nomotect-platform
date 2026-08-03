@@ -18,7 +18,31 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "a", text: "Ada"
-    assert_select ".grid-engine-table-wrap .ui-badge--success", text: "Active"
+    assert_select ".responsive-data-table .ui-badge--success", text: "Active"
+    assert_select "td[data-label='Name']", text: /Ada/
+    assert_select "td[data-label='Email']", text: "ada@example.com"
+  end
+
+  test "customer details use property, empty-state and status components" do
+    sign_in(@member)
+
+    get organization_customer_path(@organization, @customer)
+
+    assert_response :success
+    assert_select ".ui-property-list .ui-badge--success", text: "Active"
+    assert_select ".ui-empty-state", text: /No audit events yet/
+    assert_select ".ui-danger-zone", count: 0
+  end
+
+  test "owner sees a separate danger zone and tokenized textarea" do
+    sign_in(@owner)
+
+    get organization_customer_path(@organization, @customer)
+    assert_select ".ui-danger-zone", text: /Delete customer/
+
+    get edit_organization_customer_path(@organization, @customer)
+    assert_response :success
+    assert_select "textarea.ui-input#customer_notes"
   end
 
   test "owner creates a customer through domain operation" do
