@@ -12,12 +12,12 @@ class GridEngine::HtmlRendererTest < ActiveSupport::TestCase
     )
 
     fragment = Nokogiri::HTML.fragment(
-      GridEngine::HtmlRenderer.new(definition, [organization], locale: :"pt-BR").call.to_s
+      GridEngine::HtmlRenderer.new(definition, [ organization ], locale: :"pt-BR").call.to_s
     )
     table = fragment.at_css("table")
 
     assert_includes table["class"], "responsive-data-table"
-    assert_equal ["Nome", "Criada em"], table.css("tbody td").map { |cell| cell["data-label"] }
+    assert_equal [ "Nome", "Criada em" ], table.css("tbody td").map { |cell| cell["data-label"] }
     assert_equal "21/07/2026 18:30", table.css("tbody td").last.text
   end
 end

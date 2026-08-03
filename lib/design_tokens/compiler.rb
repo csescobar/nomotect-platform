@@ -131,7 +131,7 @@ module DesignTokens
     end
 
     def validate_semantic_names!(document)
-      keys = [document.fetch("base"), *document.fetch("themes").values].flat_map(&:keys)
+      keys = [ document.fetch("base"), *document.fetch("themes").values ].flat_map(&:keys)
       invalid = keys.select do |key|
         segments = key.split(/[.-]/)
         (segments & FORBIDDEN_COLOR_NAMES).any?
