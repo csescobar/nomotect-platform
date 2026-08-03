@@ -152,12 +152,12 @@ module ApplicationLayer
       end
 
       def commit_exists?(commit)
-        _output, status = Open3.capture2e("git", "-C", root.to_s, "cat-file", "-e", "#{commit}^{commit}")
-        status.success?
+        output, status = Open3.capture2e("git", "-C", root.to_s, "cat-file", "-t", commit)
+        status.success? && output.chomp == "commit"
       end
 
       def changed_paths(baseline, source)
-        output, status = Open3.capture2e("git", "-C", root.to_s, "diff", "--name-only", "#{baseline}..#{source}")
+        output, status = Open3.capture2e("git", "-C", root.to_s, "diff", "--name-only", baseline, source, "--")
         raise ArgumentError, "unable to compare certification commits" unless status.success?
 
         output.lines(chomp: true).reject(&:blank?).uniq.sort.freeze
