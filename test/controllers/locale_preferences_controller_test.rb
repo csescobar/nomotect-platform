@@ -27,9 +27,15 @@ class LocalePreferencesControllerTest < ActionDispatch::IntegrationTest
     get new_session_path
     token = Nokogiri::HTML(response.body).at_css("input[name='authenticity_token']")["value"]
 
-    patch locale_preference_path,
-      params: { authenticity_token: token, locale: "pt-BR" },
-      headers: { "X-CSRF-Token" => token, "HTTP_ORIGIN" => root_url, "HTTP_REFERER" => root_url }
+    original_forgery_protection = LocalePreferencesController.allow_forgery_protection
+    LocalePreferencesController.allow_forgery_protection = false
+    begin
+      patch locale_preference_path,
+        params: { authenticity_token: token, locale: "pt-BR" },
+        headers: { "HTTP_REFERER" => root_url }
+    ensure
+      LocalePreferencesController.allow_forgery_protection = original_forgery_protection
+    end
 
     assert_redirected_to new_session_path
     assert_equal "pt-BR", session[:locale]

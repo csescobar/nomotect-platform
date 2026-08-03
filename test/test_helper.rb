@@ -7,11 +7,7 @@ module TestMethodStubbing
     singleton = singleton_class
     direct = (singleton.instance_methods(false) + singleton.private_instance_methods(false) + singleton.protected_instance_methods(false)).include?(method_name)
     original = singleton.instance_method(method_name) if direct
-    implementation = if replacement.respond_to?(:call)
-      ->(*args, **kwargs, &block) { replacement.call(*args, **kwargs, &block) }
-    else
-      ->(*) { replacement }
-    end
+    implementation = replacement.respond_to?(:call) ? replacement : ->(*) { replacement }
     singleton.define_method(method_name, implementation)
     yield
   ensure
