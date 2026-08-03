@@ -32,7 +32,7 @@ class LocalePreferencesControllerTest < ActionDispatch::IntegrationTest
     begin
       patch locale_preference_path,
         params: { authenticity_token: token, locale: "pt-BR" },
-        headers: { "HTTP_REFERER" => root_url }
+        headers: { "HTTP_REFERER" => new_session_url }
     ensure
       LocalePreferencesController.allow_forgery_protection = original_forgery_protection
     end
