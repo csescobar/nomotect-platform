@@ -9,7 +9,7 @@
   <%= link_to t("grid_engine.actions.export"), grid_path(@definition.key, export_params.merge(format: :csv)), class: "button button--secondary" %>
 <% end %>
 
-<section class="showcase__section" aria-labelledby="grid-controls-heading">
+<section class="showcase__section grid-page-section" aria-labelledby="grid-controls-heading">
   <h2 id="grid-controls-heading"><%= t("grid_engine.controls.title") %></h2>
 
   <%= form_with url: grid_path(@definition.key), method: :get, data: { turbo_frame: "grid-results" }, html: { class: "showcase__form" } do %>
@@ -34,7 +34,7 @@
       <% @definition.columns.each_value do |column| %>
         <label class="ui-checkbox-field__label">
           <%= check_box_tag "columns[]", column.key, selected.include?(column.key), id: "column_#{column.key}", class: "ui-checkbox" %>
-          <span><%= column.label || column.key.humanize %></span>
+          <span><%= @definition.label_for(column) %></span>
         </label>
       <% end %>
     </fieldset>
@@ -43,7 +43,7 @@
   <% end %>
 </section>
 
-<section class="showcase__section" aria-labelledby="saved-views-heading">
+<section class="showcase__section grid-page-section" aria-labelledby="saved-views-heading">
   <h2 id="saved-views-heading"><%= t("grid_engine.saved_views.title") %></h2>
 
   <% if @saved_views.any? %>

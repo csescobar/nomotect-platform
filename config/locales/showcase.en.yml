@@ -10,7 +10,7 @@ en:
     empty_title: "No items yet"
     empty_description: "Create the first item to begin."
     empty_action: "Create item"
-    typography_desc: "The type scale uses two families — Manrope for headings, Inter for body — with tokens for every size and weight."
+    typography_desc: "The type scale uses Instrument Sans for headings and body copy, with IBM Plex Mono for code and token labels."
     colors_desc: "Semantic color tokens automatically switch between light and dark mode based on the active theme."
     spacing_desc: "Consistent spacing built from the token scale ensures visual rhythm across all components."
     sections:

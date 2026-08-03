@@ -7,7 +7,7 @@ module GridEngine
     def columns
       @definition.columns.values.map do |column|
         {
-          title: column.label || I18n.t("grid_engine.columns.#{column.key}", default: column.key.humanize),
+          title: @definition.label_for(column),
           field: column.key,
           visible: column.visible,
           headerSort: column.sortable,

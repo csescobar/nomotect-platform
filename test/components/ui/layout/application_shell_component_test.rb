@@ -26,7 +26,8 @@ class Ui::Layout::ApplicationShellComponentTest < ViewComponent::TestCase
     assert_selector ".app-navigation__children a", text: "Profile"
     assert_selector "nav[aria-label='Breadcrumbs'] [aria-current='page']", text: "Dashboard"
     assert_selector "h1.page-header__title", text: "Dashboard"
-    assert_selector ".application-shell__account", text: "person@example.com"
+    assert_selector "details.account-menu summary[aria-label='Account'] .application-shell__account", text: "person@example.com"
+    assert_selector ".account-menu__avatar", text: "P"
   end
 
   test "mobile toggle exposes drawer state and custom attributes are merged" do
@@ -37,5 +38,6 @@ class Ui::Layout::ApplicationShellComponentTest < ViewComponent::TestCase
 
     assert_selector ".application-shell.custom-shell[data-testid='shell'][data-controller='navigation-drawer']"
     assert_selector "button.navigation-toggle[aria-expanded='false'][aria-controls='application-sidebar']"
+    assert_selector "button.navigation-backdrop[data-navigation-drawer-target='backdrop'][hidden]"
   end
 end

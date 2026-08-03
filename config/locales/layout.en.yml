@@ -10,3 +10,13 @@ en:
     organizations: Organizations
     grid_engine: Grid engine
     close_notification: Close notification
+    component_showcase: Component showcase
+  preferences:
+    title: Settings
+    description: Manage your personal appearance and regional preferences.
+    appearance:
+      title: Appearance
+      description: Choose the theme used on this device.
+    regional:
+      title: Language and region
+      description: Choose the language used by your account.

@@ -18,6 +18,7 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "a", text: "Ada"
+    assert_select ".grid-engine-table-wrap .ui-badge--success", text: "Active"
   end
 
   test "owner creates a customer through domain operation" do

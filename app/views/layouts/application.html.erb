@@ -26,8 +26,8 @@
         { label: t("layout.component_showcase"), href: component_showcase_path, active: current_page?(component_showcase_path) }
       ] %>
       <% account_actions = capture do %>
-        <%= render Ui::LocaleSwitcherComponent.new(current_locale: I18n.locale, action: locale_preference_path) %>
-        <%= button_to t("authentication.sign_out"), session_path, method: :delete, class: "button button--secondary" %>
+        <%= link_to t("preferences.title"), preferences_path, class: "account-menu__link" %>
+        <%= button_to t("authentication.sign_out"), session_path, method: :delete, class: "account-menu__sign-out" %>
       <% end %>
 
       <%= render Ui::Layout::ApplicationShellComponent.new(

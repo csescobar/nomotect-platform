@@ -15,7 +15,7 @@
           <tr>
             <td><%= link_to customer.name, [ @organization, customer ] %></td>
             <td><%= customer.email_address %></td>
-            <td><%= t("customers.statuses.#{customer.status}") %></td>
+            <td><span class="ui-badge ui-badge--small <%= customer.status == "active" ? "ui-badge--success" : "" %>"><%= t("customers.statuses.#{customer.status}") %></span></td>
           </tr>
         <% end %>
       </tbody>

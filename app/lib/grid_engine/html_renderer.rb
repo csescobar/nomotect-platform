@@ -41,7 +41,7 @@ module GridEngine
     end
 
     def label_for(column)
-      column.label || I18n.t("grid_engine.columns.#{column.key}", default: column.key.humanize)
+      @definition.label_for(column, locale: @locale)
     end
   end
 end
