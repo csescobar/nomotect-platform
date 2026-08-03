@@ -83,6 +83,7 @@
 - `accessibility`
 - `application_layer`
 - `architecture`
+- `ci`
 - `commercial-readiness`
 - `commercial-readiness-certification`
 - `community-edition`
