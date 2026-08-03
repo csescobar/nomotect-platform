@@ -50,9 +50,7 @@ Currently registered types:
 - date
 - datetime
 
-`email`, `money`, `percentage`, `enum`, `uuid`, `relation` and `actions` are not
-registered types. Applications must use an existing type or add a reviewed
-registry extension before declaring one of those names.
+`email`, `money`, `percentage`, `enum`, `uuid`, `relation` and `actions` are not registered types. Applications must use an existing type or add a reviewed registry extension before declaring one of those names.
 
 Each type defines default operators, parser, formatter, sorting behavior and filter editor.
 

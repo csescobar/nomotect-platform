@@ -38,6 +38,6 @@ class Ui::Layout::ApplicationShellComponentTest < ViewComponent::TestCase
 
     assert_selector ".application-shell.custom-shell[data-testid='shell'][data-controller='navigation-drawer']"
     assert_selector "button.navigation-toggle[aria-expanded='false'][aria-controls='application-sidebar']"
-    assert_selector "button.navigation-backdrop[data-navigation-drawer-target='backdrop'][hidden]"
+    assert_selector "button.navigation-backdrop[data-navigation-drawer-target='backdrop'][hidden]", visible: :all
   end
 end

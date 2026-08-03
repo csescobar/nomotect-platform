@@ -23,7 +23,7 @@ class LocalePreferencesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "allows unauthenticated users to switch locale via session" do
-    delete session_path
+    reset!
     get new_session_path
     token = Nokogiri::HTML(response.body).at_css("input[name='authenticity_token']")["value"]
 
