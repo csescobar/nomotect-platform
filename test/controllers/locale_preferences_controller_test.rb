@@ -27,7 +27,7 @@ class LocalePreferencesControllerTest < ActionDispatch::IntegrationTest
     get new_session_path
     token = Nokogiri::HTML(response.body).at_css("input[name='authenticity_token']")["value"]
 
-    patch locale_preference_path, params: { authenticity_token: token, locale: "pt-BR" }, headers: { "HTTP_REFERER" => new_session_path }
+    patch locale_preference_path, params: { authenticity_token: token, locale: "pt-BR" }, headers: { "HTTP_REFERER" => new_session_url }
 
     assert_redirected_to new_session_path
     assert_equal "pt-BR", session[:locale]

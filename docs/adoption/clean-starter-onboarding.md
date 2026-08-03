@@ -47,5 +47,4 @@ validation reports drift. It is not necessary before every application command.
 | Initialization already completed | Do not rerun or delete adoption metadata; review the existing product identity |
 
 The controlled journey validates setup artifacts and documentation. It is not
-the independent Phase 8 adoption pilot. It is not the independent Phase 8
-adoption pilot, which remains a separate public-release exercise.
+the independent Phase 8 adoption pilot. It is not the independent Phase 8 adoption pilot, which remains a separate public-release exercise.
