@@ -1,0 +1,23 @@
+schema_version: 1
+id: 183-fix-visited-button-contrast
+category: fix
+summary: Preserve semantic button contrast when button links have been visited.
+release_impact: patch
+contracts:
+  - accessibility
+  - design_system
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: This stylesheet-only fix does not alter authorization, navigation targets or destructive-action behavior.
+privacy:
+  impact: reviewed
+  notes: This stylesheet-only fix does not collect, persist or disclose user data.
+accessibility:
+  impact: reviewed
+  notes: Visited links that are styled as buttons retain each variant's intended foreground contrast.

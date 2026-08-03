@@ -54,6 +54,7 @@
 - Read the installed schema version through the Rails 8.1 connection-pool migration context. (`180-fix-platform-owner-schema-version`)
 - Move personal display preferences into settings and make the application shell and data surfaces responsive. (`181-responsive-preferences-shell`)
 - Refine mobile data, form, detail and destructive-action components and apply contextual Grid Engine formatting. (`182-mobile-data-components`)
+- Preserve semantic button contrast when button links have been visited. (`183-fix-visited-button-contrast`)
 
 ### Security
 
@@ -166,6 +167,7 @@
 - **Security — 179-fix-render-validation-database:** The validation profile continues to require operator-supplied credentials and does not persist database secrets to an installer file.
 - **Security — 181-responsive-preferences-shell:** Preferences remain scoped to the authenticated user or local device, and the account menu preserves existing session controls.
 - **Security — 182-mobile-data-components:** Destructive actions retain the existing authorization and confirmation boundaries while receiving a distinct visual container.
+- **Security — 183-fix-visited-button-contrast:** This stylesheet-only fix does not alter authorization, navigation targets or destructive-action behavior.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -201,6 +203,7 @@
 - **Privacy — 177-free-render-visual-validation:** The profile uses deterministic example.com records and forbids production or personal data.
 - **Privacy — 181-responsive-preferences-shell:** The compact header no longer exposes the full account identifier on mobile viewports.
 - **Privacy — 182-mobile-data-components:** Responsive customer records present the same authorized fields without introducing new collection, persistence or disclosure.
+- **Privacy — 183-fix-visited-button-contrast:** This stylesheet-only fix does not collect, persist or disclose user data.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.
@@ -215,3 +218,4 @@
 - **Accessibility — 177-free-render-visual-validation:** The environment exposes Light/Dark and bilingual representative surfaces for manual visual and accessibility review.
 - **Accessibility — 181-responsive-preferences-shell:** The mobile drawer provides labelled controls, escape-key closure, a backdrop, focus return and horizontal table containment.
 - **Accessibility — 182-mobile-data-components:** Mobile records expose visible field labels, danger zones are labelled sections, empty audit history has descriptive text and form controls reuse accessible field components.
+- **Accessibility — 183-fix-visited-button-contrast:** Visited links that are styled as buttons retain each variant's intended foreground contrast.

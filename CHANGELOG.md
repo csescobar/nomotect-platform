@@ -55,6 +55,7 @@ Required release impact: `minor`.
 - Read the installed schema version through the Rails 8.1 connection-pool migration context. (`180-fix-platform-owner-schema-version`)
 - Move personal display preferences into settings and make the application shell and data surfaces responsive. (`181-responsive-preferences-shell`)
 - Refine mobile data, form, detail and destructive-action components and apply contextual Grid Engine formatting. (`182-mobile-data-components`)
+- Preserve semantic button contrast when button links have been visited. (`183-fix-visited-button-contrast`)
 
 ### Security
 
