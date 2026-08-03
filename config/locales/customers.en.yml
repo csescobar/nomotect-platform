@@ -29,12 +29,19 @@ en:
       inactive: "Inactive"
     actions:
       new: "New customer"
+      view: "View customers"
       save: "Save customer"
       edit: "Edit customer"
       delete: "Delete customer"
     audit:
       title: "Audit history"
+      empty:
+        title: "No audit events yet"
+        description: "Domain events for this customer will appear here."
       events:
         customer_created: "Customer created"
         customer_updated: "Customer updated"
         customer_deleted: "Customer deleted"
+    danger_zone:
+      title: "Danger zone"
+      description: "Deleting this customer is permanent and cannot be undone."

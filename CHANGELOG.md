@@ -54,6 +54,7 @@ Required release impact: `minor`.
 - Use the Rails DATABASE_URL connection when preparing the Render visual-validation owner. (`179-fix-render-validation-database`)
 - Read the installed schema version through the Rails 8.1 connection-pool migration context. (`180-fix-platform-owner-schema-version`)
 - Move personal display preferences into settings and make the application shell and data surfaces responsive. (`181-responsive-preferences-shell`)
+- Refine mobile data, form, detail and destructive-action components and apply contextual Grid Engine formatting. (`182-mobile-data-components`)
 
 ### Security
 

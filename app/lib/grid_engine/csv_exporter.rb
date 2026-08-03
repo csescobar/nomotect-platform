@@ -31,7 +31,7 @@ module GridEngine
     def format(value, column)
       return "" if value.nil?
 
-      Types.registry.fetch(column.type).format(value, locale: @locale)
+      Types.registry.fetch(column.type).format(value, locale: @locale, context: :machine)
     end
   end
 end

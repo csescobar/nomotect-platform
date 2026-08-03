@@ -73,6 +73,9 @@ After sign-in, review:
 - `/marketing` for public-page token coverage;
 - the compact account menu and responsive navigation drawer around those
   surfaces;
+- stacked customer records, tokenized form controls, detail property lists,
+  empty states and destructive-action danger zones at mobile widths;
+- compact localized grid dates on screen and stable ISO 8601 values in CSV;
 - Light and Dark rendering at desktop and mobile viewport widths.
 
 The exact organization identifier is visible in the post-login navigation.

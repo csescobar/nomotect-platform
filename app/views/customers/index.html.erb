@@ -8,14 +8,14 @@
 
 <% if @customers.any? %>
   <div class="grid-engine-table-wrap" tabindex="0">
-    <table class="grid-engine-table">
+    <table class="grid-engine-table responsive-data-table">
       <thead><tr><th scope="col"><%= t("customers.fields.name") %></th><th scope="col"><%= t("customers.fields.email") %></th><th scope="col"><%= t("customers.fields.status") %></th></tr></thead>
       <tbody>
         <% @customers.each do |customer| %>
           <tr>
-            <td><%= link_to customer.name, [ @organization, customer ] %></td>
-            <td><%= customer.email_address %></td>
-            <td><span class="ui-badge ui-badge--small <%= customer.status == "active" ? "ui-badge--success" : "" %>"><%= t("customers.statuses.#{customer.status}") %></span></td>
+            <td data-label="<%= t("customers.fields.name") %>"><%= link_to customer.name, [ @organization, customer ] %></td>
+            <td data-label="<%= t("customers.fields.email") %>"><%= customer.email_address %></td>
+            <td data-label="<%= t("customers.fields.status") %>"><span class="ui-badge ui-badge--small <%= customer.status == "active" ? "ui-badge--success" : "" %>"><%= t("customers.statuses.#{customer.status}") %></span></td>
           </tr>
         <% end %>
       </tbody>

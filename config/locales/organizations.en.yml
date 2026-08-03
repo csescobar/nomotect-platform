@@ -31,6 +31,9 @@ en:
       save: "Save organization"
       edit: "Edit organization"
       delete: "Delete organization"
+    danger_zone:
+      title: "Danger zone"
+      description: "Deleting this organization also removes its memberships and cannot be undone."
     roles:
       owner: "Owner"
       admin: "Administrator"

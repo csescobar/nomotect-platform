@@ -31,6 +31,9 @@ pt-BR:
       save: "Salvar organização"
       edit: "Editar organização"
       delete: "Excluir organização"
+    danger_zone:
+      title: "Zona de perigo"
+      description: "A exclusão desta organização também remove seus membros e não pode ser desfeita."
     roles:
       owner: "Proprietário"
       admin: "Administrador"
