@@ -45,6 +45,7 @@
 - Certify the complete Phase 3 application-layer adoption boundary with deterministic integrated evidence. (`174-application-layer-phase-3-certification`)
 - Enforce semantic token consumption and formalize Phase 4 theme-substitution certification. (`176-design-token-integrity`)
 - Add a disposable free Render profile with secure deterministic visual-validation data. (`177-free-render-visual-validation`)
+- Integrate Syncfusion EJ2 Data Grid engine with NomoTect Design Tokens. (`188-syncfusion-ej2-integration`)
 
 ### Fixed
 
@@ -81,6 +82,7 @@
 
 ## Affected contracts
 
+- `ADR-0015`
 - `accessibility`
 - `application_layer`
 - `architecture`
@@ -232,3 +234,4 @@
 - **Accessibility — 183-fix-visited-button-contrast:** Visited links that are styled as buttons retain each variant's intended foreground contrast.
 - **Accessibility — 184-remove-css-preload-warnings:** Stylesheets continue to load normally; only the redundant HTTP preload hint is removed.
 - **Accessibility — 185-responsive-grid-rendering:** Existing table headers remain available to assistive technology while localized data labels improve mobile presentation.
+- **Accessibility — 188-syncfusion-ej2-integration:** Enhanced EJ2 data grid keyboard navigation and ARIA attributes integrated with NomoTect Design Tokens.

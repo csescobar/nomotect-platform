@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "b2cdd69465dd80dd49a17f6e42133d5146c76126",
+  "repository_commit": "50bbc2ec9c98deaeaa2e338303507d6d621def24",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -2826,7 +2826,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "9b60872d025b3846a830fad20000e455211e1586615d518c48a79dd499f6495a"
+      "sha256": "4f99e69f8664fe31159227acdffa0c4aae8f2cd45e59d2c059fb21fad9190ce3"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
