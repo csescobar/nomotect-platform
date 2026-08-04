@@ -5,14 +5,17 @@
 ## Responsibilities
 
 - model: StoredFile
+- policy: StoredFile
 
 ## Source paths
 
 - `app/models/stored_file.rb`
+- `app/policies/stored_file_policy.rb`
 
 ## Relationships
 
-
+- `model:StoredFile` —TESTED_BY→ `test:Controllers::StoredFilesController`
+- `policy:StoredFile` —TESTED_BY→ `test:Controllers::StoredFilesController`
 
 ## Contract
 

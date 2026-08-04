@@ -1,0 +1,399 @@
+/*
+ * Syncfusion EJ2 theme — Fluent2 base + NomoTect Design Tokens Integration
+ *
+ * CSS files are extracted from the offline zip into vendor/assets/syncfusion/
+ * by bin/extract_syncfusion_assets. Propshaft serves them from that path.
+ */
+
+/* ── Core EJ2 base styles ─────────────────────────────────────────────────── */
+@import url("ej2-base/fluent2.css");
+
+/* ── Grid ─────────────────────────────────────────────────────────────────── */
+@import url("ej2-grids/fluent2.css");
+
+/* ── Inputs ───────────────────────────────────────────────────────────────── */
+@import url("ej2-inputs/fluent2.css");
+
+/* ── Dropdowns ────────────────────────────────────────────────────────────── */
+@import url("ej2-dropdowns/fluent2.css");
+
+/* ── Calendars ────────────────────────────────────────────────────────────── */
+@import url("ej2-calendars/fluent2.css");
+
+/* ── Buttons & SplitButtons ────────────────────────────────────────────────── */
+@import url("ej2-buttons/fluent2.css");
+@import url("ej2-splitbuttons/fluent2.css");
+
+/* ── Popups ───────────────────────────────────────────────────────────────── */
+@import url("ej2-popups/fluent2.css");
+
+/* ── Lists & Navigations & Notifications ───────────────────────────────────── */
+@import url("ej2-lists/fluent2.css");
+@import url("ej2-navigations/fluent2.css");
+@import url("ej2-notifications/fluent2.css");
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+ * NomoTect Design Tokens Integration
+ *
+ * All color, font, spacing, radius, and shadow values are mapped dynamically
+ * to NomoTect design tokens defined in app/assets/stylesheets/design_tokens.css.
+ * No hardcoded hex values or inline styles are used.
+ * ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Container shell */
+.ej2-grid-container {
+  width: 100%;
+  min-width: 0;
+  min-height: 200px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Base typography & box model */
+.e-grid,
+.e-grid .e-gridheader,
+.e-grid .e-headercell,
+.e-grid .e-rowcell,
+.e-grid .e-toolbar,
+.e-grid .e-pager,
+.e-excel-filter,
+.e-filter-popup,
+.e-dialog,
+.e-popup,
+.e-dropdownbase,
+.e-grid-popup {
+  font-family: var(--font-family-sans) !important;
+  box-sizing: border-box;
+}
+
+/* ── Grid Main Frame ───────────────────────────────────────────────────────── */
+.e-grid {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* ── Headers & Toolbar ─────────────────────────────────────────────────────── */
+.e-grid .e-gridheader,
+.e-grid .e-headercell,
+.e-grid .e-headercelldiv,
+.e-grid .e-columnheader,
+.e-grid .e-toolbar,
+.e-grid .e-toolbar-items,
+.e-grid .e-toolbar-item {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
+}
+
+.e-grid .e-headercell .e-headertext {
+  color: var(--color-text) !important;
+}
+
+/* Toolbar Search & Columns Button Containers */
+.e-grid .e-toolbar .e-search-input,
+.e-grid .e-toolbar .e-input-group,
+.e-grid .e-toolbar .e-btn,
+.e-grid .e-toolbar .e-tbar-btn {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: none !important;
+}
+
+/* Remove inner borders, outlines and background leaks on button text/icons */
+.e-grid .e-toolbar .e-tbar-btn-text,
+.e-grid .e-toolbar .e-btn-text,
+.e-grid .e-toolbar .e-btn-icon,
+.e-grid .e-toolbar .e-icon,
+.e-grid .e-toolbar .e-tbar-btn *,
+.e-grid .e-toolbar .e-btn * {
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: var(--color-text) !important;
+}
+
+.e-grid .e-toolbar .e-tbar-btn:hover,
+.e-grid .e-toolbar .e-btn:hover {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+}
+
+/* ── Tooltips ──────────────────────────────────────────────────────────────── */
+.e-tooltip-wrap,
+.e-grid-tooltip {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.e-tooltip-wrap .e-tip-content,
+.e-grid-tooltip .e-tip-content {
+  color: var(--color-text) !important;
+}
+
+/* ── Checkbox Styling (Matched to NomoTect Design Tokens & Showcase) ───────── */
+.e-checkbox-wrapper .e-frame,
+.e-css.e-checkbox-wrapper .e-frame {
+  border: 1px solid var(--color-border) !important;
+  background-color: var(--color-surface) !important;
+  border-radius: var(--radius-xs) !important;
+}
+
+/* Checked State: Fill with --color-primary and check icon in --color-on-primary (White) */
+.e-checkbox-wrapper .e-frame.e-check,
+.e-css.e-checkbox-wrapper .e-frame.e-check,
+.e-checkbox-wrapper input[type="checkbox"]:checked + .e-frame,
+.e-checkbox-wrapper .e-checkbox:checked + .e-frame {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+}
+
+.e-checkbox-wrapper .e-check::before,
+.e-css.e-checkbox-wrapper .e-check::before,
+.e-checkbox-wrapper .e-frame.e-check::before {
+  color: var(--color-on-primary) !important;
+}
+
+/* ── Sort Arrows & Filter Icons in Headers ────────────────────────────────── */
+.e-grid .e-headercell .e-sortfilter,
+.e-grid .e-headercell .e-ascending,
+.e-grid .e-headercell .e-descending,
+.e-grid .e-headercell .e-icon-ascending,
+.e-grid .e-headercell .e-icon-descending,
+.e-grid .e-headercell .e-rspin {
+  color: var(--color-primary) !important;
+}
+
+.e-grid .e-headercell .e-filtericon,
+.e-grid .e-headercell .e-icon-filter {
+  color: var(--color-text-muted) !important;
+}
+
+/* High Contrast Active Filtered Column Icon */
+.e-grid .e-headercell .e-filtered,
+.e-grid .e-headercell .e-icon-filter.e-filtered,
+.e-grid .e-headercell .e-filtericon.e-filtered {
+  color: var(--color-primary) !important;
+}
+
+/* ── Rows & Cells ──────────────────────────────────────────────────────────── */
+.e-grid .e-rowcell {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border-subtle) !important;
+}
+
+.e-grid .e-altrow .e-rowcell {
+  background-color: var(--color-surface-subtle) !important;
+}
+
+.e-grid .e-row:hover .e-rowcell {
+  background-color: var(--color-surface-subtle) !important;
+}
+
+.e-grid .e-row.e-selectionbackground .e-rowcell {
+  background-color: var(--color-accent-primary-subtle) !important;
+  color: var(--color-accent-primary) !important;
+}
+
+/* ── Pager Controls ────────────────────────────────────────────────────────── */
+.e-pager,
+.e-grid .e-pager,
+.e-pager .e-pagercontainer {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
+}
+
+.e-pager .e-link,
+.e-pager .e-numericitem,
+.e-pager .e-first,
+.e-pager .e-prev,
+.e-pager .e-next,
+.e-pager .e-last,
+.e-pager .e-firstpage,
+.e-pager .e-prevpage,
+.e-pager .e-nextpage,
+.e-pager .e-lastpage,
+.e-pager .e-firstpagedisabled,
+.e-pager .e-prevpagedisabled,
+.e-pager .e-nextpagedisabled,
+.e-pager .e-lastpagedisabled {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text-muted) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.e-pager .e-numericitem.e-active,
+.e-pager .e-currentitem {
+  background-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.e-pager .e-link:hover:not(.e-active) {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+}
+
+/* ── Universal Dialogs, Column Chooser & Filter Menu Popups ──────────────── */
+
+/* Outer Dialog Card & Popup Overlay */
+.e-dialog,
+.e-popup,
+.e-filter-popup,
+.e-excel-filter,
+.e-cc-popup,
+.e-colchooser,
+.e-ccdlg,
+.e-flmenu,
+.e-flquickmenu,
+.e-dlg-container,
+.e-dropdownbase,
+.e-grid-popup,
+.e-grid-popup .e-dialog,
+.e-grid-popup .e-dialog.e-flmenu,
+.e-grid-popup .e-dialog.e-checkboxfilter,
+.e-grid-popup .e-dialog.e-ccdlg,
+.e-grid .e-dialog.e-flmenu,
+.e-grid .e-dialog.e-checkboxfilter,
+.e-grid .e-dialog.e-ccdlg {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Dialog Headers, Titles, Content & Footers */
+.e-dialog .e-dlg-header-content,
+.e-dialog .e-dlg-header,
+.e-dialog .e-title,
+.e-dialog .e-content,
+.e-dialog .e-dlg-content,
+.e-dialog .e-footer-content,
+.e-filter-popup .e-footer-content,
+.e-grid .e-dialog .e-dlg-content,
+.e-grid-popup .e-dialog .e-dlg-content,
+.e-grid .e-ccdlg .e-dlg-content,
+.e-grid-popup .e-ccdlg .e-dlg-content,
+.e-flmenu-valuediv,
+.e-flmenu .e-flmenu-valuediv {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
+}
+
+/* Column Chooser List Containers, Checkboxes & High Contrast Labels */
+.e-cc-popup .e-cc-content,
+.e-cc-popup .e-cc-contentdiv,
+.e-cc-popup .e-cc-searchdiv,
+.e-cc-popup .e-list-parent,
+.e-cc-popup .e-list-item,
+.e-grid .e-ccdlg .e-cc-contentdiv,
+.e-grid-popup .e-ccdlg .e-cc-contentdiv,
+.e-grid .e-ccdlg .e-cc-searchdiv,
+.e-grid-popup .e-ccdlg .e-cc-searchdiv,
+.e-grid .e-ccdlg .e-list-parent,
+.e-grid-popup .e-ccdlg .e-list-parent,
+.e-grid .e-ccdlg .e-list-item,
+.e-grid-popup .e-ccdlg .e-list-item {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border-subtle) !important;
+}
+
+/* Column Chooser Label & Checkbox Text Colors */
+.e-cc-popup label,
+.e-cc-popup .e-label,
+.e-cc-popup span,
+.e-ccdlg label,
+.e-ccdlg .e-label,
+.e-ccdlg span,
+.e-list-parent .e-list-item label,
+.e-list-parent .e-list-item .e-label,
+.e-list-parent .e-list-item span,
+.e-checkbox-wrapper .e-label {
+  color: var(--color-text) !important;
+}
+
+/* Input Fields & Textboxes inside Dialogs/Popups/Toolbar */
+.e-input-group,
+.e-control.e-textbox,
+.e-search-input,
+.e-ddl,
+.e-filter-popup .e-input-group,
+.e-dialog .e-input-group,
+.e-ccdlg .e-input-group {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+input.e-input,
+.e-input-group input {
+  color: var(--color-text) !important;
+  background-color: transparent !important;
+}
+
+input::placeholder {
+  color: var(--color-text-subtle) !important;
+  opacity: 1 !important;
+}
+
+/* Icons & Input Group Icon Containers */
+.e-input-group-icon,
+.e-ddl .e-input-group-icon {
+  background-color: transparent !important;
+  color: var(--color-text-muted) !important;
+  border: none !important;
+}
+
+/* Dropdown List Items */
+.e-dropdownbase .e-list-item {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+}
+
+.e-dropdownbase .e-list-item.e-hover,
+.e-dropdownbase .e-list-item.e-item-focus {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+}
+
+/* Action Buttons in Popups & Dialogs */
+.e-btn,
+.e-dialog .e-btn,
+.e-filter-popup .e-btn {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.e-btn.e-primary,
+.e-dialog .e-btn.e-primary,
+.e-filter-popup .e-btn.e-primary {
+  background-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.e-btn.e-primary:hover,
+.e-dialog .e-btn.e-primary:hover {
+  background-color: var(--color-primary-hover) !important;
+}

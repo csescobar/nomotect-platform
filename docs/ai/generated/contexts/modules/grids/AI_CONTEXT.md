@@ -12,6 +12,7 @@
 
 ## Relationships
 
+- `controller:Grids` —TESTED_BY→ `test:Controllers::GridsControllerSyncfusion`
 - `controller:Grids` —TESTED_BY→ `test:Controllers::GridsController`
 
 ## Contract

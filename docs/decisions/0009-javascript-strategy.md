@@ -17,3 +17,7 @@ Use Importmap, Turbo and Stimulus as the default JavaScript stack. Domain behavi
 - The default application does not require Node.js or a bundler.
 - JavaScript remains a replaceable presentation adapter.
 - A bundler may be introduced by an application when a documented dependency requires it.
+
+## Amendments
+
+- [ADR-0015](0015-syncfusion-ej2-ui-library.md) — Adopts Syncfusion EJ2 (native ESM) as a Stimulus-wired third-party UI adapter for enterprise grids, consistent with this strategy.

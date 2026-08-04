@@ -172,6 +172,16 @@
       }
     },
     {
+      "id": "component:Ui::DangerZone",
+      "type": "component",
+      "name": "Ui::DangerZone",
+      "path": "app/components/ui/danger_zone_component.rb",
+      "properties": {
+        "sha256": "2dae8c9ba478a94de3a5ac989d093f6699045ce37bf49dfdf50be2d90af9f0ce",
+        "source": "platform"
+      }
+    },
+    {
       "id": "component:Ui::Divider",
       "type": "component",
       "name": "Ui::Divider",
@@ -237,7 +247,7 @@
       "name": "Ui::Layout::ApplicationShell",
       "path": "app/components/ui/layout/application_shell_component.rb",
       "properties": {
-        "sha256": "0e0ed4bd35c0366b60e6733e8f5778e6e85047b5a843627fa476a388a37a7ef3",
+        "sha256": "a4700b6317350e6098bf81d2c2fd74a248d3962af140e00c90442642a737dd33",
         "source": "platform"
       }
     },
@@ -287,7 +297,7 @@
       "name": "Ui::ThemeSwitcher",
       "path": "app/components/ui/theme_switcher_component.rb",
       "properties": {
-        "sha256": "147d3196b96c422d747a0a4918e4094825072f4c32e06592fca28eda58beda38",
+        "sha256": "f65541d49907d201f696234b0bf8c55496446947202390b3d2b09e7bb46f38df",
         "source": "platform"
       }
     },
@@ -347,7 +357,7 @@
       "name": "Grids",
       "path": "app/controllers/grids_controller.rb",
       "properties": {
-        "sha256": "dd963d43679d8b53beb57428a4d68f028add6d349358f06e7b404ecedfe08f70",
+        "sha256": "8a475516ffd8babd2d3729ff3413cf0dab1afca3c02c0fdd36170b2205fe1297",
         "source": "platform"
       }
     },
@@ -427,7 +437,7 @@
       "name": "OrganizationInvitations",
       "path": "app/controllers/organization_invitations_controller.rb",
       "properties": {
-        "sha256": "8c45b22a2bdf2717ce4d697e25daa2f052638810e7ef110b50a3a945d6b01dec",
+        "sha256": "336d26aa4061316fce65679855ff8654d694a3314645c074d28d73e03ac214b8",
         "source": "platform"
       }
     },
@@ -452,6 +462,16 @@
       }
     },
     {
+      "id": "controller:Preferences",
+      "type": "controller",
+      "name": "Preferences",
+      "path": "app/controllers/preferences_controller.rb",
+      "properties": {
+        "sha256": "961e97f3a474689a89a467d5dae00746c6540283597c8f47a67f03965bd3f080",
+        "source": "platform"
+      }
+    },
+    {
       "id": "controller:PrivacyRequests",
       "type": "controller",
       "name": "PrivacyRequests",
@@ -472,12 +492,42 @@
       }
     },
     {
+      "id": "controller:StoredFiles",
+      "type": "controller",
+      "name": "StoredFiles",
+      "path": "app/controllers/stored_files_controller.rb",
+      "properties": {
+        "sha256": "1d73826c77f6a6bc5adc7688d38cb01ada1d54bfd2dca397c1814ffb0fc9b5b6",
+        "source": "platform"
+      }
+    },
+    {
       "id": "controller:TenantSelections",
       "type": "controller",
       "name": "TenantSelections",
       "path": "app/controllers/tenant_selections_controller.rb",
       "properties": {
         "sha256": "c1876a4d7f7437f395e4ce2dfa5fe99fb1d5dff56d670c856ad6d203c9eac83d",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Adoption::Clean-starter-onboarding",
+      "type": "document",
+      "name": "Adoption::Clean-starter-onboarding",
+      "path": "docs/adoption/clean-starter-onboarding.md",
+      "properties": {
+        "sha256": "a5c0f00c8da42d7d6bed53fb3f14471165dd25ae52698ef3284f8fe7144580e2",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Adoption::Phase-4b-grid-ux-baseline",
+      "type": "document",
+      "name": "Adoption::Phase-4b-grid-ux-baseline",
+      "path": "docs/adoption/phase-4b-grid-ux-baseline.md",
+      "properties": {
+        "sha256": "ba6686b4b02831d43ce1513454361770b835090bb1843304eb7e41fa2adb916d",
         "source": "platform"
       }
     },
@@ -507,7 +557,7 @@
       "name": "Ai::Contribution-boundaries",
       "path": "docs/ai/contribution-boundaries.md",
       "properties": {
-        "sha256": "aca24294f5229add44e127421241028eb7e88c7def5bf1573a2dda25d6793608",
+        "sha256": "e51c52e8b658f685b80ed36cc2086e6f5a71a9cd705c7d00e0ea1604fe64b376",
         "source": "platform"
       }
     },
@@ -542,6 +592,16 @@
       }
     },
     {
+      "id": "document:Ai::Mcp-setup",
+      "type": "document",
+      "name": "Ai::Mcp-setup",
+      "path": "docs/ai/mcp-setup.md",
+      "properties": {
+        "sha256": "b4f3c47d06e82eb06bcc6c0d09b2e9b3c2dd910b86ac3d0d81bef39364486a4a",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Ai::Module-contract-specification",
       "type": "document",
       "name": "Ai::Module-contract-specification",
@@ -557,7 +617,7 @@
       "name": "Ai::Readme",
       "path": "docs/ai/README.md",
       "properties": {
-        "sha256": "7f0f0215aa354c342c1279eb9c0dcd73c94fe7ce0f9ac5d209e20dfaaeb79408",
+        "sha256": "3533b593e26a059a318a829fe68f57ac31b37223ecb8c4b6cf54bf99d86f52f2",
         "source": "platform"
       }
     },
@@ -597,7 +657,17 @@
       "name": "Architecture::Agents",
       "path": "docs/architecture/AGENTS.md",
       "properties": {
-        "sha256": "fe73c605eb91b39a0db4aa0def813eabdd78fac745e9947293742c63126617bf",
+        "sha256": "744151f82fc68ac1ff99e6d678d518614801cc47c3c4c86a624cbb16bea29941",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Architecture::Application-layer",
+      "type": "document",
+      "name": "Architecture::Application-layer",
+      "path": "docs/architecture/application-layer.md",
+      "properties": {
+        "sha256": "dd9dc0e756954b868c300fba22c434aec31858ec6bf12daca075dd9d197077ac",
         "source": "platform"
       }
     },
@@ -647,7 +717,7 @@
       "name": "Architecture::Decisions::0003-use-design-tokens",
       "path": "docs/architecture/decisions/0003-use-design-tokens.md",
       "properties": {
-        "sha256": "19d35e9cf66bc915e7dd3d7482c57388843734e17df990b65dd4094d368504b0",
+        "sha256": "f3edba2e0d22dc849a503bd7f4a479b8783353f050fced6fb0f13819656d8625",
         "source": "platform"
       }
     },
@@ -662,12 +732,42 @@
       }
     },
     {
+      "id": "document:Architecture::Decisions::0005-use-application-layer-boundary",
+      "type": "document",
+      "name": "Architecture::Decisions::0005-use-application-layer-boundary",
+      "path": "docs/architecture/decisions/0005-use-application-layer-boundary.md",
+      "properties": {
+        "sha256": "cb224d02b54e1f1442b0a1da8e4938de8bb2d1b3e006f89a4571615e6b2da2ec",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries",
+      "type": "document",
+      "name": "Architecture::Decisions::0006-seal-application-role-and-grid-registries",
+      "path": "docs/architecture/decisions/0006-seal-application-role-and-grid-registries.md",
+      "properties": {
+        "sha256": "901123018be7c39f8eb45bb463211d8def6960631139b43d45a8db531a0ca5bd",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Architecture::Decisions::0007-load-application-owned-extension-packages",
+      "type": "document",
+      "name": "Architecture::Decisions::0007-load-application-owned-extension-packages",
+      "path": "docs/architecture/decisions/0007-load-application-owned-extension-packages.md",
+      "properties": {
+        "sha256": "e2ad822fe1028ad45e696511b42ba73eb4c4c2214416208ba48d2fac52306bfd",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Architecture::Dependency-rules",
       "type": "document",
       "name": "Architecture::Dependency-rules",
       "path": "docs/architecture/dependency-rules.md",
       "properties": {
-        "sha256": "50783d99577d3787cda152aa8b57f636c283e92e890168234b25e11650bfb1f1",
+        "sha256": "19ad654b03e0be7a1e41b7abd48d00175a1a3f662d5784863e747cc5ff3c1514",
         "source": "platform"
       }
     },
@@ -717,7 +817,7 @@
       "name": "Architecture::Product-vision",
       "path": "docs/architecture/product-vision.md",
       "properties": {
-        "sha256": "5cf505c39134ac821ce82835cd30f24cfdb6d2325ef92c0ecc9b3eedd84c5d3d",
+        "sha256": "57aa73929985934886ddfcbc71bbb0dd7954285fdee4d4e843293c7df626b1d7",
         "source": "platform"
       }
     },
@@ -728,6 +828,66 @@
       "path": "docs/architecture/ubiquitous-language.md",
       "properties": {
         "sha256": "741b29421d9239532088f8c1106d776658ee3e881676e1ab990728e50e7eab9c",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Certifications::Epic-9",
+      "type": "document",
+      "name": "Certifications::Epic-9",
+      "path": "docs/certifications/epic-9.md",
+      "properties": {
+        "sha256": "b93aeacdd9dd15f01770a5054ab6fdaff7ce64bfa7a57e20e651293c44bc5ab6",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Commercial-readiness::Certification",
+      "type": "document",
+      "name": "Commercial-readiness::Certification",
+      "path": "docs/commercial-readiness/certification.md",
+      "properties": {
+        "sha256": "1615b56f9995c2d7004a8cde0c1c6d914a210863307a065930b7cdb484d03e39",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Commercial-readiness::Editions-and-entitlements",
+      "type": "document",
+      "name": "Commercial-readiness::Editions-and-entitlements",
+      "path": "docs/commercial-readiness/editions-and-entitlements.md",
+      "properties": {
+        "sha256": "285ba625a41f60cb7e739b7b9843ad210f957d99d8ac6c63a10b6d6731bbee17",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Commercial-readiness::Opt-in-telemetry",
+      "type": "document",
+      "name": "Commercial-readiness::Opt-in-telemetry",
+      "path": "docs/commercial-readiness/opt-in-telemetry.md",
+      "properties": {
+        "sha256": "004198c210b9600a7190198dcdc5c643441bc3d2500815175ec43b09ef2ebd01",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Commercial-readiness::Support-consent",
+      "type": "document",
+      "name": "Commercial-readiness::Support-consent",
+      "path": "docs/commercial-readiness/support-consent.md",
+      "properties": {
+        "sha256": "d929ac076effc211d0552260315b6fd47b8db5df9f8c5da3e3d4c9235b0b2f3a",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Commercial-readiness::Support-identifiers",
+      "type": "document",
+      "name": "Commercial-readiness::Support-identifiers",
+      "path": "docs/commercial-readiness/support-identifiers.md",
+      "properties": {
+        "sha256": "90b90733c03fc98555cf07c23927262fd6a44b2f629eab98f35474818924e114",
         "source": "platform"
       }
     },
@@ -787,7 +947,7 @@
       "name": "Decisions::0009-javascript-strategy",
       "path": "docs/decisions/0009-javascript-strategy.md",
       "properties": {
-        "sha256": "ab745efa0229c84689409f04cede54f4bcabc00de5396ab8c591fa7b89174c6f",
+        "sha256": "c749b07127f2f2f3b3685f1b1906d5ed578cd32ade6a3d85011af7207cbbec70",
         "source": "platform"
       }
     },
@@ -807,7 +967,7 @@
       "name": "Decisions::0011-css-strategy",
       "path": "docs/decisions/0011-css-strategy.md",
       "properties": {
-        "sha256": "46b3104abda2be68c61a6fbf1f8c0a6ad12bcfd8abbd85ba69e5687132c5fa24",
+        "sha256": "22bc4c770cbafaf9ae739857f4aa573bcd145424bcc60c6b677ad7f3bde69f40",
         "source": "platform"
       }
     },
@@ -817,7 +977,7 @@
       "name": "Decisions::0012-design-token-architecture",
       "path": "docs/decisions/0012-design-token-architecture.md",
       "properties": {
-        "sha256": "d0ab9e3556e879a1acf9f83159eaa3810b73b65f5cd36aabfabe98b25e302652",
+        "sha256": "1958a4c4bdacaafdb066ccd1ff21c7b80741732988382c82920b5dc0a887e06c",
         "source": "platform"
       }
     },
@@ -838,6 +998,16 @@
       "path": "docs/decisions/0014-supported-distribution-channels.md",
       "properties": {
         "sha256": "1d1f5761be455062424b91042d7b5ff5a7db78039959c03ca978b99fa61d59b7",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Decisions::0015-syncfusion-ej2-ui-library",
+      "type": "document",
+      "name": "Decisions::0015-syncfusion-ej2-ui-library",
+      "path": "docs/decisions/0015-syncfusion-ej2-ui-library.md",
+      "properties": {
+        "sha256": "da81a2942f836b60e3ec0b52c523536227545c354f50b6fe3942b8f7c65e41c9",
         "source": "platform"
       }
     },
@@ -878,6 +1048,16 @@
       "path": "docs/deployment/render.md",
       "properties": {
         "sha256": "a85e202a5af444c789bf569c0f71fb44a3adf05ed21bcf6ce33cd6eb27c7c650",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Deployment::Render-visual-validation",
+      "type": "document",
+      "name": "Deployment::Render-visual-validation",
+      "path": "docs/deployment/render-visual-validation.md",
+      "properties": {
+        "sha256": "f7b01b416e97d2e4cf01289fd37dadae06722a54301766743355ea531c35e394",
         "source": "platform"
       }
     },
@@ -927,7 +1107,7 @@
       "name": "Design-system::Localization",
       "path": "docs/design-system/localization.md",
       "properties": {
-        "sha256": "04b4b9627884f6a4f8d46201d8035688263e13a8eca6264df1701c56c3763db8",
+        "sha256": "41514346d95e9c275e56901f856a672fcb2307f4e00b71168fb57d877d9addd4",
         "source": "platform"
       }
     },
@@ -937,7 +1117,27 @@
       "name": "Design-system::Overview",
       "path": "docs/design-system/overview.md",
       "properties": {
-        "sha256": "0e9a64c3857e966f77c979986cbfa1efc80ed374a7af2a31d0b8d570016f6ff3",
+        "sha256": "f84363fbf223e121115d4127a089ad9f268789e5610cd92d422109c1bc266765",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Design-system::Token-integrity",
+      "type": "document",
+      "name": "Design-system::Token-integrity",
+      "path": "docs/design-system/token-integrity.md",
+      "properties": {
+        "sha256": "ad8fc4982bcd1100aecb7e22b7881cfd120959610d2840dd4b8713fd2d7cd353",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Distribution::Application-starter",
+      "type": "document",
+      "name": "Distribution::Application-starter",
+      "path": "docs/distribution/application-starter.md",
+      "properties": {
+        "sha256": "195891fdbc0a8db2f8f75d0de0a1317cb244f05f3cf45253162cb7ec96eb5fe5",
         "source": "platform"
       }
     },
@@ -987,7 +1187,7 @@
       "name": "Distribution::Github-releases",
       "path": "docs/distribution/github-releases.md",
       "properties": {
-        "sha256": "a61cb7f8bb70cf40e3f03bbc159284b6ab5dfc97ada3b5b317b75c0a36bfe137",
+        "sha256": "f3607ba85ae664ecfbc8529644a8f06928f5e1ad206471b626c8e50c317ec196",
         "source": "platform"
       }
     },
@@ -1022,12 +1222,22 @@
       }
     },
     {
+      "id": "document:Examples::Readme",
+      "type": "document",
+      "name": "Examples::Readme",
+      "path": "docs/examples/README.md",
+      "properties": {
+        "sha256": "d7293dd67cc61317ad7514febf60b070d6272a45377b9d74e05d9bde67949272",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Extensions::Architecture",
       "type": "document",
       "name": "Extensions::Architecture",
       "path": "docs/extensions/architecture.md",
       "properties": {
-        "sha256": "6b23de78a4ab021d3956772b35dcf35a11445878d1e66b61c4e2fac4d301dad2",
+        "sha256": "20e08a279df0c80b1cf7e4cca560dfdc866bc280a665cbb2b0583dc29f8bac90",
         "source": "platform"
       }
     },
@@ -1037,7 +1247,7 @@
       "name": "Extensions::Authoring",
       "path": "docs/extensions/authoring.md",
       "properties": {
-        "sha256": "1d289ea9c3c715cbbdd06366cdb6e7531d4239f41590e67c314c7b67ef6f5632",
+        "sha256": "8903981d7bc21920a6e509c3f03eb7184829ed49d8395448a12ffd678372c9c8",
         "source": "platform"
       }
     },
@@ -1067,7 +1277,7 @@
       "name": "Extensions::Inspection",
       "path": "docs/extensions/inspection.md",
       "properties": {
-        "sha256": "047eaec6b1aa63ddc3ca1c9587dda672a4b4d7b873623da01f7285758250c17d",
+        "sha256": "c5dc8d3fa37fe980820e219e0ebac7299a43615c504b2ee8fb12a15640dd47f0",
         "source": "platform"
       }
     },
@@ -1077,7 +1287,7 @@
       "name": "Extensions::Lifecycle-guide",
       "path": "docs/extensions/lifecycle-guide.md",
       "properties": {
-        "sha256": "8760c7378f042887774a298468815c14af5c8ac19ece803769fbfb6e0cd59232",
+        "sha256": "49a452e3c2ca2724f323007a9205e38d650e40414dddf88cb7dfb20e85766508",
         "source": "platform"
       }
     },
@@ -1197,7 +1407,7 @@
       "name": "Grid::Architecture",
       "path": "docs/grid/architecture.md",
       "properties": {
-        "sha256": "3366f1b14a6e38d0429522272a7cbcb6c690d8c579b48486aeb425d916284198",
+        "sha256": "b808a05ee22e2e0e46e833e10c52ec1b2128f461c53490e0236a09507ccb7a71",
         "source": "platform"
       }
     },
@@ -1297,7 +1507,7 @@
       "name": "Modules::Design-system::AiContext",
       "path": "docs/modules/design-system/AI_CONTEXT.md",
       "properties": {
-        "sha256": "1d82ee478aa8eea28dd99ec4421f2aa9c23dadd0725f9a96c88dd7972ee2daeb",
+        "sha256": "88374db693f21727dcc0b2241979d5001a53c63e6538a49e7d8e14613ead8c76",
         "source": "platform"
       }
     },
@@ -1337,7 +1547,37 @@
       "name": "Modules::EnterpriseServices::AiContext",
       "path": "docs/modules/enterprise_services/AI_CONTEXT.md",
       "properties": {
-        "sha256": "8c843d114b177e01d1c66c09299f7837592ec6f74f5849cb61b998ee99184c45",
+        "sha256": "0c665917916a9bace934cda23ed8d073f74af5662f67e86aa07a5d9580efc643",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Modules::EnterpriseServices::Notifications",
+      "type": "document",
+      "name": "Modules::EnterpriseServices::Notifications",
+      "path": "docs/modules/enterprise_services/notifications.md",
+      "properties": {
+        "sha256": "cfc38a84eb99c58443a53c025db3c84dc17af52dda036ce59e1492c93e2574a7",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Modules::EnterpriseServices::Tenant-safety-certification",
+      "type": "document",
+      "name": "Modules::EnterpriseServices::Tenant-safety-certification",
+      "path": "docs/modules/enterprise_services/tenant-safety-certification.md",
+      "properties": {
+        "sha256": "b12126d564dd6dd5c1c86a0df9f17822aa26e7e4187a7de9c5d9cea06436159c",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Modules::EnterpriseServices::Tenant-scoped-files",
+      "type": "document",
+      "name": "Modules::EnterpriseServices::Tenant-scoped-files",
+      "path": "docs/modules/enterprise_services/tenant-scoped-files.md",
+      "properties": {
+        "sha256": "0e9e6129b403535abdc8590dcb1ab8075823a9bf282dff1b1501e20ab61a1b98",
         "source": "platform"
       }
     },
@@ -1347,7 +1587,7 @@
       "name": "Modules::GridEngine::AiContext",
       "path": "docs/modules/grid_engine/AI_CONTEXT.md",
       "properties": {
-        "sha256": "0846e988057aff90f4d29c96cdeafb4bf6ba68afcd485708918744a9609fda44",
+        "sha256": "9871b83d843d6943cfae026f03a52df4baa4f55f73930bc642ae0671c2a90971",
         "source": "platform"
       }
     },
@@ -1422,6 +1662,56 @@
       }
     },
     {
+      "id": "document:Operations::Architecture",
+      "type": "document",
+      "name": "Operations::Architecture",
+      "path": "docs/operations/architecture.md",
+      "properties": {
+        "sha256": "10e13426653f2766e36c21c7d9bb0574380d499dfdaeafd1bd05dc229073bec7",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Operations::Disaster-recovery",
+      "type": "document",
+      "name": "Operations::Disaster-recovery",
+      "path": "docs/operations/disaster-recovery.md",
+      "properties": {
+        "sha256": "f9ae06ad76e2577bd70d44c30202498941bfd11c5c3ebe6ec88f9c1e754d20f5",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Operations::Resilience-certification",
+      "type": "document",
+      "name": "Operations::Resilience-certification",
+      "path": "docs/operations/resilience-certification.md",
+      "properties": {
+        "sha256": "911c3cb30ed3e2571d3e706e09fe675b6f69a8c7d16b31e6eb8cf703d340aaed",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Operators::Compatibility-and-lifecycle",
+      "type": "document",
+      "name": "Operators::Compatibility-and-lifecycle",
+      "path": "docs/operators/compatibility-and-lifecycle.md",
+      "properties": {
+        "sha256": "efe11d442edd302ec84f039fa8a5dfec257985ee1751d5dae623c57a7c83d56b",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Operators::Handbook",
+      "type": "document",
+      "name": "Operators::Handbook",
+      "path": "docs/operators/handbook.md",
+      "properties": {
+        "sha256": "20251b67016dd3b309b783f1f7696c08eb0b06e11c88e413552e656e75985490",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Packaging::Container-baseline",
       "type": "document",
       "name": "Packaging::Container-baseline",
@@ -1462,6 +1752,36 @@
       }
     },
     {
+      "id": "document:Releases::0.9.0::Migration-notes",
+      "type": "document",
+      "name": "Releases::0.9.0::Migration-notes",
+      "path": "docs/releases/0.9.0/migration-notes.md",
+      "properties": {
+        "sha256": "41f5b00de29b1bf81cbb7a04a40c72d8c39954b1b6a9aa6f1d56536967ce9cc8",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Releases::0.9.0::Release-notes",
+      "type": "document",
+      "name": "Releases::0.9.0::Release-notes",
+      "path": "docs/releases/0.9.0/release-notes.md",
+      "properties": {
+        "sha256": "ce3b549061665afa10bf79e459cba5529c0fa0260c62d8589db0973c274e57e8",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Releases::0.9.0::Upgrade-notes",
+      "type": "document",
+      "name": "Releases::0.9.0::Upgrade-notes",
+      "path": "docs/releases/0.9.0/upgrade-notes.md",
+      "properties": {
+        "sha256": "f0fa90a35857f69be4be35381f21500d066d91a8f92dcc1d8323235d4cfe16c3",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Releases::Architecture",
       "type": "document",
       "name": "Releases::Architecture",
@@ -1497,7 +1817,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "773005717c981311dad43a5d7b55b9c0f66c617e5264a6ea9a64fcf72fdd5e56",
+        "sha256": "4f99e69f8664fe31159227acdffa0c4aae8f2cd45e59d2c059fb21fad9190ce3",
         "source": "platform"
       }
     },
@@ -1507,7 +1827,37 @@
       "name": "Releases::Generated::Upgrade-notes",
       "path": "docs/releases/generated/upgrade-notes.md",
       "properties": {
-        "sha256": "1cae47a80f7f1cab11ab82e04b6e9d749c258230e9970cbf0728942eb3081f3e",
+        "sha256": "0b5c2c10ceaa59fe0e4ea1f87c51b21c2d2b16bc14753de8566d38414be32643",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:RepositoryIntelligence::Documentation-governance",
+      "type": "document",
+      "name": "RepositoryIntelligence::Documentation-governance",
+      "path": "docs/repository_intelligence/documentation-governance.md",
+      "properties": {
+        "sha256": "e9a661b175b76b30799e4ee0ac6722616926a02d56cd87cad2105cbf0cb78cee",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Roadmap::Adoption-validation-improvements",
+      "type": "document",
+      "name": "Roadmap::Adoption-validation-improvements",
+      "path": "docs/roadmap/adoption-validation-improvements.md",
+      "properties": {
+        "sha256": "7cff2000f7f6b572026f9e1b7c002b027f4f52b994adc4bd3637b0d80066b5a9",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Roadmap::Epic-10-plan",
+      "type": "document",
+      "name": "Roadmap::Epic-10-plan",
+      "path": "docs/roadmap/epic-10-plan.md",
+      "properties": {
+        "sha256": "03c902b9c37a5f35f3e6f72c11b898e92383ce647b008bed1aa11230013d095a",
         "source": "platform"
       }
     },
@@ -1517,7 +1867,7 @@
       "name": "Roadmap::Roadmap",
       "path": "docs/roadmap/roadmap.md",
       "properties": {
-        "sha256": "0d4160f20e236330fe3c0cc97d64e6716cf6d89d82dcc5cdcc6cb42190737d04",
+        "sha256": "2569cdadf9985cf5232741b314930a52109c0e8803c4ccb51382e17dcb1cc5d6",
         "source": "platform"
       }
     },
@@ -1632,6 +1982,16 @@
       }
     },
     {
+      "id": "document:Validation::Architecture",
+      "type": "document",
+      "name": "Validation::Architecture",
+      "path": "docs/validation/architecture.md",
+      "properties": {
+        "sha256": "fdbb16235be96e4fcde879768b2656eac066b73ecd2508069889c3668a2272d0",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Validation::Findings::Bug-001-ruby-version-mismatch",
       "type": "document",
       "name": "Validation::Findings::Bug-001-ruby-version-mismatch",
@@ -1682,6 +2042,46 @@
       }
     },
     {
+      "id": "document:Validation::Rc-preparation",
+      "type": "document",
+      "name": "Validation::Rc-preparation",
+      "path": "docs/validation/rc-preparation.md",
+      "properties": {
+        "sha256": "45bb91f9637ba58a479edb598e97d17716220d618104c5a8aa34f9edab8dbade",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Validation::Release-baseline",
+      "type": "document",
+      "name": "Validation::Release-baseline",
+      "path": "docs/validation/release-baseline.md",
+      "properties": {
+        "sha256": "e9752569cf24f2ccb4ab553710c88c3fdfad9f4a17a0df3d9edda1804c0128f4",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Validation::Representative-application",
+      "type": "document",
+      "name": "Validation::Representative-application",
+      "path": "docs/validation/representative-application.md",
+      "properties": {
+        "sha256": "24708f19776f77e500f75ae1be17ef5ce04bec2bae56a9a6605540fa7ecccf2c",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Validation::Threat-model",
+      "type": "document",
+      "name": "Validation::Threat-model",
+      "path": "docs/validation/threat-model.md",
+      "properties": {
+        "sha256": "f86fbb870ad917d2d176c5c9d891d20fe2d12665f9860c2081e4094f8b0a5794",
+        "source": "platform"
+      }
+    },
+    {
       "id": "job:Application",
       "type": "job",
       "name": "Application",
@@ -1697,7 +2097,7 @@
       "name": "CustomerExport",
       "path": "app/jobs/customer_export_job.rb",
       "properties": {
-        "sha256": "27fe0a1d0d4831777092092a28cd50d9653c8e1b8ee38c5f478af9d3df6a586a",
+        "sha256": "b13a618d16c607e5840e4e2dd0e5b863b321ae7d6c3b7e241ffaf98dd701c768",
         "source": "platform"
       }
     },
@@ -1707,7 +2107,7 @@
       "name": "CustomerImport",
       "path": "app/jobs/customer_import_job.rb",
       "properties": {
-        "sha256": "944c448890116702cd64d7e9b844dd779b02db4477e5b3a9b8e00c324df53d8e",
+        "sha256": "f16a178e7f52a7c6d44f021d1bb2dc7eb442a311c1fb4a90b3c8c080da4474b3",
         "source": "platform"
       }
     },
@@ -1847,7 +2247,7 @@
       "name": "Membership",
       "path": "app/models/membership.rb",
       "properties": {
-        "sha256": "bb3b0229dcd79a7d2647df3b5b22af0948d25264c5340dcdb9ee5ea4c5a21134",
+        "sha256": "40a1e34046f06db647a8ee3ac6c5be15d15f290db1a23e0761590a9f21572872",
         "source": "platform"
       }
     },
@@ -1877,7 +2277,7 @@
       "name": "OrganizationInvitation",
       "path": "app/models/organization_invitation.rb",
       "properties": {
-        "sha256": "de0f488d5b90ad2cd3ccc2e7023edd9d86b36ef4bbe3fee9fe36dc8e8dcb110b",
+        "sha256": "19abd5a26f572ddba9b5142f90355baad4cae6a71cd1a953cf50477e41e37d7b",
         "source": "platform"
       }
     },
@@ -1992,6 +2392,16 @@
       }
     },
     {
+      "id": "policy:StoredFile",
+      "type": "policy",
+      "name": "StoredFile",
+      "path": "app/policies/stored_file_policy.rb",
+      "properties": {
+        "sha256": "4a772abde9ac43c78fa1a9749152830a99a0e470f5c3159ae96b6a4d867a9db0",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Components::MarketingComponents",
       "type": "test",
       "name": "Components::MarketingComponents",
@@ -2022,6 +2432,16 @@
       }
     },
     {
+      "id": "test:Components::Ui::DangerZoneComponent",
+      "type": "test",
+      "name": "Components::Ui::DangerZoneComponent",
+      "path": "test/components/ui/danger_zone_component_test.rb",
+      "properties": {
+        "sha256": "962345bc73731932dbed8aafc317c0e4dd1b60ce1b2d341a1af2973eba4bf77f",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Components::Ui::Forms::FormComponents",
       "type": "test",
       "name": "Components::Ui::Forms::FormComponents",
@@ -2037,7 +2457,7 @@
       "name": "Components::Ui::Layout::ApplicationShellComponent",
       "path": "test/components/ui/layout/application_shell_component_test.rb",
       "properties": {
-        "sha256": "45578260e2e1d6269164a30f81fd6f64becb78d76943d218ad1ab90aa1be45e2",
+        "sha256": "85b61a64b4b99d04c85e0e7917911c1ea70dcaff94afddf9599f24827da258c7",
         "source": "platform"
       }
     },
@@ -2057,7 +2477,7 @@
       "name": "Components::Ui::ThemeSwitcherComponent",
       "path": "test/components/ui/theme_switcher_component_test.rb",
       "properties": {
-        "sha256": "e06f429c0495973eb42130b8125acfbcc27bff60ada7f729baaef5387bb12c57",
+        "sha256": "83d63a6db101fe9b3bed58c844df2fd3b7804441a75e1ba35b48f5672eeed7c5",
         "source": "platform"
       }
     },
@@ -2077,7 +2497,7 @@
       "name": "Controllers::CustomersController",
       "path": "test/controllers/customers_controller_test.rb",
       "properties": {
-        "sha256": "c38404dbdf61ffb88e5f0a8106c525db368eee9ac29554ce442ab3297c5353b4",
+        "sha256": "dbcc0679762f532a048871a9b42398962fdf82376f55600edc91319afd5b7afb",
         "source": "platform"
       }
     },
@@ -2097,7 +2517,17 @@
       "name": "Controllers::GridsController",
       "path": "test/controllers/grids_controller_test.rb",
       "properties": {
-        "sha256": "48b8a6e586888e5a2335aec9b3da9b42650432216498d67df976e4684aebf618",
+        "sha256": "9ac7f5b7e8cf51db36a48869428cfeef6a47bd037077552ce8ce7665ab312514",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Controllers::GridsControllerSyncfusion",
+      "type": "test",
+      "name": "Controllers::GridsControllerSyncfusion",
+      "path": "test/controllers/grids_controller_syncfusion_test.rb",
+      "properties": {
+        "sha256": "8ee6ea9c7326faad4ae738b6312c88bb7208dcbf256e44f8e6ad4da8961a146b",
         "source": "platform"
       }
     },
@@ -2107,7 +2537,7 @@
       "name": "Controllers::HealthController",
       "path": "test/controllers/health_controller_test.rb",
       "properties": {
-        "sha256": "5f79f2f0ea328d1bb5675a2990c0ecb669be9a31c2582d5ebedc95ac968e6dc7",
+        "sha256": "f1631c4f540e688df5369df3365e3e1719ef13114a61796c08956179a72a50dc",
         "source": "platform"
       }
     },
@@ -2137,7 +2567,7 @@
       "name": "Controllers::LocalePreferencesController",
       "path": "test/controllers/locale_preferences_controller_test.rb",
       "properties": {
-        "sha256": "8583c6005dc3a3acde6f0b02634925f0cd9beef35e3b4a2e5a30cfa59ff808e8",
+        "sha256": "92cc5c043ed12d094078683e29ddf965168c5904e956da8bec269a5b7cc80556",
         "source": "platform"
       }
     },
@@ -2147,7 +2577,7 @@
       "name": "Controllers::MarketingController",
       "path": "test/controllers/marketing_controller_test.rb",
       "properties": {
-        "sha256": "be8c5be5e7d7f6c152e90e1082b3b9bc6cbe17be904503c4ff9330f3e86136d4",
+        "sha256": "341f51cd0e6f4eceabdd8b675f2b72e060aa6245c24803958cfe57fa3f42bcfc",
         "source": "platform"
       }
     },
@@ -2167,7 +2597,27 @@
       "name": "Controllers::OrganizationsController",
       "path": "test/controllers/organizations_controller_test.rb",
       "properties": {
-        "sha256": "27a1e756f3c2cd8056c8ee6ea4537979c256ec6591d500d8d5ca1b54961cf531",
+        "sha256": "27db3a1b82abdf4c31a85034d4aaa8bc26649808e3d17c8f49ba1904805cc038",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Controllers::PreferencesController",
+      "type": "test",
+      "name": "Controllers::PreferencesController",
+      "path": "test/controllers/preferences_controller_test.rb",
+      "properties": {
+        "sha256": "cebe70559fd5be26316d53d74ef9213b1e637b7ed99310fb04bb28d6563910bd",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Controllers::StoredFilesController",
+      "type": "test",
+      "name": "Controllers::StoredFilesController",
+      "path": "test/controllers/stored_files_controller_test.rb",
+      "properties": {
+        "sha256": "27a255246eed70bd31f08b5a803917512ea10ab1ccc56f86758fb904aa8c6598",
         "source": "platform"
       }
     },
@@ -2192,12 +2642,52 @@
       }
     },
     {
+      "id": "test:Integration::ApplicationExtensionSample",
+      "type": "test",
+      "name": "Integration::ApplicationExtensionSample",
+      "path": "test/integration/application_extension_sample_test.rb",
+      "properties": {
+        "sha256": "b83833fd63342b2e5b8bc5812b87c4138b0426641c9c87b38801b7d51ce7b33f",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Integration::ApplicationLayerBootstrap",
+      "type": "test",
+      "name": "Integration::ApplicationLayerBootstrap",
+      "path": "test/integration/application_layer_bootstrap_test.rb",
+      "properties": {
+        "sha256": "5941504acefbbc9a9071f817fd37433805f63713a398585b00159b30f588a193",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Integration::CommercialReadinessCertification",
+      "type": "test",
+      "name": "Integration::CommercialReadinessCertification",
+      "path": "test/integration/commercial_readiness_certification_test.rb",
+      "properties": {
+        "sha256": "88d00fa4d682639a36b99456d270271e56e06dbe975daab97e0e3740534176c8",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Integration::CompatibilityLifecycleDocumentation",
+      "type": "test",
+      "name": "Integration::CompatibilityLifecycleDocumentation",
+      "path": "test/integration/compatibility_lifecycle_documentation_test.rb",
+      "properties": {
+        "sha256": "a990bf848f066d6c6aaac499c790c4b31395a16f22fc53bca6c0a691145b6668",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Integration::DistributionCertification",
       "type": "test",
       "name": "Integration::DistributionCertification",
       "path": "test/integration/distribution_certification_test.rb",
       "properties": {
-        "sha256": "3c55ba4a743c3c4ebd9c4561c4e75f5dfe915928677cd429738c78c960ac36c8",
+        "sha256": "0ff2b557ba44c4aa88b808844d9dd74dd06c26a7f8fc1c5d6e531318e49464be",
         "source": "platform"
       }
     },
@@ -2222,12 +2712,52 @@
       }
     },
     {
+      "id": "test:Integration::OperationalExamplesCertification",
+      "type": "test",
+      "name": "Integration::OperationalExamplesCertification",
+      "path": "test/integration/operational_examples_certification_test.rb",
+      "properties": {
+        "sha256": "0a09f6a06563d6765c68903e98deaa2049fcba3e213fd85da48881f933cfaba9",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Integration::OperationalHealthCertification",
+      "type": "test",
+      "name": "Integration::OperationalHealthCertification",
+      "path": "test/integration/operational_health_certification_test.rb",
+      "properties": {
+        "sha256": "551e6dd0e31eece5e7b671eeed7a0b52e4c668a9b9a235c5aa4fae88beae53e5",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Integration::OperationalRestoreCertification",
+      "type": "test",
+      "name": "Integration::OperationalRestoreCertification",
+      "path": "test/integration/operational_restore_certification_test.rb",
+      "properties": {
+        "sha256": "7d89ac14d5881fbe7f25df1f711edaceac3d54d4499f02ad2a9df0f62a676fa1",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Integration::OperatorGuidesCertification",
+      "type": "test",
+      "name": "Integration::OperatorGuidesCertification",
+      "path": "test/integration/operator_guides_certification_test.rb",
+      "properties": {
+        "sha256": "27a36bd03e3488a83aee68e412bba8c8c9631afa73b75a2df4d22b25c187273c",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Integration::ReleaseFrameworkCertification",
       "type": "test",
       "name": "Integration::ReleaseFrameworkCertification",
       "path": "test/integration/release_framework_certification_test.rb",
       "properties": {
-        "sha256": "061f5e03f88d1752d29639941d9aadbe37e738a976e13655904f9a4d5dfd1466",
+        "sha256": "8107f5738590efdf2fe3b1381873a6dc8de4c9ce0c6741d0288a1ad4ce961fc4",
         "source": "platform"
       }
     },
@@ -2242,12 +2772,62 @@
       }
     },
     {
+      "id": "test:Integration::ResilienceCertification",
+      "type": "test",
+      "name": "Integration::ResilienceCertification",
+      "path": "test/integration/resilience_certification_test.rb",
+      "properties": {
+        "sha256": "c6e7c7d2a7ba5d39ba8837eeb395595171fd8721676ea31789ec80cd42ce4952",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Integration::SupportBundleCertification",
+      "type": "test",
+      "name": "Integration::SupportBundleCertification",
+      "path": "test/integration/support_bundle_certification_test.rb",
+      "properties": {
+        "sha256": "df89d4b7617b951cdbabc7f5b4a58d01cfc2827bcbc68d3b984b8f3f35aa10fd",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Integration::UpgradeFrameworkCertification",
       "type": "test",
       "name": "Integration::UpgradeFrameworkCertification",
       "path": "test/integration/upgrade_framework_certification_test.rb",
       "properties": {
         "sha256": "eed55a59534261ee8d0dc3ef9e9d80de092d21698575bdcc14d1134ed98c5d77",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::ApplicationRegistrations",
+      "type": "test",
+      "name": "Lib::ApplicationRegistrations",
+      "path": "test/lib/application_registrations_test.rb",
+      "properties": {
+        "sha256": "b61726e80a9f2083ac5611366cdf786c0bcd4a93a922729f760c281faf597f98",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::ApplicationStarter",
+      "type": "test",
+      "name": "Lib::ApplicationStarter",
+      "path": "test/lib/application_starter_test.rb",
+      "properties": {
+        "sha256": "3bf8205e2db1f47c05bc29f6da2aa73732ddef0ca7a424fc420ee3ab4a5e8eac",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::CleanStarterOnboarding",
+      "type": "test",
+      "name": "Lib::CleanStarterOnboarding",
+      "path": "test/lib/clean_starter_onboarding_test.rb",
+      "properties": {
+        "sha256": "8b4fc0a3ce4b29dde57979889d6dc89c9d0099f46438cfeb6027b465369e30af",
         "source": "platform"
       }
     },
@@ -2267,7 +2847,27 @@
       "name": "Lib::DesignTokens::Compiler",
       "path": "test/lib/design_tokens/compiler_test.rb",
       "properties": {
-        "sha256": "af39f24f87ff45f79942b834586b7bf6e13f8a30443f655e06706654d2d77999",
+        "sha256": "fa1623004499f39a84b6fc9b94a60adf2e237c39214c6fcb177c1ba8d0857865",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::Epic9Certification",
+      "type": "test",
+      "name": "Lib::Epic9Certification",
+      "path": "test/lib/epic_9_certification_test.rb",
+      "properties": {
+        "sha256": "a9add47fdb16ad0a03585723c5c7c111cbe8baacb858d69c3d21b84a0310843b",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::GridEngine::HtmlRenderer",
+      "type": "test",
+      "name": "Lib::GridEngine::HtmlRenderer",
+      "path": "test/lib/grid_engine/html_renderer_test.rb",
+      "properties": {
+        "sha256": "bd8c9bbafde616c2cbf43999d6d59d3c4710e4e0cf612dabf277df843938990f",
         "source": "platform"
       }
     },
@@ -2282,6 +2882,26 @@
       }
     },
     {
+      "id": "test:Lib::GridEngine::SyncfusionAdapter",
+      "type": "test",
+      "name": "Lib::GridEngine::SyncfusionAdapter",
+      "path": "test/lib/grid_engine/syncfusion_adapter_test.rb",
+      "properties": {
+        "sha256": "dad14aa36145bdeebbc19fa778223eba64d83a2854c6469c87499fc76ea0174e",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::GridEngine::Types",
+      "type": "test",
+      "name": "Lib::GridEngine::Types",
+      "path": "test/lib/grid_engine/types_test.rb",
+      "properties": {
+        "sha256": "d3b06fc23df9b636530caf1b4f7d16dfa4c4e853ba596c5e1ad63c442ce43951",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Lib::Localization::SupportedLocales",
       "type": "test",
       "name": "Lib::Localization::SupportedLocales",
@@ -2292,12 +2912,22 @@
       }
     },
     {
+      "id": "test:Lib::McpBootstrap",
+      "type": "test",
+      "name": "Lib::McpBootstrap",
+      "path": "test/lib/mcp_bootstrap_test.rb",
+      "properties": {
+        "sha256": "af5c0591b3e375aa8b9837b4210a185e137c3afdc2b1aa06a47efb4bae70a707",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Lib::Platform::Version",
       "type": "test",
       "name": "Lib::Platform::Version",
       "path": "test/lib/platform/version_test.rb",
       "properties": {
-        "sha256": "607c5cb0c06d887578bf03475aef4462f75b00c0e61dd16d078dce233cf66f5e",
+        "sha256": "163d224a1ba7a6f084bd60b93d2f1c76a0e68fe20df5dee3e2452c535b4e64d5",
         "source": "platform"
       }
     },
@@ -2322,12 +2952,22 @@
       }
     },
     {
+      "id": "test:Lib::RepositoryIntelligenceDocumentationGovernance",
+      "type": "test",
+      "name": "Lib::RepositoryIntelligenceDocumentationGovernance",
+      "path": "test/lib/repository_intelligence_documentation_governance_test.rb",
+      "properties": {
+        "sha256": "419004ed2fa9f34b428151b731424ca4b3e5a6ab397f38143ba72485f6b4e3e6",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Lib::RepositoryIntelligenceHealth",
       "type": "test",
       "name": "Lib::RepositoryIntelligenceHealth",
       "path": "test/lib/repository_intelligence_health_test.rb",
       "properties": {
-        "sha256": "03b4d2b40772ae722c99bcdb957522bc80c82080bac750bb01b72df5eb5bf2e5",
+        "sha256": "24a17b96bae97bddeb75503eaaedd45b534b931002d43c51ee415eeccadb8f48",
         "source": "platform"
       }
     },
@@ -2442,6 +3082,56 @@
       }
     },
     {
+      "id": "test:Services::ApplicationLayer::Certification",
+      "type": "test",
+      "name": "Services::ApplicationLayer::Certification",
+      "path": "test/services/application_layer/certification_test.rb",
+      "properties": {
+        "sha256": "7606c0bf59df8be6503ccde4c6411c3ec57391efe9c8146c080b98e0d763a4ef",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::CommercialReadiness::EntitlementResolver",
+      "type": "test",
+      "name": "Services::CommercialReadiness::EntitlementResolver",
+      "path": "test/services/commercial_readiness/entitlement_resolver_test.rb",
+      "properties": {
+        "sha256": "405619dda8e23d3b6bbb28530aff4753cf7216b981e36ca7fe69bba4defd3a46",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::CommercialReadiness::SupportConsent",
+      "type": "test",
+      "name": "Services::CommercialReadiness::SupportConsent",
+      "path": "test/services/commercial_readiness/support_consent_test.rb",
+      "properties": {
+        "sha256": "754c49611caf9b5453ec5dbee2a54806e6f5bc56015b5d1c677c209c658b980d",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::CommercialReadiness::SupportIdentity",
+      "type": "test",
+      "name": "Services::CommercialReadiness::SupportIdentity",
+      "path": "test/services/commercial_readiness/support_identity_test.rb",
+      "properties": {
+        "sha256": "14172739ba2387fa2a9b7e8802e3d37bf46152d80410de781d303e02e6bee07e",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::CommercialReadiness::TelemetryPolicy",
+      "type": "test",
+      "name": "Services::CommercialReadiness::TelemetryPolicy",
+      "path": "test/services/commercial_readiness/telemetry_policy_test.rb",
+      "properties": {
+        "sha256": "f5b384215f616ca514c77303984d7a2d7b848b3647ca27365c491317d235637e",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Services::Distributions::ChannelObserver",
       "type": "test",
       "name": "Services::Distributions::ChannelObserver",
@@ -2477,7 +3167,7 @@
       "name": "Services::Distributions::GithubReleasePlan",
       "path": "test/services/distributions/github_release_plan_test.rb",
       "properties": {
-        "sha256": "36f5adb0dbd15fc3004bdbfdf699671ac36858b8cd6233c213962ba917a6be8a",
+        "sha256": "9f065c5d52f1be1bbdad7209e926de278e09a1d0a4711f39ee2fe06dde1628e7",
         "source": "platform"
       }
     },
@@ -2507,7 +3197,7 @@
       "name": "Services::Distributions::Verifier",
       "path": "test/services/distributions/verifier_test.rb",
       "properties": {
-        "sha256": "ed31d58b65334571280be34f98752aae3594eb5fc36bdfa0c5b072674ad1c19d",
+        "sha256": "772c631346369b3f3996f139547dc864fed2cca2d97ebccecbaee5dcbd0b9372",
         "source": "platform"
       }
     },
@@ -2517,7 +3207,177 @@
       "name": "Services::EnterpriseServices",
       "path": "test/services/enterprise_services_test.rb",
       "properties": {
-        "sha256": "18de9530ce46f4a3e9202380ebb940dee6103956f7915c7f5da83536a3b972fc",
+        "sha256": "6ddf9208213dad6a1d5ce961daa36c27123c180921f8ebe42169e9df1c70b74f",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::AccessibilityCertification",
+      "type": "test",
+      "name": "Services::Epic10::AccessibilityCertification",
+      "path": "test/services/epic_10/accessibility_certification_test.rb",
+      "properties": {
+        "sha256": "3a59f98f845faf71839733ad79d7438724675f355a9a0ea78e9c8a624129e8cb",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::AiReadinessCertification",
+      "type": "test",
+      "name": "Services::Epic10::AiReadinessCertification",
+      "path": "test/services/epic_10/ai_readiness_certification_test.rb",
+      "properties": {
+        "sha256": "55760709a110e0c00a01342eb3b676f292a19afb1ebad3c74efcd7e81ce6076a",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::ContractValidator",
+      "type": "test",
+      "name": "Services::Epic10::ContractValidator",
+      "path": "test/services/epic_10/contract_validator_test.rb",
+      "properties": {
+        "sha256": "c5fc0351f6cfb49fbe85b3cc615f0a908301018fc7fdde9c055d690a025feb6b",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::DomainServicesJourney",
+      "type": "test",
+      "name": "Services::Epic10::DomainServicesJourney",
+      "path": "test/services/epic_10/domain_services_journey_test.rb",
+      "properties": {
+        "sha256": "e013613319d42a44a10e2ce3162318f9e041e53bf63af3b52ca83b9e8ad9c168",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::FunctionalFrameworkCertification",
+      "type": "test",
+      "name": "Services::Epic10::FunctionalFrameworkCertification",
+      "path": "test/services/epic_10/functional_framework_certification_test.rb",
+      "properties": {
+        "sha256": "832106c9bca0df246b5dd39b2ab8e2923c31fac5139fe3fce7426a857a0a5519",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::MultitenantExtensionJourney",
+      "type": "test",
+      "name": "Services::Epic10::MultitenantExtensionJourney",
+      "path": "test/services/epic_10/multitenant_extension_journey_test.rb",
+      "properties": {
+        "sha256": "92c81784ab01b6a97226edfffdf2d00c9b52f1172eadcca44b7ca148e0124db8",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::OperationalResilienceCertification",
+      "type": "test",
+      "name": "Services::Epic10::OperationalResilienceCertification",
+      "path": "test/services/epic_10/operational_resilience_certification_test.rb",
+      "properties": {
+        "sha256": "a60d3903689c7c843ce3d7072996ace56d0914b14e926403654b8cfd35628adb",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::PerformanceCompatibilityCertification",
+      "type": "test",
+      "name": "Services::Epic10::PerformanceCompatibilityCertification",
+      "path": "test/services/epic_10/performance_compatibility_certification_test.rb",
+      "properties": {
+        "sha256": "4976346555ffccda867d31fb5cc2cdfed7f4d02f487b2229e67776e4fbf85df4",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::ProductionDeploymentCertification",
+      "type": "test",
+      "name": "Services::Epic10::ProductionDeploymentCertification",
+      "path": "test/services/epic_10/production_deployment_certification_test.rb",
+      "properties": {
+        "sha256": "923118d5c1105041b53987bc7e923d266df2f1fed2262f3d6fcef2794e7bdea2",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::RcPreparation",
+      "type": "test",
+      "name": "Services::Epic10::RcPreparation",
+      "path": "test/services/epic_10/rc_preparation_test.rb",
+      "properties": {
+        "sha256": "c76b4fe634a4b5e66802eb5e3531e6c4997fc3b5ca2161fafea3b5852ce73213",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::RcUpgradeCertification",
+      "type": "test",
+      "name": "Services::Epic10::RcUpgradeCertification",
+      "path": "test/services/epic_10/rc_upgrade_certification_test.rb",
+      "properties": {
+        "sha256": "f97a422759688db3d2dbbb2b3c3d99594e4b8073cd646f4d4cf72910f161897c",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::RcUpgradeFixture",
+      "type": "test",
+      "name": "Services::Epic10::RcUpgradeFixture",
+      "path": "test/services/epic_10/rc_upgrade_fixture_test.rb",
+      "properties": {
+        "sha256": "e027724ffb576cadabe1a9383a16be12ed10df19a809143cefe008b90f743f10",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::ReleaseBaseline",
+      "type": "test",
+      "name": "Services::Epic10::ReleaseBaseline",
+      "path": "test/services/epic_10/release_baseline_test.rb",
+      "properties": {
+        "sha256": "04a57c2d5aca05c3f774f1114a6d9fe1e0c967abecdf0bfbef6c9198ee2abd95",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::RepresentativeApplication",
+      "type": "test",
+      "name": "Services::Epic10::RepresentativeApplication",
+      "path": "test/services/epic_10/representative_application_test.rb",
+      "properties": {
+        "sha256": "820fab12b74858abe7caa7cb132c80f519daeeef79128a629c041f397057cf7e",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::RepresentativeApplicationCertification",
+      "type": "test",
+      "name": "Services::Epic10::RepresentativeApplicationCertification",
+      "path": "test/services/epic_10/representative_application_certification_test.rb",
+      "properties": {
+        "sha256": "8a85db13fcf6a6f478f0ab9d4280a12e442c61cb00db5a99e199f958679d7cb2",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::RepresentativeApplicationJourney",
+      "type": "test",
+      "name": "Services::Epic10::RepresentativeApplicationJourney",
+      "path": "test/services/epic_10/representative_application_journey_test.rb",
+      "properties": {
+        "sha256": "d12b47172c6dba2104000eeda29dc10782dc216b173450d96db945d365a74c60",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Epic10::SecurityPrivacyIsolationCertification",
+      "type": "test",
+      "name": "Services::Epic10::SecurityPrivacyIsolationCertification",
+      "path": "test/services/epic_10/security_privacy_isolation_certification_test.rb",
+      "properties": {
+        "sha256": "b3acec17e767631c6a7fb06309d526122c8696269eaf7133a58e89dc638fb712",
         "source": "platform"
       }
     },
@@ -2527,7 +3387,7 @@
       "name": "Services::Extensions::Catalog",
       "path": "test/services/extensions/catalog_test.rb",
       "properties": {
-        "sha256": "a9c59a09c8844fc52c5458fe4e3ff2727cbde4f94b037bd402dfddf70206fe32",
+        "sha256": "3488c91d32b6f6247562970cf2681ac4792f4535045744d0a214ca197a8911fe",
         "source": "platform"
       }
     },
@@ -2557,7 +3417,7 @@
       "name": "Services::Extensions::Configuration",
       "path": "test/services/extensions/configuration_test.rb",
       "properties": {
-        "sha256": "2d7cf51ce05d6c3eb221e71c56f9f856f23b1ed4ec48d06cf98fab647dd09ee9",
+        "sha256": "a3d099e7b1e39b70ba0c5520cfdc65d316c3b6369182c596d86c7a59e6078124",
         "source": "platform"
       }
     },
@@ -2652,6 +3512,16 @@
       }
     },
     {
+      "id": "test:Services::Installation::PlatformOwnerCreator",
+      "type": "test",
+      "name": "Services::Installation::PlatformOwnerCreator",
+      "path": "test/services/installation/platform_owner_creator_test.rb",
+      "properties": {
+        "sha256": "a0ddba31e3b037f32a516566f816b5843f8372fdfe675c9263e6eea86ffb445d",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Services::Installation::RuntimeDatabaseConfiguration",
       "type": "test",
       "name": "Services::Installation::RuntimeDatabaseConfiguration",
@@ -2668,6 +3538,66 @@
       "path": "test/services/installation/state_machine_test.rb",
       "properties": {
         "sha256": "5a5e9711cf3ead5d44dd543609cf7656cb61b561424b077c9ada03cd72426770",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::OperationalReadiness::BackupManifest",
+      "type": "test",
+      "name": "Services::OperationalReadiness::BackupManifest",
+      "path": "test/services/operational_readiness/backup_manifest_test.rb",
+      "properties": {
+        "sha256": "bdaf235f8fd9337cb01d28f47f2ec01ad896b4b622679ef4b84cd1c5b91c1822",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::OperationalReadiness::DiagnosticRedactor",
+      "type": "test",
+      "name": "Services::OperationalReadiness::DiagnosticRedactor",
+      "path": "test/services/operational_readiness/diagnostic_redactor_test.rb",
+      "properties": {
+        "sha256": "094c186caffb9caace5612b64697d3fc1ab676c944c54f31a5b4e28d26d94879",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::OperationalReadiness::DisasterRecoveryPolicy",
+      "type": "test",
+      "name": "Services::OperationalReadiness::DisasterRecoveryPolicy",
+      "path": "test/services/operational_readiness/disaster_recovery_policy_test.rb",
+      "properties": {
+        "sha256": "f555db6779840fdf4c886b02e5e779a6fef098123c5a72b368ea5a4e864b5e1d",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::OperationalReadiness::OperationalHealthInspector",
+      "type": "test",
+      "name": "Services::OperationalReadiness::OperationalHealthInspector",
+      "path": "test/services/operational_readiness/operational_health_inspector_test.rb",
+      "properties": {
+        "sha256": "339b0f4840811fc9fea5e748c996136d1105b5db2ff7c4bc88c6ffff50defc47",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::OperationalReadiness::RestorePlan",
+      "type": "test",
+      "name": "Services::OperationalReadiness::RestorePlan",
+      "path": "test/services/operational_readiness/restore_plan_test.rb",
+      "properties": {
+        "sha256": "00b59e1f892f62720ae4e066b713a059c4e9f7b58c989e2404144f91bde013c4",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::OperationalReadiness::SupportBundleBuilder",
+      "type": "test",
+      "name": "Services::OperationalReadiness::SupportBundleBuilder",
+      "path": "test/services/operational_readiness/support_bundle_builder_test.rb",
+      "properties": {
+        "sha256": "cf78e4a1bea5643490d566099ca44c3d91fb04a337a6dc13a0373dc86f256ed1",
         "source": "platform"
       }
     },
@@ -2697,7 +3627,7 @@
       "name": "Services::Releases::NotesGenerator",
       "path": "test/services/releases/notes_generator_test.rb",
       "properties": {
-        "sha256": "7825f768c32f7d72e7b6cbffbe9b1409f5a804eeb76de579332184393ee646cd",
+        "sha256": "6353af7933dbe904ecd44001b442055a5d270138662a1e688d126b069d520c9a",
         "source": "platform"
       }
     },
@@ -2707,7 +3637,7 @@
       "name": "Services::Releases::Preparation",
       "path": "test/services/releases/preparation_test.rb",
       "properties": {
-        "sha256": "cba03c28596422c86413578deb6e555d887f39d33795e4d7949112cdb026470f",
+        "sha256": "9f6592f56d958e2314fb5dcc68218d0d66a1e33826be001c1a65e53005fb4620",
         "source": "platform"
       }
     },
@@ -2717,7 +3647,7 @@
       "name": "Services::Releases::PullRequestValidator",
       "path": "test/services/releases/pull_request_validator_test.rb",
       "properties": {
-        "sha256": "8975d802e83946317624fa0f917e6d05c7cfc7def35d43e0d91669bb2d9c0176",
+        "sha256": "7c312477530cbf009c7961e8881f473c49b59fbc79d6f86f6a1d54cddf080e23",
         "source": "platform"
       }
     },
@@ -2777,7 +3707,7 @@
       "name": "Services::Upgrades::InstalledStateDetector",
       "path": "test/services/upgrades/installed_state_detector_test.rb",
       "properties": {
-        "sha256": "d8b3170c342fe354b19f435d447af0ab2b3915d6072005b914de94f58772d8c6",
+        "sha256": "e52205ee159010de571f1f117f7f8cf427e03dd0198768090ae9b8d1d1e2ad93",
         "source": "platform"
       }
     },
@@ -2830,9 +3760,43 @@
         "sha256": "a12897d1da661df6da37be5b2f3a52719237cfbb2ea954f28d380662ad25c637",
         "source": "platform"
       }
+    },
+    {
+      "id": "test:Services::VisualValidation::EnvironmentPreparer",
+      "type": "test",
+      "name": "Services::VisualValidation::EnvironmentPreparer",
+      "path": "test/services/visual_validation/environment_preparer_test.rb",
+      "properties": {
+        "sha256": "22f6c03bc2190f39cd9d4473eea822cb0f7992f8a8307afcf518158f501810b3",
+        "source": "platform"
+      }
     }
   ],
   "edges": [
+    {
+      "from": "component:Application",
+      "to": "document:Architecture::Application-layer",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "document:Architecture::Decisions::0005-use-application-layer-boundary",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "document:Architecture::Decisions::0007-load-application-owned-extension-packages",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
     {
       "from": "component:Application",
       "to": "document:Design-system::Application-shell",
@@ -2841,7 +3805,67 @@
     },
     {
       "from": "component:Application",
+      "to": "document:Distribution::Application-starter",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "document:Validation::Representative-application",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
       "to": "test:Components::Ui::Layout::ApplicationShellComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "test:Integration::ApplicationExtensionSample",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "test:Integration::ApplicationLayerBootstrap",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "test:Lib::ApplicationRegistrations",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "test:Lib::ApplicationStarter",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "test:Services::ApplicationLayer::Certification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "test:Services::Epic10::RepresentativeApplication",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "test:Services::Epic10::RepresentativeApplicationCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
+      "to": "test:Services::Epic10::RepresentativeApplicationJourney",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -2859,8 +3883,26 @@
     },
     {
       "from": "component:Marketing::Lifecycle",
+      "to": "document:Operators::Compatibility-and-lifecycle",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Marketing::Lifecycle",
+      "to": "test:Integration::CompatibilityLifecycleDocumentation",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Marketing::Lifecycle",
       "to": "test:Services::Extensions::Lifecycle",
       "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Base",
+      "to": "document:Adoption::Phase-4b-grid-ux-baseline",
+      "type": "DOCUMENTED_BY",
       "properties": {}
     },
     {
@@ -2882,8 +3924,26 @@
       "properties": {}
     },
     {
+      "from": "component:Ui::Base",
+      "to": "document:Validation::Release-baseline",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Base",
+      "to": "test:Services::Epic10::ReleaseBaseline",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "component:Ui::Button",
       "to": "test:Components::Ui::ButtonComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::DangerZone",
+      "to": "test:Components::Ui::DangerZoneComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -2907,13 +3967,97 @@
     },
     {
       "from": "controller:Application",
+      "to": "document:Architecture::Application-layer",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "document:Architecture::Decisions::0005-use-application-layer-boundary",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "document:Architecture::Decisions::0007-load-application-owned-extension-packages",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
       "to": "document:Design-system::Application-shell",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
     {
       "from": "controller:Application",
+      "to": "document:Distribution::Application-starter",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "document:Validation::Representative-application",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
       "to": "test:Components::Ui::Layout::ApplicationShellComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "test:Integration::ApplicationExtensionSample",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "test:Integration::ApplicationLayerBootstrap",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "test:Lib::ApplicationRegistrations",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "test:Lib::ApplicationStarter",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "test:Services::ApplicationLayer::Certification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "test:Services::Epic10::RepresentativeApplication",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "test:Services::Epic10::RepresentativeApplicationCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "test:Services::Epic10::RepresentativeApplicationJourney",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -2954,6 +4098,12 @@
       "properties": {}
     },
     {
+      "from": "controller:Grids",
+      "to": "test:Controllers::GridsControllerSyncfusion",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "controller:Health",
       "to": "document:Ai::Repository-health",
       "type": "DOCUMENTED_BY",
@@ -2967,7 +4117,19 @@
     },
     {
       "from": "controller:Health",
+      "to": "test:Integration::OperationalHealthCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Health",
       "to": "test:Lib::RepositoryIntelligenceHealth",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Health",
+      "to": "test:Services::OperationalReadiness::OperationalHealthInspector",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -2975,6 +4137,12 @@
       "from": "controller:Home",
       "to": "test:Controllers::HomeController",
       "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Installation::Base",
+      "to": "document:Adoption::Phase-4b-grid-ux-baseline",
+      "type": "DOCUMENTED_BY",
       "properties": {}
     },
     {
@@ -2993,6 +4161,18 @@
       "from": "controller:Installation::Base",
       "to": "document:Security::Security-baseline",
       "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Installation::Base",
+      "to": "document:Validation::Release-baseline",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Installation::Base",
+      "to": "test:Services::Epic10::ReleaseBaseline",
+      "type": "TESTED_BY",
       "properties": {}
     },
     {
@@ -3032,15 +4212,219 @@
       "properties": {}
     },
     {
+      "from": "controller:Preferences",
+      "to": "test:Controllers::LocalePreferencesController",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Preferences",
+      "to": "test:Controllers::PreferencesController",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:StoredFiles",
+      "to": "test:Controllers::StoredFilesController",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "controller:TenantSelections",
       "to": "test:Controllers::TenantSelectionsController",
       "type": "TESTED_BY",
       "properties": {}
     },
     {
+      "from": "document:Ai::Commands::Readme",
+      "to": "document:Examples::Readme",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Ai::Readme",
       "to": "document:Ai::Commands::Readme",
       "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Ai::Readme",
+      "to": "document:Examples::Readme",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Architecture::Application-layer",
+      "to": "document:Architecture::Decisions::0005-use-application-layer-boundary",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "document:Extensions::Certification",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "document:Modules::EnterpriseServices::Tenant-safety-certification",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "document:Operations::Resilience-certification",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "document:Upgrades::Recovery-and-certification",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::CommercialReadinessCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::DistributionCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::ExtensionFrameworkCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::OperationalExamplesCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::OperationalHealthCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::OperationalRestoreCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::OperatorGuidesCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::ReleaseFrameworkCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::RepositoryIntelligenceCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::ResilienceCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::SupportBundleCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Integration::UpgradeFrameworkCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Lib::Epic9Certification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::ApplicationLayer::Certification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Epic10::AccessibilityCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Epic10::AiReadinessCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Epic10::FunctionalFrameworkCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Epic10::OperationalResilienceCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Epic10::PerformanceCompatibilityCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Epic10::ProductionDeploymentCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Epic10::RcUpgradeCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Epic10::RepresentativeApplicationCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Epic10::SecurityPrivacyIsolationCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Deployment::Render",
+      "to": "test:Lib::GridEngine::HtmlRenderer",
+      "type": "TESTED_BY",
       "properties": {}
     },
     {
@@ -3099,6 +4483,12 @@
     },
     {
       "from": "document:Distribution::Architecture",
+      "to": "document:Operations::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Distribution::Architecture",
       "to": "document:Releases::Architecture",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -3106,6 +4496,12 @@
     {
       "from": "document:Distribution::Architecture",
       "to": "document:Upgrades::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Distribution::Architecture",
+      "to": "document:Validation::Architecture",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
@@ -3130,6 +4526,24 @@
     {
       "from": "document:Distribution::Operations",
       "to": "document:Extensions::Operations",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Distribution::Operations",
+      "to": "document:Operations::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Distribution::Operations",
+      "to": "document:Operations::Disaster-recovery",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Distribution::Operations",
+      "to": "document:Operations::Resilience-certification",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
@@ -3165,6 +4579,12 @@
     },
     {
       "from": "document:Extensions::Architecture",
+      "to": "document:Operations::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Architecture",
       "to": "document:Releases::Architecture",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -3176,9 +4596,33 @@
       "properties": {}
     },
     {
+      "from": "document:Extensions::Architecture",
+      "to": "document:Validation::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "document:Modules::EnterpriseServices::Tenant-safety-certification",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "document:Operations::Resilience-certification",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Extensions::Certification",
       "to": "document:Upgrades::Recovery-and-certification",
       "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Integration::CommercialReadinessCertification",
+      "type": "TESTED_BY",
       "properties": {}
     },
     {
@@ -3190,6 +4634,30 @@
     {
       "from": "document:Extensions::Certification",
       "to": "test:Integration::ExtensionFrameworkCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Integration::OperationalExamplesCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Integration::OperationalHealthCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Integration::OperationalRestoreCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Integration::OperatorGuidesCertification",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -3207,13 +4675,109 @@
     },
     {
       "from": "document:Extensions::Certification",
+      "to": "test:Integration::ResilienceCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Integration::SupportBundleCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
       "to": "test:Integration::UpgradeFrameworkCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Lib::Epic9Certification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::ApplicationLayer::Certification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Epic10::AccessibilityCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Epic10::AiReadinessCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Epic10::FunctionalFrameworkCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Epic10::OperationalResilienceCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Epic10::PerformanceCompatibilityCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Epic10::ProductionDeploymentCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Epic10::RcUpgradeCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Epic10::RepresentativeApplicationCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Epic10::SecurityPrivacyIsolationCertification",
       "type": "TESTED_BY",
       "properties": {}
     },
     {
       "from": "document:Extensions::Inspection",
       "to": "document:Upgrades::Inspection-and-preflight",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Operations",
+      "to": "document:Operations::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Operations",
+      "to": "document:Operations::Disaster-recovery",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Operations",
+      "to": "document:Operations::Resilience-certification",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
@@ -3237,6 +4801,12 @@
     },
     {
       "from": "document:Grid::Architecture",
+      "to": "document:Operations::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Grid::Architecture",
       "to": "document:Releases::Architecture",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -3248,6 +4818,18 @@
       "properties": {}
     },
     {
+      "from": "document:Grid::Architecture",
+      "to": "document:Validation::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Installation::Architecture",
+      "to": "document:Operations::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Installation::Architecture",
       "to": "document:Releases::Architecture",
       "type": "DOCUMENTED_BY",
@@ -3260,13 +4842,67 @@
       "properties": {}
     },
     {
+      "from": "document:Installation::Architecture",
+      "to": "document:Validation::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Operations::Architecture",
+      "to": "document:Releases::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Operations::Architecture",
+      "to": "document:Upgrades::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Operations::Architecture",
+      "to": "document:Validation::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.8.0::Migration-notes",
+      "to": "document:Releases::0.9.0::Migration-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Releases::0.8.0::Migration-notes",
       "to": "document:Releases::Generated::Migration-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
     {
+      "from": "document:Releases::0.8.0::Release-notes",
+      "to": "document:Releases::0.9.0::Release-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Releases::0.8.0::Upgrade-notes",
+      "to": "document:Releases::0.9.0::Upgrade-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.8.0::Upgrade-notes",
+      "to": "document:Releases::Generated::Upgrade-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.9.0::Migration-notes",
+      "to": "document:Releases::Generated::Migration-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.9.0::Upgrade-notes",
       "to": "document:Releases::Generated::Upgrade-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -3278,9 +4914,51 @@
       "properties": {}
     },
     {
+      "from": "document:Releases::Architecture",
+      "to": "document:Validation::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Releases::Consistency",
       "to": "test:Services::Releases::ConsistencyValidator",
       "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Security::Threat-model",
+      "to": "document:Validation::Threat-model",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Upgrades::Architecture",
+      "to": "document:Validation::Architecture",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "document:Architecture::Application-layer",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "document:Architecture::Decisions::0005-use-application-layer-boundary",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "document:Architecture::Decisions::0007-load-application-owned-extension-packages",
+      "type": "DOCUMENTED_BY",
       "properties": {}
     },
     {
@@ -3291,7 +4969,67 @@
     },
     {
       "from": "job:Application",
+      "to": "document:Distribution::Application-starter",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "document:Validation::Representative-application",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
       "to": "test:Components::Ui::Layout::ApplicationShellComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "test:Integration::ApplicationExtensionSample",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "test:Integration::ApplicationLayerBootstrap",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "test:Lib::ApplicationRegistrations",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "test:Lib::ApplicationStarter",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "test:Services::ApplicationLayer::Certification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "test:Services::Epic10::RepresentativeApplication",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "test:Services::Epic10::RepresentativeApplicationCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
+      "to": "test:Services::Epic10::RepresentativeApplicationJourney",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -3323,6 +5061,12 @@
       "from": "model:GridSavedView",
       "to": "test:Models::GridSavedView",
       "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:Notification",
+      "to": "document:Modules::EnterpriseServices::Notifications",
+      "type": "DOCUMENTED_BY",
       "properties": {}
     },
     {
@@ -3368,6 +5112,12 @@
       "properties": {}
     },
     {
+      "from": "model:StoredFile",
+      "to": "test:Controllers::StoredFilesController",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "model:User",
       "to": "test:Models::User",
       "type": "TESTED_BY",
@@ -3381,13 +5131,97 @@
     },
     {
       "from": "policy:Application",
+      "to": "document:Architecture::Application-layer",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "document:Architecture::Decisions::0005-use-application-layer-boundary",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "document:Architecture::Decisions::0007-load-application-owned-extension-packages",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
       "to": "document:Design-system::Application-shell",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
     {
       "from": "policy:Application",
+      "to": "document:Distribution::Application-starter",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "document:Validation::Representative-application",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
       "to": "test:Components::Ui::Layout::ApplicationShellComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "test:Integration::ApplicationExtensionSample",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "test:Integration::ApplicationLayerBootstrap",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "test:Lib::ApplicationRegistrations",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "test:Lib::ApplicationStarter",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "test:Services::ApplicationLayer::Certification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "test:Services::Epic10::RepresentativeApplication",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "test:Services::Epic10::RepresentativeApplicationCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "test:Services::Epic10::RepresentativeApplicationJourney",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -3446,6 +5280,18 @@
       "properties": {}
     },
     {
+      "from": "policy:StoredFile",
+      "to": "test:Controllers::StoredFilesController",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Integration::ResilienceCertification",
+      "to": "test:Services::Epic10::OperationalResilienceCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "test:Lib::Platform::Version",
       "to": "test:Services::Upgrades::Version",
       "type": "TESTED_BY",
@@ -3458,8 +5304,68 @@
       "properties": {}
     },
     {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::AccessibilityCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::AiReadinessCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::FunctionalFrameworkCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::OperationalResilienceCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::PerformanceCompatibilityCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::ProductionDeploymentCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::RcUpgradeCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::RepresentativeApplicationCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::SecurityPrivacyIsolationCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "test:Services::Distributions::Inspector",
       "to": "test:Services::Extensions::Inspector",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::Distributions::Inspector",
+      "to": "test:Services::OperationalReadiness::OperationalHealthInspector",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -3472,6 +5378,12 @@
     {
       "from": "test:Services::Distributions::Manifest",
       "to": "test:Services::Extensions::Manifest",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::Distributions::Manifest",
+      "to": "test:Services::OperationalReadiness::BackupManifest",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -3501,6 +5413,12 @@
     },
     {
       "from": "test:Services::Extensions::Inspector",
+      "to": "test:Services::OperationalReadiness::OperationalHealthInspector",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::Extensions::Inspector",
       "to": "test:Services::Upgrades::Inspector",
       "type": "TESTED_BY",
       "properties": {}
@@ -3508,6 +5426,12 @@
     {
       "from": "test:Services::Extensions::InstalledState",
       "to": "test:Services::Upgrades::InstalledStateDetector",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Services::Extensions::Manifest",
+      "to": "test:Services::OperationalReadiness::BackupManifest",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -3524,5 +5448,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "2b9d450670bfd490d26c42a930364c6df19b67f1"
+  "repository_commit": "50bbc2ec9c98deaeaa2e338303507d6d621def24"
 }

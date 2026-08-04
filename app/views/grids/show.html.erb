@@ -1,77 +1,39 @@
 <% content_for :title, t("grid_engine.#{@definition.key}.title") %>
 <% current_columns = Array(params[:columns]).presence || @preferences["columns"] %>
-<% export_params = @query_params.deep_dup.merge("columns" => current_columns).compact %>
 
 <%= render Ui::Layout::PageHeaderComponent.new(
   title: t("grid_engine.#{@definition.key}.title"),
   description: t("grid_engine.#{@definition.key}.description")
-) do %>
-  <%= link_to t("grid_engine.actions.export"), grid_path(@definition.key, export_params.merge(format: :csv)), class: "button button--secondary" %>
-<% end %>
+) %>
 
-<section class="showcase__section grid-page-section" aria-labelledby="grid-controls-heading">
-  <h2 id="grid-controls-heading"><%= t("grid_engine.controls.title") %></h2>
+<%# ── EJ2 Grid (Syncfusion) ────────────────────────────────────────────────── %>
+<%#
+  Columns are serialized server-side so the EJ2 Grid knows field names, types,
+  sorting and filtering capabilities without an extra HTTP round-trip.
+  The JSON endpoint uses ?adapter=syncfusion to return { result:, count: } as
+  required by EJ2 Custom Data Binding / UrlAdaptor.
+%>
+<% columns_json = GridEngine::SyncfusionAdapter.new(@definition).columns.to_json %>
+<% syncfusion_url = grid_path(@definition.key, format: :json, adapter: :syncfusion) %>
 
-  <%= form_with url: grid_path(@definition.key), method: :get, data: { turbo_frame: "grid-results" }, html: { class: "showcase__form" } do %>
-    <%= label_tag "filters_0_value", t("grid_engine.controls.name_filter") %>
-    <%= hidden_field_tag "filters[][column]", "name" %>
-    <%= hidden_field_tag "filters[][operator]", "contains" %>
-    <%= search_field_tag "filters[][value]", @query_params.dig("filters", 0, "value"), id: "filters_0_value", class: "ui-input" %>
+<section class="showcase__section grid-page-section" aria-labelledby="grid-results-heading">
+  <h2 id="grid-results-heading" class="visually-hidden"><%= t("grid_engine.#{@definition.key}.title") %></h2>
 
-    <%= label_tag "sorts_0_direction", t("grid_engine.controls.sort_direction") %>
-    <%= hidden_field_tag "sorts[][column]", "name" %>
-    <%= select_tag "sorts[][direction]",
-      options_for_select(
-        [[ t("grid_engine.sort.asc"), "asc" ], [ t("grid_engine.sort.desc"), "desc" ]],
-        @query_params.dig("sorts", 0, "direction") || "asc"
-      ),
-      id: "sorts_0_direction",
-      class: "ui-input" %>
+  <div
+    data-controller="ej2-grid"
+    data-ej2-grid-url-value="<%= syncfusion_url %>"
+    data-ej2-grid-columns-value="<%= columns_json %>"
+    data-ej2-grid-page-size-value="25"
+    class="ej2-grid-container"
+    aria-label="<%= t("grid_engine.#{@definition.key}.title") %>"
+    id="ej2-grid-<%= @definition.key %>"
+  ></div>
 
-    <fieldset class="ui-field">
-      <legend class="ui-field__label"><%= t("grid_engine.controls.columns") %></legend>
-      <% selected = current_columns.presence || @definition.columns.values.select(&:visible).map(&:key) %>
-      <% @definition.columns.each_value do |column| %>
-        <label class="ui-checkbox-field__label">
-          <%= check_box_tag "columns[]", column.key, selected.include?(column.key), id: "column_#{column.key}", class: "ui-checkbox" %>
-          <span><%= @definition.label_for(column) %></span>
-        </label>
-      <% end %>
-    </fieldset>
-
-    <%= submit_tag t("grid_engine.actions.apply"), class: "button button--primary" %>
-  <% end %>
+  <%# Accessible HTML fallback — rendered for screen readers, no-JS, print and tests %>
+  <noscript>
+    <turbo-frame id="grid-results">
+      <p aria-live="polite"><%= t("grid_engine.results", count: @result.total_count) %></p>
+      <%= GridEngine::HtmlRenderer.new(@definition, @result.records, columns: current_columns).call %>
+    </turbo-frame>
+  </noscript>
 </section>
-
-<section class="showcase__section grid-page-section" aria-labelledby="saved-views-heading">
-  <h2 id="saved-views-heading"><%= t("grid_engine.saved_views.title") %></h2>
-
-  <% if @saved_views.any? %>
-    <ul>
-      <% @saved_views.each do |saved_view| %>
-        <li>
-          <%= link_to saved_view.name, grid_path(@definition.key, view_id: saved_view.id) %>
-          <% if saved_view.default? %><span class="badge"><%= t("grid_engine.saved_views.default") %></span><% end %>
-          <%= button_to t("grid_engine.actions.delete"), grid_grid_saved_view_path(@definition.key, saved_view), method: :delete, class: "button button--danger button--small" %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <%= form_with url: grid_grid_saved_views_path(@definition.key), scope: :grid_saved_view, html: { class: "showcase__form" } do |form| %>
-    <%= form.label :name, t("grid_engine.saved_views.name") %>
-    <%= form.text_field :name, required: true, maxlength: 80, class: "ui-input" %>
-    <%= form.hidden_field :query_json, value: @query_params.to_json %>
-    <%= form.hidden_field :preferences_json, value: { columns: current_columns }.to_json %>
-    <label class="ui-checkbox-field__label">
-      <%= form.check_box :default, class: "ui-checkbox" %>
-      <span><%= t("grid_engine.saved_views.make_default") %></span>
-    </label>
-    <%= form.submit t("grid_engine.actions.save_view"), class: "button button--secondary" %>
-  <% end %>
-</section>
-
-<%= turbo_frame_tag "grid-results" do %>
-  <p aria-live="polite"><%= t("grid_engine.results", count: @result.total_count) %></p>
-  <%= GridEngine::HtmlRenderer.new(@definition, @result.records, columns: current_columns).call %>
-<% end %>

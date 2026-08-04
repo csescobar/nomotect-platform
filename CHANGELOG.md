@@ -46,6 +46,7 @@ Required release impact: `minor`.
 - Certify the complete Phase 3 application-layer adoption boundary with deterministic integrated evidence. (`174-application-layer-phase-3-certification`)
 - Enforce semantic token consumption and formalize Phase 4 theme-substitution certification. (`176-design-token-integrity`)
 - Add a disposable free Render profile with secure deterministic visual-validation data. (`177-free-render-visual-validation`)
+- Integrate Syncfusion EJ2 Data Grid engine with NomoTect Design Tokens. (`188-syncfusion-ej2-integration`)
 
 ### Fixed
 
