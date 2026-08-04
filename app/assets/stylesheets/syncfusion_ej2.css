@@ -62,7 +62,8 @@
 .e-filter-popup,
 .e-dialog,
 .e-popup,
-.e-dropdownbase {
+.e-dropdownbase,
+.e-grid-popup {
   font-family: var(--font-family-sans) !important;
   box-sizing: border-box;
 }
@@ -94,6 +95,16 @@
 .e-grid .e-headercell .e-icon-filter,
 .e-grid .e-headercell .e-filtericon {
   color: var(--color-text) !important;
+}
+
+/* Toolbar Search & Columns Button */
+.e-grid .e-toolbar .e-search-input,
+.e-grid .e-toolbar .e-input-group,
+.e-grid .e-toolbar .e-btn,
+.e-grid .e-toolbar .e-tbar-btn {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
 }
 
 /* ── Rows & Cells ──────────────────────────────────────────────────────────── */
@@ -157,17 +168,28 @@
   color: var(--color-text) !important;
 }
 
-/* ── Popups, Dialogs, Column Chooser & Filter Menu ─────────────────────────── */
+/* ── Universal Dialogs, Column Chooser & Filter Menu Popups ──────────────── */
+
+/* Outer Dialog Card & Popup Overlay */
 .e-dialog,
 .e-popup,
 .e-filter-popup,
 .e-excel-filter,
 .e-cc-popup,
 .e-colchooser,
+.e-ccdlg,
+.e-flmenu,
+.e-flquickmenu,
 .e-dlg-container,
 .e-dropdownbase,
-.e-dialog.e-control,
-.e-popup.e-control {
+.e-grid-popup,
+.e-grid-popup .e-dialog,
+.e-grid-popup .e-dialog.e-flmenu,
+.e-grid-popup .e-dialog.e-checkboxfilter,
+.e-grid-popup .e-dialog.e-ccdlg,
+.e-grid .e-dialog.e-flmenu,
+.e-grid .e-dialog.e-checkboxfilter,
+.e-grid .e-dialog.e-ccdlg {
   background-color: var(--color-surface) !important;
   color: var(--color-text) !important;
   border: 1px solid var(--color-border) !important;
@@ -175,22 +197,39 @@
   box-shadow: var(--shadow-lg) !important;
 }
 
-/* Dialog Header, Title, Content & Footer */
+/* Dialog Headers, Titles, Content & Footers */
 .e-dialog .e-dlg-header-content,
 .e-dialog .e-dlg-header,
 .e-dialog .e-title,
 .e-dialog .e-content,
+.e-dialog .e-dlg-content,
 .e-dialog .e-footer-content,
-.e-filter-popup .e-footer-content {
+.e-filter-popup .e-footer-content,
+.e-grid .e-dialog .e-dlg-content,
+.e-grid-popup .e-dialog .e-dlg-content,
+.e-grid .e-ccdlg .e-dlg-content,
+.e-grid-popup .e-ccdlg .e-dlg-content,
+.e-flmenu-valuediv,
+.e-flmenu .e-flmenu-valuediv {
   background-color: var(--color-surface) !important;
   color: var(--color-text) !important;
   border-color: var(--color-border) !important;
 }
 
-/* Column Chooser List Container & Checkbox Items */
+/* Column Chooser List Containers & Items (Image 2 & 3 Fix) */
 .e-cc-popup .e-cc-content,
+.e-cc-popup .e-cc-contentdiv,
+.e-cc-popup .e-cc-searchdiv,
 .e-cc-popup .e-list-parent,
-.e-cc-popup .e-list-item {
+.e-cc-popup .e-list-item,
+.e-grid .e-ccdlg .e-cc-contentdiv,
+.e-grid-popup .e-ccdlg .e-cc-contentdiv,
+.e-grid .e-ccdlg .e-cc-searchdiv,
+.e-grid-popup .e-ccdlg .e-cc-searchdiv,
+.e-grid .e-ccdlg .e-list-parent,
+.e-grid-popup .e-ccdlg .e-list-parent,
+.e-grid .e-ccdlg .e-list-item,
+.e-grid-popup .e-ccdlg .e-list-item {
   background-color: var(--color-surface) !important;
   color: var(--color-text) !important;
   border-color: var(--color-border-subtle) !important;
@@ -200,7 +239,10 @@
 .e-input-group,
 .e-control.e-textbox,
 .e-search-input,
-.e-ddl {
+.e-ddl,
+.e-filter-popup .e-input-group,
+.e-dialog .e-input-group,
+.e-ccdlg .e-input-group {
   background-color: var(--color-surface-subtle) !important;
   color: var(--color-text) !important;
   border: 1px solid var(--color-border) !important;
