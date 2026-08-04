@@ -39,6 +39,14 @@ PACKAGES=(
   ej2-calendars
   ej2-buttons
   ej2-popups
+  ej2-lists
+  ej2-navigations
+  ej2-notifications
+  ej2-excel-export
+  ej2-pdf-export
+  ej2-splitbuttons
+  ej2-file-utils
+  ej2-compression
 )
 
 JS_DIR="$ROOT/vendor/javascript/syncfusion"

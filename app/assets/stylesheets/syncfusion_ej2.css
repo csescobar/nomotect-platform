@@ -13,25 +13,31 @@
  */
 
 /* ── Core EJ2 base styles ─────────────────────────────────────────────────── */
-@import url("syncfusion/ej2-base/fluent2.css");
+@import url("ej2-base/fluent2.css");
 
 /* ── Grid ─────────────────────────────────────────────────────────────────── */
-@import url("syncfusion/ej2-grids/fluent2.css");
+@import url("ej2-grids/fluent2.css");
 
 /* ── Inputs ───────────────────────────────────────────────────────────────── */
-@import url("syncfusion/ej2-inputs/fluent2.css");
+@import url("ej2-inputs/fluent2.css");
 
 /* ── Dropdowns ────────────────────────────────────────────────────────────── */
-@import url("syncfusion/ej2-dropdowns/fluent2.css");
+@import url("ej2-dropdowns/fluent2.css");
 
 /* ── Calendars ────────────────────────────────────────────────────────────── */
-@import url("syncfusion/ej2-calendars/fluent2.css");
+@import url("ej2-calendars/fluent2.css");
 
-/* ── Buttons ──────────────────────────────────────────────────────────────── */
-@import url("syncfusion/ej2-buttons/fluent2.css");
+/* ── Buttons & SplitButtons ────────────────────────────────────────────────── */
+@import url("ej2-buttons/fluent2.css");
+@import url("ej2-splitbuttons/fluent2.css");
 
 /* ── Popups ───────────────────────────────────────────────────────────────── */
-@import url("syncfusion/ej2-popups/fluent2.css");
+@import url("ej2-popups/fluent2.css");
+
+/* ── Lists & Navigations & Notifications ───────────────────────────────────── */
+@import url("ej2-lists/fluent2.css");
+@import url("ej2-navigations/fluent2.css");
+@import url("ej2-notifications/fluent2.css");
 
 
 /* ══════════════════════════════════════════════════════════════════════════════
