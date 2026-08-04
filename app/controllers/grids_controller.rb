@@ -1,4 +1,6 @@
 class GridsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :show, if: -> { request.format.json? }
+
   def show
     @definition = GridEngine::Catalog.fetch(params[:id])
     @saved_views = Current.user.grid_saved_views.for_grid(@definition.key)

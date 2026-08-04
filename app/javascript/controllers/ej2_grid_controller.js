@@ -40,10 +40,14 @@ export default class extends Controller {
   // ---------------------------------------------------------------------------
 
   #initGrid() {
+    const csrfToken = document.querySelector("meta[name='csrf-token']")?.content;
+    const headers = csrfToken ? [{ "X-CSRF-Token": csrfToken }] : [];
+
     this.grid = new Grid({
       dataSource: new DataManager({
         url:      this.urlValue,
-        adaptor:  new UrlAdaptor()
+        adaptor:  new UrlAdaptor(),
+        headers:  headers
       }),
       allowPaging:    true,
       allowSorting:   true,
