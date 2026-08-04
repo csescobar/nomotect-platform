@@ -142,6 +142,30 @@
   color: var(--color-text) !important;
 }
 
+/* ── Checkbox Styling (Matched to NomoTect Design Tokens & Showcase) ───────── */
+.e-checkbox-wrapper .e-frame,
+.e-css.e-checkbox-wrapper .e-frame {
+  border: 1px solid var(--color-border) !important;
+  background-color: var(--color-surface) !important;
+  border-radius: var(--radius-xs) !important;
+}
+
+/* Checked State: Fill with --color-primary and check icon in --color-on-primary (White) */
+.e-checkbox-wrapper .e-frame.e-check,
+.e-css.e-checkbox-wrapper .e-frame.e-check,
+.e-checkbox-wrapper input[type="checkbox"]:checked + .e-frame,
+.e-checkbox-wrapper .e-checkbox:checked + .e-frame {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+}
+
+.e-checkbox-wrapper .e-check::before,
+.e-css.e-checkbox-wrapper .e-check::before,
+.e-checkbox-wrapper .e-frame.e-check::before {
+  color: var(--color-on-primary) !important;
+}
+
 /* ── Sort Arrows & Filter Icons in Headers ────────────────────────────────── */
 .e-grid .e-headercell .e-sortfilter,
 .e-grid .e-headercell .e-ascending,
