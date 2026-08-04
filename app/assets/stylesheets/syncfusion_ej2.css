@@ -51,9 +51,17 @@
   font-family: var(--font-family-sans) !important;
 }
 
-/* Container shell */
+/* Container shell — force full width */
+.ej2-grid-container,
+.ej2-grid-container .e-grid,
+.ej2-grid-container .e-gridheader,
+.ej2-grid-container .e-gridcontent {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
 .ej2-grid-container {
-  width: 100%;
   min-height: 200px;
   border-radius: var(--radius-md, 0.375rem);
   overflow: hidden;
@@ -87,10 +95,10 @@
   border-color: var(--color-border-subtle, #f0f0f0);
 }
 
-/* ── Dark Mode ([data-theme="dark"]) ───────────────────────────────────────── */
+/* ── Dark Mode Universal Overrides ────────────────────────────────────────── */
 
 /* 1. Main Grid Body */
-[data-theme="dark"] .e-grid,
+html[data-theme="dark"] .ej2-grid-container,
 html[data-theme="dark"] .e-grid,
 body[data-theme="dark"] .e-grid {
   background-color: var(--color-surface-primary, #0b0f19) !important;
@@ -99,205 +107,158 @@ body[data-theme="dark"] .e-grid {
 }
 
 /* 2. Grid Header & Toolbar */
-[data-theme="dark"] .e-grid .e-gridheader,
-[data-theme="dark"] .e-grid .e-headercell,
-[data-theme="dark"] .e-grid .e-headercelldiv,
-[data-theme="dark"] .e-grid .e-columnheader,
-[data-theme="dark"] .e-grid .e-toolbar,
-[data-theme="dark"] .e-grid .e-toolbar-items,
-[data-theme="dark"] .e-grid .e-toolbar-item,
 html[data-theme="dark"] .e-grid .e-gridheader,
 html[data-theme="dark"] .e-grid .e-headercell,
-html[data-theme="dark"] .e-grid .e-toolbar {
+html[data-theme="dark"] .e-grid .e-headercelldiv,
+html[data-theme="dark"] .e-grid .e-columnheader,
+html[data-theme="dark"] .e-grid .e-toolbar,
+html[data-theme="dark"] .e-grid .e-toolbar-items,
+html[data-theme="dark"] .e-grid .e-toolbar-item {
   background-color: var(--color-surface-secondary, #111827) !important;
   color: var(--color-text-primary, #f9fafb) !important;
   border-color: var(--color-border-subtle, #1e293b) !important;
 }
 
-[data-theme="dark"] .e-grid .e-headercell .e-headertext,
-[data-theme="dark"] .e-grid .e-headercell .e-icon-filter,
-[data-theme="dark"] .e-grid .e-headercell .e-filtericon {
+html[data-theme="dark"] .e-grid .e-headercell .e-headertext,
+html[data-theme="dark"] .e-grid .e-headercell .e-icon-filter,
+html[data-theme="dark"] .e-grid .e-headercell .e-filtericon {
   color: var(--color-text-primary, #f9fafb) !important;
 }
 
 /* 3. Grid Rows & Cells */
-[data-theme="dark"] .e-grid .e-rowcell,
 html[data-theme="dark"] .e-grid .e-rowcell {
   background-color: var(--color-surface-primary, #0b0f19) !important;
   color: var(--color-text-primary, #f3f4f6) !important;
   border-color: var(--color-border-subtle, #1e293b) !important;
 }
 
-[data-theme="dark"] .e-grid .e-altrow .e-rowcell {
+html[data-theme="dark"] .e-grid .e-altrow .e-rowcell {
   background-color: var(--color-surface-secondary, #111827) !important;
 }
 
-[data-theme="dark"] .e-grid .e-row:hover .e-rowcell {
+html[data-theme="dark"] .e-grid .e-row:hover .e-rowcell {
   background-color: var(--color-surface-hover, #1e293b) !important;
 }
 
-[data-theme="dark"] .e-grid .e-row.e-selectionbackground .e-rowcell {
+html[data-theme="dark"] .e-grid .e-row.e-selectionbackground .e-rowcell {
   background-color: var(--color-brand-subtle, #1e3a8a) !important;
   color: #ffffff !important;
 }
 
-/* 4. Pager Controls */
-[data-theme="dark"] .e-pager,
-[data-theme="dark"] .e-grid .e-pager,
-[data-theme="dark"] .e-pager .e-pagercontainer,
-html[data-theme="dark"] .e-pager {
+/* 4. Pager Buttons (Image 1 fix) */
+html[data-theme="dark"] .e-pager,
+html[data-theme="dark"] .e-grid .e-pager,
+html[data-theme="dark"] .e-pager .e-pagercontainer {
   background-color: var(--color-surface-secondary, #111827) !important;
   color: var(--color-text-primary, #f9fafb) !important;
   border-color: var(--color-border-subtle, #1e293b) !important;
 }
 
-[data-theme="dark"] .e-pager .e-link,
-[data-theme="dark"] .e-pager .e-numericitem,
-[data-theme="dark"] .e-pager .e-first,
-[data-theme="dark"] .e-pager .e-prev,
-[data-theme="dark"] .e-pager .e-next,
-[data-theme="dark"] .e-pager .e-last,
-[data-theme="dark"] .e-pager .e-firstpage,
-[data-theme="dark"] .e-pager .e-prevpage,
-[data-theme="dark"] .e-pager .e-nextpage,
-[data-theme="dark"] .e-pager .e-lastpage,
-[data-theme="dark"] .e-pager .e-firstpagedisabled,
-[data-theme="dark"] .e-pager .e-prevpagedisabled,
-[data-theme="dark"] .e-pager .e-nextpagedisabled,
-[data-theme="dark"] .e-pager .e-lastpagedisabled,
 html[data-theme="dark"] .e-pager .e-link,
-html[data-theme="dark"] .e-pager .e-numericitem {
+html[data-theme="dark"] .e-pager .e-numericitem,
+html[data-theme="dark"] .e-pager .e-first,
+html[data-theme="dark"] .e-pager .e-prev,
+html[data-theme="dark"] .e-pager .e-next,
+html[data-theme="dark"] .e-pager .e-last,
+html[data-theme="dark"] .e-pager .e-firstpage,
+html[data-theme="dark"] .e-pager .e-prevpage,
+html[data-theme="dark"] .e-pager .e-nextpage,
+html[data-theme="dark"] .e-pager .e-lastpage,
+html[data-theme="dark"] .e-pager .e-firstpagedisabled,
+html[data-theme="dark"] .e-pager .e-prevpagedisabled,
+html[data-theme="dark"] .e-pager .e-nextpagedisabled,
+html[data-theme="dark"] .e-pager .e-lastpagedisabled {
   background-color: var(--color-surface-primary, #0b0f19) !important;
   color: var(--color-text-primary, #9ca3af) !important;
   border: 1px solid var(--color-border-subtle, #1e293b) !important;
   border-radius: var(--radius-md, 6px) !important;
 }
 
-[data-theme="dark"] .e-pager .e-numericitem.e-active,
-[data-theme="dark"] .e-pager .e-currentitem,
-html[data-theme="dark"] .e-pager .e-numericitem.e-active {
+html[data-theme="dark"] .e-pager .e-numericitem.e-active,
+html[data-theme="dark"] .e-pager .e-currentitem {
   background-color: var(--color-brand-primary, #2563eb) !important;
   color: #ffffff !important;
   border-color: var(--color-brand-primary, #2563eb) !important;
 }
 
-[data-theme="dark"] .e-pager .e-link:hover:not(.e-active) {
+html[data-theme="dark"] .e-pager .e-link:hover:not(.e-active) {
   background-color: var(--color-surface-hover, #1e293b) !important;
   color: var(--color-text-primary, #ffffff) !important;
 }
 
-/* 5. Filter Popup, Dialogs & Menus */
-[data-theme="dark"] .e-excel-filter,
-[data-theme="dark"] .e-filter-popup,
-[data-theme="dark"] .e-dlg-container,
-[data-theme="dark"] .e-dialog,
-[data-theme="dark"] .e-popup,
-[data-theme="dark"] .e-dropdownbase,
-[data-theme="dark"] .e-menu-v,
-html[data-theme="dark"] .e-filter-popup,
-html[data-theme="dark"] .e-excel-filter,
+/* 5. ALL Popups, Dialogs, Column Chooser, Filter Menu (Image 0, 1, 2 fix) */
 html[data-theme="dark"] .e-dialog,
 html[data-theme="dark"] .e-popup,
-body[data-theme="dark"] .e-filter-popup,
-body[data-theme="dark"] .e-excel-filter,
+html[data-theme="dark"] .e-filter-popup,
+html[data-theme="dark"] .e-excel-filter,
+html[data-theme="dark"] .e-cc-popup,
+html[data-theme="dark"] .e-colchooser,
+html[data-theme="dark"] .e-dlg-container,
+html[data-theme="dark"] .e-dropdownbase,
 body[data-theme="dark"] .e-dialog,
-body[data-theme="dark"] .e-popup {
+body[data-theme="dark"] .e-popup,
+body[data-theme="dark"] .e-filter-popup,
+body[data-theme="dark"] .e-cc-popup,
+.e-dialog.e-control,
+.e-popup.e-control {
   background-color: var(--color-surface-secondary, #111827) !important;
   color: var(--color-text-primary, #f9fafb) !important;
   border: 1px solid var(--color-border-subtle, #1e293b) !important;
   border-radius: var(--radius-md, 8px) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7) !important;
 }
 
-/* Popup Pointer Arrow */
-[data-theme="dark"] .e-popup-pointer,
-[data-theme="dark"] .e-popup-pointer::after,
-html[data-theme="dark"] .e-popup-pointer,
-html[data-theme="dark"] .e-popup-pointer::after {
+/* Dialog Header, Title, Content & Footer */
+html[data-theme="dark"] .e-dialog .e-dlg-header-content,
+html[data-theme="dark"] .e-dialog .e-dlg-header,
+html[data-theme="dark"] .e-dialog .e-title,
+html[data-theme="dark"] .e-dialog .e-content,
+html[data-theme="dark"] .e-dialog .e-footer-content,
+html[data-theme="dark"] .e-filter-popup .e-footer-content,
+body[data-theme="dark"] .e-dialog .e-dlg-header-content,
+body[data-theme="dark"] .e-dialog .e-content {
   background-color: var(--color-surface-secondary, #111827) !important;
+  color: var(--color-text-primary, #f9fafb) !important;
   border-color: var(--color-border-subtle, #1e293b) !important;
 }
 
-/* Inputs, Textboxes & Dropdowns inside Filter Popup */
-[data-theme="dark"] .e-filter-popup .e-input-group,
-[data-theme="dark"] .e-filter-popup .e-control.e-textbox,
-[data-theme="dark"] .e-filter-popup .e-ddl,
-[data-theme="dark"] .e-filter-popup .e-search-input,
-html[data-theme="dark"] .e-filter-popup .e-input-group,
-html[data-theme="dark"] .e-filter-popup .e-control.e-textbox,
-html[data-theme="dark"] .e-filter-popup .e-ddl {
+/* Column Chooser List Container & Items (Image 0 fix) */
+html[data-theme="dark"] .e-cc-popup .e-cc-content,
+html[data-theme="dark"] .e-cc-popup .e-list-parent,
+html[data-theme="dark"] .e-cc-popup .e-list-item,
+body[data-theme="dark"] .e-cc-popup .e-list-item {
+  background-color: var(--color-surface-primary, #0b0f19) !important;
+  color: var(--color-text-primary, #f9fafb) !important;
+  border-color: var(--color-border-subtle, #1e293b) !important;
+}
+
+/* Text Inputs & Search Inputs inside Dialogs/Popups */
+html[data-theme="dark"] .e-input-group,
+html[data-theme="dark"] .e-control.e-textbox,
+html[data-theme="dark"] .e-search-input,
+html[data-theme="dark"] .e-ddl,
+body[data-theme="dark"] .e-input-group {
   background-color: var(--color-surface-primary, #0b0f19) !important;
   color: var(--color-text-primary, #f9fafb) !important;
   border: 1px solid var(--color-border-subtle, #1e293b) !important;
-  border-radius: var(--radius-md, 6px) !important;
 }
 
-[data-theme="dark"] .e-filter-popup .e-input-group input,
-[data-theme="dark"] .e-filter-popup input.e-input,
-html[data-theme="dark"] .e-filter-popup input {
+html[data-theme="dark"] input.e-input,
+html[data-theme="dark"] .e-input-group input,
+body[data-theme="dark"] input.e-input {
   color: var(--color-text-primary, #f9fafb) !important;
   background-color: transparent !important;
 }
 
-[data-theme="dark"] .e-filter-popup input::placeholder,
-html[data-theme="dark"] .e-filter-popup input::placeholder {
+html[data-theme="dark"] input::placeholder {
   color: #9ca3af !important;
-  opacity: 1 !important;
 }
 
-/* Remove white circle around dropdown arrow icon */
-[data-theme="dark"] .e-input-group-icon,
-[data-theme="dark"] .e-filter-popup .e-input-group-icon,
-[data-theme="dark"] .e-filter-popup .e-ddl .e-input-group-icon,
-html[data-theme="dark"] .e-input-group-icon {
+/* Dropdown Arrow & Icons */
+html[data-theme="dark"] .e-input-group-icon,
+html[data-theme="dark"] .e-ddl .e-input-group-icon,
+body[data-theme="dark"] .e-input-group-icon {
   background-color: transparent !important;
   color: var(--color-text-primary, #9ca3af) !important;
   border: none !important;
-  border-radius: 0 !important;
-}
-
-/* Dropdown list items inside filter popup */
-[data-theme="dark"] .e-dropdownbase .e-list-item,
-html[data-theme="dark"] .e-dropdownbase .e-list-item {
-  background-color: var(--color-surface-secondary, #111827) !important;
-  color: var(--color-text-primary, #f9fafb) !important;
-}
-
-[data-theme="dark"] .e-dropdownbase .e-list-item.e-hover,
-[data-theme="dark"] .e-dropdownbase .e-list-item.e-item-focus,
-html[data-theme="dark"] .e-dropdownbase .e-list-item.e-hover {
-  background-color: var(--color-surface-hover, #1e293b) !important;
-  color: var(--color-text-primary, #ffffff) !important;
-}
-
-/* Filter Popup Action Buttons */
-[data-theme="dark"] .e-filter-popup .e-footer-content,
-[data-theme="dark"] .e-dialog .e-footer-content,
-html[data-theme="dark"] .e-filter-popup .e-footer-content {
-  background-color: var(--color-surface-secondary, #111827) !important;
-  border-top: 1px solid var(--color-border-subtle, #1e293b) !important;
-}
-
-[data-theme="dark"] .e-filter-popup .e-btn,
-[data-theme="dark"] .e-dialog .e-btn,
-html[data-theme="dark"] .e-filter-popup .e-btn {
-  background-color: var(--color-surface-primary, #0b0f19) !important;
-  color: var(--color-text-primary, #f9fafb) !important;
-  border: 1px solid var(--color-border-subtle, #1e293b) !important;
-  border-radius: var(--radius-md, 6px) !important;
-  font-weight: 500 !important;
-}
-
-[data-theme="dark"] .e-filter-popup .e-btn.e-primary,
-[data-theme="dark"] .e-dialog .e-btn.e-primary,
-html[data-theme="dark"] .e-filter-popup .e-btn.e-primary {
-  background-color: var(--color-brand-primary, #2563eb) !important;
-  color: #ffffff !important;
-  border-color: var(--color-brand-primary, #2563eb) !important;
-}
-
-[data-theme="dark"] .e-filter-popup .e-btn.e-primary:hover,
-[data-theme="dark"] .e-dialog .e-btn.e-primary:hover,
-html[data-theme="dark"] .e-filter-popup .e-btn.e-primary:hover {
-  background-color: var(--color-brand-hover, #1d4ed8) !important;
 }
