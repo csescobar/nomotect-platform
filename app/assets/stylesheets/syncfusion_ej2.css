@@ -91,20 +91,54 @@
   border-color: var(--color-border) !important;
 }
 
-.e-grid .e-headercell .e-headertext,
-.e-grid .e-headercell .e-icon-filter,
-.e-grid .e-headercell .e-filtericon {
+.e-grid .e-headercell .e-headertext {
   color: var(--color-text) !important;
 }
 
-/* Toolbar Search & Columns Button */
+/* Toolbar Search & Columns Button Text & Icons */
 .e-grid .e-toolbar .e-search-input,
 .e-grid .e-toolbar .e-input-group,
 .e-grid .e-toolbar .e-btn,
-.e-grid .e-toolbar .e-tbar-btn {
+.e-grid .e-toolbar .e-tbar-btn,
+.e-grid .e-toolbar .e-tbar-btn-text,
+.e-grid .e-toolbar .e-btn-icon,
+.e-grid .e-toolbar .e-icon {
   background-color: var(--color-surface) !important;
   color: var(--color-text) !important;
   border: 1px solid var(--color-border) !important;
+}
+
+.e-grid .e-toolbar .e-tbar-btn-text,
+.e-grid .e-toolbar .e-btn .e-btn-text {
+  color: var(--color-text) !important;
+}
+
+.e-grid .e-toolbar .e-tbar-btn:hover,
+.e-grid .e-toolbar .e-btn:hover {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+}
+
+/* ── Sort Arrows & Filter Icons in Headers ────────────────────────────────── */
+.e-grid .e-headercell .e-sortfilter,
+.e-grid .e-headercell .e-ascending,
+.e-grid .e-headercell .e-descending,
+.e-grid .e-headercell .e-icon-ascending,
+.e-grid .e-headercell .e-icon-descending,
+.e-grid .e-headercell .e-rspin {
+  color: var(--color-primary) !important;
+}
+
+.e-grid .e-headercell .e-filtericon,
+.e-grid .e-headercell .e-icon-filter {
+  color: var(--color-text-muted) !important;
+}
+
+/* High Contrast Active Filtered Column Icon */
+.e-grid .e-headercell .e-filtered,
+.e-grid .e-headercell .e-icon-filter.e-filtered,
+.e-grid .e-headercell .e-filtericon.e-filtered {
+  color: var(--color-primary) !important;
 }
 
 /* ── Rows & Cells ──────────────────────────────────────────────────────────── */
@@ -216,7 +250,7 @@
   border-color: var(--color-border) !important;
 }
 
-/* Column Chooser List Containers & Items (Image 2 & 3 Fix) */
+/* Column Chooser List Containers, Checkboxes & High Contrast Labels */
 .e-cc-popup .e-cc-content,
 .e-cc-popup .e-cc-contentdiv,
 .e-cc-popup .e-cc-searchdiv,
@@ -233,6 +267,20 @@
   background-color: var(--color-surface) !important;
   color: var(--color-text) !important;
   border-color: var(--color-border-subtle) !important;
+}
+
+/* Column Chooser Label & Checkbox Text Colors */
+.e-cc-popup label,
+.e-cc-popup .e-label,
+.e-cc-popup span,
+.e-ccdlg label,
+.e-ccdlg .e-label,
+.e-ccdlg span,
+.e-list-parent .e-list-item label,
+.e-list-parent .e-list-item .e-label,
+.e-list-parent .e-list-item span,
+.e-checkbox-wrapper .e-label {
+  color: var(--color-text) !important;
 }
 
 /* Input Fields & Textboxes inside Dialogs/Popups/Toolbar */

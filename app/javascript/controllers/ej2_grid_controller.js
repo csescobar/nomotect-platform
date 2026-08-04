@@ -46,10 +46,15 @@ export default class extends Controller {
                 return fltrInput;
               },
               write: (args) => {
-                args.element.value = args.filteredValue || "";
+                const elem = args.element || (args.target ? args.target.querySelector("input") : null);
+                if (elem) {
+                  elem.value = args.filteredValue || "";
+                }
               },
               read: (args) => {
-                args.fltrObj.filterByColumn(args.column.field, args.operator, args.element.value);
+                const elem = args.element || (args.target ? args.target.querySelector("input") : null);
+                const val = elem ? elem.value : "";
+                args.fltrObj.filterByColumn(args.column.field, args.operator, val);
               }
             }
           }
