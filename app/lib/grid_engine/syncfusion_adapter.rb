@@ -69,7 +69,7 @@ module GridEngine
 
     def serialize_record(record)
       @definition.columns.values.to_h do |column|
-        value = record.public_send(column.attribute)
+        value = record.respond_to?(column.attribute) ? record.public_send(column.attribute) : nil
         [ column.key, value ]
       end
     end
