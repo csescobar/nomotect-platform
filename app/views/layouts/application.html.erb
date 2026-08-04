@@ -14,7 +14,10 @@
         }
       })();
     </script>
-    <%= stylesheet_link_tag "design_tokens", "application", "data-turbo-track": "reload", preload: false %>
+    <%= stylesheet_link_tag "design_tokens", "application", "syncfusion_ej2", "data-turbo-track": "reload", preload: false %>
+    <script nonce="<%= content_security_policy_nonce %>">
+      window.SYNCFUSION_LICENSE_KEY = "<%= Rails.application.config.syncfusion_license_key.to_s.html_safe %>";
+    </script>
     <%= javascript_importmap_tags %>
   </head>
   <body>

@@ -1,0 +1,91 @@
+/*
+ * Syncfusion EJ2 theme — Fluent2 base + dark variant
+ *
+ * CSS files are extracted from the offline zip into vendor/assets/syncfusion/
+ * by bin/extract_syncfusion_assets. Propshaft serves them from that path.
+ *
+ * The @import paths below are resolved by Propshaft at request time.
+ * The `?asset_host` suffix is NOT needed — Propshaft handles fingerprinting.
+ *
+ * Override order (last wins):
+ *   1. Syncfusion Fluent2 base variables
+ *   2. NomoTect design token overrides (at the bottom of this file)
+ */
+
+/* ── Core EJ2 base styles ─────────────────────────────────────────────────── */
+@import url("syncfusion/ej2-base/fluent2.css");
+
+/* ── Grid ─────────────────────────────────────────────────────────────────── */
+@import url("syncfusion/ej2-grids/fluent2.css");
+
+/* ── Inputs ───────────────────────────────────────────────────────────────── */
+@import url("syncfusion/ej2-inputs/fluent2.css");
+
+/* ── Dropdowns ────────────────────────────────────────────────────────────── */
+@import url("syncfusion/ej2-dropdowns/fluent2.css");
+
+/* ── Calendars ────────────────────────────────────────────────────────────── */
+@import url("syncfusion/ej2-calendars/fluent2.css");
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+@import url("syncfusion/ej2-buttons/fluent2.css");
+
+/* ── Popups ───────────────────────────────────────────────────────────────── */
+@import url("syncfusion/ej2-popups/fluent2.css");
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+ * NomoTect design token overrides
+ *
+ * Map Syncfusion EJ2 Fluent2 CSS variables to NomoTect semantic tokens.
+ * Only override variables that deviate from the base Fluent2 palette.
+ * All NomoTect semantic tokens are defined in app/assets/stylesheets/design_tokens.css.
+ * ══════════════════════════════════════════════════════════════════════════════ */
+:root {
+  /* Typography — use NomoTect body font */
+  --sf-fluent2-font-family:          var(--font-family-sans);
+  --sf-fluent2-font-size:            var(--font-size-sm);
+
+  /* Primary / brand accent */
+  --sf-fluent2-primary:              var(--color-brand-primary, #0f6cbd);
+  --sf-fluent2-primary-hover:        var(--color-brand-hover, #115ea3);
+
+  /* Surface / background */
+  --sf-fluent2-content-bg:           var(--color-surface-primary, #ffffff);
+  --sf-fluent2-header-bg:            var(--color-surface-secondary, #f5f5f5);
+
+  /* Border */
+  --sf-fluent2-border-color:         var(--color-border-subtle, #d1d1d1);
+
+  /* Row hover */
+  --sf-fluent2-row-hover-bg:         var(--color-surface-hover, #f0f0f0);
+
+  /* Selected row */
+  --sf-fluent2-row-selected-bg:      var(--color-brand-subtle, #e8f3fc);
+
+  /* Text */
+  --sf-fluent2-content-text:         var(--color-text-primary, #242424);
+  --sf-fluent2-header-text:          var(--color-text-primary, #242424);
+
+  /* Focus ring — match NomoTect focus outline */
+  --sf-fluent2-focus-ring-color:     var(--color-brand-primary, #0f6cbd);
+}
+
+/* Dark theme overrides — applied when [data-theme="dark"] is set on <html> */
+[data-theme="dark"] {
+  --sf-fluent2-content-bg:           var(--color-surface-primary, #1b1b1b);
+  --sf-fluent2-header-bg:            var(--color-surface-secondary, #292929);
+  --sf-fluent2-border-color:         var(--color-border-subtle, #404040);
+  --sf-fluent2-row-hover-bg:         var(--color-surface-hover, #2e2e2e);
+  --sf-fluent2-row-selected-bg:      var(--color-brand-subtle, #0e3f6c);
+  --sf-fluent2-content-text:         var(--color-text-primary, #f5f5f5);
+  --sf-fluent2-header-text:          var(--color-text-primary, #f5f5f5);
+}
+
+/* ── EJ2 Grid container shell ─────────────────────────────────────────────── */
+.ej2-grid-container {
+  width: 100%;
+  min-height: 200px;
+  border-radius: var(--radius-md, 0.375rem);
+  overflow: hidden;
+}

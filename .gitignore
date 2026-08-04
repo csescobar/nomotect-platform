@@ -10,3 +10,8 @@
 .env
 .DS_Store
 /public_site
+
+# Syncfusion EJ2 offline distribution zip (large binary, not committed)
+# Extracted assets live in vendor/javascript/syncfusion/ and vendor/assets/syncfusion/
+syncfusionejs2_trial.zip
+*.syncfusion*.zip
