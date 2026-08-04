@@ -1,4 +1,6 @@
 class GridSavedViewsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   before_action :set_grid
   before_action :set_saved_view, only: %i[update destroy]
 
@@ -47,9 +49,10 @@ class GridSavedViewsController < ApplicationController
   end
 
   def parse_json_object(value)
+    return value.to_h if value.is_a?(Hash) || value.is_a?(ActionController::Parameters)
     parsed = JSON.parse(value.presence || "{}")
     parsed.is_a?(Hash) ? parsed : {}
-  rescue JSON::ParserError
+  rescue JSON::ParserError, TypeError
     {}
   end
 end

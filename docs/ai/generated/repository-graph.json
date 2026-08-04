@@ -347,7 +347,7 @@
       "name": "GridSavedViews",
       "path": "app/controllers/grid_saved_views_controller.rb",
       "properties": {
-        "sha256": "1db8fcfc2a55935d05dced0d037363c3dc803d73ed2be86a499181f000e490cf",
+        "sha256": "8355b49a378da0e2dbaa5161f7430703a9ce3402c9a76de5cb5d000859fa7f09",
         "source": "platform"
       }
     },
@@ -1817,7 +1817,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "4f99e69f8664fe31159227acdffa0c4aae8f2cd45e59d2c059fb21fad9190ce3",
+        "sha256": "403bd7169acebaa89e1ed0bf776676b5fdd05b166131ca0b871932c97d24ca76",
         "source": "platform"
       }
     },
@@ -2527,7 +2527,7 @@
       "name": "Controllers::GridsControllerSyncfusion",
       "path": "test/controllers/grids_controller_syncfusion_test.rb",
       "properties": {
-        "sha256": "8ee6ea9c7326faad4ae738b6312c88bb7208dcbf256e44f8e6ad4da8961a146b",
+        "sha256": "a24efc6ef5a9b342452f2a5de90cfd2d4693585be34603d3c35e602bf628bfae",
         "source": "platform"
       }
     },
@@ -5448,5 +5448,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "50bbc2ec9c98deaeaa2e338303507d6d621def24"
+  "repository_commit": "2b0ff65fd895230397589187ab537ab28eccc9eb"
 }
