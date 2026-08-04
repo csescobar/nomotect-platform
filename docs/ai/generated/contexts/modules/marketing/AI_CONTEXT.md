@@ -25,8 +25,10 @@
 ## Relationships
 
 - `component:Marketing::Lifecycle` —DOCUMENTED_BY→ `document:Extensions::Lifecycle-guide`
+- `component:Marketing::Lifecycle` —DOCUMENTED_BY→ `document:Operators::Compatibility-and-lifecycle`
 - `controller:Marketing` —TESTED_BY→ `test:Components::MarketingComponents`
 - `controller:Marketing` —TESTED_BY→ `test:Controllers::MarketingController`
+- `component:Marketing::Lifecycle` —TESTED_BY→ `test:Integration::CompatibilityLifecycleDocumentation`
 - `component:Marketing::Header` —TESTED_BY→ `test:Requests::SecurityHeaders`
 - `component:Marketing::Lifecycle` —TESTED_BY→ `test:Services::Extensions::Lifecycle`
 

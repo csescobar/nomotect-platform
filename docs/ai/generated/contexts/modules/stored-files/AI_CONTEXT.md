@@ -1,21 +1,18 @@
-# StoredFile AI Context
+# StoredFiles AI Context
 
 > Generated artifact. Source changes must be followed by regeneration.
 
 ## Responsibilities
 
-- model: StoredFile
-- policy: StoredFile
+- controller: StoredFiles
 
 ## Source paths
 
-- `app/models/stored_file.rb`
-- `app/policies/stored_file_policy.rb`
+- `app/controllers/stored_files_controller.rb`
 
 ## Relationships
 
-- `model:StoredFile` —TESTED_BY→ `test:Controllers::StoredFilesController`
-- `policy:StoredFile` —TESTED_BY→ `test:Controllers::StoredFilesController`
+- `controller:StoredFiles` —TESTED_BY→ `test:Controllers::StoredFilesController`
 
 ## Contract
 

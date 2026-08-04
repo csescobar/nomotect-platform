@@ -28,7 +28,7 @@ class GridEngine::SyncfusionAdapterTest < ActiveSupport::TestCase
       assert col.key?(:headerText),    "missing :headerText in #{col.inspect}"
       assert col.key?(:visible),       "missing :visible in #{col.inspect}"
       assert col.key?(:allowSorting),  "missing :allowSorting in #{col.inspect}"
-      assert col.key?(:allowFiltering),"missing :allowFiltering in #{col.inspect}"
+      assert col.key?(:allowFiltering), "missing :allowFiltering in #{col.inspect}"
       assert col.key?(:type),          "missing :type in #{col.inspect}"
     end
   end
@@ -179,7 +179,7 @@ class GridEngine::SyncfusionAdapterTest < ActiveSupport::TestCase
   end
 
   test "filter_choice_response returns distinct field values for filter popup" do
-    orgs = [Organization.create!(name: "Acme"), Organization.create!(name: "Acme")]
+    orgs = [ Organization.create!(name: "Acme"), Organization.create!(name: "Acme") ]
     result = mock_result(records: orgs, total_count: 2)
     response = @adapter.filter_choice_response(result, field: "name")
 

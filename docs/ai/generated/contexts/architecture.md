@@ -4,13 +4,13 @@
 
 ## Composition
 
-- component: 29
-- controller: 19
-- document: 120
+- component: 30
+- controller: 21
+- document: 157
 - job: 7
 - model: 21
-- policy: 3
-- test: 84
+- policy: 4
+- test: 137
 
 ## Diagram
 
@@ -55,6 +55,7 @@ graph LR
   organizations[Organizations]
   passwords[Passwords]
   platform_role[PlatformRole]
+  preferences[Preferences]
   privacy_preference[PrivacyPreference]
   privacy_request[PrivacyRequest]
   privacy_requests[PrivacyRequests]
@@ -65,6 +66,7 @@ graph LR
   session[Session]
   sessions[Sessions]
   stored_file[StoredFile]
+  stored_files[StoredFiles]
   tenant_selections[TenantSelections]
   ui[Ui]
   user[User]
@@ -74,8 +76,12 @@ graph LR
 
 ## Contracts
 
+- `application_layer` v1
 - `distributions` v1
+- `epic_10_validation` v1
 - `extensions` v1
+- `operational_readiness` v1
 - `platform` v1
 - `releases` v1
+- `representative_application` v1
 - `upgrades` v1

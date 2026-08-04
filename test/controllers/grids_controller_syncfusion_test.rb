@@ -87,8 +87,8 @@ class GridsControllerSyncfusionTest < ActionDispatch::IntegrationTest
          params: {
            skip: 0,
            take: 25,
-           sorted: [{ name: "name", direction: "ascending" }],
-           where: [{ field: "name", operator: "contains", value: "Syncfusion" }]
+           sorted: [ { name: "name", direction: "ascending" } ],
+           where: [ { field: "name", operator: "contains", value: "Syncfusion" } ]
          },
          as: :json
 

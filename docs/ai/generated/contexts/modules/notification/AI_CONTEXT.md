@@ -12,7 +12,7 @@
 
 ## Relationships
 
-
+- `model:Notification` —DOCUMENTED_BY→ `document:Modules::EnterpriseServices::Notifications`
 
 ## Contract
 

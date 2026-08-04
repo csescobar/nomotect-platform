@@ -1,5 +1,48 @@
 [
   {
+    "id": "application_layer",
+    "version": 1,
+    "owns": [
+      "application_source_boundary",
+      "application_bootstrap",
+      "application_role_registration",
+      "application_grid_registration",
+      "application_policy_view_integration",
+      "application_extension_packages",
+      "application_layer_certification"
+    ],
+    "may_use": [
+      "authorization_policies",
+      "grid",
+      "extensions",
+      "multi_tenancy"
+    ],
+    "cannot_use": [
+      "undocumented_internal_contracts",
+      "protected_core_modification",
+      "arbitrary_executable_path_discovery",
+      "implicit_administrative_permissions",
+      "unscoped_grid_relations"
+    ],
+    "invariants": [
+      "product-specific behavior remains below application",
+      "shared platform code never references product-specific constants",
+      "custom roles declare explicit permissions and never replace protected roles",
+      "every application grid registration includes an authorized scope",
+      "controller authorization remains mandatory even when views hide denied actions",
+      "application extensions are disabled by default and preserve community fallback",
+      "application extension paths remain bounded to fixed roots",
+      "certification evidence is deterministic credential free and cannot authorize publication"
+    ],
+    "required_tests": [
+      "application_layer_bootstrap_test",
+      "application_registrations_test",
+      "application_extension_sample_test",
+      "application_layer_certification_test",
+      "application_layer_contract_workflow"
+    ]
+  },
+  {
     "id": "distributions",
     "version": 1,
     "owns": [
@@ -83,6 +126,60 @@
     ]
   },
   {
+    "id": "epic_10_validation",
+    "version": 1,
+    "owns": [
+      "validation_plan",
+      "governed_finding",
+      "validation_certification",
+      "release_blocker_policy",
+      "expiring_risk_acceptance",
+      "supported_environment_matrix",
+      "measurable_release_thresholds",
+      "deterministic_rc_plan",
+      "protected_rc_approval_boundary",
+      "representative_application_architecture",
+      "representative_application_public_contract_boundary"
+    ],
+    "may_use": [
+      "repository_intelligence",
+      "release_evidence",
+      "operational_readiness",
+      "compatibility_metadata",
+      "runtime_and_packaging_evidence",
+      "documented_platform_contracts"
+    ],
+    "cannot_use": [
+      "release_candidate_publication_during_planning",
+      "automatic_release_publication",
+      "silent_risk_acceptance",
+      "secret_bearing_evidence",
+      "undocumented_internal_contracts",
+      "protected_core_modification",
+      "mandatory_commercial_services"
+    ],
+    "invariants": [
+      "validation contracts reject unknown fields",
+      "critical and high findings cannot be accepted as residual risk",
+      "accepted findings require explicit human approval and expiry",
+      "passed certification requires every recorded phase to be complete",
+      "passed certification rejects unresolved critical and high findings",
+      "certification evidence is bound to a full source commit",
+      "supported environments cite repository evidence and declare manual validation",
+      "every quality category defines measurable targets and required evidence",
+      "RC plans bind versioned inputs to a full source commit",
+      "RC planning cannot approve or publish its own output",
+      "representative application journeys use documented public contracts only",
+      "representative application evidence is deterministic and credential free",
+      "representative application architecture cannot authorize publication"
+    ],
+    "required_tests": [
+      "epic_10_contract_validator_test",
+      "epic_10_release_baseline_test",
+      "epic_10_rc_preparation_test"
+    ]
+  },
+  {
     "id": "extensions",
     "version": 1,
     "owns": [
@@ -106,7 +203,9 @@
       "extension_readiness_gate",
       "extension_certification_fixture",
       "extension_certification_matrix",
-      "extension_lifecycle_documentation"
+      "extension_lifecycle_documentation",
+      "application_extension_configuration",
+      "application_extension_package"
     ],
     "may_use": [
       "platform_version",
@@ -140,6 +239,7 @@
       "optional extensions are skipped only before execution and only for fully scoped findings",
       "any entrypoint failure requires process replacement before retry",
       "extension configuration contains no credentials or runtime secrets",
+      "application extension packages resolve only below the fixed application extensions root",
       "component paths remain inside the extension package root",
       "component real paths cannot escape the package root through symbolic links",
       "extension upgrade observations never execute entrypoints or migrations",
@@ -161,6 +261,80 @@
       "extension_health_controller_test",
       "extension_framework_certification_test",
       "extension_readiness_playbook_test"
+    ]
+  },
+  {
+    "id": "operational_readiness",
+    "version": 1,
+    "owns": [
+      "operational_backup_manifest",
+      "restore_plan",
+      "restore_safety_gate",
+      "restore_adapter_registry",
+      "restore_execution",
+      "restore_certification",
+      "support_bundle_manifest",
+      "diagnostic_redaction",
+      "diagnostic_collector_registry",
+      "support_bundle_builder",
+      "operational_health_snapshot",
+      "health_provider_registry",
+      "operational_health_inspector",
+      "disaster_recovery_policy",
+      "resilience_scenario_registry",
+      "resilience_certification_report",
+      "backup_component_inventory",
+      "restore_verification_requirements"
+    ],
+    "may_use": [
+      "platform_version",
+      "database_schema",
+      "installation_state",
+      "generated_artifacts",
+      "persistent_files",
+      "backup_evidence"
+    ],
+    "cannot_use": [
+      "persisted_credentials",
+      "embedded_secrets",
+      "automatic_destructive_restore",
+      "provider_specific_assumptions"
+    ],
+    "invariants": [
+      "operational manifests are credential-free",
+      "every backup set covers PostgreSQL, persistent files, generated configuration and installation metadata",
+      "every component is checksum-bound",
+      "restore dependencies are explicit and ordered",
+      "restore execution requires a later provider adapter and operator-controlled safety gate",
+      "restore execution requires maintenance mode, drained work and explicit operator confirmation",
+      "every component checksum is verified before its adapter executes",
+      "post-restore certification fails closed unless every required check passes",
+      "support bundles contain only explicitly registered structured collectors",
+      "diagnostic values are redacted before they are written",
+      "support bundle entries and total output are size bounded",
+      "support bundle files are checksum-bound and written with restricted permissions",
+      "support bundles are never uploaded automatically",
+      "operational health providers are explicit, isolated and time bounded",
+      "health findings use stable codes without raw exception messages",
+      "required and optional dependencies affect aggregate health differently",
+      "operational health covers installation, deployment, jobs, storage and integrations",
+      "disaster recovery objectives, roles and scenarios are explicit",
+      "restore and return to service require human approval",
+      "fault injection is limited to production-like temporary fixtures",
+      "every required resilience scenario must pass before certification",
+      "verification covers database schema, installation contract, generated artifacts and application health"
+    ],
+    "required_tests": [
+      "operational_backup_manifest_test",
+      "operational_restore_plan_test",
+      "operational_restore_certification_test",
+      "diagnostic_redactor_test",
+      "support_bundle_builder_test",
+      "support_bundle_certification_test",
+      "operational_health_inspector_test",
+      "operational_health_certification_test",
+      "disaster_recovery_policy_test",
+      "resilience_certification_test"
     ]
   },
   {
@@ -244,6 +418,88 @@
       "releases_preparation_test",
       "releases_consistency_validator_test",
       "release_framework_certification_test"
+    ]
+  },
+  {
+    "id": "representative_application",
+    "version": 1,
+    "owns": [
+      "representative_application_fixture",
+      "public_contract_allowlist",
+      "required_capability_journeys",
+      "deterministic_fixture_evidence",
+      "design_i18n_grid_journey",
+      "domain_services_journey",
+      "multitenant_extension_journey",
+      "representative_application_findings",
+      "representative_application_certification",
+      "representative_application_rc_upgrade_fixtures",
+      "representative_application_rc_upgrade_certification",
+      "functional_framework_certification",
+      "production_deployment_certification",
+      "operational_resilience_certification",
+      "accessibility_certification",
+      "security_privacy_isolation_certification",
+      "performance_compatibility_certification",
+      "ai_readiness_certification"
+    ],
+    "may_use": [
+      "epic_10_validation",
+      "installation",
+      "design_tokens",
+      "themes",
+      "internationalization",
+      "domain_operations",
+      "domain_queries",
+      "authorization_policies",
+      "domain_events",
+      "grid",
+      "saved_views",
+      "exports",
+      "background_jobs",
+      "notifications",
+      "files",
+      "workflow",
+      "audit",
+      "multi_tenancy",
+      "extensions",
+      "operational_health",
+      "upgrades"
+    ],
+    "cannot_use": [
+      "undocumented_internal_contracts",
+      "protected_core_modification",
+      "mandatory_commercial_services",
+      "automatic_telemetry",
+      "maintainer_credentials",
+      "production_data",
+      "release_publication"
+    ],
+    "invariants": [
+      "fixture journeys use documented public contracts only",
+      "fixture operation remains community complete",
+      "fixture evidence is deterministic and credential free",
+      "tenant isolation is exercised with at least two organizations",
+      "Light and Dark themes are required",
+      "English and Brazilian Portuguese journeys are required",
+      "automated certification does not replace required manual reviews",
+      "representative application work cannot authorize publication"
+    ],
+    "required_tests": [
+      "representative_application_test",
+      "representative_application_journey_test",
+      "domain_services_journey_test",
+      "multitenant_extension_journey_test",
+      "representative_application_certification_test",
+      "rc_upgrade_fixture_test",
+      "rc_upgrade_certification_test",
+      "functional_framework_certification_test",
+      "production_deployment_certification_test",
+      "operational_resilience_certification_test",
+      "accessibility_certification_test",
+      "security_privacy_isolation_certification_test",
+      "performance_compatibility_certification_test",
+      "ai_readiness_certification_test"
     ]
   },
   {

@@ -14,7 +14,9 @@
 
 - `controller:Health` —DOCUMENTED_BY→ `document:Ai::Repository-health`
 - `controller:Health` —TESTED_BY→ `test:Controllers::HealthController`
+- `controller:Health` —TESTED_BY→ `test:Integration::OperationalHealthCertification`
 - `controller:Health` —TESTED_BY→ `test:Lib::RepositoryIntelligenceHealth`
+- `controller:Health` —TESTED_BY→ `test:Services::OperationalReadiness::OperationalHealthInspector`
 
 ## Contract
 
