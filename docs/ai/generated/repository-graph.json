@@ -2527,7 +2527,7 @@
       "name": "Controllers::GridsControllerSyncfusion",
       "path": "test/controllers/grids_controller_syncfusion_test.rb",
       "properties": {
-        "sha256": "a24efc6ef5a9b342452f2a5de90cfd2d4693585be34603d3c35e602bf628bfae",
+        "sha256": "cff8cd3970be44fda69304d198fd4ac3ca9e681a735569df6e915304d450af4b",
         "source": "platform"
       }
     },
@@ -5448,5 +5448,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "ac89a722938a57b1f4702d0a0138f0daa6fa969d"
+  "repository_commit": "68e3ba0756a8189df0bfb68fd5e4da8f6327b4f7"
 }

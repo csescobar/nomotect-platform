@@ -1,16 +1,62 @@
 import { Controller } from "@hotwired/stimulus";
 import { Grid, Page, Sort, Filter, Toolbar, ColumnChooser, ExcelExport } from "@syncfusion/ej2-grids";
 import { DataManager, UrlAdaptor } from "@syncfusion/ej2-data";
+import { L10n } from "@syncfusion/ej2-base";
 
 // Register EJ2 Grid feature modules including Excel/CSV Export
 Grid.Inject(Page, Sort, Filter, Toolbar, ColumnChooser, ExcelExport);
 
+// Register Syncfusion EJ2 i18n Translations for pt-BR and en
+L10n.load({
+  "pt-BR": {
+    grid: {
+      ColumnChooser: "Colunas",
+      CsvExport: "Exportar CSV",
+      ExcelExport: "Exportar Excel",
+      Search: "Buscar",
+      FilterButton: "Filtrar",
+      ClearButton: "Limpar",
+      OKButton: "OK",
+      CancelButton: "Cancelar",
+      EmptyRecord: "Nenhum registro encontrado"
+    }
+  },
+  "pt": {
+    grid: {
+      ColumnChooser: "Colunas",
+      CsvExport: "Exportar CSV",
+      ExcelExport: "Exportar Excel",
+      Search: "Buscar",
+      FilterButton: "Filtrar",
+      ClearButton: "Limpar",
+      OKButton: "OK",
+      CancelButton: "Cancelar",
+      EmptyRecord: "Nenhum registro encontrado"
+    }
+  },
+  "en": {
+    grid: {
+      ColumnChooser: "Columns",
+      CsvExport: "Export CSV",
+      ExcelExport: "Export Excel",
+      Search: "Search",
+      FilterButton: "Filter",
+      ClearButton: "Clear",
+      OKButton: "OK",
+      CancelButton: "Cancel",
+      EmptyRecord: "No records to display"
+    }
+  }
+});
+
 // EJ2 Grid Stimulus Controller — Phase 4B Enterprise UX
 export default class extends Controller {
   static values = {
-    url:      String,
-    columns:  Array,
-    pageSize: { type: Number, default: 25 }
+    url:           String,
+    columns:       Array,
+    pageSize:      { type: Number, default: 25 },
+    resetUrl:      String,
+    currentViewId: String
   };
 
   connect() {
@@ -23,8 +69,22 @@ export default class extends Controller {
   }
 
   // ---------------------------------------------------------------------------
-  // Public Actions — Saved Views Modal
+  // Public Actions — Saved Views Dropdown & Modal
   // ---------------------------------------------------------------------------
+
+  handleSavedViewSelection(event) {
+    const val = event.target.value;
+    const resetUrl = this.resetUrlValue || window.location.pathname;
+
+    if (val === "__save_new__") {
+      event.target.value = this.currentViewIdValue || "";
+      this.openSaveViewModal();
+    } else if (val === "__reset__" || val === "__default__") {
+      window.location.href = resetUrl;
+    } else if (val && val !== "") {
+      window.location.href = `${resetUrl}?view_id=${encodeURIComponent(val)}`;
+    }
+  }
 
   openSaveViewModal() {
     const dialog = document.getElementById("save-view-dialog");
@@ -116,6 +176,8 @@ export default class extends Controller {
     }
     toolbarItems.push("ColumnChooser", "CsvExport", "ExcelExport");
 
+    const activeLocale = document.documentElement.lang || "pt-BR";
+
     this.grid = new Grid({
       dataSource: new DataManager({
         url:      this.urlValue,
@@ -132,7 +194,7 @@ export default class extends Controller {
       pageSettings:      { pageSize: this.pageSizeValue },
       toolbar:           toolbarItems,
       columns:           columns,
-      locale:            document.documentElement.lang || "en",
+      locale:            activeLocale,
 
       toolbarClick: (args) => {
         const itemId = (args.item?.id || "").toLowerCase();

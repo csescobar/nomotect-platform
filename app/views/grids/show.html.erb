@@ -6,39 +6,46 @@
   description: t("grid_engine.#{@definition.key}.description")
 ) %>
 
-<%# ── Saved Views Bar & EJ2 Grid Container ──────────────────────────────────── %>
-<section
-  class="showcase__section grid-page-section"
-  aria-labelledby="grid-results-heading"
+<%# ── EJ2 Grid Page Container ────────────────────────────────────────────────── %>
+<div
+  class="grid-page-container mt-4"
   data-controller="ej2-grid"
   data-ej2-grid-url-value="<%= grid_path(@definition.key, format: :json, adapter: :syncfusion) %>"
   data-ej2-grid-columns-value="<%= GridEngine::SyncfusionAdapter.new(@definition).columns.to_json %>"
   data-ej2-grid-page-size-value="25"
+  data-ej2-grid-reset-url-value="<%= grid_path(@definition.key) %>"
+  data-ej2-grid-current-view-id-value="<%= @selected_view&.id || '' %>"
 >
-  <h2 id="grid-results-heading" class="visually-hidden"><%= t("grid_engine.#{@definition.key}.title") %></h2>
-
-  <%# ── Saved Views Toolbar ─────────────────────────────────────────────────── %>
+  <%# ── Compact Saved Views Dropdown Template (Injected into EJ2 Grid Toolbar) ── %>
   <div id="grid-saved-views-bar" class="grid-saved-views-bar">
-    <form action="<%= grid_path(@definition.key) %>" method="get" class="grid-saved-views-bar__form">
-      <label for="saved-view-selector" class="grid-saved-views-bar__label">
-        <%= t("grid_engine.saved_views.title", default: "Visão:") %>
-      </label>
-      <select id="saved-view-selector" name="view_id" onchange="this.form.submit()" class="grid-saved-views-bar__select">
-        <option value=""><%= t("grid_engine.saved_views.system_default", default: "Padrão do Sistema") %></option>
+    <select
+      id="saved-view-selector"
+      class="grid-saved-views-bar__select"
+      data-action="change->ej2-grid#handleSavedViewSelection"
+      aria-label="<%= t("grid_engine.saved_views.title", default: "Visões Salvas") %>"
+    >
+      <option value="" disabled <%= "selected" if @selected_view.nil? %>>
+        📌 <%= t("grid_engine.saved_views.title", default: "Visões Salvas") %>
+      </option>
+      <optgroup label="<%= t("grid_engine.saved_views.user_views", default: "Minhas Visões") %>">
+        <option value="__default__" <%= "selected" if @selected_view.nil? %>>
+          <%= t("grid_engine.saved_views.system_default", default: "Padrão do Sistema") %>
+        </option>
         <% @saved_views.each do |view| %>
           <option value="<%= view.id %>" <%= "selected" if @selected_view&.id == view.id %>>
             <%= view.name %><%= " (#{t('grid_engine.saved_views.default_tag', default: 'Padrão')})" if view.default? %>
           </option>
         <% end %>
-      </select>
-    </form>
-
-    <div class="grid-saved-views-bar__actions">
-      <button type="button" class="btn btn--secondary" data-action="click->ej2-grid#openSaveViewModal">
-        <%= t("grid_engine.saved_views.save_current", default: "Salvar Visão atual") %>
-      </button>
-      <%= link_to t("grid_engine.saved_views.reset", default: "Redefinir"), grid_path(@definition.key), class: "btn btn--ghost" %>
-    </div>
+      </optgroup>
+      <optgroup label="<%= t("grid_engine.saved_views.actions_group", default: "Ações") %>">
+        <option value="__save_new__">
+          ➕ <%= t("grid_engine.saved_views.save_current", default: "Salvar Visão Atual...") %>
+        </option>
+        <option value="__reset__">
+          ↺ <%= t("grid_engine.saved_views.reset", default: "Redefinir para Padrão") %>
+        </option>
+      </optgroup>
+    </select>
   </div>
 
   <%# ── EJ2 Grid Container ──────────────────────────────────────────────────── %>
@@ -83,4 +90,4 @@
       <%= GridEngine::HtmlRenderer.new(@definition, @result.records, columns: current_columns).call %>
     </turbo-frame>
   </noscript>
-</section>
+</div>

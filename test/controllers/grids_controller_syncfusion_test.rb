@@ -131,7 +131,7 @@ class GridsControllerSyncfusionTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "#grid-saved-views-bar"
-    assert_select "select[name='view_id'] option", text: /Minha Visão Teste/
+    assert_select "#saved-view-selector option", text: /Minha Visão Teste/
   end
 
   test "POST /grids/:grid_id/grid_saved_views creates a new saved view and redirects back to grid" do

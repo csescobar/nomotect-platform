@@ -2779,7 +2779,7 @@
       "name": "Controllers::GridsControllerSyncfusion",
       "path": "test/controllers/grids_controller_syncfusion_test.rb",
       "properties": {
-        "sha256": "a24efc6ef5a9b342452f2a5de90cfd2d4693585be34603d3c35e602bf628bfae",
+        "sha256": "cff8cd3970be44fda69304d198fd4ac3ca9e681a735569df6e915304d450af4b",
         "source": "platform"
       },
       "@id": "test:Controllers::GridsControllerSyncfusion"
