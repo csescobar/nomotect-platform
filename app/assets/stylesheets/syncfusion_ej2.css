@@ -95,27 +95,50 @@
   color: var(--color-text) !important;
 }
 
-/* Toolbar Search & Columns Button Text & Icons */
+/* Toolbar Search & Columns Button Containers */
 .e-grid .e-toolbar .e-search-input,
 .e-grid .e-toolbar .e-input-group,
 .e-grid .e-toolbar .e-btn,
-.e-grid .e-toolbar .e-tbar-btn,
-.e-grid .e-toolbar .e-tbar-btn-text,
-.e-grid .e-toolbar .e-btn-icon,
-.e-grid .e-toolbar .e-icon {
+.e-grid .e-toolbar .e-tbar-btn {
   background-color: var(--color-surface) !important;
   color: var(--color-text) !important;
   border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: none !important;
 }
 
+/* Remove inner borders, outlines and background leaks on button text/icons */
 .e-grid .e-toolbar .e-tbar-btn-text,
-.e-grid .e-toolbar .e-btn .e-btn-text {
+.e-grid .e-toolbar .e-btn-text,
+.e-grid .e-toolbar .e-btn-icon,
+.e-grid .e-toolbar .e-icon,
+.e-grid .e-toolbar .e-tbar-btn *,
+.e-grid .e-toolbar .e-btn * {
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   color: var(--color-text) !important;
 }
 
 .e-grid .e-toolbar .e-tbar-btn:hover,
 .e-grid .e-toolbar .e-btn:hover {
   background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+}
+
+/* ── Tooltips ──────────────────────────────────────────────────────────────── */
+.e-tooltip-wrap,
+.e-grid-tooltip {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.e-tooltip-wrap .e-tip-content,
+.e-grid-tooltip .e-tip-content {
   color: var(--color-text) !important;
 }
 
