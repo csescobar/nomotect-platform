@@ -1,0 +1,22 @@
+schema_version: 1
+id: 188-syncfusion-ej2-integration
+category: feature
+summary: Integrate Syncfusion EJ2 Data Grid engine with NomoTect Design Tokens.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Enhanced EJ2 data grid keyboard navigation and ARIA attributes integrated with NomoTect Design Tokens.
