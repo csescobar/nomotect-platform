@@ -109,7 +109,7 @@ class GridsController < ApplicationController
     return true if params[:action] == "filterchoice" || params[:distinct] == "true"
 
     where = Array(params[:where])
-    where.size == 1 && where.first.is_a?(Hash) && where.first["field"].present? && params[:page].nil? && params[:sorts].blank?
+    where.size == 1 && where.first.is_a?(Hash) && where.first["field"].present? && params[:skip].nil? && params[:requiresCounts].nil?
   end
 
   def extract_filter_field
