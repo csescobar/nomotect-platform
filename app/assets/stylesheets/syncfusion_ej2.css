@@ -34,10 +34,24 @@
 
 
 /* ══════════════════════════════════════════════════════════════════════════════
- * NomoTect Design Token Integration
+ * NomoTect Design Tokens Integration
+ *
+ * All color, font, spacing, radius, and shadow values are mapped dynamically
+ * to NomoTect design tokens defined in app/assets/stylesheets/design_tokens.css.
+ * No hardcoded hex values or inline styles are used.
  * ══════════════════════════════════════════════════════════════════════════════ */
 
-/* Common typography */
+/* Container shell */
+.ej2-grid-container {
+  width: 100%;
+  min-width: 0;
+  min-height: 200px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Base typography & box model */
 .e-grid,
 .e-grid .e-gridheader,
 .e-grid .e-headercell,
@@ -47,218 +61,202 @@
 .e-excel-filter,
 .e-filter-popup,
 .e-dialog,
-.e-popup {
+.e-popup,
+.e-dropdownbase {
   font-family: var(--font-family-sans) !important;
+  box-sizing: border-box;
 }
 
-/* Container shell — force full width */
-.ej2-grid-container,
-.ej2-grid-container .e-grid,
-.ej2-grid-container .e-gridheader,
-.ej2-grid-container .e-gridcontent {
+/* ── Grid Main Frame ───────────────────────────────────────────────────────── */
+.e-grid {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
   width: 100% !important;
   min-width: 0 !important;
-  box-sizing: border-box !important;
 }
 
-.ej2-grid-container {
-  min-height: 200px;
-  border-radius: var(--radius-md, 0.375rem);
-  overflow: hidden;
+/* ── Headers & Toolbar ─────────────────────────────────────────────────────── */
+.e-grid .e-gridheader,
+.e-grid .e-headercell,
+.e-grid .e-headercelldiv,
+.e-grid .e-columnheader,
+.e-grid .e-toolbar,
+.e-grid .e-toolbar-items,
+.e-grid .e-toolbar-item {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
 }
 
-/* ── Light Mode (default) ──────────────────────────────────────────────────── */
-[data-theme="light"] .e-grid,
-:root:not([data-theme="dark"]) .e-grid {
-  background-color: var(--color-surface-primary, #ffffff);
-  color: var(--color-text-primary, #242424);
-  border-color: var(--color-border-subtle, #e0e0e0);
+.e-grid .e-headercell .e-headertext,
+.e-grid .e-headercell .e-icon-filter,
+.e-grid .e-headercell .e-filtericon {
+  color: var(--color-text) !important;
 }
 
-[data-theme="light"] .e-grid .e-gridheader,
-[data-theme="light"] .e-grid .e-headercell,
-[data-theme="light"] .e-grid .e-toolbar,
-[data-theme="light"] .e-grid .e-pager,
-:root:not([data-theme="dark"]) .e-grid .e-gridheader,
-:root:not([data-theme="dark"]) .e-grid .e-headercell,
-:root:not([data-theme="dark"]) .e-grid .e-toolbar,
-:root:not([data-theme="dark"]) .e-grid .e-pager {
-  background-color: var(--color-surface-secondary, #f8f9fa);
-  color: var(--color-text-primary, #242424);
-  border-color: var(--color-border-subtle, #e0e0e0);
+/* ── Rows & Cells ──────────────────────────────────────────────────────────── */
+.e-grid .e-rowcell {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border-subtle) !important;
 }
 
-[data-theme="light"] .e-grid .e-rowcell,
-:root:not([data-theme="dark"]) .e-grid .e-rowcell {
-  background-color: var(--color-surface-primary, #ffffff);
-  color: var(--color-text-primary, #242424);
-  border-color: var(--color-border-subtle, #f0f0f0);
+.e-grid .e-altrow .e-rowcell {
+  background-color: var(--color-surface-subtle) !important;
 }
 
-/* ── Dark Mode Universal Overrides ────────────────────────────────────────── */
-
-/* 1. Main Grid Body */
-html[data-theme="dark"] .ej2-grid-container,
-html[data-theme="dark"] .e-grid,
-body[data-theme="dark"] .e-grid {
-  background-color: var(--color-surface-primary, #0b0f19) !important;
-  color: var(--color-text-primary, #f9fafb) !important;
-  border-color: var(--color-border-subtle, #1e293b) !important;
+.e-grid .e-row:hover .e-rowcell {
+  background-color: var(--color-surface-subtle) !important;
 }
 
-/* 2. Grid Header & Toolbar */
-html[data-theme="dark"] .e-grid .e-gridheader,
-html[data-theme="dark"] .e-grid .e-headercell,
-html[data-theme="dark"] .e-grid .e-headercelldiv,
-html[data-theme="dark"] .e-grid .e-columnheader,
-html[data-theme="dark"] .e-grid .e-toolbar,
-html[data-theme="dark"] .e-grid .e-toolbar-items,
-html[data-theme="dark"] .e-grid .e-toolbar-item {
-  background-color: var(--color-surface-secondary, #111827) !important;
-  color: var(--color-text-primary, #f9fafb) !important;
-  border-color: var(--color-border-subtle, #1e293b) !important;
+.e-grid .e-row.e-selectionbackground .e-rowcell {
+  background-color: var(--color-accent-primary-subtle) !important;
+  color: var(--color-accent-primary) !important;
 }
 
-html[data-theme="dark"] .e-grid .e-headercell .e-headertext,
-html[data-theme="dark"] .e-grid .e-headercell .e-icon-filter,
-html[data-theme="dark"] .e-grid .e-headercell .e-filtericon {
-  color: var(--color-text-primary, #f9fafb) !important;
+/* ── Pager Controls ────────────────────────────────────────────────────────── */
+.e-pager,
+.e-grid .e-pager,
+.e-pager .e-pagercontainer {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
 }
 
-/* 3. Grid Rows & Cells */
-html[data-theme="dark"] .e-grid .e-rowcell {
-  background-color: var(--color-surface-primary, #0b0f19) !important;
-  color: var(--color-text-primary, #f3f4f6) !important;
-  border-color: var(--color-border-subtle, #1e293b) !important;
+.e-pager .e-link,
+.e-pager .e-numericitem,
+.e-pager .e-first,
+.e-pager .e-prev,
+.e-pager .e-next,
+.e-pager .e-last,
+.e-pager .e-firstpage,
+.e-pager .e-prevpage,
+.e-pager .e-nextpage,
+.e-pager .e-lastpage,
+.e-pager .e-firstpagedisabled,
+.e-pager .e-prevpagedisabled,
+.e-pager .e-nextpagedisabled,
+.e-pager .e-lastpagedisabled {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text-muted) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
 }
 
-html[data-theme="dark"] .e-grid .e-altrow .e-rowcell {
-  background-color: var(--color-surface-secondary, #111827) !important;
+.e-pager .e-numericitem.e-active,
+.e-pager .e-currentitem {
+  background-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+  border-color: var(--color-primary) !important;
 }
 
-html[data-theme="dark"] .e-grid .e-row:hover .e-rowcell {
-  background-color: var(--color-surface-hover, #1e293b) !important;
+.e-pager .e-link:hover:not(.e-active) {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
 }
 
-html[data-theme="dark"] .e-grid .e-row.e-selectionbackground .e-rowcell {
-  background-color: var(--color-brand-subtle, #1e3a8a) !important;
-  color: #ffffff !important;
-}
-
-/* 4. Pager Buttons (Image 1 fix) */
-html[data-theme="dark"] .e-pager,
-html[data-theme="dark"] .e-grid .e-pager,
-html[data-theme="dark"] .e-pager .e-pagercontainer {
-  background-color: var(--color-surface-secondary, #111827) !important;
-  color: var(--color-text-primary, #f9fafb) !important;
-  border-color: var(--color-border-subtle, #1e293b) !important;
-}
-
-html[data-theme="dark"] .e-pager .e-link,
-html[data-theme="dark"] .e-pager .e-numericitem,
-html[data-theme="dark"] .e-pager .e-first,
-html[data-theme="dark"] .e-pager .e-prev,
-html[data-theme="dark"] .e-pager .e-next,
-html[data-theme="dark"] .e-pager .e-last,
-html[data-theme="dark"] .e-pager .e-firstpage,
-html[data-theme="dark"] .e-pager .e-prevpage,
-html[data-theme="dark"] .e-pager .e-nextpage,
-html[data-theme="dark"] .e-pager .e-lastpage,
-html[data-theme="dark"] .e-pager .e-firstpagedisabled,
-html[data-theme="dark"] .e-pager .e-prevpagedisabled,
-html[data-theme="dark"] .e-pager .e-nextpagedisabled,
-html[data-theme="dark"] .e-pager .e-lastpagedisabled {
-  background-color: var(--color-surface-primary, #0b0f19) !important;
-  color: var(--color-text-primary, #9ca3af) !important;
-  border: 1px solid var(--color-border-subtle, #1e293b) !important;
-  border-radius: var(--radius-md, 6px) !important;
-}
-
-html[data-theme="dark"] .e-pager .e-numericitem.e-active,
-html[data-theme="dark"] .e-pager .e-currentitem {
-  background-color: var(--color-brand-primary, #2563eb) !important;
-  color: #ffffff !important;
-  border-color: var(--color-brand-primary, #2563eb) !important;
-}
-
-html[data-theme="dark"] .e-pager .e-link:hover:not(.e-active) {
-  background-color: var(--color-surface-hover, #1e293b) !important;
-  color: var(--color-text-primary, #ffffff) !important;
-}
-
-/* 5. ALL Popups, Dialogs, Column Chooser, Filter Menu (Image 0, 1, 2 fix) */
-html[data-theme="dark"] .e-dialog,
-html[data-theme="dark"] .e-popup,
-html[data-theme="dark"] .e-filter-popup,
-html[data-theme="dark"] .e-excel-filter,
-html[data-theme="dark"] .e-cc-popup,
-html[data-theme="dark"] .e-colchooser,
-html[data-theme="dark"] .e-dlg-container,
-html[data-theme="dark"] .e-dropdownbase,
-body[data-theme="dark"] .e-dialog,
-body[data-theme="dark"] .e-popup,
-body[data-theme="dark"] .e-filter-popup,
-body[data-theme="dark"] .e-cc-popup,
+/* ── Popups, Dialogs, Column Chooser & Filter Menu ─────────────────────────── */
+.e-dialog,
+.e-popup,
+.e-filter-popup,
+.e-excel-filter,
+.e-cc-popup,
+.e-colchooser,
+.e-dlg-container,
+.e-dropdownbase,
 .e-dialog.e-control,
 .e-popup.e-control {
-  background-color: var(--color-surface-secondary, #111827) !important;
-  color: var(--color-text-primary, #f9fafb) !important;
-  border: 1px solid var(--color-border-subtle, #1e293b) !important;
-  border-radius: var(--radius-md, 8px) !important;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7) !important;
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-lg) !important;
 }
 
 /* Dialog Header, Title, Content & Footer */
-html[data-theme="dark"] .e-dialog .e-dlg-header-content,
-html[data-theme="dark"] .e-dialog .e-dlg-header,
-html[data-theme="dark"] .e-dialog .e-title,
-html[data-theme="dark"] .e-dialog .e-content,
-html[data-theme="dark"] .e-dialog .e-footer-content,
-html[data-theme="dark"] .e-filter-popup .e-footer-content,
-body[data-theme="dark"] .e-dialog .e-dlg-header-content,
-body[data-theme="dark"] .e-dialog .e-content {
-  background-color: var(--color-surface-secondary, #111827) !important;
-  color: var(--color-text-primary, #f9fafb) !important;
-  border-color: var(--color-border-subtle, #1e293b) !important;
+.e-dialog .e-dlg-header-content,
+.e-dialog .e-dlg-header,
+.e-dialog .e-title,
+.e-dialog .e-content,
+.e-dialog .e-footer-content,
+.e-filter-popup .e-footer-content {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
 }
 
-/* Column Chooser List Container & Items (Image 0 fix) */
-html[data-theme="dark"] .e-cc-popup .e-cc-content,
-html[data-theme="dark"] .e-cc-popup .e-list-parent,
-html[data-theme="dark"] .e-cc-popup .e-list-item,
-body[data-theme="dark"] .e-cc-popup .e-list-item {
-  background-color: var(--color-surface-primary, #0b0f19) !important;
-  color: var(--color-text-primary, #f9fafb) !important;
-  border-color: var(--color-border-subtle, #1e293b) !important;
+/* Column Chooser List Container & Checkbox Items */
+.e-cc-popup .e-cc-content,
+.e-cc-popup .e-list-parent,
+.e-cc-popup .e-list-item {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border-subtle) !important;
 }
 
-/* Text Inputs & Search Inputs inside Dialogs/Popups */
-html[data-theme="dark"] .e-input-group,
-html[data-theme="dark"] .e-control.e-textbox,
-html[data-theme="dark"] .e-search-input,
-html[data-theme="dark"] .e-ddl,
-body[data-theme="dark"] .e-input-group {
-  background-color: var(--color-surface-primary, #0b0f19) !important;
-  color: var(--color-text-primary, #f9fafb) !important;
-  border: 1px solid var(--color-border-subtle, #1e293b) !important;
+/* Input Fields & Textboxes inside Dialogs/Popups/Toolbar */
+.e-input-group,
+.e-control.e-textbox,
+.e-search-input,
+.e-ddl {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
 }
 
-html[data-theme="dark"] input.e-input,
-html[data-theme="dark"] .e-input-group input,
-body[data-theme="dark"] input.e-input {
-  color: var(--color-text-primary, #f9fafb) !important;
+input.e-input,
+.e-input-group input {
+  color: var(--color-text) !important;
   background-color: transparent !important;
 }
 
-html[data-theme="dark"] input::placeholder {
-  color: #9ca3af !important;
+input::placeholder {
+  color: var(--color-text-subtle) !important;
+  opacity: 1 !important;
 }
 
-/* Dropdown Arrow & Icons */
-html[data-theme="dark"] .e-input-group-icon,
-html[data-theme="dark"] .e-ddl .e-input-group-icon,
-body[data-theme="dark"] .e-input-group-icon {
+/* Icons & Input Group Icon Containers */
+.e-input-group-icon,
+.e-ddl .e-input-group-icon {
   background-color: transparent !important;
-  color: var(--color-text-primary, #9ca3af) !important;
+  color: var(--color-text-muted) !important;
   border: none !important;
+}
+
+/* Dropdown List Items */
+.e-dropdownbase .e-list-item {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+}
+
+.e-dropdownbase .e-list-item.e-hover,
+.e-dropdownbase .e-list-item.e-item-focus {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+}
+
+/* Action Buttons in Popups & Dialogs */
+.e-btn,
+.e-dialog .e-btn,
+.e-filter-popup .e-btn {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.e-btn.e-primary,
+.e-dialog .e-btn.e-primary,
+.e-filter-popup .e-btn.e-primary {
+  background-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.e-btn.e-primary:hover,
+.e-dialog .e-btn.e-primary:hover {
+  background-color: var(--color-primary-hover) !important;
 }
