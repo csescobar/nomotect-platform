@@ -56,12 +56,12 @@ module GridEngine
 
       distinct_values = result.records.map do |record|
         val = record.respond_to?(attr_name) ? record.public_send(attr_name) : nil
-        { field_key => val }
+        { field_key => val, "text" => val }
       end.uniq
 
       {
         result: distinct_values,
-        count: result.total_count
+        count: distinct_values.size
       }
     end
 

@@ -15,8 +15,8 @@ class GridsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        if params[:action] == "filterchoice" || params[:distinct] == "true" || params[:field].present?
-          field_name = params[:field] || params[:column]
+        if filter_choice_request?
+          field_name = params[:field] || params[:column] || extract_filter_field
           render json: GridEngine::SyncfusionAdapter.new(@definition).filter_choice_response(@result, field: field_name)
         elsif params[:adapter] == "syncfusion"
           render json: GridEngine::SyncfusionAdapter.new(@definition).response(@result)
@@ -103,6 +103,18 @@ class GridsController < ApplicationController
     when "lessthanorequal", "lte" then "lte"
     else "contains"
     end
+  end
+
+  def filter_choice_request?
+    return true if params[:action] == "filterchoice" || params[:distinct] == "true"
+
+    where = Array(params[:where])
+    where.size == 1 && where.first.is_a?(Hash) && where.first["field"].present? && params[:page].nil? && params[:sorts].blank?
+  end
+
+  def extract_filter_field
+    where = Array(params[:where])
+    where.first["field"] if where.first.is_a?(Hash)
   end
 
   def selected_columns
