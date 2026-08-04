@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "2b0ff65fd895230397589187ab537ab28eccc9eb",
+  "repository_commit": "ac89a722938a57b1f4702d0a0138f0daa6fa969d",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -61,7 +61,7 @@
     {
       "path": "app/assets/stylesheets/syncfusion_ej2.css",
       "kind": "source",
-      "sha256": "2d92964b922985e5df64793cc1f7b192a9f3ffc2c9196a4eca9cebaa98332ba8"
+      "sha256": "742d9a950d13817bbbf5f67d2ba70809b655fe3cd373c9fd2f2eff38bb01856d"
     },
     {
       "path": "app/components/application_component.rb",
@@ -426,7 +426,7 @@
     {
       "path": "app/javascript/controllers/ej2_grid_controller.js",
       "kind": "source",
-      "sha256": "05ebfd5f4e3619c0cf9426c6b74f5c1971c323beafbb160c5ec200a798835d6b"
+      "sha256": "9b0a3fbfaf558c4d3e6cfca4dd6027cf2230903e88eead6fc9d84a005da21c64"
     },
     {
       "path": "app/javascript/controllers/image_preview_controller.js",

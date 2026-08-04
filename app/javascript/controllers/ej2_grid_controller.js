@@ -110,6 +110,12 @@ export default class extends Controller {
       return colDef;
     });
 
+    const toolbarItems = [];
+    if (document.getElementById("grid-saved-views-bar")) {
+      toolbarItems.push({ template: "#grid-saved-views-bar" });
+    }
+    toolbarItems.push("ColumnChooser", "CsvExport", "ExcelExport");
+
     this.grid = new Grid({
       dataSource: new DataManager({
         url:      this.urlValue,
@@ -124,7 +130,7 @@ export default class extends Controller {
       width:             "100%",
       filterSettings:    { type: "Menu" },
       pageSettings:      { pageSize: this.pageSizeValue },
-      toolbar:           ["Search", "ColumnChooser", "CsvExport", "ExcelExport"],
+      toolbar:           toolbarItems,
       columns:           columns,
       locale:            document.documentElement.lang || "en",
 
