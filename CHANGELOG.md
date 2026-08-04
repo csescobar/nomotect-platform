@@ -47,6 +47,7 @@ Required release impact: `minor`.
 - Enforce semantic token consumption and formalize Phase 4 theme-substitution certification. (`176-design-token-integrity`)
 - Add a disposable free Render profile with secure deterministic visual-validation data. (`177-free-render-visual-validation`)
 - Integrate Syncfusion EJ2 Data Grid engine with NomoTect Design Tokens. (`188-syncfusion-ej2-integration`)
+- Implement Phase 4B Enterprise UX for Grid Engine including Saved Views bar, native Excel/CSV Export, and semantic badge formatting. (`189-phase4b-grid-enterprise-ux`)
 
 ### Fixed
 

@@ -6,28 +6,82 @@
   description: t("grid_engine.#{@definition.key}.description")
 ) %>
 
-<%# ── EJ2 Grid (Syncfusion) ────────────────────────────────────────────────── %>
-<%#
-  Columns are serialized server-side so the EJ2 Grid knows field names, types,
-  sorting and filtering capabilities without an extra HTTP round-trip.
-  The JSON endpoint uses ?adapter=syncfusion to return { result:, count: } as
-  required by EJ2 Custom Data Binding / UrlAdaptor.
-%>
-<% columns_json = GridEngine::SyncfusionAdapter.new(@definition).columns.to_json %>
-<% syncfusion_url = grid_path(@definition.key, format: :json, adapter: :syncfusion) %>
+<%# ── EJ2 Grid Page Container ────────────────────────────────────────────────── %>
+<div
+  class="grid-page-container"
+  data-controller="ej2-grid"
+  data-ej2-grid-url-value="<%= grid_path(@definition.key, format: :json, adapter: :syncfusion) %>"
+  data-ej2-grid-columns-value="<%= GridEngine::SyncfusionAdapter.new(@definition).columns.to_json %>"
+  data-ej2-grid-page-size-value="25"
+  data-ej2-grid-reset-url-value="<%= grid_path(@definition.key) %>"
+  data-ej2-grid-current-view-id-value="<%= @selected_view&.id || '' %>"
+>
+  <%# ── Compact Saved Views Dropdown Template (Injected into EJ2 Grid Toolbar) ── %>
+  <div id="grid-saved-views-bar" class="grid-saved-views-bar">
+    <select
+      id="saved-view-selector"
+      class="grid-saved-views-bar__select"
+      data-action="change->ej2-grid#handleSavedViewSelection"
+      aria-label="<%= t("grid_engine.saved_views.title") %>"
+    >
+      <option value="" disabled <%= "selected" if @selected_view.nil? %>>
+        📌 <%= t("grid_engine.saved_views.title") %>
+      </option>
+      <optgroup label="<%= t("grid_engine.saved_views.user_views") %>">
+        <option value="__default__" <%= "selected" if @selected_view.nil? %>>
+          <%= t("grid_engine.saved_views.system_default") %>
+        </option>
+        <% @saved_views.each do |view| %>
+          <option value="<%= view.id %>" <%= "selected" if @selected_view&.id == view.id %>>
+            <%= view.name %><%= " (#{t('grid_engine.saved_views.default_tag')})" if view.default? %>
+          </option>
+        <% end %>
+      </optgroup>
+      <optgroup label="<%= t("grid_engine.saved_views.actions_group") %>">
+        <option value="__save_new__">
+          ➕ <%= t("grid_engine.saved_views.save_current") %>
+        </option>
+        <option value="__reset__">
+          ↺ <%= t("grid_engine.saved_views.reset") %>
+        </option>
+      </optgroup>
+    </select>
+  </div>
 
-<section class="showcase__section grid-page-section" aria-labelledby="grid-results-heading">
-  <h2 id="grid-results-heading" class="visually-hidden"><%= t("grid_engine.#{@definition.key}.title") %></h2>
-
+  <%# ── EJ2 Grid Container ──────────────────────────────────────────────────── %>
   <div
-    data-controller="ej2-grid"
-    data-ej2-grid-url-value="<%= syncfusion_url %>"
-    data-ej2-grid-columns-value="<%= columns_json %>"
-    data-ej2-grid-page-size-value="25"
     class="ej2-grid-container"
     aria-label="<%= t("grid_engine.#{@definition.key}.title") %>"
     id="ej2-grid-<%= @definition.key %>"
   ></div>
+
+  <%# ── Save View Modal Dialog ──────────────────────────────────────────────── %>
+  <dialog id="save-view-dialog" class="e-dialog e-control grid-save-view-modal">
+    <div class="e-dlg-header-content">
+      <h3 class="e-title"><%= t("grid_engine.saved_views.modal_title") %></h3>
+    </div>
+    <%= form_with(url: grid_grid_saved_views_path(@definition.key), scope: :grid_saved_view, method: :post, class: "e-dlg-content") do |f| %>
+      <input type="hidden" id="save-view-query-json" name="grid_saved_view[query_json]" value="{}">
+      <input type="hidden" id="save-view-preferences-json" name="grid_saved_view[preferences_json]" value="{}">
+
+      <div class="form-group mb-4">
+        <label for="save-view-name-input" class="form-label"><%= t("grid_engine.saved_views.name_label") %></label>
+        <input type="text" id="save-view-name-input" name="grid_saved_view[name]" class="e-input" required placeholder="<%= t('grid_engine.saved_views.name_placeholder') %>">
+      </div>
+
+      <div class="form-group form-group--checkbox mb-4">
+        <label class="e-checkbox-wrapper">
+          <input type="checkbox" name="grid_saved_view[default]" value="1">
+          <span class="e-label"><%= t("grid_engine.saved_views.set_as_default") %></span>
+        </label>
+      </div>
+
+      <div class="e-footer-content flex justify-end gap-2">
+        <button type="button" class="btn btn--secondary" data-action="click->ej2-grid#closeSaveViewModal"><%= t("common.cancel", default: "Cancelar") %></button>
+        <button type="submit" class="btn btn--primary"><%= t("common.save", default: "Salvar") %></button>
+      </div>
+    <% end %>
+  </dialog>
 
   <%# Accessible HTML fallback — rendered for screen readers, no-JS, print and tests %>
   <noscript>
@@ -36,4 +90,4 @@
       <%= GridEngine::HtmlRenderer.new(@definition, @result.records, columns: current_columns).call %>
     </turbo-frame>
   </noscript>
-</section>
+</div>

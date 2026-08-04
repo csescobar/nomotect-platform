@@ -3,7 +3,7 @@ en:
     grid_engine: "Grid Engine"
   grid_engine:
     organizations:
-      title: "Organizations grid"
+      title: "Organizations Grid"
       description: "Filter, sort, personalize, save, and export organizations you can access."
       columns:
         name: "Name"
@@ -23,7 +23,17 @@ en:
       save_view: "Save view"
       delete: "Delete"
     saved_views:
-      title: "Saved views"
+      title: "Saved Views"
+      user_views: "My Views"
+      system_default: "System Default"
+      default_tag: "Default"
+      actions_group: "Actions"
+      save_current: "Save Current View..."
+      reset: "Reset to Default"
+      modal_title: "Save Current View"
+      name_label: "View Name"
+      name_placeholder: "e.g. Active Organizations"
+      set_as_default: "Set as default view"
       name: "View name"
       make_default: "Use as my default view"
       default: "Default"

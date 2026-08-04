@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "50bbc2ec9c98deaeaa2e338303507d6d621def24",
+  "repository_commit": "f70b59d17853dc7155258305e44d9cfa6dd57256",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -61,7 +61,7 @@
     {
       "path": "app/assets/stylesheets/syncfusion_ej2.css",
       "kind": "source",
-      "sha256": "a3ab51155d34a2e8644aa0b9f796912ea0d0c16f63a785d68b49ef0dd69d911a"
+      "sha256": "0581371d84889cdd9f1cb23bd83fecf5d2f0859598f4db933503e447429d5bfc"
     },
     {
       "path": "app/components/application_component.rb",
@@ -311,7 +311,7 @@
     {
       "path": "app/controllers/grid_saved_views_controller.rb",
       "kind": "controller",
-      "sha256": "1db8fcfc2a55935d05dced0d037363c3dc803d73ed2be86a499181f000e490cf"
+      "sha256": "8355b49a378da0e2dbaa5161f7430703a9ce3402c9a76de5cb5d000859fa7f09"
     },
     {
       "path": "app/controllers/grids_controller.rb",
@@ -426,7 +426,7 @@
     {
       "path": "app/javascript/controllers/ej2_grid_controller.js",
       "kind": "source",
-      "sha256": "02fd0f209e6707d204a511d098f43b0152d04822a741cd7f19df0d1b18125a0a"
+      "sha256": "7def5672aa95f57da989f8d21bc967babe58ab883541a18b69ebfadc96e9b9a8"
     },
     {
       "path": "app/javascript/controllers/image_preview_controller.js",
@@ -1401,7 +1401,7 @@
     {
       "path": "app/views/grids/show.html.erb",
       "kind": "source",
-      "sha256": "05c6841e8d18b1ec6045df0280e79eba2e50268646605d2173dfdaff749d3b51"
+      "sha256": "f4151f134c277213a705ff16110ead92e05a2dfa4182a873eab4b253674c2c77"
     },
     {
       "path": "app/views/home/index.html.erb",
@@ -1821,12 +1821,12 @@
     {
       "path": "config/locales/grid_engine.en.yml",
       "kind": "source",
-      "sha256": "106563aebd7e1044333af6d05a83666a79022fc3cda45a57d59bbb1966aec77d"
+      "sha256": "5981ae01ef7914cf839e5b071c8b77f6a6b62ae3d991b058694e32348043fd75"
     },
     {
       "path": "config/locales/grid_engine.pt-BR.yml",
       "kind": "source",
-      "sha256": "577602c73743548b7e74609af2d9cfa1aa3d0233fd05e75be3dee5baef2c5448"
+      "sha256": "5761db5b9eb52e4c199e511ecd8ee640949a5889709c01cd1e88900dad557b78"
     },
     {
       "path": "config/locales/installation.en.yml",
@@ -1896,7 +1896,7 @@
     {
       "path": "config/routes.rb",
       "kind": "source",
-      "sha256": "dbacc7747b96583683ff9bf458f5357e6673e54b158eb59a4ff4d0ad920c23c0"
+      "sha256": "73357ff28fcd9f6f813b93b170dc3c1dfb2f975c6ef7c4c1dad3b2fb7def2d7d"
     },
     {
       "path": "config/storage.yml",
@@ -2826,7 +2826,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "4f99e69f8664fe31159227acdffa0c4aae8f2cd45e59d2c059fb21fad9190ce3"
+      "sha256": "403bd7169acebaa89e1ed0bf776676b5fdd05b166131ca0b871932c97d24ca76"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3181,7 +3181,7 @@
     {
       "path": "test/controllers/grids_controller_syncfusion_test.rb",
       "kind": "test",
-      "sha256": "8ee6ea9c7326faad4ae738b6312c88bb7208dcbf256e44f8e6ad4da8961a146b"
+      "sha256": "cff8cd3970be44fda69304d198fd4ac3ca9e681a735569df6e915304d450af4b"
     },
     {
       "path": "test/controllers/grids_controller_test.rb",

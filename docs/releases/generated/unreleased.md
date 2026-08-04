@@ -46,6 +46,7 @@
 - Enforce semantic token consumption and formalize Phase 4 theme-substitution certification. (`176-design-token-integrity`)
 - Add a disposable free Render profile with secure deterministic visual-validation data. (`177-free-render-visual-validation`)
 - Integrate Syncfusion EJ2 Data Grid engine with NomoTect Design Tokens. (`188-syncfusion-ej2-integration`)
+- Implement Phase 4B Enterprise UX for Grid Engine including Saved Views bar, native Excel/CSV Export, and semantic badge formatting. (`189-phase4b-grid-enterprise-ux`)
 
 ### Fixed
 
@@ -235,3 +236,4 @@
 - **Accessibility — 184-remove-css-preload-warnings:** Stylesheets continue to load normally; only the redundant HTTP preload hint is removed.
 - **Accessibility — 185-responsive-grid-rendering:** Existing table headers remain available to assistive technology while localized data labels improve mobile presentation.
 - **Accessibility — 188-syncfusion-ej2-integration:** Enhanced EJ2 data grid keyboard navigation and ARIA attributes integrated with NomoTect Design Tokens.
+- **Accessibility — 189-phase4b-grid-enterprise-ux:** Accessible Saved Views toolbar, dialog modal, and status badge contrast compliance.

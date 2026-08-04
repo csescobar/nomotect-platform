@@ -121,6 +121,35 @@ class GridsControllerSyncfusionTest < ActionDispatch::IntegrationTest
   end
 
   # ---------------------------------------------------------------------------
+  # Saved Views integration
+  # ---------------------------------------------------------------------------
+
+  test "GET /grids/:id renders saved views bar with user views selector" do
+    @user.grid_saved_views.create!(grid_key: "organizations", name: "Minha Visão Teste", default: true)
+
+    get grid_path("organizations")
+
+    assert_response :success
+    assert_select "#grid-saved-views-bar"
+    assert_select "#saved-view-selector option", text: /Minha Visão Teste/
+  end
+
+  test "POST /grids/:grid_id/grid_saved_views creates a new saved view and redirects back to grid" do
+    assert_difference -> { @user.grid_saved_views.count }, 1 do
+      post grid_grid_saved_views_path("organizations"), params: {
+        grid_saved_view: {
+          name: "Visão Ativa 1",
+          default: "1",
+          query_json: '{"sorts":[{"column":"name","direction":"asc"}]}',
+          preferences_json: '{"columns":["name","slug"]}'
+        }
+      }
+    end
+
+    assert_response :redirect
+  end
+
+  # ---------------------------------------------------------------------------
   # Auth helpers
   # ---------------------------------------------------------------------------
 

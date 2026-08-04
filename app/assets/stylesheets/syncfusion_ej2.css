@@ -41,7 +41,11 @@
  * No hardcoded hex values or inline styles are used.
  * ══════════════════════════════════════════════════════════════════════════════ */
 
-/* Container shell */
+/* Container shell & spacing */
+.grid-page-container {
+  margin-top: var(--space-md) !important;
+}
+
 .ej2-grid-container {
   width: 100%;
   min-width: 0;
@@ -68,6 +72,63 @@
   box-sizing: border-box;
 }
 
+/* ── Saved Views Toolbar ─────────────────────────────────────────────────── */
+.e-toolbar .grid-saved-views-bar,
+.grid-saved-views-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-sm);
+  padding: 0;
+  margin: 0;
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--color-text);
+}
+
+.grid-saved-views-bar__form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.grid-saved-views-bar__label {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.grid-saved-views-bar__select {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-family: var(--font-family-sans);
+}
+
+.grid-saved-views-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* ── Save View Modal Dialog ───────────────────────────────────────────────── */
+dialog.grid-save-view-modal {
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--shadow-lg) !important;
+  max-width: 480px;
+  width: 90vw;
+}
+
+dialog.grid-save-view-modal::backdrop {
+  background-color: var(--color-fixed-canvas);
+  opacity: 0.6;
+}
+
 /* ── Grid Main Frame ───────────────────────────────────────────────────────── */
 .e-grid {
   background-color: var(--color-surface) !important;
@@ -83,28 +144,71 @@
 .e-grid .e-headercell,
 .e-grid .e-headercelldiv,
 .e-grid .e-columnheader,
-.e-grid .e-toolbar,
-.e-grid .e-toolbar-items,
-.e-grid .e-toolbar-item {
+.e-grid .e-toolbar {
   background-color: var(--color-surface-subtle) !important;
   color: var(--color-text) !important;
   border-color: var(--color-border) !important;
 }
 
-.e-grid .e-headercell .e-headertext {
-  color: var(--color-text) !important;
+.e-grid .e-toolbar {
+  padding: 0 var(--space-md) !important;
+  height: 3.25rem !important;
+  min-height: 3.25rem !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
 }
 
-/* Toolbar Search & Columns Button Containers */
-.e-grid .e-toolbar .e-search-input,
-.e-grid .e-toolbar .e-input-group,
+.e-grid .e-toolbar .e-toolbar-items {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: var(--space-xs) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  background-color: transparent !important;
+}
+
+.e-grid .e-toolbar .e-toolbar-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Toolbar Controls Standardization (Height, Font, Padding, Border & Radius) */
+.e-grid .e-toolbar .grid-saved-views-bar__select,
 .e-grid .e-toolbar .e-btn,
-.e-grid .e-toolbar .e-tbar-btn {
-  background-color: var(--color-surface) !important;
-  color: var(--color-text) !important;
+.e-grid .e-toolbar .e-tbar-btn,
+.e-grid .e-toolbar .e-dropdown-btn,
+.e-grid .e-toolbar-item .e-btn,
+.e-grid .e-toolbar-item .e-tbar-btn {
+  height: 2.25rem !important;
+  min-height: 2.25rem !important;
+  max-height: 2.25rem !important;
+  line-height: 1.25 !important;
+  padding: 0 var(--space-sm) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: var(--font-size-sm) !important;
+  font-family: var(--font-family-sans) !important;
   border: 1px solid var(--color-border) !important;
   border-radius: var(--radius-sm) !important;
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  box-sizing: border-box !important;
   box-shadow: none !important;
+}
+
+.e-grid .e-toolbar .grid-saved-views-bar__select {
+  cursor: pointer;
+  appearance: auto;
 }
 
 /* Remove inner borders, outlines and background leaks on button text/icons */
@@ -122,8 +226,10 @@
 }
 
 .e-grid .e-toolbar .e-tbar-btn:hover,
-.e-grid .e-toolbar .e-btn:hover {
+.e-grid .e-toolbar .e-btn:hover,
+.e-grid .e-toolbar .grid-saved-views-bar__select:hover {
   background-color: var(--color-surface-subtle) !important;
+  border-color: var(--color-border-subtle) !important;
   color: var(--color-text) !important;
 }
 

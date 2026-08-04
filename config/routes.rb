@@ -18,10 +18,10 @@ Rails.application.routes.draw do
   end
   patch "organization_invitations/:token/accept", to: "organization_invitations#accept", as: :accept_organization_invitation
 
-  match "grids/:id", to: "grids#show", via: %i[get post], as: :grid
   resources :grids, only: [] do
     resources :grid_saved_views, only: %i[create update destroy]
   end
+  match "grids/:id", to: "grids#show", via: %i[get post], as: :grid, constraints: { id: /[a-z][a-z0-9_]*/, format: /(html|json|csv)?/ }
 
   get "marketing", to: "marketing#show", as: :marketing
   resource :dashboard, only: :show
