@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "a8ec20827c4d01733278a2549e0189f7d6a7e077",
+  "repository_commit": "b2cdd69465dd80dd49a17f6e42133d5146c76126",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "status": "ready",
-  "indexed_commit": "a8ec20827c4d01733278a2549e0189f7d6a7e077",
-  "current_commit": "a8ec20827c4d01733278a2549e0189f7d6a7e077",
+  "indexed_commit": "b2cdd69465dd80dd49a17f6e42133d5146c76126",
+  "current_commit": "b2cdd69465dd80dd49a17f6e42133d5146c76126",
   "counts": {
     "files": 775,
     "nodes": 377,
