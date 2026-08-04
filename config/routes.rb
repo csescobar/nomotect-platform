@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   end
   patch "organization_invitations/:token/accept", to: "organization_invitations#accept", as: :accept_organization_invitation
 
-  resources :grids, only: :show do
+  match "grids/:id", to: "grids#show", via: %i[get post], as: :grid
+  resources :grids, only: [] do
     resources :grid_saved_views, only: %i[create update destroy]
   end
 

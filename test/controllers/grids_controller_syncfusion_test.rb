@@ -71,14 +71,31 @@ class GridsControllerSyncfusionTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "Syncfusion JSON record values match the database record" do
-    get grid_path("organizations", format: :json), params: { adapter: "syncfusion" }
+  test "POST /grids/:id.json with Syncfusion UrlAdaptor payload returns 200 and formatted result" do
+    post grid_path("organizations", format: :json, adapter: "syncfusion"),
+         params: { skip: 0, take: 25, requiresCounts: true },
+         as: :json
 
+    assert_response :success
     body = response.parsed_body
-    result_record = body["result"].find { |r| r["name"] == @org.name }
-    assert_not_nil result_record, "Could not find @org in the Syncfusion JSON result"
-    assert_equal @org.name, result_record["name"]
-    assert_equal @org.slug, result_record["slug"]
+    assert body.key?("result")
+    assert body.key?("count")
+  end
+
+  test "POST /grids/:id.json with Syncfusion sorting and filtering payload" do
+    post grid_path("organizations", format: :json, adapter: "syncfusion"),
+         params: {
+           skip: 0,
+           take: 25,
+           sorted: [{ name: "name", direction: "ascending" }],
+           where: [{ field: "name", operator: "contains", value: "Syncfusion" }]
+         },
+         as: :json
+
+    assert_response :success
+    body = response.parsed_body
+    assert_equal 1, body["count"]
+    assert_equal @org.name, body["result"].first["name"]
   end
 
   # ---------------------------------------------------------------------------

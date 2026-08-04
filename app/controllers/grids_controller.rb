@@ -34,7 +34,71 @@ class GridsController < ApplicationController
   private
 
   def permitted_query
-    params.permit(:page, :per_page, filters: %i[column operator value], sorts: %i[column direction])
+    if params[:adapter] == "syncfusion" || params[:skip].present? || params[:take].present? || params[:sorted].present? || params[:where].present?
+      parse_syncfusion_params
+    else
+      params.permit(:page, :per_page, filters: %i[column operator value], sorts: %i[column direction])
+    end
+  end
+
+  def parse_syncfusion_params
+    take = params[:take].to_i
+    take = 25 if take <= 0
+    skip = params[:skip].to_i
+    page = (skip / take) + 1
+
+    sorts = Array(params[:sorted]).map do |s|
+      dir = s["direction"].to_s.downcase.start_with?("desc") ? "desc" : "asc"
+      { column: s["name"] || s["field"], direction: dir }
+    end
+
+    filters = []
+    Array(params[:where]).each do |w|
+      extract_syncfusion_filters(w, filters)
+    end
+
+    if params[:search].is_a?(Array)
+      params[:search].each do |s|
+        key = s["key"]
+        next if key.blank?
+
+        fields = Array(s["fields"])
+        field = fields.first || @definition.columns.keys.first
+        filters << { column: field, operator: "contains", value: key } if field
+      end
+    end
+
+    ActionController::Parameters.new(
+      page: page,
+      per_page: take,
+      sorts: sorts,
+      filters: filters
+    ).permit(:page, :per_page, filters: %i[column operator value], sorts: %i[column direction])
+  end
+
+  def extract_syncfusion_filters(filter_obj, result_array)
+    return unless filter_obj.is_a?(Hash) || filter_obj.is_a?(ActionController::Parameters)
+
+    if filter_obj["predicates"].is_a?(Array)
+      filter_obj["predicates"].each { |pred| extract_syncfusion_filters(pred, result_array) }
+    elsif filter_obj["field"].present?
+      op = map_syncfusion_operator(filter_obj["operator"])
+      result_array << { column: filter_obj["field"], operator: op, value: filter_obj["value"] }
+    end
+  end
+
+  def map_syncfusion_operator(op)
+    case op.to_s.downcase
+    when "equal", "eq" then "eq"
+    when "notequal", "ne" then "not_eq"
+    when "contains" then "contains"
+    when "startswith" then "starts_with"
+    when "greaterthan", "gt" then "gt"
+    when "greaterthanorequal", "gte" then "gte"
+    when "lessthan", "lt" then "lt"
+    when "lessthanorequal", "lte" then "lte"
+    else "contains"
+    end
   end
 
   def selected_columns
