@@ -220,6 +220,7 @@ export default class extends Controller {
       }
     });
 
-    this.grid.appendTo(this.element);
+    const gridTarget = this.element.querySelector(".ej2-grid-container") || this.element;
+    this.grid.appendTo(gridTarget);
   }
 }
