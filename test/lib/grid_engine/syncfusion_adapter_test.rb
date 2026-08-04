@@ -178,6 +178,15 @@ class GridEngine::SyncfusionAdapterTest < ActiveSupport::TestCase
     assert_equal orgs.size, response[:count]
   end
 
+  test "filter_choice_response returns distinct field values for filter popup" do
+    orgs = [Organization.create!(name: "Acme"), Organization.create!(name: "Acme")]
+    result = mock_result(records: orgs, total_count: 2)
+    response = @adapter.filter_choice_response(result, field: "name")
+
+    assert_equal 1, response[:result].size
+    assert_equal "Acme", response[:result].first["name"]
+  end
+
   # ---------------------------------------------------------------------------
   # Helpers
   # ---------------------------------------------------------------------------

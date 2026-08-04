@@ -15,12 +15,14 @@ class GridsController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        adapter = if params[:adapter] == "syncfusion"
-          GridEngine::SyncfusionAdapter.new(@definition)
+        if params[:action] == "filterchoice" || params[:distinct] == "true" || params[:field].present?
+          field_name = params[:field] || params[:column]
+          render json: GridEngine::SyncfusionAdapter.new(@definition).filter_choice_response(@result, field: field_name)
+        elsif params[:adapter] == "syncfusion"
+          render json: GridEngine::SyncfusionAdapter.new(@definition).response(@result)
         else
-          GridEngine::TabulatorAdapter.new(@definition)
+          render json: GridEngine::TabulatorAdapter.new(@definition).response(@result)
         end
-        render json: adapter.response(@result)
       end
       format.csv do
         relation = GridEngine::ActiveRecordAdapter.new(@definition).call(export_ast, scope: grid_scope).records

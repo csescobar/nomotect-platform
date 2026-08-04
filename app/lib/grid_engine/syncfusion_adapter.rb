@@ -48,6 +48,23 @@ module GridEngine
       }
     end
 
+    # Serializes distinct values for a field when EJ2 requests filter choices (action: "filterchoice")
+    def filter_choice_response(result, field:)
+      field_key = field.to_s
+      column = @definition.columns[field_key]
+      attr_name = column ? column.attribute : field_key
+
+      distinct_values = result.records.map do |record|
+        val = record.respond_to?(attr_name) ? record.public_send(attr_name) : nil
+        { field_key => val }
+      end.uniq
+
+      {
+        result: distinct_values,
+        count: result.total_count
+      }
+    end
+
     private
 
     def serialize_record(record)

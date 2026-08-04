@@ -1,42 +1,10 @@
 <% content_for :title, t("grid_engine.#{@definition.key}.title") %>
 <% current_columns = Array(params[:columns]).presence || @preferences["columns"] %>
-<% export_params = @query_params.deep_dup.merge("columns" => current_columns).compact %>
 
 <%= render Ui::Layout::PageHeaderComponent.new(
   title: t("grid_engine.#{@definition.key}.title"),
   description: t("grid_engine.#{@definition.key}.description")
-) do %>
-  <%= link_to t("grid_engine.actions.export"), grid_path(@definition.key, export_params.merge(format: :csv)), class: "button button--secondary" %>
-<% end %>
-
-<%# ── Saved views ──────────────────────────────────────────────────────────── %>
-<section class="showcase__section grid-page-section" aria-labelledby="saved-views-heading">
-  <h2 id="saved-views-heading"><%= t("grid_engine.saved_views.title") %></h2>
-
-  <% if @saved_views.any? %>
-    <ul>
-      <% @saved_views.each do |saved_view| %>
-        <li>
-          <%= link_to saved_view.name, grid_path(@definition.key, view_id: saved_view.id) %>
-          <% if saved_view.default? %><span class="badge"><%= t("grid_engine.saved_views.default") %></span><% end %>
-          <%= button_to t("grid_engine.actions.delete"), grid_grid_saved_view_path(@definition.key, saved_view), method: :delete, class: "button button--danger button--small" %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <%= form_with url: grid_grid_saved_views_path(@definition.key), scope: :grid_saved_view, html: { class: "showcase__form" } do |form| %>
-    <%= form.label :name, t("grid_engine.saved_views.name") %>
-    <%= form.text_field :name, required: true, maxlength: 80, class: "ui-input" %>
-    <%= form.hidden_field :query_json, value: @query_params.to_json %>
-    <%= form.hidden_field :preferences_json, value: { columns: current_columns }.to_json %>
-    <label class="ui-checkbox-field__label">
-      <%= form.check_box :default, class: "ui-checkbox" %>
-      <span><%= t("grid_engine.saved_views.make_default") %></span>
-    </label>
-    <%= form.submit t("grid_engine.actions.save_view"), class: "button button--secondary" %>
-  <% end %>
-</section>
+) %>
 
 <%# ── EJ2 Grid (Syncfusion) ────────────────────────────────────────────────── %>
 <%#
