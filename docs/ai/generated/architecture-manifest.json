@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "68e3ba0756a8189df0bfb68fd5e4da8f6327b4f7",
+  "repository_commit": "c2a99b84c66bfbff64ecfb5d0e5cc5ad26d60a5b",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -61,7 +61,7 @@
     {
       "path": "app/assets/stylesheets/syncfusion_ej2.css",
       "kind": "source",
-      "sha256": "742d9a950d13817bbbf5f67d2ba70809b655fe3cd373c9fd2f2eff38bb01856d"
+      "sha256": "e57874e281e6b541e78ce2097fee394626bc22b10b00ed981f73a8b798423d93"
     },
     {
       "path": "app/components/application_component.rb",
@@ -1401,7 +1401,7 @@
     {
       "path": "app/views/grids/show.html.erb",
       "kind": "source",
-      "sha256": "714f9dd800310c74c845a9502d82a823bd58600c7a9535a483fbda31b6a2e739"
+      "sha256": "f4151f134c277213a705ff16110ead92e05a2dfa4182a873eab4b253674c2c77"
     },
     {
       "path": "app/views/home/index.html.erb",
@@ -1821,12 +1821,12 @@
     {
       "path": "config/locales/grid_engine.en.yml",
       "kind": "source",
-      "sha256": "106563aebd7e1044333af6d05a83666a79022fc3cda45a57d59bbb1966aec77d"
+      "sha256": "5981ae01ef7914cf839e5b071c8b77f6a6b62ae3d991b058694e32348043fd75"
     },
     {
       "path": "config/locales/grid_engine.pt-BR.yml",
       "kind": "source",
-      "sha256": "577602c73743548b7e74609af2d9cfa1aa3d0233fd05e75be3dee5baef2c5448"
+      "sha256": "5761db5b9eb52e4c199e511ecd8ee640949a5889709c01cd1e88900dad557b78"
     },
     {
       "path": "config/locales/installation.en.yml",

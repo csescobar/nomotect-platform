@@ -42,6 +42,10 @@
  * ══════════════════════════════════════════════════════════════════════════════ */
 
 /* Container shell */
+.grid-page-container {
+  margin-top: 0 !important;
+}
+
 .ej2-grid-container {
   width: 100%;
   min-width: 0;

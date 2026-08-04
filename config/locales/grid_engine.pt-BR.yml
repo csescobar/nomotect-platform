@@ -3,7 +3,7 @@ pt-BR:
     grid_engine: "Motor de grades"
   grid_engine:
     organizations:
-      title: "Grade de organizações"
+      title: "Grade de Organizações"
       description: "Filtre, ordene, personalize, salve e exporte as organizações às quais você tem acesso."
       columns:
         name: "Nome"
@@ -23,7 +23,17 @@ pt-BR:
       save_view: "Salvar visão"
       delete: "Excluir"
     saved_views:
-      title: "Visões salvas"
+      title: "Visões Salvas"
+      user_views: "Minhas Visões"
+      system_default: "Padrão do Sistema"
+      default_tag: "Padrão"
+      actions_group: "Ações"
+      save_current: "Salvar Visão Atual..."
+      reset: "Redefinir para Padrão"
+      modal_title: "Salvar Visão Atual"
+      name_label: "Nome da Visão"
+      name_placeholder: "ex: Organizações Ativas"
+      set_as_default: "Definir como visão padrão"
       name: "Nome da visão"
       make_default: "Usar como minha visão padrão"
       default: "Padrão"
