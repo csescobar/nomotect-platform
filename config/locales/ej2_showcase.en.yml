@@ -121,3 +121,9 @@ en:
         action3: "Archive Selected"
         action4: "Audit Log"
         action5: "Settings"
+    grid:
+      title: "EJ2 Data Grid Component"
+      description: "High-performance enterprise data grid with sorting, filtering, column chooser, pagination, and design token integration."
+      showcase:
+        title: "Interactive Enterprise Data Grid"
+        description: "Live demonstration of the Syncfusion EJ2 Data Grid engine integrated with NomoTect Design Tokens."

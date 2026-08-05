@@ -53,6 +53,7 @@ L10n.load({
 export default class extends Controller {
   static values = {
     url:           String,
+    data:          Array,
     columns:       Array,
     pageSize:      { type: Number, default: 25 },
     resetUrl:      String,
@@ -178,12 +179,16 @@ export default class extends Controller {
 
     const activeLocale = document.documentElement.lang || "pt-BR";
 
+    const dataSource = (this.hasDataValue && Array.isArray(this.dataValue) && this.dataValue.length > 0)
+      ? this.dataValue
+      : new DataManager({
+          url:      this.urlValue,
+          adaptor:  new UrlAdaptor(),
+          headers:  headers
+        });
+
     this.grid = new Grid({
-      dataSource: new DataManager({
-        url:      this.urlValue,
-        adaptor:  new UrlAdaptor(),
-        headers:  headers
-      }),
+      dataSource:        dataSource,
       allowPaging:       true,
       allowSorting:      true,
       allowFiltering:    true,
