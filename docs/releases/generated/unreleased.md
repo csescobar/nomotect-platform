@@ -48,6 +48,7 @@
 - Integrate Syncfusion EJ2 Data Grid engine with NomoTect Design Tokens. (`188-syncfusion-ej2-integration`)
 - Implement Phase 4B Enterprise UX for Grid Engine including Saved Views bar, native Excel/CSV Export, and semantic badge formatting. (`189-phase4b-grid-enterprise-ux`)
 - Implement Phase 5 Syncfusion EJ2 showcase route with reusable Form and Dialog components. (`190-ej2-showcase-forms-dialogs`)
+- Implement Phase 5 Syncfusion EJ2 Cards and Panels components in showcase. (`191-ej2-showcase-cards`)
 
 ### Fixed
 
@@ -239,3 +240,4 @@
 - **Accessibility — 188-syncfusion-ej2-integration:** Enhanced EJ2 data grid keyboard navigation and ARIA attributes integrated with NomoTect Design Tokens.
 - **Accessibility — 189-phase4b-grid-enterprise-ux:** Accessible Saved Views toolbar, dialog modal, and status badge contrast compliance.
 - **Accessibility — 190-ej2-showcase-forms-dialogs:** Accessible EJ2 Form and Dialog Stimulus controllers with ARIA attributes, focus trapping, and high-contrast design token integration.
+- **Accessibility — 191-ej2-showcase-cards:** Accessible EJ2 Card and Collapsible Panel Stimulus controllers with ARIA attributes and design token integration.
