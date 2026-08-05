@@ -970,15 +970,22 @@ input::placeholder {
   font-weight: var(--font-weight-semibold) !important;
 }
 
-.e-dialog .e-dlg-closeicon-btn {
+.e-dialog .e-dlg-closeicon-btn,
+.e-dialog .e-dlg-closeicon-btn *,
+.e-dialog .e-dlg-closeicon-btn::before,
+.e-dialog .e-icon-dlg-close {
   color: var(--color-text-muted) !important;
+  -webkit-text-fill-color: var(--color-text-muted) !important;
   background: transparent !important;
   border: none !important;
   border-radius: var(--radius-sm) !important;
 }
 
-.e-dialog .e-dlg-closeicon-btn:hover {
+.e-dialog .e-dlg-closeicon-btn:hover,
+.e-dialog .e-dlg-closeicon-btn:hover *,
+.e-dialog .e-dlg-closeicon-btn:hover::before {
   color: var(--color-text) !important;
+  -webkit-text-fill-color: var(--color-text) !important;
   background-color: var(--color-surface-subtle) !important;
 }
 
@@ -1012,17 +1019,65 @@ input::placeholder {
   margin: 0 !important;
 }
 
-/* Destructive Button in Dialog Footer */
+/* Dialog Footer Buttons styling */
+.e-dialog .e-footer-content .e-btn,
+.e-dialog .e-btn {
+  height: 2.25rem !important;
+  min-height: 2.25rem !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 0 var(--space-md) !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-medium) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Cancel / Secondary Button */
+.e-dialog .e-footer-content .e-btn:not(.e-primary):not(.e-danger),
+.e-dialog .e-btn:not(.e-primary):not(.e-danger) {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  -webkit-text-fill-color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+.e-dialog .e-footer-content .e-btn:not(.e-primary):not(.e-danger):hover,
+.e-dialog .e-btn:not(.e-primary):not(.e-danger):hover {
+  background-color: var(--color-surface-subtle) !important;
+  border-color: var(--color-text-muted) !important;
+  color: var(--color-text) !important;
+}
+
+/* Primary Action Button */
+.e-btn.e-primary,
+.e-dialog .e-btn.e-primary {
+  background-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+  -webkit-text-fill-color: var(--color-on-primary) !important;
+  border: 1px solid var(--color-primary) !important;
+}
+
+.e-btn.e-primary:hover,
+.e-dialog .e-btn.e-primary:hover {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+}
+
+/* Destructive / Danger Button in Dialog Footer */
 .e-btn.e-danger,
 .e-dialog .e-btn.e-danger {
   background-color: var(--color-danger) !important;
   color: var(--color-on-danger) !important;
-  border-color: var(--color-danger) !important;
+  -webkit-text-fill-color: var(--color-on-danger) !important;
+  border: 1px solid var(--color-danger) !important;
 }
 
 .e-btn.e-danger:hover,
 .e-dialog .e-btn.e-danger:hover {
   background-color: var(--color-danger-hover) !important;
+  border-color: var(--color-danger-hover) !important;
 }
 
 /* Alert boxes inside Dialog */
