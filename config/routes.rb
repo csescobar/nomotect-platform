@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   resource :dashboard, only: :show
 
   get "component_showcase", to: "component_showcase#show", as: :component_showcase
+  get "ej2_showcase", to: "ej2_showcase#show", as: :ej2_showcase
   get "health", to: "health#show", as: :health
   get "up", to: "rails/health#show", as: :rails_health_check
 

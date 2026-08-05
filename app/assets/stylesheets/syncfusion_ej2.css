@@ -437,10 +437,6 @@ dialog.grid-save-view-modal::backdrop {
 }
 
 /* Input Fields & Textboxes inside Dialogs/Popups/Toolbar */
-.e-input-group,
-.e-control.e-textbox,
-.e-search-input,
-.e-ddl,
 .e-filter-popup .e-input-group,
 .e-dialog .e-input-group,
 .e-ccdlg .e-input-group {
@@ -463,10 +459,49 @@ input::placeholder {
 
 /* Icons & Input Group Icon Containers */
 .e-input-group-icon,
-.e-ddl .e-input-group-icon {
+.e-ddl .e-input-group-icon,
+.e-clear-icon,
+.e-clear-icon::before,
+.e-multi-select-wrapper .e-clear-icon,
+.e-multi-select-wrapper .e-clear-icon::before,
+.e-multi-select-wrapper .e-chips-close.e-close-hooker,
+.e-multi-select-wrapper .e-chips-close.e-close-hooker::before,
+.e-multi-select-wrapper .e-close-hooker,
+.e-multi-select-wrapper .e-close-hooker::before,
+.e-multi-select-wrapper .e-chips-close,
+.e-multi-select-wrapper .e-chips-close::before,
+.e-input-group-icon::before {
   background-color: transparent !important;
   color: var(--color-text-muted) !important;
+  -webkit-text-fill-color: var(--color-text-muted) !important;
   border: none !important;
+  opacity: 0.8 !important;
+}
+
+.e-clear-icon:hover,
+.e-clear-icon:hover::before,
+.e-multi-select-wrapper .e-clear-icon:hover,
+.e-multi-select-wrapper .e-clear-icon:hover::before,
+.e-multi-select-wrapper .e-chips-close.e-close-hooker:hover,
+.e-multi-select-wrapper .e-chips-close.e-close-hooker:hover::before,
+.e-multi-select-wrapper .e-close-hooker:hover,
+.e-multi-select-wrapper .e-close-hooker:hover::before,
+.e-multi-select-wrapper .e-chips-close:hover,
+.e-multi-select-wrapper .e-chips-close:hover::before {
+  color: var(--color-danger) !important;
+  -webkit-text-fill-color: var(--color-danger) !important;
+  opacity: 1 !important;
+}
+
+/* Reset inner searcher input inside MultiSelect */
+.e-multi-select-wrapper .e-searcher,
+.e-multi-select-wrapper .e-searcher input,
+.e-multi-select-wrapper input.e-dropdownbase,
+.e-multi-select-wrapper input {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* Dropdown List Items */
@@ -503,3 +538,578 @@ input::placeholder {
 .e-dialog .e-btn.e-primary:hover {
   background-color: var(--color-primary-hover) !important;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+ * EJ2 Showcase — Layout, Sidebar & Component Cards
+ * ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Page layout: sidebar + content */
+.ej2-showcase {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .ej2-showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar navigation */
+.ej2-showcase__sidebar {
+  position: sticky;
+  top: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+}
+
+.ej2-showcase__nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.ej2-showcase__nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.ej2-showcase__nav-link:hover {
+  background: var(--color-surface-subtle);
+  color: var(--color-primary);
+}
+
+.ej2-showcase__nav-link.is-active {
+  background: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.ej2-showcase__nav-icon {
+  font-size: var(--font-size-md);
+  flex-shrink: 0;
+}
+
+/* Content area */
+.ej2-showcase__content {
+  min-width: 0;
+}
+
+/* Section wrapper */
+.ej2-showcase-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.ej2-showcase-section__header {
+  margin-bottom: var(--space-sm);
+}
+
+.ej2-showcase-section__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0 0 var(--space-xs);
+}
+
+.ej2-showcase-section__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Component cards */
+.ej2-showcase-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.ej2-showcase-card__header {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-subtle);
+}
+
+.ej2-showcase-card__title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0 0 var(--space-xs);
+}
+
+.ej2-showcase-card__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.ej2-showcase-card__demo {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Form groups wrapping EJ2 inputs */
+.ej2-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  max-width: 24rem;
+}
+
+.ej2-form-group__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.ej2-form-group__help {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.ej2-form-group__error {
+  font-size: var(--font-size-xs);
+  color: var(--color-danger);
+  margin: 0;
+}
+
+/* Coming soon placeholder */
+.ej2-showcase-coming-soon {
+  padding: var(--space-xxl) var(--space-xl);
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.ej2-showcase-coming-soon__text {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  margin: 0;
+}
+
+/* ── EJ2 Input Token Integration ──────────────────────────────────────────── */
+/* TextBox, NumericTextBox, MaskedTextBox, DropDownList, MultiSelect & DatePicker */
+.e-input-group,
+.e-float-input,
+.e-multi-select-wrapper,
+.e-control-wrapper,
+.e-ddl.e-input-group {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text) !important;
+  height: 2.25rem !important;
+  min-height: 2.25rem !important;
+  box-sizing: border-box !important;
+}
+
+/* MultiSelect wrapper can expand vertically when multiple chips are selected */
+.e-multi-select-wrapper {
+  height: auto !important;
+  min-height: 2.25rem !important;
+}
+
+/* All inner input elements MUST ALWAYS have transparent background */
+.e-input-group input,
+.e-float-input input,
+.e-control-wrapper input,
+.e-multi-select-wrapper input,
+.e-ddl input {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Read-only and Disabled states applied to outer CONTAINERS only (excludes DropDownList) */
+.e-input-group.e-read-only,
+.e-input-group.e-disabled,
+.e-float-input.e-read-only,
+.e-float-input.e-disabled,
+.e-control-wrapper.e-read-only,
+.e-control-wrapper.e-disabled,
+.e-input-group:has(input[readonly]):not(.e-ddl):not(.e-multiselect):not(.e-dropdownbase),
+.e-float-input:has(input[readonly]):not(.e-ddl):not(.e-multiselect):not(.e-dropdownbase),
+.e-input-group:has(input[disabled]):not(.e-ddl):not(.e-multiselect):not(.e-dropdownbase),
+.e-float-input:has(input[disabled]):not(.e-ddl):not(.e-multiselect):not(.e-dropdownbase) {
+  background-color: var(--color-surface-subtle) !important;
+  color: var(--color-text-muted) !important;
+  border-color: var(--color-border-subtle) !important;
+  cursor: not-allowed !important;
+}
+
+.e-input-group.e-read-only input,
+.e-input-group.e-disabled input,
+.e-float-input.e-read-only input,
+.e-float-input.e-disabled input {
+  color: var(--color-text-muted) !important;
+  -webkit-text-fill-color: var(--color-text-muted) !important;
+}
+
+.e-float-input.e-input-focus label.e-float-text,
+.e-float-input input:focus ~ label.e-float-text,
+.e-float-input input:not(:placeholder-shown) ~ label.e-float-text,
+.e-multi-select-wrapper.e-input-focus label.e-float-text {
+  color: var(--color-primary) !important;
+}
+
+/* Value text for read-only and disabled states */
+.e-input-group.e-read-only input,
+.e-input-group.e-disabled input,
+.e-float-input.e-read-only input,
+.e-float-input.e-disabled input,
+.e-float-input:has(input[readonly]) input,
+.e-float-input:has(input[disabled]) input,
+.e-input-group:has(input[readonly]) input {
+  color: var(--color-text-muted) !important;
+  -webkit-text-fill-color: var(--color-text-muted) !important;
+}
+
+.e-input-group input.e-input,
+.e-float-input input,
+.e-multi-select-wrapper input {
+  background-color: transparent !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-family-sans) !important;
+  font-size: var(--font-size-sm) !important;
+  caret-color: var(--color-primary) !important;
+}
+
+/* DropDownList & MultiSelect popup */
+.e-ddl.e-popup,
+.e-multiselect.e-popup,
+.e-dropdownbase .e-list-parent,
+.e-dropdownbase .e-list-item {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
+  font-family: var(--font-family-sans) !important;
+  font-size: var(--font-size-sm) !important;
+}
+
+.e-dropdownbase .e-list-item:hover,
+.e-dropdownbase .e-list-item.e-active,
+.e-dropdownbase .e-list-item.e-hover {
+  background-color: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface)) !important;
+  color: var(--color-primary) !important;
+}
+
+/* MultiSelect chips (selected items) */
+.e-multi-select-wrapper .e-chips {
+  background-color: var(--color-surface-subtle) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 2px var(--space-xs) !important;
+}
+
+.e-multi-select-wrapper .e-chips,
+.e-multi-select-wrapper .e-chips *,
+.e-multi-select-wrapper .e-chips > .e-chipcontent,
+.e-multi-select-wrapper .e-chips.e-chip-selected > .e-chipcontent,
+.e-multi-select-wrapper .e-chips > span,
+.e-multi-select-wrapper .e-delim-values {
+  color: var(--color-text) !important;
+  -webkit-text-fill-color: var(--color-text) !important;
+  font-size: var(--font-size-xs) !important;
+  font-weight: var(--font-weight-medium) !important;
+}
+
+.e-multi-select-wrapper .e-chips .e-chips-close,
+.e-multi-select-wrapper .e-chips .e-chips-close::before {
+  color: var(--color-text-muted) !important;
+  -webkit-text-fill-color: var(--color-text-muted) !important;
+}
+
+.e-multi-select-wrapper .e-chips .e-chips-close:hover::before {
+  color: var(--color-danger) !important;
+  -webkit-text-fill-color: var(--color-danger) !important;
+}
+
+/* DatePicker calendar popup */
+.e-datepicker.e-popup,
+.e-calendar {
+  background-color: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-family-sans) !important;
+}
+
+/* Calendar Header */
+.e-calendar .e-header {
+  background-color: var(--color-surface) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+
+.e-calendar .e-header .e-title,
+.e-calendar .e-header .e-title:hover {
+  color: var(--color-text) !important;
+  font-weight: var(--font-weight-semibold) !important;
+}
+
+.e-calendar .e-header .e-icon-container span,
+.e-calendar .e-header .e-prev,
+.e-calendar .e-header .e-next,
+.e-calendar .e-header .e-icon-container .e-btn {
+  color: var(--color-text-muted) !important;
+  background: transparent !important;
+}
+
+.e-calendar .e-header .e-icon-container .e-btn:hover {
+  color: var(--color-primary) !important;
+  background-color: var(--color-surface-subtle) !important;
+}
+
+/* Calendar Day Headers (SU MO TU WE TH FR SA) */
+.e-calendar .e-content th {
+  color: var(--color-text-muted) !important;
+  font-weight: var(--font-weight-medium) !important;
+}
+
+/* Calendar Date Cells */
+.e-calendar .e-content td.e-cell span.e-day {
+  color: var(--color-text) !important;
+  font-size: var(--font-size-sm) !important;
+}
+
+.e-calendar .e-content td.e-other-month span.e-day {
+  color: var(--color-text-subtle) !important;
+}
+
+.e-calendar .e-content td.e-cell:hover span.e-day,
+.e-calendar .e-content td.e-focused-date span.e-day {
+  background-color: color-mix(in srgb, var(--color-primary) 20%, var(--color-surface)) !important;
+  color: var(--color-primary) !important;
+  border-radius: 50% !important;
+}
+
+.e-calendar .e-content td.e-selected span.e-day {
+  background-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+  border-radius: 50% !important;
+  font-weight: var(--font-weight-bold) !important;
+}
+
+/* Calendar Footer ("Today" Bar) */
+.e-calendar .e-footer-container {
+  background-color: var(--color-surface) !important;
+  border-top: 1px solid var(--color-border) !important;
+  padding: var(--space-xs) var(--space-sm) !important;
+}
+
+.e-calendar .e-footer-container .e-btn,
+.e-calendar .e-footer-container .e-today,
+.e-calendar .e-btn.e-today {
+  background-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+  border-radius: var(--radius-sm) !important;
+  border: none !important;
+  font-weight: var(--font-weight-medium) !important;
+}
+
+.e-calendar .e-footer-container .e-btn:hover,
+.e-calendar .e-btn.e-today:hover {
+  background-color: var(--color-primary-hover) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+ * EJ2 Dialog Modal Token Integration
+ * ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Overlay backdrop */
+.e-dlg-overlay {
+  background-color: var(--color-fixed-overlay) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+/* Dialog Container */
+.e-dialog {
+  background-color: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-card) !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-family-sans) !important;
+  overflow: hidden !important;
+}
+
+/* Header */
+.e-dialog .e-dlg-header-content {
+  background-color: var(--color-surface) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  padding: var(--space-md) var(--space-lg) !important;
+}
+
+.e-dialog .e-dlg-header,
+.e-dialog .e-dlg-header * {
+  color: var(--color-text) !important;
+  font-size: var(--font-size-md) !important;
+  font-weight: var(--font-weight-semibold) !important;
+}
+
+.e-dialog .e-dlg-closeicon-btn,
+.e-dialog .e-dlg-closeicon-btn *,
+.e-dialog .e-dlg-closeicon-btn::before,
+.e-dialog .e-icon-dlg-close {
+  color: var(--color-text-muted) !important;
+  -webkit-text-fill-color: var(--color-text-muted) !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.e-dialog .e-dlg-closeicon-btn:hover,
+.e-dialog .e-dlg-closeicon-btn:hover *,
+.e-dialog .e-dlg-closeicon-btn:hover::before {
+  color: var(--color-text) !important;
+  -webkit-text-fill-color: var(--color-text) !important;
+  background-color: var(--color-surface-subtle) !important;
+}
+
+/* Content Body */
+.e-dialog .e-dlg-content {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  padding: var(--space-lg) !important;
+  font-size: var(--font-size-sm) !important;
+  line-height: var(--line-height-body) !important;
+}
+
+/* Footer Action Buttons Bar — Full-width edge-to-edge separation */
+.e-dialog .e-footer-content {
+  background-color: var(--color-surface-subtle) !important;
+  border-top: 1px solid var(--color-border) !important;
+  padding: var(--space-md) var(--space-lg) !important;
+  margin-top: var(--space-lg) !important;
+  margin-left: calc(-1 * var(--space-lg)) !important;
+  margin-right: calc(-1 * var(--space-lg)) !important;
+  margin-bottom: calc(-1 * var(--space-lg)) !important;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg) !important;
+  display: flex !important;
+  gap: var(--space-sm) !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  width: auto !important;
+}
+
+.e-dialog > .e-footer-content {
+  margin: 0 !important;
+}
+
+/* Dialog Footer Buttons styling */
+.e-dialog .e-footer-content .e-btn,
+.e-dialog .e-btn {
+  height: 2.25rem !important;
+  min-height: 2.25rem !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 0 var(--space-md) !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-medium) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Cancel / Secondary Button */
+.e-dialog .e-footer-content .e-btn:not(.e-primary):not(.e-danger),
+.e-dialog .e-btn:not(.e-primary):not(.e-danger) {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  -webkit-text-fill-color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+.e-dialog .e-footer-content .e-btn:not(.e-primary):not(.e-danger):hover,
+.e-dialog .e-btn:not(.e-primary):not(.e-danger):hover {
+  background-color: var(--color-surface-subtle) !important;
+  border-color: var(--color-text-muted) !important;
+  color: var(--color-text) !important;
+}
+
+/* Primary Action Button */
+.e-btn.e-primary,
+.e-dialog .e-btn.e-primary {
+  background-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
+  -webkit-text-fill-color: var(--color-on-primary) !important;
+  border: 1px solid var(--color-primary) !important;
+}
+
+.e-btn.e-primary:hover,
+.e-dialog .e-btn.e-primary:hover {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+}
+
+/* Destructive / Danger Button in Dialog Footer */
+.e-btn.e-danger,
+.e-dialog .e-btn.e-danger {
+  background-color: var(--color-danger) !important;
+  color: var(--color-on-danger) !important;
+  -webkit-text-fill-color: var(--color-on-danger) !important;
+  border: 1px solid var(--color-danger) !important;
+}
+
+.e-btn.e-danger:hover,
+.e-dialog .e-btn.e-danger:hover {
+  background-color: var(--color-danger-hover) !important;
+  border-color: var(--color-danger-hover) !important;
+}
+
+/* Alert boxes inside Dialog */
+.ej2-dialog-alert {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.ej2-dialog-alert--danger {
+  background-color: var(--color-badge-risk-bg);
+  border: 1px solid color-mix(in srgb, var(--color-danger) 30%, transparent);
+  color: var(--color-danger);
+}
+
+.ej2-dialog-alert__icon {
+  font-size: var(--font-size-lg);
+  flex-shrink: 0;
+}
+
+/* Hidden target container before EJ2 Dialog initialization */
+.ej2-dialog-container {
+  display: none;
+}
+
+/* Form group vertical spacing */
+.ej2-form-group + .ej2-form-group {
+  margin-top: var(--space-md);
+}
+
+

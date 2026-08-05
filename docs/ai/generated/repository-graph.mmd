@@ -33,6 +33,7 @@ graph TD
   n_controller_ComponentShowcase["ComponentShowcase"]
   n_controller_Customers["Customers"]
   n_controller_Dashboards["Dashboards"]
+  n_controller_Ej2Showcase["Ej2Showcase"]
   n_controller_GridSavedViews["GridSavedViews"]
   n_controller_Grids["Grids"]
   n_controller_Health["Health"]
@@ -250,6 +251,7 @@ graph TD
   n_test_Controllers__ComponentShowcaseController["Controllers::ComponentShowcaseController"]
   n_test_Controllers__CustomersController["Controllers::CustomersController"]
   n_test_Controllers__DashboardsController["Controllers::DashboardsController"]
+  n_test_Controllers__Ej2ShowcaseController["Controllers::Ej2ShowcaseController"]
   n_test_Controllers__GridsController["Controllers::GridsController"]
   n_test_Controllers__GridsControllerSyncfusion["Controllers::GridsControllerSyncfusion"]
   n_test_Controllers__HealthController["Controllers::HealthController"]
@@ -429,6 +431,7 @@ graph TD
   n_controller_Customers -->|TESTED_BY| n_test_Controllers__CustomersController
   n_controller_Customers -->|TESTED_BY| n_test_Operations__CustomersOperations
   n_controller_Dashboards -->|TESTED_BY| n_test_Controllers__DashboardsController
+  n_controller_Ej2Showcase -->|TESTED_BY| n_test_Controllers__Ej2ShowcaseController
   n_controller_Grids -->|TESTED_BY| n_test_Controllers__GridsController
   n_controller_Grids -->|TESTED_BY| n_test_Controllers__GridsControllerSyncfusion
   n_controller_Health -->|DOCUMENTED_BY| n_document_Ai__Repository_health

@@ -4,13 +4,14 @@
 
 ## Responsibilities
 
-- test: Controllers::ComponentShowcaseController, Controllers::CustomersController, Controllers::DashboardsController, Controllers::GridsController, Controllers::GridsControllerSyncfusion, Controllers::HealthController, Controllers::HomeController, Controllers::Installation::StepsController, Controllers::LocalePreferencesController, Controllers::MarketingController, Controllers::OrganizationMemberAdministration, Controllers::OrganizationsController, Controllers::PreferencesController, Controllers::StoredFilesController, Controllers::TenantSelectionsController
+- test: Controllers::ComponentShowcaseController, Controllers::CustomersController, Controllers::DashboardsController, Controllers::Ej2ShowcaseController, Controllers::GridsController, Controllers::GridsControllerSyncfusion, Controllers::HealthController, Controllers::HomeController, Controllers::Installation::StepsController, Controllers::LocalePreferencesController, Controllers::MarketingController, Controllers::OrganizationMemberAdministration, Controllers::OrganizationsController, Controllers::PreferencesController, Controllers::StoredFilesController, Controllers::TenantSelectionsController
 
 ## Source paths
 
 - `test/controllers/component_showcase_controller_test.rb`
 - `test/controllers/customers_controller_test.rb`
 - `test/controllers/dashboards_controller_test.rb`
+- `test/controllers/ej2_showcase_controller_test.rb`
 - `test/controllers/grids_controller_syncfusion_test.rb`
 - `test/controllers/grids_controller_test.rb`
 - `test/controllers/health_controller_test.rb`
@@ -31,6 +32,7 @@
 - `model:Customer` —TESTED_BY→ `test:Controllers::CustomersController`
 - `policy:Customer` —TESTED_BY→ `test:Controllers::CustomersController`
 - `controller:Dashboards` —TESTED_BY→ `test:Controllers::DashboardsController`
+- `controller:Ej2Showcase` —TESTED_BY→ `test:Controllers::Ej2ShowcaseController`
 - `controller:Grids` —TESTED_BY→ `test:Controllers::GridsControllerSyncfusion`
 - `controller:Grids` —TESTED_BY→ `test:Controllers::GridsController`
 - `controller:Health` —TESTED_BY→ `test:Controllers::HealthController`

@@ -4,6 +4,7 @@
 - `controller:ComponentShowcase`: controller:ComponentShowcase, test:Controllers::ComponentShowcaseController
 - `controller:Customers`: controller:Customers, document:Distribution::Operations, document:Extensions::Operations, document:Modules::Customers::AiContext, model:Customer, policy:Customer, test:Controllers::CustomersController, test:Models::Customer, test:Operations::CustomersOperations
 - `controller:Dashboards`: controller:Dashboards, test:Controllers::DashboardsController
+- `controller:Ej2Showcase`: controller:Ej2Showcase, test:Controllers::Ej2ShowcaseController
 - `controller:GridSavedViews`: controller:GridSavedViews
 - `controller:Grids`: controller:Grids, test:Controllers::GridsController, test:Controllers::GridsControllerSyncfusion
 - `controller:Health`: controller:Health, document:Ai::Repository-health, document:Commercial-readiness::Certification, document:Extensions::Certification, test:Controllers::HealthController, test:Integration::OperationalHealthCertification, test:Lib::RepositoryIntelligenceHealth, test:Services::Distributions::Inspector, test:Services::Extensions::Inspector, test:Services::OperationalReadiness::OperationalHealthInspector

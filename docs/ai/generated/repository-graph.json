@@ -342,6 +342,16 @@
       }
     },
     {
+      "id": "controller:Ej2Showcase",
+      "type": "controller",
+      "name": "Ej2Showcase",
+      "path": "app/controllers/ej2_showcase_controller.rb",
+      "properties": {
+        "sha256": "1a916ebbc27f7e73904f135e1de1915352aa3d020c43f7de23ceb3c366206f38",
+        "source": "platform"
+      }
+    },
+    {
       "id": "controller:GridSavedViews",
       "type": "controller",
       "name": "GridSavedViews",
@@ -1817,7 +1827,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "403bd7169acebaa89e1ed0bf776676b5fdd05b166131ca0b871932c97d24ca76",
+        "sha256": "cbb96a329ab5df1304dad7e577d1017a7d559a4e53b40337d84a1f3c806ee946",
         "source": "platform"
       }
     },
@@ -2508,6 +2518,16 @@
       "path": "test/controllers/dashboards_controller_test.rb",
       "properties": {
         "sha256": "cdd64a679a07cb1885f2ec1d255382483a0850464e6573eaa332b0865870f0cc",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Controllers::Ej2ShowcaseController",
+      "type": "test",
+      "name": "Controllers::Ej2ShowcaseController",
+      "path": "test/controllers/ej2_showcase_controller_test.rb",
+      "properties": {
+        "sha256": "23f8f820b3136f08bb23cb9d4eb84149f35a7bab544de12ad397e43a21dd1152",
         "source": "platform"
       }
     },
@@ -4092,6 +4112,12 @@
       "properties": {}
     },
     {
+      "from": "controller:Ej2Showcase",
+      "to": "test:Controllers::Ej2ShowcaseController",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "controller:Grids",
       "to": "test:Controllers::GridsController",
       "type": "TESTED_BY",
@@ -5448,5 +5474,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "f70b59d17853dc7155258305e44d9cfa6dd57256"
+  "repository_commit": "ed63667a8bb64a791fdbb62b756f7c9b84639986"
 }
