@@ -2372,7 +2372,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "cbb96a329ab5df1304dad7e577d1017a7d559a4e53b40337d84a1f3c806ee946",
+        "sha256": "91cbe52925c7e882a41738a60dbdfa377594616df22a3706c9f6ee05ba55a380",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -2790,7 +2790,7 @@
       "name": "Controllers::Ej2ShowcaseController",
       "path": "test/controllers/ej2_showcase_controller_test.rb",
       "properties": {
-        "sha256": "23f8f820b3136f08bb23cb9d4eb84149f35a7bab544de12ad397e43a21dd1152",
+        "sha256": "72d3afa7166a575ace41daac5cf1f854915459da38c89beb8d6a604ad9022ce0",
         "source": "platform"
       },
       "@id": "test:Controllers::Ej2ShowcaseController"

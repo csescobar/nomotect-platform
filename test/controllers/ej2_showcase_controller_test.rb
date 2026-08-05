@@ -56,6 +56,31 @@ class Ej2ShowcaseControllerTest < ActionDispatch::IntegrationTest
     assert audit.valid?, audit.violations.map(&:message).join("\n")
   end
 
+  test "ej2 showcase renders cards section explicitly" do
+    get ej2_showcase_path(section: "cards")
+
+    assert_response :success
+    assert_select "#ej2-cards-kpi"
+    assert_select "#ej2-cards-profile"
+    assert_select "#ej2-cards-collapsible"
+    assert_select "[data-controller='ej2-card']"
+
+    audit = Accessibility::HtmlAudit.new(response.body)
+    assert audit.valid?, audit.violations.map(&:message).join("\n")
+  end
+
+  test "ej2 showcase renders toolbar section explicitly" do
+    get ej2_showcase_path(section: "toolbar")
+
+    assert_response :success
+    assert_select "#ej2-toolbar-standard"
+    assert_select "#ej2-toolbar-overflow"
+    assert_select "[data-controller='ej2-toolbar']", minimum: 2
+
+    audit = Accessibility::HtmlAudit.new(response.body)
+    assert audit.valid?, audit.violations.map(&:message).join("\n")
+  end
+
   test "ej2 showcase active nav link reflects current section" do
     get ej2_showcase_path(section: "forms")
 
