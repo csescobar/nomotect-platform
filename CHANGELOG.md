@@ -48,6 +48,7 @@ Required release impact: `minor`.
 - Add a disposable free Render profile with secure deterministic visual-validation data. (`177-free-render-visual-validation`)
 - Integrate Syncfusion EJ2 Data Grid engine with NomoTect Design Tokens. (`188-syncfusion-ej2-integration`)
 - Implement Phase 4B Enterprise UX for Grid Engine including Saved Views bar, native Excel/CSV Export, and semantic badge formatting. (`189-phase4b-grid-enterprise-ux`)
+- Implement Phase 5 Syncfusion EJ2 showcase route with reusable Form and Dialog components. (`190-ej2-showcase-forms-dialogs`)
 
 ### Fixed
 
