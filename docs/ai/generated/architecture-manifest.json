@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "09ebce680616c21923e65688cee741c145cf08b0",
+  "repository_commit": "9644f9901115ba63174d13609dc03a7a1ecbd79d",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -61,7 +61,7 @@
     {
       "path": "app/assets/stylesheets/syncfusion_ej2.css",
       "kind": "source",
-      "sha256": "e2667ea9f19725c2ca855e0aa4dd90acbd27f58aab886a3984b26410fb31af79"
+      "sha256": "09070631bafbaf7135f5e78940ff6e41ec3b2947e9e0fc139d396ee44c348a72"
     },
     {
       "path": "app/components/application_component.rb",
@@ -429,6 +429,11 @@
       "sha256": "f5f3ef90919ac7c3f68f547f4fe767fefcd4b02dad916cad7cea44cf14492205"
     },
     {
+      "path": "app/javascript/controllers/ej2_button_controller.js",
+      "kind": "source",
+      "sha256": "476ab5faab390c01b86914c6178d9caebb93c2f5fd25f06ead5d93ff421402c9"
+    },
+    {
       "path": "app/javascript/controllers/ej2_card_controller.js",
       "kind": "source",
       "sha256": "55f1692124f6b6526986d9439f832510d9b2706eca72b10e8faf941c5d2b7337"
@@ -464,9 +469,19 @@
       "sha256": "2c6aea728a9e84807b944ac2b20b59d3404cdff9f6440e41a50555e6c25a33e0"
     },
     {
+      "path": "app/javascript/controllers/ej2_spinner_controller.js",
+      "kind": "source",
+      "sha256": "8000d6c21fb542c47d8a4978754e3094179a60c29347a9f9e9993b1f272436bd"
+    },
+    {
       "path": "app/javascript/controllers/ej2_textbox_controller.js",
       "kind": "source",
       "sha256": "97484b84aafdc22df2704569803cf93ae1b9173bd9b29bd79462e2f01bb238f4"
+    },
+    {
+      "path": "app/javascript/controllers/ej2_toast_controller.js",
+      "kind": "source",
+      "sha256": "077ec8702934314502fdb307e5a0a942e373c26be498888974e2719e4028c364"
     },
     {
       "path": "app/javascript/controllers/ej2_toolbar_controller.js",
@@ -1444,6 +1459,11 @@
       "sha256": "d6d9d56809390931bc2243df1f06fd6fe5c5e24a7b8eb02cdf433e616a066e81"
     },
     {
+      "path": "app/views/ej2_showcase/sections/_buttons.html.erb",
+      "kind": "source",
+      "sha256": "2c05409eb44950209678444a5bde02f2ba516e0bebd3ee653096cb2cffa383c4"
+    },
+    {
       "path": "app/views/ej2_showcase/sections/_cards.html.erb",
       "kind": "source",
       "sha256": "4fe0937dddd583c68c2fe7f2b0ad8ccf97259a055d42512c00147ecff38f9f1a"
@@ -1464,6 +1484,16 @@
       "sha256": "77f1800b6c4be91fba75581ab9e5af0ee8387569ef7994edf4cddfcc85c15903"
     },
     {
+      "path": "app/views/ej2_showcase/sections/_loading.html.erb",
+      "kind": "source",
+      "sha256": "7759f6160c894c5572dbe6e6316ab1e844a9d4ad9fbc2f8ca8f00177e2aa1a9b"
+    },
+    {
+      "path": "app/views/ej2_showcase/sections/_toasts.html.erb",
+      "kind": "source",
+      "sha256": "9c58e5e7ce60ebdfb4467b8aeea25c937afa85197ed241ce3d8dccb52b6e83bc"
+    },
+    {
       "path": "app/views/ej2_showcase/sections/_toolbar.html.erb",
       "kind": "source",
       "sha256": "68e42c5d063175e01331f9155bbeae85872f0b4df7e7a25581cce264a12dafc8"
@@ -1471,7 +1501,7 @@
     {
       "path": "app/views/ej2_showcase/show.html.erb",
       "kind": "source",
-      "sha256": "a81f642d5ee0a8f58b1ee315dc57caf1bb181df9e31fbbf468b8825b533450f4"
+      "sha256": "e294db70709d218f1af95d6a06c6bc98629557524a60563ae9646248bd5ddac8"
     },
     {
       "path": "app/views/grids/show.html.erb",
@@ -1881,12 +1911,12 @@
     {
       "path": "config/locales/ej2_showcase.en.yml",
       "kind": "source",
-      "sha256": "b9701cd2419b1c75d773129981af2c6bda23efe3bd5a99e452ffb57fc71c0a09"
+      "sha256": "ad43d33aa2fea4b49b22ad7d0cf99e2e8151339445d27c8b7cac958e5f57e2f5"
     },
     {
       "path": "config/locales/ej2_showcase.pt-BR.yml",
       "kind": "source",
-      "sha256": "babbe1d89f4bef4fbcdca76d22bc1343ccb8716ced3d1d33759b8598ef042163"
+      "sha256": "62ac1153fe90c02e0006f7655387f461ef770a3f215e171dbc286f03bd1e4f57"
     },
     {
       "path": "config/locales/en.yml",
@@ -2911,7 +2941,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "58b7b7f989d25224b67d6f5f93ef72d61aff74af3ed12684791652c529b7962a"
+      "sha256": "64e5e7b051cbd3f2dd313eefbb091ea81fbeda4b3d17375ecfb22f4d9e87876c"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3266,7 +3296,7 @@
     {
       "path": "test/controllers/ej2_showcase_controller_test.rb",
       "kind": "test",
-      "sha256": "7694e69bd0afa953c1277fab47c09c8471f47ab54dc3088bc88552ed1d47e9a5"
+      "sha256": "f2434983c3d46899dd0708c8a15214aa9fda9fe6fe66c8912adb15b546bf273c"
     },
     {
       "path": "test/controllers/grids_controller_syncfusion_test.rb",

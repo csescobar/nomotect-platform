@@ -1,0 +1,22 @@
+schema_version: 1
+id: 193-ej2-showcase-buttons-toasts-loading
+category: feature
+summary: Complete Phase 5 with Buttons, Toasts, and Loading EJ2 showcase components.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Accessible Buttons, Toasts, Spinners, and Skeleton Stimulus controllers with ARIA attributes and design token integration.
