@@ -374,6 +374,10 @@ layout invention.
 Automated and manual evidence are clearly separated, the supported browser
 matrix is honest and screen-reader results are attached to a named environment.
 
+### Certification status
+
+Completed. Real-browser automation using Cuprite and headless Chromium is configured and active in system tests (`bin/rails test:system`). Browser support matrix and screen-reader operator checklist documented in `docs/ai/browser-support-matrix.md`.
+
 ## Phase 7 — Reproducible evidence and certification integrity
 
 ### Scope

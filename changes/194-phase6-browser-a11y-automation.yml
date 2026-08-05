@@ -1,0 +1,22 @@
+schema_version: 1
+id: 194-phase6-browser-a11y-automation
+category: feature
+summary: Implement Phase 6 real-browser automation suite with Cuprite and document browser support matrix.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Real-browser System Test suite verifying interactive UI journeys, ARIA attributes, and screen-reader operator matrix.

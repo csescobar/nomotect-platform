@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "9644f9901115ba63174d13609dc03a7a1ecbd79d",
+  "repository_commit": "c5ec133ab59d6795327f89c1945f5eecf2398c28",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -311,7 +311,7 @@
     {
       "path": "app/controllers/ej2_showcase_controller.rb",
       "kind": "controller",
-      "sha256": "1a916ebbc27f7e73904f135e1de1915352aa3d020c43f7de23ceb3c366206f38"
+      "sha256": "11bcae99a93b77a2ed7914a9b3d3ade60fb27084b1f412937c44633ed7ff8b06"
     },
     {
       "path": "app/controllers/grid_saved_views_controller.rb",
@@ -2114,6 +2114,11 @@
       "sha256": "c0ebcae85cbef5cd06f8d959039067a6a7ee9720682349fd76d0a450c023e2c5"
     },
     {
+      "path": "docs/ai/browser-support-matrix.md",
+      "kind": "documentation",
+      "sha256": "4b9513ac5eca5415a6a218a551b5072c503e7364882ffaeebaa7d5ff2efa232c"
+    },
+    {
       "path": "docs/ai/commands/README.md",
       "kind": "documentation",
       "sha256": "91deb3efac41260733121258232573c3f5ed7c500b2f7eb73ba5580c281f0843"
@@ -2941,7 +2946,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "64e5e7b051cbd3f2dd313eefbb091ea81fbeda4b3d17375ecfb22f4d9e87876c"
+      "sha256": "76f977130378e0e29c4eb9bfd1ca513b873bc75ea22d0fe3703ffc045922a258"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2961,7 +2966,7 @@
     {
       "path": "docs/roadmap/adoption-validation-improvements.md",
       "kind": "documentation",
-      "sha256": "7cff2000f7f6b572026f9e1b7c002b027f4f52b994adc4bd3637b0d80066b5a9"
+      "sha256": "959a0d5916a35214b12bcd415897c1d1c1df408e4b036db4ea8c7c54577c648c"
     },
     {
       "path": "docs/roadmap/epic-10-plan.md",
@@ -3237,6 +3242,11 @@
       "path": "lib/tasks/design_tokens.rake",
       "kind": "source",
       "sha256": "fd348d1d7a1a2c3bd46eadd5e77d62fb3d804aae8395ec9d192f94fd3f48d50f"
+    },
+    {
+      "path": "test/application_system_test_case.rb",
+      "kind": "test",
+      "sha256": "a0f551dfbcb14fd55864e484d65b8dfcf6a2c21569bf5c01dd745d98f78597d7"
     },
     {
       "path": "test/components/marketing_components_test.rb",
@@ -3992,6 +4002,11 @@
       "path": "test/support/representative_application/multitenant_extension.yml",
       "kind": "test",
       "sha256": "6d2c64ebc8b9944fd0526067875e5b566855796125cce594f67d7b1ca55ea335"
+    },
+    {
+      "path": "test/system/ej2_showcase_system_test.rb",
+      "kind": "test",
+      "sha256": "d882c97793c3310cd460a5139bfd04a14067f4fb3087507bc862cd6b091c8047"
     },
     {
       "path": "test/test_helper.rb",

@@ -54,6 +54,7 @@ graph TD
   n_document_Adoption__Clean_starter_onboarding["Adoption::Clean-starter-onboarding"]
   n_document_Adoption__Phase_4b_grid_ux_baseline["Adoption::Phase-4b-grid-ux-baseline"]
   n_document_Ai__Ai_first_roadmap["Ai::Ai-first-roadmap"]
+  n_document_Ai__Browser_support_matrix["Ai::Browser-support-matrix"]
   n_document_Ai__Commands__Readme["Ai::Commands::Readme"]
   n_document_Ai__Contribution_boundaries["Ai::Contribution-boundaries"]
   n_document_Ai__Epic_8_delivery_evidence["Ai::Epic-8-delivery-evidence"]
@@ -378,6 +379,7 @@ graph TD
   n_test_Services__Upgrades__RecoveryAdvisor["Services::Upgrades::RecoveryAdvisor"]
   n_test_Services__Upgrades__Version["Services::Upgrades::Version"]
   n_test_Services__VisualValidation__EnvironmentPreparer["Services::VisualValidation::EnvironmentPreparer"]
+  n_test_System__Ej2ShowcaseSystem["System::Ej2ShowcaseSystem"]
   n_component_Application -->|DOCUMENTED_BY| n_document_Architecture__Application_layer
   n_component_Application -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0005_use_application_layer_boundary
   n_component_Application -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0006_seal_application_role_and_grid_registries
@@ -432,6 +434,7 @@ graph TD
   n_controller_Customers -->|TESTED_BY| n_test_Operations__CustomersOperations
   n_controller_Dashboards -->|TESTED_BY| n_test_Controllers__DashboardsController
   n_controller_Ej2Showcase -->|TESTED_BY| n_test_Controllers__Ej2ShowcaseController
+  n_controller_Ej2Showcase -->|TESTED_BY| n_test_System__Ej2ShowcaseSystem
   n_controller_Grids -->|TESTED_BY| n_test_Controllers__GridsController
   n_controller_Grids -->|TESTED_BY| n_test_Controllers__GridsControllerSyncfusion
   n_controller_Health -->|DOCUMENTED_BY| n_document_Ai__Repository_health
