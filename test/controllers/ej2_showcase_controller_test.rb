@@ -81,6 +81,17 @@ class Ej2ShowcaseControllerTest < ActionDispatch::IntegrationTest
     assert audit.valid?, audit.violations.map(&:message).join("\n")
   end
 
+  test "ej2 showcase renders grid section explicitly" do
+    get ej2_showcase_path(section: "grid")
+
+    assert_response :success
+    assert_select "#ej2-grid-showcase"
+    assert_select "[data-controller='ej2-grid']"
+
+    audit = Accessibility::HtmlAudit.new(response.body)
+    assert audit.valid?, audit.violations.map(&:message).join("\n")
+  end
+
   test "ej2 showcase active nav link reflects current section" do
     get ej2_showcase_path(section: "forms")
 

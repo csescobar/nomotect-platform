@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "a7445223a3acbf4b0ad8bda09f205b2e5c63157c",
+  "repository_commit": "09ebce680616c21923e65688cee741c145cf08b0",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -451,7 +451,7 @@
     {
       "path": "app/javascript/controllers/ej2_grid_controller.js",
       "kind": "source",
-      "sha256": "7def5672aa95f57da989f8d21bc967babe58ab883541a18b69ebfadc96e9b9a8"
+      "sha256": "fcc3738f3dbf94e243f59dff6083a0a60f3a0b9b54341b5e701cd1a1dda0b084"
     },
     {
       "path": "app/javascript/controllers/ej2_multiselect_controller.js",
@@ -1461,7 +1461,7 @@
     {
       "path": "app/views/ej2_showcase/sections/_grid.html.erb",
       "kind": "source",
-      "sha256": "f57235cfdc2a7354c5f8033bd6ed94960344f35a84291a9af39388ef6abf0eba"
+      "sha256": "77f1800b6c4be91fba75581ab9e5af0ee8387569ef7994edf4cddfcc85c15903"
     },
     {
       "path": "app/views/ej2_showcase/sections/_toolbar.html.erb",
@@ -1881,12 +1881,12 @@
     {
       "path": "config/locales/ej2_showcase.en.yml",
       "kind": "source",
-      "sha256": "ac8b01df1a0acadf03fee67428aba29012966e9dca4b8856345299be91e9c36f"
+      "sha256": "b9701cd2419b1c75d773129981af2c6bda23efe3bd5a99e452ffb57fc71c0a09"
     },
     {
       "path": "config/locales/ej2_showcase.pt-BR.yml",
       "kind": "source",
-      "sha256": "518a08afe12dbaae8519dfd2ffee39757ede10adaab280bdc06654fc94a9bf4f"
+      "sha256": "babbe1d89f4bef4fbcdca76d22bc1343ccb8716ced3d1d33759b8598ef042163"
     },
     {
       "path": "config/locales/en.yml",
@@ -2911,7 +2911,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "91cbe52925c7e882a41738a60dbdfa377594616df22a3706c9f6ee05ba55a380"
+      "sha256": "58b7b7f989d25224b67d6f5f93ef72d61aff74af3ed12684791652c529b7962a"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3266,7 +3266,7 @@
     {
       "path": "test/controllers/ej2_showcase_controller_test.rb",
       "kind": "test",
-      "sha256": "72d3afa7166a575ace41daac5cf1f854915459da38c89beb8d6a604ad9022ce0"
+      "sha256": "7694e69bd0afa953c1277fab47c09c8471f47ab54dc3088bc88552ed1d47e9a5"
     },
     {
       "path": "test/controllers/grids_controller_syncfusion_test.rb",

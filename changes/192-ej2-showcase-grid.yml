@@ -1,0 +1,22 @@
+schema_version: 1
+id: 192-ej2-showcase-grid
+category: feature
+summary: Implement Phase 5 Syncfusion EJ2 Data Grid showcase section and inline data array support.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Accessible EJ2 Data Grid Stimulus controller with ARIA grid attributes and high-contrast design token integration.
