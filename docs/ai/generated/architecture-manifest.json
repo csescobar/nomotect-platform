@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "5ccba286bc33c24defe84979fc2cbda8e132cd38",
+  "repository_commit": "2d3d67767cdef2c94df2468d44901e2a5be0e080",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -61,7 +61,7 @@
     {
       "path": "app/assets/stylesheets/syncfusion_ej2.css",
       "kind": "source",
-      "sha256": "cc3d27a0d23e7b0b2d886f9e74250b61fda3f72110c2683c4e48e27523d345d7"
+      "sha256": "8424193648b31bf59411d098e6ce35a90fc6a5ff47b663c986622675bd8a258f"
     },
     {
       "path": "app/components/application_component.rb",
@@ -432,6 +432,11 @@
       "path": "app/javascript/controllers/ej2_datepicker_controller.js",
       "kind": "source",
       "sha256": "b8e364069910196501482ef63eb427713f2a94860dcad62c66503a19422343fa"
+    },
+    {
+      "path": "app/javascript/controllers/ej2_dialog_controller.js",
+      "kind": "source",
+      "sha256": "0adfc5bdc5f06cbcc822caea5b804b4fe7d8cc4c5f037640ee9f7613935d62b1"
     },
     {
       "path": "app/javascript/controllers/ej2_dropdown_controller.js",
@@ -1436,7 +1441,7 @@
     {
       "path": "app/views/ej2_showcase/sections/_dialogs.html.erb",
       "kind": "source",
-      "sha256": "f57235cfdc2a7354c5f8033bd6ed94960344f35a84291a9af39388ef6abf0eba"
+      "sha256": "678092f23be3040e43e3c11b779c872b655edb986d329fb1daf7fe10fc47c07f"
     },
     {
       "path": "app/views/ej2_showcase/sections/_forms.html.erb",
@@ -1866,12 +1871,12 @@
     {
       "path": "config/locales/ej2_showcase.en.yml",
       "kind": "source",
-      "sha256": "d16ab1875f5bcaf119a5c3f9d443fb34aeb2b351a88d07d742534196e518f7c7"
+      "sha256": "25f4677f28a0c08b74ccdfd00005c19a10f6a59aea74d57382f68ac211f97ac9"
     },
     {
       "path": "config/locales/ej2_showcase.pt-BR.yml",
       "kind": "source",
-      "sha256": "c0a163ce7ce1b4863aa926e6b10ff1b15610dc79cc4a5196ce5e1ba56f696fa2"
+      "sha256": "8b3994c4f7ee5949e8efb969e0af03a0c462850e8ea8509a5771ba7eb43899eb"
     },
     {
       "path": "config/locales/en.yml",
@@ -3251,7 +3256,7 @@
     {
       "path": "test/controllers/ej2_showcase_controller_test.rb",
       "kind": "test",
-      "sha256": "74e70dcdb2adda544e9bd1d0ae5d9ae6a5e546574e9f6d8be3c7650fce9ef8a3"
+      "sha256": "23f8f820b3136f08bb23cb9d4eb84149f35a7bab544de12ad397e43a21dd1152"
     },
     {
       "path": "test/controllers/grids_controller_syncfusion_test.rb",

@@ -43,11 +43,17 @@ class Ej2ShowcaseControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-controller='ej2-multiselect']"
   end
 
-  test "ej2 showcase renders stub section for dialogs" do
+  test "ej2 showcase renders dialogs section explicitly" do
     get ej2_showcase_path(section: "dialogs")
 
     assert_response :success
-    assert_select ".ej2-showcase-coming-soon"
+    assert_select "#ej2-dialogs-confirmation"
+    assert_select "#ej2-dialogs-destructive"
+    assert_select "#ej2-dialogs-custom"
+    assert_select "[data-controller='ej2-dialog']", minimum: 3
+
+    audit = Accessibility::HtmlAudit.new(response.body)
+    assert audit.valid?, audit.violations.map(&:message).join("\n")
   end
 
   test "ej2 showcase active nav link reflects current section" do

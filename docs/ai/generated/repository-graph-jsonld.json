@@ -2790,7 +2790,7 @@
       "name": "Controllers::Ej2ShowcaseController",
       "path": "test/controllers/ej2_showcase_controller_test.rb",
       "properties": {
-        "sha256": "74e70dcdb2adda544e9bd1d0ae5d9ae6a5e546574e9f6d8be3c7650fce9ef8a3",
+        "sha256": "23f8f820b3136f08bb23cb9d4eb84149f35a7bab544de12ad397e43a21dd1152",
         "source": "platform"
       },
       "@id": "test:Controllers::Ej2ShowcaseController"
