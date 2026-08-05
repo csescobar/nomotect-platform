@@ -1036,4 +1036,14 @@ input::placeholder {
   flex-shrink: 0;
 }
 
+/* Hidden target container before EJ2 Dialog initialization */
+.ej2-dialog-container {
+  display: none;
+}
+
+/* Form group vertical spacing */
+.ej2-form-group + .ej2-form-group {
+  margin-top: var(--space-md);
+}
+
 

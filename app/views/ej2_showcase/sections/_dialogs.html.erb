@@ -16,7 +16,7 @@
         <%= t("ej2_showcase.dialogs.confirmation.trigger") %>
       </button>
 
-      <div class="ej2-dialog-container" style="display: none;">
+      <div class="ej2-dialog-container">
         <div class="ej2-dialog-body">
           <p><%= t("ej2_showcase.dialogs.confirmation.content") %></p>
         </div>
@@ -43,7 +43,7 @@
         <%= t("ej2_showcase.dialogs.destructive.trigger") %>
       </button>
 
-      <div class="ej2-dialog-container" style="display: none;">
+      <div class="ej2-dialog-container">
         <div class="ej2-dialog-body">
           <div class="ej2-dialog-alert ej2-dialog-alert--danger">
             <span class="ej2-dialog-alert__icon" aria-hidden="true">⚠️</span>
@@ -73,7 +73,7 @@
         <%= t("ej2_showcase.dialogs.custom.trigger") %>
       </button>
 
-      <div class="ej2-dialog-container" style="display: none;">
+      <div class="ej2-dialog-container">
         <div class="ej2-dialog-body">
           <div class="ej2-form-group" data-controller="ej2-textbox" data-ej2-textbox-placeholder-value="Email Address">
             <label for="dlg-email" class="ej2-form-group__label">Email Address</label>
@@ -83,7 +83,7 @@
             { value: "owner", text: "Owner" },
             { value: "admin", text: "Admin" },
             { value: "member", text: "Member" }
-          ].to_json %>" style="margin-top: 1rem;">
+          ].to_json %>">
             <label for="dlg-role" class="ej2-form-group__label">Role</label>
             <input id="dlg-role" type="text">
           </div>
