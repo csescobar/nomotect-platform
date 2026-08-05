@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "30fe87fe0f121f0aeb8151e3a903bde2a97b7488",
+  "repository_commit": "5ccba286bc33c24defe84979fc2cbda8e132cd38",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -61,7 +61,7 @@
     {
       "path": "app/assets/stylesheets/syncfusion_ej2.css",
       "kind": "source",
-      "sha256": "87d5dd811e76978c34625a15ecc54adc9b68c86ba4d2716b3953d6b3b6fd6d7c"
+      "sha256": "cc3d27a0d23e7b0b2d886f9e74250b61fda3f72110c2683c4e48e27523d345d7"
     },
     {
       "path": "app/components/application_component.rb",

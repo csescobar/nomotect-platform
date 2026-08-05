@@ -767,24 +767,20 @@ input::placeholder {
 }
 
 .e-float-input.e-input-focus label.e-float-text,
-.e-float-input:not(.e-read-only):not(.e-disabled):not(:has(input[readonly])):not(:has(input[disabled])) input:focus ~ label.e-float-text,
-.e-float-input:not(.e-read-only):not(.e-disabled):not(:has(input[readonly])):not(:has(input[disabled])) input:not(:placeholder-shown) ~ label.e-float-text,
+.e-float-input input:focus ~ label.e-float-text,
+.e-float-input input:not(:placeholder-shown) ~ label.e-float-text,
 .e-multi-select-wrapper.e-input-focus label.e-float-text {
   color: var(--color-primary) !important;
 }
 
-/* Floating label and input value text for read-only and disabled states */
+/* Value text for read-only and disabled states */
 .e-input-group.e-read-only input,
 .e-input-group.e-disabled input,
 .e-float-input.e-read-only input,
 .e-float-input.e-disabled input,
 .e-float-input:has(input[readonly]) input,
 .e-float-input:has(input[disabled]) input,
-.e-float-input.e-read-only label.e-float-text,
-.e-float-input.e-disabled label.e-float-text,
-.e-float-input:has(input[readonly]) label.e-float-text,
-.e-float-input:has(input[disabled]) label.e-float-text,
-.e-input-group:has(input[readonly]) label.e-float-text {
+.e-input-group:has(input[readonly]) input {
   color: var(--color-text-muted) !important;
   -webkit-text-fill-color: var(--color-text-muted) !important;
 }
