@@ -51,6 +51,7 @@ Required release impact: `minor`.
 - Implement Phase 5 Syncfusion EJ2 showcase route with reusable Form and Dialog components. (`190-ej2-showcase-forms-dialogs`)
 - Implement Phase 5 Syncfusion EJ2 Cards and Panels components in showcase. (`191-ej2-showcase-cards`)
 - Implement Phase 5 Syncfusion EJ2 Data Grid showcase section and inline data array support. (`192-ej2-showcase-grid`)
+- Complete Phase 5 with Buttons, Toasts, and Loading EJ2 showcase components. (`193-ej2-showcase-buttons-toasts-loading`)
 
 ### Fixed
 

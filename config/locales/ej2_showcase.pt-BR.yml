@@ -3,11 +3,14 @@ pt-BR:
     title: "Mostruário de Componentes EJ2"
     description: "Demonstrações interativas dos componentes Syncfusion EJ2 integrados com os design tokens do NomoTect via Stimulus controllers reutilizáveis."
     nav:
-      forms: "Formulários"
-      dialogs: "Diálogos"
+      forms: "Formulários & Inputs"
+      buttons: "Botões & Ações"
+      dialogs: "Diálogos & Modais"
       cards: "Cards & Painéis"
-      toolbar: "Barra de Ferramentas"
-      grid: "Grid"
+      toolbar: "Barras de Ferramentas"
+      grid: "Data Grid"
+      toasts: "Toasts & Notifications"
+      loading: "Carregamento & Spinners"
     forms:
       title: "Componentes de Formulário EJ2"
       description: "Inputs, selects, date pickers e multi-selects do Syncfusion EJ2 com integração completa aos design tokens do NomoTect."
@@ -127,3 +130,44 @@ pt-BR:
       showcase:
         title: "Data Grid Empresarial Interativo"
         description: "Demonstração ao vivo do motor de Data Grid do Syncfusion EJ2 integrado aos NomoTect Design Tokens."
+    buttons:
+      title: "Componentes de Botões EJ2"
+      description: "Botões de ação, variantes, ícones, estados e indicadores de carregamento integrados aos NomoTect Design Tokens."
+      variants:
+        title: "Variantes & Estilos de Botão"
+        description: "Variantes de botão primário, secundário, destrutivo, outline e ghost."
+        primary: "Ação Principal"
+        secondary: "Ação Secundária"
+        destructive: "Ação Destrutiva"
+        outline: "Botão Outline"
+        ghost: "Ação Ghost"
+      states:
+        title: "Estados & Indicadores de Botão"
+        description: "Estados desabilitados, apenas ícone e indicador interativo de carregamento."
+        disabled: "Estado Desabilitado"
+        loading: "Processando..."
+        trigger_loading: "Clique para Testar Carregamento"
+    toasts:
+      title: "Sistema de Notificações Toast EJ2"
+      description: "Toasts de feedback não-intrusivos para notificações de sucesso, erro, aviso e informação."
+      demo:
+        title: "Notificações Toast Interativas"
+        description: "Dispare toasts de feedback do sistema mapeados às cores de status do NomoTect."
+        success_btn: "Exibir Toast de Sucesso"
+        danger_btn: "Exibir Toast de Erro"
+        warning_btn: "Exibir Toast de Aviso"
+        info_btn: "Exibir Toast de Informação"
+        success_msg: "Operação concluída com sucesso!"
+        danger_msg: "Falha ao processar o payload de execução. Por favor, verifique as credenciais."
+        warning_msg: "Limite de requisições atingido. As chamadas estão sendo limitadas."
+        info_msg: "Manutenção do sistema agendada para 02:00 UTC."
+    loading:
+      title: "Componentes de Carregamento & Spinner EJ2"
+      description: "Indicadores suaves de carregamento, overlays de spinner e estados de skeleton placeholder."
+      spinner:
+        title: "Overlay de Spinner de Container & Card"
+        description: "Spinner de sobreposição de container completo para operações assíncronas e carregamento de dados."
+        toggle: "Alternar Overlay de Carregamento"
+      skeleton:
+        title: "Placeholders de Conteúdo Skeleton"
+        description: "Loaders skeleton animados para carregamentos iniciais de página e conteúdo de card assíncrono."

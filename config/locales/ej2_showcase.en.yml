@@ -3,11 +3,14 @@ en:
     title: "EJ2 Component Showcase"
     description: "Interactive demonstrations of Syncfusion EJ2 components integrated with NomoTect design tokens via reusable Stimulus controllers."
     nav:
-      forms: "Forms"
-      dialogs: "Dialogs"
+      forms: "Forms & Inputs"
+      buttons: "Buttons & Actions"
+      dialogs: "Dialogs & Modals"
       cards: "Cards & Panels"
-      toolbar: "Toolbar"
-      grid: "Grid"
+      toolbar: "Toolbars"
+      grid: "Data Grid"
+      toasts: "Toasts & Alerts"
+      loading: "Loading & Spinners"
     forms:
       title: "EJ2 Form Components"
       description: "Syncfusion EJ2 inputs, selects, date pickers and multi-selects with full NomoTect design token integration."
@@ -127,3 +130,44 @@ en:
       showcase:
         title: "Interactive Enterprise Data Grid"
         description: "Live demonstration of the Syncfusion EJ2 Data Grid engine integrated with NomoTect Design Tokens."
+    buttons:
+      title: "EJ2 Button Components"
+      description: "Action buttons, variants, icons, states, and loading indicators integrated with NomoTect Design Tokens."
+      variants:
+        title: "Button Variants & Styles"
+        description: "Primary, secondary, destructive, outline, and ghost button variants."
+        primary: "Primary Action"
+        secondary: "Secondary Action"
+        destructive: "Destructive Action"
+        outline: "Outline Button"
+        ghost: "Ghost Action"
+      states:
+        title: "Button States & Indicators"
+        description: "Disabled, icon-only, and interactive loading indicator states."
+        disabled: "Disabled State"
+        loading: "Processing..."
+        trigger_loading: "Click to Test Loading State"
+    toasts:
+      title: "EJ2 Toast Notification System"
+      description: "Non-intrusive feedback toasts for success, error, warning, and info notifications."
+      demo:
+        title: "Interactive Toast Notifications"
+        description: "Trigger system feedback toasts mapped to NomoTect status colors."
+        success_btn: "Show Success Toast"
+        danger_btn: "Show Error Toast"
+        warning_btn: "Show Warning Toast"
+        info_btn: "Show Info Toast"
+        success_msg: "Operation completed successfully!"
+        danger_msg: "Failed to process execution payload. Please check credentials."
+        warning_msg: "Rate limit reached. Requests are being throttled."
+        info_msg: "System maintenance scheduled for 02:00 UTC."
+    loading:
+      title: "EJ2 Loading & Spinner Components"
+      description: "Smooth loading indicators, spinner overlays, and skeleton placeholder states."
+      spinner:
+        title: "Container & Card Spinner Overlay"
+        description: "Full container overlay spinner for async operations and data loading."
+        toggle: "Toggle Loading Overlay"
+      skeleton:
+        title: "Content Skeleton Placeholders"
+        description: "Animated skeleton loaders for initial page loads and async card content."

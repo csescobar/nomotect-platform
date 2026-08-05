@@ -11,10 +11,13 @@
     <ul class="ej2-showcase__nav" role="list">
       <% [
         { key: "forms",   icon: "📝" },
+        { key: "buttons", icon: "🔘" },
         { key: "dialogs", icon: "💬" },
         { key: "cards",   icon: "🗂️" },
         { key: "toolbar", icon: "🔧" },
-        { key: "grid",    icon: "📊" }
+        { key: "grid",    icon: "📊" },
+        { key: "toasts",  icon: "🔔" },
+        { key: "loading", icon: "⏳" }
       ].each do |item| %>
         <li>
           <a
@@ -35,6 +38,8 @@
     <% case @active_section %>
     <% when "forms" %>
       <%= render "ej2_showcase/sections/forms" %>
+    <% when "buttons" %>
+      <%= render "ej2_showcase/sections/buttons" %>
     <% when "dialogs" %>
       <%= render "ej2_showcase/sections/dialogs" %>
     <% when "cards" %>
@@ -43,6 +48,10 @@
       <%= render "ej2_showcase/sections/toolbar" %>
     <% when "grid" %>
       <%= render "ej2_showcase/sections/grid" %>
+    <% when "toasts" %>
+      <%= render "ej2_showcase/sections/toasts" %>
+    <% when "loading" %>
+      <%= render "ej2_showcase/sections/loading" %>
     <% else %>
       <%= render "ej2_showcase/sections/forms" %>
     <% end %>

@@ -92,6 +92,41 @@ class Ej2ShowcaseControllerTest < ActionDispatch::IntegrationTest
     assert audit.valid?, audit.violations.map(&:message).join("\n")
   end
 
+  test "ej2 showcase renders buttons section explicitly" do
+    get ej2_showcase_path(section: "buttons")
+
+    assert_response :success
+    assert_select "#ej2-buttons-variants"
+    assert_select "#ej2-buttons-states"
+    assert_select "[data-controller='ej2-button']", minimum: 4
+
+    audit = Accessibility::HtmlAudit.new(response.body)
+    assert audit.valid?, audit.violations.map(&:message).join("\n")
+  end
+
+  test "ej2 showcase renders toasts section explicitly" do
+    get ej2_showcase_path(section: "toasts")
+
+    assert_response :success
+    assert_select "#ej2-toasts-demo"
+    assert_select "[data-controller='ej2-toast']"
+
+    audit = Accessibility::HtmlAudit.new(response.body)
+    assert audit.valid?, audit.violations.map(&:message).join("\n")
+  end
+
+  test "ej2 showcase renders loading section explicitly" do
+    get ej2_showcase_path(section: "loading")
+
+    assert_response :success
+    assert_select "#ej2-loading-spinner"
+    assert_select "#ej2-loading-skeleton"
+    assert_select "[data-controller='ej2-spinner']"
+
+    audit = Accessibility::HtmlAudit.new(response.body)
+    assert audit.valid?, audit.violations.map(&:message).join("\n")
+  end
+
   test "ej2 showcase active nav link reflects current section" do
     get ej2_showcase_path(section: "forms")
 
