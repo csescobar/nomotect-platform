@@ -1,0 +1,55 @@
+en:
+  ej2_showcase:
+    title: "EJ2 Component Showcase"
+    description: "Interactive demonstrations of Syncfusion EJ2 components integrated with NomoTect design tokens via reusable Stimulus controllers."
+    nav:
+      forms: "Forms"
+      dialogs: "Dialogs"
+      cards: "Cards & Panels"
+      toolbar: "Toolbar"
+      grid: "Grid"
+    forms:
+      title: "EJ2 Form Components"
+      description: "Syncfusion EJ2 inputs, selects, date pickers and multi-selects with full NomoTect design token integration."
+      text_input:
+        title: "TextBox"
+        description: "Single-line text input with floating label and validation states."
+        label: "Full Name"
+        placeholder: "Enter your full name"
+        help: "Use the full legal name as it appears on official documents."
+        error: "Full name is required."
+      numeric_input:
+        title: "NumericTextBox"
+        description: "Numeric input with step controls, min/max and format options."
+        label: "Quantity"
+        placeholder: "0"
+        help: "Enter a value between 1 and 1000."
+      dropdown:
+        title: "DropDownList"
+        description: "Single-select dropdown with search and grouping support."
+        label: "Status"
+        placeholder: "Select a status..."
+        help: "Choose the current status of the record."
+        options:
+          active: "Active"
+          inactive: "Inactive"
+          pending: "Pending"
+          archived: "Archived"
+      datepicker:
+        title: "DatePicker"
+        description: "Calendar popup with keyboard navigation and locale-aware formatting."
+        label: "Start Date"
+        placeholder: "Select a date"
+        help: "Choose the start date for this record."
+      multiselect:
+        title: "MultiSelect"
+        description: "Multi-value select with chip display, filtering and select-all."
+        label: "Tags"
+        placeholder: "Select tags..."
+        help: "Assign one or more tags to classify this record."
+        options:
+          critical: "Critical"
+          high: "High"
+          medium: "Medium"
+          low: "Low"
+          review: "Under Review"

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "f70b59d17853dc7155258305e44d9cfa6dd57256",
+  "repository_commit": "30fe87fe0f121f0aeb8151e3a903bde2a97b7488",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -61,7 +61,7 @@
     {
       "path": "app/assets/stylesheets/syncfusion_ej2.css",
       "kind": "source",
-      "sha256": "0581371d84889cdd9f1cb23bd83fecf5d2f0859598f4db933503e447429d5bfc"
+      "sha256": "87d5dd811e76978c34625a15ecc54adc9b68c86ba4d2716b3953d6b3b6fd6d7c"
     },
     {
       "path": "app/components/application_component.rb",
@@ -309,6 +309,11 @@
       "sha256": "4295090d17fe8b5da4a73d4010e670aee4f5100400b9ace3c32c7d8ce802d32c"
     },
     {
+      "path": "app/controllers/ej2_showcase_controller.rb",
+      "kind": "controller",
+      "sha256": "1a916ebbc27f7e73904f135e1de1915352aa3d020c43f7de23ceb3c366206f38"
+    },
+    {
       "path": "app/controllers/grid_saved_views_controller.rb",
       "kind": "controller",
       "sha256": "8355b49a378da0e2dbaa5161f7430703a9ce3402c9a76de5cb5d000859fa7f09"
@@ -424,9 +429,34 @@
       "sha256": "f5f3ef90919ac7c3f68f547f4fe767fefcd4b02dad916cad7cea44cf14492205"
     },
     {
+      "path": "app/javascript/controllers/ej2_datepicker_controller.js",
+      "kind": "source",
+      "sha256": "b8e364069910196501482ef63eb427713f2a94860dcad62c66503a19422343fa"
+    },
+    {
+      "path": "app/javascript/controllers/ej2_dropdown_controller.js",
+      "kind": "source",
+      "sha256": "021513b8b54ca75424c7d1337c193209d901459560a00f78cf52e19dc7fbbf6a"
+    },
+    {
       "path": "app/javascript/controllers/ej2_grid_controller.js",
       "kind": "source",
       "sha256": "7def5672aa95f57da989f8d21bc967babe58ab883541a18b69ebfadc96e9b9a8"
+    },
+    {
+      "path": "app/javascript/controllers/ej2_multiselect_controller.js",
+      "kind": "source",
+      "sha256": "3d5dece6a8cf13fcdd7daa37951cbf3a42e55ec5a33fe09331161440a626508c"
+    },
+    {
+      "path": "app/javascript/controllers/ej2_numeric_controller.js",
+      "kind": "source",
+      "sha256": "2c6aea728a9e84807b944ac2b20b59d3404cdff9f6440e41a50555e6c25a33e0"
+    },
+    {
+      "path": "app/javascript/controllers/ej2_textbox_controller.js",
+      "kind": "source",
+      "sha256": "97484b84aafdc22df2704569803cf93ae1b9173bd9b29bd79462e2f01bb238f4"
     },
     {
       "path": "app/javascript/controllers/image_preview_controller.js",
@@ -1399,6 +1429,36 @@
       "sha256": "d6d9d56809390931bc2243df1f06fd6fe5c5e24a7b8eb02cdf433e616a066e81"
     },
     {
+      "path": "app/views/ej2_showcase/sections/_cards.html.erb",
+      "kind": "source",
+      "sha256": "f57235cfdc2a7354c5f8033bd6ed94960344f35a84291a9af39388ef6abf0eba"
+    },
+    {
+      "path": "app/views/ej2_showcase/sections/_dialogs.html.erb",
+      "kind": "source",
+      "sha256": "f57235cfdc2a7354c5f8033bd6ed94960344f35a84291a9af39388ef6abf0eba"
+    },
+    {
+      "path": "app/views/ej2_showcase/sections/_forms.html.erb",
+      "kind": "source",
+      "sha256": "dc52c9742967a9922b98a7d7ed205952c7aea9f3432a3246db5710904c2bbdf9"
+    },
+    {
+      "path": "app/views/ej2_showcase/sections/_grid.html.erb",
+      "kind": "source",
+      "sha256": "f57235cfdc2a7354c5f8033bd6ed94960344f35a84291a9af39388ef6abf0eba"
+    },
+    {
+      "path": "app/views/ej2_showcase/sections/_toolbar.html.erb",
+      "kind": "source",
+      "sha256": "f57235cfdc2a7354c5f8033bd6ed94960344f35a84291a9af39388ef6abf0eba"
+    },
+    {
+      "path": "app/views/ej2_showcase/show.html.erb",
+      "kind": "source",
+      "sha256": "a81f642d5ee0a8f58b1ee315dc57caf1bb181df9e31fbbf468b8825b533450f4"
+    },
+    {
       "path": "app/views/grids/show.html.erb",
       "kind": "source",
       "sha256": "f4151f134c277213a705ff16110ead92e05a2dfa4182a873eab4b253674c2c77"
@@ -1421,7 +1481,7 @@
     {
       "path": "app/views/layouts/application.html.erb",
       "kind": "source",
-      "sha256": "eeb6ffd361aee4d4f969cd8ab341e032e3f90fb2c4667499d69b089602a1888e"
+      "sha256": "847031674a2723c3e9616b7e2e628fee726902d5c76c0ae1b36545f14f2105bf"
     },
     {
       "path": "app/views/layouts/installation.html.erb",
@@ -1596,7 +1656,7 @@
     {
       "path": "config/boot.rb",
       "kind": "source",
-      "sha256": "701b46d31e9e7715bcc8e19cb549913c7e4c1690320237b256f6f493878cb57e"
+      "sha256": "7a6800c5392efb0db254d9357c09cd6b805070846635f95d5c0efa916442060c"
     },
     {
       "path": "config/cable.yml",
@@ -1804,6 +1864,16 @@
       "sha256": "1a89a61a05a8bbcfe393535378caae084a15b71bff512b8f1332302963219c73"
     },
     {
+      "path": "config/locales/ej2_showcase.en.yml",
+      "kind": "source",
+      "sha256": "d16ab1875f5bcaf119a5c3f9d443fb34aeb2b351a88d07d742534196e518f7c7"
+    },
+    {
+      "path": "config/locales/ej2_showcase.pt-BR.yml",
+      "kind": "source",
+      "sha256": "c0a163ce7ce1b4863aa926e6b10ff1b15610dc79cc4a5196ce5e1ba56f696fa2"
+    },
+    {
       "path": "config/locales/en.yml",
       "kind": "source",
       "sha256": "08c3d8f862f8f3f3f1d221ffedacfda8588bca7ae90a9609f9d7e95851a5f4b1"
@@ -1841,12 +1911,12 @@
     {
       "path": "config/locales/layout.en.yml",
       "kind": "source",
-      "sha256": "8f3a2668562a9feecb27d9717bdc494ad6fdc69d95d112f0da6df8edad11860b"
+      "sha256": "077c0907ec609216df77a7e43e535827f37871fd083138dec702ecdbb54c0948"
     },
     {
       "path": "config/locales/layout.pt-BR.yml",
       "kind": "source",
-      "sha256": "a11155e3a0ccc4a3422c0e91bd109375b17ee068d7065ead98c545190e9ad63e"
+      "sha256": "c6f769b556041f258b6d4053e0d336c9fb15c0032e8ee44d7c37f4f17467e27c"
     },
     {
       "path": "config/locales/localization.en.yml",
@@ -1896,7 +1966,7 @@
     {
       "path": "config/routes.rb",
       "kind": "source",
-      "sha256": "73357ff28fcd9f6f813b93b170dc3c1dfb2f975c6ef7c4c1dad3b2fb7def2d7d"
+      "sha256": "c73d5a41bbbc2da04cdee5bfd66e5bec61219bd9a1eb5d5a9781beec846883ac"
     },
     {
       "path": "config/storage.yml",
@@ -3177,6 +3247,11 @@
       "path": "test/controllers/dashboards_controller_test.rb",
       "kind": "test",
       "sha256": "cdd64a679a07cb1885f2ec1d255382483a0850464e6573eaa332b0865870f0cc"
+    },
+    {
+      "path": "test/controllers/ej2_showcase_controller_test.rb",
+      "kind": "test",
+      "sha256": "74e70dcdb2adda544e9bd1d0ae5d9ae6a5e546574e9f6d8be3c7650fce9ef8a3"
     },
     {
       "path": "test/controllers/grids_controller_syncfusion_test.rb",

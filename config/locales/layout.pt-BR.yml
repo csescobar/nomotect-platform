@@ -11,6 +11,7 @@ pt-BR:
     grid_engine: Motor de grid
     close_notification: Fechar notificação
     component_showcase: Mostruário de componentes
+    ej2_showcase: Componentes EJ2
   preferences:
     title: Configurações
     description: Gerencie suas preferências pessoais de aparência e região.

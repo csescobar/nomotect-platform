@@ -8,9 +8,9 @@ Provider-neutral Rails platform with architecture, governance, security, privacy
 
 ## Current graph
 
-- Nodes: 377
-- Edges: 279
-- Modules: 56
+- Nodes: 379
+- Edges: 280
+- Modules: 57
 - Contracts: 9
 
 ## Engineering invariants
@@ -35,6 +35,7 @@ Provider-neutral Rails platform with architecture, governance, security, privacy
 - [Customers](modules/customers/AI_CONTEXT.md)
 - [Dashboards](modules/dashboards/AI_CONTEXT.md)
 - [DomainEvent](modules/domain-event/AI_CONTEXT.md)
+- [Ej2Showcase](modules/ej2-showcase/AI_CONTEXT.md)
 - [FeatureFlag](modules/feature-flag/AI_CONTEXT.md)
 - [GridSavedView](modules/grid-saved-view/AI_CONTEXT.md)
 - [GridSavedViews](modules/grid-saved-views/AI_CONTEXT.md)

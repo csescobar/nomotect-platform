@@ -5,12 +5,12 @@
 ## Composition
 
 - component: 30
-- controller: 21
+- controller: 22
 - document: 157
 - job: 7
 - model: 21
 - policy: 4
-- test: 137
+- test: 138
 
 ## Diagram
 
@@ -29,6 +29,7 @@ graph LR
   customers[Customers]
   dashboards[Dashboards]
   domain_event[DomainEvent]
+  ej2_showcase[Ej2Showcase]
   feature_flag[FeatureFlag]
   grid_saved_view[GridSavedView]
   grid_saved_views[GridSavedViews]

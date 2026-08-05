@@ -33,6 +33,7 @@ digraph repository {
   "controller:ComponentShowcase" [label="ComponentShowcase"];
   "controller:Customers" [label="Customers"];
   "controller:Dashboards" [label="Dashboards"];
+  "controller:Ej2Showcase" [label="Ej2Showcase"];
   "controller:GridSavedViews" [label="GridSavedViews"];
   "controller:Grids" [label="Grids"];
   "controller:Health" [label="Health"];
@@ -250,6 +251,7 @@ digraph repository {
   "test:Controllers::ComponentShowcaseController" [label="Controllers::ComponentShowcaseController"];
   "test:Controllers::CustomersController" [label="Controllers::CustomersController"];
   "test:Controllers::DashboardsController" [label="Controllers::DashboardsController"];
+  "test:Controllers::Ej2ShowcaseController" [label="Controllers::Ej2ShowcaseController"];
   "test:Controllers::GridsController" [label="Controllers::GridsController"];
   "test:Controllers::GridsControllerSyncfusion" [label="Controllers::GridsControllerSyncfusion"];
   "test:Controllers::HealthController" [label="Controllers::HealthController"];
@@ -429,6 +431,7 @@ digraph repository {
   "controller:Customers" -> "test:Controllers::CustomersController" [label="TESTED_BY"];
   "controller:Customers" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
   "controller:Dashboards" -> "test:Controllers::DashboardsController" [label="TESTED_BY"];
+  "controller:Ej2Showcase" -> "test:Controllers::Ej2ShowcaseController" [label="TESTED_BY"];
   "controller:Grids" -> "test:Controllers::GridsController" [label="TESTED_BY"];
   "controller:Grids" -> "test:Controllers::GridsControllerSyncfusion" [label="TESTED_BY"];
   "controller:Health" -> "document:Ai::Repository-health" [label="DOCUMENTED_BY"];

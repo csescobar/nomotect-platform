@@ -1,0 +1,55 @@
+pt-BR:
+  ej2_showcase:
+    title: "Mostruário de Componentes EJ2"
+    description: "Demonstrações interativas dos componentes Syncfusion EJ2 integrados com os design tokens do NomoTect via Stimulus controllers reutilizáveis."
+    nav:
+      forms: "Formulários"
+      dialogs: "Diálogos"
+      cards: "Cards & Painéis"
+      toolbar: "Barra de Ferramentas"
+      grid: "Grid"
+    forms:
+      title: "Componentes de Formulário EJ2"
+      description: "Inputs, selects, date pickers e multi-selects do Syncfusion EJ2 com integração completa aos design tokens do NomoTect."
+      text_input:
+        title: "TextBox"
+        description: "Campo de texto simples com label flutuante e estados de validação."
+        label: "Nome Completo"
+        placeholder: "Digite seu nome completo"
+        help: "Use o nome completo conforme aparece em documentos oficiais."
+        error: "O nome completo é obrigatório."
+      numeric_input:
+        title: "NumericTextBox"
+        description: "Campo numérico com controles de passo, mínimo/máximo e opções de formato."
+        label: "Quantidade"
+        placeholder: "0"
+        help: "Insira um valor entre 1 e 1000."
+      dropdown:
+        title: "DropDownList"
+        description: "Dropdown de seleção única com suporte a busca e agrupamento."
+        label: "Status"
+        placeholder: "Selecione um status..."
+        help: "Escolha o status atual do registro."
+        options:
+          active: "Ativo"
+          inactive: "Inativo"
+          pending: "Pendente"
+          archived: "Arquivado"
+      datepicker:
+        title: "DatePicker"
+        description: "Calendário pop-up com navegação por teclado e formatação localizada."
+        label: "Data de Início"
+        placeholder: "Selecione uma data"
+        help: "Escolha a data de início para este registro."
+      multiselect:
+        title: "MultiSelect"
+        description: "Seleção múltipla com exibição em chips, filtragem e seleção de todos."
+        label: "Tags"
+        placeholder: "Selecione as tags..."
+        help: "Atribua uma ou mais tags para classificar este registro."
+        options:
+          critical: "Crítico"
+          high: "Alto"
+          medium: "Médio"
+          low: "Baixo"
+          review: "Em Revisão"
