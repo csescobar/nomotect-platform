@@ -2405,7 +2405,7 @@
       "name": "Roadmap::Adoption-validation-improvements",
       "path": "docs/roadmap/adoption-validation-improvements.md",
       "properties": {
-        "sha256": "7cff2000f7f6b572026f9e1b7c002b027f4f52b994adc4bd3637b0d80066b5a9",
+        "sha256": "d3492bb6d18c59f531099975951ff929b72fe7caeb5f1dc3c67dc4a12ea48801",
         "source": "platform"
       },
       "@id": "document:Roadmap::Adoption-validation-improvements"

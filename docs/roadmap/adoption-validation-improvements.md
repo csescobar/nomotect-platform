@@ -356,6 +356,10 @@ An unfamiliar contributor can assemble coherent CRUD pages from documented
 components without raw browser controls, inline styles or application-specific
 layout invention.
 
+### Certification status
+
+Completed. All 8 component showcase sections (Forms & Inputs, Buttons & Actions, Dialogs & Modals, Cards & Panels, Toolbars, Data Grid, Toasts & Alerts, Loading & Spinners) are fully implemented, tested, and integrated with NomoTect Design Tokens via reusable Stimulus controllers with zero inline styles and full bilingual (pt-BR / en) i18n support.
+
 ## Phase 6 — Browser, accessibility and visual evidence
 
 ### Scope
