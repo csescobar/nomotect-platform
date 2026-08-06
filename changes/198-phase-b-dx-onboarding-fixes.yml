@@ -1,0 +1,22 @@
+schema_version: 1
+id: 198-phase-b-dx-onboarding-fixes
+category: feature
+summary: Implement Phase B developer experience improvements and onboarding guidelines resolving all 11 pilot friction items in docs/ai/developer-guidelines.md.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified developer onboarding guidelines and friction resolution documentation.

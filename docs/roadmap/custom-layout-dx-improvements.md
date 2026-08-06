@@ -44,6 +44,10 @@ Document and resolve the 11 onboarding friction points identified in the Phase 8
 10. **State Machine Transitions:** Document initial default states and update-triggered transition validations.
 11. **Extension Runtime Registry:** Document runtime capability resolution and in-memory test configuration patterns.
 
+### Certification status
+
+Completed. Comprehensive Developer Guidelines & Onboarding Friction Resolution Guide documented in `docs/ai/developer-guidelines.md` addressing all 11 friction points from the Phase 8 pilot. Certified and programmatically validated in `DeveloperGuidelinesTest`.
+
 ---
 
 ## Phase C — Application Starter Skeleton Documentation Sanitization

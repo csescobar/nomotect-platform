@@ -1014,6 +1014,17 @@
       "@id": "document:Ai::Contribution-boundaries"
     },
     {
+      "id": "document:Ai::Developer-guidelines",
+      "type": "document",
+      "name": "Ai::Developer-guidelines",
+      "path": "docs/ai/developer-guidelines.md",
+      "properties": {
+        "sha256": "4e179c3bef7c8a273e6a267cd9ebc8750d8769d5b574e85dce520ce5cb8b0624",
+        "source": "platform"
+      },
+      "@id": "document:Ai::Developer-guidelines"
+    },
+    {
       "id": "document:Ai::Epic-8-delivery-evidence",
       "type": "document",
       "name": "Ai::Epic-8-delivery-evidence",
@@ -2394,7 +2405,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "fed5661dbc402abd7265f3928cb19b7e48e079e1b48d14bdda80f4e9db57f6f3",
+        "sha256": "588171854a41b06e73fbdf27b3a7ffe6a6f3fbf7495ae10f2fa60aa7360a9548",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -2438,7 +2449,7 @@
       "name": "Roadmap::Custom-layout-dx-improvements",
       "path": "docs/roadmap/custom-layout-dx-improvements.md",
       "properties": {
-        "sha256": "47cf779d79223b8c7f7575f2b575dba03b4275a2991630823b650fd153091b07",
+        "sha256": "ea2b3862a81e0dc605a55afab7e34a5c281b2652c26acb96ee65db8369334ce7",
         "source": "platform"
       },
       "@id": "document:Roadmap::Custom-layout-dx-improvements"
@@ -3223,6 +3234,17 @@
         "source": "platform"
       },
       "@id": "test:Lib::DesignTokens::Compiler"
+    },
+    {
+      "id": "test:Lib::DeveloperGuidelines",
+      "type": "test",
+      "name": "Lib::DeveloperGuidelines",
+      "path": "test/lib/developer_guidelines_test.rb",
+      "properties": {
+        "sha256": "0b769d9538176fe326a874c93843d73c96dde74822a11644551ede04511aa27d",
+        "source": "platform"
+      },
+      "@id": "test:Lib::DeveloperGuidelines"
     },
     {
       "id": "test:Lib::Epic9Certification",
