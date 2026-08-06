@@ -1,0 +1,22 @@
+schema_version: 1
+id: 196-phase8-pilot-plan
+category: feature
+summary: Document Phase 8 execution plan, isolation rules, and operator guide for the second independent adoption pilot.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified Phase 8 independent adoption protocol and operator guidelines.

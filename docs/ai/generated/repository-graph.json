@@ -632,6 +632,16 @@
       }
     },
     {
+      "id": "document:Ai::Phase8-pilot-plan",
+      "type": "document",
+      "name": "Ai::Phase8-pilot-plan",
+      "path": "docs/ai/phase8-pilot-plan.md",
+      "properties": {
+        "sha256": "e2ba9d7f567ed2c9bc366c1ac6c30069e68321dc60254c798530159803b41b69",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Ai::Readme",
       "type": "document",
       "name": "Ai::Readme",
@@ -1837,7 +1847,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "f8a95bbe22403ee4fbdf67fd095f36ac1ad29e87c42846c38e6b6eac1437baa5",
+        "sha256": "3a782342ca195cade89cdc83925a3e2b4763c751659586a2a4e3c988df588e65",
         "source": "platform"
       }
     },
@@ -5510,5 +5520,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "ea0f31f442938764c8f9751b754138ecc988a11e"
+  "repository_commit": "c04584c3e56b173a3e2c3c87f92efe5bfb8ecee1"
 }

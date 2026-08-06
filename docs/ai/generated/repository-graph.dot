@@ -62,6 +62,7 @@ digraph repository {
   "document:Ai::Mcp-expanded-interface" [label="Ai::Mcp-expanded-interface"];
   "document:Ai::Mcp-setup" [label="Ai::Mcp-setup"];
   "document:Ai::Module-contract-specification" [label="Ai::Module-contract-specification"];
+  "document:Ai::Phase8-pilot-plan" [label="Ai::Phase8-pilot-plan"];
   "document:Ai::Readme" [label="Ai::Readme"];
   "document:Ai::Repository-health" [label="Ai::Repository-health"];
   "document:Ai::Repository-intelligence-api" [label="Ai::Repository-intelligence-api"];
