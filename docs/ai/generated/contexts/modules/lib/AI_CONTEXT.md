@@ -4,12 +4,13 @@
 
 ## Responsibilities
 
-- test: Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationStarter, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::DesignTokens::Compiler, Lib::DeveloperGuidelines, Lib::Epic9Certification, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
+- test: Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationSkeletonDocumentationSanitization, Lib::ApplicationStarter, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::DesignTokens::Compiler, Lib::DeveloperGuidelines, Lib::Epic9Certification, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
 
 ## Source paths
 
 - `test/lib/application_layout_config_test.rb`
 - `test/lib/application_registrations_test.rb`
+- `test/lib/application_skeleton_documentation_sanitization_test.rb`
 - `test/lib/application_starter_test.rb`
 - `test/lib/clean_starter_onboarding_test.rb`
 - `test/lib/container_environment_validator_test.rb`
@@ -40,6 +41,10 @@
 - `controller:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `job:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `policy:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
+- `component:Application` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
+- `controller:Application` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
+- `job:Application` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
+- `policy:Application` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
 - `component:Application` —TESTED_BY→ `test:Lib::ApplicationStarter`
 - `controller:Application` —TESTED_BY→ `test:Lib::ApplicationStarter`
 - `job:Application` —TESTED_BY→ `test:Lib::ApplicationStarter`

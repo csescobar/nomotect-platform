@@ -1857,7 +1857,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "588171854a41b06e73fbdf27b3a7ffe6a6f3fbf7495ae10f2fa60aa7360a9548",
+        "sha256": "bdf9ee5dc70be8fb8a35db8bd40547a2fd7722cd04d75976d3e7980dbc11fead",
         "source": "platform"
       }
     },
@@ -1897,7 +1897,7 @@
       "name": "Roadmap::Custom-layout-dx-improvements",
       "path": "docs/roadmap/custom-layout-dx-improvements.md",
       "properties": {
-        "sha256": "ea2b3862a81e0dc605a55afab7e34a5c281b2652c26acb96ee65db8369334ce7",
+        "sha256": "5e3a87c65e9d84d1253daab71caecc079ad2dc0a0602e8c3bd40c4ae890ed903",
         "source": "platform"
       }
     },
@@ -2888,6 +2888,16 @@
       "path": "test/lib/application_registrations_test.rb",
       "properties": {
         "sha256": "b61726e80a9f2083ac5611366cdf786c0bcd4a93a922729f760c281faf597f98",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::ApplicationSkeletonDocumentationSanitization",
+      "type": "test",
+      "name": "Lib::ApplicationSkeletonDocumentationSanitization",
+      "path": "test/lib/application_skeleton_documentation_sanitization_test.rb",
+      "properties": {
+        "sha256": "ad8fd03892e517f5b1d80431fd3c64737f80957a7309741c3228934099b74de0",
         "source": "platform"
       }
     },
@@ -3957,6 +3967,12 @@
     },
     {
       "from": "component:Application",
+      "to": "test:Lib::ApplicationSkeletonDocumentationSanitization",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
       "to": "test:Lib::ApplicationStarter",
       "type": "TESTED_BY",
       "properties": {}
@@ -4150,6 +4166,12 @@
     {
       "from": "controller:Application",
       "to": "test:Lib::ApplicationRegistrations",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "test:Lib::ApplicationSkeletonDocumentationSanitization",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5145,6 +5167,12 @@
     },
     {
       "from": "job:Application",
+      "to": "test:Lib::ApplicationSkeletonDocumentationSanitization",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
       "to": "test:Lib::ApplicationStarter",
       "type": "TESTED_BY",
       "properties": {}
@@ -5338,6 +5366,12 @@
     {
       "from": "policy:Application",
       "to": "test:Lib::ApplicationRegistrations",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "test:Lib::ApplicationSkeletonDocumentationSanitization",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5594,5 +5628,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "79d741aa0533aeb99e5f53217fd09a212cd18ea8"
+  "repository_commit": "67a2f2de87ee68d120164c03d04fd600d6c0ef56"
 }
