@@ -25,9 +25,23 @@ module Releases
       assert_includes report.findings.pluck(:code), "application_sbom_version_mismatch"
     end
 
+    test "reports finding for stale commit evidence" do
+      report = evidence_report(commit: "0000000000000000000000000000000000000000")
+
+      assert_not report.ready?
+      assert_includes report.findings.pluck(:code), "stale_commit_evidence"
+    end
+
+    test "reports finding when forbidden word published is used without deployment" do
+      report = evidence_report(release_notes: "# 0.9.0 Release Notes\nPlatform published to production cluster.")
+
+      assert_not report.ready?
+      assert_includes report.findings.pluck(:code), "forbidden_published_claim"
+    end
+
     private
 
-    def evidence_report(tag: "v0.9.0", provenance_version: "0.9.0", application_sbom: sbom("0.9.0"))
+    def evidence_report(tag: "v0.9.0", provenance_version: "0.9.0", application_sbom: sbom("0.9.0"), commit: nil, release_notes: "# 0.9.0 Release Notes\n")
       compatibility = {
         "schema_version" => 1,
         "source_version" => "0.8.0",
@@ -42,7 +56,8 @@ module Releases
         version: "0.9.0",
         tag:,
         release_metadata: metadata,
-        release_notes: "# 0.9.0 Release Notes\n",
+        release_notes:,
+        commit:,
         compatibility:,
         application_sbom:,
         container_sbom: sbom("0.9.0"),

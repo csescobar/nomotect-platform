@@ -396,6 +396,10 @@ Completed. Real-browser automation using Cuprite and headless Chromium is config
 A machine-readable report cannot pass when its narrative, findings, commit
 binding or execution evidence contradicts the repository state.
 
+### Certification status
+
+Completed. Commit binding validation, stale evidence detection, and claim verification implemented in `Releases::ConsistencyValidator`. Deterministic p50/p95 latency benchmarks, query budget thresholds, and execution environment classification certified in `Releases::PerformanceBenchmarkTest`.
+
 ## Phase 8 — Second independent adoption pilot
 
 ### Preconditions

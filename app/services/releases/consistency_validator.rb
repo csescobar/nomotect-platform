@@ -14,7 +14,8 @@ module Releases
       application_sbom:,
       container_sbom:,
       packaging_manifest:,
-      provenance:
+      provenance:,
+      commit: nil
     )
       @version = Platform::Version.new(version).to_s
       @tag = tag
@@ -25,6 +26,7 @@ module Releases
       @container_sbom = container_sbom
       @packaging_manifest = packaging_manifest
       @provenance = provenance
+      @commit = commit
     end
 
     def call
@@ -44,13 +46,34 @@ module Releases
         dig(release_metadata, "compatibility_digest"),
         Digest::SHA256.hexdigest(CanonicalJson.generate(compatibility))
       )
+
+      if commit.present? && current_repo_commit.present? && commit != current_repo_commit
+        findings << {
+          code: "stale_commit_evidence",
+          message: "Evidence report commit does not match current repository HEAD",
+          details: { expected: current_repo_commit, actual: commit }
+        }
+      end
+
+      if release_notes.to_s.downcase.include?("published")
+        findings << {
+          code: "forbidden_published_claim",
+          message: "Release notes contain forbidden word 'published' prior to certified external deployment",
+          details: { phrase: "published" }
+        }
+      end
+
       Report.new(findings)
     end
 
     private
 
     attr_reader :version, :tag, :release_metadata, :release_notes, :compatibility,
-      :application_sbom, :container_sbom, :packaging_manifest, :provenance
+      :application_sbom, :container_sbom, :packaging_manifest, :provenance, :commit
+
+    def current_repo_commit
+      ENV["GITHUB_SHA"].presence || `git rev-parse HEAD 2>/dev/null`.strip.presence
+    end
 
     def sbom_version(sbom)
       component_version = dig(sbom, "metadata", "component", "version")
