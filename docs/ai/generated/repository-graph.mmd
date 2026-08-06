@@ -387,6 +387,7 @@ graph TD
   n_test_Services__Upgrades__RecoveryAdvisor["Services::Upgrades::RecoveryAdvisor"]
   n_test_Services__Upgrades__Version["Services::Upgrades::Version"]
   n_test_Services__VisualValidation__EnvironmentPreparer["Services::VisualValidation::EnvironmentPreparer"]
+  n_test_System__CustomLayoutSystem["System::CustomLayoutSystem"]
   n_test_System__Ej2ShowcaseSystem["System::Ej2ShowcaseSystem"]
   n_component_Application -->|DOCUMENTED_BY| n_document_Architecture__Application_layer
   n_component_Application -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0005_use_application_layer_boundary
@@ -650,6 +651,7 @@ graph TD
   n_policy_Organization -->|TESTED_BY| n_test_Models__Organization
   n_policy_Organization -->|TESTED_BY| n_test_Models__OrganizationInvitation
   n_policy_StoredFile -->|TESTED_BY| n_test_Controllers__StoredFilesController
+  n_test_Controllers__CustomLayout -->|TESTED_BY| n_test_System__CustomLayoutSystem
   n_test_Integration__ResilienceCertification -->|TESTED_BY| n_test_Services__Epic10__OperationalResilienceCertification
   n_test_Lib__Platform__Version -->|TESTED_BY| n_test_Services__Upgrades__Version
   n_test_Models__Customer -->|TESTED_BY| n_test_Operations__CustomersOperations

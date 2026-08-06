@@ -1857,7 +1857,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "bdf9ee5dc70be8fb8a35db8bd40547a2fd7722cd04d75976d3e7980dbc11fead",
+        "sha256": "164c3bc6a21320a9bb29f1c980cf57f9e9f7db77f848610e1fb7721e8fb60f08",
         "source": "platform"
       }
     },
@@ -1897,7 +1897,7 @@
       "name": "Roadmap::Custom-layout-dx-improvements",
       "path": "docs/roadmap/custom-layout-dx-improvements.md",
       "properties": {
-        "sha256": "5e3a87c65e9d84d1253daab71caecc079ad2dc0a0602e8c3bd40c4ae890ed903",
+        "sha256": "babb3b931f3b89c3f8595c8cf76a8202a10c340243c9cd93713836532c9820d4",
         "source": "platform"
       }
     },
@@ -3882,6 +3882,16 @@
       }
     },
     {
+      "id": "test:System::CustomLayoutSystem",
+      "type": "test",
+      "name": "System::CustomLayoutSystem",
+      "path": "test/system/custom_layout_system_test.rb",
+      "properties": {
+        "sha256": "e0f273a4058a4ba2ee93d840c2e24be9fa3a50c5b485b451f89fa5c6aac823d7",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:System::Ej2ShowcaseSystem",
       "type": "test",
       "name": "System::Ej2ShowcaseSystem",
@@ -5466,6 +5476,12 @@
       "properties": {}
     },
     {
+      "from": "test:Controllers::CustomLayout",
+      "to": "test:System::CustomLayoutSystem",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "test:Integration::ResilienceCertification",
       "to": "test:Services::Epic10::OperationalResilienceCertification",
       "type": "TESTED_BY",
@@ -5628,5 +5644,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "67a2f2de87ee68d120164c03d04fd600d6c0ef56"
+  "repository_commit": "53c7987b270235e7b9b016fbf49f33aff9d50697"
 }

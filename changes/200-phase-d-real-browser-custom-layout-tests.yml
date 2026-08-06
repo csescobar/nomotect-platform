@@ -1,0 +1,22 @@
+schema_version: 1
+id: 200-phase-d-real-browser-custom-layout-tests
+category: feature
+summary: Implement Phase D real-browser automation system tests for custom layouts, showcase navigation toggles, and final certification.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified real-browser layout resolution, showcase toggling, and navigation rendering accessibility.

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "67a2f2de87ee68d120164c03d04fd600d6c0ef56",
+  "repository_commit": "53c7987b270235e7b9b016fbf49f33aff9d50697",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -2961,7 +2961,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "bdf9ee5dc70be8fb8a35db8bd40547a2fd7722cd04d75976d3e7980dbc11fead"
+      "sha256": "164c3bc6a21320a9bb29f1c980cf57f9e9f7db77f848610e1fb7721e8fb60f08"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2986,7 +2986,7 @@
     {
       "path": "docs/roadmap/custom-layout-dx-improvements.md",
       "kind": "documentation",
-      "sha256": "5e3a87c65e9d84d1253daab71caecc079ad2dc0a0602e8c3bd40c4ae890ed903"
+      "sha256": "babb3b931f3b89c3f8595c8cf76a8202a10c340243c9cd93713836532c9820d4"
     },
     {
       "path": "docs/roadmap/epic-10-plan.md",
@@ -4047,6 +4047,11 @@
       "path": "test/support/representative_application/multitenant_extension.yml",
       "kind": "test",
       "sha256": "6d2c64ebc8b9944fd0526067875e5b566855796125cce594f67d7b1ca55ea335"
+    },
+    {
+      "path": "test/system/custom_layout_system_test.rb",
+      "kind": "test",
+      "sha256": "e0f273a4058a4ba2ee93d840c2e24be9fa3a50c5b485b451f89fa5c6aac823d7"
     },
     {
       "path": "test/system/ej2_showcase_system_test.rb",
