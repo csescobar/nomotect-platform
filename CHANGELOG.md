@@ -56,6 +56,7 @@ Required release impact: `minor`.
 - Implement Phase 7 certification integrity, commit binding validation, and deterministic performance benchmarks. (`195-phase7-reproducible-evidence-integrity`)
 - Document Phase 8 execution plan, isolation rules, and operator guide for the second independent adoption pilot. (`196-phase8-pilot-plan`)
 - Implement Phase A customizable layout system, layout modes (:platform_default, :application_custom, :blank), showcase toggle, and custom navigation item registration. (`197-phase-a-custom-layout-navigation`)
+- Implement Phase B developer experience improvements and onboarding guidelines resolving all 11 pilot friction items in docs/ai/developer-guidelines.md. (`198-phase-b-dx-onboarding-fixes`)
 
 ### Fixed
 

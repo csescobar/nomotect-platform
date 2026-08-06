@@ -57,6 +57,7 @@ digraph repository {
   "document:Ai::Browser-support-matrix" [label="Ai::Browser-support-matrix"];
   "document:Ai::Commands::Readme" [label="Ai::Commands::Readme"];
   "document:Ai::Contribution-boundaries" [label="Ai::Contribution-boundaries"];
+  "document:Ai::Developer-guidelines" [label="Ai::Developer-guidelines"];
   "document:Ai::Epic-8-delivery-evidence" [label="Ai::Epic-8-delivery-evidence"];
   "document:Ai::Executable-playbooks" [label="Ai::Executable-playbooks"];
   "document:Ai::Mcp-expanded-interface" [label="Ai::Mcp-expanded-interface"];
@@ -291,6 +292,7 @@ digraph repository {
   "test:Lib::CleanStarterOnboarding" [label="Lib::CleanStarterOnboarding"];
   "test:Lib::ContainerEnvironmentValidator" [label="Lib::ContainerEnvironmentValidator"];
   "test:Lib::DesignTokens::Compiler" [label="Lib::DesignTokens::Compiler"];
+  "test:Lib::DeveloperGuidelines" [label="Lib::DeveloperGuidelines"];
   "test:Lib::Epic9Certification" [label="Lib::Epic9Certification"];
   "test:Lib::GridEngine::HtmlRenderer" [label="Lib::GridEngine::HtmlRenderer"];
   "test:Lib::GridEngine::Query" [label="Lib::GridEngine::Query"];

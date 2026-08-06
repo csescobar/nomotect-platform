@@ -2,9 +2,11 @@ name: Application layer contract
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - application/**
       - app/lib/application_roles.rb
+      - app/lib/application_layout.rb
       - app/lib/grid_engine/catalog.rb
       - app/services/application_layer/**
       - app/services/extensions/**
@@ -12,7 +14,9 @@ on:
       - config/initializers/application_registrations.rb
       - config/ai/contracts/application_layer.yml
       - docs/architecture/application-layer.md
-      - docs/roadmap/adoption-validation-improvements.md
+      - docs/roadmap/**
+      - docs/ai/**
+      - test/**
       - test/integration/application_layer_bootstrap_test.rb
       - test/integration/application_extension_sample_test.rb
       - test/lib/application_registrations_test.rb
