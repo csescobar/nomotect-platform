@@ -392,7 +392,7 @@
       "name": "Ej2Showcase",
       "path": "app/controllers/ej2_showcase_controller.rb",
       "properties": {
-        "sha256": "1a916ebbc27f7e73904f135e1de1915352aa3d020c43f7de23ceb3c366206f38",
+        "sha256": "11bcae99a93b77a2ed7914a9b3d3ade60fb27084b1f412937c44633ed7ff8b06",
         "source": "platform"
       },
       "@id": "controller:Ej2Showcase"
@@ -979,6 +979,17 @@
         "source": "platform"
       },
       "@id": "document:Ai::Ai-first-roadmap"
+    },
+    {
+      "id": "document:Ai::Browser-support-matrix",
+      "type": "document",
+      "name": "Ai::Browser-support-matrix",
+      "path": "docs/ai/browser-support-matrix.md",
+      "properties": {
+        "sha256": "4b9513ac5eca5415a6a218a551b5072c503e7364882ffaeebaa7d5ff2efa232c",
+        "source": "platform"
+      },
+      "@id": "document:Ai::Browser-support-matrix"
     },
     {
       "id": "document:Ai::Commands::Readme",
@@ -2372,7 +2383,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "64e5e7b051cbd3f2dd313eefbb091ea81fbeda4b3d17375ecfb22f4d9e87876c",
+        "sha256": "76f977130378e0e29c4eb9bfd1ca513b873bc75ea22d0fe3703ffc045922a258",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -2405,7 +2416,7 @@
       "name": "Roadmap::Adoption-validation-improvements",
       "path": "docs/roadmap/adoption-validation-improvements.md",
       "properties": {
-        "sha256": "7cff2000f7f6b572026f9e1b7c002b027f4f52b994adc4bd3637b0d80066b5a9",
+        "sha256": "959a0d5916a35214b12bcd415897c1d1c1df408e4b036db4ea8c7c54577c648c",
         "source": "platform"
       },
       "@id": "document:Roadmap::Adoption-validation-improvements"
@@ -4180,6 +4191,17 @@
         "source": "platform"
       },
       "@id": "test:Services::VisualValidation::EnvironmentPreparer"
+    },
+    {
+      "id": "test:System::Ej2ShowcaseSystem",
+      "type": "test",
+      "name": "System::Ej2ShowcaseSystem",
+      "path": "test/system/ej2_showcase_system_test.rb",
+      "properties": {
+        "sha256": "d882c97793c3310cd460a5139bfd04a14067f4fb3087507bc862cd6b091c8047",
+        "source": "platform"
+      },
+      "@id": "test:System::Ej2ShowcaseSystem"
     },
     {
       "from": "component:Ui::Base",
@@ -6140,6 +6162,13 @@
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:279"
+    },
+    {
+      "from": "controller:Ej2Showcase",
+      "to": "test:System::Ej2ShowcaseSystem",
+      "type": "TESTED_BY",
+      "properties": {},
+      "@id": "edge:280"
     }
   ]
 }

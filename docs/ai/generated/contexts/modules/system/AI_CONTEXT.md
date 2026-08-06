@@ -1,18 +1,17 @@
-# Ej2Showcase AI Context
+# System AI Context
 
 > Generated artifact. Source changes must be followed by regeneration.
 
 ## Responsibilities
 
-- controller: Ej2Showcase
+- test: System::Ej2ShowcaseSystem
 
 ## Source paths
 
-- `app/controllers/ej2_showcase_controller.rb`
+- `test/system/ej2_showcase_system_test.rb`
 
 ## Relationships
 
-- `controller:Ej2Showcase` —TESTED_BY→ `test:Controllers::Ej2ShowcaseController`
 - `controller:Ej2Showcase` —TESTED_BY→ `test:System::Ej2ShowcaseSystem`
 
 ## Contract
