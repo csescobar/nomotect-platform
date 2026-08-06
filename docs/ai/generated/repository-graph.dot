@@ -365,6 +365,7 @@ digraph repository {
   "test:Services::Releases::ChangeFragment" [label="Services::Releases::ChangeFragment"];
   "test:Services::Releases::ConsistencyValidator" [label="Services::Releases::ConsistencyValidator"];
   "test:Services::Releases::NotesGenerator" [label="Services::Releases::NotesGenerator"];
+  "test:Services::Releases::PerformanceBenchmark" [label="Services::Releases::PerformanceBenchmark"];
   "test:Services::Releases::Preparation" [label="Services::Releases::Preparation"];
   "test:Services::Releases::PullRequestValidator" [label="Services::Releases::PullRequestValidator"];
   "test:Services::Releases::ReleaseReadinessPlaybook" [label="Services::Releases::ReleaseReadinessPlaybook"];

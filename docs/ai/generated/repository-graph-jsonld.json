@@ -2383,7 +2383,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "76f977130378e0e29c4eb9bfd1ca513b873bc75ea22d0fe3703ffc045922a258",
+        "sha256": "f8a95bbe22403ee4fbdf67fd095f36ac1ad29e87c42846c38e6b6eac1437baa5",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -2416,7 +2416,7 @@
       "name": "Roadmap::Adoption-validation-improvements",
       "path": "docs/roadmap/adoption-validation-improvements.md",
       "properties": {
-        "sha256": "959a0d5916a35214b12bcd415897c1d1c1df408e4b036db4ea8c7c54577c648c",
+        "sha256": "ccfdf1fa11dd5221ac511d07dc1e84d0fdb65803a16cb015772446a927a19ccb",
         "source": "platform"
       },
       "@id": "document:Roadmap::Adoption-validation-improvements"
@@ -4022,7 +4022,7 @@
       "name": "Services::Releases::ConsistencyValidator",
       "path": "test/services/releases/consistency_validator_test.rb",
       "properties": {
-        "sha256": "529ce0f6619f6a7bca0b30e837156268383696d4b785514389272bc7c9d9a3e9",
+        "sha256": "85af254aa53a98b0e2d5da3f3d4cb16c01de695f5fbe44ecb6e872bcd35ce362",
         "source": "platform"
       },
       "@id": "test:Services::Releases::ConsistencyValidator"
@@ -4037,6 +4037,17 @@
         "source": "platform"
       },
       "@id": "test:Services::Releases::NotesGenerator"
+    },
+    {
+      "id": "test:Services::Releases::PerformanceBenchmark",
+      "type": "test",
+      "name": "Services::Releases::PerformanceBenchmark",
+      "path": "test/services/releases/performance_benchmark_test.rb",
+      "properties": {
+        "sha256": "cca2b4c58151b0b01afd6aac372c4c6e501f64b8df9108601165dd61d3eb5dd7",
+        "source": "platform"
+      },
+      "@id": "test:Services::Releases::PerformanceBenchmark"
     },
     {
       "id": "test:Services::Releases::Preparation",

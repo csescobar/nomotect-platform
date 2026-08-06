@@ -1,0 +1,22 @@
+schema_version: 1
+id: 195-phase7-reproducible-evidence-integrity
+category: feature
+summary: Implement Phase 7 certification integrity, commit binding validation, and deterministic performance benchmarks.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified evidence integrity, p50/p95 latency benchmarks, and query budget thresholds.
