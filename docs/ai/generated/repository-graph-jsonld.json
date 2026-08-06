@@ -1074,7 +1074,7 @@
       "name": "Ai::Phase8-pilot-plan",
       "path": "docs/ai/phase8-pilot-plan.md",
       "properties": {
-        "sha256": "e2ba9d7f567ed2c9bc366c1ac6c30069e68321dc60254c798530159803b41b69",
+        "sha256": "d1a5fc6fc88c24868233e6bbe9488c69410ae556633109cb3f2dc74bae0d7eb6",
         "source": "platform"
       },
       "@id": "document:Ai::Phase8-pilot-plan"
