@@ -1,0 +1,23 @@
+# frozen_string_literal: true
+
+# Application Layout & Navigation Configuration
+# Copy this file to application/config/layout.rb to customize the application shell.
+
+ApplicationLayout.configure do |config|
+  # Mode options:
+  #   :platform_default  — Use NomoTect's default application shell
+  #   :application_custom — Use custom template under application/views/layouts/application.html.erb
+  #   :blank             — Render main content cleanly without navigation bars or shell header
+  config.mode = :platform_default
+
+  # Showcases Toggle:
+  #   true  — Display Component Showcase & EJ2 Showcase in primary navigation
+  #   false — Hide showcase demo items (can also be overridden by ENV['NOMOTECT_SHOWCASES_ENABLED']="false")
+  config.showcases_enabled = true
+
+  # Custom Application Navigation Items:
+  #   Register custom menu items to append to the primary navigation bar.
+  config.custom_navigation_items = [
+    # { label: "Service Desk", href: "/organizations/1/service_requests" }
+  ]
+end

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "c5e583a507aa806745fa51743e0e26bb5804cd86",
+  "repository_commit": "ed6d7a8c7aecb739dad64bae66e68766448955c4",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -562,6 +562,11 @@
       "path": "app/jobs/webhook_delivery_job.rb",
       "kind": "job",
       "sha256": "75a497a771adbbb66421583bfe527a7f52c6ea0ccf8911437f17aa988b8f2a94"
+    },
+    {
+      "path": "app/lib/application_layout.rb",
+      "kind": "source",
+      "sha256": "f73a93da3994028e4850bd3d3cd509a78763b240ba93ca13c0df9bc6aa06c09f"
     },
     {
       "path": "app/lib/application_roles.rb",
@@ -1526,7 +1531,7 @@
     {
       "path": "app/views/layouts/application.html.erb",
       "kind": "source",
-      "sha256": "847031674a2723c3e9616b7e2e628fee726902d5c76c0ae1b36545f14f2105bf"
+      "sha256": "67bb241bbeb5ba2364697a988892d9809b6289c63330b75f77969217004e1e2b"
     },
     {
       "path": "app/views/layouts/installation.html.erb",
@@ -2161,7 +2166,7 @@
     {
       "path": "docs/ai/phase8-pilot-plan.md",
       "kind": "documentation",
-      "sha256": "d1a5fc6fc88c24868233e6bbe9488c69410ae556633109cb3f2dc74bae0d7eb6"
+      "sha256": "bfa58aac007ba6675cef45c55d4f4c1a84093aba492f4d7824a396bbdf24b970"
     },
     {
       "path": "docs/ai/repository-health.md",
@@ -2951,7 +2956,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "3a782342ca195cade89cdc83925a3e2b4763c751659586a2a4e3c988df588e65"
+      "sha256": "fed5661dbc402abd7265f3928cb19b7e48e079e1b48d14bdda80f4e9db57f6f3"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2972,6 +2977,11 @@
       "path": "docs/roadmap/adoption-validation-improvements.md",
       "kind": "documentation",
       "sha256": "ccfdf1fa11dd5221ac511d07dc1e84d0fdb65803a16cb015772446a927a19ccb"
+    },
+    {
+      "path": "docs/roadmap/custom-layout-dx-improvements.md",
+      "kind": "documentation",
+      "sha256": "47cf779d79223b8c7f7575f2b575dba03b4275a2991630823b650fd153091b07"
     },
     {
       "path": "docs/roadmap/epic-10-plan.md",
@@ -3299,6 +3309,11 @@
       "sha256": "2b441e820165976f8dbe79362f6ffd4032fe1be5a52f94d5cba0181b275154c9"
     },
     {
+      "path": "test/controllers/custom_layout_test.rb",
+      "kind": "test",
+      "sha256": "26289fd0573f43f8ba2ee1a1c3bec10f7e49ae4a599dee9c18a618a912b424ac"
+    },
+    {
       "path": "test/controllers/customers_controller_test.rb",
       "kind": "test",
       "sha256": "dbcc0679762f532a048871a9b42398962fdf82376f55600edc91319afd5b7afb"
@@ -3457,6 +3472,11 @@
       "path": "test/integration/upgrade_framework_certification_test.rb",
       "kind": "test",
       "sha256": "eed55a59534261ee8d0dc3ef9e9d80de092d21698575bdcc14d1134ed98c5d77"
+    },
+    {
+      "path": "test/lib/application_layout_config_test.rb",
+      "kind": "test",
+      "sha256": "8720883b84da527e2ab5bd6ab9b98827435b4b1ea18c2dcbac700249dd627b8d"
     },
     {
       "path": "test/lib/application_registrations_test.rb",

@@ -4,11 +4,12 @@
 
 ## Responsibilities
 
-- test: Controllers::ComponentShowcaseController, Controllers::CustomersController, Controllers::DashboardsController, Controllers::Ej2ShowcaseController, Controllers::GridsController, Controllers::GridsControllerSyncfusion, Controllers::HealthController, Controllers::HomeController, Controllers::Installation::StepsController, Controllers::LocalePreferencesController, Controllers::MarketingController, Controllers::OrganizationMemberAdministration, Controllers::OrganizationsController, Controllers::PreferencesController, Controllers::StoredFilesController, Controllers::TenantSelectionsController
+- test: Controllers::ComponentShowcaseController, Controllers::CustomLayout, Controllers::CustomersController, Controllers::DashboardsController, Controllers::Ej2ShowcaseController, Controllers::GridsController, Controllers::GridsControllerSyncfusion, Controllers::HealthController, Controllers::HomeController, Controllers::Installation::StepsController, Controllers::LocalePreferencesController, Controllers::MarketingController, Controllers::OrganizationMemberAdministration, Controllers::OrganizationsController, Controllers::PreferencesController, Controllers::StoredFilesController, Controllers::TenantSelectionsController
 
 ## Source paths
 
 - `test/controllers/component_showcase_controller_test.rb`
+- `test/controllers/custom_layout_test.rb`
 - `test/controllers/customers_controller_test.rb`
 - `test/controllers/dashboards_controller_test.rb`
 - `test/controllers/ej2_showcase_controller_test.rb`

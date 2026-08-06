@@ -6,11 +6,11 @@
 
 - component: 30
 - controller: 22
-- document: 159
+- document: 160
 - job: 7
 - model: 21
 - policy: 4
-- test: 140
+- test: 142
 
 ## Diagram
 

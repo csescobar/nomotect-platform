@@ -637,7 +637,7 @@
       "name": "Ai::Phase8-pilot-plan",
       "path": "docs/ai/phase8-pilot-plan.md",
       "properties": {
-        "sha256": "d1a5fc6fc88c24868233e6bbe9488c69410ae556633109cb3f2dc74bae0d7eb6",
+        "sha256": "bfa58aac007ba6675cef45c55d4f4c1a84093aba492f4d7824a396bbdf24b970",
         "source": "platform"
       }
     },
@@ -1847,7 +1847,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "3a782342ca195cade89cdc83925a3e2b4763c751659586a2a4e3c988df588e65",
+        "sha256": "fed5661dbc402abd7265f3928cb19b7e48e079e1b48d14bdda80f4e9db57f6f3",
         "source": "platform"
       }
     },
@@ -1878,6 +1878,16 @@
       "path": "docs/roadmap/adoption-validation-improvements.md",
       "properties": {
         "sha256": "ccfdf1fa11dd5221ac511d07dc1e84d0fdb65803a16cb015772446a927a19ccb",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Roadmap::Custom-layout-dx-improvements",
+      "type": "document",
+      "name": "Roadmap::Custom-layout-dx-improvements",
+      "path": "docs/roadmap/custom-layout-dx-improvements.md",
+      "properties": {
+        "sha256": "47cf779d79223b8c7f7575f2b575dba03b4275a2991630823b650fd153091b07",
         "source": "platform"
       }
     },
@@ -2522,6 +2532,16 @@
       }
     },
     {
+      "id": "test:Controllers::CustomLayout",
+      "type": "test",
+      "name": "Controllers::CustomLayout",
+      "path": "test/controllers/custom_layout_test.rb",
+      "properties": {
+        "sha256": "26289fd0573f43f8ba2ee1a1c3bec10f7e49ae4a599dee9c18a618a912b424ac",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Controllers::CustomersController",
       "type": "test",
       "name": "Controllers::CustomersController",
@@ -2838,6 +2858,16 @@
       "path": "test/integration/upgrade_framework_certification_test.rb",
       "properties": {
         "sha256": "eed55a59534261ee8d0dc3ef9e9d80de092d21698575bdcc14d1134ed98c5d77",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::ApplicationLayoutConfig",
+      "type": "test",
+      "name": "Lib::ApplicationLayoutConfig",
+      "path": "test/lib/application_layout_config_test.rb",
+      "properties": {
+        "sha256": "8720883b84da527e2ab5bd6ab9b98827435b4b1ea18c2dcbac700249dd627b8d",
         "source": "platform"
       }
     },
@@ -3895,6 +3925,12 @@
     },
     {
       "from": "component:Application",
+      "to": "test:Lib::ApplicationLayoutConfig",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Application",
       "to": "test:Lib::ApplicationRegistrations",
       "type": "TESTED_BY",
       "properties": {}
@@ -4082,6 +4118,12 @@
     {
       "from": "controller:Application",
       "to": "test:Integration::ApplicationLayerBootstrap",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "controller:Application",
+      "to": "test:Lib::ApplicationLayoutConfig",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5071,6 +5113,12 @@
     },
     {
       "from": "job:Application",
+      "to": "test:Lib::ApplicationLayoutConfig",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "job:Application",
       "to": "test:Lib::ApplicationRegistrations",
       "type": "TESTED_BY",
       "properties": {}
@@ -5258,6 +5306,12 @@
     {
       "from": "policy:Application",
       "to": "test:Integration::ApplicationLayerBootstrap",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Application",
+      "to": "test:Lib::ApplicationLayoutConfig",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5520,5 +5574,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "c5e583a507aa806745fa51743e0e26bb5804cd86"
+  "repository_commit": "ed6d7a8c7aecb739dad64bae66e68766448955c4"
 }

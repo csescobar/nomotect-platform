@@ -4,10 +4,11 @@
 
 ## Responsibilities
 
-- test: Lib::ApplicationRegistrations, Lib::ApplicationStarter, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::DesignTokens::Compiler, Lib::Epic9Certification, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
+- test: Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationStarter, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::DesignTokens::Compiler, Lib::Epic9Certification, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
 
 ## Source paths
 
+- `test/lib/application_layout_config_test.rb`
 - `test/lib/application_registrations_test.rb`
 - `test/lib/application_starter_test.rb`
 - `test/lib/clean_starter_onboarding_test.rb`
@@ -30,6 +31,10 @@
 
 ## Relationships
 
+- `component:Application` —TESTED_BY→ `test:Lib::ApplicationLayoutConfig`
+- `controller:Application` —TESTED_BY→ `test:Lib::ApplicationLayoutConfig`
+- `job:Application` —TESTED_BY→ `test:Lib::ApplicationLayoutConfig`
+- `policy:Application` —TESTED_BY→ `test:Lib::ApplicationLayoutConfig`
 - `component:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `controller:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `job:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`

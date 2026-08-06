@@ -58,16 +58,16 @@
 - `controller:Application` —TESTED_BY→ `test:Integration::ApplicationLayerBootstrap`
 - `job:Application` —TESTED_BY→ `test:Integration::ApplicationLayerBootstrap`
 - `policy:Application` —TESTED_BY→ `test:Integration::ApplicationLayerBootstrap`
+- `component:Application` —TESTED_BY→ `test:Lib::ApplicationLayoutConfig`
+- `controller:Application` —TESTED_BY→ `test:Lib::ApplicationLayoutConfig`
+- `job:Application` —TESTED_BY→ `test:Lib::ApplicationLayoutConfig`
+- `policy:Application` —TESTED_BY→ `test:Lib::ApplicationLayoutConfig`
 - `component:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `controller:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `job:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `policy:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `component:Application` —TESTED_BY→ `test:Lib::ApplicationStarter`
 - `controller:Application` —TESTED_BY→ `test:Lib::ApplicationStarter`
-- `job:Application` —TESTED_BY→ `test:Lib::ApplicationStarter`
-- `policy:Application` —TESTED_BY→ `test:Lib::ApplicationStarter`
-- `component:Application` —TESTED_BY→ `test:Services::ApplicationLayer::Certification`
-- `controller:Application` —TESTED_BY→ `test:Services::ApplicationLayer::Certification`
 
 ## Contract
 
