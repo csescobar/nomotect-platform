@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "c5ec133ab59d6795327f89c1945f5eecf2398c28",
+  "repository_commit": "a90bad4eec726364fdb2ce0a354b0c52d7fbc8bb",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -61,7 +61,7 @@
     {
       "path": "app/assets/stylesheets/syncfusion_ej2.css",
       "kind": "source",
-      "sha256": "09070631bafbaf7135f5e78940ff6e41ec3b2947e9e0fc139d396ee44c348a72"
+      "sha256": "70bf54c6a027df6d7b80f19d5a7eb3a97754ceadc0afe03bc052f7a2b247bff2"
     },
     {
       "path": "app/components/application_component.rb",
@@ -3246,7 +3246,7 @@
     {
       "path": "test/application_system_test_case.rb",
       "kind": "test",
-      "sha256": "a0f551dfbcb14fd55864e484d65b8dfcf6a2c21569bf5c01dd745d98f78597d7"
+      "sha256": "45c762c4b383f02a357b87098c8ff2212181cd397b24afc662db64e7725c2c12"
     },
     {
       "path": "test/components/marketing_components_test.rb",
