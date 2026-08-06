@@ -66,8 +66,8 @@
 - `controller:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `job:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `policy:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
-- `component:Application` —TESTED_BY→ `test:Lib::ApplicationStarter`
-- `controller:Application` —TESTED_BY→ `test:Lib::ApplicationStarter`
+- `component:Application` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
+- `controller:Application` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
 
 ## Contract
 

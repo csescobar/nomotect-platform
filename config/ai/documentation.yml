@@ -159,3 +159,13 @@ documents:
       - test/support/representative_application/domain_services.yml
       - test/services/epic_10/domain_services_journey_test.rb
       - docs/roadmap/epic-10-plan.md
+  - path: docs/ai/developer-guidelines.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - platform
+    source_paths:
+      - docs/ai/phase8-pilot-plan.md
+      - docs/roadmap/custom-layout-dx-improvements.md
+      - test/lib/developer_guidelines_test.rb

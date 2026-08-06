@@ -1,0 +1,22 @@
+schema_version: 1
+id: 199-phase-c-skeleton-docs-sanitization
+category: feature
+summary: Implement Phase C documentation sanitization and verify documentation catalog governance in config/ai/documentation.yml.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified documentation catalog governance and application skeleton sanitization.

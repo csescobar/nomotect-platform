@@ -288,6 +288,7 @@ graph TD
   n_test_Integration__UpgradeFrameworkCertification["Integration::UpgradeFrameworkCertification"]
   n_test_Lib__ApplicationLayoutConfig["Lib::ApplicationLayoutConfig"]
   n_test_Lib__ApplicationRegistrations["Lib::ApplicationRegistrations"]
+  n_test_Lib__ApplicationSkeletonDocumentationSanitization["Lib::ApplicationSkeletonDocumentationSanitization"]
   n_test_Lib__ApplicationStarter["Lib::ApplicationStarter"]
   n_test_Lib__CleanStarterOnboarding["Lib::CleanStarterOnboarding"]
   n_test_Lib__ContainerEnvironmentValidator["Lib::ContainerEnvironmentValidator"]
@@ -399,6 +400,7 @@ graph TD
   n_component_Application -->|TESTED_BY| n_test_Integration__ApplicationLayerBootstrap
   n_component_Application -->|TESTED_BY| n_test_Lib__ApplicationLayoutConfig
   n_component_Application -->|TESTED_BY| n_test_Lib__ApplicationRegistrations
+  n_component_Application -->|TESTED_BY| n_test_Lib__ApplicationSkeletonDocumentationSanitization
   n_component_Application -->|TESTED_BY| n_test_Lib__ApplicationStarter
   n_component_Application -->|TESTED_BY| n_test_Services__ApplicationLayer__Certification
   n_component_Application -->|TESTED_BY| n_test_Services__Epic10__RepresentativeApplication
@@ -432,6 +434,7 @@ graph TD
   n_controller_Application -->|TESTED_BY| n_test_Integration__ApplicationLayerBootstrap
   n_controller_Application -->|TESTED_BY| n_test_Lib__ApplicationLayoutConfig
   n_controller_Application -->|TESTED_BY| n_test_Lib__ApplicationRegistrations
+  n_controller_Application -->|TESTED_BY| n_test_Lib__ApplicationSkeletonDocumentationSanitization
   n_controller_Application -->|TESTED_BY| n_test_Lib__ApplicationStarter
   n_controller_Application -->|TESTED_BY| n_test_Services__ApplicationLayer__Certification
   n_controller_Application -->|TESTED_BY| n_test_Services__Epic10__RepresentativeApplication
@@ -597,6 +600,7 @@ graph TD
   n_job_Application -->|TESTED_BY| n_test_Integration__ApplicationLayerBootstrap
   n_job_Application -->|TESTED_BY| n_test_Lib__ApplicationLayoutConfig
   n_job_Application -->|TESTED_BY| n_test_Lib__ApplicationRegistrations
+  n_job_Application -->|TESTED_BY| n_test_Lib__ApplicationSkeletonDocumentationSanitization
   n_job_Application -->|TESTED_BY| n_test_Lib__ApplicationStarter
   n_job_Application -->|TESTED_BY| n_test_Services__ApplicationLayer__Certification
   n_job_Application -->|TESTED_BY| n_test_Services__Epic10__RepresentativeApplication
@@ -630,6 +634,7 @@ graph TD
   n_policy_Application -->|TESTED_BY| n_test_Integration__ApplicationLayerBootstrap
   n_policy_Application -->|TESTED_BY| n_test_Lib__ApplicationLayoutConfig
   n_policy_Application -->|TESTED_BY| n_test_Lib__ApplicationRegistrations
+  n_policy_Application -->|TESTED_BY| n_test_Lib__ApplicationSkeletonDocumentationSanitization
   n_policy_Application -->|TESTED_BY| n_test_Lib__ApplicationStarter
   n_policy_Application -->|TESTED_BY| n_test_Services__ApplicationLayer__Certification
   n_policy_Application -->|TESTED_BY| n_test_Services__Epic10__RepresentativeApplication

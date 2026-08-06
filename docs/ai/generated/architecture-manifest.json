@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "79d741aa0533aeb99e5f53217fd09a212cd18ea8",
+  "repository_commit": "67a2f2de87ee68d120164c03d04fd600d6c0ef56",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -1651,7 +1651,7 @@
     {
       "path": "config/ai/documentation.yml",
       "kind": "source",
-      "sha256": "31f12113cccf31ecb8c39cb6ac18d31fa051385dad97e836c5532067fc5a36e9"
+      "sha256": "617ae9d3046c0f3fbbc487f72485af88a3c16690170997fbdc9f27761644d551"
     },
     {
       "path": "config/ai/playbooks/bug_fix.yml",
@@ -2961,7 +2961,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "588171854a41b06e73fbdf27b3a7ffe6a6f3fbf7495ae10f2fa60aa7360a9548"
+      "sha256": "bdf9ee5dc70be8fb8a35db8bd40547a2fd7722cd04d75976d3e7980dbc11fead"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -2986,7 +2986,7 @@
     {
       "path": "docs/roadmap/custom-layout-dx-improvements.md",
       "kind": "documentation",
-      "sha256": "ea2b3862a81e0dc605a55afab7e34a5c281b2652c26acb96ee65db8369334ce7"
+      "sha256": "5e3a87c65e9d84d1253daab71caecc079ad2dc0a0602e8c3bd40c4ae890ed903"
     },
     {
       "path": "docs/roadmap/epic-10-plan.md",
@@ -3487,6 +3487,11 @@
       "path": "test/lib/application_registrations_test.rb",
       "kind": "test",
       "sha256": "b61726e80a9f2083ac5611366cdf786c0bcd4a93a922729f760c281faf597f98"
+    },
+    {
+      "path": "test/lib/application_skeleton_documentation_sanitization_test.rb",
+      "kind": "test",
+      "sha256": "ad8fd03892e517f5b1d80431fd3c64737f80957a7309741c3228934099b74de0"
     },
     {
       "path": "test/lib/application_starter_test.rb",

@@ -288,6 +288,7 @@ digraph repository {
   "test:Integration::UpgradeFrameworkCertification" [label="Integration::UpgradeFrameworkCertification"];
   "test:Lib::ApplicationLayoutConfig" [label="Lib::ApplicationLayoutConfig"];
   "test:Lib::ApplicationRegistrations" [label="Lib::ApplicationRegistrations"];
+  "test:Lib::ApplicationSkeletonDocumentationSanitization" [label="Lib::ApplicationSkeletonDocumentationSanitization"];
   "test:Lib::ApplicationStarter" [label="Lib::ApplicationStarter"];
   "test:Lib::CleanStarterOnboarding" [label="Lib::CleanStarterOnboarding"];
   "test:Lib::ContainerEnvironmentValidator" [label="Lib::ContainerEnvironmentValidator"];
@@ -399,6 +400,7 @@ digraph repository {
   "component:Application" -> "test:Integration::ApplicationLayerBootstrap" [label="TESTED_BY"];
   "component:Application" -> "test:Lib::ApplicationLayoutConfig" [label="TESTED_BY"];
   "component:Application" -> "test:Lib::ApplicationRegistrations" [label="TESTED_BY"];
+  "component:Application" -> "test:Lib::ApplicationSkeletonDocumentationSanitization" [label="TESTED_BY"];
   "component:Application" -> "test:Lib::ApplicationStarter" [label="TESTED_BY"];
   "component:Application" -> "test:Services::ApplicationLayer::Certification" [label="TESTED_BY"];
   "component:Application" -> "test:Services::Epic10::RepresentativeApplication" [label="TESTED_BY"];
@@ -432,6 +434,7 @@ digraph repository {
   "controller:Application" -> "test:Integration::ApplicationLayerBootstrap" [label="TESTED_BY"];
   "controller:Application" -> "test:Lib::ApplicationLayoutConfig" [label="TESTED_BY"];
   "controller:Application" -> "test:Lib::ApplicationRegistrations" [label="TESTED_BY"];
+  "controller:Application" -> "test:Lib::ApplicationSkeletonDocumentationSanitization" [label="TESTED_BY"];
   "controller:Application" -> "test:Lib::ApplicationStarter" [label="TESTED_BY"];
   "controller:Application" -> "test:Services::ApplicationLayer::Certification" [label="TESTED_BY"];
   "controller:Application" -> "test:Services::Epic10::RepresentativeApplication" [label="TESTED_BY"];
@@ -597,6 +600,7 @@ digraph repository {
   "job:Application" -> "test:Integration::ApplicationLayerBootstrap" [label="TESTED_BY"];
   "job:Application" -> "test:Lib::ApplicationLayoutConfig" [label="TESTED_BY"];
   "job:Application" -> "test:Lib::ApplicationRegistrations" [label="TESTED_BY"];
+  "job:Application" -> "test:Lib::ApplicationSkeletonDocumentationSanitization" [label="TESTED_BY"];
   "job:Application" -> "test:Lib::ApplicationStarter" [label="TESTED_BY"];
   "job:Application" -> "test:Services::ApplicationLayer::Certification" [label="TESTED_BY"];
   "job:Application" -> "test:Services::Epic10::RepresentativeApplication" [label="TESTED_BY"];
@@ -630,6 +634,7 @@ digraph repository {
   "policy:Application" -> "test:Integration::ApplicationLayerBootstrap" [label="TESTED_BY"];
   "policy:Application" -> "test:Lib::ApplicationLayoutConfig" [label="TESTED_BY"];
   "policy:Application" -> "test:Lib::ApplicationRegistrations" [label="TESTED_BY"];
+  "policy:Application" -> "test:Lib::ApplicationSkeletonDocumentationSanitization" [label="TESTED_BY"];
   "policy:Application" -> "test:Lib::ApplicationStarter" [label="TESTED_BY"];
   "policy:Application" -> "test:Services::ApplicationLayer::Certification" [label="TESTED_BY"];
   "policy:Application" -> "test:Services::Epic10::RepresentativeApplication" [label="TESTED_BY"];

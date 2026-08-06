@@ -8,8 +8,8 @@ Provider-neutral Rails platform with architecture, governance, security, privacy
 
 ## Current graph
 
-- Nodes: 388
-- Edges: 285
+- Nodes: 389
+- Edges: 289
 - Modules: 58
 - Contracts: 9
 

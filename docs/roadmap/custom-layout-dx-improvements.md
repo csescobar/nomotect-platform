@@ -56,6 +56,10 @@ Completed. Comprehensive Developer Guidelines & Onboarding Friction Resolution G
 - Resolve the 12 pre-existing missing documentation file references in `config/ai/documentation.yml`.
 - Ensure `bin/repository-intelligence validate` runs cleanly with 0 errors on fresh bootstrap skeletons.
 
+### Certification status
+
+Completed. `config/ai/documentation.yml` catalog validated and synchronized with new onboarding guides (`docs/ai/developer-guidelines.md`). Verified and certified with 0 findings in `ApplicationSkeletonDocumentationSanitizationTest`.
+
 ---
 
 ## Phase D — Verification, Real-Browser Automation & Final Certification

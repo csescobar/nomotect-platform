@@ -56,6 +56,7 @@
 - Document Phase 8 execution plan, isolation rules, and operator guide for the second independent adoption pilot. (`196-phase8-pilot-plan`)
 - Implement Phase A customizable layout system, layout modes (:platform_default, :application_custom, :blank), showcase toggle, and custom navigation item registration. (`197-phase-a-custom-layout-navigation`)
 - Implement Phase B developer experience improvements and onboarding guidelines resolving all 11 pilot friction items in docs/ai/developer-guidelines.md. (`198-phase-b-dx-onboarding-fixes`)
+- Implement Phase C documentation sanitization and verify documentation catalog governance in config/ai/documentation.yml. (`199-phase-c-skeleton-docs-sanitization`)
 
 ### Fixed
 
@@ -255,3 +256,4 @@
 - **Accessibility — 196-phase8-pilot-plan:** Certified Phase 8 independent adoption protocol and operator guidelines.
 - **Accessibility — 197-phase-a-custom-layout-navigation:** Certified custom application layout modes, navigation rendering, and showcase toggles.
 - **Accessibility — 198-phase-b-dx-onboarding-fixes:** Certified developer onboarding guidelines and friction resolution documentation.
+- **Accessibility — 199-phase-c-skeleton-docs-sanitization:** Certified documentation catalog governance and application skeleton sanitization.
