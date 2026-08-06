@@ -54,6 +54,7 @@
 - Implement Phase 6 real-browser automation suite with Cuprite and document browser support matrix. (`194-phase6-browser-a11y-automation`)
 - Implement Phase 7 certification integrity, commit binding validation, and deterministic performance benchmarks. (`195-phase7-reproducible-evidence-integrity`)
 - Document Phase 8 execution plan, isolation rules, and operator guide for the second independent adoption pilot. (`196-phase8-pilot-plan`)
+- Implement Phase A customizable layout system, layout modes (:platform_default, :application_custom, :blank), showcase toggle, and custom navigation item registration. (`197-phase-a-custom-layout-navigation`)
 
 ### Fixed
 
@@ -251,3 +252,4 @@
 - **Accessibility — 194-phase6-browser-a11y-automation:** Real-browser System Test suite verifying interactive UI journeys, ARIA attributes, and screen-reader operator matrix.
 - **Accessibility — 195-phase7-reproducible-evidence-integrity:** Certified evidence integrity, p50/p95 latency benchmarks, and query budget thresholds.
 - **Accessibility — 196-phase8-pilot-plan:** Certified Phase 8 independent adoption protocol and operator guidelines.
+- **Accessibility — 197-phase-a-custom-layout-navigation:** Certified custom application layout modes, navigation rendering, and showcase toggles.

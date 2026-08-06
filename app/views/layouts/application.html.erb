@@ -22,24 +22,35 @@
   </head>
   <body>
     <% if authenticated? %>
-      <% navigation_items = [
-        { label: t("layout.dashboard"), href: root_path, active: current_page?(root_path) },
-        { label: t("layout.organizations"), href: organizations_path, active: request.path.start_with?(organizations_path) },
-        { label: t("layout.grid_engine"), href: grid_path("organizations"), active: request.path.start_with?("/grids/") },
-        { label: t("layout.component_showcase"), href: component_showcase_path, active: current_page?(component_showcase_path) },
-        { label: t("layout.ej2_showcase"), href: ej2_showcase_path, active: request.path.start_with?("/ej2_showcase") }
-      ] %>
-      <% account_actions = capture do %>
-        <%= link_to t("preferences.title"), preferences_path, class: "account-menu__link" %>
-        <%= button_to t("authentication.sign_out"), session_path, method: :delete, class: "account-menu__sign-out" %>
-      <% end %>
+      <% if ApplicationLayout.config.blank? %>
+        <main class="app-main" id="main-content">
+          <%= yield %>
+        </main>
+      <% else %>
+        <% navigation_items = [
+          { label: t("layout.dashboard"), href: root_path, active: current_page?(root_path) },
+          { label: t("layout.organizations"), href: organizations_path, active: request.path.start_with?(organizations_path) },
+          { label: t("layout.grid_engine"), href: grid_path("organizations"), active: request.path.start_with?("/grids/") }
+        ] %>
+        <% if ApplicationLayout.config.showcases_enabled? %>
+          <% navigation_items << { label: t("layout.component_showcase"), href: component_showcase_path, active: current_page?(component_showcase_path) } %>
+          <% navigation_items << { label: t("layout.ej2_showcase"), href: ej2_showcase_path, active: request.path.start_with?("/ej2_showcase") } %>
+        <% end %>
+        <% ApplicationLayout.config.custom_navigation_items.each do |item| %>
+          <% navigation_items << { label: item[:label], href: item[:href], active: item[:active] || (item[:href].present? && request.path.start_with?(item[:href])) } %>
+        <% end %>
+        <% account_actions = capture do %>
+          <%= link_to t("preferences.title"), preferences_path, class: "account-menu__link" %>
+          <%= button_to t("authentication.sign_out"), session_path, method: :delete, class: "account-menu__sign-out" %>
+        <% end %>
 
-      <%= render Ui::Layout::ApplicationShellComponent.new(
-        navigation_items: navigation_items,
-        current_user: Current.user,
-        account_actions: account_actions
-      ) do %>
-        <%= yield %>
+        <%= render Ui::Layout::ApplicationShellComponent.new(
+          navigation_items: navigation_items,
+          current_user: Current.user,
+          account_actions: account_actions
+        ) do %>
+          <%= yield %>
+        <% end %>
       <% end %>
     <% else %>
       <header class="app-header">
