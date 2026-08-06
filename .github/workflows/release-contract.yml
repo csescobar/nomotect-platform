@@ -2,6 +2,24 @@ name: Release contract
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - VERSION
+      - changes/**
+      - app/services/releases/**
+      - lib/platform/version.rb
+      - config/ai/contracts/releases.yml
+      - config/ai/playbooks/release_readiness.yml
+      - config/ai/schemas/playbook.schema.json
+      - docs/contracts/change-fragment.schema.json
+      - docs/roadmap/**
+      - docs/ai/**
+      - test/**
+      - docs/contracts/release-metadata.schema.json
+      - docs/contracts/release-compatibility.schema.json
+      - docs/contracts/release-evidence.schema.json
+      - docs/releases/**
+      - bin/release-contract-certify
   push:
     branches: [main]
     paths:
@@ -13,6 +31,9 @@ on:
       - config/ai/playbooks/release_readiness.yml
       - config/ai/schemas/playbook.schema.json
       - docs/contracts/change-fragment.schema.json
+      - docs/roadmap/**
+      - docs/ai/**
+      - test/**
       - docs/contracts/release-metadata.schema.json
       - docs/contracts/release-compatibility.schema.json
       - docs/contracts/release-evidence.schema.json
