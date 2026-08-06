@@ -53,6 +53,7 @@
 - Complete Phase 5 with Buttons, Toasts, and Loading EJ2 showcase components. (`193-ej2-showcase-buttons-toasts-loading`)
 - Implement Phase 6 real-browser automation suite with Cuprite and document browser support matrix. (`194-phase6-browser-a11y-automation`)
 - Implement Phase 7 certification integrity, commit binding validation, and deterministic performance benchmarks. (`195-phase7-reproducible-evidence-integrity`)
+- Document Phase 8 execution plan, isolation rules, and operator guide for the second independent adoption pilot. (`196-phase8-pilot-plan`)
 
 ### Fixed
 
@@ -249,3 +250,4 @@
 - **Accessibility — 193-ej2-showcase-buttons-toasts-loading:** Accessible Buttons, Toasts, Spinners, and Skeleton Stimulus controllers with ARIA attributes and design token integration.
 - **Accessibility — 194-phase6-browser-a11y-automation:** Real-browser System Test suite verifying interactive UI journeys, ARIA attributes, and screen-reader operator matrix.
 - **Accessibility — 195-phase7-reproducible-evidence-integrity:** Certified evidence integrity, p50/p95 latency benchmarks, and query budget thresholds.
+- **Accessibility — 196-phase8-pilot-plan:** Certified Phase 8 independent adoption protocol and operator guidelines.

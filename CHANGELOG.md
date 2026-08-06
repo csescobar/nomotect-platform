@@ -54,6 +54,7 @@ Required release impact: `minor`.
 - Complete Phase 5 with Buttons, Toasts, and Loading EJ2 showcase components. (`193-ej2-showcase-buttons-toasts-loading`)
 - Implement Phase 6 real-browser automation suite with Cuprite and document browser support matrix. (`194-phase6-browser-a11y-automation`)
 - Implement Phase 7 certification integrity, commit binding validation, and deterministic performance benchmarks. (`195-phase7-reproducible-evidence-integrity`)
+- Document Phase 8 execution plan, isolation rules, and operator guide for the second independent adoption pilot. (`196-phase8-pilot-plan`)
 
 ### Fixed
 
