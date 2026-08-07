@@ -4,14 +4,16 @@
 
 ## Responsibilities
 
-- test: System::Ej2ShowcaseSystem
+- test: System::CustomLayoutSystem, System::Ej2ShowcaseSystem
 
 ## Source paths
 
+- `test/system/custom_layout_system_test.rb`
 - `test/system/ej2_showcase_system_test.rb`
 
 ## Relationships
 
+- `test:Controllers::CustomLayout` —TESTED_BY→ `test:System::CustomLayoutSystem`
 - `controller:Ej2Showcase` —TESTED_BY→ `test:System::Ej2ShowcaseSystem`
 
 ## Contract

@@ -58,6 +58,7 @@ Required release impact: `minor`.
 - Implement Phase A customizable layout system, layout modes (:platform_default, :application_custom, :blank), showcase toggle, and custom navigation item registration. (`197-phase-a-custom-layout-navigation`)
 - Implement Phase B developer experience improvements and onboarding guidelines resolving all 11 pilot friction items in docs/ai/developer-guidelines.md. (`198-phase-b-dx-onboarding-fixes`)
 - Implement Phase C documentation sanitization and verify documentation catalog governance in config/ai/documentation.yml. (`199-phase-c-skeleton-docs-sanitization`)
+- Implement Phase D real-browser automation system tests for custom layouts, showcase navigation toggles, and final certification. (`200-phase-d-real-browser-custom-layout-tests`)
 
 ### Fixed
 

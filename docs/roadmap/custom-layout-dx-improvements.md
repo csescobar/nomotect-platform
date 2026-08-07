@@ -68,3 +68,7 @@ Completed. `config/ai/documentation.yml` catalog validated and synchronized with
 - Build real-browser system tests (`test/system/custom_layout_system_test.rb`) verifying custom layouts, showcase toggles, and navigation rendering.
 - Run `bin/ci` to certify 100% green build across all platform and application layers.
 - Mark all phases as completed in `docs/roadmap/custom-layout-dx-improvements.md`.
+
+### Certification status
+
+Completed. Real-browser automation system tests built in `test/system/custom_layout_system_test.rb` certifying custom layout resolution, showcase toggling, custom navigation rendering, and blank mode in Headless Chrome. Full `bin/ci` pipeline certified 100% green. All post-pilot roadmap phases (Phases A through D) are fully completed.

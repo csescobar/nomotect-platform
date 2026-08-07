@@ -52,6 +52,7 @@
 - `model:StoredFile` —TESTED_BY→ `test:Controllers::StoredFilesController`
 - `policy:StoredFile` —TESTED_BY→ `test:Controllers::StoredFilesController`
 - `controller:TenantSelections` —TESTED_BY→ `test:Controllers::TenantSelectionsController`
+- `test:Controllers::CustomLayout` —TESTED_BY→ `test:System::CustomLayoutSystem`
 
 ## Contract
 

@@ -387,6 +387,7 @@ digraph repository {
   "test:Services::Upgrades::RecoveryAdvisor" [label="Services::Upgrades::RecoveryAdvisor"];
   "test:Services::Upgrades::Version" [label="Services::Upgrades::Version"];
   "test:Services::VisualValidation::EnvironmentPreparer" [label="Services::VisualValidation::EnvironmentPreparer"];
+  "test:System::CustomLayoutSystem" [label="System::CustomLayoutSystem"];
   "test:System::Ej2ShowcaseSystem" [label="System::Ej2ShowcaseSystem"];
   "component:Application" -> "document:Architecture::Application-layer" [label="DOCUMENTED_BY"];
   "component:Application" -> "document:Architecture::Decisions::0005-use-application-layer-boundary" [label="DOCUMENTED_BY"];
@@ -650,6 +651,7 @@ digraph repository {
   "policy:Organization" -> "test:Models::Organization" [label="TESTED_BY"];
   "policy:Organization" -> "test:Models::OrganizationInvitation" [label="TESTED_BY"];
   "policy:StoredFile" -> "test:Controllers::StoredFilesController" [label="TESTED_BY"];
+  "test:Controllers::CustomLayout" -> "test:System::CustomLayoutSystem" [label="TESTED_BY"];
   "test:Integration::ResilienceCertification" -> "test:Services::Epic10::OperationalResilienceCertification" [label="TESTED_BY"];
   "test:Lib::Platform::Version" -> "test:Services::Upgrades::Version" [label="TESTED_BY"];
   "test:Models::Customer" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
