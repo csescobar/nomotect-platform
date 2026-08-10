@@ -389,6 +389,7 @@ digraph repository {
   "test:Services::Releases::Preparation" [label="Services::Releases::Preparation"];
   "test:Services::Releases::PullRequestValidator" [label="Services::Releases::PullRequestValidator"];
   "test:Services::Releases::ReleaseReadinessPlaybook" [label="Services::Releases::ReleaseReadinessPlaybook"];
+  "test:Services::Releases::V1PublicContractFreeze" [label="Services::Releases::V1PublicContractFreeze"];
   "test:Services::Releases::V1QualityCertification" [label="Services::Releases::V1QualityCertification"];
   "test:Services::Releases::V1ReleaseCandidate" [label="Services::Releases::V1ReleaseCandidate"];
   "test:Services::SecurityPrivacy" [label="Services::SecurityPrivacy"];
