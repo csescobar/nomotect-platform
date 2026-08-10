@@ -52,4 +52,27 @@ class V1ReleaseCandidateTest < ActiveSupport::TestCase
       assert_includes checksums_content, "#{zip_hash}  #{zip_path.basename}"
     end
   end
+
+  test "published 1.0.0-rc.1 starter tar.gz unpacks cleanly in fresh directory" do
+    commit = `git rev-parse HEAD`.strip
+    Dir.mktmpdir("v1-rc1-clean-bootstrap-") do |dir|
+      result = ApplicationStarter::Builder.new(
+        root: Rails.root,
+        output: dir,
+        version: "1.0.0-rc.1",
+        source_commit: commit
+      ).build!
+
+      tar_path = result.fetch(:tar)
+      extracted_dir = File.join(dir, "extracted")
+      FileUtils.mkdir_p(extracted_dir)
+
+      assert system("tar", "-xzf", tar_path, "-C", extracted_dir), "tar extraction failed"
+
+      starter_subdir = File.join(extracted_dir, "nomotect-starter-v1.0.0-rc.1")
+      assert File.directory?(starter_subdir), "extracted directory must exist"
+      assert File.file?(File.join(starter_subdir, "bin/setup")), "bin/setup must exist in starter"
+      assert File.file?(File.join(starter_subdir, "application-starter-manifest.json")), "starter manifest must exist"
+    end
+  end
 end
