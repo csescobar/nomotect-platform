@@ -33,7 +33,7 @@ module Epic10
       assert_includes preparation.validate, "source commit must be a full lowercase Git SHA"
 
       Dir.mktmpdir do |directory|
-        File.write(File.join(directory, "VERSION"), "1.0.0\n")
+        File.write(File.join(directory, "VERSION"), "2.0.0\n")
         File.write(File.join(directory, "CHANGELOG.md"), "# Changelog\n")
         FileUtils.mkdir_p(File.join(directory, "config/epic_10"))
         FileUtils.cp(
@@ -42,9 +42,10 @@ module Epic10
         )
         preparation = RcPreparation.new(target_version: "1.0.0-rc.1", source_commit: COMMIT, root: directory)
 
-        assert_includes preparation.validate, "VERSION must be 0.9.0 or 1.0.0-rc.1 during RC planning"
+        assert_includes preparation.validate, "VERSION must be 0.9.0, 1.0.0-rc.1 or 1.0.0 during RC planning"
       end
     end
+
 
     test "fails closed when governed inputs are missing" do
       Dir.mktmpdir do |directory|

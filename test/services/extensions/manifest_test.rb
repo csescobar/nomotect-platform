@@ -9,7 +9,8 @@ module Extensions
 
       assert_equal "acme.audit-plus", manifest.id
       assert_equal "1.2.0", manifest.version
-      assert_equal ">= 0.9.0, < 1.0.0", manifest.platform_requirement
+      assert_equal ">= 0.9.0, <= 1.0.0", manifest.platform_requirement
+
       assert_equal [ "audit.analytics" ], manifest.provided_capabilities.pluck("id")
     end
 
@@ -55,7 +56,8 @@ module Extensions
           "contract_version" => 1,
           "entrypoint" => "acme/audit_plus"
         },
-        "platform" => { "requirement" => ">= 0.9.0, < 1.0.0" },
+        "platform" => { "requirement" => ">= 0.9.0, <= 1.0.0" },
+
         "capabilities" => {
           "provides" => [ { "id" => "audit.analytics", "version" => 1 } ],
           "requires" => [ { "id" => "audit.events", "requirement" => ">= 1, < 2" } ]

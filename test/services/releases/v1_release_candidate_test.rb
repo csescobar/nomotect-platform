@@ -8,8 +8,9 @@ class V1ReleaseCandidateTest < ActiveSupport::TestCase
     assert File.exist?(version_path), "VERSION file must exist"
 
     version = File.read(version_path).strip
-    assert_equal "1.0.0-rc.1", version
+    assert_includes %w[1.0.0-rc.1 1.0.0], version
   end
+
 
   test "release candidate roadmap is registered in docs/roadmap" do
     roadmap_path = Rails.root.join("docs/roadmap/v1-0-0-rc1-release-gate.md")

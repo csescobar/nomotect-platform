@@ -82,6 +82,15 @@
 - `document:Releases::0.9.0::Release-notes` → `document:Releases::1.0.0-rc.1::Release-notes`
 - `document:Releases::0.8.0::Upgrade-notes` → `document:Releases::1.0.0-rc.1::Upgrade-notes`
 - `document:Releases::0.9.0::Upgrade-notes` → `document:Releases::1.0.0-rc.1::Upgrade-notes`
+- `document:Releases::0.8.0::Migration-notes` → `document:Releases::1.0.0::Migration-notes`
+- `document:Releases::0.9.0::Migration-notes` → `document:Releases::1.0.0::Migration-notes`
+- `document:Releases::1.0.0-rc.1::Migration-notes` → `document:Releases::1.0.0::Migration-notes`
+- `document:Releases::0.8.0::Release-notes` → `document:Releases::1.0.0::Release-notes`
+- `document:Releases::0.9.0::Release-notes` → `document:Releases::1.0.0::Release-notes`
+- `document:Releases::1.0.0-rc.1::Release-notes` → `document:Releases::1.0.0::Release-notes`
+- `document:Releases::0.8.0::Upgrade-notes` → `document:Releases::1.0.0::Upgrade-notes`
+- `document:Releases::0.9.0::Upgrade-notes` → `document:Releases::1.0.0::Upgrade-notes`
+- `document:Releases::1.0.0-rc.1::Upgrade-notes` → `document:Releases::1.0.0::Upgrade-notes`
 - `document:Distribution::Architecture` → `document:Releases::Architecture`
 - `document:Extensions::Architecture` → `document:Releases::Architecture`
 - `document:Grid::Architecture` → `document:Releases::Architecture`
@@ -90,18 +99,9 @@
 - `document:Releases::0.8.0::Migration-notes` → `document:Releases::Generated::Migration-notes`
 - `document:Releases::0.9.0::Migration-notes` → `document:Releases::Generated::Migration-notes`
 - `document:Releases::1.0.0-rc.1::Migration-notes` → `document:Releases::Generated::Migration-notes`
+- `document:Releases::1.0.0::Migration-notes` → `document:Releases::Generated::Migration-notes`
 - `document:Releases::0.8.0::Upgrade-notes` → `document:Releases::Generated::Upgrade-notes`
 - `document:Releases::0.9.0::Upgrade-notes` → `document:Releases::Generated::Upgrade-notes`
-- `document:Releases::1.0.0-rc.1::Upgrade-notes` → `document:Releases::Generated::Upgrade-notes`
-- `document:Roadmap::Roadmap` → `document:Roadmap::V1-0-0-rc1-release-gate`
-- `document:Roadmap::Roadmap` → `document:Roadmap::V1-0-0-release-gate`
-- `component:Ui::Base` → `document:Security::Security-baseline`
-- `controller:Installation::Base` → `document:Security::Security-baseline`
-- `document:Distribution::Operations` → `document:Security::Security-operations`
-- `document:Extensions::Operations` → `document:Security::Security-operations`
-- `document:Distribution::Architecture` → `document:Upgrades::Architecture`
-- `document:Extensions::Architecture` → `document:Upgrades::Architecture`
-- `document:Grid::Architecture` → `document:Upgrades::Architecture`
 
 ## TESTED_BY
 

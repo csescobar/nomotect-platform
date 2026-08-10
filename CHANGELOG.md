@@ -65,6 +65,7 @@ Required release impact: `minor`.
 - Complete Phase 4 clean directory bootstrap certification and test suite integration for 1.0.0-rc.1 release gate. (`205-phase-4-clean-bootstrap-certification`)
 - Update master roadmap.md marking v1.0.0-rc.1 release candidate target as completed and certified. (`206-update-master-roadmap-v1-0-0-rc1`)
 - Formalize ADR 0008 acceptance criteria and engineering playbooks for v1.0.0 GA release gate. (`207-v1-0-0-release-gate`)
+- Increment platform VERSION to 1.0.0 GA and generate versioned release governance documents under docs/releases/1.0.0/. (`208-phase1-v1-0-0-release-docs`)
 
 ### Fixed
 

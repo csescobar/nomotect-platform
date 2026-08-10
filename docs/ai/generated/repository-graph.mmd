@@ -189,6 +189,9 @@ graph TD
   n_document_Releases__1_0_0_rc_1__Migration_notes["Releases::1.0.0-rc.1::Migration-notes"]
   n_document_Releases__1_0_0_rc_1__Release_notes["Releases::1.0.0-rc.1::Release-notes"]
   n_document_Releases__1_0_0_rc_1__Upgrade_notes["Releases::1.0.0-rc.1::Upgrade-notes"]
+  n_document_Releases__1_0_0__Migration_notes["Releases::1.0.0::Migration-notes"]
+  n_document_Releases__1_0_0__Release_notes["Releases::1.0.0::Release-notes"]
+  n_document_Releases__1_0_0__Upgrade_notes["Releases::1.0.0::Upgrade-notes"]
   n_document_Releases__Architecture["Releases::Architecture"]
   n_document_Releases__Consistency["Releases::Consistency"]
   n_document_Releases__Generated__Migration_notes["Releases::Generated::Migration-notes"]
@@ -592,19 +595,30 @@ graph TD
   n_document_Operations__Architecture -->|DOCUMENTED_BY| n_document_Validation__Architecture
   n_document_Releases__0_8_0__Migration_notes -->|DOCUMENTED_BY| n_document_Releases__0_9_0__Migration_notes
   n_document_Releases__0_8_0__Migration_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0_rc_1__Migration_notes
+  n_document_Releases__0_8_0__Migration_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0__Migration_notes
   n_document_Releases__0_8_0__Migration_notes -->|DOCUMENTED_BY| n_document_Releases__Generated__Migration_notes
   n_document_Releases__0_8_0__Release_notes -->|DOCUMENTED_BY| n_document_Releases__0_9_0__Release_notes
   n_document_Releases__0_8_0__Release_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0_rc_1__Release_notes
+  n_document_Releases__0_8_0__Release_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0__Release_notes
   n_document_Releases__0_8_0__Upgrade_notes -->|DOCUMENTED_BY| n_document_Releases__0_9_0__Upgrade_notes
   n_document_Releases__0_8_0__Upgrade_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0_rc_1__Upgrade_notes
+  n_document_Releases__0_8_0__Upgrade_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0__Upgrade_notes
   n_document_Releases__0_8_0__Upgrade_notes -->|DOCUMENTED_BY| n_document_Releases__Generated__Upgrade_notes
   n_document_Releases__0_9_0__Migration_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0_rc_1__Migration_notes
+  n_document_Releases__0_9_0__Migration_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0__Migration_notes
   n_document_Releases__0_9_0__Migration_notes -->|DOCUMENTED_BY| n_document_Releases__Generated__Migration_notes
   n_document_Releases__0_9_0__Release_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0_rc_1__Release_notes
+  n_document_Releases__0_9_0__Release_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0__Release_notes
   n_document_Releases__0_9_0__Upgrade_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0_rc_1__Upgrade_notes
+  n_document_Releases__0_9_0__Upgrade_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0__Upgrade_notes
   n_document_Releases__0_9_0__Upgrade_notes -->|DOCUMENTED_BY| n_document_Releases__Generated__Upgrade_notes
+  n_document_Releases__1_0_0_rc_1__Migration_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0__Migration_notes
   n_document_Releases__1_0_0_rc_1__Migration_notes -->|DOCUMENTED_BY| n_document_Releases__Generated__Migration_notes
+  n_document_Releases__1_0_0_rc_1__Release_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0__Release_notes
+  n_document_Releases__1_0_0_rc_1__Upgrade_notes -->|DOCUMENTED_BY| n_document_Releases__1_0_0__Upgrade_notes
   n_document_Releases__1_0_0_rc_1__Upgrade_notes -->|DOCUMENTED_BY| n_document_Releases__Generated__Upgrade_notes
+  n_document_Releases__1_0_0__Migration_notes -->|DOCUMENTED_BY| n_document_Releases__Generated__Migration_notes
+  n_document_Releases__1_0_0__Upgrade_notes -->|DOCUMENTED_BY| n_document_Releases__Generated__Upgrade_notes
   n_document_Releases__Architecture -->|DOCUMENTED_BY| n_document_Upgrades__Architecture
   n_document_Releases__Architecture -->|DOCUMENTED_BY| n_document_Validation__Architecture
   n_document_Releases__Consistency -->|TESTED_BY| n_test_Services__Releases__ConsistencyValidator

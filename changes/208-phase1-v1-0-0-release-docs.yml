@@ -1,0 +1,22 @@
+schema_version: 1
+id: 208-phase1-v1-0-0-release-docs
+category: feature
+summary: Increment platform VERSION to 1.0.0 GA and generate versioned release governance documents under docs/releases/1.0.0/.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified Phase 1 version bump to 1.0.0 GA and release documentation governance.

@@ -26,7 +26,8 @@ Certify and publish the stable **`v1.0.0` General Availability (GA)** release of
 
 ### Certification status
 
-Planned.
+Completed. Platform `VERSION` incremented to `1.0.0`. Versioned release governance documents generated under `docs/releases/1.0.0/`. Change fragment created in `changes/208-phase1-v1-0-0-release-docs.yml`. Certified in `V1ReleaseCandidateTest` and `Releases::ConsistencyValidator`.
+
 
 ---
 

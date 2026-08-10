@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "18813393b98220374b70b369b10637955723898f",
+  "repository_commit": "8e59377bbdceb42c9480030f02e0a5de39ee8f03",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -951,7 +951,7 @@
     {
       "path": "app/services/epic_10/rc_preparation.rb",
       "kind": "source",
-      "sha256": "32e09fdb91b2ad3d1e66bf449d0d86d7de68bfd9412cbd5aebed4186815736c1"
+      "sha256": "bffb2d381d7163dd8f41749b20b5039cd932ea23ccbe4cb2a2e38cfee84be476"
     },
     {
       "path": "app/services/epic_10/rc_upgrade_certification.rb",
@@ -2636,7 +2636,7 @@
     {
       "path": "docs/examples/extension-manifest.yml",
       "kind": "documentation",
-      "sha256": "d8bac8ab01a94da011c17a7daa803862510644b27c258e78fa30a9cce3f72ef8"
+      "sha256": "6be340fdb5d224f128a23ba0a3ec9756e807fbbf25c94af5ec8248252c8a362e"
     },
     {
       "path": "docs/examples/upgrade-manifest.json",
@@ -2994,6 +2994,31 @@
       "sha256": "462493ca454baadd398e94a60e196ceaed72381ff581aba90a52fb35bfe6b452"
     },
     {
+      "path": "docs/releases/1.0.0/compatibility.json",
+      "kind": "documentation",
+      "sha256": "157306de28f3d0aebf791637d7a91c23a121bc641c3aaf1307d6ce0a2d2088ee"
+    },
+    {
+      "path": "docs/releases/1.0.0/migration-notes.md",
+      "kind": "documentation",
+      "sha256": "ce93f797cb8793a90406ca90c16dba210abdbe96d43a0928853c3339731aad6d"
+    },
+    {
+      "path": "docs/releases/1.0.0/release-metadata.json",
+      "kind": "documentation",
+      "sha256": "2ffdbc58d2e6fcab6d708468d646178889612ec372536eba6b9550814a06cbb8"
+    },
+    {
+      "path": "docs/releases/1.0.0/release-notes.md",
+      "kind": "documentation",
+      "sha256": "35b2c74fa5db83b70891e9331e8e45031ad57dbbe7828e43f27574e6c02d2c98"
+    },
+    {
+      "path": "docs/releases/1.0.0/upgrade-notes.md",
+      "kind": "documentation",
+      "sha256": "462493ca454baadd398e94a60e196ceaed72381ff581aba90a52fb35bfe6b452"
+    },
+    {
       "path": "docs/releases/architecture.md",
       "kind": "documentation",
       "sha256": "486fe5a0bf7bceb6e1c25b5b8f32620d84d13416db3e6df0180d85183ad3c3a0"
@@ -3011,7 +3036,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "258d5da843fd5ac9a6b9d2797fc297203b22ccc58efb29b7e6328e34df7af2cb"
+      "sha256": "7a98f4fbf3aaf9eecbf7dc700b622665c0fef76886d72c15de6cc56b4acd1efb"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3056,7 +3081,7 @@
     {
       "path": "docs/roadmap/v1-0-0-release-gate.md",
       "kind": "documentation",
-      "sha256": "968073318646fb82c6d5f9e7e5e29f39c1a9b9a78a5609f6d62ca72b507a6a02"
+      "sha256": "7c7c9e31484a242b7471f27011c58d6bdaae085b766c1e27eb9a30215a03e604"
     },
     {
       "path": "docs/security/dependency-and-supply-chain-policy.md",
@@ -3461,7 +3486,7 @@
     {
       "path": "test/integration/application_extension_sample_test.rb",
       "kind": "test",
-      "sha256": "b83833fd63342b2e5b8bc5812b87c4138b0426641c9c87b38801b7d51ce7b33f"
+      "sha256": "9f1efb67e44d598efd933e6a59963275f567175fd713ba7b04a80db25b17737f"
     },
     {
       "path": "test/integration/application_layer_bootstrap_test.rb",
@@ -3806,7 +3831,7 @@
     {
       "path": "test/services/epic_10/rc_preparation_test.rb",
       "kind": "test",
-      "sha256": "23bd3a7c16db36fccaba00c53107a2887cb30a836fd58b7e762a7586a9fa1f3a"
+      "sha256": "9c78c6fb4056c36aabfa392c046706e4fb25ea82c174a78e1bb64df0d2278a1e"
     },
     {
       "path": "test/services/epic_10/rc_upgrade_certification_test.rb",
@@ -3891,7 +3916,7 @@
     {
       "path": "test/services/extensions/manifest_test.rb",
       "kind": "test",
-      "sha256": "0b239a119d70b9c4a7694a5a84a6db9c818f8f326c7edf57948e243233abd8cc"
+      "sha256": "b657e97f0b30c3754ae4245026d2ccf642f1076980f598a660b05138acb644f1"
     },
     {
       "path": "test/services/extensions/registry_test.rb",
@@ -3991,7 +4016,7 @@
     {
       "path": "test/services/releases/v1_release_candidate_test.rb",
       "kind": "test",
-      "sha256": "4b3e7618e3dcb1e6232153cd33fc51b85b969e324be51301c088f360bf3fa3f3"
+      "sha256": "6dd25d7b67faa1409c4452babb7a5c6d81773f850477124f08b7786f991de14f"
     },
     {
       "path": "test/services/security_privacy_test.rb",
@@ -4086,7 +4111,7 @@
     {
       "path": "test/support/extension_fixtures/certification-audit/platform-extension.yml",
       "kind": "test",
-      "sha256": "99d28aeee04420db179038271d92bdb15e592ae53979f98b3dd3115d22434b84"
+      "sha256": "c22fbb8e1cbe9d29314bb6fdb01ec37b2e8ac1b0606488d93f587efc775354c4"
     },
     {
       "path": "test/support/extension_package_helper.rb",

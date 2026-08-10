@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "score": 81,
+  "score": 87,
   "generated_files": 62,
   "public_nodes": 54,
-  "documented_nodes": 44,
+  "documented_nodes": 47,
   "findings": [
-    "10 public nodes lack explicit documentation edges"
+    "7 public nodes lack explicit documentation edges"
   ]
 }

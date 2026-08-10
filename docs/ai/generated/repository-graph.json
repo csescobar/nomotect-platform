@@ -1902,6 +1902,36 @@
       }
     },
     {
+      "id": "document:Releases::1.0.0::Migration-notes",
+      "type": "document",
+      "name": "Releases::1.0.0::Migration-notes",
+      "path": "docs/releases/1.0.0/migration-notes.md",
+      "properties": {
+        "sha256": "ce93f797cb8793a90406ca90c16dba210abdbe96d43a0928853c3339731aad6d",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Releases::1.0.0::Release-notes",
+      "type": "document",
+      "name": "Releases::1.0.0::Release-notes",
+      "path": "docs/releases/1.0.0/release-notes.md",
+      "properties": {
+        "sha256": "35b2c74fa5db83b70891e9331e8e45031ad57dbbe7828e43f27574e6c02d2c98",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Releases::1.0.0::Upgrade-notes",
+      "type": "document",
+      "name": "Releases::1.0.0::Upgrade-notes",
+      "path": "docs/releases/1.0.0/upgrade-notes.md",
+      "properties": {
+        "sha256": "462493ca454baadd398e94a60e196ceaed72381ff581aba90a52fb35bfe6b452",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Releases::Architecture",
       "type": "document",
       "name": "Releases::Architecture",
@@ -1937,7 +1967,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "258d5da843fd5ac9a6b9d2797fc297203b22ccc58efb29b7e6328e34df7af2cb",
+        "sha256": "7a98f4fbf3aaf9eecbf7dc700b622665c0fef76886d72c15de6cc56b4acd1efb",
         "source": "platform"
       }
     },
@@ -2017,7 +2047,7 @@
       "name": "Roadmap::V1-0-0-release-gate",
       "path": "docs/roadmap/v1-0-0-release-gate.md",
       "properties": {
-        "sha256": "968073318646fb82c6d5f9e7e5e29f39c1a9b9a78a5609f6d62ca72b507a6a02",
+        "sha256": "7c7c9e31484a242b7471f27011c58d6bdaae085b766c1e27eb9a30215a03e604",
         "source": "platform"
       }
     },
@@ -2817,7 +2847,7 @@
       "name": "Integration::ApplicationExtensionSample",
       "path": "test/integration/application_extension_sample_test.rb",
       "properties": {
-        "sha256": "b83833fd63342b2e5b8bc5812b87c4138b0426641c9c87b38801b7d51ce7b33f",
+        "sha256": "9f1efb67e44d598efd933e6a59963275f567175fd713ba7b04a80db25b17737f",
         "source": "platform"
       }
     },
@@ -3507,7 +3537,7 @@
       "name": "Services::Epic10::RcPreparation",
       "path": "test/services/epic_10/rc_preparation_test.rb",
       "properties": {
-        "sha256": "23bd3a7c16db36fccaba00c53107a2887cb30a836fd58b7e762a7586a9fa1f3a",
+        "sha256": "9c78c6fb4056c36aabfa392c046706e4fb25ea82c174a78e1bb64df0d2278a1e",
         "source": "platform"
       }
     },
@@ -3677,7 +3707,7 @@
       "name": "Services::Extensions::Manifest",
       "path": "test/services/extensions/manifest_test.rb",
       "properties": {
-        "sha256": "0b239a119d70b9c4a7694a5a84a6db9c818f8f326c7edf57948e243233abd8cc",
+        "sha256": "b657e97f0b30c3754ae4245026d2ccf642f1076980f598a660b05138acb644f1",
         "source": "platform"
       }
     },
@@ -3877,7 +3907,7 @@
       "name": "Services::Releases::V1ReleaseCandidate",
       "path": "test/services/releases/v1_release_candidate_test.rb",
       "properties": {
-        "sha256": "4b3e7618e3dcb1e6232153cd33fc51b85b969e324be51301c088f360bf3fa3f3",
+        "sha256": "6dd25d7b67faa1409c4452babb7a5c6d81773f850477124f08b7786f991de14f",
         "source": "platform"
       }
     },
@@ -5167,6 +5197,12 @@
     },
     {
       "from": "document:Releases::0.8.0::Migration-notes",
+      "to": "document:Releases::1.0.0::Migration-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.8.0::Migration-notes",
       "to": "document:Releases::Generated::Migration-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -5184,6 +5220,12 @@
       "properties": {}
     },
     {
+      "from": "document:Releases::0.8.0::Release-notes",
+      "to": "document:Releases::1.0.0::Release-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Releases::0.8.0::Upgrade-notes",
       "to": "document:Releases::0.9.0::Upgrade-notes",
       "type": "DOCUMENTED_BY",
@@ -5192,6 +5234,12 @@
     {
       "from": "document:Releases::0.8.0::Upgrade-notes",
       "to": "document:Releases::1.0.0-rc.1::Upgrade-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.8.0::Upgrade-notes",
+      "to": "document:Releases::1.0.0::Upgrade-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
@@ -5209,6 +5257,12 @@
     },
     {
       "from": "document:Releases::0.9.0::Migration-notes",
+      "to": "document:Releases::1.0.0::Migration-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.9.0::Migration-notes",
       "to": "document:Releases::Generated::Migration-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -5220,8 +5274,20 @@
       "properties": {}
     },
     {
+      "from": "document:Releases::0.9.0::Release-notes",
+      "to": "document:Releases::1.0.0::Release-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Releases::0.9.0::Upgrade-notes",
       "to": "document:Releases::1.0.0-rc.1::Upgrade-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.9.0::Upgrade-notes",
+      "to": "document:Releases::1.0.0::Upgrade-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
@@ -5233,12 +5299,42 @@
     },
     {
       "from": "document:Releases::1.0.0-rc.1::Migration-notes",
+      "to": "document:Releases::1.0.0::Migration-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::1.0.0-rc.1::Migration-notes",
       "to": "document:Releases::Generated::Migration-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
     {
+      "from": "document:Releases::1.0.0-rc.1::Release-notes",
+      "to": "document:Releases::1.0.0::Release-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Releases::1.0.0-rc.1::Upgrade-notes",
+      "to": "document:Releases::1.0.0::Upgrade-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::1.0.0-rc.1::Upgrade-notes",
+      "to": "document:Releases::Generated::Upgrade-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::1.0.0::Migration-notes",
+      "to": "document:Releases::Generated::Migration-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::1.0.0::Upgrade-notes",
       "to": "document:Releases::Generated::Upgrade-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -5826,5 +5922,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "18813393b98220374b70b369b10637955723898f"
+  "repository_commit": "8e59377bbdceb42c9480030f02e0a5de39ee8f03"
 }

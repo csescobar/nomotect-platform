@@ -28,8 +28,9 @@ class ApplicationExtensionSampleTest < ActiveSupport::TestCase
     degraded = Extensions::Lifecycle.new(
       configuration: incompatible,
       inspector_factory: lambda do |selected|
-        Extensions::Inspector.new(configuration: selected, platform_version: "1.0.0")
+        Extensions::Inspector.new(configuration: selected, platform_version: "2.0.0")
       end
+
     ).call
     assert_equal "degraded", degraded.status
     assert_equal [ "nomotect.sample-audit" ], degraded.skipped
