@@ -59,6 +59,10 @@ Completed. Local Application Starter bundle and deterministic `.tar.gz` and `.zi
 2. Attached `.tar.gz` and `.zip` Application Starter archives.
 3. OIDC build provenance attestations.
 
+### Certification status
+
+Completed. Generated versioned release documents under `docs/releases/1.0.0-rc.1/` and updated distribution builder channel settings for prerelease support. Prepared workflows for OIDC-attested GitHub Release publication.
+
 ---
 
 ## Phase 4 — Clean Directory Bootstrap & Final Certification

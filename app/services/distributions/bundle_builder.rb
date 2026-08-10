@@ -141,7 +141,7 @@ module Distributions
           {
             id: "github_release",
             enabled: true,
-            prerelease: version.start_with?("0.")
+            prerelease: version.start_with?("0.") || version.include?("-")
           },
           {
             id: "ghcr",

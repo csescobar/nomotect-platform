@@ -1822,6 +1822,36 @@
       }
     },
     {
+      "id": "document:Releases::1.0.0-rc.1::Migration-notes",
+      "type": "document",
+      "name": "Releases::1.0.0-rc.1::Migration-notes",
+      "path": "docs/releases/1.0.0-rc.1/migration-notes.md",
+      "properties": {
+        "sha256": "ce93f797cb8793a90406ca90c16dba210abdbe96d43a0928853c3339731aad6d",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Releases::1.0.0-rc.1::Release-notes",
+      "type": "document",
+      "name": "Releases::1.0.0-rc.1::Release-notes",
+      "path": "docs/releases/1.0.0-rc.1/release-notes.md",
+      "properties": {
+        "sha256": "c6a04a64476e0514e03e60f64068e5b3c481c2c1a2ef7456b02d3b79863aba34",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Releases::1.0.0-rc.1::Upgrade-notes",
+      "type": "document",
+      "name": "Releases::1.0.0-rc.1::Upgrade-notes",
+      "path": "docs/releases/1.0.0-rc.1/upgrade-notes.md",
+      "properties": {
+        "sha256": "462493ca454baadd398e94a60e196ceaed72381ff581aba90a52fb35bfe6b452",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Releases::Architecture",
       "type": "document",
       "name": "Releases::Architecture",
@@ -1857,7 +1887,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "7d070494dfdf94562400b407c2e1149e3d2c69c3cfe4215a4fb42735f9fddc62",
+        "sha256": "94dba0205a624a2fd0bd7fb4fa439b49abd26c1ac6d51952e09c800e31470990",
         "source": "platform"
       }
     },
@@ -1927,7 +1957,7 @@
       "name": "Roadmap::V1-0-0-rc1-release-gate",
       "path": "docs/roadmap/v1-0-0-rc1-release-gate.md",
       "properties": {
-        "sha256": "d69e03e1d9fad0bbaa841366c265a57b578bcd93d79680d2d844c0d72fdd8db1",
+        "sha256": "6caacfee7c3ec6a47f40813e73b395767c06a02615f1179438bf9de0a87bbd2e",
         "source": "platform"
       }
     },
@@ -5059,6 +5089,12 @@
     },
     {
       "from": "document:Releases::0.8.0::Migration-notes",
+      "to": "document:Releases::1.0.0-rc.1::Migration-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.8.0::Migration-notes",
       "to": "document:Releases::Generated::Migration-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -5070,8 +5106,20 @@
       "properties": {}
     },
     {
+      "from": "document:Releases::0.8.0::Release-notes",
+      "to": "document:Releases::1.0.0-rc.1::Release-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Releases::0.8.0::Upgrade-notes",
       "to": "document:Releases::0.9.0::Upgrade-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.8.0::Upgrade-notes",
+      "to": "document:Releases::1.0.0-rc.1::Upgrade-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
@@ -5083,12 +5131,42 @@
     },
     {
       "from": "document:Releases::0.9.0::Migration-notes",
+      "to": "document:Releases::1.0.0-rc.1::Migration-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.9.0::Migration-notes",
       "to": "document:Releases::Generated::Migration-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
     {
+      "from": "document:Releases::0.9.0::Release-notes",
+      "to": "document:Releases::1.0.0-rc.1::Release-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Releases::0.9.0::Upgrade-notes",
+      "to": "document:Releases::1.0.0-rc.1::Upgrade-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::0.9.0::Upgrade-notes",
+      "to": "document:Releases::Generated::Upgrade-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::1.0.0-rc.1::Migration-notes",
+      "to": "document:Releases::Generated::Migration-notes",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Releases::1.0.0-rc.1::Upgrade-notes",
       "to": "document:Releases::Generated::Upgrade-notes",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -5670,5 +5748,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "4db27469ec29b8b6b889491534b9319f353d56ea"
+  "repository_commit": "e6db8ca8ae5f05afc1f91741f76609e5ac364680"
 }
