@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "e11ce7e04fe6ad16646327f838a7e94a4326f619",
+  "repository_commit": "0528282d03494b1f162ec2b65177223a424c8e2c",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -3036,7 +3036,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "3a2d0f94ccc224490e8116b467ab7d0bcf8a8d8bf1d6ac50cdf1856ce19196a0"
+      "sha256": "067f4abc02ffc9da230eded0b9a0a956ae85c286a9d0a7756a40dbdd9389560b"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3081,7 +3081,7 @@
     {
       "path": "docs/roadmap/v1-0-0-release-gate.md",
       "kind": "documentation",
-      "sha256": "542019bb838dc9c27d26494a244667d5d357deabb38e4247820637ea7909927a"
+      "sha256": "382c427589cb28c964b59ab032ddda91f8f52e3d5a34d2b1c57a7ae31b8a98da"
     },
     {
       "path": "docs/security/dependency-and-supply-chain-policy.md",
@@ -4012,6 +4012,11 @@
       "path": "test/services/releases/release_readiness_playbook_test.rb",
       "kind": "test",
       "sha256": "fd47a64dab8b8a19542e24aa77b9c90ad0eb10fa2e03f417320c79cc30fe4d73"
+    },
+    {
+      "path": "test/services/releases/v1_public_contract_freeze_test.rb",
+      "kind": "test",
+      "sha256": "5547df28887520333262bed8ab48159fab660041256cf0b7b8609f1d73c4a4b1"
     },
     {
       "path": "test/services/releases/v1_quality_certification_test.rb",
