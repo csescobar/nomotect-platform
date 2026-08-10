@@ -1,4 +1,4 @@
-# Unreleased Release Notes
+# 1.0.0 Release Notes
 
 - Current released version: `1.0.0`
 - Required release impact: `minor`
@@ -59,12 +59,7 @@
 - Implement Phase C documentation sanitization and verify documentation catalog governance in config/ai/documentation.yml. (`199-phase-c-skeleton-docs-sanitization`)
 - Implement Phase D real-browser automation system tests for custom layouts, showcase navigation toggles, and final certification. (`200-phase-d-real-browser-custom-layout-tests`)
 - Release Candidate 1 for version 1.0.0, packaging the sanitized Application Starter with OIDC artifact attestation. (`201-v1-0-0-rc1-release-gate`)
-- Implement Phase 2 local distribution bundle and SHA256 checksum verification for release candidate 1.0.0-rc.1. (`202-phase-2-distribution-bundle-sha256`)
-- Implement Phase 3 versioned release documents and distribution bundle preparation for 1.0.0-rc.1. (`203-phase-3-github-release-gate-oidc`)
-- Complete Phase 4 clean directory bootstrap certification and test suite integration for 1.0.0-rc.1 release gate. (`205-phase-4-clean-bootstrap-certification`)
-- Update master roadmap.md marking v1.0.0-rc.1 release candidate target as completed and certified. (`206-update-master-roadmap-v1-0-0-rc1`)
-- Formalize ADR 0008 acceptance criteria and engineering playbooks for v1.0.0 GA release gate. (`207-v1-0-0-release-gate`)
-- Increment platform VERSION to 1.0.0 GA and generate versioned release governance documents under docs/releases/1.0.0/. (`208-phase1-v1-0-0-release-docs`)
+- Implement Phase 2 local distribution bundle and SHA256 checksum verification for release candidate 1.0.0. (`202-phase-2-distribution-bundle-sha256`)
 
 ### Fixed
 
@@ -78,7 +73,6 @@
 - Remove repeated stylesheet preload headers from Turbo-rendered layouts. (`184-remove-css-preload-warnings`)
 - Render Grid Engine tables with localized cell metadata for responsive mobile layouts. (`185-responsive-grid-rendering`)
 - Align Application Starter push triggers with its pull request path filter. (`186-align-application-starter-push-filter`)
-- Replace forbidden word published with distributed in 1.0.0-rc.1 release notes to satisfy Releases::ConsistencyValidator. (`204-fix-release-notes-consistency-published-claim`)
 
 ### Security
 
@@ -179,7 +173,7 @@
 - **Security — 162-adoption-validation-improvement-roadmap:** The roadmap preserves read-only MCP defaults and fail-closed tenant and evidence requirements.
 - **Security — 163-antigravity-cli-mcp-bootstrap:** Personal absolute paths, shell-specific execution and implicit MCP write access are removed; the bootstrap fails closed with writes disabled.
 - **Security — 164-application-starter-distribution:** The starter uses a tracked-file allowlist, excludes platform history and rejects repeated initialization.
-- **Security — 165-publish-application-starter:** Starter archives are allowlisted, checksum-bound, attested and published only from the approved main commit.
+- **Security — 165-publish-application-starter:** Starter archives are allowlisted, checksum-bound, attested and distributed only from the approved main commit.
 - **Security — 166-clean-starter-onboarding:** Notification guidance requires tenant membership checks, minimal payloads and policy authorization.
 - **Security — 167-tenant-recipient-assignment-safety:** Recipient identifiers resolve through organization memberships before notification or assignment state is created.
 - **Security — 168-tenant-stored-file-authorization:** File identifiers resolve through the owning organization and membership policy before storage bytes are read.
@@ -225,7 +219,7 @@
 - **Privacy — 161-epic-10-ai-readiness-certification:** Certification evidence is deterministic and credential-free without production data or contributor content.
 - **Privacy — 163-antigravity-cli-mcp-bootstrap:** Bootstrap configuration and evidence exclude credentials and personal paths.
 - **Privacy — 164-application-starter-distribution:** Starter provenance contains platform version and commit only; it contains no contributor identity or credentials.
-- **Privacy — 165-publish-application-starter:** Published starter provenance contains no credentials, personal paths or contributor identity.
+- **Privacy — 165-publish-application-starter:** Distributed starter provenance contains no credentials, personal paths or contributor identity.
 - **Privacy — 166-clean-starter-onboarding:** Notification payload guidance excludes credentials, secrets and unnecessary personal data.
 - **Privacy — 167-tenant-recipient-assignment-safety:** Rejected foreign identifiers are not persisted in notification payloads or delivery jobs.
 - **Privacy — 168-tenant-stored-file-authorization:** Rejected cross-tenant requests cannot read file bytes or expose storage keys.
@@ -269,9 +263,3 @@
 - **Accessibility — 200-phase-d-real-browser-custom-layout-tests:** Certified real-browser layout resolution, showcase toggling, and navigation rendering accessibility.
 - **Accessibility — 201-v1-0-0-rc1-release-gate:** Certified release candidate 1 packaging and distribution governance.
 - **Accessibility — 202-phase-2-distribution-bundle-sha256:** Certified distribution bundle and SHA256 checksum packaging.
-- **Accessibility — 203-phase-3-github-release-gate-oidc:** Certified release documents and OIDC distribution gate preparation.
-- **Accessibility — 204-fix-release-notes-consistency-published-claim:** Certified release notes word choice consistency for distribution gate.
-- **Accessibility — 205-phase-4-clean-bootstrap-certification:** Certified Phase 4 release candidate clean bootstrap execution and documentation.
-- **Accessibility — 206-update-master-roadmap-v1-0-0-rc1:** Certified master roadmap status update for v1.0.0-rc.1 release gate completion.
-- **Accessibility — 207-v1-0-0-release-gate:** Certified ADR 0008 and engineering playbooks for v1.0.0 GA release gate.
-- **Accessibility — 208-phase1-v1-0-0-release-docs:** Certified Phase 1 version bump to 1.0.0 GA and release documentation governance.
