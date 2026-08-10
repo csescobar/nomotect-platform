@@ -1,0 +1,22 @@
+schema_version: 1
+id: 212-readme-v1-0-0-ga-update
+category: feature
+summary: Update README.md to reflect v1.0.0 GA completion, delivery history table, and Engineering Playbooks catalog.
+release_impact: patch
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Updated README.md documentation links and version references to v1.0.0 GA.

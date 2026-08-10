@@ -69,6 +69,7 @@ Required release impact: `major`.
 - Implement Phase 2 cross-cutting quality certification suite covering SAST security, multi-tenant isolation, accessibility theme contracts, and query performance budgets. (`209-phase2-v1-0-0-quality-certification`)
 - Implement Phase 3 public contract freeze and documentation governance certification for v1.0.0 GA. (`210-phase3-v1-0-0-public-contract-freeze`)
 - Complete Release Gate v1.0.0 GA certification including GitHub Release publication, OCI container image promotion, and clean standalone bootstrap validation. (`211-v1-0-0-ga-certification`)
+- Update README.md to reflect v1.0.0 GA completion, delivery history table, and Engineering Playbooks catalog. (`212-readme-v1-0-0-ga-update`)
 
 ### Fixed
 

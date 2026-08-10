@@ -68,6 +68,7 @@
 - Implement Phase 2 cross-cutting quality certification suite covering SAST security, multi-tenant isolation, accessibility theme contracts, and query performance budgets. (`209-phase2-v1-0-0-quality-certification`)
 - Implement Phase 3 public contract freeze and documentation governance certification for v1.0.0 GA. (`210-phase3-v1-0-0-public-contract-freeze`)
 - Complete Release Gate v1.0.0 GA certification including GitHub Release publication, OCI container image promotion, and clean standalone bootstrap validation. (`211-v1-0-0-ga-certification`)
+- Update README.md to reflect v1.0.0 GA completion, delivery history table, and Engineering Playbooks catalog. (`212-readme-v1-0-0-ga-update`)
 
 ### Fixed
 
@@ -281,3 +282,4 @@
 - **Accessibility — 209-phase2-v1-0-0-quality-certification:** Certified Phase 2 quality assurances across security, multi-tenancy, accessibility, and query performance.
 - **Accessibility — 210-phase3-v1-0-0-public-contract-freeze:** Certified Phase 3 public contract freeze, documentation governance, and evidence consistency validation.
 - **Accessibility — 211-v1-0-0-ga-certification:** Certified official v1.0.0 GA release and standalone application starter bootstrap.
+- **Accessibility — 212-readme-v1-0-0-ga-update:** Updated README.md documentation links and version references to v1.0.0 GA.

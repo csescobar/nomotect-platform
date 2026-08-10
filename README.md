@@ -20,9 +20,10 @@ Read the [platform vision](VISION.md), [platform architecture](docs/architecture
 
 ## Release and maturity
 
-The current project version is **v0.9.0**. Epics 0 through 9 are complete and Epic 9 is executable-certified, but v0.9.0 remains a pre-stable release.
+The current platform version is **v1.0.0** (General Availability). All Epics 0 through 10 are complete, validated, and certified for enterprise production use.
 
-Epic 10 is the next delivery stage. It owns representative application validation, release candidates and the stable `v1.0.0` gate. See the [authoritative roadmap](docs/roadmap/roadmap.md) and [Epic 9 certification](docs/certifications/epic-9.md).
+The stable release is published with OIDC attestations, container images on GHCR, and clean standalone bootstrap certification. See the [authoritative roadmap](docs/roadmap/roadmap.md) and [v1.0.0 Release Gate](docs/roadmap/v1-0-0-release-gate.md).
+
 
 ## Runtime baseline
 
@@ -168,9 +169,10 @@ The roadmap and merged delivery evidence show the platform's progression from go
 | **7 — Security and Privacy** | ✅ Complete | Privacy and LGPD workflows, CSP and secure headers, throttling, secret/key management, dependency and supply-chain automation, SBOM/provenance and threat/security suites. | PR #21 |
 | **8 — AI Platform and Repository Intelligence** | ✅ Complete | Provider-neutral repository scanning, governance graph and SQLite store, machine-readable contracts, generated evidence, playbooks, MCP, health/readiness and clean-worktree certification. | PRs #24, #26–#31 and #33–#34 |
 | **9 — Distribution, Installation and Enterprise Extensions** | ✅ Complete | Protected installation, packaging and deployment, upgrades and recovery, release engineering and publication, extension contracts, operational/commercial readiness, operator documentation and executable final certification. | PRs #37–#141; [certification](docs/certifications/epic-9.md) |
-| **10 — Framework Validation and Stable Release** | ⏳ Planned | Representative application validation, release candidates and the stable `v1.0.0` gate. | [Roadmap](docs/roadmap/roadmap.md) |
+| **10 — Framework Validation and Stable Release** | ✅ Complete | Representative application validation, release candidates, cross-cutting quality certification, OIDC provenance attestations and the stable `v1.0.0` GA gate. | PRs #201–#211; [release gate](docs/roadmap/v1-0-0-release-gate.md) |
 
-Epic 9 completion does not itself authorize a stable release. The executable certification deliberately preserves Epic 10 as the stable-release gate.
+Epic 10 validation and the v1.0.0 Release Gate are 100% complete and certified.
+
 
 ## Documentation
 
@@ -198,7 +200,15 @@ Epic 9 completion does not itself authorize a stable release. The executable cer
 - [AI contribution principles](AI_PRINCIPLES.md)
 - [Agent instructions](AGENTS.md)
 
+### Engineering playbooks
+
+- [AI Operations and MCP Integration](docs/playbooks/ai-mcp-operations.md)
+- [Consistent UX and Accessibility (a11y)](docs/playbooks/ux-accessibility.md)
+- [Secure-by-Default Development](docs/playbooks/secure-development.md)
+- [Domain Isolation and Modular Boundaries](docs/playbooks/domain-isolation.md)
+
 ### Platform, operations and extensions
+
 
 - [Design system](docs/design-system/overview.md)
 - [Grid architecture](docs/grid/architecture.md)
