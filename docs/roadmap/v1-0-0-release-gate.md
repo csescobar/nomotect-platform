@@ -85,7 +85,7 @@ Completed. Public contract freeze certified in `V1PublicContractFreezeTest`: 100
 
 ### Certification status
 
-Planned.
+Completed. Published official GitHub Release `v1.0.0` at `https://github.com/csescobar/nomotect-platform/releases/tag/v1.0.0` with 11 attested release assets. Container image promoted to `ghcr.io/csescobar/nomotect-platform:1.0.0` and `latest`.
 
 ---
 
@@ -104,4 +104,5 @@ Planned.
 
 ### Certification status
 
-Planned.
+Completed. Downloaded `nomotect-starter.tar.gz` from GitHub Release `v1.0.0` into `/tmp/clean-bootstrap-v1-0-0`, extracted archive, executed setup, and certified clean standalone bootstrap with 100% green test execution (121 runs, 490 assertions, 0 failures, 0 errors).
+

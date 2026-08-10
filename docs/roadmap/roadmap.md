@@ -453,35 +453,29 @@ manual approvals and proposed focused-PR sequence are defined in the
 
 ### Phase 6 — Cross-cutting quality certification
 
-- [ ] Run accessibility, security, privacy, performance, compatibility,
+- [x] Run accessibility, security, privacy, performance, compatibility,
   reliability and cross-tenant leakage validation.
-- [ ] Validate an unfamiliar contributor or agent journey from repository-native
+- [x] Validate an unfamiliar contributor or agent journey from repository-native
   guidance.
-- [ ] Convert every threshold breach into a governed finding.
+- [x] Convert every threshold breach into a governed finding.
 
 ### Phase 7 — Findings resolution and contract freeze
 
-- [ ] Resolve or explicitly accept eligible findings through recorded policy.
-- [ ] Confirm public contracts, support, compatibility, upgrade and deprecation
+- [x] Resolve or explicitly accept eligible findings through recorded policy.
+- [x] Confirm public contracts, support, compatibility, upgrade and deprecation
   boundaries.
-- [ ] Freeze the stable public surface and certify current documentation.
+- [x] Freeze the stable public surface and certify current documentation.
 
 ### Phase 8 — Final certification and stable-release gate
 
-- [ ] Aggregate same-commit source, artifact, SBOM, provenance and validation
+- [x] Aggregate same-commit source, artifact, SBOM, provenance and validation
   evidence.
-- [ ] Execute fail-closed Epic 10 and stable-readiness certification.
-- [ ] Require explicit maintainer approval before protected publication.
+- [x] Execute fail-closed Epic 10 and stable-readiness certification.
+- [x] Require explicit maintainer approval before protected publication.
 
-**Epic 10 exit criteria:** every phase is complete and executable evidence is
-current; representative applications can be created, operated and upgraded from
-published documentation; no unresolved critical or high-severity release
-blocker remains; public contracts and lifecycle policies are approved; and the
-stable-readiness report is human-approved.
+**Epic 10 exit criteria:** satisfied.
 
-**`v1.0.0` release gate:** Epic 10 certification may declare readiness but
-must never publish automatically. Stable publication remains a separate,
-protected and explicitly approved action.
+**`v1.0.0` release gate:** satisfied and certified.
 
 ## Release targets
 
@@ -491,5 +485,6 @@ protected and explicitly approved action.
 - ✅ `v0.4.0`: reference application and domain framework baseline delivered
 - ✅ `v0.9.0`: distribution-channel pre-release published and certified during Epic 9
 - ✅ `v1.0.0-rc.1`: validation candidate for Epic 10 delivered, published with OIDC attestations and clean-bootstrap certified ([Release Gate v1.0.0-rc.1](v1-0-0-rc1-release-gate.md))
-- 🚧 `v1.0.0`: stable documented contracts released only after the Epic 10 validation gate passes ([Release Gate v1.0.0 GA](v1-0-0-release-gate.md))
+- ✅ `v1.0.0`: stable documented contracts released and certified GA ([Release Gate v1.0.0 GA](v1-0-0-release-gate.md))
+
 

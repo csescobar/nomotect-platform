@@ -1,7 +1,7 @@
 # Unreleased Release Notes
 
 - Current released version: `1.0.0`
-- Required release impact: `minor`
+- Required release impact: `major`
 
 ## Changes
 
@@ -67,6 +67,7 @@
 - Increment platform VERSION to 1.0.0 GA and generate versioned release governance documents under docs/releases/1.0.0/. (`208-phase1-v1-0-0-release-docs`)
 - Implement Phase 2 cross-cutting quality certification suite covering SAST security, multi-tenant isolation, accessibility theme contracts, and query performance budgets. (`209-phase2-v1-0-0-quality-certification`)
 - Implement Phase 3 public contract freeze and documentation governance certification for v1.0.0 GA. (`210-phase3-v1-0-0-public-contract-freeze`)
+- Complete Release Gate v1.0.0 GA certification including GitHub Release publication, OCI container image promotion, and clean standalone bootstrap validation. (`211-v1-0-0-ga-certification`)
 
 ### Fixed
 
@@ -279,3 +280,4 @@
 - **Accessibility — 208-phase1-v1-0-0-release-docs:** Certified Phase 1 version bump to 1.0.0 GA and release documentation governance.
 - **Accessibility — 209-phase2-v1-0-0-quality-certification:** Certified Phase 2 quality assurances across security, multi-tenancy, accessibility, and query performance.
 - **Accessibility — 210-phase3-v1-0-0-public-contract-freeze:** Certified Phase 3 public contract freeze, documentation governance, and evidence consistency validation.
+- **Accessibility — 211-v1-0-0-ga-certification:** Certified official v1.0.0 GA release and standalone application starter bootstrap.
