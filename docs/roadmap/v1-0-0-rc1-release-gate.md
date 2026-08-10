@@ -40,6 +40,10 @@ Completed. Platform `VERSION` incremented to `1.0.0-rc.1`. Release notes fragmen
 2. Certified `SHA256SUMS` manifest matching `.tar.gz` and `.zip` archives.
 3. Unit test suite `test/services/releases/v1_release_candidate_test.rb` certifying packaging invariants.
 
+### Certification status
+
+Completed. Local Application Starter bundle and deterministic `.tar.gz` and `.zip` archives generated with matching `SHA256SUMS` checksum manifest for version `1.0.0-rc.1`. Certified and verified in `ApplicationStarterTest` and `V1ReleaseCandidateTest`.
+
 ---
 
 ## Phase 3 — GitHub Release Gate Publication & OIDC Attestation

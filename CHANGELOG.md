@@ -60,6 +60,7 @@ Required release impact: `minor`.
 - Implement Phase C documentation sanitization and verify documentation catalog governance in config/ai/documentation.yml. (`199-phase-c-skeleton-docs-sanitization`)
 - Implement Phase D real-browser automation system tests for custom layouts, showcase navigation toggles, and final certification. (`200-phase-d-real-browser-custom-layout-tests`)
 - Release Candidate 1 for version 1.0.0, packaging the sanitized Application Starter with OIDC artifact attestation. (`201-v1-0-0-rc1-release-gate`)
+- Implement Phase 2 local distribution bundle and SHA256 checksum verification for release candidate 1.0.0-rc.1. (`202-phase-2-distribution-bundle-sha256`)
 
 ### Fixed
 

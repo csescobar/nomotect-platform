@@ -42,7 +42,7 @@ module ApplicationStarter
     private
 
     def validate!
-      raise ArgumentError, "version is invalid" unless @version.match?(/\A\d+\.\d+\.\d+\z/)
+      raise ArgumentError, "version is invalid" unless @version.match?(/\A\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?\z/)
       raise ArgumentError, "source commit is invalid" unless @source_commit.match?(/\A[a-f0-9]{40}\z/)
       raise ArgumentError, "output must not be inside the source tree" if @output.to_s.start_with?("#{@root}/")
     end

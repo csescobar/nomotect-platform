@@ -1857,7 +1857,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "47ff11aa4d9e6bcc056f9039f8a6086443c95bd2a9940180f599b390460bcaf8",
+        "sha256": "7d070494dfdf94562400b407c2e1149e3d2c69c3cfe4215a4fb42735f9fddc62",
         "source": "platform"
       }
     },
@@ -1927,7 +1927,7 @@
       "name": "Roadmap::V1-0-0-rc1-release-gate",
       "path": "docs/roadmap/v1-0-0-rc1-release-gate.md",
       "properties": {
-        "sha256": "2bf8735cf082943d09df1aa9d26d4e3097eee8e73e3d236d88398bfbb1ba44d3",
+        "sha256": "d69e03e1d9fad0bbaa841366c265a57b578bcd93d79680d2d844c0d72fdd8db1",
         "source": "platform"
       }
     },
@@ -2917,7 +2917,7 @@
       "name": "Lib::ApplicationStarter",
       "path": "test/lib/application_starter_test.rb",
       "properties": {
-        "sha256": "3bf8205e2db1f47c05bc29f6da2aa73732ddef0ca7a424fc420ee3ab4a5e8eac",
+        "sha256": "b9e88c7fff6608b5dd5ff4105c6cbd3571f6469ddf610690ba628727e054ed34",
         "source": "platform"
       }
     },
@@ -3787,7 +3787,7 @@
       "name": "Services::Releases::V1ReleaseCandidate",
       "path": "test/services/releases/v1_release_candidate_test.rb",
       "properties": {
-        "sha256": "047deefb44002ba9e6002fc603d5c12821449acd1436767f827a7260e83be259",
+        "sha256": "14bbf5a0fca4543299503f97cab8e4f44664a84cbea50d3ed1749a534cb7816c",
         "source": "platform"
       }
     },
@@ -5670,5 +5670,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "a83ce65b9e0891303d3cdb929693849396506b04"
+  "repository_commit": "4db27469ec29b8b6b889491534b9319f353d56ea"
 }
