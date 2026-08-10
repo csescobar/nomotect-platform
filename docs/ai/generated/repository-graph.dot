@@ -79,6 +79,7 @@ digraph repository {
   "document:Architecture::Decisions::0005-use-application-layer-boundary" [label="Architecture::Decisions::0005-use-application-layer-boundary"];
   "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries" [label="Architecture::Decisions::0006-seal-application-role-and-grid-registries"];
   "document:Architecture::Decisions::0007-load-application-owned-extension-packages" [label="Architecture::Decisions::0007-load-application-owned-extension-packages"];
+  "document:Architecture::Decisions::0008-v1-0-0-release-gate-acceptance-criteria" [label="Architecture::Decisions::0008-v1-0-0-release-gate-acceptance-criteria"];
   "document:Architecture::Dependency-rules" [label="Architecture::Dependency-rules"];
   "document:Architecture::Engineering-decision-tree" [label="Architecture::Engineering-decision-tree"];
   "document:Architecture::Module-catalog" [label="Architecture::Module-catalog"];
@@ -175,6 +176,10 @@ digraph repository {
   "document:Operators::Compatibility-and-lifecycle" [label="Operators::Compatibility-and-lifecycle"];
   "document:Operators::Handbook" [label="Operators::Handbook"];
   "document:Packaging::Container-baseline" [label="Packaging::Container-baseline"];
+  "document:Playbooks::Ai-mcp-operations" [label="Playbooks::Ai-mcp-operations"];
+  "document:Playbooks::Domain-isolation" [label="Playbooks::Domain-isolation"];
+  "document:Playbooks::Secure-development" [label="Playbooks::Secure-development"];
+  "document:Playbooks::Ux-accessibility" [label="Playbooks::Ux-accessibility"];
   "document:Releases::0.8.0::Migration-notes" [label="Releases::0.8.0::Migration-notes"];
   "document:Releases::0.8.0::Release-notes" [label="Releases::0.8.0::Release-notes"];
   "document:Releases::0.8.0::Upgrade-notes" [label="Releases::0.8.0::Upgrade-notes"];
@@ -195,6 +200,7 @@ digraph repository {
   "document:Roadmap::Epic-10-plan" [label="Roadmap::Epic-10-plan"];
   "document:Roadmap::Roadmap" [label="Roadmap::Roadmap"];
   "document:Roadmap::V1-0-0-rc1-release-gate" [label="Roadmap::V1-0-0-rc1-release-gate"];
+  "document:Roadmap::V1-0-0-release-gate" [label="Roadmap::V1-0-0-release-gate"];
   "document:Security::Dependency-and-supply-chain-policy" [label="Security::Dependency-and-supply-chain-policy"];
   "document:Security::Epic-7-threat-model" [label="Security::Epic-7-threat-model"];
   "document:Security::Security-baseline" [label="Security::Security-baseline"];
@@ -529,6 +535,7 @@ digraph repository {
   "document:Distribution::Operations" -> "document:Operations::Architecture" [label="DOCUMENTED_BY"];
   "document:Distribution::Operations" -> "document:Operations::Disaster-recovery" [label="DOCUMENTED_BY"];
   "document:Distribution::Operations" -> "document:Operations::Resilience-certification" [label="DOCUMENTED_BY"];
+  "document:Distribution::Operations" -> "document:Playbooks::Ai-mcp-operations" [label="DOCUMENTED_BY"];
   "document:Distribution::Operations" -> "document:Security::Security-operations" [label="DOCUMENTED_BY"];
   "document:Distribution::Operations" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
   "document:Distribution::Verification" -> "document:Upgrades::Post-upgrade-verification" [label="DOCUMENTED_BY"];
@@ -568,6 +575,7 @@ digraph repository {
   "document:Extensions::Operations" -> "document:Operations::Architecture" [label="DOCUMENTED_BY"];
   "document:Extensions::Operations" -> "document:Operations::Disaster-recovery" [label="DOCUMENTED_BY"];
   "document:Extensions::Operations" -> "document:Operations::Resilience-certification" [label="DOCUMENTED_BY"];
+  "document:Extensions::Operations" -> "document:Playbooks::Ai-mcp-operations" [label="DOCUMENTED_BY"];
   "document:Extensions::Operations" -> "document:Security::Security-operations" [label="DOCUMENTED_BY"];
   "document:Extensions::Operations" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
   "document:Grid::Architecture" -> "document:Installation::Architecture" [label="DOCUMENTED_BY"];
@@ -601,6 +609,7 @@ digraph repository {
   "document:Releases::Architecture" -> "document:Validation::Architecture" [label="DOCUMENTED_BY"];
   "document:Releases::Consistency" -> "test:Services::Releases::ConsistencyValidator" [label="TESTED_BY"];
   "document:Roadmap::Roadmap" -> "document:Roadmap::V1-0-0-rc1-release-gate" [label="DOCUMENTED_BY"];
+  "document:Roadmap::Roadmap" -> "document:Roadmap::V1-0-0-release-gate" [label="DOCUMENTED_BY"];
   "document:Security::Threat-model" -> "document:Validation::Threat-model" [label="DOCUMENTED_BY"];
   "document:Upgrades::Architecture" -> "document:Validation::Architecture" [label="DOCUMENTED_BY"];
   "job:Application" -> "document:Architecture::Application-layer" [label="DOCUMENTED_BY"];

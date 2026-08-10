@@ -491,5 +491,5 @@ protected and explicitly approved action.
 - ✅ `v0.4.0`: reference application and domain framework baseline delivered
 - ✅ `v0.9.0`: distribution-channel pre-release published and certified during Epic 9
 - ✅ `v1.0.0-rc.1`: validation candidate for Epic 10 delivered, published with OIDC attestations and clean-bootstrap certified ([Release Gate v1.0.0-rc.1](v1-0-0-rc1-release-gate.md))
-- ⏳ `v1.0.0`: stable documented contracts released only after the Epic 10 validation gate passes
+- 🚧 `v1.0.0`: stable documented contracts released only after the Epic 10 validation gate passes ([Release Gate v1.0.0 GA](v1-0-0-release-gate.md))
 

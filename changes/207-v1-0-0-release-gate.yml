@@ -1,0 +1,22 @@
+schema_version: 1
+id: 207-v1-0-0-release-gate
+category: feature
+summary: Formalize ADR 0008 acceptance criteria and engineering playbooks for v1.0.0 GA release gate.
+release_impact: patch
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified ADR 0008 and engineering playbooks for v1.0.0 GA release gate.
