@@ -1,0 +1,22 @@
+schema_version: 1
+id: 206-update-master-roadmap-v1-0-0-rc1
+category: feature
+summary: Update master roadmap.md marking v1.0.0-rc.1 release candidate target as completed and certified.
+release_impact: patch
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified master roadmap status update for v1.0.0-rc.1 release gate completion.
