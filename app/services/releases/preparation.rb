@@ -6,7 +6,7 @@ require "json"
 
 module Releases
   class Preparation
-    RELEASE_PATTERN = /\A(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)\z/
+    RELEASE_PATTERN = /\A(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-([0-9A-Za-z.-]+))?\z/
 
     attr_reader :source_version, :target_version
 
@@ -26,7 +26,7 @@ module Releases
 
     def validate
       findings = []
-      findings << "target version must be a stable semantic version" unless RELEASE_PATTERN.match?(target_version.to_s)
+      findings << "target version must be a semantic version" unless RELEASE_PATTERN.match?(target_version.to_s)
       findings << "target version must be newer than #{source_version}" unless target_version > source_version
       findings << "at least one change fragment is required" if fragments.empty?
       unless satisfies_release_impact?

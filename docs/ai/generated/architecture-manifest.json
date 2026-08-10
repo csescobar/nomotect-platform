@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "4db27469ec29b8b6b889491534b9319f353d56ea",
+  "repository_commit": "e6db8ca8ae5f05afc1f91741f76609e5ac364680",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -856,7 +856,7 @@
     {
       "path": "app/services/distributions/bundle_builder.rb",
       "kind": "source",
-      "sha256": "6488b15ce1f9552ff5b245dfe85509f645814d0c6d44b3d03b29f5bd6634d513"
+      "sha256": "390ff4cfd816a521761df6762986e96693450e678a134d10806ba7a8d218342b"
     },
     {
       "path": "app/services/distributions/channel_observer.rb",
@@ -1301,7 +1301,7 @@
     {
       "path": "app/services/releases/preparation.rb",
       "kind": "source",
-      "sha256": "44ca66b3eb3c39fb05a0936fee941e93abda0b70ed2754bf6f4c4244327dc6bb"
+      "sha256": "264f3dd51611601bfeb5ced35891430d0aa328408e0e1ade2a851d5c3dede55a"
     },
     {
       "path": "app/services/releases/pull_request_validator.rb",
@@ -2944,6 +2944,31 @@
       "sha256": "f0fa90a35857f69be4be35381f21500d066d91a8f92dcc1d8323235d4cfe16c3"
     },
     {
+      "path": "docs/releases/1.0.0-rc.1/compatibility.json",
+      "kind": "documentation",
+      "sha256": "86a7f0501ba27f19ddc1fd1ebb5fe20c1a6129b71ded9f61c174692d63a3c39f"
+    },
+    {
+      "path": "docs/releases/1.0.0-rc.1/migration-notes.md",
+      "kind": "documentation",
+      "sha256": "ce93f797cb8793a90406ca90c16dba210abdbe96d43a0928853c3339731aad6d"
+    },
+    {
+      "path": "docs/releases/1.0.0-rc.1/release-metadata.json",
+      "kind": "documentation",
+      "sha256": "cb58b8a1dad5e0495ee67c975c2b862bb14c96005cb0751bb1a6b3e00d0b62d8"
+    },
+    {
+      "path": "docs/releases/1.0.0-rc.1/release-notes.md",
+      "kind": "documentation",
+      "sha256": "c6a04a64476e0514e03e60f64068e5b3c481c2c1a2ef7456b02d3b79863aba34"
+    },
+    {
+      "path": "docs/releases/1.0.0-rc.1/upgrade-notes.md",
+      "kind": "documentation",
+      "sha256": "462493ca454baadd398e94a60e196ceaed72381ff581aba90a52fb35bfe6b452"
+    },
+    {
       "path": "docs/releases/architecture.md",
       "kind": "documentation",
       "sha256": "486fe5a0bf7bceb6e1c25b5b8f32620d84d13416db3e6df0180d85183ad3c3a0"
@@ -2961,7 +2986,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "7d070494dfdf94562400b407c2e1149e3d2c69c3cfe4215a4fb42735f9fddc62"
+      "sha256": "94dba0205a624a2fd0bd7fb4fa439b49abd26c1ac6d51952e09c800e31470990"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3001,7 +3026,7 @@
     {
       "path": "docs/roadmap/v1-0-0-rc1-release-gate.md",
       "kind": "documentation",
-      "sha256": "d69e03e1d9fad0bbaa841366c265a57b578bcd93d79680d2d844c0d72fdd8db1"
+      "sha256": "6caacfee7c3ec6a47f40813e73b395767c06a02615f1179438bf9de0a87bbd2e"
     },
     {
       "path": "docs/security/dependency-and-supply-chain-policy.md",
