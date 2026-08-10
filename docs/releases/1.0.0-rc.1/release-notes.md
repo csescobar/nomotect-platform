@@ -173,7 +173,7 @@
 - **Security — 162-adoption-validation-improvement-roadmap:** The roadmap preserves read-only MCP defaults and fail-closed tenant and evidence requirements.
 - **Security — 163-antigravity-cli-mcp-bootstrap:** Personal absolute paths, shell-specific execution and implicit MCP write access are removed; the bootstrap fails closed with writes disabled.
 - **Security — 164-application-starter-distribution:** The starter uses a tracked-file allowlist, excludes platform history and rejects repeated initialization.
-- **Security — 165-publish-application-starter:** Starter archives are allowlisted, checksum-bound, attested and published only from the approved main commit.
+- **Security — 165-publish-application-starter:** Starter archives are allowlisted, checksum-bound, attested and distributed only from the approved main commit.
 - **Security — 166-clean-starter-onboarding:** Notification guidance requires tenant membership checks, minimal payloads and policy authorization.
 - **Security — 167-tenant-recipient-assignment-safety:** Recipient identifiers resolve through organization memberships before notification or assignment state is created.
 - **Security — 168-tenant-stored-file-authorization:** File identifiers resolve through the owning organization and membership policy before storage bytes are read.
@@ -219,7 +219,7 @@
 - **Privacy — 161-epic-10-ai-readiness-certification:** Certification evidence is deterministic and credential-free without production data or contributor content.
 - **Privacy — 163-antigravity-cli-mcp-bootstrap:** Bootstrap configuration and evidence exclude credentials and personal paths.
 - **Privacy — 164-application-starter-distribution:** Starter provenance contains platform version and commit only; it contains no contributor identity or credentials.
-- **Privacy — 165-publish-application-starter:** Published starter provenance contains no credentials, personal paths or contributor identity.
+- **Privacy — 165-publish-application-starter:** Distributed starter provenance contains no credentials, personal paths or contributor identity.
 - **Privacy — 166-clean-starter-onboarding:** Notification payload guidance excludes credentials, secrets and unnecessary personal data.
 - **Privacy — 167-tenant-recipient-assignment-safety:** Rejected foreign identifiers are not persisted in notification payloads or delivery jobs.
 - **Privacy — 168-tenant-stored-file-authorization:** Rejected cross-tenant requests cannot read file bytes or expose storage keys.
