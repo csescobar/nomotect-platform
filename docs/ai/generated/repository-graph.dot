@@ -389,6 +389,7 @@ digraph repository {
   "test:Services::Releases::Preparation" [label="Services::Releases::Preparation"];
   "test:Services::Releases::PullRequestValidator" [label="Services::Releases::PullRequestValidator"];
   "test:Services::Releases::ReleaseReadinessPlaybook" [label="Services::Releases::ReleaseReadinessPlaybook"];
+  "test:Services::Releases::V1QualityCertification" [label="Services::Releases::V1QualityCertification"];
   "test:Services::Releases::V1ReleaseCandidate" [label="Services::Releases::V1ReleaseCandidate"];
   "test:Services::SecurityPrivacy" [label="Services::SecurityPrivacy"];
   "test:Services::Upgrades::BackupAndMaintenance" [label="Services::Upgrades::BackupAndMaintenance"];
@@ -517,6 +518,7 @@ digraph repository {
   "document:Commercial-readiness::Certification" -> "test:Services::Epic10::RcUpgradeCertification" [label="TESTED_BY"];
   "document:Commercial-readiness::Certification" -> "test:Services::Epic10::RepresentativeApplicationCertification" [label="TESTED_BY"];
   "document:Commercial-readiness::Certification" -> "test:Services::Epic10::SecurityPrivacyIsolationCertification" [label="TESTED_BY"];
+  "document:Commercial-readiness::Certification" -> "test:Services::Releases::V1QualityCertification" [label="TESTED_BY"];
   "document:Deployment::Render" -> "test:Lib::GridEngine::HtmlRenderer" [label="TESTED_BY"];
   "document:Design-system::Forms" -> "document:Modules::Design-system::Forms::AiContext" [label="DOCUMENTED_BY"];
   "document:Design-system::Forms" -> "test:Components::Ui::Forms::FormComponents" [label="TESTED_BY"];
@@ -574,6 +576,7 @@ digraph repository {
   "document:Extensions::Certification" -> "test:Services::Epic10::RcUpgradeCertification" [label="TESTED_BY"];
   "document:Extensions::Certification" -> "test:Services::Epic10::RepresentativeApplicationCertification" [label="TESTED_BY"];
   "document:Extensions::Certification" -> "test:Services::Epic10::SecurityPrivacyIsolationCertification" [label="TESTED_BY"];
+  "document:Extensions::Certification" -> "test:Services::Releases::V1QualityCertification" [label="TESTED_BY"];
   "document:Extensions::Inspection" -> "document:Upgrades::Inspection-and-preflight" [label="DOCUMENTED_BY"];
   "document:Extensions::Operations" -> "document:Operations::Architecture" [label="DOCUMENTED_BY"];
   "document:Extensions::Operations" -> "document:Operations::Disaster-recovery" [label="DOCUMENTED_BY"];
@@ -701,6 +704,7 @@ digraph repository {
   "test:Services::ApplicationLayer::Certification" -> "test:Services::Epic10::RcUpgradeCertification" [label="TESTED_BY"];
   "test:Services::ApplicationLayer::Certification" -> "test:Services::Epic10::RepresentativeApplicationCertification" [label="TESTED_BY"];
   "test:Services::ApplicationLayer::Certification" -> "test:Services::Epic10::SecurityPrivacyIsolationCertification" [label="TESTED_BY"];
+  "test:Services::ApplicationLayer::Certification" -> "test:Services::Releases::V1QualityCertification" [label="TESTED_BY"];
   "test:Services::Distributions::Inspector" -> "test:Services::Extensions::Inspector" [label="TESTED_BY"];
   "test:Services::Distributions::Inspector" -> "test:Services::OperationalReadiness::OperationalHealthInspector" [label="TESTED_BY"];
   "test:Services::Distributions::Inspector" -> "test:Services::Upgrades::Inspector" [label="TESTED_BY"];
