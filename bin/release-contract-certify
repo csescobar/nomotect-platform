@@ -2,7 +2,7 @@
 set -euo pipefail
 
 version="$(tr -d '[:space:]' < VERSION)"
-[[ "$version" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]
+[[ "$version" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?$ ]]
 ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
   docs/contracts/change-fragment.schema.json \
   docs/contracts/release-compatibility.schema.json \
@@ -10,7 +10,7 @@ ruby -rjson -e 'ARGV.each { |path| JSON.parse(File.read(path)) }' \
   docs/contracts/release-metadata.schema.json \
   config/ai/schemas/playbook.schema.json
 
-bundle exec rails test \
+bundle exec ruby bin/rails test \
   test/lib/platform/version_test.rb \
   test/services/releases/change_fragment_test.rb \
   test/services/releases/consistency_validator_test.rb \

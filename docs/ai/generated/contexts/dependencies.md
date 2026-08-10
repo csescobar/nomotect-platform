@@ -83,6 +83,7 @@
 - `document:Releases::0.9.0::Migration-notes` → `document:Releases::Generated::Migration-notes`
 - `document:Releases::0.8.0::Upgrade-notes` → `document:Releases::Generated::Upgrade-notes`
 - `document:Releases::0.9.0::Upgrade-notes` → `document:Releases::Generated::Upgrade-notes`
+- `document:Roadmap::Roadmap` → `document:Roadmap::V1-0-0-rc1-release-gate`
 - `component:Ui::Base` → `document:Security::Security-baseline`
 - `controller:Installation::Base` → `document:Security::Security-baseline`
 - `document:Distribution::Operations` → `document:Security::Security-operations`
@@ -101,7 +102,6 @@
 - `document:Distribution::Architecture` → `document:Validation::Architecture`
 - `document:Extensions::Architecture` → `document:Validation::Architecture`
 - `document:Grid::Architecture` → `document:Validation::Architecture`
-- `document:Installation::Architecture` → `document:Validation::Architecture`
 
 ## TESTED_BY
 

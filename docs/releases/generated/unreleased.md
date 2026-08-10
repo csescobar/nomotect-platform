@@ -1,6 +1,6 @@
 # Unreleased Release Notes
 
-- Current released version: `0.9.0`
+- Current released version: `1.0.0-rc.1`
 - Required release impact: `minor`
 
 ## Changes
@@ -58,6 +58,7 @@
 - Implement Phase B developer experience improvements and onboarding guidelines resolving all 11 pilot friction items in docs/ai/developer-guidelines.md. (`198-phase-b-dx-onboarding-fixes`)
 - Implement Phase C documentation sanitization and verify documentation catalog governance in config/ai/documentation.yml. (`199-phase-c-skeleton-docs-sanitization`)
 - Implement Phase D real-browser automation system tests for custom layouts, showcase navigation toggles, and final certification. (`200-phase-d-real-browser-custom-layout-tests`)
+- Release Candidate 1 for version 1.0.0, packaging the sanitized Application Starter with OIDC artifact attestation. (`201-v1-0-0-rc1-release-gate`)
 
 ### Fixed
 
@@ -259,3 +260,4 @@
 - **Accessibility — 198-phase-b-dx-onboarding-fixes:** Certified developer onboarding guidelines and friction resolution documentation.
 - **Accessibility — 199-phase-c-skeleton-docs-sanitization:** Certified documentation catalog governance and application skeleton sanitization.
 - **Accessibility — 200-phase-d-real-browser-custom-layout-tests:** Certified real-browser layout resolution, showcase toggling, and navigation rendering accessibility.
+- **Accessibility — 201-v1-0-0-rc1-release-gate:** Certified release candidate 1 packaging and distribution governance.

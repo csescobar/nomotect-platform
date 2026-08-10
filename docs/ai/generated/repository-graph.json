@@ -1857,7 +1857,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "164c3bc6a21320a9bb29f1c980cf57f9e9f7db77f848610e1fb7721e8fb60f08",
+        "sha256": "47ff11aa4d9e6bcc056f9039f8a6086443c95bd2a9940180f599b390460bcaf8",
         "source": "platform"
       }
     },
@@ -1918,6 +1918,16 @@
       "path": "docs/roadmap/roadmap.md",
       "properties": {
         "sha256": "2569cdadf9985cf5232741b314930a52109c0e8803c4ccb51382e17dcb1cc5d6",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Roadmap::V1-0-0-rc1-release-gate",
+      "type": "document",
+      "name": "Roadmap::V1-0-0-rc1-release-gate",
+      "path": "docs/roadmap/v1-0-0-rc1-release-gate.md",
+      "properties": {
+        "sha256": "2bf8735cf082943d09df1aa9d26d4e3097eee8e73e3d236d88398bfbb1ba44d3",
         "source": "platform"
       }
     },
@@ -3407,7 +3417,7 @@
       "name": "Services::Epic10::RcPreparation",
       "path": "test/services/epic_10/rc_preparation_test.rb",
       "properties": {
-        "sha256": "c76b4fe634a4b5e66802eb5e3531e6c4997fc3b5ca2161fafea3b5852ce73213",
+        "sha256": "23bd3a7c16db36fccaba00c53107a2887cb30a836fd58b7e762a7586a9fa1f3a",
         "source": "platform"
       }
     },
@@ -3768,6 +3778,16 @@
       "path": "test/services/releases/release_readiness_playbook_test.rb",
       "properties": {
         "sha256": "fd47a64dab8b8a19542e24aa77b9c90ad0eb10fa2e03f417320c79cc30fe4d73",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Services::Releases::V1ReleaseCandidate",
+      "type": "test",
+      "name": "Services::Releases::V1ReleaseCandidate",
+      "path": "test/services/releases/v1_release_candidate_test.rb",
+      "properties": {
+        "sha256": "047deefb44002ba9e6002fc603d5c12821449acd1436767f827a7260e83be259",
         "source": "platform"
       }
     },
@@ -5092,6 +5112,12 @@
       "properties": {}
     },
     {
+      "from": "document:Roadmap::Roadmap",
+      "to": "document:Roadmap::V1-0-0-rc1-release-gate",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Security::Threat-model",
       "to": "document:Validation::Threat-model",
       "type": "DOCUMENTED_BY",
@@ -5644,5 +5670,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "53c7987b270235e7b9b016fbf49f33aff9d50697"
+  "repository_commit": "a83ce65b9e0891303d3cdb929693849396506b04"
 }

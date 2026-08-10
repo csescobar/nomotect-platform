@@ -1,0 +1,22 @@
+schema_version: 1
+id: 201-v1-0-0-rc1-release-gate
+category: feature
+summary: Release Candidate 1 for version 1.0.0, packaging the sanitized Application Starter with OIDC artifact attestation.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified release candidate 1 packaging and distribution governance.
