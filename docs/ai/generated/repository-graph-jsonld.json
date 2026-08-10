@@ -2526,7 +2526,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "7a98f4fbf3aaf9eecbf7dc700b622665c0fef76886d72c15de6cc56b4acd1efb",
+        "sha256": "3a2d0f94ccc224490e8116b467ab7d0bcf8a8d8bf1d6ac50cdf1856ce19196a0",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -2614,7 +2614,7 @@
       "name": "Roadmap::V1-0-0-release-gate",
       "path": "docs/roadmap/v1-0-0-release-gate.md",
       "properties": {
-        "sha256": "7c7c9e31484a242b7471f27011c58d6bdaae085b766c1e27eb9a30215a03e604",
+        "sha256": "542019bb838dc9c27d26494a244667d5d357deabb38e4247820637ea7909927a",
         "source": "platform"
       },
       "@id": "document:Roadmap::V1-0-0-release-gate"
@@ -4301,6 +4301,17 @@
         "source": "platform"
       },
       "@id": "test:Services::Releases::ReleaseReadinessPlaybook"
+    },
+    {
+      "id": "test:Services::Releases::V1QualityCertification",
+      "type": "test",
+      "name": "Services::Releases::V1QualityCertification",
+      "path": "test/services/releases/v1_quality_certification_test.rb",
+      "properties": {
+        "sha256": "8a1e3b376438f8c1bcbfa1d02bad1432ab3275e1e3deb81fe53439c46f0c0a08",
+        "source": "platform"
+      },
+      "@id": "test:Services::Releases::V1QualityCertification"
     },
     {
       "id": "test:Services::Releases::V1ReleaseCandidate",
@@ -6585,67 +6596,88 @@
       "@id": "edge:303"
     },
     {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Releases::V1QualityCertification",
+      "type": "TESTED_BY",
+      "properties": {},
+      "@id": "edge:304"
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Releases::V1QualityCertification",
+      "type": "TESTED_BY",
+      "properties": {},
+      "@id": "edge:305"
+    },
+    {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Releases::V1QualityCertification",
+      "type": "TESTED_BY",
+      "properties": {},
+      "@id": "edge:306"
+    },
+    {
       "from": "test:Services::Distributions::Inspector",
       "to": "test:Services::Upgrades::Inspector",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:304"
+      "@id": "edge:307"
     },
     {
       "from": "test:Services::Extensions::Inspector",
       "to": "test:Services::Upgrades::Inspector",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:305"
+      "@id": "edge:308"
     },
     {
       "from": "test:Services::Extensions::InstalledState",
       "to": "test:Services::Upgrades::InstalledStateDetector",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:306"
+      "@id": "edge:309"
     },
     {
       "from": "test:Services::Distributions::Manifest",
       "to": "test:Services::Upgrades::Manifest",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:307"
+      "@id": "edge:310"
     },
     {
       "from": "test:Services::Extensions::Manifest",
       "to": "test:Services::Upgrades::Manifest",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:308"
+      "@id": "edge:311"
     },
     {
       "from": "test:Services::Distributions::Verifier",
       "to": "test:Services::Upgrades::PostUpgradeVerifier",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:309"
+      "@id": "edge:312"
     },
     {
       "from": "test:Lib::Platform::Version",
       "to": "test:Services::Upgrades::Version",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:310"
+      "@id": "edge:313"
     },
     {
       "from": "test:Controllers::CustomLayout",
       "to": "test:System::CustomLayoutSystem",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:311"
+      "@id": "edge:314"
     },
     {
       "from": "controller:Ej2Showcase",
       "to": "test:System::Ej2ShowcaseSystem",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:312"
+      "@id": "edge:315"
     }
   ]
 }

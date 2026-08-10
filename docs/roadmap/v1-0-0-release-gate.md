@@ -46,7 +46,8 @@ Completed. Platform `VERSION` incremented to `1.0.0`. Versioned release governan
 
 ### Certification status
 
-Planned.
+Completed. Cross-cutting quality certified in `V1QualityCertificationTest`: zero high/critical SAST findings, fail-closed multi-tenant query isolation, theme contract normalizer fallback, and query budget budget assertions for domain operations.
+
 
 ---
 

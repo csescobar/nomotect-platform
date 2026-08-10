@@ -1967,7 +1967,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "7a98f4fbf3aaf9eecbf7dc700b622665c0fef76886d72c15de6cc56b4acd1efb",
+        "sha256": "3a2d0f94ccc224490e8116b467ab7d0bcf8a8d8bf1d6ac50cdf1856ce19196a0",
         "source": "platform"
       }
     },
@@ -2047,7 +2047,7 @@
       "name": "Roadmap::V1-0-0-release-gate",
       "path": "docs/roadmap/v1-0-0-release-gate.md",
       "properties": {
-        "sha256": "7c7c9e31484a242b7471f27011c58d6bdaae085b766c1e27eb9a30215a03e604",
+        "sha256": "542019bb838dc9c27d26494a244667d5d357deabb38e4247820637ea7909927a",
         "source": "platform"
       }
     },
@@ -3902,6 +3902,16 @@
       }
     },
     {
+      "id": "test:Services::Releases::V1QualityCertification",
+      "type": "test",
+      "name": "Services::Releases::V1QualityCertification",
+      "path": "test/services/releases/v1_quality_certification_test.rb",
+      "properties": {
+        "sha256": "8a1e3b376438f8c1bcbfa1d02bad1432ab3275e1e3deb81fe53439c46f0c0a08",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Services::Releases::V1ReleaseCandidate",
       "type": "test",
       "name": "Services::Releases::V1ReleaseCandidate",
@@ -4728,6 +4738,12 @@
       "properties": {}
     },
     {
+      "from": "document:Commercial-readiness::Certification",
+      "to": "test:Services::Releases::V1QualityCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Deployment::Render",
       "to": "test:Lib::GridEngine::HtmlRenderer",
       "type": "TESTED_BY",
@@ -5066,6 +5082,12 @@
     {
       "from": "document:Extensions::Certification",
       "to": "test:Services::Epic10::SecurityPrivacyIsolationCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::Releases::V1QualityCertification",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5832,6 +5854,12 @@
       "properties": {}
     },
     {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Releases::V1QualityCertification",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "test:Services::Distributions::Inspector",
       "to": "test:Services::Extensions::Inspector",
       "type": "TESTED_BY",
@@ -5922,5 +5950,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "8e59377bbdceb42c9480030f02e0a5de39ee8f03"
+  "repository_commit": "e11ce7e04fe6ad16646327f838a7e94a4326f619"
 }
