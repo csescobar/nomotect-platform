@@ -1,0 +1,22 @@
+schema_version: 1
+id: 202-phase-2-distribution-bundle-sha256
+category: feature
+summary: Implement Phase 2 local distribution bundle and SHA256 checksum verification for release candidate 1.0.0-rc.1.
+release_impact: minor
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified distribution bundle and SHA256 checksum packaging.

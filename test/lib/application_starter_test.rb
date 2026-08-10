@@ -42,4 +42,17 @@ class ApplicationStarterTest < ActiveSupport::TestCase
       refute entries.any? { |entry| entry.include?("NomoTect_Social_Preview") }
     end
   end
+
+  test "builder accepts prerelease versions like 1.0.0-rc.1" do
+    Dir.mktmpdir("nomotect-starter-rc-test-") do |directory|
+      result = ApplicationStarter::Builder.new(
+        root: ROOT, output: directory, version: "1.0.0-rc.1", source_commit: "b" * 40
+      ).build!
+
+      assert_equal "ready", result.fetch(:status)
+      assert_equal "1.0.0-rc.1", result.fetch(:version)
+      assert File.file?(result.fetch(:tar))
+      assert File.file?(result.fetch(:zip))
+    end
+  end
 end
