@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "status": "ready",
-  "indexed_commit": "2d431114da9295a7824bbb348e9be47d76c154f3",
-  "current_commit": "2d431114da9295a7824bbb348e9be47d76c154f3",
+  "indexed_commit": "18813393b98220374b70b369b10637955723898f",
+  "current_commit": "18813393b98220374b70b369b10637955723898f",
   "counts": {
-    "files": 819,
-    "nodes": 395,
-    "edges": 299
+    "files": 825,
+    "nodes": 401,
+    "edges": 302
   },
   "findings": [],
   "provider": {

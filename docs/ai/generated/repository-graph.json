@@ -802,6 +802,16 @@
       }
     },
     {
+      "id": "document:Architecture::Decisions::0008-v1-0-0-release-gate-acceptance-criteria",
+      "type": "document",
+      "name": "Architecture::Decisions::0008-v1-0-0-release-gate-acceptance-criteria",
+      "path": "docs/architecture/decisions/0008-v1-0-0-release-gate-acceptance-criteria.md",
+      "properties": {
+        "sha256": "0ae1614de3cfc991a1b179a9b721cbbf3471d7d3b992ea48f398ecadfff43384",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Architecture::Dependency-rules",
       "type": "document",
       "name": "Architecture::Dependency-rules",
@@ -1762,6 +1772,46 @@
       }
     },
     {
+      "id": "document:Playbooks::Ai-mcp-operations",
+      "type": "document",
+      "name": "Playbooks::Ai-mcp-operations",
+      "path": "docs/playbooks/ai-mcp-operations.md",
+      "properties": {
+        "sha256": "2ea9b7ab1691f087418f5b7ce4199ba266058f66e2a5b5fe5f45f3365742ed38",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Playbooks::Domain-isolation",
+      "type": "document",
+      "name": "Playbooks::Domain-isolation",
+      "path": "docs/playbooks/domain-isolation.md",
+      "properties": {
+        "sha256": "8a3491aff839507851ad3f01b1e0683cbd54e1fb608f0f6be817619a1cb234ee",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Playbooks::Secure-development",
+      "type": "document",
+      "name": "Playbooks::Secure-development",
+      "path": "docs/playbooks/secure-development.md",
+      "properties": {
+        "sha256": "25060a19131463ec5d9fb2e531b70e1b511bb4c48a72b2888d765249765c3dc8",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Playbooks::Ux-accessibility",
+      "type": "document",
+      "name": "Playbooks::Ux-accessibility",
+      "path": "docs/playbooks/ux-accessibility.md",
+      "properties": {
+        "sha256": "ef430d44cb78a8a714ade4ecef381d890e6b613a81797118ef53e081acf073cc",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Releases::0.8.0::Migration-notes",
       "type": "document",
       "name": "Releases::0.8.0::Migration-notes",
@@ -1887,7 +1937,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "327d79f47931a7aa424efc0a4579b7871c09ca782ff46e9a63aef2a337a7385b",
+        "sha256": "258d5da843fd5ac9a6b9d2797fc297203b22ccc58efb29b7e6328e34df7af2cb",
         "source": "platform"
       }
     },
@@ -1947,7 +1997,7 @@
       "name": "Roadmap::Roadmap",
       "path": "docs/roadmap/roadmap.md",
       "properties": {
-        "sha256": "ac4c4b2d0838f48ceac640cda5216728d2ebff0e032035290999b2352150a813",
+        "sha256": "52dacdd9b750365734030ef835cc1f6ea2cdde094796ee73d7c4eb313b6be293",
         "source": "platform"
       }
     },
@@ -1958,6 +2008,16 @@
       "path": "docs/roadmap/v1-0-0-rc1-release-gate.md",
       "properties": {
         "sha256": "d60d96ea459bbdf0a11c8e0b5a2171b193b69a2ad5b9a9a7693876808416bb47",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Roadmap::V1-0-0-release-gate",
+      "type": "document",
+      "name": "Roadmap::V1-0-0-release-gate",
+      "path": "docs/roadmap/v1-0-0-release-gate.md",
+      "properties": {
+        "sha256": "968073318646fb82c6d5f9e7e5e29f39c1a9b9a78a5609f6d62ca72b507a6a02",
         "source": "platform"
       }
     },
@@ -4765,6 +4825,12 @@
     },
     {
       "from": "document:Distribution::Operations",
+      "to": "document:Playbooks::Ai-mcp-operations",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Distribution::Operations",
       "to": "document:Security::Security-operations",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -4999,6 +5065,12 @@
     },
     {
       "from": "document:Extensions::Operations",
+      "to": "document:Playbooks::Ai-mcp-operations",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Operations",
       "to": "document:Security::Security-operations",
       "type": "DOCUMENTED_BY",
       "properties": {}
@@ -5192,6 +5264,12 @@
     {
       "from": "document:Roadmap::Roadmap",
       "to": "document:Roadmap::V1-0-0-rc1-release-gate",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Roadmap::Roadmap",
+      "to": "document:Roadmap::V1-0-0-release-gate",
       "type": "DOCUMENTED_BY",
       "properties": {}
     },
@@ -5748,5 +5826,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "2d431114da9295a7824bbb348e9be47d76c154f3"
+  "repository_commit": "18813393b98220374b70b369b10637955723898f"
 }

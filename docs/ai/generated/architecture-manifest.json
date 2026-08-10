@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "2d431114da9295a7824bbb348e9be47d76c154f3",
+  "repository_commit": "18813393b98220374b70b369b10637955723898f",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -2244,6 +2244,11 @@
       "sha256": "e2ad822fe1028ad45e696511b42ba73eb4c4c2214416208ba48d2fac52306bfd"
     },
     {
+      "path": "docs/architecture/decisions/0008-v1-0-0-release-gate-acceptance-criteria.md",
+      "kind": "documentation",
+      "sha256": "0ae1614de3cfc991a1b179a9b721cbbf3471d7d3b992ea48f398ecadfff43384"
+    },
+    {
       "path": "docs/architecture/dependency-rules.md",
       "kind": "documentation",
       "sha256": "19ad654b03e0be7a1e41b7abd48d00175a1a3f662d5784863e747cc5ff3c1514"
@@ -2894,6 +2899,26 @@
       "sha256": "becdd113b7da1190b005c8d8c1cc323364ec76f84a3e18ed96574c4769ad287a"
     },
     {
+      "path": "docs/playbooks/ai-mcp-operations.md",
+      "kind": "documentation",
+      "sha256": "2ea9b7ab1691f087418f5b7ce4199ba266058f66e2a5b5fe5f45f3365742ed38"
+    },
+    {
+      "path": "docs/playbooks/domain-isolation.md",
+      "kind": "documentation",
+      "sha256": "8a3491aff839507851ad3f01b1e0683cbd54e1fb608f0f6be817619a1cb234ee"
+    },
+    {
+      "path": "docs/playbooks/secure-development.md",
+      "kind": "documentation",
+      "sha256": "25060a19131463ec5d9fb2e531b70e1b511bb4c48a72b2888d765249765c3dc8"
+    },
+    {
+      "path": "docs/playbooks/ux-accessibility.md",
+      "kind": "documentation",
+      "sha256": "ef430d44cb78a8a714ade4ecef381d890e6b613a81797118ef53e081acf073cc"
+    },
+    {
       "path": "docs/releases/0.8.0/compatibility.json",
       "kind": "documentation",
       "sha256": "2e85294fbc56cba53827c451062fd1534cff2fd0d8be81b50e724e2ad05e02f0"
@@ -2986,7 +3011,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "327d79f47931a7aa424efc0a4579b7871c09ca782ff46e9a63aef2a337a7385b"
+      "sha256": "258d5da843fd5ac9a6b9d2797fc297203b22ccc58efb29b7e6328e34df7af2cb"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3021,12 +3046,17 @@
     {
       "path": "docs/roadmap/roadmap.md",
       "kind": "documentation",
-      "sha256": "ac4c4b2d0838f48ceac640cda5216728d2ebff0e032035290999b2352150a813"
+      "sha256": "52dacdd9b750365734030ef835cc1f6ea2cdde094796ee73d7c4eb313b6be293"
     },
     {
       "path": "docs/roadmap/v1-0-0-rc1-release-gate.md",
       "kind": "documentation",
       "sha256": "d60d96ea459bbdf0a11c8e0b5a2171b193b69a2ad5b9a9a7693876808416bb47"
+    },
+    {
+      "path": "docs/roadmap/v1-0-0-release-gate.md",
+      "kind": "documentation",
+      "sha256": "968073318646fb82c6d5f9e7e5e29f39c1a9b9a78a5609f6d62ca72b507a6a02"
     },
     {
       "path": "docs/security/dependency-and-supply-chain-policy.md",

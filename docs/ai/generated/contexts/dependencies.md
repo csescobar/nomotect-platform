@@ -71,6 +71,8 @@
 - `component:Marketing::Lifecycle` → `document:Operators::Compatibility-and-lifecycle`
 - `component:Ui::Base` → `document:Packaging::Container-baseline`
 - `controller:Installation::Base` → `document:Packaging::Container-baseline`
+- `document:Distribution::Operations` → `document:Playbooks::Ai-mcp-operations`
+- `document:Extensions::Operations` → `document:Playbooks::Ai-mcp-operations`
 - `document:Releases::0.8.0::Migration-notes` → `document:Releases::0.9.0::Migration-notes`
 - `document:Releases::0.8.0::Release-notes` → `document:Releases::0.9.0::Release-notes`
 - `document:Releases::0.8.0::Upgrade-notes` → `document:Releases::0.9.0::Upgrade-notes`
@@ -92,6 +94,7 @@
 - `document:Releases::0.9.0::Upgrade-notes` → `document:Releases::Generated::Upgrade-notes`
 - `document:Releases::1.0.0-rc.1::Upgrade-notes` → `document:Releases::Generated::Upgrade-notes`
 - `document:Roadmap::Roadmap` → `document:Roadmap::V1-0-0-rc1-release-gate`
+- `document:Roadmap::Roadmap` → `document:Roadmap::V1-0-0-release-gate`
 - `component:Ui::Base` → `document:Security::Security-baseline`
 - `controller:Installation::Base` → `document:Security::Security-baseline`
 - `document:Distribution::Operations` → `document:Security::Security-operations`
@@ -99,9 +102,6 @@
 - `document:Distribution::Architecture` → `document:Upgrades::Architecture`
 - `document:Extensions::Architecture` → `document:Upgrades::Architecture`
 - `document:Grid::Architecture` → `document:Upgrades::Architecture`
-- `document:Installation::Architecture` → `document:Upgrades::Architecture`
-- `document:Operations::Architecture` → `document:Upgrades::Architecture`
-- `document:Releases::Architecture` → `document:Upgrades::Architecture`
 
 ## TESTED_BY
 
