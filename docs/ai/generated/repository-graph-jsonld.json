@@ -2438,7 +2438,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "c360281a6c8b5d81583085cf93f82cdae34beda13c39e6da9c4102ea9476dad2",
+        "sha256": "327d79f47931a7aa424efc0a4579b7871c09ca782ff46e9a63aef2a337a7385b",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -2504,7 +2504,7 @@
       "name": "Roadmap::Roadmap",
       "path": "docs/roadmap/roadmap.md",
       "properties": {
-        "sha256": "2569cdadf9985cf5232741b314930a52109c0e8803c4ccb51382e17dcb1cc5d6",
+        "sha256": "ac4c4b2d0838f48ceac640cda5216728d2ebff0e032035290999b2352150a813",
         "source": "platform"
       },
       "@id": "document:Roadmap::Roadmap"

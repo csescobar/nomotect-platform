@@ -414,9 +414,9 @@ manual approvals and proposed focused-PR sequence are defined in the
 - [x] Approve the initial supported-environment matrix and measurable release thresholds.
   Delivered through the versioned release baseline, semantic validator, governed
   evidence references and focused contract tests.
-- [x] Establish reproducible, protected `v1.0.0-rc.1` preparation.
+- [x] Establish reproducible, protected `v1.0.0-rc.1` preparation and release gate publication.
   Delivered through a deterministic review-only plan bound to the exact commit,
-  baseline, changelog and change fragments. Planning cannot approve or publish.
+  baseline, changelog, change fragments, OIDC attestations, and clean-bootstrap test ([v1.0.0-rc.1 Release Gate](v1-0-0-rc1-release-gate.md)).
 
 ### Phase 2 — Representative application
 
@@ -490,5 +490,6 @@ protected and explicitly approved action.
 - ✅ `v0.3.0`: grid engine baseline delivered
 - ✅ `v0.4.0`: reference application and domain framework baseline delivered
 - ✅ `v0.9.0`: distribution-channel pre-release published and certified during Epic 9
-- ⏳ `v1.0.0-rc.1`: validation candidate for Epic 10
+- ✅ `v1.0.0-rc.1`: validation candidate for Epic 10 delivered, published with OIDC attestations and clean-bootstrap certified ([Release Gate v1.0.0-rc.1](v1-0-0-rc1-release-gate.md))
 - ⏳ `v1.0.0`: stable documented contracts released only after the Epic 10 validation gate passes
+

@@ -62,6 +62,7 @@
 - Implement Phase 2 local distribution bundle and SHA256 checksum verification for release candidate 1.0.0-rc.1. (`202-phase-2-distribution-bundle-sha256`)
 - Implement Phase 3 versioned release documents and distribution bundle preparation for 1.0.0-rc.1. (`203-phase-3-github-release-gate-oidc`)
 - Complete Phase 4 clean directory bootstrap certification and test suite integration for 1.0.0-rc.1 release gate. (`205-phase-4-clean-bootstrap-certification`)
+- Update master roadmap.md marking v1.0.0-rc.1 release candidate target as completed and certified. (`206-update-master-roadmap-v1-0-0-rc1`)
 
 ### Fixed
 
@@ -269,3 +270,4 @@
 - **Accessibility — 203-phase-3-github-release-gate-oidc:** Certified release documents and OIDC distribution gate preparation.
 - **Accessibility — 204-fix-release-notes-consistency-published-claim:** Certified release notes word choice consistency for distribution gate.
 - **Accessibility — 205-phase-4-clean-bootstrap-certification:** Certified Phase 4 release candidate clean bootstrap execution and documentation.
+- **Accessibility — 206-update-master-roadmap-v1-0-0-rc1:** Certified master roadmap status update for v1.0.0-rc.1 release gate completion.
