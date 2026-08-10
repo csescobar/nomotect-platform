@@ -61,7 +61,7 @@ Completed. Local Application Starter bundle and deterministic `.tar.gz` and `.zi
 
 ### Certification status
 
-Completed. Generated versioned release documents under `docs/releases/1.0.0-rc.1/` and updated distribution builder channel settings for prerelease support. Prepared workflows for OIDC-attested GitHub Release publication.
+Completed. Versioned release documents created under `docs/releases/1.0.0-rc.1/` and prerelease channel configuration applied. Workflows `prepare-distribution.yml` and `publish-github-release.yml` successfully executed on `main` commit `e1ba79d734592b521b1864d66d1611bf268a304e`. Official GitHub Release `v1.0.0-rc.1` published with OIDC build provenance attestations at https://github.com/csescobar/nomotect-platform/releases/tag/v1.0.0-rc.1.
 
 ---
 
@@ -77,3 +77,8 @@ Completed. Generated versioned release documents under `docs/releases/1.0.0-rc.1
 1. Clean directory extraction and bootstrap execution log.
 2. Verified 100% passing `bin/ci` test run on fresh Application Starter.
 3. Final Release Candidate certification report.
+
+### Certification status
+
+Completed. Downloaded official `nomotect-starter.tar.gz` from GitHub Release `v1.0.0-rc.1` into `/tmp/clean-bootstrap-test`, extracted archive, executed `bin/setup`, and verified clean standalone bootstrap. Certified in `V1ReleaseCandidateTest`.
+

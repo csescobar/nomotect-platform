@@ -62,6 +62,7 @@ Required release impact: `minor`.
 - Release Candidate 1 for version 1.0.0, packaging the sanitized Application Starter with OIDC artifact attestation. (`201-v1-0-0-rc1-release-gate`)
 - Implement Phase 2 local distribution bundle and SHA256 checksum verification for release candidate 1.0.0-rc.1. (`202-phase-2-distribution-bundle-sha256`)
 - Implement Phase 3 versioned release documents and distribution bundle preparation for 1.0.0-rc.1. (`203-phase-3-github-release-gate-oidc`)
+- Complete Phase 4 clean directory bootstrap certification and test suite integration for 1.0.0-rc.1 release gate. (`205-phase-4-clean-bootstrap-certification`)
 
 ### Fixed
 
