@@ -191,6 +191,7 @@ graph TD
   n_document_Roadmap__Custom_layout_dx_improvements["Roadmap::Custom-layout-dx-improvements"]
   n_document_Roadmap__Epic_10_plan["Roadmap::Epic-10-plan"]
   n_document_Roadmap__Roadmap["Roadmap::Roadmap"]
+  n_document_Roadmap__V1_0_0_rc1_release_gate["Roadmap::V1-0-0-rc1-release-gate"]
   n_document_Security__Dependency_and_supply_chain_policy["Security::Dependency-and-supply-chain-policy"]
   n_document_Security__Epic_7_threat_model["Security::Epic-7-threat-model"]
   n_document_Security__Security_baseline["Security::Security-baseline"]
@@ -376,6 +377,7 @@ graph TD
   n_test_Services__Releases__Preparation["Services::Releases::Preparation"]
   n_test_Services__Releases__PullRequestValidator["Services::Releases::PullRequestValidator"]
   n_test_Services__Releases__ReleaseReadinessPlaybook["Services::Releases::ReleaseReadinessPlaybook"]
+  n_test_Services__Releases__V1ReleaseCandidate["Services::Releases::V1ReleaseCandidate"]
   n_test_Services__SecurityPrivacy["Services::SecurityPrivacy"]
   n_test_Services__Upgrades__BackupAndMaintenance["Services::Upgrades::BackupAndMaintenance"]
   n_test_Services__Upgrades__Executor["Services::Upgrades::Executor"]
@@ -587,6 +589,7 @@ graph TD
   n_document_Releases__Architecture -->|DOCUMENTED_BY| n_document_Upgrades__Architecture
   n_document_Releases__Architecture -->|DOCUMENTED_BY| n_document_Validation__Architecture
   n_document_Releases__Consistency -->|TESTED_BY| n_test_Services__Releases__ConsistencyValidator
+  n_document_Roadmap__Roadmap -->|DOCUMENTED_BY| n_document_Roadmap__V1_0_0_rc1_release_gate
   n_document_Security__Threat_model -->|DOCUMENTED_BY| n_document_Validation__Threat_model
   n_document_Upgrades__Architecture -->|DOCUMENTED_BY| n_document_Validation__Architecture
   n_job_Application -->|DOCUMENTED_BY| n_document_Architecture__Application_layer

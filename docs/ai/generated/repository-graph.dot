@@ -191,6 +191,7 @@ digraph repository {
   "document:Roadmap::Custom-layout-dx-improvements" [label="Roadmap::Custom-layout-dx-improvements"];
   "document:Roadmap::Epic-10-plan" [label="Roadmap::Epic-10-plan"];
   "document:Roadmap::Roadmap" [label="Roadmap::Roadmap"];
+  "document:Roadmap::V1-0-0-rc1-release-gate" [label="Roadmap::V1-0-0-rc1-release-gate"];
   "document:Security::Dependency-and-supply-chain-policy" [label="Security::Dependency-and-supply-chain-policy"];
   "document:Security::Epic-7-threat-model" [label="Security::Epic-7-threat-model"];
   "document:Security::Security-baseline" [label="Security::Security-baseline"];
@@ -376,6 +377,7 @@ digraph repository {
   "test:Services::Releases::Preparation" [label="Services::Releases::Preparation"];
   "test:Services::Releases::PullRequestValidator" [label="Services::Releases::PullRequestValidator"];
   "test:Services::Releases::ReleaseReadinessPlaybook" [label="Services::Releases::ReleaseReadinessPlaybook"];
+  "test:Services::Releases::V1ReleaseCandidate" [label="Services::Releases::V1ReleaseCandidate"];
   "test:Services::SecurityPrivacy" [label="Services::SecurityPrivacy"];
   "test:Services::Upgrades::BackupAndMaintenance" [label="Services::Upgrades::BackupAndMaintenance"];
   "test:Services::Upgrades::Executor" [label="Services::Upgrades::Executor"];
@@ -587,6 +589,7 @@ digraph repository {
   "document:Releases::Architecture" -> "document:Upgrades::Architecture" [label="DOCUMENTED_BY"];
   "document:Releases::Architecture" -> "document:Validation::Architecture" [label="DOCUMENTED_BY"];
   "document:Releases::Consistency" -> "test:Services::Releases::ConsistencyValidator" [label="TESTED_BY"];
+  "document:Roadmap::Roadmap" -> "document:Roadmap::V1-0-0-rc1-release-gate" [label="DOCUMENTED_BY"];
   "document:Security::Threat-model" -> "document:Validation::Threat-model" [label="DOCUMENTED_BY"];
   "document:Upgrades::Architecture" -> "document:Validation::Architecture" [label="DOCUMENTED_BY"];
   "job:Application" -> "document:Architecture::Application-layer" [label="DOCUMENTED_BY"];
