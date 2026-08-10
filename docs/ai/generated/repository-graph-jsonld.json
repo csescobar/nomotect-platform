@@ -2383,7 +2383,7 @@
       "name": "Releases::1.0.0-rc.1::Release-notes",
       "path": "docs/releases/1.0.0-rc.1/release-notes.md",
       "properties": {
-        "sha256": "c6a04a64476e0514e03e60f64068e5b3c481c2c1a2ef7456b02d3b79863aba34",
+        "sha256": "d8868456ea7166b3b143521966039e4b6a6b58b847b98c782570496a9d0c2465",
         "source": "platform"
       },
       "@id": "document:Releases::1.0.0-rc.1::Release-notes"
@@ -2438,7 +2438,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "94dba0205a624a2fd0bd7fb4fa439b49abd26c1ac6d51952e09c800e31470990",
+        "sha256": "33199cd8af53f5f1bf7ad72f5e286184854bd7d699b6396deda5c7c79d6d1e0e",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"

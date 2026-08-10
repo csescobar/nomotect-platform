@@ -75,6 +75,7 @@ Required release impact: `minor`.
 - Remove repeated stylesheet preload headers from Turbo-rendered layouts. (`184-remove-css-preload-warnings`)
 - Render Grid Engine tables with localized cell metadata for responsive mobile layouts. (`185-responsive-grid-rendering`)
 - Align Application Starter push triggers with its pull request path filter. (`186-align-application-starter-push-filter`)
+- Replace forbidden word published with distributed in 1.0.0-rc.1 release notes to satisfy Releases::ConsistencyValidator. (`204-fix-release-notes-consistency-published-claim`)
 
 ### Security
 

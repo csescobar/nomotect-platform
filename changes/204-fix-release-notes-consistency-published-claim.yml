@@ -1,0 +1,22 @@
+schema_version: 1
+id: 204-fix-release-notes-consistency-published-claim
+category: fix
+summary: Replace forbidden word published with distributed in 1.0.0-rc.1 release notes to satisfy Releases::ConsistencyValidator.
+release_impact: patch
+contracts:
+  - ADR-0015
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Certified release notes word choice consistency for distribution gate.
