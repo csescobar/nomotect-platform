@@ -200,7 +200,12 @@ digraph repository {
   "document:RepositoryIntelligence::Documentation-governance" [label="RepositoryIntelligence::Documentation-governance"];
   "document:Roadmap::Adoption-validation-improvements" [label="Roadmap::Adoption-validation-improvements"];
   "document:Roadmap::Custom-layout-dx-improvements" [label="Roadmap::Custom-layout-dx-improvements"];
+  "document:Roadmap::Discovery::Capability-inventory" [label="Roadmap::Discovery::Capability-inventory"];
+  "document:Roadmap::Discovery::Gap-analysis" [label="Roadmap::Discovery::Gap-analysis"];
+  "document:Roadmap::Discovery::Post-1-0-discovery-report" [label="Roadmap::Discovery::Post-1-0-discovery-report"];
+  "document:Roadmap::Discovery::Prioritization-matrix" [label="Roadmap::Discovery::Prioritization-matrix"];
   "document:Roadmap::Epic-10-plan" [label="Roadmap::Epic-10-plan"];
+  "document:Roadmap::Platform-evolution-roadmap" [label="Roadmap::Platform-evolution-roadmap"];
   "document:Roadmap::Roadmap" [label="Roadmap::Roadmap"];
   "document:Roadmap::V1-0-0-rc1-release-gate" [label="Roadmap::V1-0-0-rc1-release-gate"];
   "document:Roadmap::V1-0-0-release-gate" [label="Roadmap::V1-0-0-release-gate"];
@@ -308,6 +313,7 @@ digraph repository {
   "test:Lib::DesignTokens::Compiler" [label="Lib::DesignTokens::Compiler"];
   "test:Lib::DeveloperGuidelines" [label="Lib::DeveloperGuidelines"];
   "test:Lib::Epic9Certification" [label="Lib::Epic9Certification"];
+  "test:Lib::EvolutionDiscovery" [label="Lib::EvolutionDiscovery"];
   "test:Lib::GridEngine::HtmlRenderer" [label="Lib::GridEngine::HtmlRenderer"];
   "test:Lib::GridEngine::Query" [label="Lib::GridEngine::Query"];
   "test:Lib::GridEngine::SyncfusionAdapter" [label="Lib::GridEngine::SyncfusionAdapter"];
@@ -423,6 +429,7 @@ digraph repository {
   "component:Application" -> "test:Services::Epic10::RepresentativeApplication" [label="TESTED_BY"];
   "component:Application" -> "test:Services::Epic10::RepresentativeApplicationCertification" [label="TESTED_BY"];
   "component:Application" -> "test:Services::Epic10::RepresentativeApplicationJourney" [label="TESTED_BY"];
+  "component:Marketing::Capability" -> "document:Roadmap::Discovery::Capability-inventory" [label="DOCUMENTED_BY"];
   "component:Marketing::Header" -> "test:Requests::SecurityHeaders" [label="TESTED_BY"];
   "component:Marketing::Lifecycle" -> "document:Extensions::Lifecycle-guide" [label="DOCUMENTED_BY"];
   "component:Marketing::Lifecycle" -> "document:Operators::Compatibility-and-lifecycle" [label="DOCUMENTED_BY"];

@@ -26,6 +26,7 @@
 
 - `component:Marketing::Lifecycle` —DOCUMENTED_BY→ `document:Extensions::Lifecycle-guide`
 - `component:Marketing::Lifecycle` —DOCUMENTED_BY→ `document:Operators::Compatibility-and-lifecycle`
+- `component:Marketing::Capability` —DOCUMENTED_BY→ `document:Roadmap::Discovery::Capability-inventory`
 - `controller:Marketing` —TESTED_BY→ `test:Components::MarketingComponents`
 - `controller:Marketing` —TESTED_BY→ `test:Controllers::MarketingController`
 - `component:Marketing::Lifecycle` —TESTED_BY→ `test:Integration::CompatibilityLifecycleDocumentation`

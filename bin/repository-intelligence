@@ -17,6 +17,7 @@ require_relative "../lib/repository_intelligence/ai_artifact_generator"
 require_relative "../lib/repository_intelligence/mcp_server"
 require_relative "../lib/repository_intelligence/mcp_playbook_tools"
 require_relative "../lib/repository_intelligence/mcp_health_tools"
+require_relative "../lib/evolution_discovery"
 
 root = File.expand_path("..", __dir__)
 commit = ENV["GITHUB_SHA"].to_s
@@ -54,7 +55,12 @@ validation = lambda do
   drift = RepositoryIntelligence::SnapshotDrift.new(
     snapshot_path: output.join("repository-graph.json"), checksum_path: output.join("repository-graph.json.sha256")
   ).validate(graph_payload)
-  report.fetch(:findings) + drift.findings + ai_artifacts.validate
+  discovery = EvolutionDiscovery.new(repository_path: root)
+  evolution_findings = discovery.validate_artifacts +
+                       discovery.validate_assessment_areas +
+                       discovery.validate_prioritization_matrix +
+                       discovery.validate_roadmap_integration
+  report.fetch(:findings) + drift.findings + ai_artifacts.validate + evolution_findings
 end
 RepositoryIntelligence.configure(
   graph:, contracts: contracts.load, playbooks: playbooks.load, manifest:, readiness: report,
