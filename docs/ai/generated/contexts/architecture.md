@@ -4,13 +4,13 @@
 
 ## Composition
 
-- component: 56
+- component: 59
 - controller: 22
 - document: 179
 - job: 7
 - model: 24
 - policy: 6
-- test: 183
+- test: 186
 
 ## Diagram
 

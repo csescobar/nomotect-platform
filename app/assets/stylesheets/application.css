@@ -590,6 +590,30 @@ dialog.command-palette::backdrop { background: rgb(0 0 0 / 0.4); backdrop-filter
 .tree-view__toggle { background: none; border: none; padding: 0; font-size: 0.75rem; color: var(--color-text-subtle); cursor: pointer; width: 1rem; text-align: center; }
 .tree-view__label { font-size: var(--font-size-sm); color: var(--color-text); }
 
+/* ── DatePicker ─────────────────────────────────────────────────────────────── */
+.ui-date-picker { position: relative; width: 100%; }
+.ui-date-picker__input { width: 100%; min-height: var(--control-height); padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); color: var(--color-text); cursor: pointer; }
+.ui-date-picker__calendar { display: none; position: absolute; top: 100%; left: 0; margin-top: var(--space-xs); padding: var(--space-md); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); z-index: 50; width: 18rem; }
+.ui-date-picker__calendar--open { display: block; }
+.ui-date-picker__calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
+
+/* ── DateRangePicker ────────────────────────────────────────────────────────── */
+.ui-date-range-picker { position: relative; width: 100%; display: flex; flex-direction: column; gap: var(--space-xs); }
+.ui-date-range-picker__input { width: 100%; min-height: var(--control-height); padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); color: var(--color-text); cursor: pointer; }
+.ui-date-range-picker__presets { display: flex; gap: var(--space-xs); }
+.ui-date-range-picker__presets button { padding: 0.125rem var(--space-sm); border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-surface-subtle); color: var(--color-text-muted); font-size: var(--font-size-xs); cursor: pointer; transition: background var(--transition-fast); }
+.ui-date-range-picker__presets button:hover { background: var(--color-surface); color: var(--color-text); }
+
+/* ── TimePicker ─────────────────────────────────────────────────────────────── */
+.ui-time-picker { position: relative; width: 100%; }
+.ui-time-picker__input { width: 100%; min-height: var(--control-height); padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); color: var(--color-text); cursor: pointer; }
+.ui-time-picker__dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; margin-top: var(--space-xs); padding: var(--space-xs) 0; list-style: none; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); max-height: 14rem; overflow-y: auto; z-index: 50; }
+.ui-time-picker__dropdown--open { display: block; }
+.ui-time-picker__option { padding: var(--space-sm) var(--space-md); font-size: var(--font-size-sm); color: var(--color-text); cursor: pointer; transition: background var(--transition-fast); }
+.ui-time-picker__option:hover { background: var(--color-surface-subtle); }
+.ui-time-picker__option--selected { background: var(--color-accent-primary-subtle); color: var(--color-accent-primary); font-weight: 600; }
+
+
 
 
 

@@ -1,0 +1,22 @@
+schema_version: 1
+id: 226-epic-12-datetime-pickers-phase-7
+category: feature
+summary: Epic 12 Phase 7 — Native Date & Time picker ViewComponents (DatePickerComponent, DateRangePickerComponent, TimePickerComponent) under Ui::Forms namespace with Stimulus controllers, ARIA compliance, 12h/24h time formatting, range presets, and Rails hidden input synchronization.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: DatePicker implements calendar dialog role=dialog. DateRangePicker implements preset action buttons and range inputs. TimePicker implements role=listbox and role=option.

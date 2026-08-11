@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- component: Ui::Alert, Ui::Avatar, Ui::AvatarGroup, Ui::Badge, Ui::Base, Ui::Button, Ui::Card, Ui::CommandPalette, Ui::DangerZone, Ui::Data::ActivityFeed, Ui::Data::DescriptionList, Ui::Data::KpiCard, Ui::Data::Timeline, Ui::Data::TreeView, Ui::Divider, Ui::EmptyState, Ui::Forms::Autocomplete, Ui::Forms::Checkbox, Ui::Forms::Combobox, Ui::Forms::ErrorSummary, Ui::Forms::Field, Ui::Forms::FileUpload, Ui::Forms::MultiSelect, Ui::Forms::RadioGroup, Ui::Forms::TagInput, Ui::Layout::ApplicationShell, Ui::Layout::Breadcrumbs, Ui::Layout::Navigation, Ui::Layout::PageHeader, Ui::LocaleSwitcher, Ui::Pagination, Ui::PermissionIndicator, Ui::Popover, Ui::ProgressBar, Ui::ProgressSpinner, Ui::RoleBadge, Ui::Skeleton, Ui::Stepper, Ui::Tabs, Ui::ThemeSwitcher, Ui::Toast, Ui::ToastContainer, Ui::Tooltip, Ui::UserMenu
+- component: Ui::Alert, Ui::Avatar, Ui::AvatarGroup, Ui::Badge, Ui::Base, Ui::Button, Ui::Card, Ui::CommandPalette, Ui::DangerZone, Ui::Data::ActivityFeed, Ui::Data::DescriptionList, Ui::Data::KpiCard, Ui::Data::Timeline, Ui::Data::TreeView, Ui::Divider, Ui::EmptyState, Ui::Forms::Autocomplete, Ui::Forms::Checkbox, Ui::Forms::Combobox, Ui::Forms::DatePicker, Ui::Forms::DateRangePicker, Ui::Forms::ErrorSummary, Ui::Forms::Field, Ui::Forms::FileUpload, Ui::Forms::MultiSelect, Ui::Forms::RadioGroup, Ui::Forms::TagInput, Ui::Forms::TimePicker, Ui::Layout::ApplicationShell, Ui::Layout::Breadcrumbs, Ui::Layout::Navigation, Ui::Layout::PageHeader, Ui::LocaleSwitcher, Ui::Pagination, Ui::PermissionIndicator, Ui::Popover, Ui::ProgressBar, Ui::ProgressSpinner, Ui::RoleBadge, Ui::Skeleton, Ui::Stepper, Ui::Tabs, Ui::ThemeSwitcher, Ui::Toast, Ui::ToastContainer, Ui::Tooltip, Ui::UserMenu
 
 ## Source paths
 
@@ -27,12 +27,15 @@
 - `app/components/ui/forms/autocomplete_component.rb`
 - `app/components/ui/forms/checkbox_component.rb`
 - `app/components/ui/forms/combobox_component.rb`
+- `app/components/ui/forms/date_picker_component.rb`
+- `app/components/ui/forms/date_range_picker_component.rb`
 - `app/components/ui/forms/error_summary_component.rb`
 - `app/components/ui/forms/field_component.rb`
 - `app/components/ui/forms/file_upload_component.rb`
 - `app/components/ui/forms/multi_select_component.rb`
 - `app/components/ui/forms/radio_group_component.rb`
 - `app/components/ui/forms/tag_input_component.rb`
+- `app/components/ui/forms/time_picker_component.rb`
 - `app/components/ui/layout/application_shell_component.rb`
 - `app/components/ui/layout/breadcrumbs_component.rb`
 - `app/components/ui/layout/navigation_component.rb`
@@ -74,9 +77,12 @@
 - `component:Ui::Data::TreeView` —TESTED_BY→ `test:Components::Ui::Data::TreeViewComponent`
 - `component:Ui::Forms::Autocomplete` —TESTED_BY→ `test:Components::Ui::Forms::AutocompleteComponent`
 - `component:Ui::Forms::Combobox` —TESTED_BY→ `test:Components::Ui::Forms::ComboboxComponent`
+- `component:Ui::Forms::DatePicker` —TESTED_BY→ `test:Components::Ui::Forms::DatePickerComponent`
+- `component:Ui::Forms::DateRangePicker` —TESTED_BY→ `test:Components::Ui::Forms::DateRangePickerComponent`
 - `component:Ui::Forms::FileUpload` —TESTED_BY→ `test:Components::Ui::Forms::FileUploadComponent`
 - `component:Ui::Forms::MultiSelect` —TESTED_BY→ `test:Components::Ui::Forms::MultiSelectComponent`
 - `component:Ui::Forms::TagInput` —TESTED_BY→ `test:Components::Ui::Forms::TagInputComponent`
+- `component:Ui::Forms::TimePicker` —TESTED_BY→ `test:Components::Ui::Forms::TimePickerComponent`
 - `component:Ui::Layout::ApplicationShell` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
 - `component:Ui::LocaleSwitcher` —TESTED_BY→ `test:Components::Ui::LocaleSwitcherComponent`
 - `component:Ui::Pagination` —TESTED_BY→ `test:Components::Ui::PaginationComponent`
