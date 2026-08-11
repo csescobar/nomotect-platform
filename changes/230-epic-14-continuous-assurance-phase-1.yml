@@ -1,0 +1,22 @@
+schema_version: 1
+id: 230-epic-14-continuous-assurance-phase-1
+category: feature
+summary: Epic 14 Phase 1 — Continuous Assurance & Evidence introducing machine-readable assurance control contracts schema (JSON Schema v1.0), YAML controls, Assurance::Runner, executable bin/assurance CLI, and CI integration.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Introduced machine-readable assurance control contracts and executable bin/assurance CLI with CI integration.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

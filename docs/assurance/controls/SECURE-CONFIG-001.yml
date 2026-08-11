@@ -1,0 +1,14 @@
+id: SECURE-CONFIG-001
+domain: Secure Configuration
+objective: Ensure sealed registry pattern for platform configurations preventing runtime tampering.
+implementation:
+  - config/initializers/
+tests:
+  - test/lib/application_layout_config_test.rb
+evidence:
+  - docs/ai/generated/readiness-report.json
+standards_mapping:
+  common_criteria: FMT_MSA.1
+  iso15408: Management of Security Attributes
+freshness_requirements:
+  max_age_days: 30

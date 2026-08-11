@@ -1,0 +1,16 @@
+id: AUTHZ-RBAC-001
+domain: Authorization
+objective: Enforce role-based capability validation and server-side permission checks.
+implementation:
+  - app/helpers/permission_helper.rb
+  - app/components/ui/permission_indicator_component.rb
+tests:
+  - test/helpers/permission_helper_test.rb
+  - test/components/ui/permission_indicator_component_test.rb
+evidence:
+  - docs/ai/generated/readiness-report.json
+standards_mapping:
+  common_criteria: FDP_ACF.1
+  iso15408: Security Attribute-Based Access Control
+freshness_requirements:
+  max_age_days: 30

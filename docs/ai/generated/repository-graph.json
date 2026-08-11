@@ -2257,7 +2257,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "75090824d09280eacd37220e26121b1f1e48379f852770b17d26f0b907d6fb16",
+        "sha256": "6816a59f1c2427bba13ad8fcb10126996c841271ddd964d7d45c8abb924474c9",
         "source": "platform"
       }
     },
@@ -3758,6 +3758,16 @@
       "path": "test/lib/application_starter_test.rb",
       "properties": {
         "sha256": "b9e88c7fff6608b5dd5ff4105c6cbd3571f6469ddf610690ba628727e054ed34",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::AssuranceRunner",
+      "type": "test",
+      "name": "Lib::AssuranceRunner",
+      "path": "test/lib/assurance_runner_test.rb",
+      "properties": {
+        "sha256": "c8e5de8fca55a45bf3ddbf34fb629dcac210bb835e682ec7d825ac31a1b2da80",
         "source": "platform"
       }
     },
@@ -7178,5 +7188,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "5a2119ed5eb5eac11461fc8fc90a035736502650"
+  "repository_commit": "59776bfac002201dd70c172656fb0a0313335cbe"
 }

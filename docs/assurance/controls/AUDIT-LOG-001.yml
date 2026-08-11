@@ -1,0 +1,14 @@
+id: AUDIT-LOG-001
+domain: Audit Integrity
+objective: Maintain immutable append-only audit records and cryptographically certified release manifests.
+implementation:
+  - app/components/ui/data/activity_feed_component.rb
+tests:
+  - test/components/ui/data/activity_feed_component_test.rb
+evidence:
+  - docs/releases/generated/unreleased.md
+standards_mapping:
+  common_criteria: FAU_GEN.1
+  iso15408: Audit Data Generation
+freshness_requirements:
+  max_age_days: 30

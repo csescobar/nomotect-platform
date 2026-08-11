@@ -1,0 +1,14 @@
+id: SUPPLY-SCAN-001
+domain: Supply Chain
+objective: Scan dependencies for static security vulnerabilities blocking unsafe deployment.
+implementation:
+  - Gemfile.lock
+tests:
+  - test/lib/container_environment_validator_test.rb
+evidence:
+  - docs/ai/generated/readiness-report.json
+standards_mapping:
+  common_criteria: FPT_TSS.1
+  iso15408: Supply-Chain Vulnerability Protection
+freshness_requirements:
+  max_age_days: 30
