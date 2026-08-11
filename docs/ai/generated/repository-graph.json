@@ -2257,7 +2257,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "6816a59f1c2427bba13ad8fcb10126996c841271ddd964d7d45c8abb924474c9",
+        "sha256": "3902f0c21018289738b2a1d61aaa67826f5c163ded4f379a2d3456a1a3a4cfa6",
         "source": "platform"
       }
     },
@@ -2357,7 +2357,7 @@
       "name": "Roadmap::Platform-evolution-roadmap",
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "properties": {
-        "sha256": "058dc1c25f8e41e57d2449ca64281f854f49eca4a1359eaa05e0c3c108d1798c",
+        "sha256": "4effe2e63af29f6dcf1f387ee92c7a6b13ab6f78e784c46a3bec126f809635df",
         "source": "platform"
       }
     },
@@ -3758,6 +3758,16 @@
       "path": "test/lib/application_starter_test.rb",
       "properties": {
         "sha256": "b9e88c7fff6608b5dd5ff4105c6cbd3571f6469ddf610690ba628727e054ed34",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::AssuranceFreshnessChecker",
+      "type": "test",
+      "name": "Lib::AssuranceFreshnessChecker",
+      "path": "test/lib/assurance_freshness_checker_test.rb",
+      "properties": {
+        "sha256": "ba18f43b97481aaa39383822b342704e9a05c193f0be9aa21fe57fcee208f111",
         "source": "platform"
       }
     },
@@ -7188,5 +7198,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "59776bfac002201dd70c172656fb0a0313335cbe"
+  "repository_commit": "ee1f92597554e7b0f477499a07a9876788885a4a"
 }

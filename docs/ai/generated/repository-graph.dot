@@ -375,6 +375,7 @@ digraph repository {
   "test:Lib::ApplicationRegistrations" [label="Lib::ApplicationRegistrations"];
   "test:Lib::ApplicationSkeletonDocumentationSanitization" [label="Lib::ApplicationSkeletonDocumentationSanitization"];
   "test:Lib::ApplicationStarter" [label="Lib::ApplicationStarter"];
+  "test:Lib::AssuranceFreshnessChecker" [label="Lib::AssuranceFreshnessChecker"];
   "test:Lib::AssuranceRunner" [label="Lib::AssuranceRunner"];
   "test:Lib::CleanStarterOnboarding" [label="Lib::CleanStarterOnboarding"];
   "test:Lib::ContainerEnvironmentValidator" [label="Lib::ContainerEnvironmentValidator"];

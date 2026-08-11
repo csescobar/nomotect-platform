@@ -1,0 +1,22 @@
+schema_version: 1
+id: 231-epic-14-continuous-assurance-phase-2
+category: feature
+summary: Epic 14 Phase 2 — Continuous Assurance & Evidence completing Assurance::FreshnessChecker with fail-closed stale evidence validation and end-to-end evidence graph traceability CLI (bin/assurance --graph).
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Completed Assurance::FreshnessChecker evidence validation engine and bin/assurance --graph traceability tree renderer.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

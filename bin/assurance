@@ -10,6 +10,20 @@ puts "╚═══════════════════════�
 puts ""
 
 runner = Assurance::Runner.new
+
+if ARGV.include?("--graph")
+  puts "Evidence Traceability Graph:"
+  puts "============================"
+  runner.evidence_graph.each do |node|
+    puts "\nControl: #{node[:id]} [#{node[:domain]}] -> #{node[:status]}"
+    node[:pipeline].each_with_index do |step, idx|
+      prefix = idx == node[:pipeline].length - 1 ? "└── " : "├── "
+      puts "  #{prefix}#{step}"
+    end
+  end
+  exit 0
+end
+
 summary = runner.domain_summary
 all_passed = true
 

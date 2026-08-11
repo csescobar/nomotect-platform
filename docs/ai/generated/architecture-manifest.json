@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "59776bfac002201dd70c172656fb0a0313335cbe",
+  "repository_commit": "ee1f92597554e7b0f477499a07a9876788885a4a",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -3341,7 +3341,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "6816a59f1c2427bba13ad8fcb10126996c841271ddd964d7d45c8abb924474c9"
+      "sha256": "3902f0c21018289738b2a1d61aaa67826f5c163ded4f379a2d3456a1a3a4cfa6"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3396,7 +3396,7 @@
     {
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "kind": "documentation",
-      "sha256": "058dc1c25f8e41e57d2449ca64281f854f49eca4a1359eaa05e0c3c108d1798c"
+      "sha256": "4effe2e63af29f6dcf1f387ee92c7a6b13ab6f78e784c46a3bec126f809635df"
     },
     {
       "path": "docs/roadmap/roadmap.md",
@@ -3549,9 +3549,14 @@
       "sha256": "458209c49a716cbfed65c64347c178e896a3ccb8e223aa73075caa84934219dc"
     },
     {
+      "path": "lib/assurance/freshness_checker.rb",
+      "kind": "source",
+      "sha256": "0678a5c28df8e26a2f3b2053c0e40130175e5b40b58a49f5dd21af3cd13e9ae5"
+    },
+    {
       "path": "lib/assurance/runner.rb",
       "kind": "source",
-      "sha256": "f1d54e78776e9006f62ef2d611b46ee0fdd3a069b362e348084c6d67b29d237c"
+      "sha256": "b875a0eb7ba1b48c8d701a79e826c327485eb8704ea3e05660f38171463a942e"
     },
     {
       "path": "lib/container_environment_validator.rb",
@@ -4097,6 +4102,11 @@
       "path": "test/lib/application_starter_test.rb",
       "kind": "test",
       "sha256": "b9e88c7fff6608b5dd5ff4105c6cbd3571f6469ddf610690ba628727e054ed34"
+    },
+    {
+      "path": "test/lib/assurance_freshness_checker_test.rb",
+      "kind": "test",
+      "sha256": "ba18f43b97481aaa39383822b342704e9a05c193f0be9aa21fe57fcee208f111"
     },
     {
       "path": "test/lib/assurance_runner_test.rb",
