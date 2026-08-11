@@ -72,6 +72,7 @@
 - Complete Post-1.0 Evolution Discovery capability assessment, gap analysis, prioritization matrix, and automated validator. (`214-post-1-0-evolution-discovery`)
 - Implement Epic 11 Phase 1 persistent RBAC models (Role, Permission, RolePermission), PermissionRegistry, and domain operations. (`215-epic-11-persistent-rbac-phase-1`)
 - Complete Epic 11 Phase 2 PermissionRegistry enrichment with metadata schemas, security classifications, and database synchronization. (`216-epic-11-permission-registry-phase-2`)
+- Complete Epic 11 Phase 3 permission-aware application behavior in ActionPolicy policies and PermissionHelper view utilities. (`217-epic-11-permission-aware-behavior-phase-3`)
 
 ### Fixed
 
@@ -208,6 +209,7 @@
 - **Security — 186-align-application-starter-push-filter:** This workflow trigger change does not alter starter contents, initialization behavior or authorization boundaries.
 - **Security — 215-epic-11-persistent-rbac-phase-1:** Enforces code-backed PermissionRegistry fail-closed authorization checks and protected system role safeguards.
 - **Security — 216-epic-11-permission-registry-phase-2:** Enforces validated security classification enums (standard, sensitive, critical) and fail-closed permission checking.
+- **Security — 217-epic-11-permission-aware-behavior-phase-3:** Enforces granular membership.permitted? authorization across CustomerPolicy, MembershipPolicy, RolePolicy, OrganizationPolicy, and PermissionHelper.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

@@ -1967,7 +1967,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "016cf295c0a4b3552e48ac0fdca32473cac14117d73ebf1fff613fcd83c213a8",
+        "sha256": "2acc7ef446a5566f781fc3d4c2549da13ae290381f16329c831d374ee084dec5",
         "source": "platform"
       }
     },
@@ -2637,7 +2637,17 @@
       "name": "Customer",
       "path": "app/policies/customer_policy.rb",
       "properties": {
-        "sha256": "b2d994e5cc85856b58a5ee0cbd3316b5a8e2768ddba760b2eddc2c2e0d932ec3",
+        "sha256": "3848e17110bb67e6357ddcbbf7bb9aabc35b576d1eff1ea5eb4f52c6ebdb78d9",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "policy:Membership",
+      "type": "policy",
+      "name": "Membership",
+      "path": "app/policies/membership_policy.rb",
+      "properties": {
+        "sha256": "5ae5a2acb3328959196f41d7729e8650f5bb5d6a541cf39d16051440e2ee70d1",
         "source": "platform"
       }
     },
@@ -2647,7 +2657,17 @@
       "name": "Organization",
       "path": "app/policies/organization_policy.rb",
       "properties": {
-        "sha256": "a0fcbfc8a9540b4634b3df8ffcc193c347c79de810980b232ad4385ccf81513e",
+        "sha256": "85695d95919171b9e2ccb290a10960ce35b8b778176c488ffc8e44299b70a6c5",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "policy:Role",
+      "type": "policy",
+      "name": "Role",
+      "path": "app/policies/role_policy.rb",
+      "properties": {
+        "sha256": "8a7c4d0e96d0cc92882196bc2edfa6cb00db3b09db54608f6d4dca65d1c13934",
         "source": "platform"
       }
     },
@@ -2918,6 +2938,16 @@
       "path": "test/helpers/localization_helper_test.rb",
       "properties": {
         "sha256": "a485809a09bae47408d4b2174bdf91732a96e92b11625b2828207722939d7584",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Helpers::PermissionHelper",
+      "type": "test",
+      "name": "Helpers::PermissionHelper",
+      "path": "test/helpers/permission_helper_test.rb",
+      "properties": {
+        "sha256": "fc2cbf27c94e01ddfb2121e588544b87ef4566f1189d3e5c19a167f8480df922",
         "source": "platform"
       }
     },
@@ -3428,6 +3458,26 @@
       "path": "test/operations/roles_test.rb",
       "properties": {
         "sha256": "32e27b948654119fe62ee86e5cd24fdef571256022958482c1b8497f1096a4ff",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Policies::CustomerPolicy",
+      "type": "test",
+      "name": "Policies::CustomerPolicy",
+      "path": "test/policies/customer_policy_test.rb",
+      "properties": {
+        "sha256": "16ced2ec8ab441f5f8b97e7359245823bc7fbc0f02c8f763ed10ed253d69d72e",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Policies::MembershipPolicy",
+      "type": "test",
+      "name": "Policies::MembershipPolicy",
+      "path": "test/policies/membership_policy_test.rb",
+      "properties": {
+        "sha256": "898f6d8ae586c96f50315fc8bed2c0f1aa5725a7511fe44cc6a5b176ad3ad244",
         "source": "platform"
       }
     },
@@ -5694,8 +5744,20 @@
       "properties": {}
     },
     {
+      "from": "model:Customer",
+      "to": "test:Policies::CustomerPolicy",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "model:GridSavedView",
       "to": "test:Models::GridSavedView",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:Membership",
+      "to": "test:Policies::MembershipPolicy",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5745,6 +5807,12 @@
       "from": "model:Permission",
       "to": "document:Validation::Findings::Bug-002-bin-ci-executable-permission",
       "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:Permission",
+      "to": "test:Helpers::PermissionHelper",
+      "type": "TESTED_BY",
       "properties": {}
     },
     {
@@ -5940,6 +6008,18 @@
       "properties": {}
     },
     {
+      "from": "policy:Customer",
+      "to": "test:Policies::CustomerPolicy",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Membership",
+      "to": "test:Policies::MembershipPolicy",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "policy:Organization",
       "to": "document:Modules::Organizations::AiContext",
       "type": "DOCUMENTED_BY",
@@ -5970,6 +6050,30 @@
       "properties": {}
     },
     {
+      "from": "policy:Role",
+      "to": "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Role",
+      "to": "test:Models::PlatformRole",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Role",
+      "to": "test:Models::Role",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Role",
+      "to": "test:Operations::Roles",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "policy:StoredFile",
       "to": "test:Controllers::StoredFilesController",
       "type": "TESTED_BY",
@@ -5996,6 +6100,12 @@
     {
       "from": "test:Models::Customer",
       "to": "test:Operations::CustomersOperations",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Models::Customer",
+      "to": "test:Policies::CustomerPolicy",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -6156,5 +6266,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "fd7571ce6ccc88b6bcc3880d1109cec3d4bf5f89"
+  "repository_commit": "60ff0a289054f780d1cf76bfc58ba8bef579ee8e"
 }

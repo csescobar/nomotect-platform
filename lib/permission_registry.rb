@@ -57,8 +57,8 @@ class PermissionRegistry
     def default_permissions
       list = [
         Entry.new("customers.read", "Read Customers", "customers", "Allows viewing customer records", "standard", "all", "1.0.0"),
-        Entry.new("customers.create", "Create Customers", "customers", "Allows creating new customers", "standard", "all", "1.0.0"),
-        Entry.new("customers.update", "Update Customers", "customers", "Allows editing customer details", "standard", "all", "1.0.0"),
+        Entry.new("customers.create", "Create Customers", "customers", "Allows creating new customers", "standard", "admin_only", "1.0.0"),
+        Entry.new("customers.update", "Update Customers", "customers", "Allows editing customer details", "standard", "admin_only", "1.0.0"),
         Entry.new("customers.delete", "Delete Customers", "customers", "Allows deleting customer records", "sensitive", "admin_only", "1.0.0"),
 
         Entry.new("members.read", "Read Members", "members", "Allows viewing organization members", "standard", "all", "1.0.0"),

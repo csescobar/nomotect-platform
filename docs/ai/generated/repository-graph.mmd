@@ -263,7 +263,9 @@ graph TD
   n_model_WebhookEndpoint["WebhookEndpoint"]
   n_policy_Application["Application"]
   n_policy_Customer["Customer"]
+  n_policy_Membership["Membership"]
   n_policy_Organization["Organization"]
+  n_policy_Role["Role"]
   n_policy_StoredFile["StoredFile"]
   n_test_Components__MarketingComponents["Components::MarketingComponents"]
   n_test_Components__Ui__ButtonComponent["Components::Ui::ButtonComponent"]
@@ -291,6 +293,7 @@ graph TD
   n_test_Controllers__StoredFilesController["Controllers::StoredFilesController"]
   n_test_Controllers__TenantSelectionsController["Controllers::TenantSelectionsController"]
   n_test_Helpers__LocalizationHelper["Helpers::LocalizationHelper"]
+  n_test_Helpers__PermissionHelper["Helpers::PermissionHelper"]
   n_test_Integration__ApplicationExtensionSample["Integration::ApplicationExtensionSample"]
   n_test_Integration__ApplicationLayerBootstrap["Integration::ApplicationLayerBootstrap"]
   n_test_Integration__CommercialReadinessCertification["Integration::CommercialReadinessCertification"]
@@ -342,6 +345,8 @@ graph TD
   n_test_Models__UserLocalization["Models::UserLocalization"]
   n_test_Operations__CustomersOperations["Operations::CustomersOperations"]
   n_test_Operations__Roles["Operations::Roles"]
+  n_test_Policies__CustomerPolicy["Policies::CustomerPolicy"]
+  n_test_Policies__MembershipPolicy["Policies::MembershipPolicy"]
   n_test_Requests__SecurityHeaders["Requests::SecurityHeaders"]
   n_test_Services__ApplicationLayer__Certification["Services::ApplicationLayer::Certification"]
   n_test_Services__CommercialReadiness__EntitlementResolver["Services::CommercialReadiness::EntitlementResolver"]
@@ -668,7 +673,9 @@ graph TD
   n_model_Customer -->|TESTED_BY| n_test_Controllers__CustomersController
   n_model_Customer -->|TESTED_BY| n_test_Models__Customer
   n_model_Customer -->|TESTED_BY| n_test_Operations__CustomersOperations
+  n_model_Customer -->|TESTED_BY| n_test_Policies__CustomerPolicy
   n_model_GridSavedView -->|TESTED_BY| n_test_Models__GridSavedView
+  n_model_Membership -->|TESTED_BY| n_test_Policies__MembershipPolicy
   n_model_Notification -->|DOCUMENTED_BY| n_document_Modules__EnterpriseServices__Notifications
   n_model_Organization -->|DOCUMENTED_BY| n_document_Modules__Organizations__AiContext
   n_model_Organization -->|TESTED_BY| n_test_Controllers__OrganizationMemberAdministration
@@ -677,6 +684,7 @@ graph TD
   n_model_Organization -->|TESTED_BY| n_test_Models__OrganizationInvitation
   n_model_OrganizationInvitation -->|TESTED_BY| n_test_Models__OrganizationInvitation
   n_model_Permission -->|DOCUMENTED_BY| n_document_Validation__Findings__Bug_002_bin_ci_executable_permission
+  n_model_Permission -->|TESTED_BY| n_test_Helpers__PermissionHelper
   n_model_Permission -->|TESTED_BY| n_test_Lib__PermissionRegistry
   n_model_Permission -->|TESTED_BY| n_test_Models__Permission
   n_model_PlatformRole -->|TESTED_BY| n_test_Models__PlatformRole
@@ -709,16 +717,23 @@ graph TD
   n_policy_Customer -->|TESTED_BY| n_test_Controllers__CustomersController
   n_policy_Customer -->|TESTED_BY| n_test_Models__Customer
   n_policy_Customer -->|TESTED_BY| n_test_Operations__CustomersOperations
+  n_policy_Customer -->|TESTED_BY| n_test_Policies__CustomerPolicy
+  n_policy_Membership -->|TESTED_BY| n_test_Policies__MembershipPolicy
   n_policy_Organization -->|DOCUMENTED_BY| n_document_Modules__Organizations__AiContext
   n_policy_Organization -->|TESTED_BY| n_test_Controllers__OrganizationMemberAdministration
   n_policy_Organization -->|TESTED_BY| n_test_Controllers__OrganizationsController
   n_policy_Organization -->|TESTED_BY| n_test_Models__Organization
   n_policy_Organization -->|TESTED_BY| n_test_Models__OrganizationInvitation
+  n_policy_Role -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0006_seal_application_role_and_grid_registries
+  n_policy_Role -->|TESTED_BY| n_test_Models__PlatformRole
+  n_policy_Role -->|TESTED_BY| n_test_Models__Role
+  n_policy_Role -->|TESTED_BY| n_test_Operations__Roles
   n_policy_StoredFile -->|TESTED_BY| n_test_Controllers__StoredFilesController
   n_test_Controllers__CustomLayout -->|TESTED_BY| n_test_System__CustomLayoutSystem
   n_test_Integration__ResilienceCertification -->|TESTED_BY| n_test_Services__Epic10__OperationalResilienceCertification
   n_test_Lib__Platform__Version -->|TESTED_BY| n_test_Services__Upgrades__Version
   n_test_Models__Customer -->|TESTED_BY| n_test_Operations__CustomersOperations
+  n_test_Models__Customer -->|TESTED_BY| n_test_Policies__CustomerPolicy
   n_test_Models__Role -->|TESTED_BY| n_test_Operations__Roles
   n_test_Services__ApplicationLayer__Certification -->|TESTED_BY| n_test_Services__Epic10__AccessibilityCertification
   n_test_Services__ApplicationLayer__Certification -->|TESTED_BY| n_test_Services__Epic10__AiReadinessCertification

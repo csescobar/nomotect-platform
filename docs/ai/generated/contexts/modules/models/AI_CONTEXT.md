@@ -31,12 +31,15 @@
 - `model:Permission` —TESTED_BY→ `test:Models::Permission`
 - `model:PlatformRole` —TESTED_BY→ `test:Models::PlatformRole`
 - `model:Role` —TESTED_BY→ `test:Models::PlatformRole`
+- `policy:Role` —TESTED_BY→ `test:Models::PlatformRole`
 - `model:Role` —TESTED_BY→ `test:Models::Role`
+- `policy:Role` —TESTED_BY→ `test:Models::Role`
 - `model:User` —TESTED_BY→ `test:Models::UserLocalization`
 - `document:Design-system::Localization` —TESTED_BY→ `test:Models::UserLocalization`
 - `model:User` —TESTED_BY→ `test:Models::User`
 - `test:Models::Customer` —TESTED_BY→ `test:Operations::CustomersOperations`
 - `test:Models::Role` —TESTED_BY→ `test:Operations::Roles`
+- `test:Models::Customer` —TESTED_BY→ `test:Policies::CustomerPolicy`
 
 ## Contract
 

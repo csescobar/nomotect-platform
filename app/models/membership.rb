@@ -19,8 +19,15 @@ class Membership < ApplicationRecord
   def admin? = role.in?(%w[owner admin])
   def permitted?(permission)
     return role_record.permitted?(permission) if role_record.present?
+    return false unless PermissionRegistry.registered?(permission)
+    return true if owner?
 
-    ApplicationRoles.permission?(role, permission)
+    entry = PermissionRegistry.fetch(permission)
+    if admin?
+      entry.default_availability != "owner_only"
+    else
+      entry.default_availability == "all"
+    end
   end
 
   private

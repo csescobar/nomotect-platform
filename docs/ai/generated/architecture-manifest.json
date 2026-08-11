@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "fd7571ce6ccc88b6bcc3880d1109cec3d4bf5f89",
+  "repository_commit": "60ff0a289054f780d1cf76bfc58ba8bef579ee8e",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -414,6 +414,11 @@
       "sha256": "6dac889f4b64a214d72dc96a13866fd27557ee3861550a71e714ed6ed784567f"
     },
     {
+      "path": "app/helpers/permission_helper.rb",
+      "kind": "source",
+      "sha256": "a45312253ad4412a72c1b881c36cae705007c0ab3ae54b4683855def9c632b74"
+    },
+    {
       "path": "app/javascript/application.js",
       "kind": "source",
       "sha256": "455f122cebf8c1a7be1836dbca0bd59061e1a6a64dd674dc8bbbf92dbf464f31"
@@ -806,12 +811,22 @@
     {
       "path": "app/policies/customer_policy.rb",
       "kind": "policy",
-      "sha256": "b2d994e5cc85856b58a5ee0cbd3316b5a8e2768ddba760b2eddc2c2e0d932ec3"
+      "sha256": "3848e17110bb67e6357ddcbbf7bb9aabc35b576d1eff1ea5eb4f52c6ebdb78d9"
+    },
+    {
+      "path": "app/policies/membership_policy.rb",
+      "kind": "policy",
+      "sha256": "5ae5a2acb3328959196f41d7729e8650f5bb5d6a541cf39d16051440e2ee70d1"
     },
     {
       "path": "app/policies/organization_policy.rb",
       "kind": "policy",
-      "sha256": "a0fcbfc8a9540b4634b3df8ffcc193c347c79de810980b232ad4385ccf81513e"
+      "sha256": "85695d95919171b9e2ccb290a10960ce35b8b778176c488ffc8e44299b70a6c5"
+    },
+    {
+      "path": "app/policies/role_policy.rb",
+      "kind": "policy",
+      "sha256": "8a7c4d0e96d0cc92882196bc2edfa6cb00db3b09db54608f6d4dca65d1c13934"
     },
     {
       "path": "app/policies/stored_file_policy.rb",
@@ -3071,7 +3086,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "016cf295c0a4b3552e48ac0fdca32473cac14117d73ebf1fff613fcd83c213a8"
+      "sha256": "2acc7ef446a5566f781fc3d4c2549da13ae290381f16329c831d374ee084dec5"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3554,6 +3569,11 @@
       "sha256": "a485809a09bae47408d4b2174bdf91732a96e92b11625b2828207722939d7584"
     },
     {
+      "path": "test/helpers/permission_helper_test.rb",
+      "kind": "test",
+      "sha256": "fc2cbf27c94e01ddfb2121e588544b87ef4566f1189d3e5c19a167f8480df922"
+    },
+    {
       "path": "test/integration/application_extension_sample_test.rb",
       "kind": "test",
       "sha256": "9f1efb67e44d598efd933e6a59963275f567175fd713ba7b04a80db25b17737f"
@@ -3807,6 +3827,16 @@
       "path": "test/operations/roles_test.rb",
       "kind": "test",
       "sha256": "32e27b948654119fe62ee86e5cd24fdef571256022958482c1b8497f1096a4ff"
+    },
+    {
+      "path": "test/policies/customer_policy_test.rb",
+      "kind": "test",
+      "sha256": "16ced2ec8ab441f5f8b97e7359245823bc7fbc0f02c8f763ed10ed253d69d72e"
+    },
+    {
+      "path": "test/policies/membership_policy_test.rb",
+      "kind": "test",
+      "sha256": "898f6d8ae586c96f50315fc8bed2c0f1aa5725a7511fe44cc6a5b176ad3ad244"
     },
     {
       "path": "test/requests/security_headers_test.rb",

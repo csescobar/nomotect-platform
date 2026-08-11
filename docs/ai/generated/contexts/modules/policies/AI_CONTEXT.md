@@ -1,19 +1,21 @@
-# Membership AI Context
+# Policies AI Context
 
 > Generated artifact. Source changes must be followed by regeneration.
 
 ## Responsibilities
 
-- model: Membership
-- policy: Membership
+- test: Policies::CustomerPolicy, Policies::MembershipPolicy
 
 ## Source paths
 
-- `app/models/membership.rb`
-- `app/policies/membership_policy.rb`
+- `test/policies/customer_policy_test.rb`
+- `test/policies/membership_policy_test.rb`
 
 ## Relationships
 
+- `model:Customer` —TESTED_BY→ `test:Policies::CustomerPolicy`
+- `policy:Customer` —TESTED_BY→ `test:Policies::CustomerPolicy`
+- `test:Models::Customer` —TESTED_BY→ `test:Policies::CustomerPolicy`
 - `model:Membership` —TESTED_BY→ `test:Policies::MembershipPolicy`
 - `policy:Membership` —TESTED_BY→ `test:Policies::MembershipPolicy`
 
