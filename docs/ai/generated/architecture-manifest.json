@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "4c70dbb15c3a5d4486a3732966cbbe6d86bb13b0",
+  "repository_commit": "f2f74c865b88ab82586cdc12c3de2da981bd08b5",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -46,7 +46,7 @@
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "cccc66d4b50465fb43d8536e12cd0cf73dd7f8662f6e337f26e3d1e9976cd2cf"
+      "sha256": "e776b109f15205ff0e6e10da78cb507729ecc30993b67440320a8d981cb0dc6c"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
@@ -222,6 +222,26 @@
       "path": "app/components/ui/danger_zone_component.rb",
       "kind": "component",
       "sha256": "2dae8c9ba478a94de3a5ac989d093f6699045ce37bf49dfdf50be2d90af9f0ce"
+    },
+    {
+      "path": "app/components/ui/data/activity_feed_component.rb",
+      "kind": "component",
+      "sha256": "d573a9a0af196e6ffebd26699d1f034c1e8e2603c1542b17b8626a2903cc6bc1"
+    },
+    {
+      "path": "app/components/ui/data/description_list_component.rb",
+      "kind": "component",
+      "sha256": "db3bb630beeed24787bddc894dbfd1f3b1fa3736c64e593a243e4ab3b751b38f"
+    },
+    {
+      "path": "app/components/ui/data/kpi_card_component.rb",
+      "kind": "component",
+      "sha256": "0de2e5a275c2dc2cd5c768ea2661dbe00b66df238efdcce153b0db95086e0c2a"
+    },
+    {
+      "path": "app/components/ui/data/timeline_component.rb",
+      "kind": "component",
+      "sha256": "2d72fc382d1bcb7d2dc73376ac62c715bf590f1ebc0b8dd776c4f03a3d50695b"
     },
     {
       "path": "app/components/ui/divider_component.rb",
@@ -3211,7 +3231,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "17406bb240f9b4adee946dcbf84eca36ef078360b39b64553a9a0f6051e331bf"
+      "sha256": "e6928296e0ba4f73497924c49c8049ac84ca0862d7cf33906e0c654947cf182f"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3266,7 +3286,7 @@
     {
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "kind": "documentation",
-      "sha256": "ef830ae0937add97e6c8f00ce5c6e11fbc15595a0ec9435982476a09ab3716b8"
+      "sha256": "51b606f34080fe0cd2584293f6960b1ecea87765251fb44abd738f9334dead66"
     },
     {
       "path": "docs/roadmap/roadmap.md",
@@ -3604,6 +3624,26 @@
       "sha256": "962345bc73731932dbed8aafc317c0e4dd1b60ce1b2d341a1af2973eba4bf77f"
     },
     {
+      "path": "test/components/ui/data/activity_feed_component_test.rb",
+      "kind": "test",
+      "sha256": "7f4509f662d43b975a47012c3a2be01a25362366a91dd50c71719c36ee405296"
+    },
+    {
+      "path": "test/components/ui/data/description_list_component_test.rb",
+      "kind": "test",
+      "sha256": "a03c4f3731b3b7d3a919bd72abe4ae7c1311f1da48770c70c04ff2c04f3f9f20"
+    },
+    {
+      "path": "test/components/ui/data/kpi_card_component_test.rb",
+      "kind": "test",
+      "sha256": "6dc0b262d75faf3569761e336ab3a422be96dfa29d14f024cb2fb7e4ac620d89"
+    },
+    {
+      "path": "test/components/ui/data/timeline_component_test.rb",
+      "kind": "test",
+      "sha256": "2b77a632dd3216a14af696de4bce36c0bd9caa9fd2a3eddde6868aaf825dfc61"
+    },
+    {
       "path": "test/components/ui/forms/autocomplete_component_test.rb",
       "kind": "test",
       "sha256": "de17f08090aa8a143f971b793d7a1f8b27f76d0db38aaafc4fc5512ef38d0ed6"
@@ -3621,7 +3661,7 @@
     {
       "path": "test/components/ui/forms/multi_select_component_test.rb",
       "kind": "test",
-      "sha256": "601215a9b9ef510bb81073fe6124f778b87edfbb76d80aa188bc2502778c4ece"
+      "sha256": "c4ad3b52a516d90d7a92bf318810af28a924e055235ba7d710b534455fc8a692"
     },
     {
       "path": "test/components/ui/forms/tag_input_component_test.rb",

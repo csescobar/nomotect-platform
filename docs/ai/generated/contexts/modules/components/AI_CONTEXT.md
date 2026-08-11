@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- test: Components::MarketingComponents, Components::Ui::AvatarComponent, Components::Ui::AvatarGroupComponent, Components::Ui::ButtonComponent, Components::Ui::CommandPaletteComponent, Components::Ui::CoreComponents, Components::Ui::DangerZoneComponent, Components::Ui::Forms::AutocompleteComponent, Components::Ui::Forms::ComboboxComponent, Components::Ui::Forms::FormComponents, Components::Ui::Forms::MultiSelectComponent, Components::Ui::Forms::TagInputComponent, Components::Ui::Layout::ApplicationShellComponent, Components::Ui::LocaleSwitcherComponent, Components::Ui::PermissionIndicatorComponent, Components::Ui::ProgressBarComponent, Components::Ui::ProgressSpinnerComponent, Components::Ui::RoleBadgeComponent, Components::Ui::SkeletonComponent, Components::Ui::StepperComponent, Components::Ui::TabsComponent, Components::Ui::ThemeSwitcherComponent, Components::Ui::ToastComponent, Components::Ui::TooltipComponent
+- test: Components::MarketingComponents, Components::Ui::AvatarComponent, Components::Ui::AvatarGroupComponent, Components::Ui::ButtonComponent, Components::Ui::CommandPaletteComponent, Components::Ui::CoreComponents, Components::Ui::DangerZoneComponent, Components::Ui::Data::ActivityFeedComponent, Components::Ui::Data::DescriptionListComponent, Components::Ui::Data::KpiCardComponent, Components::Ui::Data::TimelineComponent, Components::Ui::Forms::AutocompleteComponent, Components::Ui::Forms::ComboboxComponent, Components::Ui::Forms::FormComponents, Components::Ui::Forms::MultiSelectComponent, Components::Ui::Forms::TagInputComponent, Components::Ui::Layout::ApplicationShellComponent, Components::Ui::LocaleSwitcherComponent, Components::Ui::PermissionIndicatorComponent, Components::Ui::ProgressBarComponent, Components::Ui::ProgressSpinnerComponent, Components::Ui::RoleBadgeComponent, Components::Ui::SkeletonComponent, Components::Ui::StepperComponent, Components::Ui::TabsComponent, Components::Ui::ThemeSwitcherComponent, Components::Ui::ToastComponent, Components::Ui::TooltipComponent
 
 ## Source paths
 
@@ -15,6 +15,10 @@
 - `test/components/ui/command_palette_component_test.rb`
 - `test/components/ui/core_components_test.rb`
 - `test/components/ui/danger_zone_component_test.rb`
+- `test/components/ui/data/activity_feed_component_test.rb`
+- `test/components/ui/data/description_list_component_test.rb`
+- `test/components/ui/data/kpi_card_component_test.rb`
+- `test/components/ui/data/timeline_component_test.rb`
 - `test/components/ui/forms/autocomplete_component_test.rb`
 - `test/components/ui/forms/combobox_component_test.rb`
 - `test/components/ui/forms/form_components_test.rb`
@@ -42,6 +46,11 @@
 - `component:Ui::Button` —TESTED_BY→ `test:Components::Ui::ButtonComponent`
 - `component:Ui::CommandPalette` —TESTED_BY→ `test:Components::Ui::CommandPaletteComponent`
 - `component:Ui::DangerZone` —TESTED_BY→ `test:Components::Ui::DangerZoneComponent`
+- `component:Ui::Data::ActivityFeed` —TESTED_BY→ `test:Components::Ui::Data::ActivityFeedComponent`
+- `component:Ui::Data::DescriptionList` —TESTED_BY→ `test:Components::Ui::Data::DescriptionListComponent`
+- `component:Ui::Card` —TESTED_BY→ `test:Components::Ui::Data::KpiCardComponent`
+- `component:Ui::Data::KpiCard` —TESTED_BY→ `test:Components::Ui::Data::KpiCardComponent`
+- `component:Ui::Data::Timeline` —TESTED_BY→ `test:Components::Ui::Data::TimelineComponent`
 - `component:Ui::Forms::Autocomplete` —TESTED_BY→ `test:Components::Ui::Forms::AutocompleteComponent`
 - `document:Design-system::Forms` —TESTED_BY→ `test:Components::Ui::Forms::AutocompleteComponent`
 - `component:Ui::Forms::Combobox` —TESTED_BY→ `test:Components::Ui::Forms::ComboboxComponent`

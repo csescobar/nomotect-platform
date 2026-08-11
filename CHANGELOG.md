@@ -80,6 +80,7 @@ Required release impact: `major`.
 - Epic 12 Phase 2 — Identity component family introducing Avatar, AvatarGroup, RoleBadge, and PermissionIndicator ViewComponents with ARIA compliance, presence status, role color mappings, and Light/Dark CSS design token integration. (`221-epic-12-identity-components-phase-2`)
 - Epic 12 Phase 3 — Feedback component family introducing ToastComponent, ToastContainerComponent, SkeletonComponent, ProgressBarComponent, ProgressSpinnerComponent, and TooltipComponent ViewComponents with ARIA compliance and CSS design token animation integration. (`222-epic-12-feedback-components-phase-3`)
 - Epic 12 Phase 4 — Input component family introducing ComboboxComponent, AutocompleteComponent, TagInputComponent, and MultiSelectComponent ViewComponents with Stimulus controllers, ARIA accessibility, and Rails form hidden input sync. (`223-epic-12-input-components-phase-4`)
+- Epic 12 Phase 5 — Final phase of Design System 2.0 introducing KpiCardComponent, TimelineComponent, ActivityFeedComponent, and DescriptionListComponent ViewComponents under Ui::Data namespace with ARIA compliance and CSS design token integration. (`224-epic-12-data-components-phase-5`)
 
 ### Fixed
 
