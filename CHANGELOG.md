@@ -106,6 +106,7 @@ Required release impact: `major`.
 - Certify adversarial tenant boundaries and reject invalid jobs before partial state is created. (`169-tenant-safety-adversarial-certification`)
 - Epic 13 Phase 1 — Security Assurance Engineering establishing Target of Evaluation (TOE) scope, trusted boundaries, threat actor taxonomy, operating environment assumptions, and protected security assets aligned with ISO/IEC 15408 / Common Criteria (ASE_INT / ASE_ECD). (`227-epic-13-security-assurance-phase-1`)
 - Epic 13 Phase 2 — Security Assurance Engineering establishing 4-tier security assurance traceability matrix (Asset -> Threat -> Security Objective -> Security Functional Requirement) across 11 core security domains aligned with ISO/IEC 15408 / Common Criteria (ASE_OBJ / ASE_REQ). (`228-epic-13-security-assurance-phase-2`)
+- Epic 13 Phases 3 and 4 — Completing Security Assurance Engineering by establishing ISO/IEC 15408 Common Criteria functional mapping (FAU, FDP, FIA, FMT, FPT) and the end-to-end executable security evidence matrix pipeline. (`229-epic-13-security-assurance-phase-3-4`)
 
 ### Documentation
 

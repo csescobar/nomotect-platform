@@ -2900,7 +2900,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "db6ce757be40299bdffeb6ec6e857b4f6b5affb20c492975cf1c15dfbc703d69",
+        "sha256": "75090824d09280eacd37220e26121b1f1e48379f852770b17d26f0b907d6fb16",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -3010,7 +3010,7 @@
       "name": "Roadmap::Platform-evolution-roadmap",
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "properties": {
-        "sha256": "51b606f34080fe0cd2584293f6960b1ecea87765251fb44abd738f9334dead66",
+        "sha256": "058dc1c25f8e41e57d2449ca64281f854f49eca4a1359eaa05e0c3c108d1798c",
         "source": "platform"
       },
       "@id": "document:Roadmap::Platform-evolution-roadmap"
@@ -3060,6 +3060,17 @@
       "@id": "document:Security::Assurance-scope-and-assets"
     },
     {
+      "id": "document:Security::Common-criteria-mapping",
+      "type": "document",
+      "name": "Security::Common-criteria-mapping",
+      "path": "docs/security/common-criteria-mapping.md",
+      "properties": {
+        "sha256": "28dff98917a7a9379ff4fe516a36d1d5248f5852c3bafdaa7aedd7af2d640c9b",
+        "source": "platform"
+      },
+      "@id": "document:Security::Common-criteria-mapping"
+    },
+    {
       "id": "document:Security::Dependency-and-supply-chain-policy",
       "type": "document",
       "name": "Security::Dependency-and-supply-chain-policy",
@@ -3091,6 +3102,17 @@
         "source": "platform"
       },
       "@id": "document:Security::Security-baseline"
+    },
+    {
+      "id": "document:Security::Security-evidence-matrix",
+      "type": "document",
+      "name": "Security::Security-evidence-matrix",
+      "path": "docs/security/security-evidence-matrix.md",
+      "properties": {
+        "sha256": "c7c26a5890380e3a4cc92c64e125209f7ead11b7159c8d27a9b44718c9d174a4",
+        "source": "platform"
+      },
+      "@id": "document:Security::Security-evidence-matrix"
     },
     {
       "id": "document:Security::Security-operations",
