@@ -212,6 +212,46 @@
       }
     },
     {
+      "id": "component:Ui::Data::ActivityFeed",
+      "type": "component",
+      "name": "Ui::Data::ActivityFeed",
+      "path": "app/components/ui/data/activity_feed_component.rb",
+      "properties": {
+        "sha256": "d573a9a0af196e6ffebd26699d1f034c1e8e2603c1542b17b8626a2903cc6bc1",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Data::DescriptionList",
+      "type": "component",
+      "name": "Ui::Data::DescriptionList",
+      "path": "app/components/ui/data/description_list_component.rb",
+      "properties": {
+        "sha256": "db3bb630beeed24787bddc894dbfd1f3b1fa3736c64e593a243e4ab3b751b38f",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Data::KpiCard",
+      "type": "component",
+      "name": "Ui::Data::KpiCard",
+      "path": "app/components/ui/data/kpi_card_component.rb",
+      "properties": {
+        "sha256": "0de2e5a275c2dc2cd5c768ea2661dbe00b66df238efdcce153b0db95086e0c2a",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Data::Timeline",
+      "type": "component",
+      "name": "Ui::Data::Timeline",
+      "path": "app/components/ui/data/timeline_component.rb",
+      "properties": {
+        "sha256": "2d72fc382d1bcb7d2dc73376ac62c715bf590f1ebc0b8dd776c4f03a3d50695b",
+        "source": "platform"
+      }
+    },
+    {
       "id": "component:Ui::Divider",
       "type": "component",
       "name": "Ui::Divider",
@@ -2137,7 +2177,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "17406bb240f9b4adee946dcbf84eca36ef078360b39b64553a9a0f6051e331bf",
+        "sha256": "e6928296e0ba4f73497924c49c8049ac84ca0862d7cf33906e0c654947cf182f",
         "source": "platform"
       }
     },
@@ -2237,7 +2277,7 @@
       "name": "Roadmap::Platform-evolution-roadmap",
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "properties": {
-        "sha256": "ef830ae0937add97e6c8f00ce5c6e11fbc15595a0ec9435982476a09ab3716b8",
+        "sha256": "51b606f34080fe0cd2584293f6960b1ecea87765251fb44abd738f9334dead66",
         "source": "platform"
       }
     },
@@ -2922,6 +2962,46 @@
       }
     },
     {
+      "id": "test:Components::Ui::Data::ActivityFeedComponent",
+      "type": "test",
+      "name": "Components::Ui::Data::ActivityFeedComponent",
+      "path": "test/components/ui/data/activity_feed_component_test.rb",
+      "properties": {
+        "sha256": "7f4509f662d43b975a47012c3a2be01a25362366a91dd50c71719c36ee405296",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::Data::DescriptionListComponent",
+      "type": "test",
+      "name": "Components::Ui::Data::DescriptionListComponent",
+      "path": "test/components/ui/data/description_list_component_test.rb",
+      "properties": {
+        "sha256": "a03c4f3731b3b7d3a919bd72abe4ae7c1311f1da48770c70c04ff2c04f3f9f20",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::Data::KpiCardComponent",
+      "type": "test",
+      "name": "Components::Ui::Data::KpiCardComponent",
+      "path": "test/components/ui/data/kpi_card_component_test.rb",
+      "properties": {
+        "sha256": "6dc0b262d75faf3569761e336ab3a422be96dfa29d14f024cb2fb7e4ac620d89",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::Data::TimelineComponent",
+      "type": "test",
+      "name": "Components::Ui::Data::TimelineComponent",
+      "path": "test/components/ui/data/timeline_component_test.rb",
+      "properties": {
+        "sha256": "2b77a632dd3216a14af696de4bce36c0bd9caa9fd2a3eddde6868aaf825dfc61",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Components::Ui::Forms::AutocompleteComponent",
       "type": "test",
       "name": "Components::Ui::Forms::AutocompleteComponent",
@@ -2957,7 +3037,7 @@
       "name": "Components::Ui::Forms::MultiSelectComponent",
       "path": "test/components/ui/forms/multi_select_component_test.rb",
       "properties": {
-        "sha256": "601215a9b9ef510bb81073fe6124f778b87edfbb76d80aa188bc2502778c4ece",
+        "sha256": "c4ad3b52a516d90d7a92bf318810af28a924e055235ba7d710b534455fc8a692",
         "source": "platform"
       }
     },
@@ -4804,6 +4884,12 @@
       "properties": {}
     },
     {
+      "from": "component:Ui::Card",
+      "to": "test:Components::Ui::Data::KpiCardComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "component:Ui::CommandPalette",
       "to": "test:Components::Ui::CommandPaletteComponent",
       "type": "TESTED_BY",
@@ -4812,6 +4898,30 @@
     {
       "from": "component:Ui::DangerZone",
       "to": "test:Components::Ui::DangerZoneComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Data::ActivityFeed",
+      "to": "test:Components::Ui::Data::ActivityFeedComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Data::DescriptionList",
+      "to": "test:Components::Ui::Data::DescriptionListComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Data::KpiCard",
+      "to": "test:Components::Ui::Data::KpiCardComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Data::Timeline",
+      "to": "test:Components::Ui::Data::TimelineComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -6790,5 +6900,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "4c70dbb15c3a5d4486a3732966cbbe6d86bb13b0"
+  "repository_commit": "f2f74c865b88ab82586cdc12c3de2da981bd08b5"
 }

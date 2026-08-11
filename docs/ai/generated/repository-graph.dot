@@ -20,6 +20,10 @@ digraph repository {
   "component:Ui::Card" [label="Ui::Card"];
   "component:Ui::CommandPalette" [label="Ui::CommandPalette"];
   "component:Ui::DangerZone" [label="Ui::DangerZone"];
+  "component:Ui::Data::ActivityFeed" [label="Ui::Data::ActivityFeed"];
+  "component:Ui::Data::DescriptionList" [label="Ui::Data::DescriptionList"];
+  "component:Ui::Data::KpiCard" [label="Ui::Data::KpiCard"];
+  "component:Ui::Data::Timeline" [label="Ui::Data::Timeline"];
   "component:Ui::Divider" [label="Ui::Divider"];
   "component:Ui::EmptyState" [label="Ui::EmptyState"];
   "component:Ui::Forms::Autocomplete" [label="Ui::Forms::Autocomplete"];
@@ -291,6 +295,10 @@ digraph repository {
   "test:Components::Ui::CommandPaletteComponent" [label="Components::Ui::CommandPaletteComponent"];
   "test:Components::Ui::CoreComponents" [label="Components::Ui::CoreComponents"];
   "test:Components::Ui::DangerZoneComponent" [label="Components::Ui::DangerZoneComponent"];
+  "test:Components::Ui::Data::ActivityFeedComponent" [label="Components::Ui::Data::ActivityFeedComponent"];
+  "test:Components::Ui::Data::DescriptionListComponent" [label="Components::Ui::Data::DescriptionListComponent"];
+  "test:Components::Ui::Data::KpiCardComponent" [label="Components::Ui::Data::KpiCardComponent"];
+  "test:Components::Ui::Data::TimelineComponent" [label="Components::Ui::Data::TimelineComponent"];
   "test:Components::Ui::Forms::AutocompleteComponent" [label="Components::Ui::Forms::AutocompleteComponent"];
   "test:Components::Ui::Forms::ComboboxComponent" [label="Components::Ui::Forms::ComboboxComponent"];
   "test:Components::Ui::Forms::FormComponents" [label="Components::Ui::Forms::FormComponents"];
@@ -493,8 +501,13 @@ digraph repository {
   "component:Ui::Base" -> "document:Validation::Release-baseline" [label="DOCUMENTED_BY"];
   "component:Ui::Base" -> "test:Services::Epic10::ReleaseBaseline" [label="TESTED_BY"];
   "component:Ui::Button" -> "test:Components::Ui::ButtonComponent" [label="TESTED_BY"];
+  "component:Ui::Card" -> "test:Components::Ui::Data::KpiCardComponent" [label="TESTED_BY"];
   "component:Ui::CommandPalette" -> "test:Components::Ui::CommandPaletteComponent" [label="TESTED_BY"];
   "component:Ui::DangerZone" -> "test:Components::Ui::DangerZoneComponent" [label="TESTED_BY"];
+  "component:Ui::Data::ActivityFeed" -> "test:Components::Ui::Data::ActivityFeedComponent" [label="TESTED_BY"];
+  "component:Ui::Data::DescriptionList" -> "test:Components::Ui::Data::DescriptionListComponent" [label="TESTED_BY"];
+  "component:Ui::Data::KpiCard" -> "test:Components::Ui::Data::KpiCardComponent" [label="TESTED_BY"];
+  "component:Ui::Data::Timeline" -> "test:Components::Ui::Data::TimelineComponent" [label="TESTED_BY"];
   "component:Ui::Forms::Autocomplete" -> "test:Components::Ui::Forms::AutocompleteComponent" [label="TESTED_BY"];
   "component:Ui::Forms::Combobox" -> "test:Components::Ui::Forms::ComboboxComponent" [label="TESTED_BY"];
   "component:Ui::Forms::MultiSelect" -> "test:Components::Ui::Forms::MultiSelectComponent" [label="TESTED_BY"];

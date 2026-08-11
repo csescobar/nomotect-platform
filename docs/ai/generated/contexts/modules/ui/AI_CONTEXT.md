@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- component: Ui::Alert, Ui::Avatar, Ui::AvatarGroup, Ui::Badge, Ui::Base, Ui::Button, Ui::Card, Ui::CommandPalette, Ui::DangerZone, Ui::Divider, Ui::EmptyState, Ui::Forms::Autocomplete, Ui::Forms::Checkbox, Ui::Forms::Combobox, Ui::Forms::ErrorSummary, Ui::Forms::Field, Ui::Forms::MultiSelect, Ui::Forms::RadioGroup, Ui::Forms::TagInput, Ui::Layout::ApplicationShell, Ui::Layout::Breadcrumbs, Ui::Layout::Navigation, Ui::Layout::PageHeader, Ui::LocaleSwitcher, Ui::PermissionIndicator, Ui::ProgressBar, Ui::ProgressSpinner, Ui::RoleBadge, Ui::Skeleton, Ui::Stepper, Ui::Tabs, Ui::ThemeSwitcher, Ui::Toast, Ui::ToastContainer, Ui::Tooltip
+- component: Ui::Alert, Ui::Avatar, Ui::AvatarGroup, Ui::Badge, Ui::Base, Ui::Button, Ui::Card, Ui::CommandPalette, Ui::DangerZone, Ui::Data::ActivityFeed, Ui::Data::DescriptionList, Ui::Data::KpiCard, Ui::Data::Timeline, Ui::Divider, Ui::EmptyState, Ui::Forms::Autocomplete, Ui::Forms::Checkbox, Ui::Forms::Combobox, Ui::Forms::ErrorSummary, Ui::Forms::Field, Ui::Forms::MultiSelect, Ui::Forms::RadioGroup, Ui::Forms::TagInput, Ui::Layout::ApplicationShell, Ui::Layout::Breadcrumbs, Ui::Layout::Navigation, Ui::Layout::PageHeader, Ui::LocaleSwitcher, Ui::PermissionIndicator, Ui::ProgressBar, Ui::ProgressSpinner, Ui::RoleBadge, Ui::Skeleton, Ui::Stepper, Ui::Tabs, Ui::ThemeSwitcher, Ui::Toast, Ui::ToastContainer, Ui::Tooltip
 
 ## Source paths
 
@@ -17,6 +17,10 @@
 - `app/components/ui/card_component.rb`
 - `app/components/ui/command_palette_component.rb`
 - `app/components/ui/danger_zone_component.rb`
+- `app/components/ui/data/activity_feed_component.rb`
+- `app/components/ui/data/description_list_component.rb`
+- `app/components/ui/data/kpi_card_component.rb`
+- `app/components/ui/data/timeline_component.rb`
 - `app/components/ui/divider_component.rb`
 - `app/components/ui/empty_state_component.rb`
 - `app/components/ui/forms/autocomplete_component.rb`
@@ -57,6 +61,11 @@
 - `component:Ui::Button` —TESTED_BY→ `test:Components::Ui::ButtonComponent`
 - `component:Ui::CommandPalette` —TESTED_BY→ `test:Components::Ui::CommandPaletteComponent`
 - `component:Ui::DangerZone` —TESTED_BY→ `test:Components::Ui::DangerZoneComponent`
+- `component:Ui::Data::ActivityFeed` —TESTED_BY→ `test:Components::Ui::Data::ActivityFeedComponent`
+- `component:Ui::Data::DescriptionList` —TESTED_BY→ `test:Components::Ui::Data::DescriptionListComponent`
+- `component:Ui::Card` —TESTED_BY→ `test:Components::Ui::Data::KpiCardComponent`
+- `component:Ui::Data::KpiCard` —TESTED_BY→ `test:Components::Ui::Data::KpiCardComponent`
+- `component:Ui::Data::Timeline` —TESTED_BY→ `test:Components::Ui::Data::TimelineComponent`
 - `component:Ui::Forms::Autocomplete` —TESTED_BY→ `test:Components::Ui::Forms::AutocompleteComponent`
 - `component:Ui::Forms::Combobox` —TESTED_BY→ `test:Components::Ui::Forms::ComboboxComponent`
 - `component:Ui::Forms::MultiSelect` —TESTED_BY→ `test:Components::Ui::Forms::MultiSelectComponent`

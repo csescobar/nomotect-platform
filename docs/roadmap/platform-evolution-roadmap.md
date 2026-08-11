@@ -234,7 +234,7 @@ persistent RBAC model and its evidence are stable.
 
 # Epic 12 — Design System 2.0
 
-**Status:** ⏳ Planned
+**Status:** ✅ Completed
 
 ## Objective
 
