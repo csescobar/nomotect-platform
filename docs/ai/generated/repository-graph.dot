@@ -336,6 +336,7 @@ digraph repository {
   "test:Lib::RepositoryIntelligenceStorage" [label="Lib::RepositoryIntelligenceStorage"];
   "test:Models::Customer" [label="Models::Customer"];
   "test:Models::GridSavedView" [label="Models::GridSavedView"];
+  "test:Models::Membership" [label="Models::Membership"];
   "test:Models::Organization" [label="Models::Organization"];
   "test:Models::OrganizationInvitation" [label="Models::OrganizationInvitation"];
   "test:Models::Permission" [label="Models::Permission"];
@@ -675,6 +676,7 @@ digraph repository {
   "model:Customer" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
   "model:Customer" -> "test:Policies::CustomerPolicy" [label="TESTED_BY"];
   "model:GridSavedView" -> "test:Models::GridSavedView" [label="TESTED_BY"];
+  "model:Membership" -> "test:Models::Membership" [label="TESTED_BY"];
   "model:Membership" -> "test:Policies::MembershipPolicy" [label="TESTED_BY"];
   "model:Notification" -> "document:Modules::EnterpriseServices::Notifications" [label="DOCUMENTED_BY"];
   "model:Organization" -> "document:Modules::Organizations::AiContext" [label="DOCUMENTED_BY"];
@@ -718,6 +720,7 @@ digraph repository {
   "policy:Customer" -> "test:Models::Customer" [label="TESTED_BY"];
   "policy:Customer" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
   "policy:Customer" -> "test:Policies::CustomerPolicy" [label="TESTED_BY"];
+  "policy:Membership" -> "test:Models::Membership" [label="TESTED_BY"];
   "policy:Membership" -> "test:Policies::MembershipPolicy" [label="TESTED_BY"];
   "policy:Organization" -> "document:Modules::Organizations::AiContext" [label="DOCUMENTED_BY"];
   "policy:Organization" -> "test:Controllers::OrganizationMemberAdministration" [label="TESTED_BY"];
@@ -734,6 +737,7 @@ digraph repository {
   "test:Lib::Platform::Version" -> "test:Services::Upgrades::Version" [label="TESTED_BY"];
   "test:Models::Customer" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
   "test:Models::Customer" -> "test:Policies::CustomerPolicy" [label="TESTED_BY"];
+  "test:Models::Membership" -> "test:Policies::MembershipPolicy" [label="TESTED_BY"];
   "test:Models::Role" -> "test:Operations::Roles" [label="TESTED_BY"];
   "test:Services::ApplicationLayer::Certification" -> "test:Services::Epic10::AccessibilityCertification" [label="TESTED_BY"];
   "test:Services::ApplicationLayer::Certification" -> "test:Services::Epic10::AiReadinessCertification" [label="TESTED_BY"];

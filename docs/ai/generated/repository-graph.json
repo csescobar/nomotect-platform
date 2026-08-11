@@ -1957,7 +1957,7 @@
       "name": "Releases::Generated::Migration-notes",
       "path": "docs/releases/generated/migration-notes.md",
       "properties": {
-        "sha256": "7b7d971d2ec9cf65c464058ad356c1f987dcceabd0ab39a90d1dd77abc65eecb",
+        "sha256": "98b18041510647b18e420dbd1a20f33f02925c4c9ba0d984a0dcdba70d4d7f0d",
         "source": "platform"
       }
     },
@@ -1967,7 +1967,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "2acc7ef446a5566f781fc3d4c2549da13ae290381f16329c831d374ee084dec5",
+        "sha256": "7292ca38e2fab1684ec761fc94041bf7c260f201bd6aaec604563be411217c27",
         "source": "platform"
       }
     },
@@ -2477,7 +2477,7 @@
       "name": "Membership",
       "path": "app/models/membership.rb",
       "properties": {
-        "sha256": "56f9dd775e74de75370bcb586df1be4d13c15c04a46a7927d3a9fe835ad1c591",
+        "sha256": "cc4972d9431bc53eca91f46e181dfafccd22e5db9da86611b725cd59c7460245",
         "source": "platform"
       }
     },
@@ -3372,6 +3372,16 @@
       }
     },
     {
+      "id": "test:Models::Membership",
+      "type": "test",
+      "name": "Models::Membership",
+      "path": "test/models/membership_test.rb",
+      "properties": {
+        "sha256": "b838a781d5d0669f2c1093e6f28d4d6d4f033bf35932d2922cec9593125706a6",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Models::Organization",
       "type": "test",
       "name": "Models::Organization",
@@ -3397,7 +3407,7 @@
       "name": "Models::Permission",
       "path": "test/models/permission_test.rb",
       "properties": {
-        "sha256": "7f03efdf1c45cd105d5e9ecf63772c93bf857c3a777c3591d93f221e6037da13",
+        "sha256": "54247c1bc5c54d68c73d576e491cca1e61e7e684106bc5f35cbffecbac84f951",
         "source": "platform"
       }
     },
@@ -3417,7 +3427,7 @@
       "name": "Models::Role",
       "path": "test/models/role_test.rb",
       "properties": {
-        "sha256": "1d651f477e6c4fad0ebfee30ab0a1be1e4e55ee4b78122c20a304e20126188b3",
+        "sha256": "1cf1b97283081bed26a246dcd3ef142dd9740980ed5a51f532197073efda8046",
         "source": "platform"
       }
     },
@@ -3457,7 +3467,7 @@
       "name": "Operations::Roles",
       "path": "test/operations/roles_test.rb",
       "properties": {
-        "sha256": "32e27b948654119fe62ee86e5cd24fdef571256022958482c1b8497f1096a4ff",
+        "sha256": "a8f860f42585cdb74b78f711f5874979f48af95513a2ad39972ab4a3fad50073",
         "source": "platform"
       }
     },
@@ -5757,6 +5767,12 @@
     },
     {
       "from": "model:Membership",
+      "to": "test:Models::Membership",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:Membership",
       "to": "test:Policies::MembershipPolicy",
       "type": "TESTED_BY",
       "properties": {}
@@ -6015,6 +6031,12 @@
     },
     {
       "from": "policy:Membership",
+      "to": "test:Models::Membership",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "policy:Membership",
       "to": "test:Policies::MembershipPolicy",
       "type": "TESTED_BY",
       "properties": {}
@@ -6106,6 +6128,12 @@
     {
       "from": "test:Models::Customer",
       "to": "test:Policies::CustomerPolicy",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "test:Models::Membership",
+      "to": "test:Policies::MembershipPolicy",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -6266,5 +6294,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "60ff0a289054f780d1cf76bfc58ba8bef579ee8e"
+  "repository_commit": "1553b572dfe65a5967f2bcf359c8a02fbd6d707d"
 }

@@ -10,6 +10,7 @@ class Membership < ApplicationRecord
   validates :user_id, uniqueness: { scope: :organization_id }
   validate :organization_must_retain_an_owner, if: :removing_owner_role?
 
+  before_validation :assign_default_role_record
   before_destroy :organization_must_retain_an_owner_before_destroy
 
   def self.roles = ApplicationRoles.keys
@@ -18,16 +19,9 @@ class Membership < ApplicationRecord
   def owner? = role == "owner"
   def admin? = role.in?(%w[owner admin])
   def permitted?(permission)
-    return role_record.permitted?(permission) if role_record.present?
-    return false unless PermissionRegistry.registered?(permission)
-    return true if owner?
+    return false if role_record.blank?
 
-    entry = PermissionRegistry.fetch(permission)
-    if admin?
-      entry.default_availability != "owner_only"
-    else
-      entry.default_availability == "all"
-    end
+    role_record.permitted?(permission)
   end
 
   private
@@ -48,5 +42,18 @@ class Membership < ApplicationRecord
 
     errors.add(:base, :last_owner)
     throw :abort
+  end
+
+  def assign_default_role_record
+    return if role.blank?
+
+    if role_changed? || role_record.blank?
+      system_role = Role.find_by(key: role, organization_id: nil)
+      if system_role.blank? || system_role.role_permissions.count == 0
+        PermissionRegistry.seed_system_roles!
+        system_role = Role.find_by(key: role, organization_id: nil)
+      end
+      self.role_record = system_role if system_role.present?
+    end
   end
 end

@@ -39,6 +39,10 @@ class PermissionRegistry
     end
 
     def seed_database!
+      seed_system_roles!
+    end
+
+    def seed_system_roles!
       entries.each do |entry|
         permission = Permission.find_or_initialize_by(key: entry.key)
         permission.name = entry.name
@@ -49,6 +53,40 @@ class PermissionRegistry
         permission.default_availability = entry.default_availability
         permission.version = entry.version
         permission.save!
+      end
+
+      system_roles = {
+        "owner" => { name: "Owner", description: "Full administrative and security control" },
+        "admin" => { name: "Admin", description: "Administrative access to organization resources" },
+        "member" => { name: "Member", description: "Standard member access" }
+      }
+
+      created_roles = {}
+      system_roles.each do |key, attrs|
+        role = Role.find_or_create_by!(key: key, organization_id: nil) do |r|
+          r.name = attrs[:name]
+          r.description = attrs[:description]
+          r.protected = true
+        end
+        role.update!(protected: true)
+        created_roles[key] = role
+      end
+
+      all_permissions = Permission.all.each_with_object({}) { |p, h| h[p.key] = p }
+
+      entries.each do |entry|
+        perm = all_permissions[entry.key]
+        next unless perm
+
+        created_roles["owner"].role_permissions.find_or_create_by!(permission: perm)
+
+        if entry.default_availability != "owner_only"
+          created_roles["admin"].role_permissions.find_or_create_by!(permission: perm)
+        end
+
+        if entry.default_availability == "all"
+          created_roles["member"].role_permissions.find_or_create_by!(permission: perm)
+        end
       end
     end
 

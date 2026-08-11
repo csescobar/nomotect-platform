@@ -74,6 +74,7 @@ Required release impact: `major`.
 - Implement Epic 11 Phase 1 persistent RBAC models (Role, Permission, RolePermission), PermissionRegistry, and domain operations. (`215-epic-11-persistent-rbac-phase-1`)
 - Complete Epic 11 Phase 2 PermissionRegistry enrichment with metadata schemas, security classifications, and database synchronization. (`216-epic-11-permission-registry-phase-2`)
 - Complete Epic 11 Phase 3 permission-aware application behavior in ActionPolicy policies and PermissionHelper view utilities. (`217-epic-11-permission-aware-behavior-phase-3`)
+- Complete Epic 11 protected system roles backfill, automatic membership role linkage, and removal of legacy string authorization fallback. (`218-epic-11-system-roles-backfill`)
 
 ### Fixed
 

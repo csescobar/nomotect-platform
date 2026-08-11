@@ -24,6 +24,9 @@ Module.prepend(TestMethodStubbing)
 module ActiveSupport
   class TestCase
     parallelize(workers: :number_of_processors)
+    parallelize_setup do |_worker|
+      PermissionRegistry.seed_system_roles!
+    end
     fixtures :all
   end
 end

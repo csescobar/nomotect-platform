@@ -18,6 +18,7 @@
 - `test:Models::Customer` —TESTED_BY→ `test:Policies::CustomerPolicy`
 - `model:Membership` —TESTED_BY→ `test:Policies::MembershipPolicy`
 - `policy:Membership` —TESTED_BY→ `test:Policies::MembershipPolicy`
+- `test:Models::Membership` —TESTED_BY→ `test:Policies::MembershipPolicy`
 
 ## Contract
 

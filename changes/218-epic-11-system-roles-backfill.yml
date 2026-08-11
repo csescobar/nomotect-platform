@@ -1,0 +1,22 @@
+schema_version: 1
+id: 218-epic-11-system-roles-backfill
+category: feature
+summary: Complete Epic 11 protected system roles backfill, automatic membership role linkage, and removal of legacy string authorization fallback.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: true
+  notes: Seeds protected system roles (owner, admin, member) with canonical permissions and backfills existing memberships.
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Enforces strict role_record presence for all authorization checks in Membership#permitted?.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
