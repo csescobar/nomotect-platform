@@ -239,9 +239,11 @@ digraph repository {
   "document:Roadmap::V1-0-0-rc1-release-gate" [label="Roadmap::V1-0-0-rc1-release-gate"];
   "document:Roadmap::V1-0-0-release-gate" [label="Roadmap::V1-0-0-release-gate"];
   "document:Security::Assurance-scope-and-assets" [label="Security::Assurance-scope-and-assets"];
+  "document:Security::Common-criteria-mapping" [label="Security::Common-criteria-mapping"];
   "document:Security::Dependency-and-supply-chain-policy" [label="Security::Dependency-and-supply-chain-policy"];
   "document:Security::Epic-7-threat-model" [label="Security::Epic-7-threat-model"];
   "document:Security::Security-baseline" [label="Security::Security-baseline"];
+  "document:Security::Security-evidence-matrix" [label="Security::Security-evidence-matrix"];
   "document:Security::Security-operations" [label="Security::Security-operations"];
   "document:Security::Threat-model" [label="Security::Threat-model"];
   "document:Security::Threats-and-security-objectives" [label="Security::Threats-and-security-objectives"];

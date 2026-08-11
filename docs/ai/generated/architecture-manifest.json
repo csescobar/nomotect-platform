@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "2743183600c6efaff0702f3efac7b1e442dba96e",
+  "repository_commit": "5a2119ed5eb5eac11461fc8fc90a035736502650",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -3306,7 +3306,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "db6ce757be40299bdffeb6ec6e857b4f6b5affb20c492975cf1c15dfbc703d69"
+      "sha256": "75090824d09280eacd37220e26121b1f1e48379f852770b17d26f0b907d6fb16"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3361,7 +3361,7 @@
     {
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "kind": "documentation",
-      "sha256": "51b606f34080fe0cd2584293f6960b1ecea87765251fb44abd738f9334dead66"
+      "sha256": "058dc1c25f8e41e57d2449ca64281f854f49eca4a1359eaa05e0c3c108d1798c"
     },
     {
       "path": "docs/roadmap/roadmap.md",
@@ -3384,6 +3384,11 @@
       "sha256": "9b6521cd459c2d79a257d828d293d1e5ddb1627752206e6738d6f610d1b006ab"
     },
     {
+      "path": "docs/security/common-criteria-mapping.md",
+      "kind": "documentation",
+      "sha256": "28dff98917a7a9379ff4fe516a36d1d5248f5852c3bafdaa7aedd7af2d640c9b"
+    },
+    {
       "path": "docs/security/dependency-and-supply-chain-policy.md",
       "kind": "documentation",
       "sha256": "6cbd0e63b7d520972c11a0d1786160e9a2f76114dc65883db9561bbf1ebccc54"
@@ -3397,6 +3402,11 @@
       "path": "docs/security/security-baseline.md",
       "kind": "documentation",
       "sha256": "2e2a184239146a03c9fcf900d67efb4ca74fa8d7948e63beca3fd9e52aaa8b3e"
+    },
+    {
+      "path": "docs/security/security-evidence-matrix.md",
+      "kind": "documentation",
+      "sha256": "c7c26a5890380e3a4cc92c64e125209f7ead11b7159c8d27a9b44718c9d174a4"
     },
     {
       "path": "docs/security/security-operations.md",

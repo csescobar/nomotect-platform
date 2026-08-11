@@ -1,0 +1,22 @@
+schema_version: 1
+id: 229-epic-13-security-assurance-phase-3-4
+category: security
+summary: Epic 13 Phases 3 and 4 — Completing Security Assurance Engineering by establishing ISO/IEC 15408 Common Criteria functional mapping (FAU, FDP, FIA, FMT, FPT) and the end-to-end executable security evidence matrix pipeline.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Established Common Criteria functional mapping in common-criteria-mapping.md and end-to-end evidence matrix in security-evidence-matrix.md with explicit disclaimer of uncertified external claims.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
