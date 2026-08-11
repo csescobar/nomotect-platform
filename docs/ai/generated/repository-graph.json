@@ -1957,7 +1957,7 @@
       "name": "Releases::Generated::Migration-notes",
       "path": "docs/releases/generated/migration-notes.md",
       "properties": {
-        "sha256": "7858a680cda42b53269f527bafc8a5aeb58071f69f5e82fc8a16fe7336c2aa6c",
+        "sha256": "2ef0667551aab6a3f5bc7527f7423186ce1eff603f3a3c52288d54c3c6efa123",
         "source": "platform"
       }
     },
@@ -1967,7 +1967,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "607831e83b6a24ba0b354cdd85e47faad255bb6715bf7692f203de2c2ea55b3b",
+        "sha256": "628b787a2236c3b273a4ad24f38c37b1381d63fb9152e2363ab58d43fb5decd6",
         "source": "platform"
       }
     },
@@ -2477,7 +2477,7 @@
       "name": "Membership",
       "path": "app/models/membership.rb",
       "properties": {
-        "sha256": "40a1e34046f06db647a8ee3ac6c5be15d15f290db1a23e0761590a9f21572872",
+        "sha256": "56f9dd775e74de75370bcb586df1be4d13c15c04a46a7927d3a9fe835ad1c591",
         "source": "platform"
       }
     },
@@ -2497,7 +2497,7 @@
       "name": "Organization",
       "path": "app/models/organization.rb",
       "properties": {
-        "sha256": "8f95334b90394c09173e973badcdbeffa1679351385adbf7971a9094c5ba1a5f",
+        "sha256": "d761ba98a48cde77e190c6729d81f4500f98b3670cc90fef842f83648b2698c0",
         "source": "platform"
       }
     },
@@ -2508,6 +2508,16 @@
       "path": "app/models/organization_invitation.rb",
       "properties": {
         "sha256": "19abd5a26f572ddba9b5142f90355baad4cae6a71cd1a953cf50477e41e37d7b",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "model:Permission",
+      "type": "model",
+      "name": "Permission",
+      "path": "app/models/permission.rb",
+      "properties": {
+        "sha256": "a9836b9633e3fbb7387e6b141ffbfd13b2f044e394e3d6005786f88d974a7d3b",
         "source": "platform"
       }
     },
@@ -2548,6 +2558,26 @@
       "path": "app/models/retention_policy.rb",
       "properties": {
         "sha256": "aa41ed8ac0234adff7125e4eb82dc407adca8a05815bc57e278e00f73cdbe998",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "model:Role",
+      "type": "model",
+      "name": "Role",
+      "path": "app/models/role.rb",
+      "properties": {
+        "sha256": "c5095c476cdf408dcb39ef669845346f37371ba93b23e65709f31a00e705248b",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "model:RolePermission",
+      "type": "model",
+      "name": "RolePermission",
+      "path": "app/models/role_permission.rb",
+      "properties": {
+        "sha256": "a5a9ddbd3f14d9fc36631992490b476f9a5b3038f3651616e1ab201825a7edc1",
         "source": "platform"
       }
     },
@@ -3322,12 +3352,32 @@
       }
     },
     {
+      "id": "test:Models::Permission",
+      "type": "test",
+      "name": "Models::Permission",
+      "path": "test/models/permission_test.rb",
+      "properties": {
+        "sha256": "7f03efdf1c45cd105d5e9ecf63772c93bf857c3a777c3591d93f221e6037da13",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Models::PlatformRole",
       "type": "test",
       "name": "Models::PlatformRole",
       "path": "test/models/platform_role_test.rb",
       "properties": {
         "sha256": "a58fab32fa4c759b5a2fbd20b005a7f66477d60675de48f57c4153cb58a71f89",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Models::Role",
+      "type": "test",
+      "name": "Models::Role",
+      "path": "test/models/role_test.rb",
+      "properties": {
+        "sha256": "1d651f477e6c4fad0ebfee30ab0a1be1e4e55ee4b78122c20a304e20126188b3",
         "source": "platform"
       }
     },
@@ -3358,6 +3408,16 @@
       "path": "test/operations/customers_operations_test.rb",
       "properties": {
         "sha256": "3a217bc8425a6fd4ab4c7d1061c039921b13d2dc1c91eba31cc66233db1e39aa",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Operations::Roles",
+      "type": "test",
+      "name": "Operations::Roles",
+      "path": "test/operations/roles_test.rb",
+      "properties": {
+        "sha256": "32e27b948654119fe62ee86e5cd24fdef571256022958482c1b8497f1096a4ff",
         "source": "platform"
       }
     },
@@ -4964,6 +5024,12 @@
       "properties": {}
     },
     {
+      "from": "document:Distribution::Operations",
+      "to": "test:Operations::Roles",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "document:Distribution::Verification",
       "to": "document:Upgrades::Post-upgrade-verification",
       "type": "DOCUMENTED_BY",
@@ -5206,6 +5272,12 @@
     {
       "from": "document:Extensions::Operations",
       "to": "test:Operations::CustomersOperations",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Extensions::Operations",
+      "to": "test:Operations::Roles",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5660,8 +5732,44 @@
       "properties": {}
     },
     {
+      "from": "model:Permission",
+      "to": "document:Validation::Findings::Bug-002-bin-ci-executable-permission",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:Permission",
+      "to": "test:Models::Permission",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "model:PlatformRole",
       "to": "test:Models::PlatformRole",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:Role",
+      "to": "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries",
+      "type": "DOCUMENTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:Role",
+      "to": "test:Models::PlatformRole",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:Role",
+      "to": "test:Models::Role",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:Role",
+      "to": "test:Operations::Roles",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5876,6 +5984,12 @@
       "properties": {}
     },
     {
+      "from": "test:Models::Role",
+      "to": "test:Operations::Roles",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "test:Services::ApplicationLayer::Certification",
       "to": "test:Services::Epic10::AccessibilityCertification",
       "type": "TESTED_BY",
@@ -6026,5 +6140,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "02f8f27637d8a98d352f6ebf13f98d04f79908d0"
+  "repository_commit": "a853d08188ce23c8081b6f0f6ed9f9c38a791271"
 }

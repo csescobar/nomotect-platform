@@ -250,10 +250,13 @@ digraph repository {
   "model:Notification" [label="Notification"];
   "model:Organization" [label="Organization"];
   "model:OrganizationInvitation" [label="OrganizationInvitation"];
+  "model:Permission" [label="Permission"];
   "model:PlatformRole" [label="PlatformRole"];
   "model:PrivacyPreference" [label="PrivacyPreference"];
   "model:PrivacyRequest" [label="PrivacyRequest"];
   "model:RetentionPolicy" [label="RetentionPolicy"];
+  "model:Role" [label="Role"];
+  "model:RolePermission" [label="RolePermission"];
   "model:Session" [label="Session"];
   "model:StoredFile" [label="StoredFile"];
   "model:User" [label="User"];
@@ -331,10 +334,13 @@ digraph repository {
   "test:Models::GridSavedView" [label="Models::GridSavedView"];
   "test:Models::Organization" [label="Models::Organization"];
   "test:Models::OrganizationInvitation" [label="Models::OrganizationInvitation"];
+  "test:Models::Permission" [label="Models::Permission"];
   "test:Models::PlatformRole" [label="Models::PlatformRole"];
+  "test:Models::Role" [label="Models::Role"];
   "test:Models::User" [label="Models::User"];
   "test:Models::UserLocalization" [label="Models::UserLocalization"];
   "test:Operations::CustomersOperations" [label="Operations::CustomersOperations"];
+  "test:Operations::Roles" [label="Operations::Roles"];
   "test:Requests::SecurityHeaders" [label="Requests::SecurityHeaders"];
   "test:Services::ApplicationLayer::Certification" [label="Services::ApplicationLayer::Certification"];
   "test:Services::CommercialReadiness::EntitlementResolver" [label="Services::CommercialReadiness::EntitlementResolver"];
@@ -551,6 +557,7 @@ digraph repository {
   "document:Distribution::Operations" -> "document:Playbooks::Ai-mcp-operations" [label="DOCUMENTED_BY"];
   "document:Distribution::Operations" -> "document:Security::Security-operations" [label="DOCUMENTED_BY"];
   "document:Distribution::Operations" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
+  "document:Distribution::Operations" -> "test:Operations::Roles" [label="TESTED_BY"];
   "document:Distribution::Verification" -> "document:Upgrades::Post-upgrade-verification" [label="DOCUMENTED_BY"];
   "document:Extensions::Architecture" -> "document:Grid::Architecture" [label="DOCUMENTED_BY"];
   "document:Extensions::Architecture" -> "document:Installation::Architecture" [label="DOCUMENTED_BY"];
@@ -592,6 +599,7 @@ digraph repository {
   "document:Extensions::Operations" -> "document:Playbooks::Ai-mcp-operations" [label="DOCUMENTED_BY"];
   "document:Extensions::Operations" -> "document:Security::Security-operations" [label="DOCUMENTED_BY"];
   "document:Extensions::Operations" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
+  "document:Extensions::Operations" -> "test:Operations::Roles" [label="TESTED_BY"];
   "document:Grid::Architecture" -> "document:Installation::Architecture" [label="DOCUMENTED_BY"];
   "document:Grid::Architecture" -> "document:Operations::Architecture" [label="DOCUMENTED_BY"];
   "document:Grid::Architecture" -> "document:Releases::Architecture" [label="DOCUMENTED_BY"];
@@ -667,7 +675,13 @@ digraph repository {
   "model:Organization" -> "test:Models::Organization" [label="TESTED_BY"];
   "model:Organization" -> "test:Models::OrganizationInvitation" [label="TESTED_BY"];
   "model:OrganizationInvitation" -> "test:Models::OrganizationInvitation" [label="TESTED_BY"];
+  "model:Permission" -> "document:Validation::Findings::Bug-002-bin-ci-executable-permission" [label="DOCUMENTED_BY"];
+  "model:Permission" -> "test:Models::Permission" [label="TESTED_BY"];
   "model:PlatformRole" -> "test:Models::PlatformRole" [label="TESTED_BY"];
+  "model:Role" -> "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries" [label="DOCUMENTED_BY"];
+  "model:Role" -> "test:Models::PlatformRole" [label="TESTED_BY"];
+  "model:Role" -> "test:Models::Role" [label="TESTED_BY"];
+  "model:Role" -> "test:Operations::Roles" [label="TESTED_BY"];
   "model:StoredFile" -> "test:Controllers::StoredFilesController" [label="TESTED_BY"];
   "model:User" -> "test:Models::User" [label="TESTED_BY"];
   "model:User" -> "test:Models::UserLocalization" [label="TESTED_BY"];
@@ -703,6 +717,7 @@ digraph repository {
   "test:Integration::ResilienceCertification" -> "test:Services::Epic10::OperationalResilienceCertification" [label="TESTED_BY"];
   "test:Lib::Platform::Version" -> "test:Services::Upgrades::Version" [label="TESTED_BY"];
   "test:Models::Customer" -> "test:Operations::CustomersOperations" [label="TESTED_BY"];
+  "test:Models::Role" -> "test:Operations::Roles" [label="TESTED_BY"];
   "test:Services::ApplicationLayer::Certification" -> "test:Services::Epic10::AccessibilityCertification" [label="TESTED_BY"];
   "test:Services::ApplicationLayer::Certification" -> "test:Services::Epic10::AiReadinessCertification" [label="TESTED_BY"];
   "test:Services::ApplicationLayer::Certification" -> "test:Services::Epic10::FunctionalFrameworkCertification" [label="TESTED_BY"];

@@ -70,6 +70,7 @@
 - Complete Release Gate v1.0.0 GA certification including GitHub Release publication, OCI container image promotion, and clean standalone bootstrap validation. (`211-v1-0-0-ga-certification`)
 - Update README.md to reflect v1.0.0 GA completion, delivery history table, and Engineering Playbooks catalog. (`212-readme-v1-0-0-ga-update`)
 - Complete Post-1.0 Evolution Discovery capability assessment, gap analysis, prioritization matrix, and automated validator. (`214-post-1-0-evolution-discovery`)
+- Implement Epic 11 Phase 1 persistent RBAC models (Role, Permission, RolePermission), PermissionRegistry, and domain operations. (`215-epic-11-persistent-rbac-phase-1`)
 
 ### Fixed
 
@@ -204,6 +205,7 @@
 - **Security — 184-remove-css-preload-warnings:** This layout metadata change does not alter request authorization, session handling or asset contents.
 - **Security — 185-responsive-grid-rendering:** This rendering-only change does not alter grid authorization, tenant scoping, query validation or export behavior.
 - **Security — 186-align-application-starter-push-filter:** This workflow trigger change does not alter starter contents, initialization behavior or authorization boundaries.
+- **Security — 215-epic-11-persistent-rbac-phase-1:** Enforces code-backed PermissionRegistry fail-closed authorization checks and protected system role safeguards.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

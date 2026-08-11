@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- test: Models::Customer, Models::GridSavedView, Models::Organization, Models::OrganizationInvitation, Models::PlatformRole, Models::User, Models::UserLocalization
+- test: Models::Customer, Models::GridSavedView, Models::Organization, Models::OrganizationInvitation, Models::Permission, Models::PlatformRole, Models::Role, Models::User, Models::UserLocalization
 
 ## Source paths
 
@@ -12,7 +12,9 @@
 - `test/models/grid_saved_view_test.rb`
 - `test/models/organization_invitation_test.rb`
 - `test/models/organization_test.rb`
+- `test/models/permission_test.rb`
 - `test/models/platform_role_test.rb`
+- `test/models/role_test.rb`
 - `test/models/user_localization_test.rb`
 - `test/models/user_test.rb`
 
@@ -26,11 +28,15 @@
 - `policy:Organization` —TESTED_BY→ `test:Models::OrganizationInvitation`
 - `model:Organization` —TESTED_BY→ `test:Models::Organization`
 - `policy:Organization` —TESTED_BY→ `test:Models::Organization`
+- `model:Permission` —TESTED_BY→ `test:Models::Permission`
 - `model:PlatformRole` —TESTED_BY→ `test:Models::PlatformRole`
+- `model:Role` —TESTED_BY→ `test:Models::PlatformRole`
+- `model:Role` —TESTED_BY→ `test:Models::Role`
 - `model:User` —TESTED_BY→ `test:Models::UserLocalization`
 - `document:Design-system::Localization` —TESTED_BY→ `test:Models::UserLocalization`
 - `model:User` —TESTED_BY→ `test:Models::User`
 - `test:Models::Customer` —TESTED_BY→ `test:Operations::CustomersOperations`
+- `test:Models::Role` —TESTED_BY→ `test:Operations::Roles`
 
 ## Contract
 

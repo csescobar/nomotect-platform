@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_27_170000) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_11_140200) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -104,17 +104,19 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_27_170000) do
     t.string "status", null: false
     t.datetime "updated_at", null: false
     t.index ["environment", "created_at"], name: "index_installation_records_on_environment_and_created_at"
-    t.check_constraint "status::text = ANY (ARRAY['migrated'::character varying, 'owner_created'::character varying, 'completed'::character varying]::text[])", name: "installation_records_status"
+    t.check_constraint "status::text = ANY (ARRAY['migrated'::character varying::text, 'owner_created'::character varying::text, 'completed'::character varying::text])", name: "installation_records_status"
   end
 
   create_table "memberships", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.bigint "organization_id", null: false
     t.string "role", default: "member", null: false
+    t.bigint "role_id"
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["organization_id", "user_id"], name: "index_memberships_on_organization_id_and_user_id", unique: true
     t.index ["organization_id"], name: "index_memberships_on_organization_id"
+    t.index ["role_id"], name: "index_memberships_on_role_id"
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
@@ -154,7 +156,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_27_170000) do
     t.string "time_zone", default: "UTC", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_organizations_on_slug", unique: true
-    t.check_constraint "theme::text = ANY (ARRAY['light'::character varying, 'dark'::character varying, 'system'::character varying]::text[])", name: "organizations_theme_check"
+    t.check_constraint "theme::text = ANY (ARRAY['light'::character varying::text, 'dark'::character varying::text, 'system'::character varying::text])", name: "organizations_theme_check"
+  end
+
+  create_table "permissions", force: :cascade do |t|
+    t.string "category", null: false
+    t.datetime "created_at", null: false
+    t.text "description"
+    t.string "key", null: false
+    t.string "name", null: false
+    t.datetime "updated_at", null: false
+    t.index ["key"], name: "index_permissions_on_key", unique: true
   end
 
   create_table "platform_roles", force: :cascade do |t|
@@ -191,8 +203,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_27_170000) do
     t.datetime "updated_at", null: false
     t.index ["organization_id"], name: "index_privacy_requests_on_organization_id"
     t.index ["requested_by_id"], name: "index_privacy_requests_on_requested_by_id"
-    t.check_constraint "kind::text = ANY (ARRAY['export'::character varying, 'anonymize'::character varying]::text[])", name: "privacy_requests_kind_check"
-    t.check_constraint "status::text = ANY (ARRAY['pending'::character varying, 'processing'::character varying, 'completed'::character varying, 'failed'::character varying]::text[])", name: "privacy_requests_status_check"
+    t.check_constraint "kind::text = ANY (ARRAY['export'::character varying::text, 'anonymize'::character varying::text])", name: "privacy_requests_kind_check"
+    t.check_constraint "status::text = ANY (ARRAY['pending'::character varying::text, 'processing'::character varying::text, 'completed'::character varying::text, 'failed'::character varying::text])", name: "privacy_requests_status_check"
   end
 
   create_table "retention_policies", force: :cascade do |t|
@@ -205,6 +217,28 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_27_170000) do
     t.index ["organization_id", "record_type"], name: "index_retention_policies_on_organization_id_and_record_type", unique: true
     t.index ["organization_id"], name: "index_retention_policies_on_organization_id"
     t.check_constraint "retention_days > 0", name: "retention_policies_positive_days"
+  end
+
+  create_table "role_permissions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "permission_id", null: false
+    t.bigint "role_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["permission_id"], name: "index_role_permissions_on_permission_id"
+    t.index ["role_id", "permission_id"], name: "index_role_permissions_on_role_id_and_permission_id", unique: true
+    t.index ["role_id"], name: "index_role_permissions_on_role_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "description"
+    t.string "key", null: false
+    t.string "name", null: false
+    t.bigint "organization_id"
+    t.boolean "protected", default: false, null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id", "key"], name: "index_roles_on_organization_id_and_key", unique: true
+    t.index ["organization_id"], name: "index_roles_on_organization_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -260,6 +294,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_27_170000) do
   add_foreign_key "import_runs", "organizations"
   add_foreign_key "import_runs", "users", column: "requested_by_id"
   add_foreign_key "memberships", "organizations"
+  add_foreign_key "memberships", "roles"
   add_foreign_key "memberships", "users"
   add_foreign_key "notifications", "organizations"
   add_foreign_key "notifications", "users", column: "recipient_id"
@@ -271,6 +306,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_27_170000) do
   add_foreign_key "privacy_requests", "organizations"
   add_foreign_key "privacy_requests", "users", column: "requested_by_id"
   add_foreign_key "retention_policies", "organizations"
+  add_foreign_key "role_permissions", "permissions", on_delete: :cascade
+  add_foreign_key "role_permissions", "roles", on_delete: :cascade
+  add_foreign_key "roles", "organizations"
   add_foreign_key "sessions", "users"
   add_foreign_key "stored_files", "organizations"
   add_foreign_key "stored_files", "users", column: "uploaded_by_id"

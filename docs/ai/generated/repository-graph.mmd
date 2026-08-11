@@ -250,10 +250,13 @@ graph TD
   n_model_Notification["Notification"]
   n_model_Organization["Organization"]
   n_model_OrganizationInvitation["OrganizationInvitation"]
+  n_model_Permission["Permission"]
   n_model_PlatformRole["PlatformRole"]
   n_model_PrivacyPreference["PrivacyPreference"]
   n_model_PrivacyRequest["PrivacyRequest"]
   n_model_RetentionPolicy["RetentionPolicy"]
+  n_model_Role["Role"]
+  n_model_RolePermission["RolePermission"]
   n_model_Session["Session"]
   n_model_StoredFile["StoredFile"]
   n_model_User["User"]
@@ -331,10 +334,13 @@ graph TD
   n_test_Models__GridSavedView["Models::GridSavedView"]
   n_test_Models__Organization["Models::Organization"]
   n_test_Models__OrganizationInvitation["Models::OrganizationInvitation"]
+  n_test_Models__Permission["Models::Permission"]
   n_test_Models__PlatformRole["Models::PlatformRole"]
+  n_test_Models__Role["Models::Role"]
   n_test_Models__User["Models::User"]
   n_test_Models__UserLocalization["Models::UserLocalization"]
   n_test_Operations__CustomersOperations["Operations::CustomersOperations"]
+  n_test_Operations__Roles["Operations::Roles"]
   n_test_Requests__SecurityHeaders["Requests::SecurityHeaders"]
   n_test_Services__ApplicationLayer__Certification["Services::ApplicationLayer::Certification"]
   n_test_Services__CommercialReadiness__EntitlementResolver["Services::CommercialReadiness::EntitlementResolver"]
@@ -551,6 +557,7 @@ graph TD
   n_document_Distribution__Operations -->|DOCUMENTED_BY| n_document_Playbooks__Ai_mcp_operations
   n_document_Distribution__Operations -->|DOCUMENTED_BY| n_document_Security__Security_operations
   n_document_Distribution__Operations -->|TESTED_BY| n_test_Operations__CustomersOperations
+  n_document_Distribution__Operations -->|TESTED_BY| n_test_Operations__Roles
   n_document_Distribution__Verification -->|DOCUMENTED_BY| n_document_Upgrades__Post_upgrade_verification
   n_document_Extensions__Architecture -->|DOCUMENTED_BY| n_document_Grid__Architecture
   n_document_Extensions__Architecture -->|DOCUMENTED_BY| n_document_Installation__Architecture
@@ -592,6 +599,7 @@ graph TD
   n_document_Extensions__Operations -->|DOCUMENTED_BY| n_document_Playbooks__Ai_mcp_operations
   n_document_Extensions__Operations -->|DOCUMENTED_BY| n_document_Security__Security_operations
   n_document_Extensions__Operations -->|TESTED_BY| n_test_Operations__CustomersOperations
+  n_document_Extensions__Operations -->|TESTED_BY| n_test_Operations__Roles
   n_document_Grid__Architecture -->|DOCUMENTED_BY| n_document_Installation__Architecture
   n_document_Grid__Architecture -->|DOCUMENTED_BY| n_document_Operations__Architecture
   n_document_Grid__Architecture -->|DOCUMENTED_BY| n_document_Releases__Architecture
@@ -667,7 +675,13 @@ graph TD
   n_model_Organization -->|TESTED_BY| n_test_Models__Organization
   n_model_Organization -->|TESTED_BY| n_test_Models__OrganizationInvitation
   n_model_OrganizationInvitation -->|TESTED_BY| n_test_Models__OrganizationInvitation
+  n_model_Permission -->|DOCUMENTED_BY| n_document_Validation__Findings__Bug_002_bin_ci_executable_permission
+  n_model_Permission -->|TESTED_BY| n_test_Models__Permission
   n_model_PlatformRole -->|TESTED_BY| n_test_Models__PlatformRole
+  n_model_Role -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0006_seal_application_role_and_grid_registries
+  n_model_Role -->|TESTED_BY| n_test_Models__PlatformRole
+  n_model_Role -->|TESTED_BY| n_test_Models__Role
+  n_model_Role -->|TESTED_BY| n_test_Operations__Roles
   n_model_StoredFile -->|TESTED_BY| n_test_Controllers__StoredFilesController
   n_model_User -->|TESTED_BY| n_test_Models__User
   n_model_User -->|TESTED_BY| n_test_Models__UserLocalization
@@ -703,6 +717,7 @@ graph TD
   n_test_Integration__ResilienceCertification -->|TESTED_BY| n_test_Services__Epic10__OperationalResilienceCertification
   n_test_Lib__Platform__Version -->|TESTED_BY| n_test_Services__Upgrades__Version
   n_test_Models__Customer -->|TESTED_BY| n_test_Operations__CustomersOperations
+  n_test_Models__Role -->|TESTED_BY| n_test_Operations__Roles
   n_test_Services__ApplicationLayer__Certification -->|TESTED_BY| n_test_Services__Epic10__AccessibilityCertification
   n_test_Services__ApplicationLayer__Certification -->|TESTED_BY| n_test_Services__Epic10__AiReadinessCertification
   n_test_Services__ApplicationLayer__Certification -->|TESTED_BY| n_test_Services__Epic10__FunctionalFrameworkCertification
