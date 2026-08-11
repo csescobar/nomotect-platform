@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "8f7a97197f00ac5b70c6b6ebfc952850555f161d",
+  "repository_commit": "588c3d5f0ab7be1340895f5cc73a52c205a07b5b",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -46,7 +46,7 @@
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "763164bf6b4bb998c0ac0f1cbf00487e5ff3f061273433363df996d0f9b44c04"
+      "sha256": "875fc3412d0788d0c55e5867394a924a39c0967792afab1fac3808910a56b3fa"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
@@ -204,6 +204,11 @@
       "sha256": "53b5b508e88b75ffd57b7facc2bf537aa2b3cf75a54380781dcc4f2e3b8d931f"
     },
     {
+      "path": "app/components/ui/command_palette_component.rb",
+      "kind": "component",
+      "sha256": "a940ed302af21e4298e8e208d1b49097f0a3139177f30c3ca22ef9c43f1cb237"
+    },
+    {
       "path": "app/components/ui/danger_zone_component.rb",
       "kind": "component",
       "sha256": "2dae8c9ba478a94de3a5ac989d093f6699045ce37bf49dfdf50be2d90af9f0ce"
@@ -262,6 +267,16 @@
       "path": "app/components/ui/locale_switcher_component.rb",
       "kind": "component",
       "sha256": "348d75b2257c1ed91f620408a18afdabe1ea5dc4fb1b33bf2030c3bc9f487582"
+    },
+    {
+      "path": "app/components/ui/stepper_component.rb",
+      "kind": "component",
+      "sha256": "3214964125fa16f2b3cad8fb461a41a0e5b0328d31add5e04f631c470c572003"
+    },
+    {
+      "path": "app/components/ui/tabs_component.rb",
+      "kind": "component",
+      "sha256": "14aa9c669f860029c7c6e9132af0ecacaefc754bcefa078604580cb23e4dd13e"
     },
     {
       "path": "app/components/ui/theme_switcher_component.rb",
@@ -434,6 +449,11 @@
       "sha256": "f5f3ef90919ac7c3f68f547f4fe767fefcd4b02dad916cad7cea44cf14492205"
     },
     {
+      "path": "app/javascript/controllers/command_palette_controller.js",
+      "kind": "source",
+      "sha256": "0502c0f929a8ca224ed77ee6c45882c72e52ee30f37f8364a91e4db3a441980f"
+    },
+    {
       "path": "app/javascript/controllers/ej2_button_controller.js",
       "kind": "source",
       "sha256": "476ab5faab390c01b86914c6178d9caebb93c2f5fd25f06ead5d93ff421402c9"
@@ -517,6 +537,16 @@
       "path": "app/javascript/controllers/navigation_drawer_controller.js",
       "kind": "source",
       "sha256": "7a94b9bb59ab584cbd9d8cd8a07de1653d5ac6075de7dd520c423ab8b04472ab"
+    },
+    {
+      "path": "app/javascript/controllers/stepper_controller.js",
+      "kind": "source",
+      "sha256": "95e73b0f109d49cb03daf5f820c431eaf50afc36b66eec4088ac088cb3fa3448"
+    },
+    {
+      "path": "app/javascript/controllers/tabs_controller.js",
+      "kind": "source",
+      "sha256": "7e085630601a8c2c7500d95bec7344269a3ef7935e234cf6dea3dba3a963573c"
     },
     {
       "path": "app/javascript/controllers/theme_controller.js",
@@ -3091,7 +3121,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "620a8ed33dbbcc3baeedb80adfe131912c90e5de7a42199baaadeda9b728aeb7"
+      "sha256": "d0752c40becc57114cd6024a027a345dd5d35d51e078c9677eefaba6a85305f0"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3459,6 +3489,11 @@
       "sha256": "8bb13fd11326e0e2509ae92e988eede71e09abbd7ab77ec169a485a4f4e47675"
     },
     {
+      "path": "test/components/ui/command_palette_component_test.rb",
+      "kind": "test",
+      "sha256": "7c75e71517804df832429987f51ee18a5de0ecc4450605f29b6a94c7be3e15db"
+    },
+    {
       "path": "test/components/ui/core_components_test.rb",
       "kind": "test",
       "sha256": "9f5b2e5afc324602646d99ea2b98258ea3e6aec04d55cc66c170d04a7e485f12"
@@ -3482,6 +3517,16 @@
       "path": "test/components/ui/locale_switcher_component_test.rb",
       "kind": "test",
       "sha256": "0782c61e1ca49b34f3750a15562467b725fe67b4b1ded91f44a8f4ceddcece1e"
+    },
+    {
+      "path": "test/components/ui/stepper_component_test.rb",
+      "kind": "test",
+      "sha256": "1e0f39ff75834f8e91921dac5d70000005918b15dff8da4ed966f939fd6cae7f"
+    },
+    {
+      "path": "test/components/ui/tabs_component_test.rb",
+      "kind": "test",
+      "sha256": "68c83e5dfc4008056655acd7e79f2657598543c1bff7f5b27bcb13c20fcb0f0c"
     },
     {
       "path": "test/components/ui/theme_switcher_component_test.rb",

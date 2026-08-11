@@ -172,6 +172,16 @@
       }
     },
     {
+      "id": "component:Ui::CommandPalette",
+      "type": "component",
+      "name": "Ui::CommandPalette",
+      "path": "app/components/ui/command_palette_component.rb",
+      "properties": {
+        "sha256": "a940ed302af21e4298e8e208d1b49097f0a3139177f30c3ca22ef9c43f1cb237",
+        "source": "platform"
+      }
+    },
+    {
       "id": "component:Ui::DangerZone",
       "type": "component",
       "name": "Ui::DangerZone",
@@ -288,6 +298,26 @@
       "path": "app/components/ui/locale_switcher_component.rb",
       "properties": {
         "sha256": "348d75b2257c1ed91f620408a18afdabe1ea5dc4fb1b33bf2030c3bc9f487582",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Stepper",
+      "type": "component",
+      "name": "Ui::Stepper",
+      "path": "app/components/ui/stepper_component.rb",
+      "properties": {
+        "sha256": "3214964125fa16f2b3cad8fb461a41a0e5b0328d31add5e04f631c470c572003",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Tabs",
+      "type": "component",
+      "name": "Ui::Tabs",
+      "path": "app/components/ui/tabs_component.rb",
+      "properties": {
+        "sha256": "14aa9c669f860029c7c6e9132af0ecacaefc754bcefa078604580cb23e4dd13e",
         "source": "platform"
       }
     },
@@ -1967,7 +1997,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "620a8ed33dbbcc3baeedb80adfe131912c90e5de7a42199baaadeda9b728aeb7",
+        "sha256": "d0752c40becc57114cd6024a027a345dd5d35d51e078c9677eefaba6a85305f0",
         "source": "platform"
       }
     },
@@ -2702,6 +2732,16 @@
       }
     },
     {
+      "id": "test:Components::Ui::CommandPaletteComponent",
+      "type": "test",
+      "name": "Components::Ui::CommandPaletteComponent",
+      "path": "test/components/ui/command_palette_component_test.rb",
+      "properties": {
+        "sha256": "7c75e71517804df832429987f51ee18a5de0ecc4450605f29b6a94c7be3e15db",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Components::Ui::CoreComponents",
       "type": "test",
       "name": "Components::Ui::CoreComponents",
@@ -2748,6 +2788,26 @@
       "path": "test/components/ui/locale_switcher_component_test.rb",
       "properties": {
         "sha256": "0782c61e1ca49b34f3750a15562467b725fe67b4b1ded91f44a8f4ceddcece1e",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::StepperComponent",
+      "type": "test",
+      "name": "Components::Ui::StepperComponent",
+      "path": "test/components/ui/stepper_component_test.rb",
+      "properties": {
+        "sha256": "1e0f39ff75834f8e91921dac5d70000005918b15dff8da4ed966f939fd6cae7f",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::TabsComponent",
+      "type": "test",
+      "name": "Components::Ui::TabsComponent",
+      "path": "test/components/ui/tabs_component_test.rb",
+      "properties": {
+        "sha256": "68c83e5dfc4008056655acd7e79f2657598543c1bff7f5b27bcb13c20fcb0f0c",
         "source": "platform"
       }
     },
@@ -4450,6 +4510,12 @@
       "properties": {}
     },
     {
+      "from": "component:Ui::CommandPalette",
+      "to": "test:Components::Ui::CommandPaletteComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "component:Ui::DangerZone",
       "to": "test:Components::Ui::DangerZoneComponent",
       "type": "TESTED_BY",
@@ -4464,6 +4530,18 @@
     {
       "from": "component:Ui::LocaleSwitcher",
       "to": "test:Components::Ui::LocaleSwitcherComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Stepper",
+      "to": "test:Components::Ui::StepperComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Tabs",
+      "to": "test:Components::Ui::TabsComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -6304,5 +6382,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "8f7a97197f00ac5b70c6b6ebfc952850555f161d"
+  "repository_commit": "588c3d5f0ab7be1340895f5cc73a52c205a07b5b"
 }

@@ -16,6 +16,7 @@ digraph repository {
   "component:Ui::Base" [label="Ui::Base"];
   "component:Ui::Button" [label="Ui::Button"];
   "component:Ui::Card" [label="Ui::Card"];
+  "component:Ui::CommandPalette" [label="Ui::CommandPalette"];
   "component:Ui::DangerZone" [label="Ui::DangerZone"];
   "component:Ui::Divider" [label="Ui::Divider"];
   "component:Ui::EmptyState" [label="Ui::EmptyState"];
@@ -28,6 +29,8 @@ digraph repository {
   "component:Ui::Layout::Navigation" [label="Ui::Layout::Navigation"];
   "component:Ui::Layout::PageHeader" [label="Ui::Layout::PageHeader"];
   "component:Ui::LocaleSwitcher" [label="Ui::LocaleSwitcher"];
+  "component:Ui::Stepper" [label="Ui::Stepper"];
+  "component:Ui::Tabs" [label="Ui::Tabs"];
   "component:Ui::ThemeSwitcher" [label="Ui::ThemeSwitcher"];
   "controller:Application" [label="Application"];
   "controller:ComponentShowcase" [label="ComponentShowcase"];
@@ -269,11 +272,14 @@ digraph repository {
   "policy:StoredFile" [label="StoredFile"];
   "test:Components::MarketingComponents" [label="Components::MarketingComponents"];
   "test:Components::Ui::ButtonComponent" [label="Components::Ui::ButtonComponent"];
+  "test:Components::Ui::CommandPaletteComponent" [label="Components::Ui::CommandPaletteComponent"];
   "test:Components::Ui::CoreComponents" [label="Components::Ui::CoreComponents"];
   "test:Components::Ui::DangerZoneComponent" [label="Components::Ui::DangerZoneComponent"];
   "test:Components::Ui::Forms::FormComponents" [label="Components::Ui::Forms::FormComponents"];
   "test:Components::Ui::Layout::ApplicationShellComponent" [label="Components::Ui::Layout::ApplicationShellComponent"];
   "test:Components::Ui::LocaleSwitcherComponent" [label="Components::Ui::LocaleSwitcherComponent"];
+  "test:Components::Ui::StepperComponent" [label="Components::Ui::StepperComponent"];
+  "test:Components::Ui::TabsComponent" [label="Components::Ui::TabsComponent"];
   "test:Components::Ui::ThemeSwitcherComponent" [label="Components::Ui::ThemeSwitcherComponent"];
   "test:Controllers::ComponentShowcaseController" [label="Controllers::ComponentShowcaseController"];
   "test:Controllers::CustomLayout" [label="Controllers::CustomLayout"];
@@ -456,9 +462,12 @@ digraph repository {
   "component:Ui::Base" -> "document:Validation::Release-baseline" [label="DOCUMENTED_BY"];
   "component:Ui::Base" -> "test:Services::Epic10::ReleaseBaseline" [label="TESTED_BY"];
   "component:Ui::Button" -> "test:Components::Ui::ButtonComponent" [label="TESTED_BY"];
+  "component:Ui::CommandPalette" -> "test:Components::Ui::CommandPaletteComponent" [label="TESTED_BY"];
   "component:Ui::DangerZone" -> "test:Components::Ui::DangerZoneComponent" [label="TESTED_BY"];
   "component:Ui::Layout::ApplicationShell" -> "test:Components::Ui::Layout::ApplicationShellComponent" [label="TESTED_BY"];
   "component:Ui::LocaleSwitcher" -> "test:Components::Ui::LocaleSwitcherComponent" [label="TESTED_BY"];
+  "component:Ui::Stepper" -> "test:Components::Ui::StepperComponent" [label="TESTED_BY"];
+  "component:Ui::Tabs" -> "test:Components::Ui::TabsComponent" [label="TESTED_BY"];
   "component:Ui::ThemeSwitcher" -> "test:Components::Ui::ThemeSwitcherComponent" [label="TESTED_BY"];
   "controller:Application" -> "document:Architecture::Application-layer" [label="DOCUMENTED_BY"];
   "controller:Application" -> "document:Architecture::Decisions::0005-use-application-layer-boundary" [label="DOCUMENTED_BY"];
