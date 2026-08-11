@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "f2f74c865b88ab82586cdc12c3de2da981bd08b5",
+  "repository_commit": "3b17f50ba2627f0009d4f1c03b9ac12d395bf5d7",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -46,7 +46,7 @@
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "e776b109f15205ff0e6e10da78cb507729ecc30993b67440320a8d981cb0dc6c"
+      "sha256": "f61a643fe8405b1b17a196187bbfbd82122493e281f0b037f0ba93695871e322"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
@@ -231,7 +231,7 @@
     {
       "path": "app/components/ui/data/description_list_component.rb",
       "kind": "component",
-      "sha256": "db3bb630beeed24787bddc894dbfd1f3b1fa3736c64e593a243e4ab3b751b38f"
+      "sha256": "3c81ca3b8e60f5b618b9aec1e2ed5d20d54c6aed8cc65e9b760f5110738a006d"
     },
     {
       "path": "app/components/ui/data/kpi_card_component.rb",
@@ -242,6 +242,11 @@
       "path": "app/components/ui/data/timeline_component.rb",
       "kind": "component",
       "sha256": "2d72fc382d1bcb7d2dc73376ac62c715bf590f1ebc0b8dd776c4f03a3d50695b"
+    },
+    {
+      "path": "app/components/ui/data/tree_view_component.rb",
+      "kind": "component",
+      "sha256": "edec0c411ea41d733030557fe28a90b66697a53411fc800d8f13a602bc758f48"
     },
     {
       "path": "app/components/ui/divider_component.rb",
@@ -277,6 +282,11 @@
       "path": "app/components/ui/forms/field_component.rb",
       "kind": "component",
       "sha256": "7d66586bc20bc17f88a3462768a5392086606543ced7d9aaabda63b2f1af725e"
+    },
+    {
+      "path": "app/components/ui/forms/file_upload_component.rb",
+      "kind": "component",
+      "sha256": "e1aab34ea317bd42ef3e44b75b06eff93eca390137506af5f5afe49550c3dbae"
     },
     {
       "path": "app/components/ui/forms/multi_select_component.rb",
@@ -319,9 +329,19 @@
       "sha256": "348d75b2257c1ed91f620408a18afdabe1ea5dc4fb1b33bf2030c3bc9f487582"
     },
     {
+      "path": "app/components/ui/pagination_component.rb",
+      "kind": "component",
+      "sha256": "5b5bb20f4483ffd736592d343ab343f072f6423945bbd8d66f89a281e707904e"
+    },
+    {
       "path": "app/components/ui/permission_indicator_component.rb",
       "kind": "component",
       "sha256": "099746830ed53f5d62a301ffa2490acc9debdc6b2021c1b1248135c061e3e616"
+    },
+    {
+      "path": "app/components/ui/popover_component.rb",
+      "kind": "component",
+      "sha256": "4686e61ce79420fa0481570d3e9a38f74e86b48a7982a660085c9b299cd1d367"
     },
     {
       "path": "app/components/ui/progress_bar_component.rb",
@@ -372,6 +392,11 @@
       "path": "app/components/ui/tooltip_component.rb",
       "kind": "component",
       "sha256": "41cde8d16d83ff9ec48830912bc7f8d9dbb222c0cc682680e573bf5d2d1e858f"
+    },
+    {
+      "path": "app/components/ui/user_menu_component.rb",
+      "kind": "component",
+      "sha256": "261d115dc7b4a1f76acf3ab0b3a9328097faa56922d9c6ab99f83807d2d1d56b"
     },
     {
       "path": "app/controllers/application_controller.rb",
@@ -614,6 +639,11 @@
       "sha256": "1e4be789c0aab6c56563adaba3bf86a596da81f8fee55458fffd84cf40d10ff1"
     },
     {
+      "path": "app/javascript/controllers/file_upload_controller.js",
+      "kind": "source",
+      "sha256": "ebfab8db6e352eb0c0a2dd040012beff623c17d18cd324b9ee3e34569b229130"
+    },
+    {
       "path": "app/javascript/controllers/image_preview_controller.js",
       "kind": "source",
       "sha256": "cce1f369bb460dc343340c0723c96849218be95b908d34cb2636624263d3ee26"
@@ -644,6 +674,11 @@
       "sha256": "7a94b9bb59ab584cbd9d8cd8a07de1653d5ac6075de7dd520c423ab8b04472ab"
     },
     {
+      "path": "app/javascript/controllers/popover_controller.js",
+      "kind": "source",
+      "sha256": "f2c67395ddd0127a7e41ccbeaa74e02ee31d723265f13b8a00a79ed375c94ef0"
+    },
+    {
       "path": "app/javascript/controllers/stepper_controller.js",
       "kind": "source",
       "sha256": "95e73b0f109d49cb03daf5f820c431eaf50afc36b66eec4088ac088cb3fa3448"
@@ -667,6 +702,16 @@
       "path": "app/javascript/controllers/toast_controller.js",
       "kind": "source",
       "sha256": "9d282cb55d378f57b4558853c439186d0999b798c9b522f7fff43bf85f788ba4"
+    },
+    {
+      "path": "app/javascript/controllers/tree_view_controller.js",
+      "kind": "source",
+      "sha256": "4fd6fda8887e258a0c1c6ef9a400e9eff77d9c6a3eb8aa58ce5aa44574b37a28"
+    },
+    {
+      "path": "app/javascript/controllers/user_menu_controller.js",
+      "kind": "source",
+      "sha256": "182281ea979e6f49afdd906cab04cda9edf620c5a1f1865ac8a2cd27a5403cd4"
     },
     {
       "path": "app/javascript/syncfusion_license.js",
@@ -3231,7 +3276,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "e6928296e0ba4f73497924c49c8049ac84ca0862d7cf33906e0c654947cf182f"
+      "sha256": "d5520260392abb903ed43d1fe33eff02909c8feaf527a722ce681b2e8744bd17"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3644,6 +3689,11 @@
       "sha256": "2b77a632dd3216a14af696de4bce36c0bd9caa9fd2a3eddde6868aaf825dfc61"
     },
     {
+      "path": "test/components/ui/data/tree_view_component_test.rb",
+      "kind": "test",
+      "sha256": "4d382c0303a4eab628e6c2783fcd4ec66e2348c4e9af12f96bf51a002bf63401"
+    },
+    {
       "path": "test/components/ui/forms/autocomplete_component_test.rb",
       "kind": "test",
       "sha256": "de17f08090aa8a143f971b793d7a1f8b27f76d0db38aaafc4fc5512ef38d0ed6"
@@ -3652,6 +3702,11 @@
       "path": "test/components/ui/forms/combobox_component_test.rb",
       "kind": "test",
       "sha256": "243735c36d7e2bbb59e54410fc5fa6b8a36b050bbcb41deef2ace62a640568a0"
+    },
+    {
+      "path": "test/components/ui/forms/file_upload_component_test.rb",
+      "kind": "test",
+      "sha256": "1f24cc7fc4044c063213ed2e7a8dc1731c2544c9ea182e0211ed0b76b24543b1"
     },
     {
       "path": "test/components/ui/forms/form_components_test.rb",
@@ -3679,9 +3734,19 @@
       "sha256": "0782c61e1ca49b34f3750a15562467b725fe67b4b1ded91f44a8f4ceddcece1e"
     },
     {
+      "path": "test/components/ui/pagination_component_test.rb",
+      "kind": "test",
+      "sha256": "bbe2d11469c5f0f0f6fabfe3f4178a82d92bf7ce798e705b73cb957143aa8395"
+    },
+    {
       "path": "test/components/ui/permission_indicator_component_test.rb",
       "kind": "test",
       "sha256": "362dd8ed11639818dfc07e2bda0f151d1f4c2a8500ea7938a9c21171163d84b3"
+    },
+    {
+      "path": "test/components/ui/popover_component_test.rb",
+      "kind": "test",
+      "sha256": "1e3028d02f95358e4889fbbe8ffd7a34e3d34c4d1a86d60f133e3fa996299374"
     },
     {
       "path": "test/components/ui/progress_bar_component_test.rb",
@@ -3727,6 +3792,11 @@
       "path": "test/components/ui/tooltip_component_test.rb",
       "kind": "test",
       "sha256": "47802327e2a5ba2d756b7c6c99290903b2755dad50320dc103f83d2ea9faebe6"
+    },
+    {
+      "path": "test/components/ui/user_menu_component_test.rb",
+      "kind": "test",
+      "sha256": "13508a02a4776efed56c8ec6978cf5e9c1b5f8a8eb113b1d28e6b44a081a5c80"
     },
     {
       "path": "test/controllers/component_showcase_controller_test.rb",

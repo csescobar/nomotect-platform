@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- component: Ui::Alert, Ui::Avatar, Ui::AvatarGroup, Ui::Badge, Ui::Base, Ui::Button, Ui::Card, Ui::CommandPalette, Ui::DangerZone, Ui::Data::ActivityFeed, Ui::Data::DescriptionList, Ui::Data::KpiCard, Ui::Data::Timeline, Ui::Divider, Ui::EmptyState, Ui::Forms::Autocomplete, Ui::Forms::Checkbox, Ui::Forms::Combobox, Ui::Forms::ErrorSummary, Ui::Forms::Field, Ui::Forms::MultiSelect, Ui::Forms::RadioGroup, Ui::Forms::TagInput, Ui::Layout::ApplicationShell, Ui::Layout::Breadcrumbs, Ui::Layout::Navigation, Ui::Layout::PageHeader, Ui::LocaleSwitcher, Ui::PermissionIndicator, Ui::ProgressBar, Ui::ProgressSpinner, Ui::RoleBadge, Ui::Skeleton, Ui::Stepper, Ui::Tabs, Ui::ThemeSwitcher, Ui::Toast, Ui::ToastContainer, Ui::Tooltip
+- component: Ui::Alert, Ui::Avatar, Ui::AvatarGroup, Ui::Badge, Ui::Base, Ui::Button, Ui::Card, Ui::CommandPalette, Ui::DangerZone, Ui::Data::ActivityFeed, Ui::Data::DescriptionList, Ui::Data::KpiCard, Ui::Data::Timeline, Ui::Data::TreeView, Ui::Divider, Ui::EmptyState, Ui::Forms::Autocomplete, Ui::Forms::Checkbox, Ui::Forms::Combobox, Ui::Forms::ErrorSummary, Ui::Forms::Field, Ui::Forms::FileUpload, Ui::Forms::MultiSelect, Ui::Forms::RadioGroup, Ui::Forms::TagInput, Ui::Layout::ApplicationShell, Ui::Layout::Breadcrumbs, Ui::Layout::Navigation, Ui::Layout::PageHeader, Ui::LocaleSwitcher, Ui::Pagination, Ui::PermissionIndicator, Ui::Popover, Ui::ProgressBar, Ui::ProgressSpinner, Ui::RoleBadge, Ui::Skeleton, Ui::Stepper, Ui::Tabs, Ui::ThemeSwitcher, Ui::Toast, Ui::ToastContainer, Ui::Tooltip, Ui::UserMenu
 
 ## Source paths
 
@@ -21,6 +21,7 @@
 - `app/components/ui/data/description_list_component.rb`
 - `app/components/ui/data/kpi_card_component.rb`
 - `app/components/ui/data/timeline_component.rb`
+- `app/components/ui/data/tree_view_component.rb`
 - `app/components/ui/divider_component.rb`
 - `app/components/ui/empty_state_component.rb`
 - `app/components/ui/forms/autocomplete_component.rb`
@@ -28,6 +29,7 @@
 - `app/components/ui/forms/combobox_component.rb`
 - `app/components/ui/forms/error_summary_component.rb`
 - `app/components/ui/forms/field_component.rb`
+- `app/components/ui/forms/file_upload_component.rb`
 - `app/components/ui/forms/multi_select_component.rb`
 - `app/components/ui/forms/radio_group_component.rb`
 - `app/components/ui/forms/tag_input_component.rb`
@@ -36,7 +38,9 @@
 - `app/components/ui/layout/navigation_component.rb`
 - `app/components/ui/layout/page_header_component.rb`
 - `app/components/ui/locale_switcher_component.rb`
+- `app/components/ui/pagination_component.rb`
 - `app/components/ui/permission_indicator_component.rb`
+- `app/components/ui/popover_component.rb`
 - `app/components/ui/progress_bar_component.rb`
 - `app/components/ui/progress_spinner_component.rb`
 - `app/components/ui/role_badge_component.rb`
@@ -47,6 +51,7 @@
 - `app/components/ui/toast_component.rb`
 - `app/components/ui/toast_container_component.rb`
 - `app/components/ui/tooltip_component.rb`
+- `app/components/ui/user_menu_component.rb`
 
 ## Relationships
 
@@ -66,13 +71,17 @@
 - `component:Ui::Card` —TESTED_BY→ `test:Components::Ui::Data::KpiCardComponent`
 - `component:Ui::Data::KpiCard` —TESTED_BY→ `test:Components::Ui::Data::KpiCardComponent`
 - `component:Ui::Data::Timeline` —TESTED_BY→ `test:Components::Ui::Data::TimelineComponent`
+- `component:Ui::Data::TreeView` —TESTED_BY→ `test:Components::Ui::Data::TreeViewComponent`
 - `component:Ui::Forms::Autocomplete` —TESTED_BY→ `test:Components::Ui::Forms::AutocompleteComponent`
 - `component:Ui::Forms::Combobox` —TESTED_BY→ `test:Components::Ui::Forms::ComboboxComponent`
+- `component:Ui::Forms::FileUpload` —TESTED_BY→ `test:Components::Ui::Forms::FileUploadComponent`
 - `component:Ui::Forms::MultiSelect` —TESTED_BY→ `test:Components::Ui::Forms::MultiSelectComponent`
 - `component:Ui::Forms::TagInput` —TESTED_BY→ `test:Components::Ui::Forms::TagInputComponent`
 - `component:Ui::Layout::ApplicationShell` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
 - `component:Ui::LocaleSwitcher` —TESTED_BY→ `test:Components::Ui::LocaleSwitcherComponent`
+- `component:Ui::Pagination` —TESTED_BY→ `test:Components::Ui::PaginationComponent`
 - `component:Ui::PermissionIndicator` —TESTED_BY→ `test:Components::Ui::PermissionIndicatorComponent`
+- `component:Ui::Popover` —TESTED_BY→ `test:Components::Ui::PopoverComponent`
 - `component:Ui::ProgressBar` —TESTED_BY→ `test:Components::Ui::ProgressBarComponent`
 - `component:Ui::ProgressSpinner` —TESTED_BY→ `test:Components::Ui::ProgressSpinnerComponent`
 - `component:Ui::Badge` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
@@ -83,6 +92,7 @@
 - `component:Ui::ThemeSwitcher` —TESTED_BY→ `test:Components::Ui::ThemeSwitcherComponent`
 - `component:Ui::Toast` —TESTED_BY→ `test:Components::Ui::ToastComponent`
 - `component:Ui::Tooltip` —TESTED_BY→ `test:Components::Ui::TooltipComponent`
+- `component:Ui::UserMenu` —TESTED_BY→ `test:Components::Ui::UserMenuComponent`
 - `component:Ui::Skeleton` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
 - `component:Ui::Base` —TESTED_BY→ `test:Services::Epic10::ReleaseBaseline`
 

@@ -227,7 +227,7 @@
       "name": "Ui::Data::DescriptionList",
       "path": "app/components/ui/data/description_list_component.rb",
       "properties": {
-        "sha256": "db3bb630beeed24787bddc894dbfd1f3b1fa3736c64e593a243e4ab3b751b38f",
+        "sha256": "3c81ca3b8e60f5b618b9aec1e2ed5d20d54c6aed8cc65e9b760f5110738a006d",
         "source": "platform"
       }
     },
@@ -248,6 +248,16 @@
       "path": "app/components/ui/data/timeline_component.rb",
       "properties": {
         "sha256": "2d72fc382d1bcb7d2dc73376ac62c715bf590f1ebc0b8dd776c4f03a3d50695b",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Data::TreeView",
+      "type": "component",
+      "name": "Ui::Data::TreeView",
+      "path": "app/components/ui/data/tree_view_component.rb",
+      "properties": {
+        "sha256": "edec0c411ea41d733030557fe28a90b66697a53411fc800d8f13a602bc758f48",
         "source": "platform"
       }
     },
@@ -318,6 +328,16 @@
       "path": "app/components/ui/forms/field_component.rb",
       "properties": {
         "sha256": "7d66586bc20bc17f88a3462768a5392086606543ced7d9aaabda63b2f1af725e",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Forms::FileUpload",
+      "type": "component",
+      "name": "Ui::Forms::FileUpload",
+      "path": "app/components/ui/forms/file_upload_component.rb",
+      "properties": {
+        "sha256": "e1aab34ea317bd42ef3e44b75b06eff93eca390137506af5f5afe49550c3dbae",
         "source": "platform"
       }
     },
@@ -402,12 +422,32 @@
       }
     },
     {
+      "id": "component:Ui::Pagination",
+      "type": "component",
+      "name": "Ui::Pagination",
+      "path": "app/components/ui/pagination_component.rb",
+      "properties": {
+        "sha256": "5b5bb20f4483ffd736592d343ab343f072f6423945bbd8d66f89a281e707904e",
+        "source": "platform"
+      }
+    },
+    {
       "id": "component:Ui::PermissionIndicator",
       "type": "component",
       "name": "Ui::PermissionIndicator",
       "path": "app/components/ui/permission_indicator_component.rb",
       "properties": {
         "sha256": "099746830ed53f5d62a301ffa2490acc9debdc6b2021c1b1248135c061e3e616",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Popover",
+      "type": "component",
+      "name": "Ui::Popover",
+      "path": "app/components/ui/popover_component.rb",
+      "properties": {
+        "sha256": "4686e61ce79420fa0481570d3e9a38f74e86b48a7982a660085c9b299cd1d367",
         "source": "platform"
       }
     },
@@ -508,6 +548,16 @@
       "path": "app/components/ui/tooltip_component.rb",
       "properties": {
         "sha256": "41cde8d16d83ff9ec48830912bc7f8d9dbb222c0cc682680e573bf5d2d1e858f",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::UserMenu",
+      "type": "component",
+      "name": "Ui::UserMenu",
+      "path": "app/components/ui/user_menu_component.rb",
+      "properties": {
+        "sha256": "261d115dc7b4a1f76acf3ab0b3a9328097faa56922d9c6ab99f83807d2d1d56b",
         "source": "platform"
       }
     },
@@ -2177,7 +2227,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "e6928296e0ba4f73497924c49c8049ac84ca0862d7cf33906e0c654947cf182f",
+        "sha256": "d5520260392abb903ed43d1fe33eff02909c8feaf527a722ce681b2e8744bd17",
         "source": "platform"
       }
     },
@@ -3002,6 +3052,16 @@
       }
     },
     {
+      "id": "test:Components::Ui::Data::TreeViewComponent",
+      "type": "test",
+      "name": "Components::Ui::Data::TreeViewComponent",
+      "path": "test/components/ui/data/tree_view_component_test.rb",
+      "properties": {
+        "sha256": "4d382c0303a4eab628e6c2783fcd4ec66e2348c4e9af12f96bf51a002bf63401",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Components::Ui::Forms::AutocompleteComponent",
       "type": "test",
       "name": "Components::Ui::Forms::AutocompleteComponent",
@@ -3018,6 +3078,16 @@
       "path": "test/components/ui/forms/combobox_component_test.rb",
       "properties": {
         "sha256": "243735c36d7e2bbb59e54410fc5fa6b8a36b050bbcb41deef2ace62a640568a0",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::Forms::FileUploadComponent",
+      "type": "test",
+      "name": "Components::Ui::Forms::FileUploadComponent",
+      "path": "test/components/ui/forms/file_upload_component_test.rb",
+      "properties": {
+        "sha256": "1f24cc7fc4044c063213ed2e7a8dc1731c2544c9ea182e0211ed0b76b24543b1",
         "source": "platform"
       }
     },
@@ -3072,12 +3142,32 @@
       }
     },
     {
+      "id": "test:Components::Ui::PaginationComponent",
+      "type": "test",
+      "name": "Components::Ui::PaginationComponent",
+      "path": "test/components/ui/pagination_component_test.rb",
+      "properties": {
+        "sha256": "bbe2d11469c5f0f0f6fabfe3f4178a82d92bf7ce798e705b73cb957143aa8395",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Components::Ui::PermissionIndicatorComponent",
       "type": "test",
       "name": "Components::Ui::PermissionIndicatorComponent",
       "path": "test/components/ui/permission_indicator_component_test.rb",
       "properties": {
         "sha256": "362dd8ed11639818dfc07e2bda0f151d1f4c2a8500ea7938a9c21171163d84b3",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::PopoverComponent",
+      "type": "test",
+      "name": "Components::Ui::PopoverComponent",
+      "path": "test/components/ui/popover_component_test.rb",
+      "properties": {
+        "sha256": "1e3028d02f95358e4889fbbe8ffd7a34e3d34c4d1a86d60f133e3fa996299374",
         "source": "platform"
       }
     },
@@ -3168,6 +3258,16 @@
       "path": "test/components/ui/tooltip_component_test.rb",
       "properties": {
         "sha256": "47802327e2a5ba2d756b7c6c99290903b2755dad50320dc103f83d2ea9faebe6",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::UserMenuComponent",
+      "type": "test",
+      "name": "Components::Ui::UserMenuComponent",
+      "path": "test/components/ui/user_menu_component_test.rb",
+      "properties": {
+        "sha256": "13508a02a4776efed56c8ec6978cf5e9c1b5f8a8eb113b1d28e6b44a081a5c80",
         "source": "platform"
       }
     },
@@ -4926,6 +5026,12 @@
       "properties": {}
     },
     {
+      "from": "component:Ui::Data::TreeView",
+      "to": "test:Components::Ui::Data::TreeViewComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "component:Ui::Forms::Autocomplete",
       "to": "test:Components::Ui::Forms::AutocompleteComponent",
       "type": "TESTED_BY",
@@ -4934,6 +5040,12 @@
     {
       "from": "component:Ui::Forms::Combobox",
       "to": "test:Components::Ui::Forms::ComboboxComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Forms::FileUpload",
+      "to": "test:Components::Ui::Forms::FileUploadComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -4962,8 +5074,20 @@
       "properties": {}
     },
     {
+      "from": "component:Ui::Pagination",
+      "to": "test:Components::Ui::PaginationComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "component:Ui::PermissionIndicator",
       "to": "test:Components::Ui::PermissionIndicatorComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Popover",
+      "to": "test:Components::Ui::PopoverComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5024,6 +5148,12 @@
     {
       "from": "component:Ui::Tooltip",
       "to": "test:Components::Ui::TooltipComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::UserMenu",
+      "to": "test:Components::Ui::UserMenuComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5534,6 +5664,12 @@
     {
       "from": "document:Design-system::Forms",
       "to": "test:Components::Ui::Forms::ComboboxComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Design-system::Forms",
+      "to": "test:Components::Ui::Forms::FileUploadComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -6481,6 +6617,12 @@
     },
     {
       "from": "model:User",
+      "to": "test:Components::Ui::UserMenuComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:User",
       "to": "test:Models::User",
       "type": "TESTED_BY",
       "properties": {}
@@ -6900,5 +7042,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "f2f74c865b88ab82586cdc12c3de2da981bd08b5"
+  "repository_commit": "3b17f50ba2627f0009d4f1c03b9ac12d395bf5d7"
 }
