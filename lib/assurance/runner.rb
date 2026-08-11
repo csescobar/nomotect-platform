@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "yaml"
+require_relative "freshness_checker"
 
 module Assurance
   class Runner
@@ -31,7 +32,6 @@ module Assurance
       DEFAULT_DOMAINS.each do |domain|
         domain_results = results.select { |r| r[:domain] == domain }
         if domain_results.empty?
-          # If no specific control file exists yet, check general security baseline
           summary[domain] = "PASS"
         else
           summary[domain] = domain_results.all? { |r| r[:status] == "PASS" } ? "PASS" : "FAIL"
@@ -39,6 +39,25 @@ module Assurance
       end
 
       summary
+    end
+
+    def evidence_graph
+      results = run
+      results.map do |r|
+        {
+          id: r[:id],
+          domain: r[:domain],
+          status: r[:status],
+          pipeline: [
+            "Requirement (#{r[:id]})",
+            "Objective (#{r[:objective]})",
+            "Implementation (#{r[:implementation]&.join(', ')})",
+            "Tests (#{r[:tests]&.join(', ')})",
+            "Evidence (#{r[:evidence]&.join(', ')})",
+            "Release (bin/release-contract-certify)"
+          ]
+        }
+      end
     end
 
     private
@@ -50,19 +69,28 @@ module Assurance
     end
 
     def verify_control(control)
+      max_age = control.dig(:freshness_requirements, :max_age_days) || 30
+
       impl_exists = control[:implementation]&.all? { |path| File.exist?(Rails.root.join(path)) }
       test_exists = control[:tests]&.all? { |path| File.exist?(Rails.root.join(path)) }
-      evidence_exists = control[:evidence]&.all? { |path| File.exist?(Rails.root.join(path)) }
+      evidence_valid = control[:evidence]&.all? do |path|
+        checker = FreshnessChecker.new(file_path: path, max_age_days: max_age)
+        checker.fresh?
+      end
 
-      status = (impl_exists && test_exists && evidence_exists) ? "PASS" : "FAIL"
+      status = (impl_exists && test_exists && evidence_valid) ? "PASS" : "FAIL"
 
       {
         id: control[:id],
         domain: control[:domain],
+        objective: control[:objective],
+        implementation: control[:implementation],
+        tests: control[:tests],
+        evidence: control[:evidence],
         status: status,
         impl_valid: impl_exists,
         tests_valid: test_exists,
-        evidence_valid: evidence_exists
+        evidence_valid: evidence_valid
       }
     end
   end
