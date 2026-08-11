@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "5a2119ed5eb5eac11461fc8fc90a035736502650",
+  "repository_commit": "59776bfac002201dd70c172656fb0a0313335cbe",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -2554,6 +2554,41 @@
       "sha256": "741b29421d9239532088f8c1106d776658ee3e881676e1ab990728e50e7eab9c"
     },
     {
+      "path": "docs/assurance/controls/AUDIT-LOG-001.yml",
+      "kind": "documentation",
+      "sha256": "6ab771df5eb6e4d818cade04bd1252ddc178007ce621b934d44ee3662cef8884"
+    },
+    {
+      "path": "docs/assurance/controls/AUTH-TENANT-001.yml",
+      "kind": "documentation",
+      "sha256": "103d7cbc14c2856dc459cbcf3ca95c184db85685bb6add19b3fd062d4a620cd7"
+    },
+    {
+      "path": "docs/assurance/controls/AUTHZ-RBAC-001.yml",
+      "kind": "documentation",
+      "sha256": "9fbe7a8af4cfcb0fc24971559f25c2e611ad89bdb7b619915278f1f0037e9e82"
+    },
+    {
+      "path": "docs/assurance/controls/SECRET-STORE-001.yml",
+      "kind": "documentation",
+      "sha256": "65d62d97fa707d3578bf7f2798e15a535f1bb17268113b2424d90c9dc8ec17c9"
+    },
+    {
+      "path": "docs/assurance/controls/SECURE-CONFIG-001.yml",
+      "kind": "documentation",
+      "sha256": "b22f356292a6fd6a69d478163035ca3da32843d44f369a7dc7f04192a77e45ca"
+    },
+    {
+      "path": "docs/assurance/controls/SUPPLY-SCAN-001.yml",
+      "kind": "documentation",
+      "sha256": "efd5d93c118a68a23fd8ca4da2e4e430fca3ecb4683c1d2ce10e2507c31df03c"
+    },
+    {
+      "path": "docs/assurance/schema/assurance-control-schema.json",
+      "kind": "documentation",
+      "sha256": "a6d0031362ba251d06bdb2dd41489a51ca9a9af55cf062aa401e3291377bf3db"
+    },
+    {
       "path": "docs/certifications/epic-9.md",
       "kind": "documentation",
       "sha256": "b93aeacdd9dd15f01770a5054ab6fdaff7ce64bfa7a57e20e651293c44bc5ab6"
@@ -3306,7 +3341,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "75090824d09280eacd37220e26121b1f1e48379f852770b17d26f0b907d6fb16"
+      "sha256": "6816a59f1c2427bba13ad8fcb10126996c841271ddd964d7d45c8abb924474c9"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3512,6 +3547,11 @@
       "path": "lib/application_starter.rb",
       "kind": "source",
       "sha256": "458209c49a716cbfed65c64347c178e896a3ccb8e223aa73075caa84934219dc"
+    },
+    {
+      "path": "lib/assurance/runner.rb",
+      "kind": "source",
+      "sha256": "f1d54e78776e9006f62ef2d611b46ee0fdd3a069b362e348084c6d67b29d237c"
     },
     {
       "path": "lib/container_environment_validator.rb",
@@ -4057,6 +4097,11 @@
       "path": "test/lib/application_starter_test.rb",
       "kind": "test",
       "sha256": "b9e88c7fff6608b5dd5ff4105c6cbd3571f6469ddf610690ba628727e054ed34"
+    },
+    {
+      "path": "test/lib/assurance_runner_test.rb",
+      "kind": "test",
+      "sha256": "c8e5de8fca55a45bf3ddbf34fb629dcac210bb835e682ec7d825ac31a1b2da80"
     },
     {
       "path": "test/lib/clean_starter_onboarding_test.rb",

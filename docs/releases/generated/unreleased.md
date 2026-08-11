@@ -82,6 +82,7 @@
 - Epic 12 Phase 5 — Final phase of Design System 2.0 introducing KpiCardComponent, TimelineComponent, ActivityFeedComponent, and DescriptionListComponent ViewComponents under Ui::Data namespace with ARIA compliance and CSS design token integration. (`224-epic-12-data-components-phase-5`)
 - Epic 12 Phase 6 — Final complementary phase completing 100% of Design System 2.0 component families, introducing PaginationComponent, UserMenuComponent, PopoverComponent, FileUploadComponent, and TreeViewComponent with Stimulus controllers, ARIA compliance, and CSS design token integration. (`225-epic-12-complementary-components-phase-6`)
 - Epic 12 Phase 7 — Native Date & Time picker ViewComponents (DatePickerComponent, DateRangePickerComponent, TimePickerComponent) under Ui::Forms namespace with Stimulus controllers, ARIA compliance, 12h/24h time formatting, range presets, and Rails hidden input synchronization. (`226-epic-12-datetime-pickers-phase-7`)
+- Epic 14 Phase 1 — Continuous Assurance & Evidence introducing machine-readable assurance control contracts schema (JSON Schema v1.0), YAML controls, Assurance::Runner, executable bin/assurance CLI, and CI integration. (`230-epic-14-continuous-assurance-phase-1`)
 
 ### Fixed
 
@@ -227,6 +228,7 @@
 - **Security — 227-epic-13-security-assurance-phase-1:** Established formal ISO/IEC 15408 assurance scope, trusted boundaries, threat actors, and asset traceability matrix in assurance-scope-and-assets.md and updated threat-model.md.
 - **Security — 228-epic-13-security-assurance-phase-2:** Formalized 4-tier security traceability matrix across authentication, authorization, tenant isolation, audit integrity, secrets, supply chain, and AI boundaries in threats-and-security-objectives.md.
 - **Security — 229-epic-13-security-assurance-phase-3-4:** Established Common Criteria functional mapping in common-criteria-mapping.md and end-to-end evidence matrix in security-evidence-matrix.md with explicit disclaimer of uncertified external claims.
+- **Security — 230-epic-14-continuous-assurance-phase-1:** Introduced machine-readable assurance control contracts and executable bin/assurance CLI with CI integration.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

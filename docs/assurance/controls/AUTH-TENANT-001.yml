@@ -1,0 +1,15 @@
+id: AUTH-TENANT-001
+domain: Tenant Isolation
+objective: Prevent cross-tenant data access and enforce ActiveRecord row-level tenant boundaries.
+implementation:
+  - app/models/current.rb
+  - app/controllers/application_controller.rb
+tests:
+  - test/controllers/tenant_selections_controller_test.rb
+evidence:
+  - docs/ai/generated/readiness-report.json
+standards_mapping:
+  common_criteria: FDP_ACC.1
+  iso15408: Subset Access Control
+freshness_requirements:
+  max_age_days: 30

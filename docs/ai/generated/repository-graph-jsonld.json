@@ -2900,7 +2900,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "75090824d09280eacd37220e26121b1f1e48379f852770b17d26f0b907d6fb16",
+        "sha256": "6816a59f1c2427bba13ad8fcb10126996c841271ddd964d7d45c8abb924474c9",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -4147,6 +4147,17 @@
         "source": "platform"
       },
       "@id": "test:Lib::ApplicationStarter"
+    },
+    {
+      "id": "test:Lib::AssuranceRunner",
+      "type": "test",
+      "name": "Lib::AssuranceRunner",
+      "path": "test/lib/assurance_runner_test.rb",
+      "properties": {
+        "sha256": "c8e5de8fca55a45bf3ddbf34fb629dcac210bb835e682ec7d825ac31a1b2da80",
+        "source": "platform"
+      },
+      "@id": "test:Lib::AssuranceRunner"
     },
     {
       "id": "test:Lib::CleanStarterOnboarding",

@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "../config/environment"
+require_relative "../lib/assurance/runner"
+
+puts "╔═══════════════════════════════════════════════════════════════════════════╗"
+puts "║                     NomoTect Continuous Assurance CLI                     ║"
+puts "╚═══════════════════════════════════════════════════════════════════════════╝"
+puts ""
+
+runner = Assurance::Runner.new
+summary = runner.domain_summary
+all_passed = true
+
+printf "%-30s %-15s\n", "Assurance Domain", "Status"
+puts "───────────────────────────────────────────────"
+
+summary.each do |domain, status|
+  color = status == "PASS" ? "\e[32mPASS\e[0m" : "\e[31mFAIL\e[0m"
+  printf "%-30s %s\n", domain, color
+  all_passed = false if status != "PASS"
+end
+
+puts "───────────────────────────────────────────────"
+
+if all_passed
+  puts "\e[32m✔ All continuous assurance controls verified and active.\e[0m"
+  exit 0
+else
+  puts "\e[31m✖ One or more assurance controls failed verification.\e[0m"
+  exit 1
+end

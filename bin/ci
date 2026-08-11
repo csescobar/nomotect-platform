@@ -6,4 +6,5 @@ ruby bin/design-token-audit
 ruby bin/repository-intelligence validate
 bash bin/lint
 bash bin/security
+ruby bin/assurance
 bash bin/test

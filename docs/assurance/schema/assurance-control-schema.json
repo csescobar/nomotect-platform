@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AssuranceControlContract",
+  "type": "object",
+  "required": [
+    "id",
+    "domain",
+    "objective",
+    "implementation",
+    "tests",
+    "evidence",
+    "standards_mapping"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9_-]+$"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "implementation": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tests": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "standards_mapping": {
+      "type": "object",
+      "properties": {
+        "common_criteria": { "type": "string" },
+        "iso15408": { "type": "string" }
+      }
+    },
+    "freshness_requirements": {
+      "type": "object",
+      "properties": {
+        "max_age_days": { "type": "integer" }
+      }
+    }
+  }
+}
