@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "30aeaa18d596c0d56a1f338e90f03891b44c90eb",
+  "repository_commit": "2743183600c6efaff0702f3efac7b1e442dba96e",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -3306,7 +3306,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "38bc84ab8f6739374005adebfc0088a0fa7fbd2c29c0b40c5c65c3ee1259a4c0"
+      "sha256": "db6ce757be40299bdffeb6ec6e857b4f6b5affb20c492975cf1c15dfbc703d69"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3406,7 +3406,12 @@
     {
       "path": "docs/security/threat-model.md",
       "kind": "documentation",
-      "sha256": "42fd8e199114d58ee56e0b35fb027dc04d7c33e4a8dc9e4f01fa7b5c892f537f"
+      "sha256": "59c379676579fdd2e0e1b76d2a19eb1e7d6f5dab2561a6c079a4665d77253e86"
+    },
+    {
+      "path": "docs/security/threats-and-security-objectives.md",
+      "kind": "documentation",
+      "sha256": "abf2b0c5aa7925d2f94e22184ac870d536623150431d9b24d7ace43ec3b3b62a"
     },
     {
       "path": "docs/upgrades/architecture.md",

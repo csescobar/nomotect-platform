@@ -244,6 +244,7 @@ digraph repository {
   "document:Security::Security-baseline" [label="Security::Security-baseline"];
   "document:Security::Security-operations" [label="Security::Security-operations"];
   "document:Security::Threat-model" [label="Security::Threat-model"];
+  "document:Security::Threats-and-security-objectives" [label="Security::Threats-and-security-objectives"];
   "document:Upgrades::Architecture" [label="Upgrades::Architecture"];
   "document:Upgrades::Backup-and-maintenance" [label="Upgrades::Backup-and-maintenance"];
   "document:Upgrades::Execution-engine" [label="Upgrades::Execution-engine"];
