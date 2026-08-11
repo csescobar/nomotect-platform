@@ -45,6 +45,7 @@
 - `job:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `policy:Application` —TESTED_BY→ `test:Lib::ApplicationRegistrations`
 - `component:Application` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
+- `component:Ui::Skeleton` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
 - `controller:Application` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
 - `job:Application` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
 - `policy:Application` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`

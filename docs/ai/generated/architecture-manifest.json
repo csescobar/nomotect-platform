@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "7ef432ca7926189a4dc713ba3425b249fdcb30ec",
+  "repository_commit": "4fa61222f0e838c6f196e6a96e7f02fd8a4cb3ad",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -46,7 +46,7 @@
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "45d836733f9f94bfb2e6f44cb6b4c42183c72b073527dde89a12da6c5050877c"
+      "sha256": "563dd46790d6373ecdce8b14a2cca1eb6743b1b62eb38f1eb8c7a826eb68ced2"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
@@ -284,9 +284,24 @@
       "sha256": "099746830ed53f5d62a301ffa2490acc9debdc6b2021c1b1248135c061e3e616"
     },
     {
+      "path": "app/components/ui/progress_bar_component.rb",
+      "kind": "component",
+      "sha256": "b75a0ce2c99aa5dd54ea52b7ca05b4c8e1549106638537f822a5c0e2d5f4cb99"
+    },
+    {
+      "path": "app/components/ui/progress_spinner_component.rb",
+      "kind": "component",
+      "sha256": "7b91b93ecca0c7085fbd048b4db7ea13f43ba5f147088197922b7db02ce567ea"
+    },
+    {
       "path": "app/components/ui/role_badge_component.rb",
       "kind": "component",
       "sha256": "e6510100e9e2a08ab2119c8b9a533e43f62aac20e82655fa6b6123e85535ef1c"
+    },
+    {
+      "path": "app/components/ui/skeleton_component.rb",
+      "kind": "component",
+      "sha256": "eaf9245485f6cb95e6244fde071def6110e1ceb12a8132f20dbae2c2a3c80853"
     },
     {
       "path": "app/components/ui/stepper_component.rb",
@@ -302,6 +317,21 @@
       "path": "app/components/ui/theme_switcher_component.rb",
       "kind": "component",
       "sha256": "f65541d49907d201f696234b0bf8c55496446947202390b3d2b09e7bb46f38df"
+    },
+    {
+      "path": "app/components/ui/toast_component.rb",
+      "kind": "component",
+      "sha256": "d5bd455007f7a298b45e59ecf4fd965163fbce12d1d692a47237d9c2be10723b"
+    },
+    {
+      "path": "app/components/ui/toast_container_component.rb",
+      "kind": "component",
+      "sha256": "6144ec24385703f603e3c91b317234112df73b93484213ec9a48832631058961"
+    },
+    {
+      "path": "app/components/ui/tooltip_component.rb",
+      "kind": "component",
+      "sha256": "41cde8d16d83ff9ec48830912bc7f8d9dbb222c0cc682680e573bf5d2d1e858f"
     },
     {
       "path": "app/controllers/application_controller.rb",
@@ -3141,7 +3171,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "f7d1792f93fd1a30c9678cb7a6171fedcfe991d1e1985c316cbe2bf4d3582585"
+      "sha256": "694eb0df1b62f854be1ed9eb2187ed4db16a8a2896351a90790e5b37da129c52"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3554,9 +3584,24 @@
       "sha256": "362dd8ed11639818dfc07e2bda0f151d1f4c2a8500ea7938a9c21171163d84b3"
     },
     {
+      "path": "test/components/ui/progress_bar_component_test.rb",
+      "kind": "test",
+      "sha256": "9c58c6f9a29a9323d91ffe55b2b047ddaab903c7494bb030ac9ae3f705f51251"
+    },
+    {
+      "path": "test/components/ui/progress_spinner_component_test.rb",
+      "kind": "test",
+      "sha256": "1cf7ebbe637bb4d449deff539e5d993dd52f028655339330ea6b6c472ca47e98"
+    },
+    {
       "path": "test/components/ui/role_badge_component_test.rb",
       "kind": "test",
       "sha256": "b97351b039bd67eb0f662f27dcfb8b92b9819d8af5f781967b3eeeb035934d91"
+    },
+    {
+      "path": "test/components/ui/skeleton_component_test.rb",
+      "kind": "test",
+      "sha256": "32428ba5415519054b8b5b829e76321c6382e828a874dc774537f70cbb943816"
     },
     {
       "path": "test/components/ui/stepper_component_test.rb",
@@ -3572,6 +3617,16 @@
       "path": "test/components/ui/theme_switcher_component_test.rb",
       "kind": "test",
       "sha256": "83d63a6db101fe9b3bed58c844df2fd3b7804441a75e1ba35b48f5672eeed7c5"
+    },
+    {
+      "path": "test/components/ui/toast_component_test.rb",
+      "kind": "test",
+      "sha256": "5479629b8a8f8e8aaaf0e249206b21d51acdecf2d12ef6e09c3e2ae1f444fdf5"
+    },
+    {
+      "path": "test/components/ui/tooltip_component_test.rb",
+      "kind": "test",
+      "sha256": "47802327e2a5ba2d756b7c6c99290903b2755dad50320dc103f83d2ea9faebe6"
     },
     {
       "path": "test/controllers/component_showcase_controller_test.rb",

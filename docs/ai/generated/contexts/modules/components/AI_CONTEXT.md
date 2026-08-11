@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- test: Components::MarketingComponents, Components::Ui::AvatarComponent, Components::Ui::AvatarGroupComponent, Components::Ui::ButtonComponent, Components::Ui::CommandPaletteComponent, Components::Ui::CoreComponents, Components::Ui::DangerZoneComponent, Components::Ui::Forms::FormComponents, Components::Ui::Layout::ApplicationShellComponent, Components::Ui::LocaleSwitcherComponent, Components::Ui::PermissionIndicatorComponent, Components::Ui::RoleBadgeComponent, Components::Ui::StepperComponent, Components::Ui::TabsComponent, Components::Ui::ThemeSwitcherComponent
+- test: Components::MarketingComponents, Components::Ui::AvatarComponent, Components::Ui::AvatarGroupComponent, Components::Ui::ButtonComponent, Components::Ui::CommandPaletteComponent, Components::Ui::CoreComponents, Components::Ui::DangerZoneComponent, Components::Ui::Forms::FormComponents, Components::Ui::Layout::ApplicationShellComponent, Components::Ui::LocaleSwitcherComponent, Components::Ui::PermissionIndicatorComponent, Components::Ui::ProgressBarComponent, Components::Ui::ProgressSpinnerComponent, Components::Ui::RoleBadgeComponent, Components::Ui::SkeletonComponent, Components::Ui::StepperComponent, Components::Ui::TabsComponent, Components::Ui::ThemeSwitcherComponent, Components::Ui::ToastComponent, Components::Ui::TooltipComponent
 
 ## Source paths
 
@@ -19,10 +19,15 @@
 - `test/components/ui/layout/application_shell_component_test.rb`
 - `test/components/ui/locale_switcher_component_test.rb`
 - `test/components/ui/permission_indicator_component_test.rb`
+- `test/components/ui/progress_bar_component_test.rb`
+- `test/components/ui/progress_spinner_component_test.rb`
 - `test/components/ui/role_badge_component_test.rb`
+- `test/components/ui/skeleton_component_test.rb`
 - `test/components/ui/stepper_component_test.rb`
 - `test/components/ui/tabs_component_test.rb`
 - `test/components/ui/theme_switcher_component_test.rb`
+- `test/components/ui/toast_component_test.rb`
+- `test/components/ui/tooltip_component_test.rb`
 
 ## Relationships
 
@@ -42,13 +47,18 @@
 - `component:Ui::LocaleSwitcher` —TESTED_BY→ `test:Components::Ui::LocaleSwitcherComponent`
 - `component:Ui::PermissionIndicator` —TESTED_BY→ `test:Components::Ui::PermissionIndicatorComponent`
 - `model:Permission` —TESTED_BY→ `test:Components::Ui::PermissionIndicatorComponent`
+- `component:Ui::ProgressBar` —TESTED_BY→ `test:Components::Ui::ProgressBarComponent`
+- `component:Ui::ProgressSpinner` —TESTED_BY→ `test:Components::Ui::ProgressSpinnerComponent`
 - `component:Ui::Badge` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
 - `component:Ui::RoleBadge` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
 - `model:Role` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
 - `policy:Role` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
+- `component:Ui::Skeleton` —TESTED_BY→ `test:Components::Ui::SkeletonComponent`
 - `component:Ui::Stepper` —TESTED_BY→ `test:Components::Ui::StepperComponent`
 - `component:Ui::Tabs` —TESTED_BY→ `test:Components::Ui::TabsComponent`
 - `component:Ui::ThemeSwitcher` —TESTED_BY→ `test:Components::Ui::ThemeSwitcherComponent`
+- `component:Ui::Toast` —TESTED_BY→ `test:Components::Ui::ToastComponent`
+- `component:Ui::Tooltip` —TESTED_BY→ `test:Components::Ui::TooltipComponent`
 
 ## Contract
 

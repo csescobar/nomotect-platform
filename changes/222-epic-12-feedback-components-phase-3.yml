@@ -1,0 +1,22 @@
+schema_version: 1
+id: 222-epic-12-feedback-components-phase-3
+category: feature
+summary: Epic 12 Phase 3 — Feedback component family introducing ToastComponent, ToastContainerComponent, SkeletonComponent, ProgressBarComponent, ProgressSpinnerComponent, and TooltipComponent ViewComponents with ARIA compliance and CSS design token animation integration.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: ToastComponent uses role=status/alert and dismiss button. ProgressBar and ProgressSpinner implement role=progressbar with aria-valuenow/aria-valuemin/aria-valuemax. Skeleton implements aria-hidden=true. TooltipComponent implements role=tooltip linked via aria-describedby.
