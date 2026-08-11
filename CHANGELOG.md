@@ -77,6 +77,7 @@ Required release impact: `major`.
 - Complete Epic 11 protected system roles backfill, automatic membership role linkage, and removal of legacy string authorization fallback. (`218-epic-11-system-roles-backfill`)
 - Complete Epic 11 Phase 4 advanced contextual authorization evaluator, data classification security clearance checks, and security denial domain auditing. (`219-epic-11-advanced-policy-context-phase-4`)
 - Epic 12 Phase 1 — Navigation component family introducing Tabs, Stepper, and Command Palette ViewComponents with Stimulus controllers, ARIA compliance, and Light/Dark CSS design token integration. (`220-epic-12-navigation-components-phase-1`)
+- Epic 12 Phase 2 — Identity component family introducing Avatar, AvatarGroup, RoleBadge, and PermissionIndicator ViewComponents with ARIA compliance, presence status, role color mappings, and Light/Dark CSS design token integration. (`221-epic-12-identity-components-phase-2`)
 
 ### Fixed
 

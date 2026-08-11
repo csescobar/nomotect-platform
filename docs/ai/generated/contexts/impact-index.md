@@ -42,12 +42,12 @@
 - `model:Notification`: document:Modules::EnterpriseServices::Notifications, model:Notification
 - `model:Organization`: controller:Organizations, document:Modules::Organizations::AiContext, model:Organization, model:OrganizationInvitation, policy:Organization, test:Controllers::OrganizationMemberAdministration, test:Controllers::OrganizationsController, test:Models::Organization, test:Models::OrganizationInvitation
 - `model:OrganizationInvitation`: model:Organization, model:OrganizationInvitation, policy:Organization, test:Models::OrganizationInvitation
-- `model:Permission`: document:Validation::Findings::Bug-002-bin-ci-executable-permission, model:Permission, test:Helpers::PermissionHelper, test:Lib::PermissionRegistry, test:Models::Permission
+- `model:Permission`: component:Ui::PermissionIndicator, document:Validation::Findings::Bug-002-bin-ci-executable-permission, model:Permission, test:Components::Ui::PermissionIndicatorComponent, test:Helpers::PermissionHelper, test:Lib::PermissionRegistry, test:Models::Permission
 - `model:PlatformRole`: model:PlatformRole, model:Role, policy:Role, test:Models::PlatformRole
 - `model:PrivacyPreference`: model:PrivacyPreference
 - `model:PrivacyRequest`: model:PrivacyRequest
 - `model:RetentionPolicy`: model:RetentionPolicy
-- `model:Role`: component:Application, controller:Application, document:Architecture::Decisions::0006-seal-application-role-and-grid-registries, document:Distribution::Operations, document:Extensions::Operations, job:Application, model:PlatformRole, model:Role, policy:Application, policy:Role, test:Models::PlatformRole, test:Models::Role, test:Operations::Roles
+- `model:Role`: component:Application, component:Ui::Badge, component:Ui::RoleBadge, controller:Application, document:Architecture::Decisions::0006-seal-application-role-and-grid-registries, document:Distribution::Operations, document:Extensions::Operations, job:Application, model:PlatformRole, model:Role, policy:Application, policy:Role, test:Components::Ui::RoleBadgeComponent, test:Models::PlatformRole, test:Models::Role, test:Operations::Roles
 - `model:RolePermission`: model:RolePermission
 - `model:Session`: model:Session
 - `model:StoredFile`: controller:StoredFiles, model:StoredFile, policy:StoredFile, test:Controllers::StoredFilesController
@@ -57,5 +57,5 @@
 - `policy:Customer`: controller:Customers, document:Distribution::Operations, document:Extensions::Operations, document:Modules::Customers::AiContext, model:Customer, policy:Customer, test:Controllers::CustomersController, test:Models::Customer, test:Operations::CustomersOperations, test:Policies::CustomerPolicy
 - `policy:Membership`: model:Membership, policy:Membership, test:Models::Membership, test:Policies::MembershipPolicy
 - `policy:Organization`: controller:Organizations, document:Modules::Organizations::AiContext, model:Organization, model:OrganizationInvitation, policy:Organization, test:Controllers::OrganizationMemberAdministration, test:Controllers::OrganizationsController, test:Models::Organization, test:Models::OrganizationInvitation
-- `policy:Role`: component:Application, controller:Application, document:Architecture::Decisions::0006-seal-application-role-and-grid-registries, document:Distribution::Operations, document:Extensions::Operations, job:Application, model:PlatformRole, model:Role, policy:Application, policy:Role, test:Models::PlatformRole, test:Models::Role, test:Operations::Roles
+- `policy:Role`: component:Application, component:Ui::Badge, component:Ui::RoleBadge, controller:Application, document:Architecture::Decisions::0006-seal-application-role-and-grid-registries, document:Distribution::Operations, document:Extensions::Operations, job:Application, model:PlatformRole, model:Role, policy:Application, policy:Role, test:Components::Ui::RoleBadgeComponent, test:Models::PlatformRole, test:Models::Role, test:Operations::Roles
 - `policy:StoredFile`: controller:StoredFiles, model:StoredFile, policy:StoredFile, test:Controllers::StoredFilesController

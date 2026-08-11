@@ -12,6 +12,8 @@ graph TD
   n_component_Marketing__ProductPreview["Marketing::ProductPreview"]
   n_component_Marketing__TechnologyStack["Marketing::TechnologyStack"]
   n_component_Ui__Alert["Ui::Alert"]
+  n_component_Ui__Avatar["Ui::Avatar"]
+  n_component_Ui__AvatarGroup["Ui::AvatarGroup"]
   n_component_Ui__Badge["Ui::Badge"]
   n_component_Ui__Base["Ui::Base"]
   n_component_Ui__Button["Ui::Button"]
@@ -29,6 +31,8 @@ graph TD
   n_component_Ui__Layout__Navigation["Ui::Layout::Navigation"]
   n_component_Ui__Layout__PageHeader["Ui::Layout::PageHeader"]
   n_component_Ui__LocaleSwitcher["Ui::LocaleSwitcher"]
+  n_component_Ui__PermissionIndicator["Ui::PermissionIndicator"]
+  n_component_Ui__RoleBadge["Ui::RoleBadge"]
   n_component_Ui__Stepper["Ui::Stepper"]
   n_component_Ui__Tabs["Ui::Tabs"]
   n_component_Ui__ThemeSwitcher["Ui::ThemeSwitcher"]
@@ -271,6 +275,8 @@ graph TD
   n_policy_Role["Role"]
   n_policy_StoredFile["StoredFile"]
   n_test_Components__MarketingComponents["Components::MarketingComponents"]
+  n_test_Components__Ui__AvatarComponent["Components::Ui::AvatarComponent"]
+  n_test_Components__Ui__AvatarGroupComponent["Components::Ui::AvatarGroupComponent"]
   n_test_Components__Ui__ButtonComponent["Components::Ui::ButtonComponent"]
   n_test_Components__Ui__CommandPaletteComponent["Components::Ui::CommandPaletteComponent"]
   n_test_Components__Ui__CoreComponents["Components::Ui::CoreComponents"]
@@ -278,6 +284,8 @@ graph TD
   n_test_Components__Ui__Forms__FormComponents["Components::Ui::Forms::FormComponents"]
   n_test_Components__Ui__Layout__ApplicationShellComponent["Components::Ui::Layout::ApplicationShellComponent"]
   n_test_Components__Ui__LocaleSwitcherComponent["Components::Ui::LocaleSwitcherComponent"]
+  n_test_Components__Ui__PermissionIndicatorComponent["Components::Ui::PermissionIndicatorComponent"]
+  n_test_Components__Ui__RoleBadgeComponent["Components::Ui::RoleBadgeComponent"]
   n_test_Components__Ui__StepperComponent["Components::Ui::StepperComponent"]
   n_test_Components__Ui__TabsComponent["Components::Ui::TabsComponent"]
   n_test_Components__Ui__ThemeSwitcherComponent["Components::Ui::ThemeSwitcherComponent"]
@@ -455,6 +463,10 @@ graph TD
   n_component_Marketing__Lifecycle -->|DOCUMENTED_BY| n_document_Operators__Compatibility_and_lifecycle
   n_component_Marketing__Lifecycle -->|TESTED_BY| n_test_Integration__CompatibilityLifecycleDocumentation
   n_component_Marketing__Lifecycle -->|TESTED_BY| n_test_Services__Extensions__Lifecycle
+  n_component_Ui__Avatar -->|TESTED_BY| n_test_Components__Ui__AvatarComponent
+  n_component_Ui__Avatar -->|TESTED_BY| n_test_Components__Ui__AvatarGroupComponent
+  n_component_Ui__AvatarGroup -->|TESTED_BY| n_test_Components__Ui__AvatarGroupComponent
+  n_component_Ui__Badge -->|TESTED_BY| n_test_Components__Ui__RoleBadgeComponent
   n_component_Ui__Base -->|DOCUMENTED_BY| n_document_Adoption__Phase_4b_grid_ux_baseline
   n_component_Ui__Base -->|DOCUMENTED_BY| n_document_Installation__Database_provisioning
   n_component_Ui__Base -->|DOCUMENTED_BY| n_document_Packaging__Container_baseline
@@ -466,6 +478,8 @@ graph TD
   n_component_Ui__DangerZone -->|TESTED_BY| n_test_Components__Ui__DangerZoneComponent
   n_component_Ui__Layout__ApplicationShell -->|TESTED_BY| n_test_Components__Ui__Layout__ApplicationShellComponent
   n_component_Ui__LocaleSwitcher -->|TESTED_BY| n_test_Components__Ui__LocaleSwitcherComponent
+  n_component_Ui__PermissionIndicator -->|TESTED_BY| n_test_Components__Ui__PermissionIndicatorComponent
+  n_component_Ui__RoleBadge -->|TESTED_BY| n_test_Components__Ui__RoleBadgeComponent
   n_component_Ui__Stepper -->|TESTED_BY| n_test_Components__Ui__StepperComponent
   n_component_Ui__Tabs -->|TESTED_BY| n_test_Components__Ui__TabsComponent
   n_component_Ui__ThemeSwitcher -->|TESTED_BY| n_test_Components__Ui__ThemeSwitcherComponent
@@ -696,11 +710,13 @@ graph TD
   n_model_Organization -->|TESTED_BY| n_test_Models__OrganizationInvitation
   n_model_OrganizationInvitation -->|TESTED_BY| n_test_Models__OrganizationInvitation
   n_model_Permission -->|DOCUMENTED_BY| n_document_Validation__Findings__Bug_002_bin_ci_executable_permission
+  n_model_Permission -->|TESTED_BY| n_test_Components__Ui__PermissionIndicatorComponent
   n_model_Permission -->|TESTED_BY| n_test_Helpers__PermissionHelper
   n_model_Permission -->|TESTED_BY| n_test_Lib__PermissionRegistry
   n_model_Permission -->|TESTED_BY| n_test_Models__Permission
   n_model_PlatformRole -->|TESTED_BY| n_test_Models__PlatformRole
   n_model_Role -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0006_seal_application_role_and_grid_registries
+  n_model_Role -->|TESTED_BY| n_test_Components__Ui__RoleBadgeComponent
   n_model_Role -->|TESTED_BY| n_test_Models__PlatformRole
   n_model_Role -->|TESTED_BY| n_test_Models__Role
   n_model_Role -->|TESTED_BY| n_test_Operations__Roles
@@ -738,6 +754,7 @@ graph TD
   n_policy_Organization -->|TESTED_BY| n_test_Models__Organization
   n_policy_Organization -->|TESTED_BY| n_test_Models__OrganizationInvitation
   n_policy_Role -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0006_seal_application_role_and_grid_registries
+  n_policy_Role -->|TESTED_BY| n_test_Components__Ui__RoleBadgeComponent
   n_policy_Role -->|TESTED_BY| n_test_Models__PlatformRole
   n_policy_Role -->|TESTED_BY| n_test_Models__Role
   n_policy_Role -->|TESTED_BY| n_test_Operations__Roles

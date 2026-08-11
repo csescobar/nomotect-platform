@@ -12,6 +12,8 @@ digraph repository {
   "component:Marketing::ProductPreview" [label="Marketing::ProductPreview"];
   "component:Marketing::TechnologyStack" [label="Marketing::TechnologyStack"];
   "component:Ui::Alert" [label="Ui::Alert"];
+  "component:Ui::Avatar" [label="Ui::Avatar"];
+  "component:Ui::AvatarGroup" [label="Ui::AvatarGroup"];
   "component:Ui::Badge" [label="Ui::Badge"];
   "component:Ui::Base" [label="Ui::Base"];
   "component:Ui::Button" [label="Ui::Button"];
@@ -29,6 +31,8 @@ digraph repository {
   "component:Ui::Layout::Navigation" [label="Ui::Layout::Navigation"];
   "component:Ui::Layout::PageHeader" [label="Ui::Layout::PageHeader"];
   "component:Ui::LocaleSwitcher" [label="Ui::LocaleSwitcher"];
+  "component:Ui::PermissionIndicator" [label="Ui::PermissionIndicator"];
+  "component:Ui::RoleBadge" [label="Ui::RoleBadge"];
   "component:Ui::Stepper" [label="Ui::Stepper"];
   "component:Ui::Tabs" [label="Ui::Tabs"];
   "component:Ui::ThemeSwitcher" [label="Ui::ThemeSwitcher"];
@@ -271,6 +275,8 @@ digraph repository {
   "policy:Role" [label="Role"];
   "policy:StoredFile" [label="StoredFile"];
   "test:Components::MarketingComponents" [label="Components::MarketingComponents"];
+  "test:Components::Ui::AvatarComponent" [label="Components::Ui::AvatarComponent"];
+  "test:Components::Ui::AvatarGroupComponent" [label="Components::Ui::AvatarGroupComponent"];
   "test:Components::Ui::ButtonComponent" [label="Components::Ui::ButtonComponent"];
   "test:Components::Ui::CommandPaletteComponent" [label="Components::Ui::CommandPaletteComponent"];
   "test:Components::Ui::CoreComponents" [label="Components::Ui::CoreComponents"];
@@ -278,6 +284,8 @@ digraph repository {
   "test:Components::Ui::Forms::FormComponents" [label="Components::Ui::Forms::FormComponents"];
   "test:Components::Ui::Layout::ApplicationShellComponent" [label="Components::Ui::Layout::ApplicationShellComponent"];
   "test:Components::Ui::LocaleSwitcherComponent" [label="Components::Ui::LocaleSwitcherComponent"];
+  "test:Components::Ui::PermissionIndicatorComponent" [label="Components::Ui::PermissionIndicatorComponent"];
+  "test:Components::Ui::RoleBadgeComponent" [label="Components::Ui::RoleBadgeComponent"];
   "test:Components::Ui::StepperComponent" [label="Components::Ui::StepperComponent"];
   "test:Components::Ui::TabsComponent" [label="Components::Ui::TabsComponent"];
   "test:Components::Ui::ThemeSwitcherComponent" [label="Components::Ui::ThemeSwitcherComponent"];
@@ -455,6 +463,10 @@ digraph repository {
   "component:Marketing::Lifecycle" -> "document:Operators::Compatibility-and-lifecycle" [label="DOCUMENTED_BY"];
   "component:Marketing::Lifecycle" -> "test:Integration::CompatibilityLifecycleDocumentation" [label="TESTED_BY"];
   "component:Marketing::Lifecycle" -> "test:Services::Extensions::Lifecycle" [label="TESTED_BY"];
+  "component:Ui::Avatar" -> "test:Components::Ui::AvatarComponent" [label="TESTED_BY"];
+  "component:Ui::Avatar" -> "test:Components::Ui::AvatarGroupComponent" [label="TESTED_BY"];
+  "component:Ui::AvatarGroup" -> "test:Components::Ui::AvatarGroupComponent" [label="TESTED_BY"];
+  "component:Ui::Badge" -> "test:Components::Ui::RoleBadgeComponent" [label="TESTED_BY"];
   "component:Ui::Base" -> "document:Adoption::Phase-4b-grid-ux-baseline" [label="DOCUMENTED_BY"];
   "component:Ui::Base" -> "document:Installation::Database-provisioning" [label="DOCUMENTED_BY"];
   "component:Ui::Base" -> "document:Packaging::Container-baseline" [label="DOCUMENTED_BY"];
@@ -466,6 +478,8 @@ digraph repository {
   "component:Ui::DangerZone" -> "test:Components::Ui::DangerZoneComponent" [label="TESTED_BY"];
   "component:Ui::Layout::ApplicationShell" -> "test:Components::Ui::Layout::ApplicationShellComponent" [label="TESTED_BY"];
   "component:Ui::LocaleSwitcher" -> "test:Components::Ui::LocaleSwitcherComponent" [label="TESTED_BY"];
+  "component:Ui::PermissionIndicator" -> "test:Components::Ui::PermissionIndicatorComponent" [label="TESTED_BY"];
+  "component:Ui::RoleBadge" -> "test:Components::Ui::RoleBadgeComponent" [label="TESTED_BY"];
   "component:Ui::Stepper" -> "test:Components::Ui::StepperComponent" [label="TESTED_BY"];
   "component:Ui::Tabs" -> "test:Components::Ui::TabsComponent" [label="TESTED_BY"];
   "component:Ui::ThemeSwitcher" -> "test:Components::Ui::ThemeSwitcherComponent" [label="TESTED_BY"];
@@ -696,11 +710,13 @@ digraph repository {
   "model:Organization" -> "test:Models::OrganizationInvitation" [label="TESTED_BY"];
   "model:OrganizationInvitation" -> "test:Models::OrganizationInvitation" [label="TESTED_BY"];
   "model:Permission" -> "document:Validation::Findings::Bug-002-bin-ci-executable-permission" [label="DOCUMENTED_BY"];
+  "model:Permission" -> "test:Components::Ui::PermissionIndicatorComponent" [label="TESTED_BY"];
   "model:Permission" -> "test:Helpers::PermissionHelper" [label="TESTED_BY"];
   "model:Permission" -> "test:Lib::PermissionRegistry" [label="TESTED_BY"];
   "model:Permission" -> "test:Models::Permission" [label="TESTED_BY"];
   "model:PlatformRole" -> "test:Models::PlatformRole" [label="TESTED_BY"];
   "model:Role" -> "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries" [label="DOCUMENTED_BY"];
+  "model:Role" -> "test:Components::Ui::RoleBadgeComponent" [label="TESTED_BY"];
   "model:Role" -> "test:Models::PlatformRole" [label="TESTED_BY"];
   "model:Role" -> "test:Models::Role" [label="TESTED_BY"];
   "model:Role" -> "test:Operations::Roles" [label="TESTED_BY"];
@@ -738,6 +754,7 @@ digraph repository {
   "policy:Organization" -> "test:Models::Organization" [label="TESTED_BY"];
   "policy:Organization" -> "test:Models::OrganizationInvitation" [label="TESTED_BY"];
   "policy:Role" -> "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries" [label="DOCUMENTED_BY"];
+  "policy:Role" -> "test:Components::Ui::RoleBadgeComponent" [label="TESTED_BY"];
   "policy:Role" -> "test:Models::PlatformRole" [label="TESTED_BY"];
   "policy:Role" -> "test:Models::Role" [label="TESTED_BY"];
   "policy:Role" -> "test:Operations::Roles" [label="TESTED_BY"];
