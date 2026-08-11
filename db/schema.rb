@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_11_140200) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_11_141600) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -162,10 +162,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_11_140200) do
   create_table "permissions", force: :cascade do |t|
     t.string "category", null: false
     t.datetime "created_at", null: false
+    t.string "default_availability", default: "all", null: false
     t.text "description"
     t.string "key", null: false
     t.string "name", null: false
+    t.string "owning_capability", default: "platform", null: false
+    t.string "security_classification", default: "standard", null: false
     t.datetime "updated_at", null: false
+    t.string "version", default: "1.0.0", null: false
     t.index ["key"], name: "index_permissions_on_key", unique: true
   end
 

@@ -42,7 +42,7 @@
 - `model:Notification`: document:Modules::EnterpriseServices::Notifications, model:Notification
 - `model:Organization`: controller:Organizations, document:Modules::Organizations::AiContext, model:Organization, model:OrganizationInvitation, policy:Organization, test:Controllers::OrganizationMemberAdministration, test:Controllers::OrganizationsController, test:Models::Organization, test:Models::OrganizationInvitation
 - `model:OrganizationInvitation`: model:Organization, model:OrganizationInvitation, policy:Organization, test:Models::OrganizationInvitation
-- `model:Permission`: document:Validation::Findings::Bug-002-bin-ci-executable-permission, model:Permission, test:Models::Permission
+- `model:Permission`: document:Validation::Findings::Bug-002-bin-ci-executable-permission, model:Permission, test:Lib::PermissionRegistry, test:Models::Permission
 - `model:PlatformRole`: model:PlatformRole, model:Role, test:Models::PlatformRole
 - `model:PrivacyPreference`: model:PrivacyPreference
 - `model:PrivacyRequest`: model:PrivacyRequest

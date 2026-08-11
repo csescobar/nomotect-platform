@@ -323,6 +323,7 @@ graph TD
   n_test_Lib__GridEngine__Types["Lib::GridEngine::Types"]
   n_test_Lib__Localization__SupportedLocales["Lib::Localization::SupportedLocales"]
   n_test_Lib__McpBootstrap["Lib::McpBootstrap"]
+  n_test_Lib__PermissionRegistry["Lib::PermissionRegistry"]
   n_test_Lib__Platform__Version["Lib::Platform::Version"]
   n_test_Lib__RepositoryIntelligence["Lib::RepositoryIntelligence"]
   n_test_Lib__RepositoryIntelligenceAiArtifact["Lib::RepositoryIntelligenceAiArtifact"]
@@ -676,6 +677,7 @@ graph TD
   n_model_Organization -->|TESTED_BY| n_test_Models__OrganizationInvitation
   n_model_OrganizationInvitation -->|TESTED_BY| n_test_Models__OrganizationInvitation
   n_model_Permission -->|DOCUMENTED_BY| n_document_Validation__Findings__Bug_002_bin_ci_executable_permission
+  n_model_Permission -->|TESTED_BY| n_test_Lib__PermissionRegistry
   n_model_Permission -->|TESTED_BY| n_test_Models__Permission
   n_model_PlatformRole -->|TESTED_BY| n_test_Models__PlatformRole
   n_model_Role -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0006_seal_application_role_and_grid_registries

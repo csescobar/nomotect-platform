@@ -18,6 +18,7 @@ require_relative "../lib/repository_intelligence/mcp_server"
 require_relative "../lib/repository_intelligence/mcp_playbook_tools"
 require_relative "../lib/repository_intelligence/mcp_health_tools"
 require_relative "../lib/evolution_discovery"
+require_relative "../lib/permission_registry"
 
 root = File.expand_path("..", __dir__)
 commit = ENV["GITHUB_SHA"].to_s
@@ -60,7 +61,10 @@ validation = lambda do
                        discovery.validate_assessment_areas +
                        discovery.validate_prioritization_matrix +
                        discovery.validate_roadmap_integration
-  report.fetch(:findings) + drift.findings + ai_artifacts.validate + evolution_findings
+  permission_findings = PermissionRegistry.entries.filter_map do |entry|
+    "Invalid permission entry: #{entry.key}" unless PermissionRegistry::SECURITY_CLASSIFICATIONS.include?(entry.security_classification)
+  end
+  report.fetch(:findings) + drift.findings + ai_artifacts.validate + evolution_findings + permission_findings
 end
 RepositoryIntelligence.configure(
   graph:, contracts: contracts.load, playbooks: playbooks.load, manifest:, readiness: report,

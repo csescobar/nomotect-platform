@@ -1,0 +1,22 @@
+schema_version: 1
+id: 216-epic-11-permission-registry-phase-2
+category: feature
+summary: Complete Epic 11 Phase 2 PermissionRegistry enrichment with metadata schemas, security classifications, and database synchronization.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: true
+  notes: Adds owning_capability, security_classification, default_availability, and version columns to permissions table.
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Enforces validated security classification enums (standard, sensitive, critical) and fail-closed permission checking.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
