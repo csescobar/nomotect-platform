@@ -1,0 +1,22 @@
+schema_version: 1
+id: 227-epic-13-security-assurance-phase-1
+category: security
+summary: Epic 13 Phase 1 — Security Assurance Engineering establishing Target of Evaluation (TOE) scope, trusted boundaries, threat actor taxonomy, operating environment assumptions, and protected security assets aligned with ISO/IEC 15408 / Common Criteria (ASE_INT / ASE_ECD).
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Established formal ISO/IEC 15408 assurance scope, trusted boundaries, threat actors, and asset traceability matrix in assurance-scope-and-assets.md and updated threat-model.md.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

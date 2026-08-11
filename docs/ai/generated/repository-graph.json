@@ -327,7 +327,7 @@
       "name": "Ui::Forms::DateRangePicker",
       "path": "app/components/ui/forms/date_range_picker_component.rb",
       "properties": {
-        "sha256": "c12d98663ba280558dbce42f43fa2f8b4ef4099879778805281f55634280ec23",
+        "sha256": "29b297e9f8f50096e35ccda69cce518b168855f40da10761b7ea3c9a3425917e",
         "source": "platform"
       }
     },
@@ -2257,7 +2257,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "ef9b1a3086ac6b04f43fc0cc2f8d83a235b0d4099f701e0b569a27a7969519f6",
+        "sha256": "38bc84ab8f6739374005adebfc0088a0fa7fbd2c29c0b40c5c65c3ee1259a4c0",
         "source": "platform"
       }
     },
@@ -2392,6 +2392,16 @@
       }
     },
     {
+      "id": "document:Security::Assurance-scope-and-assets",
+      "type": "document",
+      "name": "Security::Assurance-scope-and-assets",
+      "path": "docs/security/assurance-scope-and-assets.md",
+      "properties": {
+        "sha256": "9b6521cd459c2d79a257d828d293d1e5ddb1627752206e6738d6f610d1b006ab",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Security::Dependency-and-supply-chain-policy",
       "type": "document",
       "name": "Security::Dependency-and-supply-chain-policy",
@@ -2437,7 +2447,7 @@
       "name": "Security::Threat-model",
       "path": "docs/security/threat-model.md",
       "properties": {
-        "sha256": "ef8047e7704b1d9ee05dddd9a8084619f9fee1d4f2f221920f6fe5a897301e83",
+        "sha256": "42fd8e199114d58ee56e0b35fb027dc04d7c33e4a8dc9e4f01fa7b5c892f537f",
         "source": "platform"
       }
     },
@@ -7138,5 +7148,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "6dff5399c22301bd97b62a9665ad245a48a19e02"
+  "repository_commit": "30aeaa18d596c0d56a1f338e90f03891b44c90eb"
 }
