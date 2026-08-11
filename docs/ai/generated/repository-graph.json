@@ -312,6 +312,26 @@
       }
     },
     {
+      "id": "component:Ui::Forms::DatePicker",
+      "type": "component",
+      "name": "Ui::Forms::DatePicker",
+      "path": "app/components/ui/forms/date_picker_component.rb",
+      "properties": {
+        "sha256": "5d7d01cdaac5fe1a5a2160f4e22075cf5769d2e931eb21aff836324e522bff78",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Forms::DateRangePicker",
+      "type": "component",
+      "name": "Ui::Forms::DateRangePicker",
+      "path": "app/components/ui/forms/date_range_picker_component.rb",
+      "properties": {
+        "sha256": "c12d98663ba280558dbce42f43fa2f8b4ef4099879778805281f55634280ec23",
+        "source": "platform"
+      }
+    },
+    {
       "id": "component:Ui::Forms::ErrorSummary",
       "type": "component",
       "name": "Ui::Forms::ErrorSummary",
@@ -368,6 +388,16 @@
       "path": "app/components/ui/forms/tag_input_component.rb",
       "properties": {
         "sha256": "690859421de0df0f5196694ac84c141b0b45b3b14adb632397309b71d09b0878",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Forms::TimePicker",
+      "type": "component",
+      "name": "Ui::Forms::TimePicker",
+      "path": "app/components/ui/forms/time_picker_component.rb",
+      "properties": {
+        "sha256": "5740582a14339fd9f5f4556e0700e31503231e92b2efd3f5e779801d299ca1f0",
         "source": "platform"
       }
     },
@@ -2227,7 +2257,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "d5520260392abb903ed43d1fe33eff02909c8feaf527a722ce681b2e8744bd17",
+        "sha256": "ef9b1a3086ac6b04f43fc0cc2f8d83a235b0d4099f701e0b569a27a7969519f6",
         "source": "platform"
       }
     },
@@ -3082,6 +3112,26 @@
       }
     },
     {
+      "id": "test:Components::Ui::Forms::DatePickerComponent",
+      "type": "test",
+      "name": "Components::Ui::Forms::DatePickerComponent",
+      "path": "test/components/ui/forms/date_picker_component_test.rb",
+      "properties": {
+        "sha256": "f7edb299d480be02fdedca910826a17f669b1fc6786074ff2f0a6bfee9ec9aea",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::Forms::DateRangePickerComponent",
+      "type": "test",
+      "name": "Components::Ui::Forms::DateRangePickerComponent",
+      "path": "test/components/ui/forms/date_range_picker_component_test.rb",
+      "properties": {
+        "sha256": "8df7d3e55f1a3790909d637c9aca5d5f7e1bb96f671d9b155d79af1eb28f217e",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Components::Ui::Forms::FileUploadComponent",
       "type": "test",
       "name": "Components::Ui::Forms::FileUploadComponent",
@@ -3118,6 +3168,16 @@
       "path": "test/components/ui/forms/tag_input_component_test.rb",
       "properties": {
         "sha256": "7205ba0235b6128d38820e84f29c95690d1bcfd6aedd6aad132f1cf807b53d6a",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::Forms::TimePickerComponent",
+      "type": "test",
+      "name": "Components::Ui::Forms::TimePickerComponent",
+      "path": "test/components/ui/forms/time_picker_component_test.rb",
+      "properties": {
+        "sha256": "f217c862de94529603a07d35ca77143242d881a39b1bedee53e5a5026a43bf8b",
         "source": "platform"
       }
     },
@@ -5044,6 +5104,18 @@
       "properties": {}
     },
     {
+      "from": "component:Ui::Forms::DatePicker",
+      "to": "test:Components::Ui::Forms::DatePickerComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Forms::DateRangePicker",
+      "to": "test:Components::Ui::Forms::DateRangePickerComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "component:Ui::Forms::FileUpload",
       "to": "test:Components::Ui::Forms::FileUploadComponent",
       "type": "TESTED_BY",
@@ -5058,6 +5130,12 @@
     {
       "from": "component:Ui::Forms::TagInput",
       "to": "test:Components::Ui::Forms::TagInputComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Forms::TimePicker",
+      "to": "test:Components::Ui::Forms::TimePickerComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -5669,6 +5747,18 @@
     },
     {
       "from": "document:Design-system::Forms",
+      "to": "test:Components::Ui::Forms::DatePickerComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Design-system::Forms",
+      "to": "test:Components::Ui::Forms::DateRangePickerComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Design-system::Forms",
       "to": "test:Components::Ui::Forms::FileUploadComponent",
       "type": "TESTED_BY",
       "properties": {}
@@ -5688,6 +5778,12 @@
     {
       "from": "document:Design-system::Forms",
       "to": "test:Components::Ui::Forms::TagInputComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Design-system::Forms",
+      "to": "test:Components::Ui::Forms::TimePickerComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -7042,5 +7138,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "3b17f50ba2627f0009d4f1c03b9ac12d395bf5d7"
+  "repository_commit": "6dff5399c22301bd97b62a9665ad245a48a19e02"
 }

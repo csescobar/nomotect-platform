@@ -82,6 +82,7 @@ Required release impact: `major`.
 - Epic 12 Phase 4 — Input component family introducing ComboboxComponent, AutocompleteComponent, TagInputComponent, and MultiSelectComponent ViewComponents with Stimulus controllers, ARIA accessibility, and Rails form hidden input sync. (`223-epic-12-input-components-phase-4`)
 - Epic 12 Phase 5 — Final phase of Design System 2.0 introducing KpiCardComponent, TimelineComponent, ActivityFeedComponent, and DescriptionListComponent ViewComponents under Ui::Data namespace with ARIA compliance and CSS design token integration. (`224-epic-12-data-components-phase-5`)
 - Epic 12 Phase 6 — Final complementary phase completing 100% of Design System 2.0 component families, introducing PaginationComponent, UserMenuComponent, PopoverComponent, FileUploadComponent, and TreeViewComponent with Stimulus controllers, ARIA compliance, and CSS design token integration. (`225-epic-12-complementary-components-phase-6`)
+- Epic 12 Phase 7 — Native Date & Time picker ViewComponents (DatePickerComponent, DateRangePickerComponent, TimePickerComponent) under Ui::Forms namespace with Stimulus controllers, ARIA compliance, 12h/24h time formatting, range presets, and Rails hidden input synchronization. (`226-epic-12-datetime-pickers-phase-7`)
 
 ### Fixed
 
