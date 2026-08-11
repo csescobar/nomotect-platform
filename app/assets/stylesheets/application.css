@@ -456,4 +456,43 @@ dialog.command-palette::backdrop { background: rgb(0 0 0 / 0.4); backdrop-filter
 .tooltip-bubble--left { right: 100%; top: 50%; transform: translateY(-50%) translateX(-4px); }
 .tooltip-bubble--right { left: 100%; top: 50%; transform: translateY(-50%) translateX(4px); }
 
+/* ── Combobox ───────────────────────────────────────────────────────────────── */
+.ui-combobox { position: relative; width: 100%; }
+.ui-combobox__input { width: 100%; min-height: var(--control-height); padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); color: var(--color-text); }
+.ui-combobox__listbox { display: none; position: absolute; top: 100%; left: 0; right: 0; margin: 4px 0 0 0; padding: var(--space-xs) 0; list-style: none; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); max-height: 14rem; overflow-y: auto; z-index: 50; }
+.ui-combobox__listbox--open { display: block; }
+.ui-combobox__option { padding: var(--space-sm) var(--space-md); font-size: var(--font-size-sm); color: var(--color-text); cursor: pointer; transition: background var(--transition-fast); }
+.ui-combobox__option:hover, .ui-combobox__option:focus { background: var(--color-surface-subtle); outline: none; }
+.ui-combobox__option--selected { background: var(--color-accent-primary-subtle); color: var(--color-accent-primary); font-weight: 600; }
+
+/* ── Autocomplete ───────────────────────────────────────────────────────────── */
+.ui-autocomplete { position: relative; width: 100%; }
+.ui-autocomplete__input { width: 100%; min-height: var(--control-height); padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); color: var(--color-text); }
+.ui-autocomplete__results { display: none; position: absolute; top: 100%; left: 0; right: 0; margin: 4px 0 0 0; padding: var(--space-xs) 0; list-style: none; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); max-height: 14rem; overflow-y: auto; z-index: 50; }
+.ui-autocomplete__results--open { display: block; }
+.ui-autocomplete__option { padding: var(--space-sm) var(--space-md); font-size: var(--font-size-sm); color: var(--color-text); cursor: pointer; transition: background var(--transition-fast); }
+.ui-autocomplete__option:hover, .ui-autocomplete__option:focus { background: var(--color-surface-subtle); outline: none; }
+
+/* ── TagInput ───────────────────────────────────────────────────────────────── */
+.ui-tag-input { width: 100%; }
+.ui-tag-input__container { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); min-height: var(--control-height); padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); }
+.ui-tag-input__tag { display: inline-flex; align-items: center; gap: var(--space-xs); padding: 0.125rem var(--space-sm); background: var(--color-surface-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: var(--font-size-xs); color: var(--color-text); }
+.ui-tag-input__remove { background: none; border: none; padding: 0; color: var(--color-text-subtle); cursor: pointer; font-size: var(--font-size-sm); line-height: 1; }
+.ui-tag-input__remove:hover { color: var(--color-danger); }
+.ui-tag-input__field { flex: 1; min-width: 6rem; border: none; background: transparent; outline: none; padding: var(--space-xs); font-size: var(--font-size-sm); color: var(--color-text); }
+
+/* ── MultiSelect ────────────────────────────────────────────────────────────── */
+.ui-multi-select { position: relative; width: 100%; }
+.ui-multi-select__trigger { display: flex; align-items: center; justify-content: space-between; min-height: var(--control-height); padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); cursor: pointer; }
+.ui-multi-select__placeholder { font-size: var(--font-size-sm); color: var(--color-text-subtle); padding-left: var(--space-xs); }
+.ui-multi-select__chips { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.ui-multi-select__chip { display: inline-flex; align-items: center; gap: var(--space-xs); padding: 0.125rem var(--space-sm); background: var(--color-accent-primary-subtle); color: var(--color-accent-primary); border-radius: var(--radius-sm); font-size: var(--font-size-xs); font-weight: 600; }
+.ui-multi-select__chip-remove { background: none; border: none; padding: 0; color: var(--color-accent-primary); cursor: pointer; font-size: var(--font-size-sm); line-height: 1; }
+.ui-multi-select__dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; margin: 4px 0 0 0; padding: var(--space-xs) 0; list-style: none; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); max-height: 14rem; overflow-y: auto; z-index: 50; }
+.ui-multi-select__dropdown--open { display: block; }
+.ui-multi-select__option { padding: var(--space-sm) var(--space-md); font-size: var(--font-size-sm); color: var(--color-text); cursor: pointer; transition: background var(--transition-fast); }
+.ui-multi-select__option:hover, .ui-multi-select__option:focus { background: var(--color-surface-subtle); outline: none; }
+.ui-multi-select__option--selected { background: var(--color-accent-primary-subtle); color: var(--color-accent-primary); font-weight: 600; }
+
+
 

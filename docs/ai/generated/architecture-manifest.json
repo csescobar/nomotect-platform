@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "4fa61222f0e838c6f196e6a96e7f02fd8a4cb3ad",
+  "repository_commit": "4c70dbb15c3a5d4486a3732966cbbe6d86bb13b0",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -46,7 +46,7 @@
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "563dd46790d6373ecdce8b14a2cca1eb6743b1b62eb38f1eb8c7a826eb68ced2"
+      "sha256": "cccc66d4b50465fb43d8536e12cd0cf73dd7f8662f6e337f26e3d1e9976cd2cf"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
@@ -234,9 +234,19 @@
       "sha256": "11ab02324215abb06b97be828af0cae81ad46d84a7a1878f35f9b7edb3f52977"
     },
     {
+      "path": "app/components/ui/forms/autocomplete_component.rb",
+      "kind": "component",
+      "sha256": "2d44a02748d54778388b91f23f03b204ea6fdfbe2e54539637b5270eed909eb3"
+    },
+    {
       "path": "app/components/ui/forms/checkbox_component.rb",
       "kind": "component",
       "sha256": "9cd67f80888d6a1a9daa595a6bc311ea6936b5f138507379b728396519baa33d"
+    },
+    {
+      "path": "app/components/ui/forms/combobox_component.rb",
+      "kind": "component",
+      "sha256": "0dcbbdcf964443fa115ee6fccc18234d85c06e7f2723ed13dd1f682b22b394cd"
     },
     {
       "path": "app/components/ui/forms/error_summary_component.rb",
@@ -249,9 +259,19 @@
       "sha256": "7d66586bc20bc17f88a3462768a5392086606543ced7d9aaabda63b2f1af725e"
     },
     {
+      "path": "app/components/ui/forms/multi_select_component.rb",
+      "kind": "component",
+      "sha256": "16e0ea8c7324767d9635b5a6b44baf4451f8146b287c7fa765a6871fc0054247"
+    },
+    {
       "path": "app/components/ui/forms/radio_group_component.rb",
       "kind": "component",
       "sha256": "2296cd2d61341bcebd833d71117a5400fd8bce7f72c46b0c56d4b736b5b37c9c"
+    },
+    {
+      "path": "app/components/ui/forms/tag_input_component.rb",
+      "kind": "component",
+      "sha256": "690859421de0df0f5196694ac84c141b0b45b3b14adb632397309b71d09b0878"
     },
     {
       "path": "app/components/ui/layout/application_shell_component.rb",
@@ -286,7 +306,7 @@
     {
       "path": "app/components/ui/progress_bar_component.rb",
       "kind": "component",
-      "sha256": "b75a0ce2c99aa5dd54ea52b7ca05b4c8e1549106638537f822a5c0e2d5f4cb99"
+      "sha256": "51dea002b91ffb48649cefa2e77db3fdb31e4bc98760c26a8b6341cd6308a1b7"
     },
     {
       "path": "app/components/ui/progress_spinner_component.rb",
@@ -499,6 +519,16 @@
       "sha256": "f5f3ef90919ac7c3f68f547f4fe767fefcd4b02dad916cad7cea44cf14492205"
     },
     {
+      "path": "app/javascript/controllers/autocomplete_controller.js",
+      "kind": "source",
+      "sha256": "e0069887a3493552c2908ece8e1a8e46db62eab4db4f54fa352f18420d3dff3d"
+    },
+    {
+      "path": "app/javascript/controllers/combobox_controller.js",
+      "kind": "source",
+      "sha256": "51cbca7479785ba1b5ae16b2f13edda5098de3b5f8267f00cb3e73209352cd98"
+    },
+    {
       "path": "app/javascript/controllers/command_palette_controller.js",
       "kind": "source",
       "sha256": "0502c0f929a8ca224ed77ee6c45882c72e52ee30f37f8364a91e4db3a441980f"
@@ -584,6 +614,11 @@
       "sha256": "7e8743ca9db4a4c764bbbb9dd1a096122eea2f0c96a117fe03bb0637d1669607"
     },
     {
+      "path": "app/javascript/controllers/multi_select_controller.js",
+      "kind": "source",
+      "sha256": "386b9004169df2525270db7aba27b60b414e32a1196c726f5eceb448331838b4"
+    },
+    {
       "path": "app/javascript/controllers/navigation_drawer_controller.js",
       "kind": "source",
       "sha256": "7a94b9bb59ab584cbd9d8cd8a07de1653d5ac6075de7dd520c423ab8b04472ab"
@@ -597,6 +632,11 @@
       "path": "app/javascript/controllers/tabs_controller.js",
       "kind": "source",
       "sha256": "7e085630601a8c2c7500d95bec7344269a3ef7935e234cf6dea3dba3a963573c"
+    },
+    {
+      "path": "app/javascript/controllers/tag_input_controller.js",
+      "kind": "source",
+      "sha256": "e8d890bf6e4b1052f3643944fbc434edf53a139dfd24ba9d1d3e276bf8137ee9"
     },
     {
       "path": "app/javascript/controllers/theme_controller.js",
@@ -3171,7 +3211,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "694eb0df1b62f854be1ed9eb2187ed4db16a8a2896351a90790e5b37da129c52"
+      "sha256": "17406bb240f9b4adee946dcbf84eca36ef078360b39b64553a9a0f6051e331bf"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3564,9 +3604,29 @@
       "sha256": "962345bc73731932dbed8aafc317c0e4dd1b60ce1b2d341a1af2973eba4bf77f"
     },
     {
+      "path": "test/components/ui/forms/autocomplete_component_test.rb",
+      "kind": "test",
+      "sha256": "de17f08090aa8a143f971b793d7a1f8b27f76d0db38aaafc4fc5512ef38d0ed6"
+    },
+    {
+      "path": "test/components/ui/forms/combobox_component_test.rb",
+      "kind": "test",
+      "sha256": "243735c36d7e2bbb59e54410fc5fa6b8a36b050bbcb41deef2ace62a640568a0"
+    },
+    {
       "path": "test/components/ui/forms/form_components_test.rb",
       "kind": "test",
       "sha256": "2690fd53d09a36d3542f081f4089e12d31592463c55e591282e8216a37004f6e"
+    },
+    {
+      "path": "test/components/ui/forms/multi_select_component_test.rb",
+      "kind": "test",
+      "sha256": "601215a9b9ef510bb81073fe6124f778b87edfbb76d80aa188bc2502778c4ece"
+    },
+    {
+      "path": "test/components/ui/forms/tag_input_component_test.rb",
+      "kind": "test",
+      "sha256": "7205ba0235b6128d38820e84f29c95690d1bcfd6aedd6aad132f1cf807b53d6a"
     },
     {
       "path": "test/components/ui/layout/application_shell_component_test.rb",

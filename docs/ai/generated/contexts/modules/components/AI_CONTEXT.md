@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- test: Components::MarketingComponents, Components::Ui::AvatarComponent, Components::Ui::AvatarGroupComponent, Components::Ui::ButtonComponent, Components::Ui::CommandPaletteComponent, Components::Ui::CoreComponents, Components::Ui::DangerZoneComponent, Components::Ui::Forms::FormComponents, Components::Ui::Layout::ApplicationShellComponent, Components::Ui::LocaleSwitcherComponent, Components::Ui::PermissionIndicatorComponent, Components::Ui::ProgressBarComponent, Components::Ui::ProgressSpinnerComponent, Components::Ui::RoleBadgeComponent, Components::Ui::SkeletonComponent, Components::Ui::StepperComponent, Components::Ui::TabsComponent, Components::Ui::ThemeSwitcherComponent, Components::Ui::ToastComponent, Components::Ui::TooltipComponent
+- test: Components::MarketingComponents, Components::Ui::AvatarComponent, Components::Ui::AvatarGroupComponent, Components::Ui::ButtonComponent, Components::Ui::CommandPaletteComponent, Components::Ui::CoreComponents, Components::Ui::DangerZoneComponent, Components::Ui::Forms::AutocompleteComponent, Components::Ui::Forms::ComboboxComponent, Components::Ui::Forms::FormComponents, Components::Ui::Forms::MultiSelectComponent, Components::Ui::Forms::TagInputComponent, Components::Ui::Layout::ApplicationShellComponent, Components::Ui::LocaleSwitcherComponent, Components::Ui::PermissionIndicatorComponent, Components::Ui::ProgressBarComponent, Components::Ui::ProgressSpinnerComponent, Components::Ui::RoleBadgeComponent, Components::Ui::SkeletonComponent, Components::Ui::StepperComponent, Components::Ui::TabsComponent, Components::Ui::ThemeSwitcherComponent, Components::Ui::ToastComponent, Components::Ui::TooltipComponent
 
 ## Source paths
 
@@ -15,7 +15,11 @@
 - `test/components/ui/command_palette_component_test.rb`
 - `test/components/ui/core_components_test.rb`
 - `test/components/ui/danger_zone_component_test.rb`
+- `test/components/ui/forms/autocomplete_component_test.rb`
+- `test/components/ui/forms/combobox_component_test.rb`
 - `test/components/ui/forms/form_components_test.rb`
+- `test/components/ui/forms/multi_select_component_test.rb`
+- `test/components/ui/forms/tag_input_component_test.rb`
 - `test/components/ui/layout/application_shell_component_test.rb`
 - `test/components/ui/locale_switcher_component_test.rb`
 - `test/components/ui/permission_indicator_component_test.rb`
@@ -38,7 +42,15 @@
 - `component:Ui::Button` —TESTED_BY→ `test:Components::Ui::ButtonComponent`
 - `component:Ui::CommandPalette` —TESTED_BY→ `test:Components::Ui::CommandPaletteComponent`
 - `component:Ui::DangerZone` —TESTED_BY→ `test:Components::Ui::DangerZoneComponent`
+- `component:Ui::Forms::Autocomplete` —TESTED_BY→ `test:Components::Ui::Forms::AutocompleteComponent`
+- `document:Design-system::Forms` —TESTED_BY→ `test:Components::Ui::Forms::AutocompleteComponent`
+- `component:Ui::Forms::Combobox` —TESTED_BY→ `test:Components::Ui::Forms::ComboboxComponent`
+- `document:Design-system::Forms` —TESTED_BY→ `test:Components::Ui::Forms::ComboboxComponent`
 - `document:Design-system::Forms` —TESTED_BY→ `test:Components::Ui::Forms::FormComponents`
+- `component:Ui::Forms::MultiSelect` —TESTED_BY→ `test:Components::Ui::Forms::MultiSelectComponent`
+- `document:Design-system::Forms` —TESTED_BY→ `test:Components::Ui::Forms::MultiSelectComponent`
+- `component:Ui::Forms::TagInput` —TESTED_BY→ `test:Components::Ui::Forms::TagInputComponent`
+- `document:Design-system::Forms` —TESTED_BY→ `test:Components::Ui::Forms::TagInputComponent`
 - `component:Application` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
 - `component:Ui::Layout::ApplicationShell` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
 - `controller:Application` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
