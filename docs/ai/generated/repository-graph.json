@@ -2012,12 +2012,62 @@
       }
     },
     {
+      "id": "document:Roadmap::Discovery::Capability-inventory",
+      "type": "document",
+      "name": "Roadmap::Discovery::Capability-inventory",
+      "path": "docs/roadmap/discovery/capability-inventory.md",
+      "properties": {
+        "sha256": "3933dbfe9e99fd15ee5b296df342657c76e37878fd931e9b488572c5955cb43e",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Roadmap::Discovery::Gap-analysis",
+      "type": "document",
+      "name": "Roadmap::Discovery::Gap-analysis",
+      "path": "docs/roadmap/discovery/gap-analysis.md",
+      "properties": {
+        "sha256": "ad375de067ea10be5c92bcb33db8970a4a378da8c0aa13e892093763250255ff",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Roadmap::Discovery::Post-1-0-discovery-report",
+      "type": "document",
+      "name": "Roadmap::Discovery::Post-1-0-discovery-report",
+      "path": "docs/roadmap/discovery/post-1-0-discovery-report.md",
+      "properties": {
+        "sha256": "7726fa4b2ef435fa159766b610eba0b79ece675fdf145577b0d664d8c83806e4",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Roadmap::Discovery::Prioritization-matrix",
+      "type": "document",
+      "name": "Roadmap::Discovery::Prioritization-matrix",
+      "path": "docs/roadmap/discovery/prioritization-matrix.md",
+      "properties": {
+        "sha256": "a1dbb2beecb4f8d67d53fe58f4adf806cc8e4f35a7cedbc324c8db5f6cca9900",
+        "source": "platform"
+      }
+    },
+    {
       "id": "document:Roadmap::Epic-10-plan",
       "type": "document",
       "name": "Roadmap::Epic-10-plan",
       "path": "docs/roadmap/epic-10-plan.md",
       "properties": {
         "sha256": "03c902b9c37a5f35f3e6f72c11b898e92383ce647b008bed1aa11230013d095a",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "document:Roadmap::Platform-evolution-roadmap",
+      "type": "document",
+      "name": "Roadmap::Platform-evolution-roadmap",
+      "path": "docs/roadmap/platform-evolution-roadmap.md",
+      "properties": {
+        "sha256": "8725dbf9e89cf834363b486e262de206104616dc06b349a806d5628e84fdb3cd",
         "source": "platform"
       }
     },
@@ -3088,6 +3138,16 @@
       "path": "test/lib/epic_9_certification_test.rb",
       "properties": {
         "sha256": "a9add47fdb16ad0a03585723c5c7c111cbe8baacb858d69c3d21b84a0310843b",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::EvolutionDiscovery",
+      "type": "test",
+      "name": "Lib::EvolutionDiscovery",
+      "path": "test/lib/evolution_discovery_test.rb",
+      "properties": {
+        "sha256": "cbe64a9dec15df43a80e292058c4db4d28c85305dec2b409635e0644f6900e20",
         "source": "platform"
       }
     },
@@ -4169,6 +4229,12 @@
       "from": "component:Application",
       "to": "test:Services::Epic10::RepresentativeApplicationJourney",
       "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Marketing::Capability",
+      "to": "document:Roadmap::Discovery::Capability-inventory",
+      "type": "DOCUMENTED_BY",
       "properties": {}
     },
     {
@@ -5960,5 +6026,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "c039f3280c3dce7d50732fcef35991b044edb6b8"
+  "repository_commit": "594abf23a2221d66cc600f666d3b893f32244418"
 }

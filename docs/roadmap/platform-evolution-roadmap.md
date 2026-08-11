@@ -60,7 +60,7 @@ Each implementation issue and pull request should identify:
 
 # Evolution Discovery — Post-1.0 Capability Assessment
 
-**Status:** ⏳ Planned
+**Status:** ✅ Completed
 
 ## Objective
 
@@ -70,6 +70,13 @@ post-1.0 implementation sequence.
 The discovery phase must identify which capabilities already exist, where current
 contracts are insufficient and which proposed improvements provide the highest
 strategic value.
+
+## Completed Discovery Artifacts
+
+- [Capability Inventory](discovery/capability-inventory.md)
+- [Gap Analysis](discovery/gap-analysis.md)
+- [Prioritization Matrix](discovery/prioritization-matrix.md)
+- [Discovery Report](discovery/post-1-0-discovery-report.md)
 
 ## Assessment Areas
 

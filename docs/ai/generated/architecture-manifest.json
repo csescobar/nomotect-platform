@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "c039f3280c3dce7d50732fcef35991b044edb6b8",
+  "repository_commit": "594abf23a2221d66cc600f666d3b893f32244418",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -1651,7 +1651,7 @@
     {
       "path": "config/ai/documentation.yml",
       "kind": "source",
-      "sha256": "617ae9d3046c0f3fbbc487f72485af88a3c16690170997fbdc9f27761644d551"
+      "sha256": "7639d53419767f6ea9c2ca44eedda35f74509aa0ec08fc07f291434db33a461f"
     },
     {
       "path": "config/ai/playbooks/bug_fix.yml",
@@ -3064,9 +3064,34 @@
       "sha256": "babb3b931f3b89c3f8595c8cf76a8202a10c340243c9cd93713836532c9820d4"
     },
     {
+      "path": "docs/roadmap/discovery/capability-inventory.md",
+      "kind": "documentation",
+      "sha256": "3933dbfe9e99fd15ee5b296df342657c76e37878fd931e9b488572c5955cb43e"
+    },
+    {
+      "path": "docs/roadmap/discovery/gap-analysis.md",
+      "kind": "documentation",
+      "sha256": "ad375de067ea10be5c92bcb33db8970a4a378da8c0aa13e892093763250255ff"
+    },
+    {
+      "path": "docs/roadmap/discovery/post-1-0-discovery-report.md",
+      "kind": "documentation",
+      "sha256": "7726fa4b2ef435fa159766b610eba0b79ece675fdf145577b0d664d8c83806e4"
+    },
+    {
+      "path": "docs/roadmap/discovery/prioritization-matrix.md",
+      "kind": "documentation",
+      "sha256": "a1dbb2beecb4f8d67d53fe58f4adf806cc8e4f35a7cedbc324c8db5f6cca9900"
+    },
+    {
       "path": "docs/roadmap/epic-10-plan.md",
       "kind": "documentation",
       "sha256": "03c902b9c37a5f35f3e6f72c11b898e92383ce647b008bed1aa11230013d095a"
+    },
+    {
+      "path": "docs/roadmap/platform-evolution-roadmap.md",
+      "kind": "documentation",
+      "sha256": "8725dbf9e89cf834363b486e262de206104616dc06b349a806d5628e84fdb3cd"
     },
     {
       "path": "docs/roadmap/roadmap.md",
@@ -3217,6 +3242,11 @@
       "path": "lib/epic_9/certification.rb",
       "kind": "source",
       "sha256": "5352ee2b06c5bea6fe129cb89829bba92c7d2c1fe37ba6b62a279f273bd8a54a"
+    },
+    {
+      "path": "lib/evolution_discovery.rb",
+      "kind": "source",
+      "sha256": "0ba4fe99318891a125e8ee5f0859e8283bd3b9f7c6b12801ac097f1f22865163"
     },
     {
       "path": "lib/platform/json_log_formatter.rb",
@@ -3607,6 +3637,11 @@
       "path": "test/lib/epic_9_certification_test.rb",
       "kind": "test",
       "sha256": "a9add47fdb16ad0a03585723c5c7c111cbe8baacb858d69c3d21b84a0310843b"
+    },
+    {
+      "path": "test/lib/evolution_discovery_test.rb",
+      "kind": "test",
+      "sha256": "cbe64a9dec15df43a80e292058c4db4d28c85305dec2b409635e0644f6900e20"
     },
     {
       "path": "test/lib/grid_engine/html_renderer_test.rb",

@@ -200,7 +200,12 @@ graph TD
   n_document_RepositoryIntelligence__Documentation_governance["RepositoryIntelligence::Documentation-governance"]
   n_document_Roadmap__Adoption_validation_improvements["Roadmap::Adoption-validation-improvements"]
   n_document_Roadmap__Custom_layout_dx_improvements["Roadmap::Custom-layout-dx-improvements"]
+  n_document_Roadmap__Discovery__Capability_inventory["Roadmap::Discovery::Capability-inventory"]
+  n_document_Roadmap__Discovery__Gap_analysis["Roadmap::Discovery::Gap-analysis"]
+  n_document_Roadmap__Discovery__Post_1_0_discovery_report["Roadmap::Discovery::Post-1-0-discovery-report"]
+  n_document_Roadmap__Discovery__Prioritization_matrix["Roadmap::Discovery::Prioritization-matrix"]
   n_document_Roadmap__Epic_10_plan["Roadmap::Epic-10-plan"]
+  n_document_Roadmap__Platform_evolution_roadmap["Roadmap::Platform-evolution-roadmap"]
   n_document_Roadmap__Roadmap["Roadmap::Roadmap"]
   n_document_Roadmap__V1_0_0_rc1_release_gate["Roadmap::V1-0-0-rc1-release-gate"]
   n_document_Roadmap__V1_0_0_release_gate["Roadmap::V1-0-0-release-gate"]
@@ -308,6 +313,7 @@ graph TD
   n_test_Lib__DesignTokens__Compiler["Lib::DesignTokens::Compiler"]
   n_test_Lib__DeveloperGuidelines["Lib::DeveloperGuidelines"]
   n_test_Lib__Epic9Certification["Lib::Epic9Certification"]
+  n_test_Lib__EvolutionDiscovery["Lib::EvolutionDiscovery"]
   n_test_Lib__GridEngine__HtmlRenderer["Lib::GridEngine::HtmlRenderer"]
   n_test_Lib__GridEngine__Query["Lib::GridEngine::Query"]
   n_test_Lib__GridEngine__SyncfusionAdapter["Lib::GridEngine::SyncfusionAdapter"]
@@ -423,6 +429,7 @@ graph TD
   n_component_Application -->|TESTED_BY| n_test_Services__Epic10__RepresentativeApplication
   n_component_Application -->|TESTED_BY| n_test_Services__Epic10__RepresentativeApplicationCertification
   n_component_Application -->|TESTED_BY| n_test_Services__Epic10__RepresentativeApplicationJourney
+  n_component_Marketing__Capability -->|DOCUMENTED_BY| n_document_Roadmap__Discovery__Capability_inventory
   n_component_Marketing__Header -->|TESTED_BY| n_test_Requests__SecurityHeaders
   n_component_Marketing__Lifecycle -->|DOCUMENTED_BY| n_document_Extensions__Lifecycle_guide
   n_component_Marketing__Lifecycle -->|DOCUMENTED_BY| n_document_Operators__Compatibility_and_lifecycle

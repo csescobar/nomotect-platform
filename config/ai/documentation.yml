@@ -169,3 +169,24 @@ documents:
       - docs/ai/phase8-pilot-plan.md
       - docs/roadmap/custom-layout-dx-improvements.md
       - test/lib/developer_guidelines_test.rb
+  - path: docs/roadmap/platform-evolution-roadmap.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - platform
+    source_paths:
+      - lib/evolution_discovery.rb
+      - test/lib/evolution_discovery_test.rb
+      - docs/roadmap/discovery/post-1-0-discovery-report.md
+  - path: docs/roadmap/discovery/post-1-0-discovery-report.md
+    owners:
+      - "@csescobar"
+    review_by: "2027-01-31"
+    contracts:
+      - platform
+    source_paths:
+      - docs/roadmap/discovery/capability-inventory.md
+      - docs/roadmap/discovery/gap-analysis.md
+      - docs/roadmap/discovery/prioritization-matrix.md
+

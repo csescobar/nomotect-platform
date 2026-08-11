@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- test: Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationSkeletonDocumentationSanitization, Lib::ApplicationStarter, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::DesignTokens::Compiler, Lib::DeveloperGuidelines, Lib::Epic9Certification, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
+- test: Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationSkeletonDocumentationSanitization, Lib::ApplicationStarter, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::DesignTokens::Compiler, Lib::DeveloperGuidelines, Lib::Epic9Certification, Lib::EvolutionDiscovery, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
 
 ## Source paths
 
@@ -17,6 +17,7 @@
 - `test/lib/design_tokens/compiler_test.rb`
 - `test/lib/developer_guidelines_test.rb`
 - `test/lib/epic_9_certification_test.rb`
+- `test/lib/evolution_discovery_test.rb`
 - `test/lib/grid_engine/html_renderer_test.rb`
 - `test/lib/grid_engine/query_test.rb`
 - `test/lib/grid_engine/syncfusion_adapter_test.rb`
