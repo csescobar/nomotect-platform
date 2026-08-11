@@ -74,6 +74,7 @@
 - Complete Epic 11 Phase 2 PermissionRegistry enrichment with metadata schemas, security classifications, and database synchronization. (`216-epic-11-permission-registry-phase-2`)
 - Complete Epic 11 Phase 3 permission-aware application behavior in ActionPolicy policies and PermissionHelper view utilities. (`217-epic-11-permission-aware-behavior-phase-3`)
 - Complete Epic 11 protected system roles backfill, automatic membership role linkage, and removal of legacy string authorization fallback. (`218-epic-11-system-roles-backfill`)
+- Complete Epic 11 Phase 4 advanced contextual authorization evaluator, data classification security clearance checks, and security denial domain auditing. (`219-epic-11-advanced-policy-context-phase-4`)
 
 ### Fixed
 
@@ -212,6 +213,7 @@
 - **Security — 216-epic-11-permission-registry-phase-2:** Enforces validated security classification enums (standard, sensitive, critical) and fail-closed permission checking.
 - **Security — 217-epic-11-permission-aware-behavior-phase-3:** Enforces granular membership.permitted? authorization across CustomerPolicy, MembershipPolicy, RolePolicy, OrganizationPolicy, and PermissionHelper.
 - **Security — 218-epic-11-system-roles-backfill:** Enforces strict role_record presence for all authorization checks in Membership#permitted?.
+- **Security — 219-epic-11-advanced-policy-context-phase-4:** Enforces ContextualAuthorization evaluator combining RBAC baseline, data classification clearance (standard, sensitive, restricted), resource ownership, and emits security.contextual_denial domain events.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -251,6 +253,7 @@
 - **Privacy — 184-remove-css-preload-warnings:** This layout metadata change does not collect, persist or disclose user data.
 - **Privacy — 185-responsive-grid-rendering:** This rendering-only change does not collect, persist or disclose user data.
 - **Privacy — 186-align-application-starter-push-filter:** This workflow trigger change does not collect, persist or disclose user data.
+- **Privacy — 219-epic-11-advanced-policy-context-phase-4:** Restricts access to sensitive and restricted classified data based on role security clearance.
 - **Accessibility — 145-epic-10-release-thresholds:** Accessibility requires zero critical automated violations, zero keyboard blockers and manual screen-reader approval.
 - **Accessibility — 147-epic-10-representative-app-architecture:** The architecture requires Light/Dark, bilingual and manual screen-reader review journeys.
 - **Accessibility — 148-epic-10-representative-app-foundation:** The foundation requires both Light/Dark themes and English/Brazilian Portuguese fixtures for later journeys.

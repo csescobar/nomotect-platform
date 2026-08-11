@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "1553b572dfe65a5967f2bcf359c8a02fbd6d707d",
+  "repository_commit": "8f7a97197f00ac5b70c6b6ebfc952850555f161d",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -416,7 +416,7 @@
     {
       "path": "app/helpers/permission_helper.rb",
       "kind": "source",
-      "sha256": "a45312253ad4412a72c1b881c36cae705007c0ab3ae54b4683855def9c632b74"
+      "sha256": "28246cb8add3df8b5e1b2fc445a08a9726af23c8531cb59e7e1d932b903cce22"
     },
     {
       "path": "app/javascript/application.js",
@@ -806,12 +806,12 @@
     {
       "path": "app/policies/application_policy.rb",
       "kind": "policy",
-      "sha256": "651b5222018602a6e18398024e00a02b34ea57eb6f4ff0662f52d4c86cca768b"
+      "sha256": "2568f4e5f0969dd5d8e1fce93bf6f2ab07761bd050b5df66d850bc2ae11ba6d6"
     },
     {
       "path": "app/policies/customer_policy.rb",
       "kind": "policy",
-      "sha256": "3848e17110bb67e6357ddcbbf7bb9aabc35b576d1eff1ea5eb4f52c6ebdb78d9"
+      "sha256": "3c5d65ecdc7a7b57e6e7939c0355a3b0fcf4eac7555ad573bce6b76b9734750b"
     },
     {
       "path": "app/policies/membership_policy.rb",
@@ -3091,7 +3091,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "7292ca38e2fab1684ec761fc94041bf7c260f201bd6aaec604563be411217c27"
+      "sha256": "620a8ed33dbbcc3baeedb80adfe131912c90e5de7a42199baaadeda9b728aeb7"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3146,7 +3146,7 @@
     {
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "kind": "documentation",
-      "sha256": "8725dbf9e89cf834363b486e262de206104616dc06b349a806d5628e84fdb3cd"
+      "sha256": "ef830ae0937add97e6c8f00ce5c6e11fbc15595a0ec9435982476a09ab3716b8"
     },
     {
       "path": "docs/roadmap/roadmap.md",
@@ -3282,6 +3282,11 @@
       "path": "lib/container_environment_validator.rb",
       "kind": "source",
       "sha256": "2937e9ad072fd5215c6bb19eaacae4f0583cab3708dccd5c495e600ede35db1f"
+    },
+    {
+      "path": "lib/contextual_authorization.rb",
+      "kind": "source",
+      "sha256": "badba6cb9bbe74c3e33c4260f7bd1832bf7aecc63c48057be93d96f6de19a6c6"
     },
     {
       "path": "lib/design_tokens/compiler.rb",
@@ -3576,7 +3581,7 @@
     {
       "path": "test/helpers/permission_helper_test.rb",
       "kind": "test",
-      "sha256": "fc2cbf27c94e01ddfb2121e588544b87ef4566f1189d3e5c19a167f8480df922"
+      "sha256": "b03953b0b1b73957f4067e78b6d514e9b8930cb79dcb86d0b430ef683ae9f968"
     },
     {
       "path": "test/integration/application_extension_sample_test.rb",
@@ -3687,6 +3692,11 @@
       "path": "test/lib/container_environment_validator_test.rb",
       "kind": "test",
       "sha256": "f50b705bdf6e61afe793f21f30f1c55532a83ca0bacc869efe5ed9679f4062e1"
+    },
+    {
+      "path": "test/lib/contextual_authorization_test.rb",
+      "kind": "test",
+      "sha256": "e70f089d797193087fe7662b60a279dea369a355cd16b46962c914169111442d"
     },
     {
       "path": "test/lib/design_tokens/compiler_test.rb",

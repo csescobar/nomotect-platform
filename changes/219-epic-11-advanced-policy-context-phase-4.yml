@@ -1,0 +1,22 @@
+schema_version: 1
+id: 219-epic-11-advanced-policy-context-phase-4
+category: feature
+summary: Complete Epic 11 Phase 4 advanced contextual authorization evaluator, data classification security clearance checks, and security denial domain auditing.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Enforces ContextualAuthorization evaluator combining RBAC baseline, data classification clearance (standard, sensitive, restricted), resource ownership, and emits security.contextual_denial domain events.
+privacy:
+  impact: reviewed
+  notes: Restricts access to sensitive and restricted classified data based on role security clearance.
+accessibility:
+  impact: none
+  notes:
