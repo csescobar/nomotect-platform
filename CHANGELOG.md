@@ -72,6 +72,7 @@ Required release impact: `major`.
 - Update README.md to reflect v1.0.0 GA completion, delivery history table, and Engineering Playbooks catalog. (`212-readme-v1-0-0-ga-update`)
 - Complete Post-1.0 Evolution Discovery capability assessment, gap analysis, prioritization matrix, and automated validator. (`214-post-1-0-evolution-discovery`)
 - Implement Epic 11 Phase 1 persistent RBAC models (Role, Permission, RolePermission), PermissionRegistry, and domain operations. (`215-epic-11-persistent-rbac-phase-1`)
+- Complete Epic 11 Phase 2 PermissionRegistry enrichment with metadata schemas, security classifications, and database synchronization. (`216-epic-11-permission-registry-phase-2`)
 
 ### Fixed
 

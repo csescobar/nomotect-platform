@@ -1957,7 +1957,7 @@
       "name": "Releases::Generated::Migration-notes",
       "path": "docs/releases/generated/migration-notes.md",
       "properties": {
-        "sha256": "2ef0667551aab6a3f5bc7527f7423186ce1eff603f3a3c52288d54c3c6efa123",
+        "sha256": "7b7d971d2ec9cf65c464058ad356c1f987dcceabd0ab39a90d1dd77abc65eecb",
         "source": "platform"
       }
     },
@@ -1967,7 +1967,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "628b787a2236c3b273a4ad24f38c37b1381d63fb9152e2363ab58d43fb5decd6",
+        "sha256": "016cf295c0a4b3552e48ac0fdca32473cac14117d73ebf1fff613fcd83c213a8",
         "source": "platform"
       }
     },
@@ -2517,7 +2517,7 @@
       "name": "Permission",
       "path": "app/models/permission.rb",
       "properties": {
-        "sha256": "a9836b9633e3fbb7387e6b141ffbfd13b2f044e394e3d6005786f88d974a7d3b",
+        "sha256": "8fa37764763355e7e2a1041886f5cebb4a6754a400b05ea04778df7d8a8c42f4",
         "source": "platform"
       }
     },
@@ -3238,6 +3238,16 @@
       "path": "test/lib/mcp_bootstrap_test.rb",
       "properties": {
         "sha256": "af5c0591b3e375aa8b9837b4210a185e137c3afdc2b1aa06a47efb4bae70a707",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::PermissionRegistry",
+      "type": "test",
+      "name": "Lib::PermissionRegistry",
+      "path": "test/lib/permission_registry_test.rb",
+      "properties": {
+        "sha256": "7d82ff7df0123ec2000eb0d1394c0d532c2faba013cd0fde66c3d07e5d3ca441",
         "source": "platform"
       }
     },
@@ -5739,6 +5749,12 @@
     },
     {
       "from": "model:Permission",
+      "to": "test:Lib::PermissionRegistry",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "model:Permission",
       "to": "test:Models::Permission",
       "type": "TESTED_BY",
       "properties": {}
@@ -6140,5 +6156,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "a853d08188ce23c8081b6f0f6ed9f9c38a791271"
+  "repository_commit": "fd7571ce6ccc88b6bcc3880d1109cec3d4bf5f89"
 }

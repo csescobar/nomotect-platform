@@ -810,7 +810,7 @@
       "name": "Permission",
       "path": "app/models/permission.rb",
       "properties": {
-        "sha256": "a9836b9633e3fbb7387e6b141ffbfd13b2f044e394e3d6005786f88d974a7d3b",
+        "sha256": "8fa37764763355e7e2a1041886f5cebb4a6754a400b05ea04778df7d8a8c42f4",
         "source": "platform"
       },
       "@id": "model:Permission"
@@ -2548,7 +2548,7 @@
       "name": "Releases::Generated::Migration-notes",
       "path": "docs/releases/generated/migration-notes.md",
       "properties": {
-        "sha256": "2ef0667551aab6a3f5bc7527f7423186ce1eff603f3a3c52288d54c3c6efa123",
+        "sha256": "7b7d971d2ec9cf65c464058ad356c1f987dcceabd0ab39a90d1dd77abc65eecb",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Migration-notes"
@@ -2559,7 +2559,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "628b787a2236c3b273a4ad24f38c37b1381d63fb9152e2363ab58d43fb5decd6",
+        "sha256": "016cf295c0a4b3552e48ac0fdca32473cac14117d73ebf1fff613fcd83c213a8",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -3575,6 +3575,17 @@
         "source": "platform"
       },
       "@id": "test:Lib::McpBootstrap"
+    },
+    {
+      "id": "test:Lib::PermissionRegistry",
+      "type": "test",
+      "name": "Lib::PermissionRegistry",
+      "path": "test/lib/permission_registry_test.rb",
+      "properties": {
+        "sha256": "7d82ff7df0123ec2000eb0d1394c0d532c2faba013cd0fde66c3d07e5d3ca441",
+        "source": "platform"
+      },
+      "@id": "test:Lib::PermissionRegistry"
     },
     {
       "id": "test:Lib::Platform::Version",
@@ -6193,84 +6204,84 @@
       "@id": "edge:225"
     },
     {
+      "from": "model:Permission",
+      "to": "test:Lib::PermissionRegistry",
+      "type": "TESTED_BY",
+      "properties": {},
+      "@id": "edge:226"
+    },
+    {
       "from": "controller:Health",
       "to": "test:Lib::RepositoryIntelligenceHealth",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:226"
+      "@id": "edge:227"
     },
     {
       "from": "model:Customer",
       "to": "test:Models::Customer",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:227"
+      "@id": "edge:228"
     },
     {
       "from": "policy:Customer",
       "to": "test:Models::Customer",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:228"
+      "@id": "edge:229"
     },
     {
       "from": "model:GridSavedView",
       "to": "test:Models::GridSavedView",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:229"
-    },
-    {
-      "from": "model:Organization",
-      "to": "test:Models::OrganizationInvitation",
-      "type": "TESTED_BY",
-      "properties": {},
       "@id": "edge:230"
     },
     {
-      "from": "model:OrganizationInvitation",
+      "from": "model:Organization",
       "to": "test:Models::OrganizationInvitation",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:231"
     },
     {
-      "from": "policy:Organization",
+      "from": "model:OrganizationInvitation",
       "to": "test:Models::OrganizationInvitation",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:232"
     },
     {
-      "from": "model:Organization",
-      "to": "test:Models::Organization",
+      "from": "policy:Organization",
+      "to": "test:Models::OrganizationInvitation",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:233"
     },
     {
-      "from": "policy:Organization",
+      "from": "model:Organization",
       "to": "test:Models::Organization",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:234"
     },
     {
-      "from": "model:Permission",
-      "to": "test:Models::Permission",
+      "from": "policy:Organization",
+      "to": "test:Models::Organization",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:235"
     },
     {
-      "from": "model:PlatformRole",
-      "to": "test:Models::PlatformRole",
+      "from": "model:Permission",
+      "to": "test:Models::Permission",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:236"
     },
     {
-      "from": "model:Role",
+      "from": "model:PlatformRole",
       "to": "test:Models::PlatformRole",
       "type": "TESTED_BY",
       "properties": {},
@@ -6278,619 +6289,626 @@
     },
     {
       "from": "model:Role",
-      "to": "test:Models::Role",
+      "to": "test:Models::PlatformRole",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:238"
     },
     {
-      "from": "model:User",
-      "to": "test:Models::UserLocalization",
+      "from": "model:Role",
+      "to": "test:Models::Role",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:239"
     },
     {
-      "from": "document:Design-system::Localization",
+      "from": "model:User",
       "to": "test:Models::UserLocalization",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:240"
     },
     {
+      "from": "document:Design-system::Localization",
+      "to": "test:Models::UserLocalization",
+      "type": "TESTED_BY",
+      "properties": {},
+      "@id": "edge:241"
+    },
+    {
       "from": "model:User",
       "to": "test:Models::User",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:241"
+      "@id": "edge:242"
     },
     {
       "from": "controller:Customers",
       "to": "test:Operations::CustomersOperations",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:242"
+      "@id": "edge:243"
     },
     {
       "from": "model:Customer",
       "to": "test:Operations::CustomersOperations",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:243"
+      "@id": "edge:244"
     },
     {
       "from": "policy:Customer",
       "to": "test:Operations::CustomersOperations",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:244"
-    },
-    {
-      "from": "document:Distribution::Operations",
-      "to": "test:Operations::CustomersOperations",
-      "type": "TESTED_BY",
-      "properties": {},
       "@id": "edge:245"
     },
     {
-      "from": "document:Extensions::Operations",
+      "from": "document:Distribution::Operations",
       "to": "test:Operations::CustomersOperations",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:246"
     },
     {
-      "from": "test:Models::Customer",
+      "from": "document:Extensions::Operations",
       "to": "test:Operations::CustomersOperations",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:247"
     },
     {
-      "from": "model:Role",
-      "to": "test:Operations::Roles",
+      "from": "test:Models::Customer",
+      "to": "test:Operations::CustomersOperations",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:248"
     },
     {
-      "from": "document:Distribution::Operations",
+      "from": "model:Role",
       "to": "test:Operations::Roles",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:249"
     },
     {
-      "from": "document:Extensions::Operations",
+      "from": "document:Distribution::Operations",
       "to": "test:Operations::Roles",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:250"
     },
     {
-      "from": "test:Models::Role",
+      "from": "document:Extensions::Operations",
       "to": "test:Operations::Roles",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:251"
     },
     {
-      "from": "component:Marketing::Header",
-      "to": "test:Requests::SecurityHeaders",
+      "from": "test:Models::Role",
+      "to": "test:Operations::Roles",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:252"
     },
     {
-      "from": "component:Application",
-      "to": "test:Services::ApplicationLayer::Certification",
+      "from": "component:Marketing::Header",
+      "to": "test:Requests::SecurityHeaders",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:253"
     },
     {
-      "from": "controller:Application",
+      "from": "component:Application",
       "to": "test:Services::ApplicationLayer::Certification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:254"
     },
     {
-      "from": "job:Application",
+      "from": "controller:Application",
       "to": "test:Services::ApplicationLayer::Certification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:255"
     },
     {
-      "from": "policy:Application",
+      "from": "job:Application",
       "to": "test:Services::ApplicationLayer::Certification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:256"
     },
     {
-      "from": "document:Commercial-readiness::Certification",
+      "from": "policy:Application",
       "to": "test:Services::ApplicationLayer::Certification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:257"
     },
     {
-      "from": "document:Extensions::Certification",
+      "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::ApplicationLayer::Certification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:258"
     },
     {
-      "from": "document:Distribution::Ghcr",
-      "to": "test:Services::Distributions::GhcrPromotionPlan",
+      "from": "document:Extensions::Certification",
+      "to": "test:Services::ApplicationLayer::Certification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:259"
     },
     {
-      "from": "document:Commercial-readiness::Certification",
-      "to": "test:Services::Epic10::AccessibilityCertification",
+      "from": "document:Distribution::Ghcr",
+      "to": "test:Services::Distributions::GhcrPromotionPlan",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:260"
     },
     {
-      "from": "document:Extensions::Certification",
+      "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::Epic10::AccessibilityCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:261"
     },
     {
-      "from": "test:Services::ApplicationLayer::Certification",
+      "from": "document:Extensions::Certification",
       "to": "test:Services::Epic10::AccessibilityCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:262"
     },
     {
-      "from": "document:Commercial-readiness::Certification",
-      "to": "test:Services::Epic10::AiReadinessCertification",
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::AccessibilityCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:263"
     },
     {
-      "from": "document:Extensions::Certification",
+      "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::Epic10::AiReadinessCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:264"
     },
     {
-      "from": "test:Services::ApplicationLayer::Certification",
+      "from": "document:Extensions::Certification",
       "to": "test:Services::Epic10::AiReadinessCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:265"
     },
     {
-      "from": "document:Commercial-readiness::Certification",
-      "to": "test:Services::Epic10::FunctionalFrameworkCertification",
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::AiReadinessCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:266"
     },
     {
-      "from": "document:Extensions::Certification",
+      "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::Epic10::FunctionalFrameworkCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:267"
     },
     {
-      "from": "test:Services::ApplicationLayer::Certification",
+      "from": "document:Extensions::Certification",
       "to": "test:Services::Epic10::FunctionalFrameworkCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:268"
     },
     {
-      "from": "document:Commercial-readiness::Certification",
-      "to": "test:Services::Epic10::OperationalResilienceCertification",
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::FunctionalFrameworkCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:269"
     },
     {
-      "from": "document:Extensions::Certification",
+      "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::Epic10::OperationalResilienceCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:270"
     },
     {
-      "from": "test:Integration::ResilienceCertification",
+      "from": "document:Extensions::Certification",
       "to": "test:Services::Epic10::OperationalResilienceCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:271"
     },
     {
-      "from": "test:Services::ApplicationLayer::Certification",
+      "from": "test:Integration::ResilienceCertification",
       "to": "test:Services::Epic10::OperationalResilienceCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:272"
     },
     {
-      "from": "document:Commercial-readiness::Certification",
-      "to": "test:Services::Epic10::PerformanceCompatibilityCertification",
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::OperationalResilienceCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:273"
     },
     {
-      "from": "document:Extensions::Certification",
+      "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::Epic10::PerformanceCompatibilityCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:274"
     },
     {
-      "from": "test:Services::ApplicationLayer::Certification",
+      "from": "document:Extensions::Certification",
       "to": "test:Services::Epic10::PerformanceCompatibilityCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:275"
     },
     {
-      "from": "document:Commercial-readiness::Certification",
-      "to": "test:Services::Epic10::ProductionDeploymentCertification",
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::PerformanceCompatibilityCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:276"
     },
     {
-      "from": "document:Extensions::Certification",
+      "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::Epic10::ProductionDeploymentCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:277"
     },
     {
-      "from": "test:Services::ApplicationLayer::Certification",
+      "from": "document:Extensions::Certification",
       "to": "test:Services::Epic10::ProductionDeploymentCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:278"
     },
     {
-      "from": "document:Commercial-readiness::Certification",
-      "to": "test:Services::Epic10::RcUpgradeCertification",
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::ProductionDeploymentCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:279"
     },
     {
-      "from": "document:Extensions::Certification",
+      "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::Epic10::RcUpgradeCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:280"
     },
     {
-      "from": "test:Services::ApplicationLayer::Certification",
+      "from": "document:Extensions::Certification",
       "to": "test:Services::Epic10::RcUpgradeCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:281"
     },
     {
-      "from": "component:Ui::Base",
-      "to": "test:Services::Epic10::ReleaseBaseline",
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::RcUpgradeCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:282"
     },
     {
-      "from": "controller:Installation::Base",
+      "from": "component:Ui::Base",
       "to": "test:Services::Epic10::ReleaseBaseline",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:283"
     },
     {
-      "from": "component:Application",
-      "to": "test:Services::Epic10::RepresentativeApplicationCertification",
+      "from": "controller:Installation::Base",
+      "to": "test:Services::Epic10::ReleaseBaseline",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:284"
     },
     {
-      "from": "controller:Application",
+      "from": "component:Application",
       "to": "test:Services::Epic10::RepresentativeApplicationCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:285"
     },
     {
-      "from": "job:Application",
+      "from": "controller:Application",
       "to": "test:Services::Epic10::RepresentativeApplicationCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:286"
     },
     {
-      "from": "policy:Application",
+      "from": "job:Application",
       "to": "test:Services::Epic10::RepresentativeApplicationCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:287"
     },
     {
-      "from": "document:Commercial-readiness::Certification",
+      "from": "policy:Application",
       "to": "test:Services::Epic10::RepresentativeApplicationCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:288"
     },
     {
-      "from": "document:Extensions::Certification",
+      "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::Epic10::RepresentativeApplicationCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:289"
     },
     {
-      "from": "test:Services::ApplicationLayer::Certification",
+      "from": "document:Extensions::Certification",
       "to": "test:Services::Epic10::RepresentativeApplicationCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:290"
     },
     {
-      "from": "component:Application",
-      "to": "test:Services::Epic10::RepresentativeApplicationJourney",
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::RepresentativeApplicationCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:291"
     },
     {
-      "from": "controller:Application",
+      "from": "component:Application",
       "to": "test:Services::Epic10::RepresentativeApplicationJourney",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:292"
     },
     {
-      "from": "job:Application",
+      "from": "controller:Application",
       "to": "test:Services::Epic10::RepresentativeApplicationJourney",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:293"
     },
     {
-      "from": "policy:Application",
+      "from": "job:Application",
       "to": "test:Services::Epic10::RepresentativeApplicationJourney",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:294"
     },
     {
-      "from": "component:Application",
-      "to": "test:Services::Epic10::RepresentativeApplication",
+      "from": "policy:Application",
+      "to": "test:Services::Epic10::RepresentativeApplicationJourney",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:295"
     },
     {
-      "from": "controller:Application",
+      "from": "component:Application",
       "to": "test:Services::Epic10::RepresentativeApplication",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:296"
     },
     {
-      "from": "job:Application",
+      "from": "controller:Application",
       "to": "test:Services::Epic10::RepresentativeApplication",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:297"
     },
     {
-      "from": "policy:Application",
+      "from": "job:Application",
       "to": "test:Services::Epic10::RepresentativeApplication",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:298"
     },
     {
-      "from": "document:Commercial-readiness::Certification",
-      "to": "test:Services::Epic10::SecurityPrivacyIsolationCertification",
+      "from": "policy:Application",
+      "to": "test:Services::Epic10::RepresentativeApplication",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:299"
     },
     {
-      "from": "document:Extensions::Certification",
+      "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::Epic10::SecurityPrivacyIsolationCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:300"
     },
     {
-      "from": "test:Services::ApplicationLayer::Certification",
+      "from": "document:Extensions::Certification",
       "to": "test:Services::Epic10::SecurityPrivacyIsolationCertification",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:301"
     },
     {
+      "from": "test:Services::ApplicationLayer::Certification",
+      "to": "test:Services::Epic10::SecurityPrivacyIsolationCertification",
+      "type": "TESTED_BY",
+      "properties": {},
+      "@id": "edge:302"
+    },
+    {
       "from": "test:Services::Distributions::Inspector",
       "to": "test:Services::Extensions::Inspector",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:302"
+      "@id": "edge:303"
     },
     {
       "from": "component:Marketing::Lifecycle",
       "to": "test:Services::Extensions::Lifecycle",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:303"
+      "@id": "edge:304"
     },
     {
       "from": "test:Services::Distributions::Manifest",
       "to": "test:Services::Extensions::Manifest",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:304"
+      "@id": "edge:305"
     },
     {
       "from": "test:Services::Extensions::Configuration",
       "to": "test:Services::Installation::DatabaseConfiguration",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:305"
+      "@id": "edge:306"
     },
     {
       "from": "test:Services::Extensions::Configuration",
       "to": "test:Services::Installation::RuntimeDatabaseConfiguration",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:306"
+      "@id": "edge:307"
     },
     {
       "from": "test:Services::Installation::DatabaseConfiguration",
       "to": "test:Services::Installation::RuntimeDatabaseConfiguration",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:307"
-    },
-    {
-      "from": "test:Services::Distributions::Manifest",
-      "to": "test:Services::OperationalReadiness::BackupManifest",
-      "type": "TESTED_BY",
-      "properties": {},
       "@id": "edge:308"
     },
     {
-      "from": "test:Services::Extensions::Manifest",
+      "from": "test:Services::Distributions::Manifest",
       "to": "test:Services::OperationalReadiness::BackupManifest",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:309"
     },
     {
-      "from": "controller:Health",
-      "to": "test:Services::OperationalReadiness::OperationalHealthInspector",
+      "from": "test:Services::Extensions::Manifest",
+      "to": "test:Services::OperationalReadiness::BackupManifest",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:310"
     },
     {
-      "from": "test:Services::Distributions::Inspector",
+      "from": "controller:Health",
       "to": "test:Services::OperationalReadiness::OperationalHealthInspector",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:311"
     },
     {
-      "from": "test:Services::Extensions::Inspector",
+      "from": "test:Services::Distributions::Inspector",
       "to": "test:Services::OperationalReadiness::OperationalHealthInspector",
       "type": "TESTED_BY",
       "properties": {},
       "@id": "edge:312"
     },
     {
+      "from": "test:Services::Extensions::Inspector",
+      "to": "test:Services::OperationalReadiness::OperationalHealthInspector",
+      "type": "TESTED_BY",
+      "properties": {},
+      "@id": "edge:313"
+    },
+    {
       "from": "document:Releases::Consistency",
       "to": "test:Services::Releases::ConsistencyValidator",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:313"
+      "@id": "edge:314"
     },
     {
       "from": "document:Commercial-readiness::Certification",
       "to": "test:Services::Releases::V1QualityCertification",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:314"
+      "@id": "edge:315"
     },
     {
       "from": "document:Extensions::Certification",
       "to": "test:Services::Releases::V1QualityCertification",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:315"
+      "@id": "edge:316"
     },
     {
       "from": "test:Services::ApplicationLayer::Certification",
       "to": "test:Services::Releases::V1QualityCertification",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:316"
+      "@id": "edge:317"
     },
     {
       "from": "test:Services::Distributions::Inspector",
       "to": "test:Services::Upgrades::Inspector",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:317"
+      "@id": "edge:318"
     },
     {
       "from": "test:Services::Extensions::Inspector",
       "to": "test:Services::Upgrades::Inspector",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:318"
+      "@id": "edge:319"
     },
     {
       "from": "test:Services::Extensions::InstalledState",
       "to": "test:Services::Upgrades::InstalledStateDetector",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:319"
+      "@id": "edge:320"
     },
     {
       "from": "test:Services::Distributions::Manifest",
       "to": "test:Services::Upgrades::Manifest",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:320"
+      "@id": "edge:321"
     },
     {
       "from": "test:Services::Extensions::Manifest",
       "to": "test:Services::Upgrades::Manifest",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:321"
+      "@id": "edge:322"
     },
     {
       "from": "test:Services::Distributions::Verifier",
       "to": "test:Services::Upgrades::PostUpgradeVerifier",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:322"
+      "@id": "edge:323"
     },
     {
       "from": "test:Lib::Platform::Version",
       "to": "test:Services::Upgrades::Version",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:323"
+      "@id": "edge:324"
     },
     {
       "from": "test:Controllers::CustomLayout",
       "to": "test:System::CustomLayoutSystem",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:324"
+      "@id": "edge:325"
     },
     {
       "from": "controller:Ej2Showcase",
       "to": "test:System::Ej2ShowcaseSystem",
       "type": "TESTED_BY",
       "properties": {},
-      "@id": "edge:325"
+      "@id": "edge:326"
     }
   ]
 }

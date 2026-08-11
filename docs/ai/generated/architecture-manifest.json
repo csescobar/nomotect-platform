@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "a853d08188ce23c8081b6f0f6ed9f9c38a791271",
+  "repository_commit": "fd7571ce6ccc88b6bcc3880d1109cec3d4bf5f89",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -711,7 +711,7 @@
     {
       "path": "app/models/permission.rb",
       "kind": "model",
-      "sha256": "a9836b9633e3fbb7387e6b141ffbfd13b2f044e394e3d6005786f88d974a7d3b"
+      "sha256": "8fa37764763355e7e2a1041886f5cebb4a6754a400b05ea04778df7d8a8c42f4"
     },
     {
       "path": "app/models/platform_role.rb",
@@ -791,7 +791,7 @@
     {
       "path": "app/operations/roles/create.rb",
       "kind": "source",
-      "sha256": "d89f100035acbdbd7c514e8f9beefdc90f4c9e9e162f7c5eb9c824bec858b27b"
+      "sha256": "5a2fc52409b8edab5ad08b239d38e3808c7364660e308eb89fb6c734baabb5af"
     },
     {
       "path": "app/operations/stored_files/download.rb",
@@ -2114,9 +2114,14 @@
       "sha256": "a168b27b307214cb3556baa0050953f89f5ed63b361491ec6c326d6ca4a3cbaf"
     },
     {
+      "path": "db/migrate/20260811141600_add_metadata_columns_to_permissions.rb",
+      "kind": "migration",
+      "sha256": "6e340b384ac620fc4faa94022e1e0f0980318ee2b6a3eb1d5c3127f76abe2f47"
+    },
+    {
       "path": "db/schema.rb",
       "kind": "source",
-      "sha256": "3a482435d431246856d898b789f3427f012947d0120b784024e8c5852ad74e0a"
+      "sha256": "e50d5667fc322df0e4d874e214dc89c86bf5a38e4cfdbb5e89feeebf66d9f890"
     },
     {
       "path": "db/seeds.rb",
@@ -3061,12 +3066,12 @@
     {
       "path": "docs/releases/generated/migration-notes.md",
       "kind": "documentation",
-      "sha256": "2ef0667551aab6a3f5bc7527f7423186ce1eff603f3a3c52288d54c3c6efa123"
+      "sha256": "7b7d971d2ec9cf65c464058ad356c1f987dcceabd0ab39a90d1dd77abc65eecb"
     },
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "628b787a2236c3b273a4ad24f38c37b1381d63fb9152e2363ab58d43fb5decd6"
+      "sha256": "016cf295c0a4b3552e48ac0fdca32473cac14117d73ebf1fff613fcd83c213a8"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3281,7 +3286,7 @@
     {
       "path": "lib/permission_registry.rb",
       "kind": "source",
-      "sha256": "f2232a1a5dcf3e57e8bdec52fbf2c6f648bf4b38b7778e9e5c0c4c831241977e"
+      "sha256": "cfc03077aa82efdfc4f5a79fc7bb68d1e036f637d26086286342fe3278b9609b"
     },
     {
       "path": "lib/platform/json_log_formatter.rb",
@@ -3707,6 +3712,11 @@
       "path": "test/lib/mcp_bootstrap_test.rb",
       "kind": "test",
       "sha256": "af5c0591b3e375aa8b9837b4210a185e137c3afdc2b1aa06a47efb4bae70a707"
+    },
+    {
+      "path": "test/lib/permission_registry_test.rb",
+      "kind": "test",
+      "sha256": "7d82ff7df0123ec2000eb0d1394c0d532c2faba013cd0fde66c3d07e5d3ca441"
     },
     {
       "path": "test/lib/platform/version_test.rb",

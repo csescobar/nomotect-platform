@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- test: Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationSkeletonDocumentationSanitization, Lib::ApplicationStarter, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::DesignTokens::Compiler, Lib::DeveloperGuidelines, Lib::Epic9Certification, Lib::EvolutionDiscovery, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
+- test: Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationSkeletonDocumentationSanitization, Lib::ApplicationStarter, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::DesignTokens::Compiler, Lib::DeveloperGuidelines, Lib::Epic9Certification, Lib::EvolutionDiscovery, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::PermissionRegistry, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
 
 ## Source paths
 
@@ -24,6 +24,7 @@
 - `test/lib/grid_engine/types_test.rb`
 - `test/lib/localization/supported_locales_test.rb`
 - `test/lib/mcp_bootstrap_test.rb`
+- `test/lib/permission_registry_test.rb`
 - `test/lib/platform/version_test.rb`
 - `test/lib/repository_intelligence_ai_artifact_test.rb`
 - `test/lib/repository_intelligence_documentation_governance_test.rb`
@@ -54,6 +55,7 @@
 - `document:Extensions::Certification` —TESTED_BY→ `test:Lib::Epic9Certification`
 - `document:Deployment::Render` —TESTED_BY→ `test:Lib::GridEngine::HtmlRenderer`
 - `document:Design-system::Localization` —TESTED_BY→ `test:Lib::Localization::SupportedLocales`
+- `model:Permission` —TESTED_BY→ `test:Lib::PermissionRegistry`
 - `controller:Health` —TESTED_BY→ `test:Lib::RepositoryIntelligenceHealth`
 - `test:Lib::Platform::Version` —TESTED_BY→ `test:Services::Upgrades::Version`
 

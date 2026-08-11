@@ -36,8 +36,12 @@ module Roles
           Permission.find_or_create_by!(key: key) do |p|
             entry = PermissionRegistry.fetch(key)
             p.name = entry.name
-            p.category = entry.category
+            p.category = entry.owning_capability
+            p.owning_capability = entry.owning_capability
             p.description = entry.description
+            p.security_classification = entry.security_classification
+            p.default_availability = entry.default_availability
+            p.version = entry.version
           end
         end
         role.permissions = permissions

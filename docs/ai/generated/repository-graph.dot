@@ -323,6 +323,7 @@ digraph repository {
   "test:Lib::GridEngine::Types" [label="Lib::GridEngine::Types"];
   "test:Lib::Localization::SupportedLocales" [label="Lib::Localization::SupportedLocales"];
   "test:Lib::McpBootstrap" [label="Lib::McpBootstrap"];
+  "test:Lib::PermissionRegistry" [label="Lib::PermissionRegistry"];
   "test:Lib::Platform::Version" [label="Lib::Platform::Version"];
   "test:Lib::RepositoryIntelligence" [label="Lib::RepositoryIntelligence"];
   "test:Lib::RepositoryIntelligenceAiArtifact" [label="Lib::RepositoryIntelligenceAiArtifact"];
@@ -676,6 +677,7 @@ digraph repository {
   "model:Organization" -> "test:Models::OrganizationInvitation" [label="TESTED_BY"];
   "model:OrganizationInvitation" -> "test:Models::OrganizationInvitation" [label="TESTED_BY"];
   "model:Permission" -> "document:Validation::Findings::Bug-002-bin-ci-executable-permission" [label="DOCUMENTED_BY"];
+  "model:Permission" -> "test:Lib::PermissionRegistry" [label="TESTED_BY"];
   "model:Permission" -> "test:Models::Permission" [label="TESTED_BY"];
   "model:PlatformRole" -> "test:Models::PlatformRole" [label="TESTED_BY"];
   "model:Role" -> "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries" [label="DOCUMENTED_BY"];

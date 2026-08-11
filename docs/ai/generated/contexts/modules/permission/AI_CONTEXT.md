@@ -13,6 +13,7 @@
 ## Relationships
 
 - `model:Permission` —DOCUMENTED_BY→ `document:Validation::Findings::Bug-002-bin-ci-executable-permission`
+- `model:Permission` —TESTED_BY→ `test:Lib::PermissionRegistry`
 - `model:Permission` —TESTED_BY→ `test:Models::Permission`
 
 ## Contract
