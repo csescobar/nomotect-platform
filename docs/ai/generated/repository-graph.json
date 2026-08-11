@@ -332,12 +332,42 @@
       }
     },
     {
+      "id": "component:Ui::ProgressBar",
+      "type": "component",
+      "name": "Ui::ProgressBar",
+      "path": "app/components/ui/progress_bar_component.rb",
+      "properties": {
+        "sha256": "b75a0ce2c99aa5dd54ea52b7ca05b4c8e1549106638537f822a5c0e2d5f4cb99",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::ProgressSpinner",
+      "type": "component",
+      "name": "Ui::ProgressSpinner",
+      "path": "app/components/ui/progress_spinner_component.rb",
+      "properties": {
+        "sha256": "7b91b93ecca0c7085fbd048b4db7ea13f43ba5f147088197922b7db02ce567ea",
+        "source": "platform"
+      }
+    },
+    {
       "id": "component:Ui::RoleBadge",
       "type": "component",
       "name": "Ui::RoleBadge",
       "path": "app/components/ui/role_badge_component.rb",
       "properties": {
         "sha256": "e6510100e9e2a08ab2119c8b9a533e43f62aac20e82655fa6b6123e85535ef1c",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Skeleton",
+      "type": "component",
+      "name": "Ui::Skeleton",
+      "path": "app/components/ui/skeleton_component.rb",
+      "properties": {
+        "sha256": "eaf9245485f6cb95e6244fde071def6110e1ceb12a8132f20dbae2c2a3c80853",
         "source": "platform"
       }
     },
@@ -368,6 +398,36 @@
       "path": "app/components/ui/theme_switcher_component.rb",
       "properties": {
         "sha256": "f65541d49907d201f696234b0bf8c55496446947202390b3d2b09e7bb46f38df",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Toast",
+      "type": "component",
+      "name": "Ui::Toast",
+      "path": "app/components/ui/toast_component.rb",
+      "properties": {
+        "sha256": "d5bd455007f7a298b45e59ecf4fd965163fbce12d1d692a47237d9c2be10723b",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::ToastContainer",
+      "type": "component",
+      "name": "Ui::ToastContainer",
+      "path": "app/components/ui/toast_container_component.rb",
+      "properties": {
+        "sha256": "6144ec24385703f603e3c91b317234112df73b93484213ec9a48832631058961",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Tooltip",
+      "type": "component",
+      "name": "Ui::Tooltip",
+      "path": "app/components/ui/tooltip_component.rb",
+      "properties": {
+        "sha256": "41cde8d16d83ff9ec48830912bc7f8d9dbb222c0cc682680e573bf5d2d1e858f",
         "source": "platform"
       }
     },
@@ -2037,7 +2097,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "f7d1792f93fd1a30c9678cb7a6171fedcfe991d1e1985c316cbe2bf4d3582585",
+        "sha256": "694eb0df1b62f854be1ed9eb2187ed4db16a8a2896351a90790e5b37da129c52",
         "source": "platform"
       }
     },
@@ -2862,12 +2922,42 @@
       }
     },
     {
+      "id": "test:Components::Ui::ProgressBarComponent",
+      "type": "test",
+      "name": "Components::Ui::ProgressBarComponent",
+      "path": "test/components/ui/progress_bar_component_test.rb",
+      "properties": {
+        "sha256": "9c58c6f9a29a9323d91ffe55b2b047ddaab903c7494bb030ac9ae3f705f51251",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::ProgressSpinnerComponent",
+      "type": "test",
+      "name": "Components::Ui::ProgressSpinnerComponent",
+      "path": "test/components/ui/progress_spinner_component_test.rb",
+      "properties": {
+        "sha256": "1cf7ebbe637bb4d449deff539e5d993dd52f028655339330ea6b6c472ca47e98",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Components::Ui::RoleBadgeComponent",
       "type": "test",
       "name": "Components::Ui::RoleBadgeComponent",
       "path": "test/components/ui/role_badge_component_test.rb",
       "properties": {
         "sha256": "b97351b039bd67eb0f662f27dcfb8b92b9819d8af5f781967b3eeeb035934d91",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::SkeletonComponent",
+      "type": "test",
+      "name": "Components::Ui::SkeletonComponent",
+      "path": "test/components/ui/skeleton_component_test.rb",
+      "properties": {
+        "sha256": "32428ba5415519054b8b5b829e76321c6382e828a874dc774537f70cbb943816",
         "source": "platform"
       }
     },
@@ -2898,6 +2988,26 @@
       "path": "test/components/ui/theme_switcher_component_test.rb",
       "properties": {
         "sha256": "83d63a6db101fe9b3bed58c844df2fd3b7804441a75e1ba35b48f5672eeed7c5",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::ToastComponent",
+      "type": "test",
+      "name": "Components::Ui::ToastComponent",
+      "path": "test/components/ui/toast_component_test.rb",
+      "properties": {
+        "sha256": "5479629b8a8f8e8aaaf0e249206b21d51acdecf2d12ef6e09c3e2ae1f444fdf5",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::TooltipComponent",
+      "type": "test",
+      "name": "Components::Ui::TooltipComponent",
+      "path": "test/components/ui/tooltip_component_test.rb",
+      "properties": {
+        "sha256": "47802327e2a5ba2d756b7c6c99290903b2755dad50320dc103f83d2ea9faebe6",
         "source": "platform"
       }
     },
@@ -4644,8 +4754,32 @@
       "properties": {}
     },
     {
+      "from": "component:Ui::ProgressBar",
+      "to": "test:Components::Ui::ProgressBarComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::ProgressSpinner",
+      "to": "test:Components::Ui::ProgressSpinnerComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "component:Ui::RoleBadge",
       "to": "test:Components::Ui::RoleBadgeComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Skeleton",
+      "to": "test:Components::Ui::SkeletonComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Skeleton",
+      "to": "test:Lib::ApplicationSkeletonDocumentationSanitization",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -4664,6 +4798,18 @@
     {
       "from": "component:Ui::ThemeSwitcher",
       "to": "test:Components::Ui::ThemeSwitcherComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Toast",
+      "to": "test:Components::Ui::ToastComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Tooltip",
+      "to": "test:Components::Ui::TooltipComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -6516,5 +6662,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "7ef432ca7926189a4dc713ba3425b249fdcb30ec"
+  "repository_commit": "4fa61222f0e838c6f196e6a96e7f02fd8a4cb3ad"
 }

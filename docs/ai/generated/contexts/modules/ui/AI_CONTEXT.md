@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- component: Ui::Alert, Ui::Avatar, Ui::AvatarGroup, Ui::Badge, Ui::Base, Ui::Button, Ui::Card, Ui::CommandPalette, Ui::DangerZone, Ui::Divider, Ui::EmptyState, Ui::Forms::Checkbox, Ui::Forms::ErrorSummary, Ui::Forms::Field, Ui::Forms::RadioGroup, Ui::Layout::ApplicationShell, Ui::Layout::Breadcrumbs, Ui::Layout::Navigation, Ui::Layout::PageHeader, Ui::LocaleSwitcher, Ui::PermissionIndicator, Ui::RoleBadge, Ui::Stepper, Ui::Tabs, Ui::ThemeSwitcher
+- component: Ui::Alert, Ui::Avatar, Ui::AvatarGroup, Ui::Badge, Ui::Base, Ui::Button, Ui::Card, Ui::CommandPalette, Ui::DangerZone, Ui::Divider, Ui::EmptyState, Ui::Forms::Checkbox, Ui::Forms::ErrorSummary, Ui::Forms::Field, Ui::Forms::RadioGroup, Ui::Layout::ApplicationShell, Ui::Layout::Breadcrumbs, Ui::Layout::Navigation, Ui::Layout::PageHeader, Ui::LocaleSwitcher, Ui::PermissionIndicator, Ui::ProgressBar, Ui::ProgressSpinner, Ui::RoleBadge, Ui::Skeleton, Ui::Stepper, Ui::Tabs, Ui::ThemeSwitcher, Ui::Toast, Ui::ToastContainer, Ui::Tooltip
 
 ## Source paths
 
@@ -29,10 +29,16 @@
 - `app/components/ui/layout/page_header_component.rb`
 - `app/components/ui/locale_switcher_component.rb`
 - `app/components/ui/permission_indicator_component.rb`
+- `app/components/ui/progress_bar_component.rb`
+- `app/components/ui/progress_spinner_component.rb`
 - `app/components/ui/role_badge_component.rb`
+- `app/components/ui/skeleton_component.rb`
 - `app/components/ui/stepper_component.rb`
 - `app/components/ui/tabs_component.rb`
 - `app/components/ui/theme_switcher_component.rb`
+- `app/components/ui/toast_component.rb`
+- `app/components/ui/toast_container_component.rb`
+- `app/components/ui/tooltip_component.rb`
 
 ## Relationships
 
@@ -50,11 +56,17 @@
 - `component:Ui::Layout::ApplicationShell` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
 - `component:Ui::LocaleSwitcher` —TESTED_BY→ `test:Components::Ui::LocaleSwitcherComponent`
 - `component:Ui::PermissionIndicator` —TESTED_BY→ `test:Components::Ui::PermissionIndicatorComponent`
+- `component:Ui::ProgressBar` —TESTED_BY→ `test:Components::Ui::ProgressBarComponent`
+- `component:Ui::ProgressSpinner` —TESTED_BY→ `test:Components::Ui::ProgressSpinnerComponent`
 - `component:Ui::Badge` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
 - `component:Ui::RoleBadge` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
+- `component:Ui::Skeleton` —TESTED_BY→ `test:Components::Ui::SkeletonComponent`
 - `component:Ui::Stepper` —TESTED_BY→ `test:Components::Ui::StepperComponent`
 - `component:Ui::Tabs` —TESTED_BY→ `test:Components::Ui::TabsComponent`
 - `component:Ui::ThemeSwitcher` —TESTED_BY→ `test:Components::Ui::ThemeSwitcherComponent`
+- `component:Ui::Toast` —TESTED_BY→ `test:Components::Ui::ToastComponent`
+- `component:Ui::Tooltip` —TESTED_BY→ `test:Components::Ui::TooltipComponent`
+- `component:Ui::Skeleton` —TESTED_BY→ `test:Lib::ApplicationSkeletonDocumentationSanitization`
 - `component:Ui::Base` —TESTED_BY→ `test:Services::Epic10::ReleaseBaseline`
 
 ## Contract

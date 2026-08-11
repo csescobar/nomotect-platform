@@ -32,10 +32,16 @@ graph TD
   n_component_Ui__Layout__PageHeader["Ui::Layout::PageHeader"]
   n_component_Ui__LocaleSwitcher["Ui::LocaleSwitcher"]
   n_component_Ui__PermissionIndicator["Ui::PermissionIndicator"]
+  n_component_Ui__ProgressBar["Ui::ProgressBar"]
+  n_component_Ui__ProgressSpinner["Ui::ProgressSpinner"]
   n_component_Ui__RoleBadge["Ui::RoleBadge"]
+  n_component_Ui__Skeleton["Ui::Skeleton"]
   n_component_Ui__Stepper["Ui::Stepper"]
   n_component_Ui__Tabs["Ui::Tabs"]
   n_component_Ui__ThemeSwitcher["Ui::ThemeSwitcher"]
+  n_component_Ui__Toast["Ui::Toast"]
+  n_component_Ui__ToastContainer["Ui::ToastContainer"]
+  n_component_Ui__Tooltip["Ui::Tooltip"]
   n_controller_Application["Application"]
   n_controller_ComponentShowcase["ComponentShowcase"]
   n_controller_Customers["Customers"]
@@ -285,10 +291,15 @@ graph TD
   n_test_Components__Ui__Layout__ApplicationShellComponent["Components::Ui::Layout::ApplicationShellComponent"]
   n_test_Components__Ui__LocaleSwitcherComponent["Components::Ui::LocaleSwitcherComponent"]
   n_test_Components__Ui__PermissionIndicatorComponent["Components::Ui::PermissionIndicatorComponent"]
+  n_test_Components__Ui__ProgressBarComponent["Components::Ui::ProgressBarComponent"]
+  n_test_Components__Ui__ProgressSpinnerComponent["Components::Ui::ProgressSpinnerComponent"]
   n_test_Components__Ui__RoleBadgeComponent["Components::Ui::RoleBadgeComponent"]
+  n_test_Components__Ui__SkeletonComponent["Components::Ui::SkeletonComponent"]
   n_test_Components__Ui__StepperComponent["Components::Ui::StepperComponent"]
   n_test_Components__Ui__TabsComponent["Components::Ui::TabsComponent"]
   n_test_Components__Ui__ThemeSwitcherComponent["Components::Ui::ThemeSwitcherComponent"]
+  n_test_Components__Ui__ToastComponent["Components::Ui::ToastComponent"]
+  n_test_Components__Ui__TooltipComponent["Components::Ui::TooltipComponent"]
   n_test_Controllers__ComponentShowcaseController["Controllers::ComponentShowcaseController"]
   n_test_Controllers__CustomLayout["Controllers::CustomLayout"]
   n_test_Controllers__CustomersController["Controllers::CustomersController"]
@@ -479,10 +490,16 @@ graph TD
   n_component_Ui__Layout__ApplicationShell -->|TESTED_BY| n_test_Components__Ui__Layout__ApplicationShellComponent
   n_component_Ui__LocaleSwitcher -->|TESTED_BY| n_test_Components__Ui__LocaleSwitcherComponent
   n_component_Ui__PermissionIndicator -->|TESTED_BY| n_test_Components__Ui__PermissionIndicatorComponent
+  n_component_Ui__ProgressBar -->|TESTED_BY| n_test_Components__Ui__ProgressBarComponent
+  n_component_Ui__ProgressSpinner -->|TESTED_BY| n_test_Components__Ui__ProgressSpinnerComponent
   n_component_Ui__RoleBadge -->|TESTED_BY| n_test_Components__Ui__RoleBadgeComponent
+  n_component_Ui__Skeleton -->|TESTED_BY| n_test_Components__Ui__SkeletonComponent
+  n_component_Ui__Skeleton -->|TESTED_BY| n_test_Lib__ApplicationSkeletonDocumentationSanitization
   n_component_Ui__Stepper -->|TESTED_BY| n_test_Components__Ui__StepperComponent
   n_component_Ui__Tabs -->|TESTED_BY| n_test_Components__Ui__TabsComponent
   n_component_Ui__ThemeSwitcher -->|TESTED_BY| n_test_Components__Ui__ThemeSwitcherComponent
+  n_component_Ui__Toast -->|TESTED_BY| n_test_Components__Ui__ToastComponent
+  n_component_Ui__Tooltip -->|TESTED_BY| n_test_Components__Ui__TooltipComponent
   n_controller_Application -->|DOCUMENTED_BY| n_document_Architecture__Application_layer
   n_controller_Application -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0005_use_application_layer_boundary
   n_controller_Application -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0006_seal_application_role_and_grid_registries
