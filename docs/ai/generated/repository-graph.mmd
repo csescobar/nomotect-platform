@@ -16,6 +16,7 @@ graph TD
   n_component_Ui__Base["Ui::Base"]
   n_component_Ui__Button["Ui::Button"]
   n_component_Ui__Card["Ui::Card"]
+  n_component_Ui__CommandPalette["Ui::CommandPalette"]
   n_component_Ui__DangerZone["Ui::DangerZone"]
   n_component_Ui__Divider["Ui::Divider"]
   n_component_Ui__EmptyState["Ui::EmptyState"]
@@ -28,6 +29,8 @@ graph TD
   n_component_Ui__Layout__Navigation["Ui::Layout::Navigation"]
   n_component_Ui__Layout__PageHeader["Ui::Layout::PageHeader"]
   n_component_Ui__LocaleSwitcher["Ui::LocaleSwitcher"]
+  n_component_Ui__Stepper["Ui::Stepper"]
+  n_component_Ui__Tabs["Ui::Tabs"]
   n_component_Ui__ThemeSwitcher["Ui::ThemeSwitcher"]
   n_controller_Application["Application"]
   n_controller_ComponentShowcase["ComponentShowcase"]
@@ -269,11 +272,14 @@ graph TD
   n_policy_StoredFile["StoredFile"]
   n_test_Components__MarketingComponents["Components::MarketingComponents"]
   n_test_Components__Ui__ButtonComponent["Components::Ui::ButtonComponent"]
+  n_test_Components__Ui__CommandPaletteComponent["Components::Ui::CommandPaletteComponent"]
   n_test_Components__Ui__CoreComponents["Components::Ui::CoreComponents"]
   n_test_Components__Ui__DangerZoneComponent["Components::Ui::DangerZoneComponent"]
   n_test_Components__Ui__Forms__FormComponents["Components::Ui::Forms::FormComponents"]
   n_test_Components__Ui__Layout__ApplicationShellComponent["Components::Ui::Layout::ApplicationShellComponent"]
   n_test_Components__Ui__LocaleSwitcherComponent["Components::Ui::LocaleSwitcherComponent"]
+  n_test_Components__Ui__StepperComponent["Components::Ui::StepperComponent"]
+  n_test_Components__Ui__TabsComponent["Components::Ui::TabsComponent"]
   n_test_Components__Ui__ThemeSwitcherComponent["Components::Ui::ThemeSwitcherComponent"]
   n_test_Controllers__ComponentShowcaseController["Controllers::ComponentShowcaseController"]
   n_test_Controllers__CustomLayout["Controllers::CustomLayout"]
@@ -456,9 +462,12 @@ graph TD
   n_component_Ui__Base -->|DOCUMENTED_BY| n_document_Validation__Release_baseline
   n_component_Ui__Base -->|TESTED_BY| n_test_Services__Epic10__ReleaseBaseline
   n_component_Ui__Button -->|TESTED_BY| n_test_Components__Ui__ButtonComponent
+  n_component_Ui__CommandPalette -->|TESTED_BY| n_test_Components__Ui__CommandPaletteComponent
   n_component_Ui__DangerZone -->|TESTED_BY| n_test_Components__Ui__DangerZoneComponent
   n_component_Ui__Layout__ApplicationShell -->|TESTED_BY| n_test_Components__Ui__Layout__ApplicationShellComponent
   n_component_Ui__LocaleSwitcher -->|TESTED_BY| n_test_Components__Ui__LocaleSwitcherComponent
+  n_component_Ui__Stepper -->|TESTED_BY| n_test_Components__Ui__StepperComponent
+  n_component_Ui__Tabs -->|TESTED_BY| n_test_Components__Ui__TabsComponent
   n_component_Ui__ThemeSwitcher -->|TESTED_BY| n_test_Components__Ui__ThemeSwitcherComponent
   n_controller_Application -->|DOCUMENTED_BY| n_document_Architecture__Application_layer
   n_controller_Application -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0005_use_application_layer_boundary

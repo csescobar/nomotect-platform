@@ -4,23 +4,27 @@
 
 ## Responsibilities
 
-- test: Components::MarketingComponents, Components::Ui::ButtonComponent, Components::Ui::CoreComponents, Components::Ui::DangerZoneComponent, Components::Ui::Forms::FormComponents, Components::Ui::Layout::ApplicationShellComponent, Components::Ui::LocaleSwitcherComponent, Components::Ui::ThemeSwitcherComponent
+- test: Components::MarketingComponents, Components::Ui::ButtonComponent, Components::Ui::CommandPaletteComponent, Components::Ui::CoreComponents, Components::Ui::DangerZoneComponent, Components::Ui::Forms::FormComponents, Components::Ui::Layout::ApplicationShellComponent, Components::Ui::LocaleSwitcherComponent, Components::Ui::StepperComponent, Components::Ui::TabsComponent, Components::Ui::ThemeSwitcherComponent
 
 ## Source paths
 
 - `test/components/marketing_components_test.rb`
 - `test/components/ui/button_component_test.rb`
+- `test/components/ui/command_palette_component_test.rb`
 - `test/components/ui/core_components_test.rb`
 - `test/components/ui/danger_zone_component_test.rb`
 - `test/components/ui/forms/form_components_test.rb`
 - `test/components/ui/layout/application_shell_component_test.rb`
 - `test/components/ui/locale_switcher_component_test.rb`
+- `test/components/ui/stepper_component_test.rb`
+- `test/components/ui/tabs_component_test.rb`
 - `test/components/ui/theme_switcher_component_test.rb`
 
 ## Relationships
 
 - `controller:Marketing` —TESTED_BY→ `test:Components::MarketingComponents`
 - `component:Ui::Button` —TESTED_BY→ `test:Components::Ui::ButtonComponent`
+- `component:Ui::CommandPalette` —TESTED_BY→ `test:Components::Ui::CommandPaletteComponent`
 - `component:Ui::DangerZone` —TESTED_BY→ `test:Components::Ui::DangerZoneComponent`
 - `document:Design-system::Forms` —TESTED_BY→ `test:Components::Ui::Forms::FormComponents`
 - `component:Application` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
@@ -29,6 +33,8 @@
 - `job:Application` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
 - `policy:Application` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
 - `component:Ui::LocaleSwitcher` —TESTED_BY→ `test:Components::Ui::LocaleSwitcherComponent`
+- `component:Ui::Stepper` —TESTED_BY→ `test:Components::Ui::StepperComponent`
+- `component:Ui::Tabs` —TESTED_BY→ `test:Components::Ui::TabsComponent`
 - `component:Ui::ThemeSwitcher` —TESTED_BY→ `test:Components::Ui::ThemeSwitcherComponent`
 
 ## Contract
