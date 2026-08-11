@@ -8,9 +8,9 @@
 - controller: 22
 - document: 179
 - job: 7
-- model: 21
+- model: 24
 - policy: 4
-- test: 149
+- test: 152
 
 ## Diagram
 
@@ -55,6 +55,7 @@ graph LR
   organization_invitations[OrganizationInvitations]
   organizations[Organizations]
   passwords[Passwords]
+  permission[Permission]
   platform_role[PlatformRole]
   preferences[Preferences]
   privacy_preference[PrivacyPreference]
@@ -63,6 +64,8 @@ graph LR
   requests[Requests]
   retention_enforcement[RetentionEnforcement]
   retention_policy[RetentionPolicy]
+  role[Role]
+  role_permission[RolePermission]
   services[Services]
   session[Session]
   sessions[Sessions]

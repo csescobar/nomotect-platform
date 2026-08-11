@@ -1,0 +1,22 @@
+schema_version: 1
+id: 215-epic-11-persistent-rbac-phase-1
+category: feature
+summary: Implement Epic 11 Phase 1 persistent RBAC models (Role, Permission, RolePermission), PermissionRegistry, and domain operations.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: true
+  notes: Introduces roles, permissions, and role_permissions tables, and adds role_id to memberships table.
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Enforces code-backed PermissionRegistry fail-closed authorization checks and protected system role safeguards.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

@@ -4,6 +4,7 @@ class Membership < ApplicationRecord
 
   belongs_to :organization
   belongs_to :user
+  belongs_to :role_record, class_name: "Role", foreign_key: "role_id", optional: true
 
   validates :role, inclusion: { in: ->(_) { ApplicationRoles.keys } }
   validates :user_id, uniqueness: { scope: :organization_id }
@@ -16,7 +17,11 @@ class Membership < ApplicationRecord
 
   def owner? = role == "owner"
   def admin? = role.in?(%w[owner admin])
-  def permitted?(permission) = ApplicationRoles.permission?(role, permission)
+  def permitted?(permission)
+    return role_record.permitted?(permission) if role_record.present?
+
+    ApplicationRoles.permission?(role, permission)
+  end
 
   private
 

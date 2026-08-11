@@ -71,6 +71,7 @@ Required release impact: `major`.
 - Complete Release Gate v1.0.0 GA certification including GitHub Release publication, OCI container image promotion, and clean standalone bootstrap validation. (`211-v1-0-0-ga-certification`)
 - Update README.md to reflect v1.0.0 GA completion, delivery history table, and Engineering Playbooks catalog. (`212-readme-v1-0-0-ga-update`)
 - Complete Post-1.0 Evolution Discovery capability assessment, gap analysis, prioritization matrix, and automated validator. (`214-post-1-0-evolution-discovery`)
+- Implement Epic 11 Phase 1 persistent RBAC models (Role, Permission, RolePermission), PermissionRegistry, and domain operations. (`215-epic-11-persistent-rbac-phase-1`)
 
 ### Fixed
 

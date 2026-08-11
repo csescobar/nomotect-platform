@@ -4,11 +4,12 @@
 
 ## Responsibilities
 
-- test: Operations::CustomersOperations
+- test: Operations::CustomersOperations, Operations::Roles
 
 ## Source paths
 
 - `test/operations/customers_operations_test.rb`
+- `test/operations/roles_test.rb`
 
 ## Relationships
 
@@ -18,6 +19,10 @@
 - `document:Distribution::Operations` —TESTED_BY→ `test:Operations::CustomersOperations`
 - `document:Extensions::Operations` —TESTED_BY→ `test:Operations::CustomersOperations`
 - `test:Models::Customer` —TESTED_BY→ `test:Operations::CustomersOperations`
+- `model:Role` —TESTED_BY→ `test:Operations::Roles`
+- `document:Distribution::Operations` —TESTED_BY→ `test:Operations::Roles`
+- `document:Extensions::Operations` —TESTED_BY→ `test:Operations::Roles`
+- `test:Models::Role` —TESTED_BY→ `test:Operations::Roles`
 
 ## Contract
 
