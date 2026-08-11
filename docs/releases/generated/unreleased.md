@@ -80,6 +80,7 @@
 - Epic 12 Phase 3 — Feedback component family introducing ToastComponent, ToastContainerComponent, SkeletonComponent, ProgressBarComponent, ProgressSpinnerComponent, and TooltipComponent ViewComponents with ARIA compliance and CSS design token animation integration. (`222-epic-12-feedback-components-phase-3`)
 - Epic 12 Phase 4 — Input component family introducing ComboboxComponent, AutocompleteComponent, TagInputComponent, and MultiSelectComponent ViewComponents with Stimulus controllers, ARIA accessibility, and Rails form hidden input sync. (`223-epic-12-input-components-phase-4`)
 - Epic 12 Phase 5 — Final phase of Design System 2.0 introducing KpiCardComponent, TimelineComponent, ActivityFeedComponent, and DescriptionListComponent ViewComponents under Ui::Data namespace with ARIA compliance and CSS design token integration. (`224-epic-12-data-components-phase-5`)
+- Epic 12 Phase 6 — Final complementary phase completing 100% of Design System 2.0 component families, introducing PaginationComponent, UserMenuComponent, PopoverComponent, FileUploadComponent, and TreeViewComponent with Stimulus controllers, ARIA compliance, and CSS design token integration. (`225-epic-12-complementary-components-phase-6`)
 
 ### Fixed
 
@@ -306,3 +307,4 @@
 - **Accessibility — 222-epic-12-feedback-components-phase-3:** ToastComponent uses role=status/alert and dismiss button. ProgressBar and ProgressSpinner implement role=progressbar with aria-valuenow/aria-valuemin/aria-valuemax. Skeleton implements aria-hidden=true. TooltipComponent implements role=tooltip linked via aria-describedby.
 - **Accessibility — 223-epic-12-input-components-phase-4:** Combobox and Autocomplete implement role=combobox, role=listbox, and aria-autocomplete=list. TagInput implements chip dismiss buttons with screen reader labels and keyboard nav. MultiSelect implements role=listbox and option aria-selected toggling.
 - **Accessibility — 224-epic-12-data-components-phase-5:** Timeline uses ordered list semantics. ActivityFeed uses list semantics and integrates accessible AvatarComponent. DescriptionList uses dl/dt/dd HTML5 definition list semantics with responsive grid columns.
+- **Accessibility — 225-epic-12-complementary-components-phase-6:** Pagination uses nav role=pagination with aria-disabled and aria-current. UserMenu implements role=menu and menuitem. Popover implements role=dialog with aria-haspopup. FileUpload implements file dropzone accessibility. TreeView implements role=tree and role=treeitem with aria-expanded.

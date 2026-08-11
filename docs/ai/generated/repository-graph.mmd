@@ -24,6 +24,7 @@ graph TD
   n_component_Ui__Data__DescriptionList["Ui::Data::DescriptionList"]
   n_component_Ui__Data__KpiCard["Ui::Data::KpiCard"]
   n_component_Ui__Data__Timeline["Ui::Data::Timeline"]
+  n_component_Ui__Data__TreeView["Ui::Data::TreeView"]
   n_component_Ui__Divider["Ui::Divider"]
   n_component_Ui__EmptyState["Ui::EmptyState"]
   n_component_Ui__Forms__Autocomplete["Ui::Forms::Autocomplete"]
@@ -31,6 +32,7 @@ graph TD
   n_component_Ui__Forms__Combobox["Ui::Forms::Combobox"]
   n_component_Ui__Forms__ErrorSummary["Ui::Forms::ErrorSummary"]
   n_component_Ui__Forms__Field["Ui::Forms::Field"]
+  n_component_Ui__Forms__FileUpload["Ui::Forms::FileUpload"]
   n_component_Ui__Forms__MultiSelect["Ui::Forms::MultiSelect"]
   n_component_Ui__Forms__RadioGroup["Ui::Forms::RadioGroup"]
   n_component_Ui__Forms__TagInput["Ui::Forms::TagInput"]
@@ -39,7 +41,9 @@ graph TD
   n_component_Ui__Layout__Navigation["Ui::Layout::Navigation"]
   n_component_Ui__Layout__PageHeader["Ui::Layout::PageHeader"]
   n_component_Ui__LocaleSwitcher["Ui::LocaleSwitcher"]
+  n_component_Ui__Pagination["Ui::Pagination"]
   n_component_Ui__PermissionIndicator["Ui::PermissionIndicator"]
+  n_component_Ui__Popover["Ui::Popover"]
   n_component_Ui__ProgressBar["Ui::ProgressBar"]
   n_component_Ui__ProgressSpinner["Ui::ProgressSpinner"]
   n_component_Ui__RoleBadge["Ui::RoleBadge"]
@@ -50,6 +54,7 @@ graph TD
   n_component_Ui__Toast["Ui::Toast"]
   n_component_Ui__ToastContainer["Ui::ToastContainer"]
   n_component_Ui__Tooltip["Ui::Tooltip"]
+  n_component_Ui__UserMenu["Ui::UserMenu"]
   n_controller_Application["Application"]
   n_controller_ComponentShowcase["ComponentShowcase"]
   n_controller_Customers["Customers"]
@@ -299,14 +304,18 @@ graph TD
   n_test_Components__Ui__Data__DescriptionListComponent["Components::Ui::Data::DescriptionListComponent"]
   n_test_Components__Ui__Data__KpiCardComponent["Components::Ui::Data::KpiCardComponent"]
   n_test_Components__Ui__Data__TimelineComponent["Components::Ui::Data::TimelineComponent"]
+  n_test_Components__Ui__Data__TreeViewComponent["Components::Ui::Data::TreeViewComponent"]
   n_test_Components__Ui__Forms__AutocompleteComponent["Components::Ui::Forms::AutocompleteComponent"]
   n_test_Components__Ui__Forms__ComboboxComponent["Components::Ui::Forms::ComboboxComponent"]
+  n_test_Components__Ui__Forms__FileUploadComponent["Components::Ui::Forms::FileUploadComponent"]
   n_test_Components__Ui__Forms__FormComponents["Components::Ui::Forms::FormComponents"]
   n_test_Components__Ui__Forms__MultiSelectComponent["Components::Ui::Forms::MultiSelectComponent"]
   n_test_Components__Ui__Forms__TagInputComponent["Components::Ui::Forms::TagInputComponent"]
   n_test_Components__Ui__Layout__ApplicationShellComponent["Components::Ui::Layout::ApplicationShellComponent"]
   n_test_Components__Ui__LocaleSwitcherComponent["Components::Ui::LocaleSwitcherComponent"]
+  n_test_Components__Ui__PaginationComponent["Components::Ui::PaginationComponent"]
   n_test_Components__Ui__PermissionIndicatorComponent["Components::Ui::PermissionIndicatorComponent"]
+  n_test_Components__Ui__PopoverComponent["Components::Ui::PopoverComponent"]
   n_test_Components__Ui__ProgressBarComponent["Components::Ui::ProgressBarComponent"]
   n_test_Components__Ui__ProgressSpinnerComponent["Components::Ui::ProgressSpinnerComponent"]
   n_test_Components__Ui__RoleBadgeComponent["Components::Ui::RoleBadgeComponent"]
@@ -316,6 +325,7 @@ graph TD
   n_test_Components__Ui__ThemeSwitcherComponent["Components::Ui::ThemeSwitcherComponent"]
   n_test_Components__Ui__ToastComponent["Components::Ui::ToastComponent"]
   n_test_Components__Ui__TooltipComponent["Components::Ui::TooltipComponent"]
+  n_test_Components__Ui__UserMenuComponent["Components::Ui::UserMenuComponent"]
   n_test_Controllers__ComponentShowcaseController["Controllers::ComponentShowcaseController"]
   n_test_Controllers__CustomLayout["Controllers::CustomLayout"]
   n_test_Controllers__CustomersController["Controllers::CustomersController"]
@@ -508,13 +518,17 @@ graph TD
   n_component_Ui__Data__DescriptionList -->|TESTED_BY| n_test_Components__Ui__Data__DescriptionListComponent
   n_component_Ui__Data__KpiCard -->|TESTED_BY| n_test_Components__Ui__Data__KpiCardComponent
   n_component_Ui__Data__Timeline -->|TESTED_BY| n_test_Components__Ui__Data__TimelineComponent
+  n_component_Ui__Data__TreeView -->|TESTED_BY| n_test_Components__Ui__Data__TreeViewComponent
   n_component_Ui__Forms__Autocomplete -->|TESTED_BY| n_test_Components__Ui__Forms__AutocompleteComponent
   n_component_Ui__Forms__Combobox -->|TESTED_BY| n_test_Components__Ui__Forms__ComboboxComponent
+  n_component_Ui__Forms__FileUpload -->|TESTED_BY| n_test_Components__Ui__Forms__FileUploadComponent
   n_component_Ui__Forms__MultiSelect -->|TESTED_BY| n_test_Components__Ui__Forms__MultiSelectComponent
   n_component_Ui__Forms__TagInput -->|TESTED_BY| n_test_Components__Ui__Forms__TagInputComponent
   n_component_Ui__Layout__ApplicationShell -->|TESTED_BY| n_test_Components__Ui__Layout__ApplicationShellComponent
   n_component_Ui__LocaleSwitcher -->|TESTED_BY| n_test_Components__Ui__LocaleSwitcherComponent
+  n_component_Ui__Pagination -->|TESTED_BY| n_test_Components__Ui__PaginationComponent
   n_component_Ui__PermissionIndicator -->|TESTED_BY| n_test_Components__Ui__PermissionIndicatorComponent
+  n_component_Ui__Popover -->|TESTED_BY| n_test_Components__Ui__PopoverComponent
   n_component_Ui__ProgressBar -->|TESTED_BY| n_test_Components__Ui__ProgressBarComponent
   n_component_Ui__ProgressSpinner -->|TESTED_BY| n_test_Components__Ui__ProgressSpinnerComponent
   n_component_Ui__RoleBadge -->|TESTED_BY| n_test_Components__Ui__RoleBadgeComponent
@@ -525,6 +539,7 @@ graph TD
   n_component_Ui__ThemeSwitcher -->|TESTED_BY| n_test_Components__Ui__ThemeSwitcherComponent
   n_component_Ui__Toast -->|TESTED_BY| n_test_Components__Ui__ToastComponent
   n_component_Ui__Tooltip -->|TESTED_BY| n_test_Components__Ui__TooltipComponent
+  n_component_Ui__UserMenu -->|TESTED_BY| n_test_Components__Ui__UserMenuComponent
   n_controller_Application -->|DOCUMENTED_BY| n_document_Architecture__Application_layer
   n_controller_Application -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0005_use_application_layer_boundary
   n_controller_Application -->|DOCUMENTED_BY| n_document_Architecture__Decisions__0006_seal_application_role_and_grid_registries
@@ -610,6 +625,7 @@ graph TD
   n_document_Design_system__Forms -->|DOCUMENTED_BY| n_document_Modules__Design_system__Forms__AiContext
   n_document_Design_system__Forms -->|TESTED_BY| n_test_Components__Ui__Forms__AutocompleteComponent
   n_document_Design_system__Forms -->|TESTED_BY| n_test_Components__Ui__Forms__ComboboxComponent
+  n_document_Design_system__Forms -->|TESTED_BY| n_test_Components__Ui__Forms__FileUploadComponent
   n_document_Design_system__Forms -->|TESTED_BY| n_test_Components__Ui__Forms__FormComponents
   n_document_Design_system__Forms -->|TESTED_BY| n_test_Components__Ui__Forms__MultiSelectComponent
   n_document_Design_system__Forms -->|TESTED_BY| n_test_Components__Ui__Forms__TagInputComponent
@@ -767,6 +783,7 @@ graph TD
   n_model_Role -->|TESTED_BY| n_test_Models__Role
   n_model_Role -->|TESTED_BY| n_test_Operations__Roles
   n_model_StoredFile -->|TESTED_BY| n_test_Controllers__StoredFilesController
+  n_model_User -->|TESTED_BY| n_test_Components__Ui__UserMenuComponent
   n_model_User -->|TESTED_BY| n_test_Models__User
   n_model_User -->|TESTED_BY| n_test_Models__UserLocalization
   n_policy_Application -->|DOCUMENTED_BY| n_document_Architecture__Application_layer

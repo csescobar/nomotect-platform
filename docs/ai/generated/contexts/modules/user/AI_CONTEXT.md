@@ -12,6 +12,7 @@
 
 ## Relationships
 
+- `model:User` —TESTED_BY→ `test:Components::Ui::UserMenuComponent`
 - `model:User` —TESTED_BY→ `test:Models::UserLocalization`
 - `model:User` —TESTED_BY→ `test:Models::User`
 

@@ -24,6 +24,7 @@ digraph repository {
   "component:Ui::Data::DescriptionList" [label="Ui::Data::DescriptionList"];
   "component:Ui::Data::KpiCard" [label="Ui::Data::KpiCard"];
   "component:Ui::Data::Timeline" [label="Ui::Data::Timeline"];
+  "component:Ui::Data::TreeView" [label="Ui::Data::TreeView"];
   "component:Ui::Divider" [label="Ui::Divider"];
   "component:Ui::EmptyState" [label="Ui::EmptyState"];
   "component:Ui::Forms::Autocomplete" [label="Ui::Forms::Autocomplete"];
@@ -31,6 +32,7 @@ digraph repository {
   "component:Ui::Forms::Combobox" [label="Ui::Forms::Combobox"];
   "component:Ui::Forms::ErrorSummary" [label="Ui::Forms::ErrorSummary"];
   "component:Ui::Forms::Field" [label="Ui::Forms::Field"];
+  "component:Ui::Forms::FileUpload" [label="Ui::Forms::FileUpload"];
   "component:Ui::Forms::MultiSelect" [label="Ui::Forms::MultiSelect"];
   "component:Ui::Forms::RadioGroup" [label="Ui::Forms::RadioGroup"];
   "component:Ui::Forms::TagInput" [label="Ui::Forms::TagInput"];
@@ -39,7 +41,9 @@ digraph repository {
   "component:Ui::Layout::Navigation" [label="Ui::Layout::Navigation"];
   "component:Ui::Layout::PageHeader" [label="Ui::Layout::PageHeader"];
   "component:Ui::LocaleSwitcher" [label="Ui::LocaleSwitcher"];
+  "component:Ui::Pagination" [label="Ui::Pagination"];
   "component:Ui::PermissionIndicator" [label="Ui::PermissionIndicator"];
+  "component:Ui::Popover" [label="Ui::Popover"];
   "component:Ui::ProgressBar" [label="Ui::ProgressBar"];
   "component:Ui::ProgressSpinner" [label="Ui::ProgressSpinner"];
   "component:Ui::RoleBadge" [label="Ui::RoleBadge"];
@@ -50,6 +54,7 @@ digraph repository {
   "component:Ui::Toast" [label="Ui::Toast"];
   "component:Ui::ToastContainer" [label="Ui::ToastContainer"];
   "component:Ui::Tooltip" [label="Ui::Tooltip"];
+  "component:Ui::UserMenu" [label="Ui::UserMenu"];
   "controller:Application" [label="Application"];
   "controller:ComponentShowcase" [label="ComponentShowcase"];
   "controller:Customers" [label="Customers"];
@@ -299,14 +304,18 @@ digraph repository {
   "test:Components::Ui::Data::DescriptionListComponent" [label="Components::Ui::Data::DescriptionListComponent"];
   "test:Components::Ui::Data::KpiCardComponent" [label="Components::Ui::Data::KpiCardComponent"];
   "test:Components::Ui::Data::TimelineComponent" [label="Components::Ui::Data::TimelineComponent"];
+  "test:Components::Ui::Data::TreeViewComponent" [label="Components::Ui::Data::TreeViewComponent"];
   "test:Components::Ui::Forms::AutocompleteComponent" [label="Components::Ui::Forms::AutocompleteComponent"];
   "test:Components::Ui::Forms::ComboboxComponent" [label="Components::Ui::Forms::ComboboxComponent"];
+  "test:Components::Ui::Forms::FileUploadComponent" [label="Components::Ui::Forms::FileUploadComponent"];
   "test:Components::Ui::Forms::FormComponents" [label="Components::Ui::Forms::FormComponents"];
   "test:Components::Ui::Forms::MultiSelectComponent" [label="Components::Ui::Forms::MultiSelectComponent"];
   "test:Components::Ui::Forms::TagInputComponent" [label="Components::Ui::Forms::TagInputComponent"];
   "test:Components::Ui::Layout::ApplicationShellComponent" [label="Components::Ui::Layout::ApplicationShellComponent"];
   "test:Components::Ui::LocaleSwitcherComponent" [label="Components::Ui::LocaleSwitcherComponent"];
+  "test:Components::Ui::PaginationComponent" [label="Components::Ui::PaginationComponent"];
   "test:Components::Ui::PermissionIndicatorComponent" [label="Components::Ui::PermissionIndicatorComponent"];
+  "test:Components::Ui::PopoverComponent" [label="Components::Ui::PopoverComponent"];
   "test:Components::Ui::ProgressBarComponent" [label="Components::Ui::ProgressBarComponent"];
   "test:Components::Ui::ProgressSpinnerComponent" [label="Components::Ui::ProgressSpinnerComponent"];
   "test:Components::Ui::RoleBadgeComponent" [label="Components::Ui::RoleBadgeComponent"];
@@ -316,6 +325,7 @@ digraph repository {
   "test:Components::Ui::ThemeSwitcherComponent" [label="Components::Ui::ThemeSwitcherComponent"];
   "test:Components::Ui::ToastComponent" [label="Components::Ui::ToastComponent"];
   "test:Components::Ui::TooltipComponent" [label="Components::Ui::TooltipComponent"];
+  "test:Components::Ui::UserMenuComponent" [label="Components::Ui::UserMenuComponent"];
   "test:Controllers::ComponentShowcaseController" [label="Controllers::ComponentShowcaseController"];
   "test:Controllers::CustomLayout" [label="Controllers::CustomLayout"];
   "test:Controllers::CustomersController" [label="Controllers::CustomersController"];
@@ -508,13 +518,17 @@ digraph repository {
   "component:Ui::Data::DescriptionList" -> "test:Components::Ui::Data::DescriptionListComponent" [label="TESTED_BY"];
   "component:Ui::Data::KpiCard" -> "test:Components::Ui::Data::KpiCardComponent" [label="TESTED_BY"];
   "component:Ui::Data::Timeline" -> "test:Components::Ui::Data::TimelineComponent" [label="TESTED_BY"];
+  "component:Ui::Data::TreeView" -> "test:Components::Ui::Data::TreeViewComponent" [label="TESTED_BY"];
   "component:Ui::Forms::Autocomplete" -> "test:Components::Ui::Forms::AutocompleteComponent" [label="TESTED_BY"];
   "component:Ui::Forms::Combobox" -> "test:Components::Ui::Forms::ComboboxComponent" [label="TESTED_BY"];
+  "component:Ui::Forms::FileUpload" -> "test:Components::Ui::Forms::FileUploadComponent" [label="TESTED_BY"];
   "component:Ui::Forms::MultiSelect" -> "test:Components::Ui::Forms::MultiSelectComponent" [label="TESTED_BY"];
   "component:Ui::Forms::TagInput" -> "test:Components::Ui::Forms::TagInputComponent" [label="TESTED_BY"];
   "component:Ui::Layout::ApplicationShell" -> "test:Components::Ui::Layout::ApplicationShellComponent" [label="TESTED_BY"];
   "component:Ui::LocaleSwitcher" -> "test:Components::Ui::LocaleSwitcherComponent" [label="TESTED_BY"];
+  "component:Ui::Pagination" -> "test:Components::Ui::PaginationComponent" [label="TESTED_BY"];
   "component:Ui::PermissionIndicator" -> "test:Components::Ui::PermissionIndicatorComponent" [label="TESTED_BY"];
+  "component:Ui::Popover" -> "test:Components::Ui::PopoverComponent" [label="TESTED_BY"];
   "component:Ui::ProgressBar" -> "test:Components::Ui::ProgressBarComponent" [label="TESTED_BY"];
   "component:Ui::ProgressSpinner" -> "test:Components::Ui::ProgressSpinnerComponent" [label="TESTED_BY"];
   "component:Ui::RoleBadge" -> "test:Components::Ui::RoleBadgeComponent" [label="TESTED_BY"];
@@ -525,6 +539,7 @@ digraph repository {
   "component:Ui::ThemeSwitcher" -> "test:Components::Ui::ThemeSwitcherComponent" [label="TESTED_BY"];
   "component:Ui::Toast" -> "test:Components::Ui::ToastComponent" [label="TESTED_BY"];
   "component:Ui::Tooltip" -> "test:Components::Ui::TooltipComponent" [label="TESTED_BY"];
+  "component:Ui::UserMenu" -> "test:Components::Ui::UserMenuComponent" [label="TESTED_BY"];
   "controller:Application" -> "document:Architecture::Application-layer" [label="DOCUMENTED_BY"];
   "controller:Application" -> "document:Architecture::Decisions::0005-use-application-layer-boundary" [label="DOCUMENTED_BY"];
   "controller:Application" -> "document:Architecture::Decisions::0006-seal-application-role-and-grid-registries" [label="DOCUMENTED_BY"];
@@ -610,6 +625,7 @@ digraph repository {
   "document:Design-system::Forms" -> "document:Modules::Design-system::Forms::AiContext" [label="DOCUMENTED_BY"];
   "document:Design-system::Forms" -> "test:Components::Ui::Forms::AutocompleteComponent" [label="TESTED_BY"];
   "document:Design-system::Forms" -> "test:Components::Ui::Forms::ComboboxComponent" [label="TESTED_BY"];
+  "document:Design-system::Forms" -> "test:Components::Ui::Forms::FileUploadComponent" [label="TESTED_BY"];
   "document:Design-system::Forms" -> "test:Components::Ui::Forms::FormComponents" [label="TESTED_BY"];
   "document:Design-system::Forms" -> "test:Components::Ui::Forms::MultiSelectComponent" [label="TESTED_BY"];
   "document:Design-system::Forms" -> "test:Components::Ui::Forms::TagInputComponent" [label="TESTED_BY"];
@@ -767,6 +783,7 @@ digraph repository {
   "model:Role" -> "test:Models::Role" [label="TESTED_BY"];
   "model:Role" -> "test:Operations::Roles" [label="TESTED_BY"];
   "model:StoredFile" -> "test:Controllers::StoredFilesController" [label="TESTED_BY"];
+  "model:User" -> "test:Components::Ui::UserMenuComponent" [label="TESTED_BY"];
   "model:User" -> "test:Models::User" [label="TESTED_BY"];
   "model:User" -> "test:Models::UserLocalization" [label="TESTED_BY"];
   "policy:Application" -> "document:Architecture::Application-layer" [label="DOCUMENTED_BY"];
