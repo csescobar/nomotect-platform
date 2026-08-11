@@ -2,24 +2,18 @@
 
 class CustomerPolicy < ApplicationPolicy
   def show?
-    membership&.permitted?("customers.read")
+    contextually_permitted?("customers.read")
   end
 
   def create?
-    membership&.permitted?("customers.create")
+    contextually_permitted?("customers.create")
   end
 
   def update?
-    membership&.permitted?("customers.update")
+    contextually_permitted?("customers.update")
   end
 
   def destroy?
-    membership&.permitted?("customers.destroy")
-  end
-
-  private
-
-  def membership
-    @membership ||= record.organization.membership_for(user)
+    contextually_permitted?("customers.destroy")
   end
 end

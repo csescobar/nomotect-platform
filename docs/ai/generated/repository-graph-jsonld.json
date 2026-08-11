@@ -931,7 +931,7 @@
       "name": "Application",
       "path": "app/policies/application_policy.rb",
       "properties": {
-        "sha256": "651b5222018602a6e18398024e00a02b34ea57eb6f4ff0662f52d4c86cca768b",
+        "sha256": "2568f4e5f0969dd5d8e1fce93bf6f2ab07761bd050b5df66d850bc2ae11ba6d6",
         "source": "platform"
       },
       "@id": "policy:Application"
@@ -942,7 +942,7 @@
       "name": "Customer",
       "path": "app/policies/customer_policy.rb",
       "properties": {
-        "sha256": "3848e17110bb67e6357ddcbbf7bb9aabc35b576d1eff1ea5eb4f52c6ebdb78d9",
+        "sha256": "3c5d65ecdc7a7b57e6e7939c0355a3b0fcf4eac7555ad573bce6b76b9734750b",
         "source": "platform"
       },
       "@id": "policy:Customer"
@@ -2581,7 +2581,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "7292ca38e2fab1684ec761fc94041bf7c260f201bd6aaec604563be411217c27",
+        "sha256": "620a8ed33dbbcc3baeedb80adfe131912c90e5de7a42199baaadeda9b728aeb7",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -2691,7 +2691,7 @@
       "name": "Roadmap::Platform-evolution-roadmap",
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "properties": {
-        "sha256": "8725dbf9e89cf834363b486e262de206104616dc06b349a806d5628e84fdb3cd",
+        "sha256": "ef830ae0937add97e6c8f00ce5c6e11fbc15595a0ec9435982476a09ab3716b8",
         "source": "platform"
       },
       "@id": "document:Roadmap::Platform-evolution-roadmap"
@@ -3252,7 +3252,7 @@
       "name": "Helpers::PermissionHelper",
       "path": "test/helpers/permission_helper_test.rb",
       "properties": {
-        "sha256": "fc2cbf27c94e01ddfb2121e588544b87ef4566f1189d3e5c19a167f8480df922",
+        "sha256": "b03953b0b1b73957f4067e78b6d514e9b8930cb79dcb86d0b430ef683ae9f968",
         "source": "platform"
       },
       "@id": "test:Helpers::PermissionHelper"
@@ -3498,6 +3498,17 @@
         "source": "platform"
       },
       "@id": "test:Lib::ContainerEnvironmentValidator"
+    },
+    {
+      "id": "test:Lib::ContextualAuthorization",
+      "type": "test",
+      "name": "Lib::ContextualAuthorization",
+      "path": "test/lib/contextual_authorization_test.rb",
+      "properties": {
+        "sha256": "e70f089d797193087fe7662b60a279dea369a355cd16b46962c914169111442d",
+        "source": "platform"
+      },
+      "@id": "test:Lib::ContextualAuthorization"
     },
     {
       "id": "test:Lib::DesignTokens::Compiler",

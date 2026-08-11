@@ -316,6 +316,7 @@ digraph repository {
   "test:Lib::ApplicationStarter" [label="Lib::ApplicationStarter"];
   "test:Lib::CleanStarterOnboarding" [label="Lib::CleanStarterOnboarding"];
   "test:Lib::ContainerEnvironmentValidator" [label="Lib::ContainerEnvironmentValidator"];
+  "test:Lib::ContextualAuthorization" [label="Lib::ContextualAuthorization"];
   "test:Lib::DesignTokens::Compiler" [label="Lib::DesignTokens::Compiler"];
   "test:Lib::DeveloperGuidelines" [label="Lib::DeveloperGuidelines"];
   "test:Lib::Epic9Certification" [label="Lib::Epic9Certification"];
