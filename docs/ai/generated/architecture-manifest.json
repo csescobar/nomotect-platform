@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "588c3d5f0ab7be1340895f5cc73a52c205a07b5b",
+  "repository_commit": "7ef432ca7926189a4dc713ba3425b249fdcb30ec",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -46,7 +46,7 @@
     {
       "path": "app/assets/stylesheets/application.css",
       "kind": "source",
-      "sha256": "875fc3412d0788d0c55e5867394a924a39c0967792afab1fac3808910a56b3fa"
+      "sha256": "45d836733f9f94bfb2e6f44cb6b4c42183c72b073527dde89a12da6c5050877c"
     },
     {
       "path": "app/assets/stylesheets/design_tokens.css",
@@ -184,6 +184,16 @@
       "sha256": "959822e07e0d4c3e6311d6ca73515472adc473d58ab59c498e6baafe3e1a011f"
     },
     {
+      "path": "app/components/ui/avatar_component.rb",
+      "kind": "component",
+      "sha256": "a61dc818ec3295c21a3f45060ba2b95b44f381678657bf296fbfe1354d78ad95"
+    },
+    {
+      "path": "app/components/ui/avatar_group_component.rb",
+      "kind": "component",
+      "sha256": "a1d2d46c20faac9d3609dbb9c72380c436f09ca45e1132cf0d8db2f28e7f3984"
+    },
+    {
       "path": "app/components/ui/badge_component.rb",
       "kind": "component",
       "sha256": "e0b49c5280c64975c1d3dc142c3e499e48e540bb3fddb5c5d71b684bb45eecfd"
@@ -206,7 +216,7 @@
     {
       "path": "app/components/ui/command_palette_component.rb",
       "kind": "component",
-      "sha256": "a940ed302af21e4298e8e208d1b49097f0a3139177f30c3ca22ef9c43f1cb237"
+      "sha256": "1ac1eee0815a316c86bc834323b61f6e7ef2dc6315baa88ad1b523569054149a"
     },
     {
       "path": "app/components/ui/danger_zone_component.rb",
@@ -269,14 +279,24 @@
       "sha256": "348d75b2257c1ed91f620408a18afdabe1ea5dc4fb1b33bf2030c3bc9f487582"
     },
     {
+      "path": "app/components/ui/permission_indicator_component.rb",
+      "kind": "component",
+      "sha256": "099746830ed53f5d62a301ffa2490acc9debdc6b2021c1b1248135c061e3e616"
+    },
+    {
+      "path": "app/components/ui/role_badge_component.rb",
+      "kind": "component",
+      "sha256": "e6510100e9e2a08ab2119c8b9a533e43f62aac20e82655fa6b6123e85535ef1c"
+    },
+    {
       "path": "app/components/ui/stepper_component.rb",
       "kind": "component",
-      "sha256": "3214964125fa16f2b3cad8fb461a41a0e5b0328d31add5e04f631c470c572003"
+      "sha256": "f2286c2b0c740fcf58be800d5dcdf05491c112be55a5492d214ff25fdff163d2"
     },
     {
       "path": "app/components/ui/tabs_component.rb",
       "kind": "component",
-      "sha256": "14aa9c669f860029c7c6e9132af0ecacaefc754bcefa078604580cb23e4dd13e"
+      "sha256": "1bab8dec72c2811358546d54cb7311862ed37e5903f81f56311a5a720dc8209a"
     },
     {
       "path": "app/components/ui/theme_switcher_component.rb",
@@ -3121,7 +3141,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "d0752c40becc57114cd6024a027a345dd5d35d51e078c9677eefaba6a85305f0"
+      "sha256": "f7d1792f93fd1a30c9678cb7a6171fedcfe991d1e1985c316cbe2bf4d3582585"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3484,6 +3504,16 @@
       "sha256": "3a2efc1caf6c64b647f3953db9362e52ffc213545f5b5288fecea250a9d41e62"
     },
     {
+      "path": "test/components/ui/avatar_component_test.rb",
+      "kind": "test",
+      "sha256": "c1d1cb5c9ab75272d7710e9352962ff0133ca90795c4cf9ee9a891acfdaec991"
+    },
+    {
+      "path": "test/components/ui/avatar_group_component_test.rb",
+      "kind": "test",
+      "sha256": "abcd7e772798fb3496dcd7954f11f33154fd4bcb3818e6767d7ee720e81a16ee"
+    },
+    {
       "path": "test/components/ui/button_component_test.rb",
       "kind": "test",
       "sha256": "8bb13fd11326e0e2509ae92e988eede71e09abbd7ab77ec169a485a4f4e47675"
@@ -3517,6 +3547,16 @@
       "path": "test/components/ui/locale_switcher_component_test.rb",
       "kind": "test",
       "sha256": "0782c61e1ca49b34f3750a15562467b725fe67b4b1ded91f44a8f4ceddcece1e"
+    },
+    {
+      "path": "test/components/ui/permission_indicator_component_test.rb",
+      "kind": "test",
+      "sha256": "362dd8ed11639818dfc07e2bda0f151d1f4c2a8500ea7938a9c21171163d84b3"
+    },
+    {
+      "path": "test/components/ui/role_badge_component_test.rb",
+      "kind": "test",
+      "sha256": "b97351b039bd67eb0f662f27dcfb8b92b9819d8af5f781967b3eeeb035934d91"
     },
     {
       "path": "test/components/ui/stepper_component_test.rb",

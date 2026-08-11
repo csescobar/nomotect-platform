@@ -1,0 +1,22 @@
+schema_version: 1
+id: 221-epic-12-identity-components-phase-2
+category: feature
+summary: Epic 12 Phase 2 — Identity component family introducing Avatar, AvatarGroup, RoleBadge, and PermissionIndicator ViewComponents with ARIA compliance, presence status, role color mappings, and Light/Dark CSS design token integration.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Avatar implements role=img and initials fallback with aria-label. AvatarGroup implements role=group and overflow counter label. RoleBadge implements role screen reader labels. PermissionIndicator implements tooltip and aria-label for granted/denied permission states.

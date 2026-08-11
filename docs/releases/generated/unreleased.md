@@ -76,6 +76,7 @@
 - Complete Epic 11 protected system roles backfill, automatic membership role linkage, and removal of legacy string authorization fallback. (`218-epic-11-system-roles-backfill`)
 - Complete Epic 11 Phase 4 advanced contextual authorization evaluator, data classification security clearance checks, and security denial domain auditing. (`219-epic-11-advanced-policy-context-phase-4`)
 - Epic 12 Phase 1 — Navigation component family introducing Tabs, Stepper, and Command Palette ViewComponents with Stimulus controllers, ARIA compliance, and Light/Dark CSS design token integration. (`220-epic-12-navigation-components-phase-1`)
+- Epic 12 Phase 2 — Identity component family introducing Avatar, AvatarGroup, RoleBadge, and PermissionIndicator ViewComponents with ARIA compliance, presence status, role color mappings, and Light/Dark CSS design token integration. (`221-epic-12-identity-components-phase-2`)
 
 ### Fixed
 
@@ -298,3 +299,4 @@
 - **Accessibility — 211-v1-0-0-ga-certification:** Certified official v1.0.0 GA release and standalone application starter bootstrap.
 - **Accessibility — 212-readme-v1-0-0-ga-update:** Updated README.md documentation links and version references to v1.0.0 GA.
 - **Accessibility — 220-epic-12-navigation-components-phase-1:** Tabs implement ARIA tablist/tab/tabpanel with keyboard arrow navigation. Stepper implements aria-current=step. Command Palette implements dialog aria-modal, combobox role, listbox/option roles, and focus trap.
+- **Accessibility — 221-epic-12-identity-components-phase-2:** Avatar implements role=img and initials fallback with aria-label. AvatarGroup implements role=group and overflow counter label. RoleBadge implements role screen reader labels. PermissionIndicator implements tooltip and aria-label for granted/denied permission states.

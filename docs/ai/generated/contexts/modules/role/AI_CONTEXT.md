@@ -16,6 +16,8 @@
 
 - `model:Role` —DOCUMENTED_BY→ `document:Architecture::Decisions::0006-seal-application-role-and-grid-registries`
 - `policy:Role` —DOCUMENTED_BY→ `document:Architecture::Decisions::0006-seal-application-role-and-grid-registries`
+- `model:Role` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
+- `policy:Role` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
 - `model:Role` —TESTED_BY→ `test:Models::PlatformRole`
 - `policy:Role` —TESTED_BY→ `test:Models::PlatformRole`
 - `model:Role` —TESTED_BY→ `test:Models::Role`

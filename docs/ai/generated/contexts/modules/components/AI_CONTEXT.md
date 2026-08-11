@@ -4,11 +4,13 @@
 
 ## Responsibilities
 
-- test: Components::MarketingComponents, Components::Ui::ButtonComponent, Components::Ui::CommandPaletteComponent, Components::Ui::CoreComponents, Components::Ui::DangerZoneComponent, Components::Ui::Forms::FormComponents, Components::Ui::Layout::ApplicationShellComponent, Components::Ui::LocaleSwitcherComponent, Components::Ui::StepperComponent, Components::Ui::TabsComponent, Components::Ui::ThemeSwitcherComponent
+- test: Components::MarketingComponents, Components::Ui::AvatarComponent, Components::Ui::AvatarGroupComponent, Components::Ui::ButtonComponent, Components::Ui::CommandPaletteComponent, Components::Ui::CoreComponents, Components::Ui::DangerZoneComponent, Components::Ui::Forms::FormComponents, Components::Ui::Layout::ApplicationShellComponent, Components::Ui::LocaleSwitcherComponent, Components::Ui::PermissionIndicatorComponent, Components::Ui::RoleBadgeComponent, Components::Ui::StepperComponent, Components::Ui::TabsComponent, Components::Ui::ThemeSwitcherComponent
 
 ## Source paths
 
 - `test/components/marketing_components_test.rb`
+- `test/components/ui/avatar_component_test.rb`
+- `test/components/ui/avatar_group_component_test.rb`
 - `test/components/ui/button_component_test.rb`
 - `test/components/ui/command_palette_component_test.rb`
 - `test/components/ui/core_components_test.rb`
@@ -16,6 +18,8 @@
 - `test/components/ui/forms/form_components_test.rb`
 - `test/components/ui/layout/application_shell_component_test.rb`
 - `test/components/ui/locale_switcher_component_test.rb`
+- `test/components/ui/permission_indicator_component_test.rb`
+- `test/components/ui/role_badge_component_test.rb`
 - `test/components/ui/stepper_component_test.rb`
 - `test/components/ui/tabs_component_test.rb`
 - `test/components/ui/theme_switcher_component_test.rb`
@@ -23,6 +27,9 @@
 ## Relationships
 
 - `controller:Marketing` —TESTED_BY→ `test:Components::MarketingComponents`
+- `component:Ui::Avatar` —TESTED_BY→ `test:Components::Ui::AvatarComponent`
+- `component:Ui::Avatar` —TESTED_BY→ `test:Components::Ui::AvatarGroupComponent`
+- `component:Ui::AvatarGroup` —TESTED_BY→ `test:Components::Ui::AvatarGroupComponent`
 - `component:Ui::Button` —TESTED_BY→ `test:Components::Ui::ButtonComponent`
 - `component:Ui::CommandPalette` —TESTED_BY→ `test:Components::Ui::CommandPaletteComponent`
 - `component:Ui::DangerZone` —TESTED_BY→ `test:Components::Ui::DangerZoneComponent`
@@ -33,6 +40,12 @@
 - `job:Application` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
 - `policy:Application` —TESTED_BY→ `test:Components::Ui::Layout::ApplicationShellComponent`
 - `component:Ui::LocaleSwitcher` —TESTED_BY→ `test:Components::Ui::LocaleSwitcherComponent`
+- `component:Ui::PermissionIndicator` —TESTED_BY→ `test:Components::Ui::PermissionIndicatorComponent`
+- `model:Permission` —TESTED_BY→ `test:Components::Ui::PermissionIndicatorComponent`
+- `component:Ui::Badge` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
+- `component:Ui::RoleBadge` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
+- `model:Role` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
+- `policy:Role` —TESTED_BY→ `test:Components::Ui::RoleBadgeComponent`
 - `component:Ui::Stepper` —TESTED_BY→ `test:Components::Ui::StepperComponent`
 - `component:Ui::Tabs` —TESTED_BY→ `test:Components::Ui::TabsComponent`
 - `component:Ui::ThemeSwitcher` —TESTED_BY→ `test:Components::Ui::ThemeSwitcherComponent`
