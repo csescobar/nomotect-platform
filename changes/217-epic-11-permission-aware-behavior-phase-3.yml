@@ -1,0 +1,22 @@
+schema_version: 1
+id: 217-epic-11-permission-aware-behavior-phase-3
+category: feature
+summary: Complete Epic 11 Phase 3 permission-aware application behavior in ActionPolicy policies and PermissionHelper view utilities.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Enforces granular membership.permitted? authorization across CustomerPolicy, MembershipPolicy, RolePolicy, OrganizationPolicy, and PermissionHelper.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

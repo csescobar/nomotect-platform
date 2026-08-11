@@ -20,6 +20,7 @@
 - `job:Application` → `document:Architecture::Decisions::0006-seal-application-role-and-grid-registries`
 - `model:Role` → `document:Architecture::Decisions::0006-seal-application-role-and-grid-registries`
 - `policy:Application` → `document:Architecture::Decisions::0006-seal-application-role-and-grid-registries`
+- `policy:Role` → `document:Architecture::Decisions::0006-seal-application-role-and-grid-registries`
 - `component:Application` → `document:Architecture::Decisions::0007-load-application-owned-extension-packages`
 - `controller:Application` → `document:Architecture::Decisions::0007-load-application-owned-extension-packages`
 - `job:Application` → `document:Architecture::Decisions::0007-load-application-owned-extension-packages`
@@ -101,7 +102,6 @@
 - `document:Releases::0.9.0::Migration-notes` → `document:Releases::Generated::Migration-notes`
 - `document:Releases::1.0.0-rc.1::Migration-notes` → `document:Releases::Generated::Migration-notes`
 - `document:Releases::1.0.0::Migration-notes` → `document:Releases::Generated::Migration-notes`
-- `document:Releases::0.8.0::Upgrade-notes` → `document:Releases::Generated::Upgrade-notes`
 
 ## TESTED_BY
 
@@ -141,6 +141,7 @@
 - `policy:StoredFile` → `test:Controllers::StoredFilesController`
 - `controller:TenantSelections` → `test:Controllers::TenantSelectionsController`
 - `document:Design-system::Localization` → `test:Helpers::LocalizationHelper`
+- `model:Permission` → `test:Helpers::PermissionHelper`
 - `component:Application` → `test:Integration::ApplicationExtensionSample`
 - `controller:Application` → `test:Integration::ApplicationExtensionSample`
 - `job:Application` → `test:Integration::ApplicationExtensionSample`
@@ -204,4 +205,3 @@
 - `model:OrganizationInvitation` → `test:Models::OrganizationInvitation`
 - `policy:Organization` → `test:Models::OrganizationInvitation`
 - `model:Organization` → `test:Models::Organization`
-- `policy:Organization` → `test:Models::Organization`

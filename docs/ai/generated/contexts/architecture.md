@@ -9,8 +9,8 @@
 - document: 179
 - job: 7
 - model: 24
-- policy: 4
-- test: 153
+- policy: 6
+- test: 156
 
 ## Diagram
 
@@ -57,6 +57,7 @@ graph LR
   passwords[Passwords]
   permission[Permission]
   platform_role[PlatformRole]
+  policies[Policies]
   preferences[Preferences]
   privacy_preference[PrivacyPreference]
   privacy_request[PrivacyRequest]

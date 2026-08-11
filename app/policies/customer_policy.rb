@@ -1,8 +1,21 @@
+# frozen_string_literal: true
+
 class CustomerPolicy < ApplicationPolicy
-  def show? = membership.present?
-  def create? = membership&.admin?
-  def update? = membership&.admin?
-  def destroy? = membership&.admin?
+  def show?
+    membership&.permitted?("customers.read")
+  end
+
+  def create?
+    membership&.permitted?("customers.create")
+  end
+
+  def update?
+    membership&.permitted?("customers.update")
+  end
+
+  def destroy?
+    membership&.permitted?("customers.destroy")
+  end
 
   private
 

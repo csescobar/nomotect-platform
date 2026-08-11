@@ -22,6 +22,8 @@
 - `policy:Customer` —TESTED_BY→ `test:Models::Customer`
 - `model:Customer` —TESTED_BY→ `test:Operations::CustomersOperations`
 - `policy:Customer` —TESTED_BY→ `test:Operations::CustomersOperations`
+- `model:Customer` —TESTED_BY→ `test:Policies::CustomerPolicy`
+- `policy:Customer` —TESTED_BY→ `test:Policies::CustomerPolicy`
 
 ## Contract
 

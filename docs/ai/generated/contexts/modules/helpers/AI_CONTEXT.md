@@ -4,15 +4,17 @@
 
 ## Responsibilities
 
-- test: Helpers::LocalizationHelper
+- test: Helpers::LocalizationHelper, Helpers::PermissionHelper
 
 ## Source paths
 
 - `test/helpers/localization_helper_test.rb`
+- `test/helpers/permission_helper_test.rb`
 
 ## Relationships
 
 - `document:Design-system::Localization` —TESTED_BY→ `test:Helpers::LocalizationHelper`
+- `model:Permission` —TESTED_BY→ `test:Helpers::PermissionHelper`
 
 ## Contract
 

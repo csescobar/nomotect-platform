@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class OrganizationPolicy < ApplicationPolicy
   def show?
-    membership.present?
+    membership.present? && (membership.permitted?("settings.read") || membership.owner? || membership.admin?)
   end
 
   def create?
@@ -8,7 +10,7 @@ class OrganizationPolicy < ApplicationPolicy
   end
 
   def update?
-    membership&.admin?
+    membership.present? && (membership.permitted?("settings.manage") || membership.owner? || membership.admin?)
   end
 
   def destroy?
@@ -16,7 +18,7 @@ class OrganizationPolicy < ApplicationPolicy
   end
 
   def manage_members?
-    membership&.admin?
+    membership.present? && (membership.permitted?("members.manage_roles") || membership.permitted?("members.invite") || membership.admin? || membership.owner?)
   end
 
   def manage_owners?

@@ -5,17 +5,23 @@
 ## Responsibilities
 
 - model: Role
+- policy: Role
 
 ## Source paths
 
 - `app/models/role.rb`
+- `app/policies/role_policy.rb`
 
 ## Relationships
 
 - `model:Role` —DOCUMENTED_BY→ `document:Architecture::Decisions::0006-seal-application-role-and-grid-registries`
+- `policy:Role` —DOCUMENTED_BY→ `document:Architecture::Decisions::0006-seal-application-role-and-grid-registries`
 - `model:Role` —TESTED_BY→ `test:Models::PlatformRole`
+- `policy:Role` —TESTED_BY→ `test:Models::PlatformRole`
 - `model:Role` —TESTED_BY→ `test:Models::Role`
+- `policy:Role` —TESTED_BY→ `test:Models::Role`
 - `model:Role` —TESTED_BY→ `test:Operations::Roles`
+- `policy:Role` —TESTED_BY→ `test:Operations::Roles`
 
 ## Contract
 
