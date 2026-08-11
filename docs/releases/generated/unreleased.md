@@ -104,6 +104,7 @@
 - Enforce tenant-scoped attachment association and authorized downloads before storage access. (`168-tenant-stored-file-authorization`)
 - Certify adversarial tenant boundaries and reject invalid jobs before partial state is created. (`169-tenant-safety-adversarial-certification`)
 - Epic 13 Phase 1 — Security Assurance Engineering establishing Target of Evaluation (TOE) scope, trusted boundaries, threat actor taxonomy, operating environment assumptions, and protected security assets aligned with ISO/IEC 15408 / Common Criteria (ASE_INT / ASE_ECD). (`227-epic-13-security-assurance-phase-1`)
+- Epic 13 Phase 2 — Security Assurance Engineering establishing 4-tier security assurance traceability matrix (Asset -> Threat -> Security Objective -> Security Functional Requirement) across 11 core security domains aligned with ISO/IEC 15408 / Common Criteria (ASE_OBJ / ASE_REQ). (`228-epic-13-security-assurance-phase-2`)
 
 ### Documentation
 
@@ -223,6 +224,7 @@
 - **Security — 218-epic-11-system-roles-backfill:** Enforces strict role_record presence for all authorization checks in Membership#permitted?.
 - **Security — 219-epic-11-advanced-policy-context-phase-4:** Enforces ContextualAuthorization evaluator combining RBAC baseline, data classification clearance (standard, sensitive, restricted), resource ownership, and emits security.contextual_denial domain events.
 - **Security — 227-epic-13-security-assurance-phase-1:** Established formal ISO/IEC 15408 assurance scope, trusted boundaries, threat actors, and asset traceability matrix in assurance-scope-and-assets.md and updated threat-model.md.
+- **Security — 228-epic-13-security-assurance-phase-2:** Formalized 4-tier security traceability matrix across authentication, authorization, tenant isolation, audit integrity, secrets, supply chain, and AI boundaries in threats-and-security-objectives.md.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

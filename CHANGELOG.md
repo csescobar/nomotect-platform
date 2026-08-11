@@ -105,6 +105,7 @@ Required release impact: `major`.
 - Enforce tenant-scoped attachment association and authorized downloads before storage access. (`168-tenant-stored-file-authorization`)
 - Certify adversarial tenant boundaries and reject invalid jobs before partial state is created. (`169-tenant-safety-adversarial-certification`)
 - Epic 13 Phase 1 — Security Assurance Engineering establishing Target of Evaluation (TOE) scope, trusted boundaries, threat actor taxonomy, operating environment assumptions, and protected security assets aligned with ISO/IEC 15408 / Common Criteria (ASE_INT / ASE_ECD). (`227-epic-13-security-assurance-phase-1`)
+- Epic 13 Phase 2 — Security Assurance Engineering establishing 4-tier security assurance traceability matrix (Asset -> Threat -> Security Objective -> Security Functional Requirement) across 11 core security domains aligned with ISO/IEC 15408 / Common Criteria (ASE_OBJ / ASE_REQ). (`228-epic-13-security-assurance-phase-2`)
 
 ### Documentation
 

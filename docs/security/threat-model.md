@@ -4,7 +4,9 @@
 
 This threat model defines potential threat vectors, threat actor profiles, and security objectives for NomoTect.
 
-For full ISO/IEC 15408 / Common Criteria (ASE_INT / ASE_ECD) alignment details, Target of Evaluation (TOE) scope, and operating environment assumptions, refer to [`assurance-scope-and-assets.md`](file:///home/cesar-escobar/Projects/NomoTect/docs/security/assurance-scope-and-assets.md).
+For full ISO/IEC 15408 / Common Criteria (ASE_INT / ASE_ECD / ASE_OBJ / ASE_REQ) alignment details:
+- **Scope & Assets**: [`assurance-scope-and-assets.md`](file:///home/cesar-escobar/Projects/NomoTect/docs/security/assurance-scope-and-assets.md)
+- **Threats & Security Objectives**: [`threats-and-security-objectives.md`](file:///home/cesar-escobar/Projects/NomoTect/docs/security/threats-and-security-objectives.md)
 
 ---
 

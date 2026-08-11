@@ -1,0 +1,22 @@
+schema_version: 1
+id: 228-epic-13-security-assurance-phase-2
+category: security
+summary: Epic 13 Phase 2 — Security Assurance Engineering establishing 4-tier security assurance traceability matrix (Asset -> Threat -> Security Objective -> Security Functional Requirement) across 11 core security domains aligned with ISO/IEC 15408 / Common Criteria (ASE_OBJ / ASE_REQ).
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Formalized 4-tier security traceability matrix across authentication, authorization, tenant isolation, audit integrity, secrets, supply chain, and AI boundaries in threats-and-security-objectives.md.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
