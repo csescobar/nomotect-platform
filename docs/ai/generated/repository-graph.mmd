@@ -336,6 +336,7 @@ graph TD
   n_test_Lib__RepositoryIntelligenceStorage["Lib::RepositoryIntelligenceStorage"]
   n_test_Models__Customer["Models::Customer"]
   n_test_Models__GridSavedView["Models::GridSavedView"]
+  n_test_Models__Membership["Models::Membership"]
   n_test_Models__Organization["Models::Organization"]
   n_test_Models__OrganizationInvitation["Models::OrganizationInvitation"]
   n_test_Models__Permission["Models::Permission"]
@@ -675,6 +676,7 @@ graph TD
   n_model_Customer -->|TESTED_BY| n_test_Operations__CustomersOperations
   n_model_Customer -->|TESTED_BY| n_test_Policies__CustomerPolicy
   n_model_GridSavedView -->|TESTED_BY| n_test_Models__GridSavedView
+  n_model_Membership -->|TESTED_BY| n_test_Models__Membership
   n_model_Membership -->|TESTED_BY| n_test_Policies__MembershipPolicy
   n_model_Notification -->|DOCUMENTED_BY| n_document_Modules__EnterpriseServices__Notifications
   n_model_Organization -->|DOCUMENTED_BY| n_document_Modules__Organizations__AiContext
@@ -718,6 +720,7 @@ graph TD
   n_policy_Customer -->|TESTED_BY| n_test_Models__Customer
   n_policy_Customer -->|TESTED_BY| n_test_Operations__CustomersOperations
   n_policy_Customer -->|TESTED_BY| n_test_Policies__CustomerPolicy
+  n_policy_Membership -->|TESTED_BY| n_test_Models__Membership
   n_policy_Membership -->|TESTED_BY| n_test_Policies__MembershipPolicy
   n_policy_Organization -->|DOCUMENTED_BY| n_document_Modules__Organizations__AiContext
   n_policy_Organization -->|TESTED_BY| n_test_Controllers__OrganizationMemberAdministration
@@ -734,6 +737,7 @@ graph TD
   n_test_Lib__Platform__Version -->|TESTED_BY| n_test_Services__Upgrades__Version
   n_test_Models__Customer -->|TESTED_BY| n_test_Operations__CustomersOperations
   n_test_Models__Customer -->|TESTED_BY| n_test_Policies__CustomerPolicy
+  n_test_Models__Membership -->|TESTED_BY| n_test_Policies__MembershipPolicy
   n_test_Models__Role -->|TESTED_BY| n_test_Operations__Roles
   n_test_Services__ApplicationLayer__Certification -->|TESTED_BY| n_test_Services__Epic10__AccessibilityCertification
   n_test_Services__ApplicationLayer__Certification -->|TESTED_BY| n_test_Services__Epic10__AiReadinessCertification

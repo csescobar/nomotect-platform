@@ -63,11 +63,14 @@ class RoleTest < ActiveSupport::TestCase
       key: "reporter",
       name: "Reporter"
     )
-    permission = Permission.create!(
-      key: "reports.read",
-      name: "Read Reports",
-      category: "reports"
-    )
+    permission = Permission.find_or_create_by!(key: "reports.read") do |p|
+      p.name = "Read Reports"
+      p.category = "reports"
+      p.owning_capability = "reports"
+      p.security_classification = "standard"
+      p.default_availability = "all"
+      p.version = "1.0.0"
+    end
 
     role.permissions << permission
 

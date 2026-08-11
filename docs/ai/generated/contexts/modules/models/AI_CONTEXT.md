@@ -4,12 +4,13 @@
 
 ## Responsibilities
 
-- test: Models::Customer, Models::GridSavedView, Models::Organization, Models::OrganizationInvitation, Models::Permission, Models::PlatformRole, Models::Role, Models::User, Models::UserLocalization
+- test: Models::Customer, Models::GridSavedView, Models::Membership, Models::Organization, Models::OrganizationInvitation, Models::Permission, Models::PlatformRole, Models::Role, Models::User, Models::UserLocalization
 
 ## Source paths
 
 - `test/models/customer_test.rb`
 - `test/models/grid_saved_view_test.rb`
+- `test/models/membership_test.rb`
 - `test/models/organization_invitation_test.rb`
 - `test/models/organization_test.rb`
 - `test/models/permission_test.rb`
@@ -23,6 +24,8 @@
 - `model:Customer` —TESTED_BY→ `test:Models::Customer`
 - `policy:Customer` —TESTED_BY→ `test:Models::Customer`
 - `model:GridSavedView` —TESTED_BY→ `test:Models::GridSavedView`
+- `model:Membership` —TESTED_BY→ `test:Models::Membership`
+- `policy:Membership` —TESTED_BY→ `test:Models::Membership`
 - `model:Organization` —TESTED_BY→ `test:Models::OrganizationInvitation`
 - `model:OrganizationInvitation` —TESTED_BY→ `test:Models::OrganizationInvitation`
 - `policy:Organization` —TESTED_BY→ `test:Models::OrganizationInvitation`
@@ -40,6 +43,7 @@
 - `test:Models::Customer` —TESTED_BY→ `test:Operations::CustomersOperations`
 - `test:Models::Role` —TESTED_BY→ `test:Operations::Roles`
 - `test:Models::Customer` —TESTED_BY→ `test:Policies::CustomerPolicy`
+- `test:Models::Membership` —TESTED_BY→ `test:Policies::MembershipPolicy`
 
 ## Contract
 

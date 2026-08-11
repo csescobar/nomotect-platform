@@ -51,11 +51,14 @@ class RolesOperationsTest < ActiveSupport::TestCase
       key: "auditor",
       name: "Auditor"
     )
-    permission = Permission.create!(
-      key: "audit.read",
-      name: "Read Audit Logs",
-      category: "audit"
-    )
+    permission = Permission.find_or_create_by!(key: "audit.read") do |p|
+      p.name = "Read Audit Logs"
+      p.category = "audit"
+      p.owning_capability = "audit"
+      p.security_classification = "sensitive"
+      p.default_availability = "admin_only"
+      p.version = "1.0.0"
+    end
     role.permissions << permission
 
     result = Roles::Assign.new(

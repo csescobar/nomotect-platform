@@ -14,6 +14,8 @@
 
 ## Relationships
 
+- `model:Membership` —TESTED_BY→ `test:Models::Membership`
+- `policy:Membership` —TESTED_BY→ `test:Models::Membership`
 - `model:Membership` —TESTED_BY→ `test:Policies::MembershipPolicy`
 - `policy:Membership` —TESTED_BY→ `test:Policies::MembershipPolicy`
 

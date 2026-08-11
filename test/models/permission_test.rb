@@ -5,9 +5,13 @@ require "test_helper"
 class PermissionTest < ActiveSupport::TestCase
   test "validates required fields and key format" do
     permission = Permission.new(
-      key: "customers.read",
-      name: "Read Customers",
-      category: "customers"
+      key: "custom_scope.custom_action",
+      name: "Custom Action",
+      category: "custom_scope",
+      owning_capability: "custom_scope",
+      security_classification: "standard",
+      default_availability: "all",
+      version: "1.0.0"
     )
 
     assert permission.valid?
@@ -15,16 +19,23 @@ class PermissionTest < ActiveSupport::TestCase
   end
 
   test "prevents creation of duplicate permission keys" do
-    Permission.create!(
-      key: "members.read",
-      name: "Read Members",
-      category: "members"
-    )
+    first = Permission.find_or_create_by!(key: "members.read") do |p|
+      p.name = "Read Members"
+      p.category = "members"
+      p.owning_capability = "members"
+      p.security_classification = "standard"
+      p.default_availability = "all"
+      p.version = "1.0.0"
+    end
 
     duplicate = Permission.new(
-      key: "members.read",
+      key: first.key,
       name: "Read Members Copy",
-      category: "members"
+      category: "members",
+      owning_capability: "members",
+      security_classification: "standard",
+      default_availability: "all",
+      version: "1.0.0"
     )
 
     assert_not duplicate.valid?
