@@ -232,12 +232,32 @@
       }
     },
     {
+      "id": "component:Ui::Forms::Autocomplete",
+      "type": "component",
+      "name": "Ui::Forms::Autocomplete",
+      "path": "app/components/ui/forms/autocomplete_component.rb",
+      "properties": {
+        "sha256": "2d44a02748d54778388b91f23f03b204ea6fdfbe2e54539637b5270eed909eb3",
+        "source": "platform"
+      }
+    },
+    {
       "id": "component:Ui::Forms::Checkbox",
       "type": "component",
       "name": "Ui::Forms::Checkbox",
       "path": "app/components/ui/forms/checkbox_component.rb",
       "properties": {
         "sha256": "9cd67f80888d6a1a9daa595a6bc311ea6936b5f138507379b728396519baa33d",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Forms::Combobox",
+      "type": "component",
+      "name": "Ui::Forms::Combobox",
+      "path": "app/components/ui/forms/combobox_component.rb",
+      "properties": {
+        "sha256": "0dcbbdcf964443fa115ee6fccc18234d85c06e7f2723ed13dd1f682b22b394cd",
         "source": "platform"
       }
     },
@@ -262,12 +282,32 @@
       }
     },
     {
+      "id": "component:Ui::Forms::MultiSelect",
+      "type": "component",
+      "name": "Ui::Forms::MultiSelect",
+      "path": "app/components/ui/forms/multi_select_component.rb",
+      "properties": {
+        "sha256": "16e0ea8c7324767d9635b5a6b44baf4451f8146b287c7fa765a6871fc0054247",
+        "source": "platform"
+      }
+    },
+    {
       "id": "component:Ui::Forms::RadioGroup",
       "type": "component",
       "name": "Ui::Forms::RadioGroup",
       "path": "app/components/ui/forms/radio_group_component.rb",
       "properties": {
         "sha256": "2296cd2d61341bcebd833d71117a5400fd8bce7f72c46b0c56d4b736b5b37c9c",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "component:Ui::Forms::TagInput",
+      "type": "component",
+      "name": "Ui::Forms::TagInput",
+      "path": "app/components/ui/forms/tag_input_component.rb",
+      "properties": {
+        "sha256": "690859421de0df0f5196694ac84c141b0b45b3b14adb632397309b71d09b0878",
         "source": "platform"
       }
     },
@@ -337,7 +377,7 @@
       "name": "Ui::ProgressBar",
       "path": "app/components/ui/progress_bar_component.rb",
       "properties": {
-        "sha256": "b75a0ce2c99aa5dd54ea52b7ca05b4c8e1549106638537f822a5c0e2d5f4cb99",
+        "sha256": "51dea002b91ffb48649cefa2e77db3fdb31e4bc98760c26a8b6341cd6308a1b7",
         "source": "platform"
       }
     },
@@ -2097,7 +2137,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "694eb0df1b62f854be1ed9eb2187ed4db16a8a2896351a90790e5b37da129c52",
+        "sha256": "17406bb240f9b4adee946dcbf84eca36ef078360b39b64553a9a0f6051e331bf",
         "source": "platform"
       }
     },
@@ -2882,12 +2922,52 @@
       }
     },
     {
+      "id": "test:Components::Ui::Forms::AutocompleteComponent",
+      "type": "test",
+      "name": "Components::Ui::Forms::AutocompleteComponent",
+      "path": "test/components/ui/forms/autocomplete_component_test.rb",
+      "properties": {
+        "sha256": "de17f08090aa8a143f971b793d7a1f8b27f76d0db38aaafc4fc5512ef38d0ed6",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::Forms::ComboboxComponent",
+      "type": "test",
+      "name": "Components::Ui::Forms::ComboboxComponent",
+      "path": "test/components/ui/forms/combobox_component_test.rb",
+      "properties": {
+        "sha256": "243735c36d7e2bbb59e54410fc5fa6b8a36b050bbcb41deef2ace62a640568a0",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Components::Ui::Forms::FormComponents",
       "type": "test",
       "name": "Components::Ui::Forms::FormComponents",
       "path": "test/components/ui/forms/form_components_test.rb",
       "properties": {
         "sha256": "2690fd53d09a36d3542f081f4089e12d31592463c55e591282e8216a37004f6e",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::Forms::MultiSelectComponent",
+      "type": "test",
+      "name": "Components::Ui::Forms::MultiSelectComponent",
+      "path": "test/components/ui/forms/multi_select_component_test.rb",
+      "properties": {
+        "sha256": "601215a9b9ef510bb81073fe6124f778b87edfbb76d80aa188bc2502778c4ece",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Components::Ui::Forms::TagInputComponent",
+      "type": "test",
+      "name": "Components::Ui::Forms::TagInputComponent",
+      "path": "test/components/ui/forms/tag_input_component_test.rb",
+      "properties": {
+        "sha256": "7205ba0235b6128d38820e84f29c95690d1bcfd6aedd6aad132f1cf807b53d6a",
         "source": "platform"
       }
     },
@@ -4736,6 +4816,30 @@
       "properties": {}
     },
     {
+      "from": "component:Ui::Forms::Autocomplete",
+      "to": "test:Components::Ui::Forms::AutocompleteComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Forms::Combobox",
+      "to": "test:Components::Ui::Forms::ComboboxComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Forms::MultiSelect",
+      "to": "test:Components::Ui::Forms::MultiSelectComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "component:Ui::Forms::TagInput",
+      "to": "test:Components::Ui::Forms::TagInputComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
       "from": "component:Ui::Layout::ApplicationShell",
       "to": "test:Components::Ui::Layout::ApplicationShellComponent",
       "type": "TESTED_BY",
@@ -5313,7 +5417,31 @@
     },
     {
       "from": "document:Design-system::Forms",
+      "to": "test:Components::Ui::Forms::AutocompleteComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Design-system::Forms",
+      "to": "test:Components::Ui::Forms::ComboboxComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Design-system::Forms",
       "to": "test:Components::Ui::Forms::FormComponents",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Design-system::Forms",
+      "to": "test:Components::Ui::Forms::MultiSelectComponent",
+      "type": "TESTED_BY",
+      "properties": {}
+    },
+    {
+      "from": "document:Design-system::Forms",
+      "to": "test:Components::Ui::Forms::TagInputComponent",
       "type": "TESTED_BY",
       "properties": {}
     },
@@ -6662,5 +6790,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "4fa61222f0e838c6f196e6a96e7f02fd8a4cb3ad"
+  "repository_commit": "4c70dbb15c3a5d4486a3732966cbbe6d86bb13b0"
 }

@@ -78,6 +78,7 @@
 - Epic 12 Phase 1 — Navigation component family introducing Tabs, Stepper, and Command Palette ViewComponents with Stimulus controllers, ARIA compliance, and Light/Dark CSS design token integration. (`220-epic-12-navigation-components-phase-1`)
 - Epic 12 Phase 2 — Identity component family introducing Avatar, AvatarGroup, RoleBadge, and PermissionIndicator ViewComponents with ARIA compliance, presence status, role color mappings, and Light/Dark CSS design token integration. (`221-epic-12-identity-components-phase-2`)
 - Epic 12 Phase 3 — Feedback component family introducing ToastComponent, ToastContainerComponent, SkeletonComponent, ProgressBarComponent, ProgressSpinnerComponent, and TooltipComponent ViewComponents with ARIA compliance and CSS design token animation integration. (`222-epic-12-feedback-components-phase-3`)
+- Epic 12 Phase 4 — Input component family introducing ComboboxComponent, AutocompleteComponent, TagInputComponent, and MultiSelectComponent ViewComponents with Stimulus controllers, ARIA accessibility, and Rails form hidden input sync. (`223-epic-12-input-components-phase-4`)
 
 ### Fixed
 
@@ -302,3 +303,4 @@
 - **Accessibility — 220-epic-12-navigation-components-phase-1:** Tabs implement ARIA tablist/tab/tabpanel with keyboard arrow navigation. Stepper implements aria-current=step. Command Palette implements dialog aria-modal, combobox role, listbox/option roles, and focus trap.
 - **Accessibility — 221-epic-12-identity-components-phase-2:** Avatar implements role=img and initials fallback with aria-label. AvatarGroup implements role=group and overflow counter label. RoleBadge implements role screen reader labels. PermissionIndicator implements tooltip and aria-label for granted/denied permission states.
 - **Accessibility — 222-epic-12-feedback-components-phase-3:** ToastComponent uses role=status/alert and dismiss button. ProgressBar and ProgressSpinner implement role=progressbar with aria-valuenow/aria-valuemin/aria-valuemax. Skeleton implements aria-hidden=true. TooltipComponent implements role=tooltip linked via aria-describedby.
+- **Accessibility — 223-epic-12-input-components-phase-4:** Combobox and Autocomplete implement role=combobox, role=listbox, and aria-autocomplete=list. TagInput implements chip dismiss buttons with screen reader labels and keyboard nav. MultiSelect implements role=listbox and option aria-selected toggling.

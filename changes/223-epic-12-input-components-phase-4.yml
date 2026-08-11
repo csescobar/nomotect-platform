@@ -1,0 +1,22 @@
+schema_version: 1
+id: 223-epic-12-input-components-phase-4
+category: feature
+summary: Epic 12 Phase 4 — Input component family introducing ComboboxComponent, AutocompleteComponent, TagInputComponent, and MultiSelectComponent ViewComponents with Stimulus controllers, ARIA accessibility, and Rails form hidden input sync.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Combobox and Autocomplete implement role=combobox, role=listbox, and aria-autocomplete=list. TagInput implements chip dismiss buttons with screen reader labels and keyboard nav. MultiSelect implements role=listbox and option aria-selected toggling.
