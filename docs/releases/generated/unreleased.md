@@ -90,6 +90,7 @@
 - Epic 16 Phases 2 & 3 — MCP Application Gateway (lib/ai/mcp/gateway.rb) with Current context propagation and audit logging, plus contextual resources provider (lib/ai/mcp/resources.rb) exposing nomotect:// URIs. (`235-epic-16-ai-assistant-phase-2-3`)
 - Epic 16 Phases 4, 5 & 6 — Completing AI Assistant Platform with Governed MCP Tools Registry (lib/ai/mcp/tool_registry.rb), SKILL.md Skills Framework (lib/ai/skills/), Platform Skills, and Governed AI Mutating Action Executor (lib/ai/mcp/action_executor.rb) with user confirmation policies and audit integration (ai.action.executed). (`236-epic-16-ai-assistant-phase-4-5-6`)
 - Introduce CheckboxComponent, RadioGroupComponent, ToggleComponent, SliderComponent, and InputGroupComponent ViewComponents with showcase integration, Portuguese i18n, strict CSP inline-style compliance, and unified form control design tokens. (`237-ui-form-controls-showcase-enhancements`)
+- Expand Syncfusion EJ2 suite with canonical Ui::Syncfusion::* ViewComponents (Checkbox, RadioGroup, Toggle, Slider, InputGroup, DatePicker, DateRangePicker, TimePicker, FileUpload, Combobox, MultiSelect, Stepper, Tabs, TreeView, ProgressBar, Skeleton, Grid, Dialog, Button, Card) and full unit test coverage. (`238-syncfusion-viewcomponents-expansion`)
 
 ### Fixed
 
@@ -243,6 +244,7 @@
 - **Security — 235-epic-16-ai-assistant-phase-2-3:** Created Ai::Mcp::Gateway for tool execution and Ai::Mcp::Resources exposing safe contextual data via nomotect:// URIs with data minimization.
 - **Security — 236-epic-16-ai-assistant-phase-4-5-6:** Implemented server-authoritative Ai::Mcp::ToolRegistry, Ai::Skills::Registry with SKILL.md parser, and Ai::Mcp::ActionExecutor requiring explicit user confirmation for write operations with ai.action.executed audit logging.
 - **Security — 237-ui-form-controls-showcase-enhancements:** Removed inline style attributes from JS controllers and ViewComponents to ensure strict CSP style-src compliance without nonces.
+- **Security — 238-syncfusion-viewcomponents-expansion:** All Syncfusion ViewComponents adhere to strict CSP style-src rules without inline style attributes.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
@@ -333,3 +335,4 @@
 - **Accessibility — 225-epic-12-complementary-components-phase-6:** Pagination uses nav role=pagination with aria-disabled and aria-current. UserMenu implements role=menu and menuitem. Popover implements role=dialog with aria-haspopup. FileUpload implements file dropzone accessibility. TreeView implements role=tree and role=treeitem with aria-expanded.
 - **Accessibility — 226-epic-12-datetime-pickers-phase-7:** DatePicker implements calendar dialog role=dialog. DateRangePicker implements preset action buttons and range inputs. TimePicker implements role=listbox and role=option.
 - **Accessibility — 237-ui-form-controls-showcase-enhancements:** ToggleComponent implements role=switch with aria-checked state. SliderComponent implements accessible range input semantics. Checkbox and Radio controls maintain rigid 20px sizing with keyboard focus rings.
+- **Accessibility — 238-syncfusion-viewcomponents-expansion:** Syncfusion ViewComponents wrap WAI-ARIA role attributes (role=switch, role=tree, role=tablist, role=dialog, role=progressbar) for full screen reader accessibility.
