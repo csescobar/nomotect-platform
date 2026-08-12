@@ -62,6 +62,16 @@ module Ui
         tag.span(class: "ui-multi-select__chip") do
           safe_join([
             tag.span(opt[:label], class: "ui-multi-select__chip-label"),
+            tag.input(
+              type: "text",
+              placeholder: @placeholder,
+              aria: { label: @placeholder || "Select multiple options" },
+              class: "ui-multi-select__input",
+              data: {
+                multi_select_target: "input",
+                action: "focus->multi-select#open click->multi-select#open input->multi-select#filter"
+              }
+            ),
             tag.button(
               "×",
               type: "button",

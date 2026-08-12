@@ -33,11 +33,11 @@ module Ui
               name: @name,
               value: @value,
               placeholder: @placeholder,
+              aria: { label: @placeholder || "Search suggestions", autocomplete: "list", expanded: false },
               class: "ui-autocomplete__input",
-              aria: { autocomplete: "list", expanded: false },
               data: {
                 autocomplete_target: "input",
-                action: "input->autocomplete#search keydown->autocomplete#navigate"
+                action: "input->autocomplete#search focus->autocomplete#search"
               }
             ),
             tag.ul(

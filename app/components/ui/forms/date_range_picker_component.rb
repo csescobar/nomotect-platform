@@ -32,10 +32,11 @@ module Ui
               type: "text",
               value: display_val,
               placeholder: @placeholder,
+              aria: { label: @placeholder || "Select date range" },
               class: "ui-date-range-picker__input",
               data: {
                 date_range_picker_target: "input",
-                action: "click->date-range-picker#open"
+                action: "focus->date-range-picker#open click->date-range-picker#open"
               }
             ),
             (render_presets if @presets)

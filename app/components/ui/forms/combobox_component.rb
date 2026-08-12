@@ -39,8 +39,8 @@ module Ui
           role: "combobox",
           value: display_label,
           placeholder: @placeholder,
+          aria: { label: @placeholder || "Select option", expanded: false, autocomplete: "list" },
           class: "ui-combobox__input",
-          aria: { expanded: false, autocomplete: "list" },
           data: {
             combobox_target: "input",
             action: "focus->combobox#open input->combobox#filter keydown->combobox#navigate"

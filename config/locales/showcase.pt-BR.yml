@@ -21,6 +21,12 @@ pt-BR:
       feedback: "Feedback e status"
       containers: "Contêineres e estados vazios"
       forms: "Controles de formulário"
+      pickers: "Pickers de data e hora"
+      advanced_inputs: "Inputs avançados"
+      avatars: "Avatares e crachás de função"
+      navigation: "Navegação, abas e steppers"
+      progress: "Progresso e carregamento (Skeletons)"
+      overlays: "Popovers, dicas e paleta de comandos"
       formatting: "Formatação de acordo com o idioma"
     form:
       name: "Nome"

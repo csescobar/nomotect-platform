@@ -3,9 +3,26 @@
 <div class="showcase">
   <%= render Ui::Layout::PageHeaderComponent.new(title: t("showcase.title"), description: t("showcase.description")) %>
 
+  <%# ── Navigation Index Bar ───────────────────────────────── %>
+  <nav class="showcase__nav-index" aria-label="Showcase Navigation">
+    <a href="#showcase-typography" class="showcase__nav-link"><%= t("showcase.sections.typography") %></a>
+    <a href="#showcase-colors" class="showcase__nav-link"><%= t("showcase.sections.colors") %></a>
+    <a href="#showcase-spacing" class="showcase__nav-link"><%= t("showcase.sections.spacing") %></a>
+    <a href="#showcase-buttons" class="showcase__nav-link"><%= t("showcase.sections.buttons") %></a>
+    <a href="#showcase-pickers" class="showcase__nav-link"><%= t("showcase.sections.pickers") %></a>
+    <a href="#showcase-advanced-inputs" class="showcase__nav-link"><%= t("showcase.sections.advanced_inputs") %></a>
+    <a href="#showcase-avatars" class="showcase__nav-link"><%= t("showcase.sections.avatars") %></a>
+    <a href="#showcase-navigation" class="showcase__nav-link"><%= t("showcase.sections.navigation") %></a>
+    <a href="#showcase-progress" class="showcase__nav-link"><%= t("showcase.sections.progress") %></a>
+    <a href="#showcase-overlays" class="showcase__nav-link"><%= t("showcase.sections.overlays") %></a>
+    <a href="#showcase-feedback" class="showcase__nav-link"><%= t("showcase.sections.feedback") %></a>
+    <a href="#showcase-containers" class="showcase__nav-link"><%= t("showcase.sections.containers") %></a>
+    <a href="#showcase-formatting" class="showcase__nav-link"><%= t("showcase.sections.formatting") %></a>
+  </nav>
+
   <%# ── Typography ──────────────────────────────────────────── %>
-  <section class="showcase__section" aria-labelledby="showcase-typography">
-    <h2 id="showcase-typography"><%= t("showcase.sections.typography") %></h2>
+  <section class="showcase__section" id="showcase-typography" aria-labelledby="showcase-typography-heading">
+    <h2 id="showcase-typography-heading"><%= t("showcase.sections.typography") %></h2>
     <p class="showcase__section-desc"><%= t("showcase.typography_desc") %></p>
     <div class="showcase__typo-scale">
       <div class="showcase__typo-row">
@@ -48,8 +65,8 @@
   </section>
 
   <%# ── Colors ─────────────────────────────────────────────── %>
-  <section class="showcase__section" aria-labelledby="showcase-colors">
-    <h2 id="showcase-colors"><%= t("showcase.sections.colors") %></h2>
+  <section class="showcase__section" id="showcase-colors" aria-labelledby="showcase-colors-heading">
+    <h2 id="showcase-colors-heading"><%= t("showcase.sections.colors") %></h2>
     <p class="showcase__section-desc"><%= t("showcase.colors_desc") %></p>
     <div class="showcase__swatches">
       <% [
@@ -66,8 +83,8 @@
   </section>
 
   <%# ── Spacing ─────────────────────────────────────────────── %>
-  <section class="showcase__section" aria-labelledby="showcase-spacing">
-    <h2 id="showcase-spacing"><%= t("showcase.sections.spacing") %></h2>
+  <section class="showcase__section" id="showcase-spacing" aria-labelledby="showcase-spacing-heading">
+    <h2 id="showcase-spacing-heading"><%= t("showcase.sections.spacing") %></h2>
     <p class="showcase__section-desc"><%= t("showcase.spacing_desc") %></p>
     <div class="showcase__spacing-scale">
       <% [
@@ -87,8 +104,8 @@
   </section>
 
   <%# ── Buttons ─────────────────────────────────────────────── %>
-  <section class="showcase__section" aria-labelledby="showcase-buttons">
-    <h2 id="showcase-buttons"><%= t("showcase.sections.buttons") %></h2>
+  <section class="showcase__section" id="showcase-buttons" aria-labelledby="showcase-buttons-heading">
+    <h2 id="showcase-buttons-heading"><%= t("showcase.sections.buttons") %></h2>
     <div class="showcase__row">
       <% Ui::ButtonComponent::VARIANTS.each do |variant| %>
         <%= render Ui::ButtonComponent.new(label: variant.to_s.humanize, variant: variant) %>
@@ -97,9 +114,133 @@
     </div>
   </section>
 
+  <%# ── Date & Time Pickers ──────────────────────────────────── %>
+  <section class="showcase__section" id="showcase-pickers" aria-labelledby="showcase-pickers-heading">
+    <h2 id="showcase-pickers-heading"><%= t("showcase.sections.pickers") %></h2>
+    <div class="showcase__grid">
+      <div>
+        <h3>DatePickerComponent</h3>
+        <%= render Ui::Forms::DatePickerComponent.new(name: "showcase_date", value: Date.today) %>
+      </div>
+      <div>
+        <h3>DateRangePickerComponent</h3>
+        <%= render Ui::Forms::DateRangePickerComponent.new(start_name: "showcase_start", end_name: "showcase_end", start_value: Date.today, end_value: Date.today + 14) %>
+      </div>
+      <div>
+        <h3>TimePickerComponent</h3>
+        <%= render Ui::Forms::TimePickerComponent.new(name: "showcase_time", value: "15:30") %>
+      </div>
+    </div>
+  </section>
+
+  <%# ── Advanced Inputs ───────────────────────────────────────── %>
+  <section class="showcase__section" id="showcase-advanced-inputs" aria-labelledby="showcase-advanced-inputs-heading">
+    <h2 id="showcase-advanced-inputs-heading"><%= t("showcase.sections.advanced_inputs") %></h2>
+    <div class="showcase__grid">
+      <div>
+        <h3>AutocompleteComponent</h3>
+        <%= render Ui::Forms::AutocompleteComponent.new(name: "showcase_country", suggestions: ["Brazil", "United States", "Germany", "Japan", "Canada"]) %>
+      </div>
+      <div>
+        <h3>ComboboxComponent</h3>
+        <%= render Ui::Forms::ComboboxComponent.new(name: "showcase_category", options: [{ label: "Technology", value: "tech" }, { label: "Finance", value: "fin" }]) %>
+      </div>
+      <div>
+        <h3>MultiSelectComponent</h3>
+        <%= render Ui::Forms::MultiSelectComponent.new(name: "showcase_tags", options: [{ label: "Ruby", value: "ruby" }, { label: "Rails", value: "rails" }]) %>
+      </div>
+      <div>
+        <h3>TagInputComponent</h3>
+        <%= render Ui::Forms::TagInputComponent.new(name: "showcase_skills", tags: ["Ruby", "Rails", "Design System"]) %>
+      </div>
+      <div>
+        <h3>FileUploadComponent</h3>
+        <%= render Ui::Forms::FileUploadComponent.new(name: "showcase_file", label: "Upload Document", accept: ".pdf,.png") %>
+      </div>
+    </div>
+  </section>
+
+  <%# ── Avatars & Badges ─────────────────────────────────────── %>
+  <section class="showcase__section" id="showcase-avatars" aria-labelledby="showcase-avatars-heading">
+    <h2 id="showcase-avatars-heading"><%= t("showcase.sections.avatars") %></h2>
+    <div class="showcase__row">
+      <%= render Ui::AvatarComponent.new(name: "Cesar Escobar", size: :sm) %>
+      <%= render Ui::AvatarComponent.new(name: "Cesar Escobar", size: :md) %>
+      <%= render Ui::AvatarComponent.new(name: "Cesar Escobar", size: :lg) %>
+      <%= render Ui::AvatarGroupComponent.new(avatars: [ { name: "Alice Smith" }, { name: "Bob Jones" }, { name: "Charlie Brown" }, { name: "Diana Prince" } ]) %>
+      <%= render Ui::RoleBadgeComponent.new(role: "admin") %>
+      <%= render Ui::RoleBadgeComponent.new(role: "member") %>
+    </div>
+  </section>
+
+  <%# ── Navigation & Steppers ────────────────────────────────── %>
+  <section class="showcase__section" id="showcase-navigation" aria-labelledby="showcase-navigation-heading">
+    <h2 id="showcase-navigation-heading"><%= t("showcase.sections.navigation") %></h2>
+    <div class="showcase__stack">
+      <div>
+        <h3>StepperComponent</h3>
+        <%= render Ui::StepperComponent.new(steps: [ { id: "1", label: "Step 1: Identity" }, { id: "2", label: "Step 2: Security" }, { id: "3", label: "Step 3: Certification" } ], current_step: "2") %>
+      </div>
+      <div>
+        <h3>TabsComponent</h3>
+        <%= render Ui::TabsComponent.new(tabs: [ { id: "general", label: "General Settings", content: "General configuration options" }, { id: "security", label: "Security & Governance", content: "Audit policies and authorization rules" } ], active_tab: "general") %>
+      </div>
+    </div>
+  </section>
+
+  <%# ── Progress & Skeletons ──────────────────────────────────── %>
+  <section class="showcase__section" id="showcase-progress" aria-labelledby="showcase-progress-heading">
+    <h2 id="showcase-progress-heading"><%= t("showcase.sections.progress") %></h2>
+    <div class="showcase__stack">
+      <div>
+        <h3>ProgressBarComponent</h3>
+        <%= render Ui::ProgressBarComponent.new(value: 85, show_label: true, label: "Continuous Assurance Score (85%)") %>
+      </div>
+      <div class="showcase__row">
+        <h3>ProgressSpinnerComponent</h3>
+        <%= render Ui::ProgressSpinnerComponent.new(size: :sm) %>
+        <%= render Ui::ProgressSpinnerComponent.new(size: :md) %>
+        <%= render Ui::ProgressSpinnerComponent.new(size: :lg) %>
+      </div>
+      <div>
+        <h3>SkeletonComponent</h3>
+        <div class="showcase__stack">
+          <%= render Ui::SkeletonComponent.new(variant: :text) %>
+          <%= render Ui::SkeletonComponent.new(variant: :card) %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%# ── Overlays & Command Palette ───────────────────────────── %>
+  <section class="showcase__section" id="showcase-overlays" aria-labelledby="showcase-overlays-heading">
+    <h2 id="showcase-overlays-heading"><%= t("showcase.sections.overlays") %></h2>
+    <div class="showcase__row">
+      <div>
+        <h3>TooltipComponent</h3>
+        <%= render Ui::TooltipComponent.new(text: "Accessible tooltip hint", position: :top) do %>
+          <%= render Ui::ButtonComponent.new(label: "Hover for Tooltip", variant: :secondary) %>
+        <% end %>
+      </div>
+      <div>
+        <h3>PopoverComponent</h3>
+        <%= render Ui::PopoverComponent.new(title: "Popover Details") do |popover| %>
+          <% popover.with_trigger_slot { render Ui::ButtonComponent.new(label: "Click for Popover", variant: :ghost) } %>
+          <% popover.with_body_slot { "Interactive popover content anchored safely." } %>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <h3>DangerZoneComponent</h3>
+      <%= render Ui::DangerZoneComponent.new(id: "danger-showcase", title: "Delete Organization Data", description: "Irreversible corporate governance action requiring tenant administrative privilege.") do %>
+        <%= render Ui::ButtonComponent.new(label: "Delete Organization", variant: :danger) %>
+      <% end %>
+    </div>
+  </section>
+
   <%# ── Feedback ─────────────────────────────────────────────── %>
-  <section class="showcase__section" aria-labelledby="showcase-feedback">
-    <h2 id="showcase-feedback"><%= t("showcase.sections.feedback") %></h2>
+  <section class="showcase__section" id="showcase-feedback" aria-labelledby="showcase-feedback-heading">
+    <h2 id="showcase-feedback-heading"><%= t("showcase.sections.feedback") %></h2>
     <div class="showcase__stack">
       <% Ui::AlertComponent::VARIANTS.each do |variant| %>
         <%= render Ui::AlertComponent.new(title: variant.to_s.humanize, variant: variant).with_content(t("showcase.alert_body")) %>
@@ -113,8 +254,8 @@
   </section>
 
   <%# ── Containers ──────────────────────────────────────────── %>
-  <section class="showcase__section" aria-labelledby="showcase-containers">
-    <h2 id="showcase-containers"><%= t("showcase.sections.containers") %></h2>
+  <section class="showcase__section" id="showcase-containers" aria-labelledby="showcase-containers-heading">
+    <h2 id="showcase-containers-heading"><%= t("showcase.sections.containers") %></h2>
     <div class="showcase__grid">
       <% Ui::CardComponent::VARIANTS.each do |variant| %>
         <%= render Ui::CardComponent.new(variant: variant) do %>
@@ -129,8 +270,8 @@
   </section>
 
   <%# ── Forms ───────────────────────────────────────────────── %>
-  <section class="showcase__section" aria-labelledby="showcase-forms">
-    <h2 id="showcase-forms"><%= t("showcase.sections.forms") %></h2>
+  <section class="showcase__section" id="showcase-forms" aria-labelledby="showcase-forms-heading">
+    <h2 id="showcase-forms-heading"><%= t("showcase.sections.forms") %></h2>
     <%= form_with scope: :showcase, url: component_showcase_path, method: :get, builder: Ui::FormBuilder, html: { class: "showcase__form" } do |form| %>
       <%= form.ui_text_field :name, label: t("showcase.form.name"), help_text: t("showcase.form.name_help"), required: true %>
       <%= form.ui_email_field :email, label: t("showcase.form.email") %>
@@ -142,8 +283,8 @@
   </section>
 
   <%# ── Formatting ───────────────────────────────────────────── %>
-  <section class="showcase__section" aria-labelledby="showcase-formatting">
-    <h2 id="showcase-formatting"><%= t("showcase.sections.formatting") %></h2>
+  <section class="showcase__section" id="showcase-formatting" aria-labelledby="showcase-formatting-heading">
+    <h2 id="showcase-formatting-heading"><%= t("showcase.sections.formatting") %></h2>
     <dl class="showcase__grid">
       <div><dt><%= t("showcase.formatting.date") %></dt><dd><%= format_local_date(Date.new(2026, 7, 25)) %></dd></div>
       <div><dt><%= t("showcase.formatting.time") %></dt><dd><%= format_local_time(Time.utc(2026, 7, 25, 18, 30)) %></dd></div>

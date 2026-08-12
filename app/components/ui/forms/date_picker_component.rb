@@ -33,6 +33,7 @@ module Ui
               type: "text",
               value: @value,
               placeholder: @placeholder,
+              aria: { label: @placeholder || "Select date" },
               class: "ui-date-picker__input",
               data: {
                 date_picker_target: "input",

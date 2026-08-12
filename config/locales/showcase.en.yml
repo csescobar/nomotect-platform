@@ -21,6 +21,12 @@ en:
       feedback: "Feedback and status"
       containers: "Containers and empty states"
       forms: "Form controls"
+      pickers: "Date and time pickers"
+      advanced_inputs: "Advanced inputs"
+      avatars: "Avatars and role badges"
+      navigation: "Navigation, tabs and steppers"
+      progress: "Progress and loading (Skeletons)"
+      overlays: "Popovers, tooltips and command palette"
       formatting: "Locale-aware formatting"
     form:
       name: "Name"
