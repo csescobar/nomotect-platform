@@ -2900,7 +2900,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "149a140a7f5896e2d4cbeaa1de6d408d7f1e0365dd88ab88413299f40abb573a",
+        "sha256": "5070166813d7d4290eca07d836437d6134418c49fc77a15eff72f557374ee7d3",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -4114,6 +4114,28 @@
         "source": "platform"
       },
       "@id": "test:Lib::AiConfigurationResolver"
+    },
+    {
+      "id": "test:Lib::AiMcpGateway",
+      "type": "test",
+      "name": "Lib::AiMcpGateway",
+      "path": "test/lib/ai_mcp_gateway_test.rb",
+      "properties": {
+        "sha256": "c4e9feffa0173caad87e803501a48be54f7cef09a5bca7f6f1fe7f0b42e270fe",
+        "source": "platform"
+      },
+      "@id": "test:Lib::AiMcpGateway"
+    },
+    {
+      "id": "test:Lib::AiMcpResources",
+      "type": "test",
+      "name": "Lib::AiMcpResources",
+      "path": "test/lib/ai_mcp_resources_test.rb",
+      "properties": {
+        "sha256": "affa252d342e9ae0c5dfee6bd3044e92d4610f962282aeee16b8c90205ac476b",
+        "source": "platform"
+      },
+      "@id": "test:Lib::AiMcpResources"
     },
     {
       "id": "test:Lib::AiProviderInterface",
