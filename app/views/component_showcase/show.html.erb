@@ -120,15 +120,15 @@
     <div class="showcase__grid">
       <div>
         <h3>DatePickerComponent</h3>
-        <%= render Ui::Forms::DatePickerComponent.new(name: "showcase_date", value: Date.today) %>
+        <%= render Ui::Forms::DatePickerComponent.new(name: "showcase_date", value: Date.today, placeholder: t("showcase.examples.select_date")) %>
       </div>
       <div>
         <h3>DateRangePickerComponent</h3>
-        <%= render Ui::Forms::DateRangePickerComponent.new(start_name: "showcase_start", end_name: "showcase_end", start_value: Date.today, end_value: Date.today + 14) %>
+        <%= render Ui::Forms::DateRangePickerComponent.new(start_name: "showcase_start", end_name: "showcase_end", start_value: Date.today, end_value: Date.today + 14, placeholder: t("showcase.examples.select_date_range")) %>
       </div>
       <div>
         <h3>TimePickerComponent</h3>
-        <%= render Ui::Forms::TimePickerComponent.new(name: "showcase_time", value: "15:30") %>
+        <%= render Ui::Forms::TimePickerComponent.new(name: "showcase_time", value: "15:30", placeholder: t("showcase.examples.select_time")) %>
       </div>
     </div>
   </section>
@@ -139,23 +139,23 @@
     <div class="showcase__grid">
       <div>
         <h3>AutocompleteComponent</h3>
-        <%= render Ui::Forms::AutocompleteComponent.new(name: "showcase_country", suggestions: ["Brazil", "United States", "Germany", "Japan", "Canada"]) %>
+        <%= render Ui::Forms::AutocompleteComponent.new(name: "showcase_country", suggestions: [t("showcase.examples.country_brazil"), t("showcase.examples.country_usa"), t("showcase.examples.country_germany"), t("showcase.examples.country_japan"), t("showcase.examples.country_canada")], placeholder: t("showcase.examples.start_typing")) %>
       </div>
       <div>
         <h3>ComboboxComponent</h3>
-        <%= render Ui::Forms::ComboboxComponent.new(name: "showcase_category", options: [{ label: "Technology", value: "tech" }, { label: "Finance", value: "fin" }], selected: "fin") %>
+        <%= render Ui::Forms::ComboboxComponent.new(name: "showcase_category", options: [{ label: t("showcase.examples.cat_tech"), value: "tech" }, { label: t("showcase.examples.cat_fin"), value: "fin" }], selected: "fin", placeholder: t("showcase.examples.select_category")) %>
       </div>
       <div>
         <h3>MultiSelectComponent</h3>
-        <%= render Ui::Forms::MultiSelectComponent.new(name: "showcase_tags", options: [{ label: "Ruby", value: "ruby" }, { label: "Rails", value: "rails" }], selected: ["ruby", "rails"]) %>
+        <%= render Ui::Forms::MultiSelectComponent.new(name: "showcase_tags", options: [{ label: "Ruby", value: "ruby" }, { label: "Rails", value: "rails" }], selected: ["ruby", "rails"], placeholder: t("showcase.examples.select_tags")) %>
       </div>
       <div>
         <h3>TagInputComponent</h3>
-        <%= render Ui::Forms::TagInputComponent.new(name: "showcase_skills", tags: ["Ruby", "Rails", "Design System"]) %>
+        <%= render Ui::Forms::TagInputComponent.new(name: "showcase_skills", tags: ["Ruby", "Rails", "Design System"], placeholder: t("showcase.examples.add_tag")) %>
       </div>
       <div>
         <h3>FileUploadComponent</h3>
-        <%= render Ui::Forms::FileUploadComponent.new(name: "showcase_file", label: "Upload Document", accept: ".pdf,.png") %>
+        <%= render Ui::Forms::FileUploadComponent.new(name: "showcase_file", label: t("showcase.examples.upload_file"), accept: ".pdf,.png") %>
       </div>
     </div>
   </section>
@@ -179,11 +179,11 @@
     <div class="showcase__stack">
       <div>
         <h3>StepperComponent</h3>
-        <%= render Ui::StepperComponent.new(steps: [ { id: "1", label: "Step 1: Identity" }, { id: "2", label: "Step 2: Security" }, { id: "3", label: "Step 3: Certification" } ], current_step: "2") %>
+        <%= render Ui::StepperComponent.new(steps: [ { id: "1", label: t("showcase.examples.step_1") }, { id: "2", label: t("showcase.examples.step_2") }, { id: "3", label: t("showcase.examples.step_3") } ], current_step: "2") %>
       </div>
       <div>
         <h3>TabsComponent</h3>
-        <%= render Ui::TabsComponent.new(tabs: [ { id: "general", label: "General Settings", content: "General configuration options" }, { id: "security", label: "Security & Governance", content: "Audit policies and authorization rules" } ], active_tab: "general") %>
+        <%= render Ui::TabsComponent.new(tabs: [ { id: "general", label: t("showcase.examples.tab_general"), content: t("showcase.examples.tab_general_content") }, { id: "security", label: t("showcase.examples.tab_security"), content: t("showcase.examples.tab_security_content") } ], active_tab: "general") %>
       </div>
     </div>
   </section>
@@ -194,7 +194,7 @@
     <div class="showcase__stack">
       <div>
         <h3>ProgressBarComponent</h3>
-        <%= render Ui::ProgressBarComponent.new(value: 85, show_label: true, label: "Continuous Assurance Score") %>
+        <%= render Ui::ProgressBarComponent.new(value: 85, show_label: true, label: t("showcase.examples.assurance_score")) %>
       </div>
       <div class="showcase__row">
         <h3>ProgressSpinnerComponent</h3>
@@ -218,22 +218,22 @@
     <div class="showcase__row">
       <div>
         <h3>TooltipComponent</h3>
-        <%= render Ui::TooltipComponent.new(text: "Accessible tooltip hint", position: :top) do %>
-          <%= render Ui::ButtonComponent.new(label: "Hover for Tooltip", variant: :secondary) %>
+        <%= render Ui::TooltipComponent.new(text: t("showcase.examples.tooltip_hint"), position: :top) do %>
+          <%= render Ui::ButtonComponent.new(label: t("showcase.examples.hover_tooltip"), variant: :secondary) %>
         <% end %>
       </div>
       <div>
         <h3>PopoverComponent</h3>
-        <%= render Ui::PopoverComponent.new(title: "Popover Details") do |popover| %>
-          <% popover.with_trigger_slot { render Ui::ButtonComponent.new(label: "Click for Popover", variant: :ghost) } %>
-          <% popover.with_body_slot { "Interactive popover content anchored safely." } %>
+        <%= render Ui::PopoverComponent.new(title: t("showcase.examples.popover_title")) do |popover| %>
+          <% popover.with_trigger_slot { render Ui::ButtonComponent.new(label: t("showcase.examples.popover_button"), variant: :ghost) } %>
+          <% popover.with_body_slot { t("showcase.examples.popover_content") } %>
         <% end %>
       </div>
     </div>
     <div>
       <h3>DangerZoneComponent</h3>
-      <%= render Ui::DangerZoneComponent.new(id: "danger-showcase", title: "Delete Organization Data", description: "Irreversible corporate governance action requiring tenant administrative privilege.") do %>
-        <%= render Ui::ButtonComponent.new(label: "Delete Organization", variant: :danger) %>
+      <%= render Ui::DangerZoneComponent.new(id: "danger-showcase", title: t("showcase.examples.danger_zone_title"), description: t("showcase.examples.danger_zone_desc")) do %>
+        <%= render Ui::ButtonComponent.new(label: t("showcase.examples.danger_zone_button"), variant: :danger) %>
       <% end %>
     </div>
   </section>

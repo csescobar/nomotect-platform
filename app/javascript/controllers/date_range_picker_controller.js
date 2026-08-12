@@ -11,8 +11,9 @@ export default class extends Controller {
     const now = new Date()
     this.viewYear = now.getFullYear()
     this.viewMonth = now.getMonth()
-    this.startDate = null
-    this.endDate = null
+    this.startDate = this.hasStartHiddenTarget ? this.startHiddenTarget.value : null
+    this.endDate = this.hasEndHiddenTarget ? this.endHiddenTarget.value : null
+    this.lang = document.documentElement.lang || "pt-BR"
     this.renderCalendar()
   }
 
@@ -97,31 +98,46 @@ export default class extends Controller {
     }
   }
 
+  formatLocalDate(isoStr) {
+    if (!isoStr) return ""
+    const [y, m, d] = isoStr.split("-").map(Number)
+    const dt = new Date(y, m - 1, d)
+    return new Intl.DateTimeFormat(this.lang, { day: "2-digit", month: "2-digit", year: "numeric" }).format(dt)
+  }
+
   applyRange() {
     if (this.hasStartHiddenTarget) this.startHiddenTarget.value = this.startDate || ""
     if (this.hasEndHiddenTarget) this.endHiddenTarget.value = this.endDate || ""
     if (this.hasInputTarget && this.startDate && this.endDate) {
-      this.inputTarget.value = `${this.startDate} – ${this.endDate}`
+      const startFmt = this.formatLocalDate(this.startDate)
+      const endFmt = this.formatLocalDate(this.endDate)
+      this.inputTarget.value = `${startFmt} – ${endFmt}`
     }
   }
 
   renderCalendar() {
     if (!this.hasCalendarTarget) return
 
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    const dayNames = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+    const sampleDate = new Date(this.viewYear, this.viewMonth, 1)
+    const monthTitle = new Intl.DateTimeFormat(this.lang, { month: "long", year: "numeric" }).format(sampleDate)
+
+    const dayFormatter = new Intl.DateTimeFormat(this.lang, { weekday: "narrow" })
+    const dayNames = [0, 1, 2, 3, 4, 5, 6].map(d => {
+      const temp = new Date(2026, 7, 2 + d)
+      return dayFormatter.format(temp)
+    })
 
     const firstDay = new Date(this.viewYear, this.viewMonth, 1).getDay()
     const daysInMonth = new Date(this.viewYear, this.viewMonth + 1, 0).getDate()
 
     let html = `
       <div class="ui-date-picker__presets">
-        <button type="button" class="ui-date-picker__preset-btn" data-preset="7_days" data-action="click->date-range-picker#selectPreset">Last 7 Days</button>
-        <button type="button" class="ui-date-picker__preset-btn" data-preset="this_month" data-action="click->date-range-picker#selectPreset">This Month</button>
+        <button type="button" class="ui-date-picker__preset-btn" data-preset="7_days" data-action="click->date-range-picker#selectPreset">7 dias</button>
+        <button type="button" class="ui-date-picker__preset-btn" data-preset="this_month" data-action="click->date-range-picker#selectPreset">Este mês</button>
       </div>
       <div class="ui-date-picker__header">
         <button type="button" class="ui-date-picker__nav-btn" data-action="click->date-range-picker#prevMonth">&larr;</button>
-        <span class="ui-date-picker__month-title">${monthNames[this.viewMonth]} ${this.viewYear}</span>
+        <span class="ui-date-picker__month-title" style="text-transform: capitalize;">${monthTitle}</span>
         <button type="button" class="ui-date-picker__nav-btn" data-action="click->date-range-picker#nextMonth">&rarr;</button>
       </div>
       <div class="ui-date-picker__weekdays">

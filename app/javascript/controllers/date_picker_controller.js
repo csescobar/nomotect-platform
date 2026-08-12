@@ -1,16 +1,17 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["input", "hiddenInput", "calendar", "grid"]
+  static targets = ["input", "hiddenInput", "calendar"]
   static values = { min: String, max: String }
 
   connect() {
-    const val = this.hasInputTarget ? this.inputTarget.value : null
+    const val = this.hasHiddenInputTarget && this.hiddenInputTarget.value ? this.hiddenInputTarget.value : null
     const parsed = val ? new Date(val + "T00:00:00") : new Date()
     this.currentDate = isNaN(parsed.getTime()) ? new Date() : parsed
     this.viewYear = this.currentDate.getFullYear()
     this.viewMonth = this.currentDate.getMonth()
-    this.selectedStr = val || ""
+    this.selectedIso = val || ""
+    this.lang = document.documentElement.lang || "pt-BR"
 
     this.boundClose = (e) => {
       if (!this.element.contains(e.target)) this.close()
@@ -58,20 +59,34 @@ export default class extends Controller {
 
   selectDay(e) {
     e.stopPropagation()
-    const dayStr = e.currentTarget.dataset.date
-    if (!dayStr) return
+    const isoStr = e.currentTarget.dataset.date
+    if (!isoStr) return
 
-    this.selectedStr = dayStr
-    if (this.hasHiddenInputTarget) this.hiddenInputTarget.value = dayStr
-    if (this.hasInputTarget) this.inputTarget.value = dayStr
+    const [y, m, d] = isoStr.split("-").map(Number)
+    const formatted = this.formatLocalDate(y, m - 1, d)
+
+    this.selectedIso = isoStr
+    if (this.hasHiddenInputTarget) this.hiddenInputTarget.value = isoStr
+    if (this.hasInputTarget) this.inputTarget.value = formatted
     this.close()
+  }
+
+  formatLocalDate(year, monthIndex, day) {
+    const dt = new Date(year, monthIndex, day)
+    return new Intl.DateTimeFormat(this.lang, { day: "2-digit", month: "2-digit", year: "numeric" }).format(dt)
   }
 
   renderCalendar() {
     if (!this.hasCalendarTarget) return
 
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    const dayNames = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+    const sampleDate = new Date(this.viewYear, this.viewMonth, 1)
+    const monthTitle = new Intl.DateTimeFormat(this.lang, { month: "long", year: "numeric" }).format(sampleDate)
+
+    const dayFormatter = new Intl.DateTimeFormat(this.lang, { weekday: "narrow" })
+    const dayNames = [0, 1, 2, 3, 4, 5, 6].map(d => {
+      const temp = new Date(2026, 7, 2 + d) // Aug 2, 2026 is Sunday
+      return dayFormatter.format(temp)
+    })
 
     const firstDay = new Date(this.viewYear, this.viewMonth, 1).getDay()
     const daysInMonth = new Date(this.viewYear, this.viewMonth + 1, 0).getDate()
@@ -79,7 +94,7 @@ export default class extends Controller {
     let html = `
       <div class="ui-date-picker__header">
         <button type="button" class="ui-date-picker__nav-btn" data-action="click->date-picker#prevMonth">&larr;</button>
-        <span class="ui-date-picker__month-title">${monthNames[this.viewMonth]} ${this.viewYear}</span>
+        <span class="ui-date-picker__month-title" style="text-transform: capitalize;">${monthTitle}</span>
         <button type="button" class="ui-date-picker__nav-btn" data-action="click->date-picker#nextMonth">&rarr;</button>
       </div>
       <div class="ui-date-picker__weekdays">
@@ -96,7 +111,7 @@ export default class extends Controller {
       const monthStr = String(this.viewMonth + 1).padStart(2, "0")
       const dayPad = String(d).padStart(2, "0")
       const dateStr = `${this.viewYear}-${monthStr}-${dayPad}`
-      const isSelected = dateStr === this.selectedStr
+      const isSelected = dateStr === this.selectedIso
       const isToday = dateStr === new Date().toISOString().split("T")[0]
 
       let cls = "ui-date-picker__day"
