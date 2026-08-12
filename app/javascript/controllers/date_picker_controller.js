@@ -94,7 +94,7 @@ export default class extends Controller {
     let html = `
       <div class="ui-date-picker__header">
         <button type="button" class="ui-date-picker__nav-btn" data-action="click->date-picker#prevMonth">&larr;</button>
-        <span class="ui-date-picker__month-title" style="text-transform: capitalize;">${monthTitle}</span>
+        <span class="ui-date-picker__month-title">${monthTitle}</span>
         <button type="button" class="ui-date-picker__nav-btn" data-action="click->date-picker#nextMonth">&rarr;</button>
       </div>
       <div class="ui-date-picker__weekdays">

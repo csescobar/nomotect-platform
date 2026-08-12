@@ -481,6 +481,7 @@ dialog.command-palette::backdrop { background: rgb(0 0 0 / 0.4); backdrop-filter
 .toast__message { flex: 1; }
 .toast__dismiss { background: none; border: none; font-size: var(--font-size-md); color: var(--color-text-subtle); cursor: pointer; padding: 0; line-height: 1; }
 .toast__dismiss:hover { color: var(--color-text); }
+.toast--dismissed { opacity: 0; transition: opacity 150ms ease; }
 
 /* ── Skeleton ────────────────────────────────────────────────────────────────── */
 .skeleton { background: linear-gradient(90deg, var(--color-surface-subtle) 25%, var(--color-border-subtle) 50%, var(--color-surface-subtle) 75%); background-size: 200% 100%; animation: skeleton-shimmer 1.5s infinite; border-radius: var(--radius-sm); }

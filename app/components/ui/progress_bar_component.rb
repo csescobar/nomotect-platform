@@ -53,8 +53,15 @@ module Ui
     end
 
     def render_fill
-      style = @indeterminate ? nil : "width: #{@value}%;"
-      tag.div(class: "progress-bar__fill", style: style)
+      return tag.div(class: "progress-bar__fill") if @indeterminate
+
+      tag.div(
+        class: "progress-bar__fill",
+        data: {
+          controller: "progress-bar",
+          progress_bar_value_value: @value
+        }
+      )
     end
   end
 end

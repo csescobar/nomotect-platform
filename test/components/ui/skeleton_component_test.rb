@@ -19,7 +19,7 @@ class Ui::SkeletonComponentTest < ViewComponent::TestCase
   test "renders rect skeleton variant with custom height and width" do
     render_inline Ui::SkeletonComponent.new(variant: :rect, width: "100px", height: "200px")
 
-    assert_selector ".skeleton.skeleton--rect[style*='width: 100px'][style*='height: 200px']"
+    assert_selector ".skeleton.skeleton--rect[data-skeleton-width-value='100px'][data-skeleton-height-value='200px']"
   end
 
   test "renders multi-line text skeleton when lines parameter is passed" do
