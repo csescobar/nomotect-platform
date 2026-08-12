@@ -33,7 +33,7 @@ module Audit
           event_type: event_type,
           family: family,
           actor: actor,
-          organization_id: organization_id || Current.tenant&.id,
+          organization_id: organization_id || Current.organization&.id,
           action: action,
           target: target,
           request_id: Current.request_id || SecureRandom.hex(8),

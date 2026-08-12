@@ -378,6 +378,8 @@ digraph repository {
   "test:Lib::AssuranceFreshnessChecker" [label="Lib::AssuranceFreshnessChecker"];
   "test:Lib::AssuranceRunner" [label="Lib::AssuranceRunner"];
   "test:Lib::AuditEventLogger" [label="Lib::AuditEventLogger"];
+  "test:Lib::AuditEvidenceExporter" [label="Lib::AuditEvidenceExporter"];
+  "test:Lib::AuditTamperEvidentVerifier" [label="Lib::AuditTamperEvidentVerifier"];
   "test:Lib::CleanStarterOnboarding" [label="Lib::CleanStarterOnboarding"];
   "test:Lib::ContainerEnvironmentValidator" [label="Lib::ContainerEnvironmentValidator"];
   "test:Lib::ContextualAuthorization" [label="Lib::ContextualAuthorization"];
