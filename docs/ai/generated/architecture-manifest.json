@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "9360abb272caf8b4b55859dbc64069301e7c97b9",
+  "repository_commit": "3dfe52ac29042394de850399e1c8dd15b440424c",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -2274,6 +2274,31 @@
       "sha256": "c73d5a41bbbc2da04cdee5bfd66e5bec61219bd9a1eb5d5a9781beec846883ac"
     },
     {
+      "path": "config/skills/analyze-activity/SKILL.md",
+      "kind": "source",
+      "sha256": "292c78b7ad9d87e72ef078ebf0fff6d9362a8e57236c54d3be636eb347675e5e"
+    },
+    {
+      "path": "config/skills/explain-current-page/SKILL.md",
+      "kind": "source",
+      "sha256": "07c653bcf71dfb094754f6becb009d6b5479e3e9419738a49015b41d7094c2e0"
+    },
+    {
+      "path": "config/skills/generate-report/SKILL.md",
+      "kind": "source",
+      "sha256": "d9f631e1f9a823cbe34d604d7c373a298c4cc4638eb14e06b6f4e76171096ba2"
+    },
+    {
+      "path": "config/skills/search-audit/SKILL.md",
+      "kind": "source",
+      "sha256": "de01cc1d1125e2b80dd8b7ec2b79730b1b7a111ae462b87821f0c6aa8d07fd1c"
+    },
+    {
+      "path": "config/skills/summarize-record/SKILL.md",
+      "kind": "source",
+      "sha256": "2762296aad6983737a337e7bc105ae58ce693c7a66eb1cc1f53503dc239701a9"
+    },
+    {
       "path": "config/storage.yml",
       "kind": "source",
       "sha256": "953c26ff67c495023638c426d8fafdfeca29b0e614ada574958fd973fc9e44cc"
@@ -3341,7 +3366,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "5070166813d7d4290eca07d836437d6134418c49fc77a15eff72f557374ee7d3"
+      "sha256": "4bb6c5235827fa5ae415b2c14eae45bfbea99713681b810ed6a2ce78f6fcb0cb"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3396,7 +3421,7 @@
     {
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "kind": "documentation",
-      "sha256": "60b0872ef1f84af6b0153cfd7b876a786f7131f86957ca0f942ba99d8e9c53b3"
+      "sha256": "8627d7861711b36fe1d776dc1a6b6372045b894b18fac48336a1d15265d4c9e2"
     },
     {
       "path": "docs/roadmap/roadmap.md",
@@ -3554,6 +3579,11 @@
       "sha256": "8f4ef114961e72db554453600e13acf7187823939fb0e998511969c17b2d24c8"
     },
     {
+      "path": "lib/ai/mcp/action_executor.rb",
+      "kind": "source",
+      "sha256": "6304ab44f845ce54ec2a037b4586156ae9c904b7679e234e67aa0f3b26c53b86"
+    },
+    {
       "path": "lib/ai/mcp/gateway.rb",
       "kind": "source",
       "sha256": "7bea131716b7bb496eb3eecb07555946b7c5c386ff802c686b225387a65a89b2"
@@ -3561,7 +3591,12 @@
     {
       "path": "lib/ai/mcp/resources.rb",
       "kind": "source",
-      "sha256": "73e36826d24d160032ba133d29ba1b14adefbc8ecea2225df58e225e6db0f2b1"
+      "sha256": "5981a03dd44c9a6c91296174d6e02a6c0e8ce176d4d9f400fe2c08fb5efcd9e7"
+    },
+    {
+      "path": "lib/ai/mcp/tool_registry.rb",
+      "kind": "source",
+      "sha256": "b9fbbfc7b132cf0c41bc309a87753cd9d4614de1ac6adde5228d4d5ad7c05f40"
     },
     {
       "path": "lib/ai/providers/anthropic_adapter.rb",
@@ -3592,6 +3627,16 @@
       "path": "lib/ai/providers/open_router_adapter.rb",
       "kind": "source",
       "sha256": "acd96bde9e6993f0e6e6b07e46c18d9bc0d0bbbc5bdab39c4c936c63a195c095"
+    },
+    {
+      "path": "lib/ai/skills/registry.rb",
+      "kind": "source",
+      "sha256": "3bc827836672c2a107538c88520c5183198b3f9e7ba443e1cb4c8a615a33d250"
+    },
+    {
+      "path": "lib/ai/skills/skill_parser.rb",
+      "kind": "source",
+      "sha256": "8b635931cbaf0784bcaeb337136760f399ca495ecc6fb79f1716d3ff5bf7fbb5"
     },
     {
       "path": "lib/ai/usage_tracker.rb",
@@ -4159,6 +4204,11 @@
       "sha256": "eed55a59534261ee8d0dc3ef9e9d80de092d21698575bdcc14d1134ed98c5d77"
     },
     {
+      "path": "test/lib/ai_action_executor_test.rb",
+      "kind": "test",
+      "sha256": "81df2466ccffb8f864b3539439b9c98d146b10609274f9e9b3427e8ea94b89ed"
+    },
+    {
       "path": "test/lib/ai_configuration_resolver_test.rb",
       "kind": "test",
       "sha256": "0bda293a5b46af22b58af033200f4d6242dc5737b0ed2984a1ce3eec947f9818"
@@ -4174,9 +4224,19 @@
       "sha256": "affa252d342e9ae0c5dfee6bd3044e92d4610f962282aeee16b8c90205ac476b"
     },
     {
+      "path": "test/lib/ai_mcp_tool_registry_test.rb",
+      "kind": "test",
+      "sha256": "08a193d9ee5e40288c6162794fffed60c8b13ad3d534f57c578f96299d8d9db9"
+    },
+    {
       "path": "test/lib/ai_provider_interface_test.rb",
       "kind": "test",
       "sha256": "6db176dfdcbe9118c0ed673f15f57789b02a35a2b9d5c33845fd20b27ff5b309"
+    },
+    {
+      "path": "test/lib/ai_skills_registry_test.rb",
+      "kind": "test",
+      "sha256": "99c87b5145d41564301e25f590b8f567c9c28a89fa0ba217097b820f13dde90c"
     },
     {
       "path": "test/lib/application_layout_config_test.rb",

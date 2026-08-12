@@ -2900,7 +2900,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "5070166813d7d4290eca07d836437d6134418c49fc77a15eff72f557374ee7d3",
+        "sha256": "4bb6c5235827fa5ae415b2c14eae45bfbea99713681b810ed6a2ce78f6fcb0cb",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -3010,7 +3010,7 @@
       "name": "Roadmap::Platform-evolution-roadmap",
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "properties": {
-        "sha256": "60b0872ef1f84af6b0153cfd7b876a786f7131f86957ca0f942ba99d8e9c53b3",
+        "sha256": "8627d7861711b36fe1d776dc1a6b6372045b894b18fac48336a1d15265d4c9e2",
         "source": "platform"
       },
       "@id": "document:Roadmap::Platform-evolution-roadmap"
@@ -4105,6 +4105,17 @@
       "@id": "test:Integration::UpgradeFrameworkCertification"
     },
     {
+      "id": "test:Lib::AiActionExecutor",
+      "type": "test",
+      "name": "Lib::AiActionExecutor",
+      "path": "test/lib/ai_action_executor_test.rb",
+      "properties": {
+        "sha256": "81df2466ccffb8f864b3539439b9c98d146b10609274f9e9b3427e8ea94b89ed",
+        "source": "platform"
+      },
+      "@id": "test:Lib::AiActionExecutor"
+    },
+    {
       "id": "test:Lib::AiConfigurationResolver",
       "type": "test",
       "name": "Lib::AiConfigurationResolver",
@@ -4138,6 +4149,17 @@
       "@id": "test:Lib::AiMcpResources"
     },
     {
+      "id": "test:Lib::AiMcpToolRegistry",
+      "type": "test",
+      "name": "Lib::AiMcpToolRegistry",
+      "path": "test/lib/ai_mcp_tool_registry_test.rb",
+      "properties": {
+        "sha256": "08a193d9ee5e40288c6162794fffed60c8b13ad3d534f57c578f96299d8d9db9",
+        "source": "platform"
+      },
+      "@id": "test:Lib::AiMcpToolRegistry"
+    },
+    {
       "id": "test:Lib::AiProviderInterface",
       "type": "test",
       "name": "Lib::AiProviderInterface",
@@ -4147,6 +4169,17 @@
         "source": "platform"
       },
       "@id": "test:Lib::AiProviderInterface"
+    },
+    {
+      "id": "test:Lib::AiSkillsRegistry",
+      "type": "test",
+      "name": "Lib::AiSkillsRegistry",
+      "path": "test/lib/ai_skills_registry_test.rb",
+      "properties": {
+        "sha256": "99c87b5145d41564301e25f590b8f567c9c28a89fa0ba217097b820f13dde90c",
+        "source": "platform"
+      },
+      "@id": "test:Lib::AiSkillsRegistry"
     },
     {
       "id": "test:Lib::ApplicationLayoutConfig",

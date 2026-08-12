@@ -4,14 +4,17 @@
 
 ## Responsibilities
 
-- test: Lib::AiConfigurationResolver, Lib::AiMcpGateway, Lib::AiMcpResources, Lib::AiProviderInterface, Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationSkeletonDocumentationSanitization, Lib::ApplicationStarter, Lib::AssuranceFreshnessChecker, Lib::AssuranceRunner, Lib::AuditEventLogger, Lib::AuditEvidenceExporter, Lib::AuditTamperEvidentVerifier, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::ContextualAuthorization, Lib::DesignTokens::Compiler, Lib::DeveloperGuidelines, Lib::Epic9Certification, Lib::EvolutionDiscovery, Lib::GovernancePolicyRegistry, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::PermissionRegistry, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
+- test: Lib::AiActionExecutor, Lib::AiConfigurationResolver, Lib::AiMcpGateway, Lib::AiMcpResources, Lib::AiMcpToolRegistry, Lib::AiProviderInterface, Lib::AiSkillsRegistry, Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationSkeletonDocumentationSanitization, Lib::ApplicationStarter, Lib::AssuranceFreshnessChecker, Lib::AssuranceRunner, Lib::AuditEventLogger, Lib::AuditEvidenceExporter, Lib::AuditTamperEvidentVerifier, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::ContextualAuthorization, Lib::DesignTokens::Compiler, Lib::DeveloperGuidelines, Lib::Epic9Certification, Lib::EvolutionDiscovery, Lib::GovernancePolicyRegistry, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::PermissionRegistry, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
 
 ## Source paths
 
+- `test/lib/ai_action_executor_test.rb`
 - `test/lib/ai_configuration_resolver_test.rb`
 - `test/lib/ai_mcp_gateway_test.rb`
 - `test/lib/ai_mcp_resources_test.rb`
+- `test/lib/ai_mcp_tool_registry_test.rb`
 - `test/lib/ai_provider_interface_test.rb`
+- `test/lib/ai_skills_registry_test.rb`
 - `test/lib/application_layout_config_test.rb`
 - `test/lib/application_registrations_test.rb`
 - `test/lib/application_skeleton_documentation_sanitization_test.rb`
