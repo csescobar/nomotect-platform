@@ -1861,6 +1861,7 @@ input::placeholder {
   -webkit-appearance: none !important;
   width: 1rem !important;
   height: 1rem !important;
+  margin-top: -0.3125rem !important;
   border-radius: 50% !important;
   background: var(--color-primary) !important;
   border: 2px solid var(--color-surface) !important;
