@@ -1,0 +1,22 @@
+schema_version: 1
+id: 232-epic-15-governance-audit-phase-1-2
+category: feature
+summary: Epic 15 Phases 1 & 2 — Administrative governance policy registry (lib/governance/policy_registry.rb) across 10 corporate domains and standardized structured audit event taxonomy (lib/audit/event_logger.rb) across 9 event families.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Implemented Governance::PolicyRegistry across 10 corporate domains and Audit::EventLogger structured taxonomy.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

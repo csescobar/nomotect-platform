@@ -377,6 +377,7 @@ digraph repository {
   "test:Lib::ApplicationStarter" [label="Lib::ApplicationStarter"];
   "test:Lib::AssuranceFreshnessChecker" [label="Lib::AssuranceFreshnessChecker"];
   "test:Lib::AssuranceRunner" [label="Lib::AssuranceRunner"];
+  "test:Lib::AuditEventLogger" [label="Lib::AuditEventLogger"];
   "test:Lib::CleanStarterOnboarding" [label="Lib::CleanStarterOnboarding"];
   "test:Lib::ContainerEnvironmentValidator" [label="Lib::ContainerEnvironmentValidator"];
   "test:Lib::ContextualAuthorization" [label="Lib::ContextualAuthorization"];
@@ -384,6 +385,7 @@ digraph repository {
   "test:Lib::DeveloperGuidelines" [label="Lib::DeveloperGuidelines"];
   "test:Lib::Epic9Certification" [label="Lib::Epic9Certification"];
   "test:Lib::EvolutionDiscovery" [label="Lib::EvolutionDiscovery"];
+  "test:Lib::GovernancePolicyRegistry" [label="Lib::GovernancePolicyRegistry"];
   "test:Lib::GridEngine::HtmlRenderer" [label="Lib::GridEngine::HtmlRenderer"];
   "test:Lib::GridEngine::Query" [label="Lib::GridEngine::Query"];
   "test:Lib::GridEngine::SyncfusionAdapter" [label="Lib::GridEngine::SyncfusionAdapter"];
