@@ -626,6 +626,30 @@ dialog.command-palette::backdrop { background: rgb(0 0 0 / 0.4); backdrop-filter
 .ui-time-picker__option:hover { background: var(--color-surface-subtle); }
 .ui-time-picker__option--selected { background: var(--color-accent-primary-subtle); color: var(--color-accent-primary); font-weight: 600; }
 
+/* ── Toggle / Switch ────────────────────────────────────────────────────────── */
+.ui-toggle { display: inline-flex; align-items: center; gap: var(--space-sm); cursor: pointer; user-select: none; }
+.ui-toggle--disabled { opacity: 0.5; cursor: not-allowed; }
+.ui-toggle__switch { position: relative; width: 2.75rem; height: 1.5rem; border-radius: var(--radius-full, 9999px); background: var(--color-surface-subtle); border: 1px solid var(--color-border); padding: 2px; cursor: pointer; transition: background var(--transition-fast), border-color var(--transition-fast); }
+.ui-toggle__switch--checked { background: var(--color-primary); border-color: var(--color-primary); }
+.ui-toggle__thumb { display: block; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: #ffffff; box-shadow: var(--shadow-sm); transition: transform var(--transition-fast); }
+.ui-toggle__switch--checked .ui-toggle__thumb { transform: translateX(1.25rem); }
+.ui-toggle__label { font-size: var(--font-size-sm); color: var(--color-text); font-weight: 500; }
+
+/* ── Slider ─────────────────────────────────────────────────────────────────── */
+.ui-slider { display: flex; flex-direction: column; gap: var(--space-xs); width: 100%; }
+.ui-slider__header { display: flex; align-items: center; justify-content: space-between; font-size: var(--font-size-sm); font-weight: 600; color: var(--color-text); }
+.ui-slider__label { color: var(--color-text); }
+.ui-slider__value { color: var(--color-accent-primary); font-family: var(--font-family-mono); font-weight: 700; }
+.ui-slider__input { width: 100%; height: 0.5rem; accent-color: var(--color-primary); border-radius: var(--radius-full, 9999px); background: var(--color-surface-subtle); cursor: pointer; }
+
+/* ── InputGroup ─────────────────────────────────────────────────────────────── */
+.ui-input-group-wrapper { display: flex; flex-direction: column; gap: var(--space-xs); width: 100%; }
+.ui-input-group__label { font-size: var(--font-size-sm); font-weight: 600; color: var(--color-text); }
+.ui-input-group { display: flex; align-items: center; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); overflow: hidden; }
+.ui-input-group__prefix, .ui-input-group__suffix { padding: var(--space-sm) var(--space-md); background: var(--color-surface-subtle); color: var(--color-text-muted); font-size: var(--font-size-sm); font-weight: 600; border-right: 1px solid var(--color-border); user-select: none; }
+.ui-input-group__suffix { border-right: none; border-left: 1px solid var(--color-border); }
+.ui-input-group__input { flex: 1; border: none; background: transparent; padding: var(--space-sm) var(--space-md); font-size: var(--font-size-sm); color: var(--color-text); outline: none; width: 100%; }
+
 
 
 

@@ -9,6 +9,7 @@
     <a href="#showcase-colors" class="showcase__nav-link"><%= t("showcase.sections.colors") %></a>
     <a href="#showcase-spacing" class="showcase__nav-link"><%= t("showcase.sections.spacing") %></a>
     <a href="#showcase-buttons" class="showcase__nav-link"><%= t("showcase.sections.buttons") %></a>
+    <a href="#showcase-basic-controls" class="showcase__nav-link"><%= t("showcase.sections.basic_controls") %></a>
     <a href="#showcase-pickers" class="showcase__nav-link"><%= t("showcase.sections.pickers") %></a>
     <a href="#showcase-advanced-inputs" class="showcase__nav-link"><%= t("showcase.sections.advanced_inputs") %></a>
     <a href="#showcase-avatars" class="showcase__nav-link"><%= t("showcase.sections.avatars") %></a>
@@ -111,6 +112,36 @@
         <%= render Ui::ButtonComponent.new(label: variant.to_s.humanize, variant: variant) %>
       <% end %>
       <%= render Ui::ButtonComponent.new(label: t("showcase.disabled"), disabled: true) %>
+    </div>
+  </section>
+
+  <%# ── Selection & Entry Controls ───────────────────────────── %>
+  <section class="showcase__section" id="showcase-basic-controls" aria-labelledby="showcase-basic-controls-heading">
+    <h2 id="showcase-basic-controls-heading"><%= t("showcase.sections.basic_controls") %></h2>
+    <div class="showcase__grid">
+      <div>
+        <h3>CheckboxComponent</h3>
+        <%= render Ui::Forms::CheckboxComponent.new(label: t("showcase.examples.checkbox_label"), input_id: "showcase_checkbox", input_html: check_box_tag("showcase[audit_alerts]", "1", true, id: "showcase_checkbox"), help_text: t("showcase.examples.checkbox_help")) %>
+      </div>
+      <div>
+        <h3>RadioGroupComponent</h3>
+        <%= render Ui::Forms::RadioGroupComponent.new(legend: t("showcase.examples.radio_legend"), input_id: "showcase_radio", options_html: safe_join([ label_tag("risk_low", class: "ui-radio-option") { safe_join([ radio_button_tag("showcase[risk]", "low", true, id: "risk_low"), tag.span(t("showcase.examples.radio_low")) ]) }, label_tag("risk_high", class: "ui-radio-option") { safe_join([ radio_button_tag("showcase[risk]", "high", false, id: "risk_high"), tag.span(t("showcase.examples.radio_high")) ]) } ])) %>
+      </div>
+      <div>
+        <h3>ToggleComponent (Switch)</h3>
+        <div class="showcase__stack">
+          <%= render Ui::Forms::ToggleComponent.new(name: "showcase_notifications", label: t("showcase.examples.toggle_notifications"), checked: true) %>
+          <%= render Ui::Forms::ToggleComponent.new(name: "showcase_dark_mode", label: t("showcase.examples.toggle_dark_mode"), checked: false) %>
+        </div>
+      </div>
+      <div>
+        <h3>SliderComponent</h3>
+        <%= render Ui::Forms::SliderComponent.new(name: "showcase_slider", value: 65, min: 0, max: 100, step: 5, label: t("showcase.examples.slider_threshold")) %>
+      </div>
+      <div>
+        <h3>InputGroupComponent</h3>
+        <%= render Ui::Forms::InputGroupComponent.new(name: "showcase_contract", value: "150.000", prefix: "R$", suffix: ",00", label: t("showcase.examples.input_group_price")) %>
+      </div>
     </div>
   </section>
 
