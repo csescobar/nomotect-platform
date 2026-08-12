@@ -121,11 +121,11 @@
     <div class="showcase__grid">
       <div>
         <h3>CheckboxComponent</h3>
-        <%= render Ui::Forms::CheckboxComponent.new(label: t("showcase.examples.checkbox_label"), input_id: "showcase_checkbox", input_html: check_box_tag("showcase[audit_alerts]", "1", true, id: "showcase_checkbox"), help_text: t("showcase.examples.checkbox_help")) %>
+        <%= render Ui::Forms::CheckboxComponent.new(label: t("showcase.examples.checkbox_label"), input_id: "showcase_checkbox", input_html: check_box_tag("showcase[audit_alerts]", "1", true, id: "showcase_checkbox", class: "ui-checkbox"), help_text: t("showcase.examples.checkbox_help")) %>
       </div>
       <div>
         <h3>RadioGroupComponent</h3>
-        <%= render Ui::Forms::RadioGroupComponent.new(legend: t("showcase.examples.radio_legend"), input_id: "showcase_radio", options_html: safe_join([ label_tag("risk_low", class: "ui-radio-option") { safe_join([ radio_button_tag("showcase[risk]", "low", true, id: "risk_low"), tag.span(t("showcase.examples.radio_low")) ]) }, label_tag("risk_high", class: "ui-radio-option") { safe_join([ radio_button_tag("showcase[risk]", "high", false, id: "risk_high"), tag.span(t("showcase.examples.radio_high")) ]) } ])) %>
+        <%= render Ui::Forms::RadioGroupComponent.new(legend: t("showcase.examples.radio_legend"), input_id: "showcase_radio", options_html: safe_join([ label_tag("risk_low", class: "ui-radio-option") { safe_join([ radio_button_tag("showcase[risk]", "low", true, id: "risk_low", class: "ui-radio"), tag.span(t("showcase.examples.radio_low")) ]) }, label_tag("risk_high", class: "ui-radio-option") { safe_join([ radio_button_tag("showcase[risk]", "high", false, id: "risk_high", class: "ui-radio"), tag.span(t("showcase.examples.radio_high")) ]) } ])) %>
       </div>
       <div>
         <h3>ToggleComponent (Switch)</h3>
