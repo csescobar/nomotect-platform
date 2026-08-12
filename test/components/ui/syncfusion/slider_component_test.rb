@@ -19,8 +19,7 @@ module Ui
         assert_selector "div.ui-field[data-controller='ej2-slider']"
         assert_selector "label.ej2-slider__label", text: "Volume Control"
         assert_selector "span.ej2-slider__value", text: "75"
-        assert_selector "div[data-ej2-slider-target='slider']"
-        assert_selector "input[type='hidden'][name='volume'][value='75']", visible: false
+        assert_selector "input[type='range'][name='volume'][value='75'][data-ej2-slider-target='slider']"
       end
     end
   end

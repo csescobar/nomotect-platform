@@ -52,6 +52,7 @@ module Ui
               checked: (opt_checked ? "checked" : nil),
               disabled: (opt_disabled ? "disabled" : nil)
             ),
+            tag.span(class: "e-frame"),
             tag.span(opt_label, class: "e-label")
           ])
         end

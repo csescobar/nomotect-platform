@@ -36,13 +36,23 @@ module Ui
                 tag.span(@value, class: "ej2-slider__value", data: { ej2_slider_target: "display" })
               ])
             end,
-            tag.div(id: @input_id, data: { ej2_slider_target: "slider" }),
-            tag.input(
-              type: "hidden",
-              name: @name,
-              value: @value,
-              data: { ej2_slider_target: "hiddenInput" }
-            )
+            tag.div(class: "ej2-slider__track-container") do
+              tag.input(
+                type: "range",
+                id: @input_id,
+                name: @name,
+                value: @value,
+                min: @min,
+                max: @max,
+                step: @step,
+                disabled: (@disabled ? "disabled" : nil),
+                class: "e-control e-slider ui-slider",
+                data: {
+                  ej2_slider_target: "slider",
+                  action: "input->ej2-slider#update"
+                }
+              )
+            end
           ])
         end
       end

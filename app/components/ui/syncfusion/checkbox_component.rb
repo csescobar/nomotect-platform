@@ -35,18 +35,23 @@ module Ui
               value: @checked.to_s,
               data: { ej2_checkbox_target: "hiddenInput" }
             ),
-            tag.input(
-              type: "checkbox",
-              id: @input_id,
-              class: "e-checkbox",
-              checked: (@checked ? "checked" : nil),
-              disabled: (@disabled ? "disabled" : nil),
-              data: {
-                ej2_checkbox_target: "checkbox",
-                action: "change->ej2-checkbox#handleChange"
-              }
-            ),
-            tag.label(for: @input_id, class: "e-checkbox-wrapper") { tag.span(@label, class: "e-label") },
+            tag.label(for: @input_id, class: "e-checkbox-wrapper") do
+              safe_join([
+                tag.input(
+                  type: "checkbox",
+                  id: @input_id,
+                  class: "e-checkbox",
+                  checked: (@checked ? "checked" : nil),
+                  disabled: (@disabled ? "disabled" : nil),
+                  data: {
+                    ej2_checkbox_target: "checkbox",
+                    action: "change->ej2-checkbox#handleChange"
+                  }
+                ),
+                tag.span(class: "e-frame e-icons"),
+                tag.span(@label, class: "e-label")
+              ])
+            end,
             help_markup,
             error_markup
           ].compact)
