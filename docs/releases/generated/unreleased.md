@@ -84,6 +84,7 @@
 - Epic 12 Phase 7 — Native Date & Time picker ViewComponents (DatePickerComponent, DateRangePickerComponent, TimePickerComponent) under Ui::Forms namespace with Stimulus controllers, ARIA compliance, 12h/24h time formatting, range presets, and Rails hidden input synchronization. (`226-epic-12-datetime-pickers-phase-7`)
 - Epic 14 Phase 1 — Continuous Assurance & Evidence introducing machine-readable assurance control contracts schema (JSON Schema v1.0), YAML controls, Assurance::Runner, executable bin/assurance CLI, and CI integration. (`230-epic-14-continuous-assurance-phase-1`)
 - Epic 14 Phase 2 — Continuous Assurance & Evidence completing Assurance::FreshnessChecker with fail-closed stale evidence validation and end-to-end evidence graph traceability CLI (bin/assurance --graph). (`231-epic-14-continuous-assurance-phase-2`)
+- Epic 15 Phases 1 & 2 — Administrative governance policy registry (lib/governance/policy_registry.rb) across 10 corporate domains and standardized structured audit event taxonomy (lib/audit/event_logger.rb) across 9 event families. (`232-epic-15-governance-audit-phase-1-2`)
 
 ### Fixed
 
@@ -231,6 +232,7 @@
 - **Security — 229-epic-13-security-assurance-phase-3-4:** Established Common Criteria functional mapping in common-criteria-mapping.md and end-to-end evidence matrix in security-evidence-matrix.md with explicit disclaimer of uncertified external claims.
 - **Security — 230-epic-14-continuous-assurance-phase-1:** Introduced machine-readable assurance control contracts and executable bin/assurance CLI with CI integration.
 - **Security — 231-epic-14-continuous-assurance-phase-2:** Completed Assurance::FreshnessChecker evidence validation engine and bin/assurance --graph traceability tree renderer.
+- **Security — 232-epic-15-governance-audit-phase-1-2:** Implemented Governance::PolicyRegistry across 10 corporate domains and Audit::EventLogger structured taxonomy.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

@@ -2257,7 +2257,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "3902f0c21018289738b2a1d61aaa67826f5c163ded4f379a2d3456a1a3a4cfa6",
+        "sha256": "a8c328537976310cf5c4bb10870dd84105da0aa5b0984722c368384d3d0cf7a7",
         "source": "platform"
       }
     },
@@ -3782,6 +3782,16 @@
       }
     },
     {
+      "id": "test:Lib::AuditEventLogger",
+      "type": "test",
+      "name": "Lib::AuditEventLogger",
+      "path": "test/lib/audit_event_logger_test.rb",
+      "properties": {
+        "sha256": "be68ae931c92ba1c8a9f0b5418e7a888a9643a2caa968bf48369778318b6bdba",
+        "source": "platform"
+      }
+    },
+    {
       "id": "test:Lib::CleanStarterOnboarding",
       "type": "test",
       "name": "Lib::CleanStarterOnboarding",
@@ -3848,6 +3858,16 @@
       "path": "test/lib/evolution_discovery_test.rb",
       "properties": {
         "sha256": "cbe64a9dec15df43a80e292058c4db4d28c85305dec2b409635e0644f6900e20",
+        "source": "platform"
+      }
+    },
+    {
+      "id": "test:Lib::GovernancePolicyRegistry",
+      "type": "test",
+      "name": "Lib::GovernancePolicyRegistry",
+      "path": "test/lib/governance_policy_registry_test.rb",
+      "properties": {
+        "sha256": "c57c40f71306a233bf0898ab5aa6e1e4bed5ddef4b3a64abb8a58a696f3efcff",
         "source": "platform"
       }
     },
@@ -7198,5 +7218,5 @@
       "properties": {}
     }
   ],
-  "repository_commit": "ee1f92597554e7b0f477499a07a9876788885a4a"
+  "repository_commit": "edd47cb67adaf8837ebc701ca402d83ea7249196"
 }

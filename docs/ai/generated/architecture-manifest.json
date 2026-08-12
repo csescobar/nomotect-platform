@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "ee1f92597554e7b0f477499a07a9876788885a4a",
+  "repository_commit": "edd47cb67adaf8837ebc701ca402d83ea7249196",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -3341,7 +3341,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "3902f0c21018289738b2a1d61aaa67826f5c163ded4f379a2d3456a1a3a4cfa6"
+      "sha256": "a8c328537976310cf5c4bb10870dd84105da0aa5b0984722c368384d3d0cf7a7"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3556,7 +3556,12 @@
     {
       "path": "lib/assurance/runner.rb",
       "kind": "source",
-      "sha256": "b875a0eb7ba1b48c8d701a79e826c327485eb8704ea3e05660f38171463a942e"
+      "sha256": "45c5fd5903afaf5a839392e96890c1a172a1dea5ab5d8a6454bd32dcd5bef57b"
+    },
+    {
+      "path": "lib/audit/event_logger.rb",
+      "kind": "source",
+      "sha256": "dbdf188928e8b60cb70e7c9d11a7af54968b404185c00172a6faa86ac651b872"
     },
     {
       "path": "lib/container_environment_validator.rb",
@@ -3587,6 +3592,11 @@
       "path": "lib/evolution_discovery.rb",
       "kind": "source",
       "sha256": "7426959abfa60d1468eac83856098a264fb9cd017a4d3b92396ef4d8d151e3a4"
+    },
+    {
+      "path": "lib/governance/policy_registry.rb",
+      "kind": "source",
+      "sha256": "7a8ca177a2d3c6ac28de662879c0cfc9f6bed141ba781acae6413648ba274333"
     },
     {
       "path": "lib/permission_registry.rb",
@@ -4114,6 +4124,11 @@
       "sha256": "c8e5de8fca55a45bf3ddbf34fb629dcac210bb835e682ec7d825ac31a1b2da80"
     },
     {
+      "path": "test/lib/audit_event_logger_test.rb",
+      "kind": "test",
+      "sha256": "be68ae931c92ba1c8a9f0b5418e7a888a9643a2caa968bf48369778318b6bdba"
+    },
+    {
       "path": "test/lib/clean_starter_onboarding_test.rb",
       "kind": "test",
       "sha256": "8b4fc0a3ce4b29dde57979889d6dc89c9d0099f46438cfeb6027b465369e30af"
@@ -4147,6 +4162,11 @@
       "path": "test/lib/evolution_discovery_test.rb",
       "kind": "test",
       "sha256": "cbe64a9dec15df43a80e292058c4db4d28c85305dec2b409635e0644f6900e20"
+    },
+    {
+      "path": "test/lib/governance_policy_registry_test.rb",
+      "kind": "test",
+      "sha256": "c57c40f71306a233bf0898ab5aa6e1e4bed5ddef4b3a64abb8a58a696f3efcff"
     },
     {
       "path": "test/lib/grid_engine/html_renderer_test.rb",
