@@ -143,11 +143,11 @@
       </div>
       <div>
         <h3>ComboboxComponent</h3>
-        <%= render Ui::Forms::ComboboxComponent.new(name: "showcase_category", options: [{ label: "Technology", value: "tech" }, { label: "Finance", value: "fin" }]) %>
+        <%= render Ui::Forms::ComboboxComponent.new(name: "showcase_category", options: [{ label: "Technology", value: "tech" }, { label: "Finance", value: "fin" }], selected: "fin") %>
       </div>
       <div>
         <h3>MultiSelectComponent</h3>
-        <%= render Ui::Forms::MultiSelectComponent.new(name: "showcase_tags", options: [{ label: "Ruby", value: "ruby" }, { label: "Rails", value: "rails" }]) %>
+        <%= render Ui::Forms::MultiSelectComponent.new(name: "showcase_tags", options: [{ label: "Ruby", value: "ruby" }, { label: "Rails", value: "rails" }], selected: ["ruby", "rails"]) %>
       </div>
       <div>
         <h3>TagInputComponent</h3>
@@ -194,7 +194,7 @@
     <div class="showcase__stack">
       <div>
         <h3>ProgressBarComponent</h3>
-        <%= render Ui::ProgressBarComponent.new(value: 85, show_label: true, label: "Continuous Assurance Score (85%)") %>
+        <%= render Ui::ProgressBarComponent.new(value: 85, show_label: true, label: "Continuous Assurance Score") %>
       </div>
       <div class="showcase__row">
         <h3>ProgressSpinnerComponent</h3>
@@ -266,19 +266,6 @@
     </div>
     <%= render Ui::EmptyStateComponent.new(title: t("showcase.empty_title"), description: t("showcase.empty_description")) do %>
       <%= render Ui::ButtonComponent.new(label: t("showcase.empty_action")) %>
-    <% end %>
-  </section>
-
-  <%# ── Forms ───────────────────────────────────────────────── %>
-  <section class="showcase__section" id="showcase-forms" aria-labelledby="showcase-forms-heading">
-    <h2 id="showcase-forms-heading"><%= t("showcase.sections.forms") %></h2>
-    <%= form_with scope: :showcase, url: component_showcase_path, method: :get, builder: Ui::FormBuilder, html: { class: "showcase__form" } do |form| %>
-      <%= form.ui_text_field :name, label: t("showcase.form.name"), help_text: t("showcase.form.name_help"), required: true %>
-      <%= form.ui_email_field :email, label: t("showcase.form.email") %>
-      <%= form.ui_select :locale, Localization::SupportedLocales.options, label: t("showcase.form.locale") %>
-      <%= form.ui_checkbox :active, label: t("showcase.form.active") %>
-      <%= form.ui_radio_group :role, [ [ "admin", t("showcase.form.admin") ], [ "member", t("showcase.form.member") ] ], label: t("showcase.form.role") %>
-      <%= form.ui_submit t("showcase.form.submit") %>
     <% end %>
   </section>
 

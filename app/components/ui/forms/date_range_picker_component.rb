@@ -21,7 +21,7 @@ module Ui
 
         tag.div(
           **merged_html_options(
-            class: "ui-date-range-picker",
+            class: "ui-date-range-picker ui-date-picker",
             data: { controller: "date-range-picker" }
           )
         ) do
@@ -33,13 +33,14 @@ module Ui
               value: display_val,
               placeholder: @placeholder,
               aria: { label: @placeholder || "Select date range" },
-              class: "ui-date-range-picker__input",
+              class: "ui-date-range-picker__input ui-date-picker__input",
               data: {
                 date_range_picker_target: "input",
                 action: "focus->date-range-picker#open click->date-range-picker#open"
               }
             ),
-            (render_presets if @presets)
+            (render_presets if @presets),
+            render_calendar_dialog
           ].compact)
         end
       end
@@ -53,6 +54,15 @@ module Ui
             tag.button("This month", type: "button", data: { action: "click->date-range-picker#selectPreset", preset: "this_month" })
           ])
         end
+      end
+
+      def render_calendar_dialog
+        tag.div(
+          role: "dialog",
+          aria: { label: "Calendar" },
+          class: "ui-date-picker__calendar",
+          data: { date_range_picker_target: "calendar" }
+        )
       end
     end
   end

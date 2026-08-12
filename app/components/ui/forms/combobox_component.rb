@@ -26,6 +26,7 @@ module Ui
           safe_join([
             tag.input(type: "hidden", name: @name, value: @selected, data: { combobox_target: "hiddenInput" }),
             render_visible_input(display_label),
+            render_chevron_icon,
             render_listbox
           ])
         end
@@ -46,6 +47,25 @@ module Ui
             action: "focus->combobox#open input->combobox#filter keydown->combobox#navigate"
           }
         )
+      end
+
+      def render_chevron_icon
+        tag.svg(
+          class: "ui-combobox__chevron",
+          width: "16",
+          height: "16",
+          viewBox: "0 0 16 16",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg"
+        ) do
+          tag.path(
+            d: "M4 6L8 10L12 6",
+            stroke: "currentColor",
+            "stroke-width": "1.5",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round"
+          )
+        end
       end
 
       def render_listbox
