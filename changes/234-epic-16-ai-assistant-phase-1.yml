@@ -1,0 +1,22 @@
+schema_version: 1
+id: 234-epic-16-ai-assistant-phase-1
+category: feature
+summary: Epic 16 Phase 1 — Provider-neutral AI assistant runtime (lib/ai/base_provider.rb) with OpenRouter, OpenAI, Anthropic, Gemini, Ollama, and NullProvider adapters, tenant-resolvable configuration, and usage accounting audit integration (ai.request.completed).
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Created provider-neutral AI runtime with OpenRouterAdapter, OpenAiAdapter, AnthropicAdapter, GeminiAdapter, OllamaAdapter, NullProvider, and ai.request.completed audit logging.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

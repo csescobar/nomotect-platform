@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "dc126c7e67bef5af81dd3c863431d34e00886100",
+  "repository_commit": "e8b02c0f0f239edf305b1bf2984a0e5952bd8715",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -3341,7 +3341,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "8ba0dc4fecc753e7b713e3b6ebc024d1d85565d7106c19feb6e580330a4773bc"
+      "sha256": "149a140a7f5896e2d4cbeaa1de6d408d7f1e0365dd88ab88413299f40abb573a"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3542,6 +3542,51 @@
       "path": "lib/accessibility/html_audit.rb",
       "kind": "source",
       "sha256": "25d7d5215856f68102c1067dda125d09aa36eb6955f1d69c33e3358204734ecf"
+    },
+    {
+      "path": "lib/ai/base_provider.rb",
+      "kind": "source",
+      "sha256": "7fdc7ff36b4f16d4d7bb2efce1218dbaa80957301d734ffc2eba3a9a4308a6b7"
+    },
+    {
+      "path": "lib/ai/configuration_resolver.rb",
+      "kind": "source",
+      "sha256": "8f4ef114961e72db554453600e13acf7187823939fb0e998511969c17b2d24c8"
+    },
+    {
+      "path": "lib/ai/providers/anthropic_adapter.rb",
+      "kind": "source",
+      "sha256": "b4d5f502d90d3b8b15f6e761241a39a5fef6a0434e44e398d9fb1154ff51d400"
+    },
+    {
+      "path": "lib/ai/providers/gemini_adapter.rb",
+      "kind": "source",
+      "sha256": "0dc3ad4add92c1532a5c4b0d814c31b74e49128e72520c605d9d22a8b3c7fcba"
+    },
+    {
+      "path": "lib/ai/providers/null_provider.rb",
+      "kind": "source",
+      "sha256": "3e7536fcdf601841b80d88571d897250065ef437fef66813cdd5bc3ab15bd8c8"
+    },
+    {
+      "path": "lib/ai/providers/ollama_adapter.rb",
+      "kind": "source",
+      "sha256": "dab1204982e18d965853f06e3c986dbaafd227fcc7ba91502e6234e6a0428887"
+    },
+    {
+      "path": "lib/ai/providers/open_ai_adapter.rb",
+      "kind": "source",
+      "sha256": "8106062dd1986bebd12f4089159700909d9045759699f0b82b7909a239640560"
+    },
+    {
+      "path": "lib/ai/providers/open_router_adapter.rb",
+      "kind": "source",
+      "sha256": "acd96bde9e6993f0e6e6b07e46c18d9bc0d0bbbc5bdab39c4c936c63a195c095"
+    },
+    {
+      "path": "lib/ai/usage_tracker.rb",
+      "kind": "source",
+      "sha256": "fd4c80990af4d3ab34eca4a44cdaad42f5aee3912de568661546cb83021b26fb"
     },
     {
       "path": "lib/application_starter.rb",
@@ -4104,6 +4149,16 @@
       "sha256": "eed55a59534261ee8d0dc3ef9e9d80de092d21698575bdcc14d1134ed98c5d77"
     },
     {
+      "path": "test/lib/ai_configuration_resolver_test.rb",
+      "kind": "test",
+      "sha256": "0bda293a5b46af22b58af033200f4d6242dc5737b0ed2984a1ce3eec947f9818"
+    },
+    {
+      "path": "test/lib/ai_provider_interface_test.rb",
+      "kind": "test",
+      "sha256": "6db176dfdcbe9118c0ed673f15f57789b02a35a2b9d5c33845fd20b27ff5b309"
+    },
+    {
       "path": "test/lib/application_layout_config_test.rb",
       "kind": "test",
       "sha256": "8720883b84da527e2ab5bd6ab9b98827435b4b1ea18c2dcbac700249dd627b8d"
@@ -4146,7 +4201,7 @@
     {
       "path": "test/lib/audit_tamper_evident_verifier_test.rb",
       "kind": "test",
-      "sha256": "69c20f75f8e8815166184cfa1e8b007796a6593ce31e5ac0f639e839bc940cb6"
+      "sha256": "ff9c53beff1980bddabe4bcf1fd014648c60d80523d9be0e9e7d31d74dfee5ec"
     },
     {
       "path": "test/lib/clean_starter_onboarding_test.rb",

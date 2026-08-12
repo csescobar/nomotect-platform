@@ -2900,7 +2900,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "8ba0dc4fecc753e7b713e3b6ebc024d1d85565d7106c19feb6e580330a4773bc",
+        "sha256": "149a140a7f5896e2d4cbeaa1de6d408d7f1e0365dd88ab88413299f40abb573a",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -4105,6 +4105,28 @@
       "@id": "test:Integration::UpgradeFrameworkCertification"
     },
     {
+      "id": "test:Lib::AiConfigurationResolver",
+      "type": "test",
+      "name": "Lib::AiConfigurationResolver",
+      "path": "test/lib/ai_configuration_resolver_test.rb",
+      "properties": {
+        "sha256": "0bda293a5b46af22b58af033200f4d6242dc5737b0ed2984a1ce3eec947f9818",
+        "source": "platform"
+      },
+      "@id": "test:Lib::AiConfigurationResolver"
+    },
+    {
+      "id": "test:Lib::AiProviderInterface",
+      "type": "test",
+      "name": "Lib::AiProviderInterface",
+      "path": "test/lib/ai_provider_interface_test.rb",
+      "properties": {
+        "sha256": "6db176dfdcbe9118c0ed673f15f57789b02a35a2b9d5c33845fd20b27ff5b309",
+        "source": "platform"
+      },
+      "@id": "test:Lib::AiProviderInterface"
+    },
+    {
       "id": "test:Lib::ApplicationLayoutConfig",
       "type": "test",
       "name": "Lib::ApplicationLayoutConfig",
@@ -4198,7 +4220,7 @@
       "name": "Lib::AuditTamperEvidentVerifier",
       "path": "test/lib/audit_tamper_evident_verifier_test.rb",
       "properties": {
-        "sha256": "69c20f75f8e8815166184cfa1e8b007796a6593ce31e5ac0f639e839bc940cb6",
+        "sha256": "ff9c53beff1980bddabe4bcf1fd014648c60d80523d9be0e9e7d31d74dfee5ec",
         "source": "platform"
       },
       "@id": "test:Lib::AuditTamperEvidentVerifier"

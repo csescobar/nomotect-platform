@@ -86,6 +86,7 @@
 - Epic 14 Phase 2 — Continuous Assurance & Evidence completing Assurance::FreshnessChecker with fail-closed stale evidence validation and end-to-end evidence graph traceability CLI (bin/assurance --graph). (`231-epic-14-continuous-assurance-phase-2`)
 - Epic 15 Phases 1 & 2 — Administrative governance policy registry (lib/governance/policy_registry.rb) across 10 corporate domains and standardized structured audit event taxonomy (lib/audit/event_logger.rb) across 9 event families. (`232-epic-15-governance-audit-phase-1-2`)
 - Epic 15 Phases 3 & 4 — Completing Governance & Audit Platform with Audit::TamperEvidentVerifier SHA-256 chained event digest verification and Audit::EvidenceExporter deterministic audit package exporter. (`233-epic-15-governance-audit-phase-3-4`)
+- Epic 16 Phase 1 — Provider-neutral AI assistant runtime (lib/ai/base_provider.rb) with OpenRouter, OpenAI, Anthropic, Gemini, Ollama, and NullProvider adapters, tenant-resolvable configuration, and usage accounting audit integration (ai.request.completed). (`234-epic-16-ai-assistant-phase-1`)
 
 ### Fixed
 
@@ -235,6 +236,7 @@
 - **Security — 231-epic-14-continuous-assurance-phase-2:** Completed Assurance::FreshnessChecker evidence validation engine and bin/assurance --graph traceability tree renderer.
 - **Security — 232-epic-15-governance-audit-phase-1-2:** Implemented Governance::PolicyRegistry across 10 corporate domains and Audit::EventLogger structured taxonomy.
 - **Security — 233-epic-15-governance-audit-phase-3-4:** Implemented Audit::TamperEvidentVerifier digest chaining and Audit::EvidenceExporter deterministic packaging.
+- **Security — 234-epic-16-ai-assistant-phase-1:** Created provider-neutral AI runtime with OpenRouterAdapter, OpenAiAdapter, AnthropicAdapter, GeminiAdapter, OllamaAdapter, NullProvider, and ai.request.completed audit logging.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
