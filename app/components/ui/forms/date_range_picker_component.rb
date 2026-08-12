@@ -3,7 +3,7 @@
 module Ui
   module Forms
     class DateRangePickerComponent < Ui::BaseComponent
-      def initialize(start_name:, end_name:, start_value: nil, end_value: nil, placeholder: "Select date range...", presets: false, html_options: {})
+      def initialize(start_name:, end_name:, start_value: nil, end_value: nil, placeholder: nil, presets: false, html_options: {})
         raise ArgumentError, "start_name must not be blank" if start_name.blank?
         raise ArgumentError, "end_name must not be blank" if end_name.blank?
 
@@ -11,39 +11,65 @@ module Ui
         @end_name = end_name
         @start_value = start_value
         @end_value = end_value
-        @placeholder = placeholder
+        @placeholder = placeholder || I18n.t("showcase.examples.select_date_range", default: "Select date range...")
         @presets = presets
         @html_options = html_options
       end
 
       def call
-        display_val = [ @start_value, @end_value ].compact.join(" – ")
+        display_val = [ formatted_date(@start_value), formatted_date(@end_value) ].compact.join(" – ")
 
         tag.div(
           **merged_html_options(
-            class: "ui-date-range-picker",
+            class: "ui-date-range-picker ui-date-picker",
             data: { controller: "date-range-picker" }
           )
         ) do
           safe_join([
-            tag.input(type: "hidden", name: @start_name, value: @start_value, data: { date_range_picker_target: "startHidden" }),
-            tag.input(type: "hidden", name: @end_name, value: @end_value, data: { date_range_picker_target: "endHidden" }),
+            tag.input(type: "hidden", name: @start_name, value: iso_date(@start_value), data: { date_range_picker_target: "startHidden" }),
+            tag.input(type: "hidden", name: @end_name, value: iso_date(@end_value), data: { date_range_picker_target: "endHidden" }),
             tag.input(
               type: "text",
               value: display_val,
               placeholder: @placeholder,
-              class: "ui-date-range-picker__input",
+              aria: { label: @placeholder },
+              class: "ui-date-range-picker__input ui-date-picker__input",
               data: {
                 date_range_picker_target: "input",
-                action: "click->date-range-picker#open"
+                action: "focus->date-range-picker#open click->date-range-picker#open"
               }
             ),
-            (render_presets if @presets)
+            (render_presets if @presets),
+            render_calendar_dialog
           ].compact)
         end
       end
 
       private
+
+      def formatted_date(val)
+        return if val.blank?
+
+        parsed = parse_date(val)
+        return val.to_s unless parsed
+
+        I18n.l(parsed, format: :short)
+      end
+
+      def iso_date(val)
+        return if val.blank?
+
+        parsed = parse_date(val)
+        parsed ? parsed.iso8601 : val.to_s
+      end
+
+      def parse_date(val)
+        return val.to_date if val.is_a?(Date) || val.is_a?(Time)
+
+        Date.parse(val.to_s)
+      rescue ArgumentError, TypeError
+        nil
+      end
 
       def render_presets
         tag.div(class: "ui-date-range-picker__presets") do
@@ -52,6 +78,15 @@ module Ui
             tag.button("This month", type: "button", data: { action: "click->date-range-picker#selectPreset", preset: "this_month" })
           ])
         end
+      end
+
+      def render_calendar_dialog
+        tag.div(
+          role: "dialog",
+          aria: { label: "Calendar" },
+          class: "ui-date-picker__calendar",
+          data: { date_range_picker_target: "calendar" }
+        )
       end
     end
   end

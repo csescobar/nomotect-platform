@@ -45,7 +45,8 @@ module Ui
         ) do
           safe_join([
             render_chips(selected_options),
-            (tag.span(@placeholder, class: "ui-multi-select__placeholder") if selected_options.empty?)
+            (tag.span(@placeholder, class: "ui-multi-select__placeholder") if selected_options.empty?),
+            render_chevron_icon
           ].compact)
         end
       end
@@ -53,7 +54,7 @@ module Ui
       def render_chips(selected_options)
         return if selected_options.empty?
 
-        tag.div(class: "ui-multi-select__chips") do
+        tag.div(class: "ui-multi-select__chips", data: { multi_select_target: "chips" }) do
           safe_join(selected_options.map { |opt| render_chip(opt) })
         end
       end
@@ -70,6 +71,25 @@ module Ui
               data: { action: "click->multi-select#remove", value: opt[:value].to_s }
             )
           ])
+        end
+      end
+
+      def render_chevron_icon
+        tag.svg(
+          class: "ui-multi-select__chevron",
+          width: "16",
+          height: "16",
+          viewBox: "0 0 16 16",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg"
+        ) do
+          tag.path(
+            d: "M4 6L8 10L12 6",
+            stroke: "currentColor",
+            "stroke-width": "1.5",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round"
+          )
         end
       end
 
@@ -94,6 +114,7 @@ module Ui
           aria: { selected: is_selected },
           data: {
             value: val,
+            label: opt[:label],
             action: "click->multi-select#select"
           }
         )

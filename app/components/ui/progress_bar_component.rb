@@ -23,32 +23,45 @@ module Ui
         { valuenow: @value, valuemin: 0, valuemax: 100, label: @label }
       end
 
-      tag.div(
-        **merged_html_options(
-          class: class_names("progress-bar", "progress-bar--#{@size}", ("progress-bar--indeterminate" if @indeterminate)),
-          role: "progressbar",
-          aria: aria_opts.compact
-        )
-      ) do
+      tag.div(class: "progress-bar-wrapper") do
         safe_join([
-          render_fill,
-          render_label
+          render_header,
+          tag.div(
+            **merged_html_options(
+              class: class_names("progress-bar", "progress-bar--#{@size}", ("progress-bar--indeterminate" if @indeterminate)),
+              role: "progressbar",
+              aria: aria_opts.compact
+            )
+          ) do
+            render_fill
+          end
         ].compact)
       end
     end
 
     private
 
-    def render_fill
-      style = @indeterminate ? nil : "width: #{@value}%"
-      tag.div(class: "progress-bar__fill", style: style)
+    def render_header
+      return if @label.blank? && !@show_label
+
+      tag.div(class: "progress-bar__header") do
+        safe_join([
+          (@label.present? ? tag.span(@label, class: "progress-bar__label") : (@show_label ? tag.span("#{@value}%", class: "progress-bar__label") : nil)),
+          ((@show_label && @label.present?) ? tag.span("#{@value}%", class: "progress-bar__value") : nil)
+        ].compact)
+      end
     end
 
-    def render_label
-      display_text = @label || ("#{@value}%" if @show_label)
-      return if display_text.blank?
+    def render_fill
+      return tag.div(class: "progress-bar__fill") if @indeterminate
 
-      tag.span(display_text, class: "progress-bar__label")
+      tag.div(
+        class: "progress-bar__fill",
+        data: {
+          controller: "progress-bar",
+          progress_bar_value_value: @value
+        }
+      )
     end
   end
 end

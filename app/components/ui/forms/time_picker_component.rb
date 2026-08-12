@@ -27,10 +27,11 @@ module Ui
               type: "text",
               value: @value,
               placeholder: @placeholder,
+              aria: { label: @placeholder || "Select time" },
               class: "ui-time-picker__input",
               data: {
                 time_picker_target: "input",
-                action: "click->time-picker#toggle"
+                action: "focus->time-picker#toggle click->time-picker#toggle"
               }
             ),
             render_dropdown

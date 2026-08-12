@@ -32,9 +32,8 @@ module Ui
     private
 
     def render_trigger_slot
-      tag.button(
+      tag.div(
         trigger_slot,
-        type: "button",
         class: "popover__trigger",
         aria: { expanded: false, haspopup: "dialog" },
         data: { action: "click->popover#toggle" }

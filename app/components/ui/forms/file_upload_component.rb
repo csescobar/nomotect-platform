@@ -37,6 +37,7 @@ module Ui
               name: @name,
               multiple: @multiple,
               accept: @accept,
+              aria: { label: @label },
               class: "ui-file-upload__input",
               data: {
                 file_upload_target: "input",

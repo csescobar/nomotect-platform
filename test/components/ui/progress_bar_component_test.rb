@@ -7,7 +7,7 @@ class Ui::ProgressBarComponentTest < ViewComponent::TestCase
     render_inline Ui::ProgressBarComponent.new(value: 45)
 
     assert_selector ".progress-bar[role='progressbar'][aria-valuenow='45'][aria-valuemin='0'][aria-valuemax='100']"
-    assert_selector ".progress-bar__fill[style*='width: 45%']"
+    assert_selector ".progress-bar__fill[data-progress-bar-value-value='45']"
   end
 
   test "renders percentage label when show_label is true" do

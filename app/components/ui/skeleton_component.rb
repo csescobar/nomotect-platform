@@ -27,15 +27,18 @@ module Ui
     private
 
     def render_single_skeleton
-      style = [
-        ("width: #{@width}" if @width),
-        ("height: #{@height}" if @height)
-      ].compact.join("; ").presence
+      data_attrs = {}.tap do |d|
+        if @width || @height
+          d[:controller] = "skeleton"
+          d[:skeleton_width_value] = @width if @width
+          d[:skeleton_height_value] = @height if @height
+        end
+      end
 
       tag.div(
         **merged_html_options(
           class: class_names("skeleton", "skeleton--#{@variant}"),
-          style: style,
+          data: data_attrs.presence,
           aria: { hidden: true }
         ).compact
       )

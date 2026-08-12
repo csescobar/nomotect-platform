@@ -62,6 +62,7 @@ module Ui
         tag.input(
           type: "text",
           placeholder: @placeholder,
+          aria: { label: @placeholder || "Add a tag" },
           class: "ui-tag-input__field",
           data: {
             tag_input_target: "input",
