@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "3dfe52ac29042394de850399e1c8dd15b440424c",
+  "repository_commit": "d4ba65d905e0d1d069ed0429c5e7490c7fc5fa9c",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -2276,27 +2276,27 @@
     {
       "path": "config/skills/analyze-activity/SKILL.md",
       "kind": "source",
-      "sha256": "292c78b7ad9d87e72ef078ebf0fff6d9362a8e57236c54d3be636eb347675e5e"
+      "sha256": "4a7c85aa6a10d7eca540ce99af8bee2fe839babd8f6af29140abd604b711056b"
     },
     {
       "path": "config/skills/explain-current-page/SKILL.md",
       "kind": "source",
-      "sha256": "07c653bcf71dfb094754f6becb009d6b5479e3e9419738a49015b41d7094c2e0"
+      "sha256": "85b017d578342c8980c4f5e416b19c8cc9f8ecf131d84dc4073ec30ca7030598"
     },
     {
       "path": "config/skills/generate-report/SKILL.md",
       "kind": "source",
-      "sha256": "d9f631e1f9a823cbe34d604d7c373a298c4cc4638eb14e06b6f4e76171096ba2"
+      "sha256": "083aefc1f181393dbec333bd76d5d7f18a6b5c15229dfda010e346acadced72d"
     },
     {
       "path": "config/skills/search-audit/SKILL.md",
       "kind": "source",
-      "sha256": "de01cc1d1125e2b80dd8b7ec2b79730b1b7a111ae462b87821f0c6aa8d07fd1c"
+      "sha256": "a3958fc41dea535fbf9aeae61af395bd1efe4928e9df3a692ae085170e65afee"
     },
     {
       "path": "config/skills/summarize-record/SKILL.md",
       "kind": "source",
-      "sha256": "2762296aad6983737a337e7bc105ae58ce693c7a66eb1cc1f53503dc239701a9"
+      "sha256": "585317971c86ad111550c90e1e471a2515effbc97ba743c196d41dd212e097af"
     },
     {
       "path": "config/storage.yml",
@@ -4236,7 +4236,7 @@
     {
       "path": "test/lib/ai_skills_registry_test.rb",
       "kind": "test",
-      "sha256": "99c87b5145d41564301e25f590b8f567c9c28a89fa0ba217097b820f13dde90c"
+      "sha256": "c5852c2429d97b856ca3372dab9b3ba55c5fa6fb781ea03c32cb22649e4aed74"
     },
     {
       "path": "test/lib/application_layout_config_test.rb",

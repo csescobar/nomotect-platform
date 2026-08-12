@@ -4176,7 +4176,7 @@
       "name": "Lib::AiSkillsRegistry",
       "path": "test/lib/ai_skills_registry_test.rb",
       "properties": {
-        "sha256": "99c87b5145d41564301e25f590b8f567c9c28a89fa0ba217097b820f13dde90c",
+        "sha256": "c5852c2429d97b856ca3372dab9b3ba55c5fa6fb781ea03c32cb22649e4aed74",
         "source": "platform"
       },
       "@id": "test:Lib::AiSkillsRegistry"
