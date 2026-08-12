@@ -371,6 +371,8 @@ digraph repository {
   "test:Integration::ResilienceCertification" [label="Integration::ResilienceCertification"];
   "test:Integration::SupportBundleCertification" [label="Integration::SupportBundleCertification"];
   "test:Integration::UpgradeFrameworkCertification" [label="Integration::UpgradeFrameworkCertification"];
+  "test:Lib::AiConfigurationResolver" [label="Lib::AiConfigurationResolver"];
+  "test:Lib::AiProviderInterface" [label="Lib::AiProviderInterface"];
   "test:Lib::ApplicationLayoutConfig" [label="Lib::ApplicationLayoutConfig"];
   "test:Lib::ApplicationRegistrations" [label="Lib::ApplicationRegistrations"];
   "test:Lib::ApplicationSkeletonDocumentationSanitization" [label="Lib::ApplicationSkeletonDocumentationSanitization"];
