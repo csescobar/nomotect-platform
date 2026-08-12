@@ -1,1 +1,0 @@
-window.syncfusionLicenseKey = '{SyncfusionJSLicensekey}';
