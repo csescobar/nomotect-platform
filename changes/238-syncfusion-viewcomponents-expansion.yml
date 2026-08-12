@@ -1,0 +1,22 @@
+schema_version: 1
+id: 238-syncfusion-viewcomponents-expansion
+category: feature
+summary: Expand Syncfusion EJ2 suite with canonical Ui::Syncfusion::* ViewComponents (Checkbox, RadioGroup, Toggle, Slider, InputGroup, DatePicker, DateRangePicker, TimePicker, FileUpload, Combobox, MultiSelect, Stepper, Tabs, TreeView, ProgressBar, Skeleton, Grid, Dialog, Button, Card) and full unit test coverage.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: All Syncfusion ViewComponents adhere to strict CSP style-src rules without inline style attributes.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Syncfusion ViewComponents wrap WAI-ARIA role attributes (role=switch, role=tree, role=tablist, role=dialog, role=progressbar) for full screen reader accessibility.

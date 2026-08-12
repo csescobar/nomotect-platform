@@ -15,3 +15,4 @@
 # Extracted assets live in vendor/javascript/syncfusion/ and vendor/assets/syncfusion/
 syncfusionejs2_trial.zip
 *.syncfusion*.zip
+syncfusionejs2_trial/
