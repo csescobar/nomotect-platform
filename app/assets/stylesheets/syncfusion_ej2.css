@@ -710,12 +710,42 @@ input::placeholder {
   margin: 0;
 }
 
+/* Showcase Grid Layout */
+.ej2-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.ej2-showcase-grid__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ej2-showcase-grid__title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 0.5rem 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.ej2-showcase-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 /* ── EJ2 Input Token Integration ──────────────────────────────────────────── */
 /* TextBox, NumericTextBox, MaskedTextBox, DropDownList, MultiSelect & DatePicker */
-.e-input-group,
+.e-input-group:not(.e-checkbox-wrapper):not(.e-radio-wrapper):not(.e-switch-wrapper),
 .e-float-input,
 .e-multi-select-wrapper,
-.e-control-wrapper,
+.e-textbox.e-control-wrapper,
+.e-numeric.e-control-wrapper,
 .e-ddl.e-input-group {
   background-color: var(--color-surface) !important;
   border-color: var(--color-border) !important;
@@ -1561,6 +1591,218 @@ input::placeholder {
 
 .ej2-skeleton--short {
   width: 60%;
+}
+
+/* ── Precise Syncfusion Form Control Token Rules ────────────────────────── */
+
+/* Checkbox */
+.ui-checkbox-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.e-checkbox {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  min-width: 1.25rem !important;
+  min-height: 1.25rem !important;
+  aspect-ratio: 1 / 1 !important;
+  flex: 0 0 1.25rem !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-color: var(--color-surface) !important;
+  border: 1.5px solid var(--color-border) !important;
+  border-radius: var(--radius-sm) !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.e-checkbox:hover:not(:disabled) {
+  border-color: var(--color-primary-hover) !important;
+}
+
+.e-checkbox:checked {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath fill-rule='evenodd' d='M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.739a.75.75 0 0 1 1.04-.208z'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 0.875rem 0.875rem !important;
+}
+
+.e-checkbox-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-size: var(--font-size-sm) !important;
+  color: var(--color-text) !important;
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+/* Radio Button */
+.ui-radio-group__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.e-radio {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  min-width: 1.25rem !important;
+  min-height: 1.25rem !important;
+  aspect-ratio: 1 / 1 !important;
+  flex: 0 0 1.25rem !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-color: var(--color-surface) !important;
+  border: 1.5px solid var(--color-border) !important;
+  border-radius: 9999px !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease !important;
+}
+
+.e-radio:hover:not(:disabled) {
+  border-color: var(--color-primary-hover) !important;
+}
+
+.e-radio:checked {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  background-image: radial-gradient(circle, var(--color-surface) 35%, transparent 40%) !important;
+}
+
+.e-radio-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-size: var(--font-size-sm) !important;
+  color: var(--color-text) !important;
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+/* Switch / Toggle */
+.ej2-toggle-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ej2-toggle-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.e-switch {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 2.5rem !important;
+  height: 1.375rem !important;
+  min-width: 2.5rem !important;
+  min-height: 1.375rem !important;
+  background-color: color-mix(in srgb, var(--color-border) 60%, var(--color-surface-subtle)) !important;
+  border: 1.5px solid var(--color-border) !important;
+  border-radius: 9999px !important;
+  position: relative !important;
+  cursor: pointer !important;
+  outline: none !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.e-switch::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 0.125rem !important;
+  transform: translateY(-50%) !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  border-radius: 50% !important;
+  background-color: var(--color-surface) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.e-switch:checked {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.e-switch:checked::before {
+  transform: translate(1.125rem, -50%) !important;
+}
+
+.ej2-toggle__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Slider */
+.ej2-slider-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+}
+
+.ej2-slider__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ej2-slider__label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.ej2-slider__value {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-surface-subtle);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
+}
+
+/* InputGroup */
+.ej2-input-group-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.ej2-input-group__label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.e-input-group-icon.e-input-group-prefix,
+.e-input-group-icon.e-input-group-suffix {
+  padding: 0 0.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface-subtle);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
 }
 
 
