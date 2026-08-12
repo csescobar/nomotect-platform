@@ -88,6 +88,7 @@
 - Epic 15 Phases 3 & 4 — Completing Governance & Audit Platform with Audit::TamperEvidentVerifier SHA-256 chained event digest verification and Audit::EvidenceExporter deterministic audit package exporter. (`233-epic-15-governance-audit-phase-3-4`)
 - Epic 16 Phase 1 — Provider-neutral AI assistant runtime (lib/ai/base_provider.rb) with OpenRouter, OpenAI, Anthropic, Gemini, Ollama, and NullProvider adapters, tenant-resolvable configuration, and usage accounting audit integration (ai.request.completed). (`234-epic-16-ai-assistant-phase-1`)
 - Epic 16 Phases 2 & 3 — MCP Application Gateway (lib/ai/mcp/gateway.rb) with Current context propagation and audit logging, plus contextual resources provider (lib/ai/mcp/resources.rb) exposing nomotect:// URIs. (`235-epic-16-ai-assistant-phase-2-3`)
+- Epic 16 Phases 4, 5 & 6 — Completing AI Assistant Platform with Governed MCP Tools Registry (lib/ai/mcp/tool_registry.rb), SKILL.md Skills Framework (lib/ai/skills/), Platform Skills, and Governed AI Mutating Action Executor (lib/ai/mcp/action_executor.rb) with user confirmation policies and audit integration (ai.action.executed). (`236-epic-16-ai-assistant-phase-4-5-6`)
 
 ### Fixed
 
@@ -239,6 +240,7 @@
 - **Security — 233-epic-15-governance-audit-phase-3-4:** Implemented Audit::TamperEvidentVerifier digest chaining and Audit::EvidenceExporter deterministic packaging.
 - **Security — 234-epic-16-ai-assistant-phase-1:** Created provider-neutral AI runtime with OpenRouterAdapter, OpenAiAdapter, AnthropicAdapter, GeminiAdapter, OllamaAdapter, NullProvider, and ai.request.completed audit logging.
 - **Security — 235-epic-16-ai-assistant-phase-2-3:** Created Ai::Mcp::Gateway for tool execution and Ai::Mcp::Resources exposing safe contextual data via nomotect:// URIs with data minimization.
+- **Security — 236-epic-16-ai-assistant-phase-4-5-6:** Implemented server-authoritative Ai::Mcp::ToolRegistry, Ai::Skills::Registry with SKILL.md parser, and Ai::Mcp::ActionExecutor requiring explicit user confirmation for write operations with ai.action.executed audit logging.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.

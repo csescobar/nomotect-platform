@@ -1,0 +1,22 @@
+schema_version: 1
+id: 236-epic-16-ai-assistant-phase-4-5-6
+category: feature
+summary: Epic 16 Phases 4, 5 & 6 — Completing AI Assistant Platform with Governed MCP Tools Registry (lib/ai/mcp/tool_registry.rb), SKILL.md Skills Framework (lib/ai/skills/), Platform Skills, and Governed AI Mutating Action Executor (lib/ai/mcp/action_executor.rb) with user confirmation policies and audit integration (ai.action.executed).
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Implemented server-authoritative Ai::Mcp::ToolRegistry, Ai::Skills::Registry with SKILL.md parser, and Ai::Mcp::ActionExecutor requiring explicit user confirmation for write operations with ai.action.executed audit logging.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:

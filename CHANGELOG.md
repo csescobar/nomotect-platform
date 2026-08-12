@@ -89,6 +89,7 @@ Required release impact: `major`.
 - Epic 15 Phases 3 & 4 — Completing Governance & Audit Platform with Audit::TamperEvidentVerifier SHA-256 chained event digest verification and Audit::EvidenceExporter deterministic audit package exporter. (`233-epic-15-governance-audit-phase-3-4`)
 - Epic 16 Phase 1 — Provider-neutral AI assistant runtime (lib/ai/base_provider.rb) with OpenRouter, OpenAI, Anthropic, Gemini, Ollama, and NullProvider adapters, tenant-resolvable configuration, and usage accounting audit integration (ai.request.completed). (`234-epic-16-ai-assistant-phase-1`)
 - Epic 16 Phases 2 & 3 — MCP Application Gateway (lib/ai/mcp/gateway.rb) with Current context propagation and audit logging, plus contextual resources provider (lib/ai/mcp/resources.rb) exposing nomotect:// URIs. (`235-epic-16-ai-assistant-phase-2-3`)
+- Epic 16 Phases 4, 5 & 6 — Completing AI Assistant Platform with Governed MCP Tools Registry (lib/ai/mcp/tool_registry.rb), SKILL.md Skills Framework (lib/ai/skills/), Platform Skills, and Governed AI Mutating Action Executor (lib/ai/mcp/action_executor.rb) with user confirmation policies and audit integration (ai.action.executed). (`236-epic-16-ai-assistant-phase-4-5-6`)
 
 ### Fixed
 
