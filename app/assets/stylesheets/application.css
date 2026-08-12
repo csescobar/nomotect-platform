@@ -103,9 +103,32 @@ a.button--primary:visited { color: var(--color-on-primary); }
 .ui-field { display: grid; gap: var(--space-xs); margin-bottom: var(--space-md); }
 .ui-field__label { font-weight: var(--font-weight-semibold); }
 .ui-field__required { color: var(--color-primary); }
-.ui-input, .ui-field select, .ui-field textarea { width: 100%; min-height: var(--control-height); padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); color: var(--color-text); transition: border-color var(--transition-fast); }
-.ui-input:hover, .ui-field select:hover, .ui-field textarea:hover { border-color: var(--color-primary-hover); }
-.ui-input:focus, .ui-field select:focus, .ui-field textarea:focus { border-color: var(--color-primary); outline: none; }
+.ui-input, .ui-field select, .ui-field textarea,
+.ui-date-picker__input, .ui-time-picker__input, .ui-autocomplete__input,
+.ui-combobox__input, .ui-multi-select__trigger, .ui-tag-input__container,
+.ui-input-group {
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ui-input:hover, .ui-field select:hover, .ui-field textarea:hover,
+.ui-date-picker__input:hover, .ui-time-picker__input:hover, .ui-autocomplete__input:hover,
+.ui-combobox__input:hover, .ui-multi-select__trigger:hover, .ui-tag-input__container:hover,
+.ui-input-group:hover {
+  border-color: var(--color-primary-hover);
+}
+
+.ui-input:focus, .ui-input:focus-visible,
+.ui-field select:focus, .ui-field textarea:focus,
+.ui-date-picker__input:focus, .ui-time-picker__input:focus,
+.ui-autocomplete__input:focus, .ui-combobox__input:focus,
+.ui-multi-select__trigger:focus, .ui-tag-input__container:focus-within,
+.ui-input-group:focus-within {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent-primary-subtle);
+}
+
+.ui-input, .ui-field select, .ui-field textarea { width: 100%; min-height: var(--control-height); padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-background); color: var(--color-text); }
 .ui-field textarea { min-height: 7rem; resize: vertical; }
 .ui-field--invalid .ui-input, .ui-field--invalid select, .ui-field--invalid textarea { border-width: 2px; border-color: var(--color-danger); }
 .ui-field__help { margin: 0; color: var(--color-text-muted); font-size: var(--font-size-sm); }
@@ -120,6 +143,7 @@ a.button--primary:visited { color: var(--color-on-primary); }
   min-height: 1.25rem !important;
   max-width: 1.25rem !important;
   max-height: 1.25rem !important;
+  aspect-ratio: 1 / 1 !important;
   box-sizing: border-box !important;
   flex-shrink: 0 !important;
   align-self: flex-start;
@@ -152,6 +176,7 @@ a.button--primary:visited { color: var(--color-on-primary); }
   min-height: 1.25rem !important;
   max-width: 1.25rem !important;
   max-height: 1.25rem !important;
+  aspect-ratio: 1 / 1 !important;
   box-sizing: border-box !important;
   flex-shrink: 0 !important;
   align-self: flex-start;

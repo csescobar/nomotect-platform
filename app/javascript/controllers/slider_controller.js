@@ -8,8 +8,17 @@ export default class extends Controller {
   }
 
   update() {
-    if (this.hasInputTarget && this.hasDisplayTarget) {
-      this.displayTarget.textContent = this.inputTarget.value
+    if (this.hasInputTarget) {
+      const val = parseFloat(this.inputTarget.value)
+      const min = parseFloat(this.inputTarget.min) || 0
+      const max = parseFloat(this.inputTarget.max) || 100
+      const pct = max > min ? ((val - min) / (max - min)) * 100 : 0
+
+      this.inputTarget.style.setProperty("--slider-pct", `${pct}%`)
+
+      if (this.hasDisplayTarget) {
+        this.displayTarget.textContent = this.inputTarget.value
+      }
     }
   }
 }
