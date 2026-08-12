@@ -27,8 +27,7 @@ export default class extends Controller {
     this.textbox = new TextBox({
       placeholder:   this.placeholderValue,
       value:         this.valueValue,
-      readonly:      this.readonlyValue,
-      floatLabelType: "Auto"
+      readonly:      this.readonlyValue
     });
 
     this.textbox.appendTo(input);

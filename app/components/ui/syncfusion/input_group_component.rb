@@ -9,7 +9,7 @@ module Ui
         @prefix = prefix
         @suffix = suffix
         @label = label
-        @placeholder = placeholder || label || "Enter value"
+        @placeholder = placeholder || "Enter value"
         @disabled = !!disabled
         @input_id = input_id || "ej2_input_group_#{SecureRandom.hex(4)}"
         @html_options = html_options
@@ -36,7 +36,9 @@ module Ui
                   id: @input_id,
                   name: @name,
                   value: @value,
+                  placeholder: @placeholder,
                   disabled: (@disabled ? "disabled" : nil),
+                  class: "e-input",
                   data: { ej2_input_group_target: "input" }
                 ),
                 suffix_markup

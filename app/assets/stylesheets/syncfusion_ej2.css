@@ -1654,13 +1654,26 @@ input::placeholder {
   border-color: var(--color-primary-hover) !important;
 }
 
+/* Checked state: Fill with primary color and display SVG checkmark ("v") */
 .e-checkbox-wrapper input[type="checkbox"]:checked + .e-frame,
 .e-checkbox-wrapper .e-checkbox:checked + .e-frame,
 .e-checkbox-wrapper .e-frame.e-check {
   background-color: var(--color-primary) !important;
   border-color: var(--color-primary) !important;
-  color: var(--color-on-primary) !important;
   opacity: 1 !important;
+}
+
+.e-checkbox-wrapper input[type="checkbox"]:checked + .e-frame::before,
+.e-checkbox-wrapper .e-checkbox:checked + .e-frame::before,
+.e-checkbox-wrapper .e-frame.e-check::before {
+  content: "" !important;
+  width: 0.875rem !important;
+  height: 0.875rem !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath fill-rule='evenodd' d='M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.739a.75.75 0 0 1 1.04-.208z'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  display: block !important;
 }
 
 /* Radio Button */
@@ -1740,7 +1753,7 @@ input::placeholder {
   height: 1.375rem !important;
   min-width: 2.5rem !important;
   min-height: 1.375rem !important;
-  background-color: color-mix(in srgb, var(--color-border) 80%, var(--color-surface-subtle)) !important;
+  background-color: var(--color-surface-subtle) !important;
   border: 2px solid var(--color-border) !important;
   border-radius: 9999px !important;
   position: relative !important;
@@ -1767,14 +1780,14 @@ input::placeholder {
   width: 0.9375rem !important;
   height: 0.9375rem !important;
   border-radius: 50% !important;
-  background-color: var(--color-text) !important;
+  background-color: var(--color-text-muted) !important;
   box-shadow: var(--shadow-sm) !important;
   transition: transform 0.2s ease, background-color 0.2s ease !important;
 }
 
 .e-switch:checked::before {
   transform: translate(1.125rem, -50%) !important;
-  background-color: var(--color-surface) !important;
+  background-color: var(--color-on-primary) !important;
 }
 
 .ej2-toggle__label {
@@ -1815,15 +1828,27 @@ input::placeholder {
   border: 1px solid var(--color-border-subtle);
 }
 
+.ej2-slider__track-container {
+  width: 100%;
+  padding: 0.375rem 0;
+  display: flex;
+  align-items: center;
+}
+
 .ui-slider {
   appearance: none !important;
   -webkit-appearance: none !important;
   width: 100% !important;
-  height: 0.5rem !important;
+  height: 0.375rem !important;
+  min-height: 0.375rem !important;
+  max-height: 0.375rem !important;
   border-radius: 9999px !important;
   background: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary) var(--slider-pct, 50%), var(--color-border-subtle) var(--slider-pct, 50%), var(--color-border-subtle) 100%) !important;
   outline: none !important;
   cursor: pointer !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
   transition: background 0.15s ease !important;
 }
 
@@ -1834,8 +1859,8 @@ input::placeholder {
 .ui-slider::-webkit-slider-thumb {
   appearance: none !important;
   -webkit-appearance: none !important;
-  width: 1.25rem !important;
-  height: 1.25rem !important;
+  width: 1rem !important;
+  height: 1rem !important;
   border-radius: 50% !important;
   background: var(--color-primary) !important;
   border: 2px solid var(--color-surface) !important;
@@ -1846,12 +1871,12 @@ input::placeholder {
 
 .ui-slider:hover::-webkit-slider-thumb {
   background: var(--color-primary-hover) !important;
-  transform: scale(1.1) !important;
+  transform: scale(1.15) !important;
 }
 
 .ui-slider::-moz-range-thumb {
-  width: 1.25rem !important;
-  height: 1.25rem !important;
+  width: 1rem !important;
+  height: 1rem !important;
   border-radius: 50% !important;
   background: var(--color-primary) !important;
   border: 2px solid var(--color-surface) !important;
@@ -1862,7 +1887,7 @@ input::placeholder {
 
 .ui-slider:hover::-moz-range-thumb {
   background: var(--color-primary-hover) !important;
-  transform: scale(1.1) !important;
+  transform: scale(1.15) !important;
 }
 
 /* InputGroup */
