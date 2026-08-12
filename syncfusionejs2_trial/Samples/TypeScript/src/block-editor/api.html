@@ -1,0 +1,103 @@
+<div class="col-lg-8 control-section">
+        <div class="blockeditor-api">
+            <div id="api-blockeditor">
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <div id="property" title="Properties" class="block-editor-table">
+        <table id="property" title="Properties">
+            <tbody>
+                <tr>
+                    <td>
+                        <div>ReadOnly </div>
+                    </td>
+                    <td>
+                        <div style="padding-top: 0;padding-left: 0;">
+                            <input type="checkbox" id="readonly" checked="false" aria-label="Readonly">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Drag and Drop </div>
+                    </td>
+                    <td>
+                        <div style="padding-top: 0;padding-left: 0;">
+                            <input type="checkbox" id="enableDragDrop" checked="true" aria-label="Enable Drag and Drop">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Get Data</div>
+                    </td>
+                    <td>
+                        <div class='e-btn-group' style="padding: 0; margin: 10px 0 0 10px;">
+                            <button class="e-btn" id="getJson">JSON</button>
+                            <button class="e-btn" id="getHtml">HTML</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+                            <button id="getBlockCount" class="btn btn-default">Get Block Count</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+                            <button id="selectall" class="btn btn-default">Select All Blocks</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+                            <button id="print" class="btn btn-default">Print</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .blockeditor-api {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .block-editor-table .e-btn 
+    {
+        background-color: white;
+        color: black;
+    }
+</style>
+
+<div id="action-description">
+    <p>This sample demonstrates the usage of API in Block Editor. Use the properties panel to change read-only mode,
+        enable/disable drag and drop, get JSON data, get HTML data, get block count and select all blocks</p>
+</div>
+<div id="description">
+    <p>In this demo, you can explore the API behaviors by:</p>
+    <ul>
+        <li>Click the <code>readOnly</code> checkbox to enable/disable editable and non-editable mode of the Block Editor.</li>
+        <li>Click the <code>enableDragDrop</code> checkbox to enable/disable drag and drop functionality.</li>
+        <li>Use the grouped buttons:
+        <ul>
+            <li><code>JSON</code>: Shows the editor’s data as JSON in a predefined dialog.</li>
+            <li><code>HTML</code>: Shows the editor’s HTML output as text in a predefined dialog.</li>
+        </ul>
+        </li>
+        <li>Click the <code>getBlockCount</code> button to display the total number of blocks in an predefined dialog.</li>
+        <li>Click the <code>selectAllBlocks</code> button to select all content in the editor.</li>
+        <li>Click the <code>print</code> button to preview the content before printing from the editor.</li>
+    </ul>
+</div>

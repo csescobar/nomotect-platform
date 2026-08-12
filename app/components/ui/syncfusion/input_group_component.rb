@@ -9,7 +9,7 @@ module Ui
         @prefix = prefix
         @suffix = suffix
         @label = label
-        @placeholder = placeholder
+        @placeholder = placeholder || label || "Enter value"
         @disabled = !!disabled
         @input_id = input_id || "ej2_input_group_#{SecureRandom.hex(4)}"
         @html_options = html_options
@@ -18,12 +18,16 @@ module Ui
       def call
         tag.div(
           **merged_html_options(
-            class: "ui-field ej2-input-group-wrapper",
-            data: { controller: "ej2-input-group" }
+            class: "ui-field ej2-form-group",
+            data: {
+              controller: "ej2-input-group",
+              ej2_input_group_placeholder_value: @placeholder,
+              ej2_input_group_value_value: @value.to_s
+            }
           )
         ) do
           safe_join([
-            label_markup,
+            (tag.label(@label, for: @input_id, class: "ej2-form-group__label") if @label.present?),
             tag.div(class: class_names("e-input-group", ("e-disabled" if @disabled))) do
               safe_join([
                 prefix_markup,
@@ -32,9 +36,7 @@ module Ui
                   id: @input_id,
                   name: @name,
                   value: @value,
-                  placeholder: @placeholder,
                   disabled: (@disabled ? "disabled" : nil),
-                  class: "e-input",
                   data: { ej2_input_group_target: "input" }
                 ),
                 suffix_markup
@@ -45,12 +47,6 @@ module Ui
       end
 
       private
-
-      def label_markup
-        return if @label.blank?
-
-        tag.label(@label, for: @input_id, class: "ej2-input-group__label")
-      end
 
       def prefix_markup
         return if @prefix.blank?

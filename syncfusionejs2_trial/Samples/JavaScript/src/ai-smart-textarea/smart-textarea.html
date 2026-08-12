@@ -1,0 +1,48 @@
+<div class="col-lg-12 control-section" id="default">
+    <div class="content-wrapper">
+        <div class="example-label">Select a role</div>
+        <div id='container' style="width:430px;">
+            <input type="text" id='user-role' />
+        </div>
+        <textarea id="smart-textarea"></textarea>
+    </div>
+</div>
+<div id="action-description">
+    <p>
+        This example demonstrates how to use the Smart Text Area component, including its key properties and functionalities. The component supports various features such as inline suggestions and real-time input handling.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The <code>SmartTextArea</code> component is configured with the following properties:
+    </p>
+    <ul>
+        <li><strong>UserRole:</strong> Sets the role of the current user, which may influence suggestions or access controls.</li>
+        <li><strong>UserPhrases:</strong> Provides predefined phrases or suggestions relevant to the user’s role, enhancing the context of the input.</li>
+        <li><strong>Width:</strong> Defines the width of the text area. In this example, it is set to <code>75%</code> of its container’s width.</li>
+        <li><strong>Placeholder:</strong> Displays a hint or instruction within the text area when it is empty. Here, it prompts the user with <code>Enter your queries here</code>.</li>
+        <li><strong>RowCount:</strong> Specifies the number of visible rows in the text area, set to <code>5</code> in this example, to accommodate more text.</li>
+        <li><strong>FloatLabelType:</strong> Controls the label behavior. The <code>FloatLabelType.Auto</code> option ensures that the label floats above the text area when it is focused or contains text.</li>
+    </ul>
+    <p>
+        This setup facilitates a flexible and interactive text area, ideal for capturing and processing user input efficiently.
+    </p>
+</div>
+<style>
+    .content-wrapper {
+        margin: 50px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .content-wrapper div.row {
+        padding: 7px 0px;
+    }
+
+    .example-label {
+        width: 29%;
+        font-weight: 700;
+    }
+</style>

@@ -1,0 +1,31 @@
+{
+    "name": "Inline AI Prompt",
+    "directory": "inline-ai-prompt",
+    "category": "Interactive Chat",
+    "ftName": "inline-ai-prompt",
+    "type": "preview",
+    "samples": [
+        {
+            "url": "ai-overview",
+            "name": "Overview",
+            "category": "Inline AI Prompt",
+            "api":{ "InlineAIPrompt": ["promptRequest", "relateTo", "commandSettings", "responseSettings"] },
+            "description": "Showcases the default combinations of the Inline AI Prompt control.",
+            "sourceFiles": [
+                { "displayName": "ai-overview.vue", "path":"src/inline-ai-prompt/ai-overview.vue" },
+                { "displayName": "service.ts", "path":"src/inline-ai-prompt/service.ts" }
+            ]
+        },
+        {
+            "url": "ai-rich-text-editor",
+            "name": "Rich Text Editor",
+            "category": "Integration",
+            "api":{ "InlineAIPrompt": ["promptRequest", "relateTo", "commandSettings", "responseSettings", "responseMode"] },
+            "description": "Showcases the usecase of the Inline AI Prompt control.",
+            "sourceFiles": [
+                { "displayName": "ai-rich-text-editor.vue", "path":"src/inline-ai-prompt/ai-rich-text-editor.vue" },
+                { "displayName": "service.ts", "path":"src/inline-ai-prompt/service.ts" } 
+            ]
+        }
+    ]
+}

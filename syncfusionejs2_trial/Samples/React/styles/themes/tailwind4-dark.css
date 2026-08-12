@@ -1,0 +1,253 @@
+.tailwind4-dark .sb-reset-icon:before {
+    content: '\e7e7';
+}
+
+.tailwind4-dark .copycode::before {
+    content: '\e77c';
+    font-size: 25px;
+}
+
+/*Hide property pane */
+@media (max-width: 480px) {
+    .tailwind4-dark .sb-content-tab.e-tab>.e-nested>.e-tab-header>.e-items.e-toolbar-items>.e-toolbar-item>.e-tab-wrap {
+        height: 70px;
+    }
+}
+
+.tailwind4-dark .sb-reset-icon {
+    color: #ffffff
+}
+
+/* tailwind4-dark */
+.tailwind4-dark .sb-content,
+.tailwind4-dark textarea#ruleContent {
+    background: #1f2937;
+}
+
+.tailwind4-dark .sb-home {
+    color: #ffffff
+}
+
+.tailwind4-dark .sb-left-pane .e-listview .e-list-item.e-active:hover {
+    color: #ffffff;
+}
+
+body.tailwind4-dark,
+.tailwind4-dark #sb-header-text,
+.tailwind4-dark .control-name,
+.tailwind4-dark .sample-navigation,
+.tailwind4-dark .sb-icon-Popout,
+.tailwind4-dark .sb-switch-popup a {
+    color: #fff;
+}
+
+.tailwind4-dark .sb-header,
+.tailwind4-dark .sb-search-result .e-list-item,
+.tailwind4-dark .sb-search-result .e-list-group-item {
+    background: #1f2937 !important;
+}
+
+.tailwind4-dark .sb-content-tab>.e-tab.e-nested>.e-tab-header>.e-items.e-toolbar-items>.e-indicator {
+    background: rgb(99, 102, 241);
+}
+
+.tailwind4-dark #left-sidebar {
+    color: #c2c0c0;
+    background: #1f2937;
+}
+
+.tailwind4-dark #left-sidebar {
+    border: none;
+}
+
+.tailwind4-dark .sb-mobile-right-pane {
+    background: #1f2937;
+}
+
+.tailwind4-dark .e-icons.back-icon,
+.tailwind4-dark .sb-plnr-section,
+.tailwind4-dark .sb-bread-crumb,
+.tailwind4-dark .sb-component-name,
+.tailwind4-dark .sb-icon-Home,
+.tailwind4-dark .description-header,
+.tailwind4-dark .sb-setting-translate,
+.tailwind4-dark .sample-navigation>button:hover,
+.tailwind4-dark .sb-switch-popup li:first-child,
+.tailwind4-dark .sb-left-pane .e-listview .e-list-group-item,
+.tailwind4-dark .sb-theme-popup li.active .sb-theme-select {
+    color: rgb(99, 102, 241) !important;
+}
+
+.tailwind4-dark .sb-icon-Hamburger,
+.tailwind4-dark .sb-footer-links a,
+.tailwind4-dark .description-section a {
+    color: rgb(99, 102, 241);
+}
+
+.tailwind4-dark .sb-icon-Hamburger:active {
+    color: white;
+}
+
+.tailwind4-dark .sb-content-section,
+.tailwind4-dark .sb-switch-popup .tailwind4-dark .sb-content-tab-header,
+.tailwind4-dark .sb-content-section .sb-content-tab-header {
+    background: #1f2937;
+    border-color: #c1c1c1;
+}
+
+.tailwind4-dark .sample-navigation>button:hover,
+.tailwind4-dark .sb-plnr-section,
+.tailwind4-dark .sb-icon-Popout:hover {
+    color: rgb(99, 102, 241);
+}
+
+.tailwind4-dark .sb-content-tab>.e-tab.e-nested>.e-tab-header>.e-items.e-toolbar-items>.e-toolbar-item>.e-tab-wrap>.e-text-wrap>.e-tab-text,
+.tailwind4-dark .sb-content-tab>.e-tab.e-nested>.e-tab-header>.e-items.e-toolbar-items>.e-toolbar-item>.e-tab-wrap>.e-text-wrap>.e-tab-text {
+    color: #ffffff !important;
+}
+
+.tailwind4-dark code,
+.tailwind4-dark .sb-switch-popup,
+.tailwind4-dark .sb-setting-popup,
+.tailwind4-dark .sb-search-result,
+.tailwind4-dark .sb-src-code,
+.tailwind4-dark .CodeMirror,
+.tailwind4-dark .sb-api-section,
+.tailwind4-dark .sb-theme-popup,
+.tailwind4-dark .copy-tooltip,
+.tailwind4-dark .e-icons.copycode,
+.tailwind4-dark #search-input-wrapper input,
+.tailwind4-dark #search-input-wrapper input::placeholder {
+    color: #ffffff;
+    background: #1f2937;
+}
+
+.tailwind4-dark .sb-search-btn:hover,
+.tailwind4-dark .sb-search-btn.active,
+.tailwind4-dark .sb-setting-btn:hover,
+.tailwind4-dark .sb-setting-btn.active,
+.tailwind4-dark .sb-switch-popup li:hover,
+.tailwind4-dark .theme-wrapper:hover,
+.tailwind4-dark .theme-wrapper.active,
+.tailwind4-dark .sb-theme-popup li:hover,
+.tailwind4-dark .sb-search-result .e-list-item:hover,
+.tailwind4-dark .sb-left-pane .e-listview .e-list-item:hover,
+.tailwind4-dark .sb-themeswitch-btn:hover,
+.tailwind4-dark .sb-themeswitch-btn.active {
+    background-color: rgb(107, 114, 128);
+}
+
+.tailwind4-dark .sb-left-pane .e-treeview .e-list-item.e-active>.e-fullrow {
+    background-color: rgb(107, 114, 128) !important;
+    border: none;
+}
+
+.tailwind4-dark .setting-responsive .sb-responsive-items {
+    width: 104px;
+    background-color: rgb(107, 114, 128);
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid transparent;
+    display: table-cell;
+    cursor: pointer;
+}
+
+.tailwind4-dark .setting-responsive .sb-responsive-items.active {
+    background-color: rgb(99, 102, 241);
+    color: white;
+}
+
+.tailwind4-dark .sb-left-pane .e-listview .e-list-item.e-active,
+.tailwind4-dark .cont {
+    background-color: rgb(99, 102, 241) !important;
+}
+
+.tailwind4-dark .sb-left-pane .e-listview .e-list-item:hover {
+    color: aliceblue;
+}
+
+.tailwind4-dark .sb-left-pane {
+    background: #1f2937;
+}
+
+.tailwind4-dark .sb-body-overlay {
+    background: #1f2937;
+}
+
+.tailwind4-dark .sb-mobile-left-pane {
+    background: #1f2937;
+}
+
+.tailwind4-dark .sb-mobilefooter>.e-btn.e-flat {
+    background: #1f2937;
+    color: #fff;
+}
+
+.tailwind4-dark .sb-mobilefooter>.e-btn.e-flat:hover {
+    color: rgb(99, 102, 241);
+}
+
+.tailwind4-dark .sb-left-pane .e-treeview .e-list-item.e-hover>.e-fullrow,
+.tailwind4-dark .sb-content-tab.e-tab>.e-nested>.e-tab-header>.e-items.e-toolbar-items>.e-indicator {
+    background-color: rgb(99, 102, 241);
+}
+
+.tailwind4-dark .sb-header-text-left,
+.tailwind4-dark .sb-header-text-right {
+    color: #ffffff
+}
+
+.tailwind4-dark .e-samplestatus.new.tree,
+.tailwind4-dark .e-samplestatus.update.tree,
+.tailwind4-dark .e-samplestatus.preview.tree {
+    margin-top: 7px;
+    margin-bottom: 4.5px;
+    margin-right: -15px;
+    height: 22px;
+}
+
+.tailwind4-dark .e-samplestatus.new,
+.tailwind4-dark .e-samplestatus.update,
+.tailwind4-dark .e-samplestatus.preview {
+    margin: 2px 0;
+    height: 22px;
+    margin-top: 0.5px;
+}
+
+.tailwind4-dark .sb-content-tab.e-tab>.e-nested>.e-tab-header>.e-items.e-toolbar-items>.e-toolbar-item>.e-tab-wrap>.e-text-wrap>.e-tab-text,
+.tailwind4-dark .sb-search-input .e-ddl .e-clear-icon {
+    color: #ffffff !important;
+}
+
+.tailwind4-dark .sb-content-tab.e-tab>.e-nested>.e-tab-header>.e-items.e-toolbar-items>.e-toolbar-item.e-active>.e-tab-wrap>.e-text-wrap>.e-tab-text,
+.tailwind4-dark .sb-content-tab.e-tab>.e-nested>.e-tab-header>.e-items.e-toolbar-items>.e-toolbar-item>.e-tab-wrap>.e-text-wrap>.e-tab-text:hover,
+.tailwind4-dark .sb-search-result .e-list-group-item {
+    color: rgb(99, 102, 241) !important;
+}
+
+.tailwind4-dark .sb-theme-select {
+    color: rgb(31, 41, 55) !important;
+}
+
+.tailwind4-dark .sb-theme-popup li:hover .sb-theme-select {
+    color: transparent !important;
+}
+
+.tailwind4-dark .sb-theme-popup li:hover.active .sb-theme-select,
+.tailwind4-dark .sb-left-pane .e-treeview .e-list-item.e-active>.e-text-content .e-list-text {
+    color: white !important;
+}
+
+.tailwind4-dark .sb-source-code-section .e-toolbar .e-toolbar-items {
+    vertical-align: middle;
+}
+
+.tailwind4-dark .sb-nextjs-icon {
+    fill: #ffffff;
+}
+
+.tailwind4-dark .sb-nextjs-icon .sb-nextjs-pathb,
+.tailwind4-dark .sb-nextjs-icon .sb-nextjs-pathc {
+    fill: #333333;
+}

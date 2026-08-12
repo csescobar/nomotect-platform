@@ -1,0 +1,19 @@
+.tailwind4 .copycode::before {
+    content: '\e77c';
+    font-size: 25px;
+}
+
+.tailwind4 .e-samplestatus.new.tree,
+.tailwind4 .e-samplestatus.update.tree,
+.tailwind4 .e-samplestatus.preview.tree {
+    margin: 1px 0;
+    height: 22px;
+    margin-top: 8px;
+}
+
+.tailwind4 .e-samplestatus.new,
+.tailwind4 .e-samplestatus.update,
+.tailwind4 .e-samplestatus.preview {
+    margin: 1px 0;
+    height: 22px;
+}

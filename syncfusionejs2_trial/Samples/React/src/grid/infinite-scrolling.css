@@ -1,0 +1,216 @@
+.image {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url('src/grid/images/spinner.gif');
+    background-position: center;
+    width: 16px;
+    height: 28px;
+}
+
+.e-bigger .image {
+    height: 36px;
+}
+
+#popup {
+    position: absolute;
+    background-color: transparent;
+    display: none;
+    z-index: 100;
+}
+
+.div-button {
+    margin: 5px 5px 5px 0;
+}
+
+#performanceTime {
+    float: right;
+    margin-top: 3px;
+}
+
+.e-bigger #performanceTime {
+    margin-top: 8px;
+}
+
+#InfiniteScroll .e-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 150px;
+}
+
+#InfiniteScroll .e-value {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 8px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.material3-dark #InfiniteScroll .e-value,
+.bootstrap5\.3-dark #InfiniteScroll .e-value,
+.fluent2-dark #InfiniteScroll .e-value,
+.tailwind3-dark #InfiniteScroll .e-value,
+.fluent2-highcontrast #InfiniteScroll .e-value,
+.fluent-dark #InfiniteScroll .e-value,
+.highcontrast #InfiniteScroll .e-value {
+    color: white;
+}
+
+#InfiniteScroll .e-track {
+    height: 11px;
+    overflow: hidden;
+    background: #e2e8f0;
+    border-radius: 999px;
+    margin-top: 8px;
+}
+
+#InfiniteScroll .e-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+#InfiniteScroll .e-profit .e-fill {
+    background: linear-gradient(90deg, #2563eb, #0ea5e9);
+}
+
+/* ✅ Remark chip */
+#InfiniteScroll .remark-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+#InfiniteScroll .remark-chip.neutral {
+    background: #e0f2fe;
+    color: #075985;
+}
+
+#InfiniteScroll .remark-chip.warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+#InfiniteScroll .e-icon-location::before {
+    content: "\e30c";
+}
+
+#InfiniteScroll .e-icon-calender::before {
+    content: "\e7c5";
+}
+
+#InfiniteScroll .e-location,
+#InfiniteScroll .e-icon-calender::before {
+    margin-right: 5px;
+}
+
+.highcontrast #InfiniteScroll .e-grid td.e-rowcell.e-selectionbackground.e-active .e-icons,
+.fluent2-highcontrast #InfiniteScroll .e-grid .e-row:hover .e-icons {
+    color: black;
+}
+
+#InfiniteScroll .e-track {
+    background-color: #eee;
+    height: 10px;
+    border-radius: 4px;
+}
+
+/* ✅ Fill colors */
+#InfiniteScroll .e-fill.low {
+    background-color: #e74c3c;
+}
+
+#InfiniteScroll .e-fill.medium {
+    background-color: #f1c40f;
+}
+
+#InfiniteScroll .e-fill.high {
+    background-color: #2ecc71;
+}
+
+/* ✅ Quarter UI box */
+#InfiniteScroll .quarter-box {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#InfiniteScroll .quarter-text {
+    color: white;
+}
+
+#InfiniteScroll .quarter1 {
+    background-color: #3b82f6;
+}
+
+#InfiniteScroll .quarter2 {
+    background-color: #22c55e;
+}
+
+#InfiniteScroll .quarter3 {
+    background-color: #f59e0b;
+}
+
+#InfiniteScroll .quarter4 {
+    background-color: #ef4444;
+}
+
+/* ✅ Dark modes */
+.material3-dark #InfiniteScroll .quarter1,
+.bootstrap5\.3-dark #InfiniteScroll .quarter1,
+.fluent2-dark #InfiniteScroll .quarter1,
+.tailwind3-dark #InfiniteScroll .quarter1,
+.fluent2-highcontrast #InfiniteScroll .quarter1,
+.fluent-dark #InfiniteScroll .quarter1,
+.highcontrast #InfiniteScroll .quarter1 {
+    background-color: #1e3a8a;
+}
+
+.material3-dark #InfiniteScroll .quarter2,
+.bootstrap5\.3-dark #InfiniteScroll .quarter2,
+.fluent2-dark #InfiniteScroll .quarter2,
+.tailwind3-dark #InfiniteScroll .quarter2,
+.fluent2-highcontrast #InfiniteScroll .quarter2,
+.fluent-dark #InfiniteScroll .quarter2,
+.highcontrast #InfiniteScroll .quarter2 {
+    background-color: #14532d;
+}
+
+.material3-dark #InfiniteScroll .quarter3,
+.bootstrap5\.3-dark #InfiniteScroll .quarter3,
+.fluent2-dark #InfiniteScroll .quarter3,
+.tailwind3-dark #InfiniteScroll .quarter3,
+.fluent2-highcontrast #InfiniteScroll .quarter3,
+.fluent-dark #InfiniteScroll .quarter3,
+.highcontrast #InfiniteScroll .quarter3 {
+    background-color: #78350f;
+}
+
+.material3-dark #InfiniteScroll .quarter4,
+.bootstrap5\.3-dark #InfiniteScroll .quarter4,
+.fluent2-dark #InfiniteScroll .quarter4,
+.tailwind3-dark #InfiniteScroll .quarter4,
+.fluent2-highcontrast #InfiniteScroll .quarter4,
+.fluent-dark #InfiniteScroll .quarter4,
+.highcontrast #InfiniteScroll .quarter4 {
+    background-color: #7f1d1d;
+}
+
+#InfiniteScroll .country-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#InfiniteScroll .country-flag {
+    width: 20px;
+    height: 14px;
+    border-radius: 2px;
+    object-fit: cover;
+}

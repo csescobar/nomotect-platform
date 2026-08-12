@@ -1,0 +1,48 @@
+<div class="col-lg-12 control-section">
+    <div class="content-wrapper">
+        <div id='container'>
+            <div>
+              <ng-template #toolbarTemplate>
+                <div id='toolbar-template'>
+                  <button id='calculate_Grade' class='e-btn e-primary' (click)="CalculateGrade()">Calculate Grade</button>
+                </div>
+              </ng-template>
+              <ejs-grid #grid [dataSource]='gridData' [toolbar]='toolbar' (queryCellInfo)='CustomizeCell($event)'
+                [enableHover]='false'>
+                <e-columns>
+                  <e-column field="StudentID" isPrimaryKey="true" headerText="Student ID" textAlign="Right"
+                    width="100"></e-column>
+                  <e-column field="StudentName" headerText="Student Name" width="100"></e-column>
+                  <e-column field="FirstYearGPA" textAlign="Center" headerText="First Year GPA" width="100"></e-column>
+                  <e-column field="SecondYearGPA" headerText="Second Year GPA" headerTextAlign="Center" textAlign="Center"
+                    width="100"></e-column>
+                  <e-column field="ThirdYearGPA" headerText="Third Year GPA" headerTextAlign="Center " textAlign="Center"
+                    width="100"></e-column>
+                  <e-column field="FinalYearGPA" headerText="Final Year GPA" [visible]="false" headerTextAlign="Center"
+                    textAlign="Center" width="100"></e-column>
+                  <e-column field="TotalGPA" headerText="Total GPA" [visible]="false" headerTextAlign="Center" textAlign="Center"
+                    width="100"></e-column>
+                  <e-column field="TotalGrade" headerText="Total Grade" [visible]="false" headerTextAlign="Center"
+                    textAlign="Center" width="100"></e-column>
+                </e-columns>
+
+              </ejs-grid>
+            </div>
+          </div>
+    </div>
+    <div id="action-description">
+        <p>This sample demonstrates how the syncfusion Angular DataGrid, integrated with AI, can predict data based on
+            the grid's existing entries
+        </p>
+        <p>To explore this and more Syncfusion Angular Smart AI integrations locally, check out our <a target='_blank'
+                href='https://github.com/syncfusion/smart-ai-samples/tree/master/angular' aria-label="Navigate to explore the syncfusion Angular AI Demos repository">GitHub
+                repository</a>.</p>
+    </div>
+    <div id="description">
+        <p>In this example, the DataGrid displays information such as Student Name and ID, along with GPAs for the first,
+            second, and third years. With AI, the Syncfusion Angular DataGrid can forecast the Final-year GPA, Total, and Grade.
+            These predictions are shown in the grid when you click the "Calculate Grade" button
+        </p>
+    </div>
+    <app-ai-toast></app-ai-toast>
+</div>

@@ -1,0 +1,22 @@
+export declare const componentList: string[];
+export declare const pdfViewerSDKComponents: string[];
+export declare const spreadsheetEditorSDKComponents: string[];
+export declare const wordEditorSDKComponents: string[];
+export declare const gridSDKComponents: string[];
+export declare const fileManagerSDKComponents: string[];
+export declare const chartsSDKComponents: string[];
+export declare const rteSDKComponents: string[];
+export declare const diagramSDKComponents: string[];
+export declare const ganttSDKComponents: string[];
+export declare const schedulerSDKComponents: string[];
+export declare const essentialUISDKComponents: string[];
+/**
+ * To set license key.
+ *
+ * @param {string} key - license key
+ * @returns {void}
+ */
+export declare function registerLicense(key: string): void;
+export declare const validateLicense: Function;
+export declare const getVersion: Function;
+export declare const createLicenseOverlay: Function;

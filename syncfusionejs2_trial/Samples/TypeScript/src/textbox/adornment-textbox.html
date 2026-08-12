@@ -1,0 +1,53 @@
+<div class="col-lg-12 control-section">
+    <div class="content-wrapper ador-textbox">
+        <div class="row">
+            <input id="prepend"/>
+        </div>
+        <div class="row">
+            <input id="append" />
+        </div>
+        <div class="row">
+            <input id="iconTextbox" />
+        </div>
+    </div>
+</div>  
+
+<div id="action-description">
+    <p>
+        This example demonstrates the adornment capabilities of the Syncfusion TextBox component. Adornments are custom elements that can be added by using the <code>prependTemplate</code> and <code>appendTemplate</code> properties of the textbox to provide additional functionality or visual cues. This feature allows for enhanced user interaction, such as a dropdown for prefixes or clickable icons to toggle password visibility or clear input.
+    </p>
+</div>
+<div id="description">
+    <p>This sample demonstrates the adornment feature of the Syncfusion JavaScript TextBox, showcasing how to integrate custom elements or icons at both the beginning and end of the input field</p>
+    <ul>
+        <li>The first textbox illustrates a prepended dropdown for selecting titles (Mr., Mrs.).</li>
+        <li>The second textbox features an appended eye icon, allowing users to toggle password visibility.</li>
+        <li>The third textbox combines a prepended user icon with an appended ".com" text and a trash icon that clears the input when clicked.</li>
+    </ul>
+    <p>These examples highlight the flexibility and enhanced user experience provided by TextBox adornments.</p>    
+</div>
+<!-- custom code start -->
+<style>
+    .content-wrapper {
+        width: 35%;
+        margin: 5% auto;
+        min-width: 185px;
+    }
+    .e-prepend-textbox .e-prepend-template {
+        padding: 0 !important;
+    }
+    .e-prepend-textbox .e-prepend-template .e-control-wrapper.e-ddl  {
+        padding-left: 10px;
+    }
+    .e-prepend-textbox .e-prepend-template .e-ddl-icon {
+        display: none;
+    }
+    .material3 .ador-textbox .row {
+        margin: 7% 0;
+    }
+
+    .e-float-input.e-input-group.e-prepend-textbox input.e-input {
+        padding-left: 0;
+    }
+</style>
+<!-- custom code end-->

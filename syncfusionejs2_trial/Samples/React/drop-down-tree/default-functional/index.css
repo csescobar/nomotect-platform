@@ -1,0 +1,26 @@
+.dropdowntree-default  .col-lg-8 {
+    min-height: 250px;
+}
+
+.dropdowntree-default #default {
+    margin: 0 auto;
+    width: 250px !important;
+    padding-top: 15px;
+}
+
+.dropdowntree-default .property-panel-content {
+    overflow: hidden;
+}
+
+.dropdowntree-default .property-section{
+    padding-bottom: 15px;
+}
+
+.dropdowntree-default .property-panel-section {
+    padding-left: 0;
+}
+
+.dropdowns .property-panel-content td {
+    padding: 10px 0px;
+    width: 35%;
+}

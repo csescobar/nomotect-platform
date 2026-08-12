@@ -1,0 +1,38 @@
+#PivotView {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media only screen and (max-width: 400px) {
+    #pivot-table-section {
+        overflow: auto;
+    }
+}
+
+#PivotViewcontainerwrapper {
+    height: auto !important;
+}
+
+.switch-container {
+    display: flex;
+    gap: 50px;
+}
+
+.tabular-layout-switch, .repeat-label-switch {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pivot-layout-switch, #layout-switch, .pivot-repeatlabel-switch, #repeatlabel-switch {
+    margin-left: 10px;
+}
+
+#layout-label, #repeat-label {
+    font-size: 20px;
+}
+
+.pivot-switch-label {
+    margin-bottom: 0px;
+}

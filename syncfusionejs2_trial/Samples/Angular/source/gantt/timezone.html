@@ -1,0 +1,55 @@
+<div id="action-description">
+  <p>This sample demonstrates how the Angular Gantt Chart schedules project tasks using the UTC timezone, ensuring consistent date and time handling across global teams</p>
+</div>
+
+<div class="control-section">
+  <div class="timezone-toolbar">
+    <!-- Left-aligned timezone label and combobox -->
+    <div class="timezone-selector">
+      <label for="timezonelist">Time Zone:</label>
+      <ejs-combobox #timezonelist id="timezonelist" [dataSource]="timeZoneData"
+        [fields]="{ text: 'text', value: 'text' }" [value]="timezoneValue" placeholder="Select timezone"
+        popupHeight="350px" popupWidth="300px" ignoreAccent="true" filterType="Contains"
+        [allowFiltering]="true" (change)="timeZoneChange($event)">
+      </ejs-combobox>
+    </div>
+
+    <!-- Right-aligned buttons and dropdown -->
+    <div class="timeline-controls">
+      <button ejs-button #previousTimespan id="previousTimespan" cssClass="previous-timespan"
+        (click)="previousTimeSpan()" aria-label="Previous TimeSpan">
+        <span class="e-icons e-chevron-left-fill"></span>
+      </button>
+      <ejs-dropdownlist #timeline id="timeline" [dataSource]="timelineData"
+        [fields]="{ text: 'value', value: 'value' }" placeholder="Select timeline mode" value="Day"
+        (change)="changeTimelineMode($event)">
+      </ejs-dropdownlist>
+      <button ejs-button #nextTimespan id="nextTimespan" cssClass="next-timespan"
+        (click)="nextTimeSpan()" aria-label="Next TimeSpan">
+        <span class="e-icons e-chevron-right-fill"></span>
+      </button>
+    </div>
+  </div>
+  <ejs-gantt #gantt id="gantt" [dataSource]="data" [taskFields]="taskSettings" [dayWorkingTime]="dayWorkingTime"
+    [timelineSettings]="timelineSettings" [columns]="columns" [treeColumnIndex]="1" [timezone]="timezoneValue"
+    durationUnit="Hour" dateFormat="hh:mm a" height="650px" [includeWeekend]="true" rowHeight="46" taskbarHeight="25"
+    [toolbar]="toolbar">
+  </ejs-gantt>
+</div>
+
+
+<div id="description">
+  <p>This sample demonstrates how the Angular Gantt Chart schedules project tasks using the UTC timezone, ensuring
+    consistent date and time handling across global teams.</p>
+  <p>
+    When a user sets any timezone, dates are converted based on the value set to the
+    <code><a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#timezone">timezone</a></code>
+    property of the Gantt control.
+  </p>
+  <p>
+        Gantt component features are segregated into individual feature-wise modules. To use selection and toolbar support, inject the
+        <code>SelectionService</code> and <code>ToolbarService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+  <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/gantt/timezone">documentation section</a>.</p>
+</div>

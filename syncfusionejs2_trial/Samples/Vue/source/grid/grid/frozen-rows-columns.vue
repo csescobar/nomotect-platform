@@ -1,0 +1,144 @@
+<template>
+<div>
+    <div id="action-description">
+        <p>This sample demonstrates the default rendering of the Grid with minimum configuration.</p>
+    </div>  
+    <div class="col-lg-8 control-section">
+        <ejs-grid :dataSource="data" height='350' :frozenRows='rows' :frozenColumns='columns' :allowSelection='false' :enableHover='false' :allowResizing='true' :allowFiltering='true' :filterSettings='filterSettings' :allowSorting='true' :allowMultiSorting='false' :allowPaging='true'>
+            <e-columns>
+                <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' :isPrimaryKey='true'></e-column>
+                <e-column field='Freight' headerText='Freight' width='125' format='C2'></e-column>
+                <e-column field='CustomerID' headerText='Customer ID' width='150'></e-column>
+                <e-column field='CustomerName' headerText='Customer Name' width='180'></e-column>
+                <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign='Right'></e-column>
+                <e-column field='ShippedDate' headerText='Shipped Date' width='180' format="yMd" textAlign='Right'></e-column>
+                <e-column field='ShipName' headerText='Ship Name' width='300'></e-column>
+                <e-column field='ShipAddress' headerText='Ship Address' width='270'></e-column>
+                <e-column field='ShipCity' headerText='Ship City' width='250'></e-column>
+                <e-column field='ShipCountry' headerText='Ship Country' width='250'></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+    <div class="col-lg-4 property-section">
+      <table
+        id="property"
+        title="Properties"
+        style="width: 100%; margin-left: -10px"
+      >
+        <colgroup>
+          <col span="1" style="width: 40%" />
+          <col span="1" style="width: 60%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div>Frozen Rows</div>
+            </td>
+            <td>
+              <div id="frozeninput">
+                <ejs-numerictextbox
+                  ref="row"
+                  :min="0"
+                  :max="5"
+                  format="n"
+                  :value="2"
+                ></ejs-numerictextbox>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>Frozen Columns</div>
+            </td>
+            <td>
+              <div id="frozeninput">
+                <ejs-numerictextbox
+                  ref="column"
+                  :min="0"
+                  :max="columnValue"
+                  format="n"
+                  :value="1"
+                ></ejs-numerictextbox>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div id="buttonSet">
+                <ejs-button @click="btnClick">Set</ejs-button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+     <div id="description">
+       <p>
+           The freezing feature enables the user to freeze certain rows/columns to scroll remaining movable content. This can be achieved by setting <b>frozenRows</b> and <b>frozenColumns</b> property.
+        </p>
+        <p>
+        In this demo sample, the first column and two rows are set to frozen by using the  <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/vue/documentation/api/grid/#frozenrows">frozenRows</a></code>  and 
+        <code><a target="_blank" class="code" href="http://ej2.syncfusion.com/vue/documentation/api/grid/#frozencolumns">frozenColumns
+        </a></code>  properties.
+    </p>
+    <p style="font-weight: 500">Injecting Module:</p>
+    <p>
+         Grid component features are segregated into individual feature-wise modules. To use frozen rows and columns feature, we need to inject
+         <code>Freeze</code> into the <code>provide</code> section.
+    </p>
+    <p>
+        Looking for the full Vue Data Grid component overview, features, pricing, and documentation? Visit our
+        <a target="_blank" href="https://www.syncfusion.com/vue-components/vue-data-grid">
+            Vue Data Grid component</a> page.
+    </p>
+    </div>
+
+</div>
+</template>
+<!-- custom code start -->
+<style scoped>
+#buttonSet {
+  float: right;
+}
+#frozeninput {
+  min-width: 148px;
+}
+</style>
+<!-- custom code end -->
+<script lang="ts">
+import { GridComponent, ColumnsDirective, ColumnDirective, Freeze, Resize, Sort, Page, Filter } from "@syncfusion/ej2-vue-grids";
+import { Browser } from '@syncfusion/ej2-base';
+import { ButtonComponent } from "@syncfusion/ej2-vue-buttons";
+import { NumericTextBoxComponent } from '@syncfusion/ej2-vue-inputs';
+import { orderDetails } from "./data-source";
+
+export default {
+  components: {
+    'ejs-grid': GridComponent,
+    'e-columns': ColumnsDirective,
+    'e-column': ColumnDirective,
+    'ejs-numerictextbox': NumericTextBoxComponent,
+    'ejs-button': ButtonComponent,
+  },
+  data: () => {
+    return {
+      data: orderDetails,
+      filterSettings: { type: 'Excel' },
+      rows: 2,
+      columns: 1,
+      columnValue: Browser.isDevice ? 1 : 2
+    };
+  },
+  methods: {
+      btnClick: function (){
+        (this as any).rows = parseInt(((this as any).$refs.row).getText(), 10);
+        (this as any).columns = parseInt(((this as any).$refs.column).getText(), 10);
+    }
+  },
+  provide: {
+      grid: [Freeze, Resize, Sort, Page, Filter]
+  }
+}
+</script>

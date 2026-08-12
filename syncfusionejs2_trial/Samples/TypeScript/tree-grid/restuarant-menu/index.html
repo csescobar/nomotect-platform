@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <!-- Google Tag Manager -->
+    <script>
+        if (window.location.hostname === 'ej2.syncfusion.com') {
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-W8WD8WN');
+        }
+    </script>
+    <!-- End Google Tag Manager -->   
+        <script>function _0xde02(){var _0x5f2ba3=['9TYJyPJ','8519130vccODC','length','indexOf','642676nYqdEN','split','1588446jBtanR','1207348wihLFo','204856gJKXOd','1996386mrrBRO','7202905WqbCdL','href','ej2.syncfusion.com','36VGEwVI'];_0xde02=function(){return _0x5f2ba3;};return _0xde02();}var _0x5c03ce=_0x2e99;(function(_0x4610ba,_0x2edf38){var _0x2bab05=_0x2e99,_0x295339=_0x4610ba();while(!![]){try{var _0x258b1a=parseInt(_0x2bab05(0xd5))/0x1+-parseInt(_0x2bab05(0xd7))/0x2+parseInt(_0x2bab05(0xd1))/0x3*(parseInt(_0x2bab05(0xd8))/0x4)+-parseInt(_0x2bab05(0xdb))/0x5+parseInt(_0x2bab05(0xd2))/0x6+parseInt(_0x2bab05(0xda))/0x7+-parseInt(_0x2bab05(0xd9))/0x8*(parseInt(_0x2bab05(0xd0))/0x9);if(_0x258b1a===_0x2edf38)break;else _0x295339['push'](_0x295339['shift']());}catch(_0x5cb54d){_0x295339['push'](_0x295339['shift']());}}}(_0xde02,0xdfa28));var bypassKey=[0x73,0x79,0x6e,0x63,0x66,0x75,0x73,0x69,0x6f,0x6e,0x2e,0x69,0x73,0x4c,0x69,0x63,0x56,0x61,0x6c,0x69,0x64,0x61,0x74,0x65,0x64];function _0x2e99(_0x50a339,_0x56f268){var _0xde0271=_0xde02();return _0x2e99=function(_0x2e9975,_0x55ee02){_0x2e9975=_0x2e9975-0xce;var _0x32119=_0xde0271[_0x2e9975];return _0x32119;},_0x2e99(_0x50a339,_0x56f268);}function convertToChar(_0x3e5688){var _0x37d95d=_0x2e99,_0x30ade7='';for(var _0x30d200=0x0,_0x532558=_0x3e5688;_0x30d200<_0x532558[_0x37d95d(0xd3)];_0x30d200++){var _0xc98512=_0x532558[_0x30d200];_0x30ade7+=String['fromCharCode'](_0xc98512);}return _0x30ade7;}location[_0x5c03ce(0xce)]&&location['href'][_0x5c03ce(0xd4)](_0x5c03ce(0xcf))!==-0x1&&(window[convertToChar(bypassKey)['split']('.')[0x0]]={},window[convertToChar(bypassKey)[_0x5c03ce(0xd6)]('.')[0x0]][convertToChar(bypassKey)[_0x5c03ce(0xd6)]('.')[0x1]]=!![]);</script>
+    <title>Javascript Tree Grid Restuarant Menu Example - Syncfusion</title>
+	<meta name="description" content="This example explains the Restuarant Menu functionality in the Javascript Tree Grid component. Explore it for more details.">
+	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <meta name="author" content="Syncfusion">
+    <link rel="shortcut icon" href="https://ej2.syncfusion.com/home/favicon.ico">
+    <script type="text/javascript">
+        var themeName = location.hash || 'material';
+        themeName = themeName.replace('#', '');
+        window.ripple = (themeName === "material")
+        document.write('<link href="../../styles/' + themeName + '.css" rel="stylesheet">');
+    </script>
+    <script type="text/javascript">
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+            document.write("<script src=\'https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js\'>");
+        }</script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <style>
+        #loader {
+            color: #008cff;
+            height: 40px;
+            left: 45%;
+            position: absolute;
+            top: 45%;
+            width: 30%;
+        }
+
+        body {
+            touch-action: none;
+        }
+    </style>
+
+    
+</head>
+<body class="ej2-new">
+        
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3WXFWCW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8WD8WN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div hidden id="sync-analytics" data-queue="EJ2 - Javascript - Demos"></div>
+    
+    <div class="sample-browser">
+        <div id="sample-header" class="sb-header" role="banner">
+            <div class="sb-header-left sb-left sb-table">
+                <div class="sb-header-item sb-table-cell">
+                    <div class="header-logo">
+                        <a href="#" target="" rel="noopener noreferrer">
+                                </a><a href="https://ej2.syncfusion.com/home" target="" rel="noopener noreferrer">
+                            <div class="footer-logo"> </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="sb-header-splitter sb-download-splitter"></div>
+                <div class="sb-header-item sb-table-cell">
+                    <div id="sb-header-text" class="e-sb-header-text">
+
+                        <span class="sb-header-text-left">Essential Studio for Javascript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sb-header-right sb-right sb-table">
+                <div class="sb-header-item sb-table-cell">
+                    <div class="product-style">
+                        <div><a href="https://www.syncfusion.com/javascript-ui-controls/tree-grid">PRODUCT DETAILS</a></div>
+                    </div>
+                </div>
+                <div class="sb-header-item sb-table-cell">
+                    <div class="sb-header-item sb-table-cell sb-download-wrapper">
+                        <a href="https://www.syncfusion.com/downloads/essential-js2" target="_blank">
+                            <button id="download-now" class="sb-download-btn">
+                                <span class="sb-download-text">Download Now</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="content e-view">
+        <div class="sample-content">
+            <div id="sample-bread-crumb" class="sb-bread-crumb">
+                <div class="sb-custom-item sb-sample-navigation sb-right sb-header-right sb-table-cell">
+                    <div id="prev-sample" class="sb-navigation-prev e-control e-tooltip " aria-label="previous sample" title="Previous Sample">
+                        <a href="https://ej2.syncfusion.com/demos/tree-grid/employee/"="" class=""><span class="sb-icons sb-icon-Previous"></span></a>
+                       
+                    </div>
+                    <div id="next-sample" class="sb-navigation-next e-control e-tooltip" aria-label="next sample" title="Next Sample">
+                        <a href="https://ej2.syncfusion.com/demos/tree-grid/localdata/"="" class=""><span class="sb-icons sb-icon-Next"></span></a>
+                        
+                    </div>
+                </div>
+                
+
+                
+<h1 class="sb-bread-crumb-text">Example of Restuarant Menu in Javascript Tree Grid</h1>
+<h2 class="sb-bread-crumb-text">
+                    <div class="category-allcontrols"><a href="https://ej2.syncfusion.com/demos"><span>All Controls</span></a></div>
+                    <div class="category-seperator sb-icons"> / </div>
+                    <div class="category-text bread-ctext"><a href="https://ej2.syncfusion.com/demos/#/tailwind3/tree-grid/default.html"><span>Tree Grid</span></a></div>
+                    <div class="category-seperator sb-icons"> / </div>
+                    <div class="crumb-sample">Restaurant Menu</div>
+                </h2>
+            </div>
+            <div class="control-content">
+            <div id="action-description">
+                    <p>
+                        </p><div class="layout" id="actionDes">
+  <p>This demo shows how the Tree Grid can be used to create a visually rich and interactive food menu. The demo meets
+    different viewer preferences, such as vegetarian and bestseller dishes. It uses a food dataset that includes
+    details for categories like salads, pizza, burgers, hot-dogs, chowmein, and desserts, with descriptions, prices,
+    ratings, and bestseller indicators.
+  </p>
+</div>
+                        <a id="details" class="layout" onclick="desDetails()"> More Details...</a>
+                        <script>
+                            function desDetails() {
+                                var element = document.getElementById('description-section');
+                                if (element) {
+                                    element.scrollIntoView();
+                                }
+                            }
+                        </script>
+                    <p></p>
+                </div>
+                <div class="container-fluid">
+                <div class="control-section">
+                        <script id="emptytemplate" type="text/x-template">
+  <div class='emptyRecordTemplate'>
+    <span class="resmenu-emptyRecord">Hmm... we could not find that dish. Want to try something else?</span> 
+  </div>
+</script>
+<script id="rowTemplate" type="text/x-template">
+  <tr>
+    ${if(FoodName === FoodCategory || CategoryId == null)}
+    <td class='resmenu-cell resmenu-parentfoodname' colspan="3">
+      <span class="resmenu-title">${FoodName}&nbsp;<span> (${iterateFoodCount(vegCount, nonvegCount)})</span>  </span> 
+    </td>
+    ${else}
+    <td class='resmenu-cell'>
+      <div class='resmenu-card'>
+        <div class="foodname-row" style=" display: flex;">
+          ${if(FoodType === 'Veg')}
+          <span class='resmenu-FoodCategory_icon_veg'><span class="resmenu-veg-icon"></span>  </span> 
+          ${else}
+          <span class='resmenu-FoodCategory_icon_nonveg'><span class="resmenu-nonveg-icon"></span>  </span> 
+          ${/if}
+          <span class='resmenu-foodname'>${FoodName}</span> 
+        </div>
+        <div class="resmenu-rating">
+          <span>
+              <span class="resmenu-rating-thumbsup">👍</span> 
+          <span class="resmenu-rating-value">${Rating}</span>  &nbsp;
+          <span class="resmenu-rating-count">(${TotalReviews})</span> 
+          </span> 
+        </div>
+        <div class='resmenu-fooddesc'>
+          ${FoodDescription}
+        </div>
+        <div class="resmenu-info-separator">${chiptags(ingredients)}</div>
+      </div>
+    </td>
+    <td class='resmenu-cell'>
+      <div class="resmenu-price-section">
+        ${if(originalPrice> newPrice)}
+        <span class="resmenu-price">${newPrice} &nbsp;&nbsp;</span> 
+        <span class='price-direction'>  <-- </span> 
+        <span class="resmenu-old-price">${originalPrice}</span>  ${else}
+        <span class="resmenu-price">${newPrice}</span>  ${/if}
+      </div>
+    </td>
+    <td class='resmenu-cell'>
+      <div class="menu-right">
+        <div class="resmenu-image-wrap">
+          <img class="resmenu-image" src="${Image}" alt="${FoodName}" />
+          <div class="resmenu-count">
+            <input id="food-numeric" class="resmenu-food-count" type="text" />
+          </div>
+        </div>
+      </div>
+    </td>
+    ${/if}
+  </tr>
+</script>
+<style>
+  .border {
+    border-color: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    border-width: 1px 0px 0px 0px;
+  }
+  
+  img {
+    width: 60px;
+    height: 60px;
+    vertical-align: baseline;
+    border-radius: 50px;
+    margin-left: 20px;
+    background-repeat: no-repeat;
+  }
+  
+  .tailwind3-dark #TreeGrid .e-table td.border,
+  .fluent2-dark #TreeGrid .e-table td.border,
+  .bootstrap5\.3-dark #TreeGrid .e-table td.border,
+  .material3-dark #TreeGrid .e-table td.border,
+  .fluent2-highcontrast #TreeGrid .e-table td.border {
+    color: #fff;
+  }
+  
+  #TreeGrid .e-gridheader .e-headercelldiv {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 3.45px !important;
+  }
+  
+  :root {
+    --green: #27ae60;
+    --red: #e74c3c;
+    --radius: 12px;
+    --grey-line: #e5e7eb;
+  }
+  
+  [class*="veg-icon"],
+  [class*="e-veg-icon"],
+  [class*="e-nonveg-icon"] {
+    display: inline-block;
+    border-radius: 50%;
+  }
+  
+  [class*="veg-icon"] {
+    width: 12px;
+    height: 12px;
+    margin: 0 0 4px 2px;
+  }
+  
+  .material3 [class*="veg-icon"],
+  .tailwind3 [class*="veg-icon"] {
+    margin: 0 0 2px 2px;
+  }
+  
+  .material3-dark [class*="veg-icon"] {
+    margin: 0 0 3px 2px;
+  }
+  
+  .resmenu-veg-icon {
+    background: green;
+  }
+  
+  .resmenu-nonveg-icon {
+    background: red;
+  }
+  
+  [class*="FoodCategory_icon"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+  }
+  
+  .resmenu-FoodCategory_icon_veg {
+    border-color: green;
+  }
+  
+  .resmenu-FoodCategory_icon_nonveg {
+    border-color: red;
+  }
+  
+  .resmenu-e-veg-icon,
+  .resmenu-e-nonveg-icon {
+    border: 2px solid;
+    border-radius: 4px;
+    background: #fff;
+    position: relative;
+  }
+  
+  .resmenu-e-veg-icon {
+    border-color: var(--green);
+  }
+  
+  .resmenu-e-nonveg-icon {
+    border-color: var(--red);
+  }
+  
+  .resmenu-e-veg-icon::after,
+  .resmenu-e-nonveg-icon::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+  }
+  
+  .resmenu-e-veg-icon::after {
+    background: var(--green);
+  }
+  
+  .resmenu-e-nonveg-icon::after {
+    background: var(--red);
+  }
+  
+  .resmenu-price {
+    font-weight: bold;
+  }
+  
+  .resmenu-old-price {
+    font-size: 12px;
+    text-decoration: line-through;
+    margin: 3px;
+  }
+  
+  .resmenu-card {
+    width: 30vw;
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+  
+  .resmenu-info-separator {
+    margin: 20px 0 0 0;
+  }
+  
+  .resmenu-cell {
+    border-bottom: 1px solid var(--grey-line);
+  }
+  
+  #cartbadge {
+    top: -14px;
+    font-size: 10px;
+  }
+  
+  .resmenu-image {
+    width: 110px;
+    height: 110px;
+    float: right;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius);
+    margin: 20px;
+    transition: transform .3s;
+  }
+  
+  .resmenu-image-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  
+  .resmenu-image-wrap:hover .resmenu-image {
+    transform: scale(1.2);
+  }
+  
+  .resmenu-count {
+    margin: 10px 20px 0 0;
+  }
+  
+  .resmenu-food-count {
+    width: 60px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .resmenu-price-section {
+    text-align: right;
+    width: 28vw;
+  }
+  
+  .resmenu-rating {
+    padding: 15px 0;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  
+  .resmenu-rating-value {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  
+  .resmenu-rating-thumbsup,
+  .resmenu-rating-count {
+    font-size: 15px;
+  }
+  
+  .resmenu-foodname {
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 7px;
+  }
+  
+  .resmenu-fooddesc {
+    font-weight: 400;
+    letter-spacing: .45px;
+  }
+  
+  .resmenu-title {
+    float: right;
+    margin: 5px 0 0 5px;
+    font-weight: bold;
+  }
+  
+  .resmenu-parentfoodname {
+    height: 48px;
+    font-weight: 800;
+    font-size: 18px;
+  }
+  
+  .treegrid-center-container .e-toolbar-right {
+    right: 20px !important;
+  }
+  
+  #CartUpdate {
+    font-weight: 400;
+    font-size: 10px;
+  }
+  
+  .treegrid-center-container,
+  .resmenu-toolbar-search {
+    width: 800px;
+    margin: 32px auto;
+  }
+  
+  .resmenu-toolbar-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  
+  #search-autocomplete {
+    width: 100%;
+    padding: 25px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .material3 #search-autocomplete,
+  .material3-dark #search-autocomplete {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 13px;
+  }
+  
+  #ingredientsList .e-chip.e-outline {
+    color: #222 !important;
+    border-color: #ccc !important;
+    background: #D3D3D3 !important;
+    box-shadow: none !important;
+    cursor: default !important;
+    transition: none !important;
+  }
+  
+  @media (max-width: 1200px) {
+    .treegrid-center-container,
+    .resmenu-toolbar-search {
+      width: 100%;
+      padding: 0 8px;
+      box-sizing: border-box;
+    }
+  }
+  
+  #cartDialog_title {
+    text-align: center;
+  }
+  
+  .treegrid-center-container .e-treegridexpand,
+  .treegrid-center-container .e-treegridcollapse {
+    vertical-align: middle !important;
+    margin-left: 7px;
+  }
+  
+  #TreeGrid .e-toolbar {
+    height: 60px !important;
+  }
+  
+  .resmenu-emptyRecord {
+    font-style: italic;
+    font-size: 20px;
+  }
+  
+  @media (max-width: 450px) {
+    .resmenu-image {
+      width: 60px;
+      height: 60px;
+    }
+    .resmenu-count {
+      margin: 0 5px 0 0;
+    }
+    .resmenu-price-section {
+      text-align: left;
+    }
+  }
+  
+  .sample-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .resmenu-order-no,
+  .resmenu-order-date {
+    font-weight: bold;
+  }
+  
+  .resmenu-order-no {
+    font-size: medium;
+  }
+  
+  .resmenu-thank-note {
+    font-weight: bold;
+    font-style: italic;
+    margin: 30px;
+    justify-items: center;
+    font-size: medium;
+  }
+  
+  #dialog-container td {
+    padding: 5px 0;
+  }
+</style>
+<div class="control-section">
+  <div class="content-wrapper">
+    <div class="treegrid-center-container">
+      <div class="resmenu-toolbar-search">
+        <input id="search-autocomplete" type="text" placeholder="Search for DISHES">
+        <span class="e-input-group-icon e-search-icon"></span> 
+      </div>
+      <div id="cartDialog"></div>
+      <div id="TreeGrid">
+      </div>
+    </div>
+  </div>
+</div>
+<style src="/restaurant-menu.css"></style>
+                    </div>
+                    </div>
+                <div id="description-section">Description</div>    
+                <div id="description">
+                    <p>
+                       
+    The sample shows how dynamic, customizable row templates and custom cell rendering make the menu more informative
+    and attractive. The Tree Grid row template adds visual elements like images, ratings, and price comparisons
+    right in the cells. With its flexibility and easy customization, the Tree Grid is a great tool for creating
+    interesting and engaging food menu presentations.
+
+    More information on the resizing can be found in this 
+      documentation section.
+
+  
+  
+    Looking for the full TypeScript Tree Grid component overview, features, pricing, and documentation? Visit our TypeScript Tree Grid component page.
+  
+                     </p>     
+                </div>    
+            </div>             
+        </div>
+            
+        </div>
+    </div>
+    <script src="index.min.js"></script>
+    <script src="../../treegrid.min.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+.generative-aiassistview {
+    height: 600px;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.generative-aiassistview .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+
+.generative-aiassistview .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .generative-aiassistview {
+        width: 100%;
+    }
+}
+
+.generative-aiassistview .chartContainer {
+    width: max-content;
+}
+
+.generative-aiassistview .chartContainer svg text {
+    fill: rgba(0, 0, 0, 1);
+}
+
+body[class*="highcontrast"] .generative-aiassistview .chartContainer svg text,
+body[class*="dark"] .generative-aiassistview .chartContainer svg text {
+    fill: white;
+}
+
+/* Weather Card Layout Customization */
+
+.generative-aiassistview #weather_card.e-card {
+    background-image: url('https://ej2.syncfusion.com/javascript/demos/src/card/images/weather.png');
+    width: 420px;
+}
+
+.generative-aiassistview .material3-dark .e-card .e-card-header,
+.generative-aiassistview .material-dark .e-card .e-card-header {
+    padding: 10px;
+}
+
+.generative-aiassistview #weather_card.e-card .e-card-header-caption .e-card-header-title,
+.generative-aiassistview #weather_card.e-card .e-card-header-caption .e-card-sub-title {
+    color: white;
+}
+
+.generative-aiassistview .highcontrast #weather_card.e-card .e-card-header.weather_report .e-card-header-image {
+    border: none;
+}
+
+.generative-aiassistview #weather_card.e-card .weather_report .e-card-header-caption {
+    text-align: right;
+}
+
+.generative-aiassistview #weather_card.e-card .e-card-header.weather_report .e-card-header-image {
+    background-image: url('https://ej2.syncfusion.com/javascript/demos/src/card/images/rainy.svg');
+}
+
+.generative-aiassistview .col-xs-6.col-sm-6.col-lg-6.col-md-6 {
+    width: 100%;
+    padding: 10px;
+}
+
+.generative-aiassistview .card-layout {
+    margin: auto;
+    max-width: 400px;
+}

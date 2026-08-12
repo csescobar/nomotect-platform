@@ -1,0 +1,1 @@
+/* Yjs Compatibility Types for Legacy TypeScript */

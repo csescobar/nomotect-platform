@@ -1,0 +1,13 @@
+li[control-name="diagram"],
+li[control-name="rich-text-editor"],
+li[control-name="gantt"],
+li[control-name="schedule"],
+li[control-name="kanban"],
+li[control-name="block-editor"],
+li[control-name="mark-down-editor"],
+li[control-name="markdown-editor"] {
+  display: none;
+}
+#controlTree > ul > li:nth-child(2) {
+  display: none !important;
+}

@@ -1,0 +1,49 @@
+<div class="control-section">
+    <div class="default-aiassistview"> 
+        <div id="aiAssistView"></div>
+    </div>
+</div>
+
+<script id="bannerContent" type="text/x-jsrender">
+    <div class="banner-content">
+        <div class="e-icons e-assist-icon"></div>
+        <h3>AI Assistance</h3>
+        <i>To get started, provide input or choose a suggestion.</i>
+    </div>
+</script>
+
+<style>
+
+    .default-aiassistview {
+        height: 600px;
+        width: 60vw;
+        margin: 0 auto;
+    }
+    
+    .default-aiassistview .e-assist-icon:before {
+        content: '\e903';
+        font-size: 35px;
+    }
+    
+    .default-aiassistview .banner-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 330px;
+        text-align: center;
+    }
+    
+    @media only screen and (max-width: 750px) {
+        .default-aiassistview {
+            width: 100%;
+        }
+    }
+    
+    </style>
+    
+<div id="action-description">
+    <p>This sample demonstrates the default functionalities of the AI Assistview. The AI AssistView control creates an interactive interface for the users to interact with AI-driven suggestions and prompts.</p>
+</div>
+<div id="description">
+    <p>In the above sample, the <code>bannerTemplate</code> customizes the banner content, and <code>toolbarSettings</code> adds custom toolbar items like a right-aligned button. The <code>promptSuggestions</code> provides AI prompt suggestions, and <code>promptRequest</code> handles prompt requests when triggered.</p>
+</div>

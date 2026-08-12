@@ -1,0 +1,122 @@
+<style>
+#toolbarContainer {
+  display: flex;
+  align-items: center;
+  height: 62px !important;
+  width: 100% !important;
+  position: relative;
+}
+#Diagramtoolbar {
+  width: 80% !important;
+  height: 62px !important;
+}
+#DiagramtoolbarWithToggleSwitch {
+  width: 20% !important;
+  height: 62px !important;
+}
+#Diagramtoolbar .e-toolbar-item{
+  padding: 0px !important;
+}
+#DiagramtoolbarWithToggleSwitch .e-toolbar-item{
+  padding: 0px !important;
+}
+#symbolPalette {
+  overflow: hidden !important;
+  height: 100%; 
+  display: flex;
+  align-items: center;
+}
+#symbolPalette_container{
+  border: none !important;
+}
+#symbolPalette .e-acrdn-header{
+  display: none;
+}
+#symbolPalette .e-acrdn-content{
+  padding: 0;
+  background-color: transparent !important;
+}
+#symbolPalette .e-remove-palette{
+  background-color: transparent !important;
+}
+#symbolPalette .e-accordion{
+  background-color: transparent !important;
+}
+#symbolPalette .e-accordion .e-acrdn-item.e-selected.e-select.e-active{
+  background-color: transparent !important;
+}
+#diagramContainer {
+    flex: 1;
+}
+#diagram {
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+}
+#switch-container{
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0; 
+    margin-right: 10px;
+}
+.loading-indicator {
+  border: 4px solid #e6ffe6;
+  border-top: 4px solid green;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: spin 2s linear infinite;
+}
+.tick {
+  display: none;
+  animation: showTick 0.5s forwards;
+  width: 14px;
+  height: 14px;
+  padding: 1px;
+  line-height: 1;
+  color: white;
+  border-radius: 50%;
+  background-color: green;
+}
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+@keyframes showTick {
+  0% {
+      opacity: 0;
+      transform: scale(0.5);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+</style>
+
+<div class="control-section">
+  <div id="toolbarContainer">
+      <div id="Diagramtoolbar"></div>
+      <div id="DiagramtoolbarWithToggleSwitch"></div>
+  </div>
+  <div id="diagram"></div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample provides a visual representation of a streamlined workflow diagram built using the <a href="https://www.syncfusion.com/javascript-ui-controls/js-diagram" target="_blank">JavaScript Diagram</a> control with BPMN shapes.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This sample demonstrates how to build an animated workflow diagram using BPMN nodes, connectors, and annotations. The diagram simulates a workflow execution process, where clicking the <code>Execute</code> button triggers animated connectors and loading indicators on nodes that transition to checkmarks upon successful completion. The sample also includes options to pause, resume, stop, and reset the workflow. The <code>Reset</code> button restores the diagram to its initial state. Users can enhance the workflow by dragging BPMN elements from the symbol palette, with zoom and pan functionalities enabled for interactive navigation.
+    </p>
+    <br>
+</div>

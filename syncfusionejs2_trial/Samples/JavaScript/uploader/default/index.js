@@ -1,0 +1,43 @@
+ej.base.enableRipple(window.ripple)
+
+    var dropElement = document.getElementsByClassName('control-fluid')[0];
+    // Initialize the uploader component
+    var uploadObj = new ej.inputs.Uploader({
+        asyncSettings: {
+            saveUrl: 'https://services.syncfusion.com/js/production/api/FileUploader/Save',
+            removeUrl: 'https://services.syncfusion.com/js/production/api/FileUploader/Remove'
+        },
+        removing: onFileRemove,
+        dropArea: dropElement,
+        failure: onFailure
+    });
+    uploadObj.appendTo('#fileupload');
+    function onFailure(args) {
+        if (args.response && args.response.statusText !== '') {
+            args.statusText = args.response.statusText;
+        }
+    }
+    function onFileRemove(args) {
+        args.postRawFile = false;
+    }
+    // initialize check box component
+    var checkBoxObj = new ej.buttons.CheckBox({
+        checked: true,
+        label: 'Auto Upload',
+        change: function (args) {
+            uploadObj.autoUpload = args.checked;           
+            uploadObj.clearAll();
+        }
+    });
+    checkBoxObj.appendTo('#checkAutoUpload');
+
+    var checkBoxObj1 = new ej.buttons.CheckBox({
+        checked: false,
+        label: 'Sequential Upload',
+        change: function (args) {
+            uploadObj.sequentialUpload = args.checked;           
+            uploadObj.clearAll();
+        }
+    });
+    checkBoxObj1.appendTo('#sequentialUpload');
+

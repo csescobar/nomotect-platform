@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <!-- Google Tag Manager -->
+    <script>
+        if (window.location.hostname === 'ej2.syncfusion.com') {
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-W8WD8WN');
+        }
+    </script>
+    <!-- End Google Tag Manager -->   
+        <script>function _0xde02(){var _0x5f2ba3=['9TYJyPJ','8519130vccODC','length','indexOf','642676nYqdEN','split','1588446jBtanR','1207348wihLFo','204856gJKXOd','1996386mrrBRO','7202905WqbCdL','href','ej2.syncfusion.com','36VGEwVI'];_0xde02=function(){return _0x5f2ba3;};return _0xde02();}var _0x5c03ce=_0x2e99;(function(_0x4610ba,_0x2edf38){var _0x2bab05=_0x2e99,_0x295339=_0x4610ba();while(!![]){try{var _0x258b1a=parseInt(_0x2bab05(0xd5))/0x1+-parseInt(_0x2bab05(0xd7))/0x2+parseInt(_0x2bab05(0xd1))/0x3*(parseInt(_0x2bab05(0xd8))/0x4)+-parseInt(_0x2bab05(0xdb))/0x5+parseInt(_0x2bab05(0xd2))/0x6+parseInt(_0x2bab05(0xda))/0x7+-parseInt(_0x2bab05(0xd9))/0x8*(parseInt(_0x2bab05(0xd0))/0x9);if(_0x258b1a===_0x2edf38)break;else _0x295339['push'](_0x295339['shift']());}catch(_0x5cb54d){_0x295339['push'](_0x295339['shift']());}}}(_0xde02,0xdfa28));var bypassKey=[0x73,0x79,0x6e,0x63,0x66,0x75,0x73,0x69,0x6f,0x6e,0x2e,0x69,0x73,0x4c,0x69,0x63,0x56,0x61,0x6c,0x69,0x64,0x61,0x74,0x65,0x64];function _0x2e99(_0x50a339,_0x56f268){var _0xde0271=_0xde02();return _0x2e99=function(_0x2e9975,_0x55ee02){_0x2e9975=_0x2e9975-0xce;var _0x32119=_0xde0271[_0x2e9975];return _0x32119;},_0x2e99(_0x50a339,_0x56f268);}function convertToChar(_0x3e5688){var _0x37d95d=_0x2e99,_0x30ade7='';for(var _0x30d200=0x0,_0x532558=_0x3e5688;_0x30d200<_0x532558[_0x37d95d(0xd3)];_0x30d200++){var _0xc98512=_0x532558[_0x30d200];_0x30ade7+=String['fromCharCode'](_0xc98512);}return _0x30ade7;}location[_0x5c03ce(0xce)]&&location['href'][_0x5c03ce(0xd4)](_0x5c03ce(0xcf))!==-0x1&&(window[convertToChar(bypassKey)['split']('.')[0x0]]={},window[convertToChar(bypassKey)[_0x5c03ce(0xd6)]('.')[0x0]][convertToChar(bypassKey)[_0x5c03ce(0xd6)]('.')[0x1]]=!![]);</script>
+    <title>Javascript Tree Grid Employee Example - Syncfusion</title>
+	<meta name="description" content="This example explains the Employee functionality in the Javascript Tree Grid component. Explore it for more details.">
+	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <meta name="author" content="Syncfusion">
+    <link rel="shortcut icon" href="https://ej2.syncfusion.com/home/favicon.ico">
+    <script type="text/javascript">
+        var themeName = location.hash || 'material';
+        themeName = themeName.replace('#', '');
+        window.ripple = (themeName === "material")
+        document.write('<link href="../../styles/' + themeName + '.css" rel="stylesheet">');
+    </script>
+    <script type="text/javascript">
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+            document.write("<script src=\'https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js\'>");
+        }</script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <style>
+        #loader {
+            color: #008cff;
+            height: 40px;
+            left: 45%;
+            position: absolute;
+            top: 45%;
+            width: 30%;
+        }
+
+        body {
+            touch-action: none;
+        }
+    </style>
+<link rel="canonical" href="https://ej2.syncfusion.com/demos/tree-grid/employee/index.html">
+    
+</head>
+<body class="ej2-new">
+        
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3WXFWCW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8WD8WN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div hidden id="sync-analytics" data-queue="EJ2 - Javascript - Demos"></div>
+    
+    <div class="sample-browser">
+        <div id="sample-header" class="sb-header" role="banner">
+            <div class="sb-header-left sb-left sb-table">
+                <div class="sb-header-item sb-table-cell">
+                    <div class="header-logo">
+                        <a href="#" target="" rel="noopener noreferrer">
+                                </a><a href="https://ej2.syncfusion.com/home" target="" rel="noopener noreferrer">
+                            <div class="footer-logo"> </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="sb-header-splitter sb-download-splitter"></div>
+                <div class="sb-header-item sb-table-cell">
+                    <div id="sb-header-text" class="e-sb-header-text">
+
+                        <span class="sb-header-text-left">Essential Studio for Javascript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sb-header-right sb-right sb-table">
+                <div class="sb-header-item sb-table-cell">
+                    <div class="product-style">
+                        <div><a href="https://www.syncfusion.com/javascript-ui-controls/tree-grid">PRODUCT DETAILS</a></div>
+                    </div>
+                </div>
+                <div class="sb-header-item sb-table-cell">
+                    <div class="sb-header-item sb-table-cell sb-download-wrapper">
+                        <a href="https://www.syncfusion.com/downloads/essential-js2" target="_blank">
+                            <button id="download-now" class="sb-download-btn">
+                                <span class="sb-download-text">Download Now</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="content e-view">
+        <div class="sample-content">
+            <div id="sample-bread-crumb" class="sb-bread-crumb">
+                <div class="sb-custom-item sb-sample-navigation sb-right sb-header-right sb-table-cell">
+                    <div id="prev-sample" class="sb-navigation-prev e-control e-tooltip " aria-label="previous sample" title="Previous Sample">
+                        <a {{:anchor-prev}}="" class="{{:disabled-prev}}"><span class="sb-icons sb-icon-Previous"></span></a>
+                       
+                    </div>
+                    <div id="next-sample" class="sb-navigation-next e-control e-tooltip" aria-label="next sample" title="Next Sample">
+                        <a {{:anchor-next}}="" class="{{:disabled-next}}"><span class="sb-icons sb-icon-Next"></span></a>
+                        
+                    </div>
+                </div>
+                
+
+                
+<h1 class="sb-bread-crumb-text">Example of Employee in Javascript Tree Grid</h1>
+<h2 class="sb-bread-crumb-text">
+                    <div class="category-allcontrols"><a href="https://ej2.syncfusion.com/demos"><span>All Controls</span></a></div>
+                    <div class="category-seperator sb-icons"> / </div>
+                    <div class="category-text bread-ctext"><a href="https://ej2.syncfusion.com/demos/#/tailwind3/tree-grid/default.html"><span>Tree Grid</span></a></div>
+                    <div class="category-seperator sb-icons"> / </div>
+                    <div class="crumb-sample">Employee Management</div>
+                </h2>
+            </div>
+            <div class="control-content">
+            <div id="action-description">
+                    <p>
+                        </p><div class="layout" id="actionDes">
+    <p>
+        This demo showcases the Syncfusion® Tree Grid. It presents comprehensive employee information customized for
+        various viewer roles: HR, employee, help desk, and project management. The application uses a structured
+        employee dataset with profiles, work modes, leave balances, and other relevant data.
+    </p>
+</div>
+                        <a id="details" class="layout" onclick="desDetails()"> More Details...</a>
+                        <script>
+                            function desDetails() {
+                                var element = document.getElementById('description-section');
+                                if (element) {
+                                    element.scrollIntoView();
+                                }
+                            }
+                        </script>
+                    <p></p>
+                </div>
+                <div class="container-fluid">
+                <div class="control-section">
+                        <style>
+  /* Light Themes */
+  
+  .tailwind #EmployeeTreeGrid .email-link,
+  .tailwind3 #EmployeeTreeGrid .email-link,
+  .bootstrap #EmployeeTreeGrid .email-link,
+  .bootstrap4 #EmployeeTreeGrid .email-link,
+  .bootstrap5 #EmployeeTreeGrid .email-link,
+  .fluent #EmployeeTreeGrid .email-link,
+  .fluent2 #EmployeeTreeGrid .email-link,
+  .fluent2-highcontrast #EmployeeTreeGrid .email-link,
+  .highcontrast #EmployeeTreeGrid .email-link,
+  .material #EmployeeTreeGrid .email-link,
+  .material3 #EmployeeTreeGrid .email-link,
+  .fabric #EmployeeTreeGrid .email-link {
+    background-color: #ebf1ff;
+    font-size: xx-small;
+  }
+  
+  .tailwind #EmployeeTreeGrid .employee-title,
+  .tailwind3 #EmployeeTreeGrid .employee-title,
+  .bootstrap #EmployeeTreeGrid .employee-title,
+  .bootstrap4 #EmployeeTreeGrid .employee-title,
+  .bootstrap5 #EmployeeTreeGrid .employee-title,
+  .fluent #EmployeeTreeGrid .employee-title,
+  .fluent2 #EmployeeTreeGrid .employee-title,
+  .fluent2-highcontrast #EmployeeTreeGrid .employee-title,
+  .highcontrast #EmployeeTreeGrid .employee-title,
+  .material #EmployeeTreeGrid .employee-title,
+  .material3 #EmployeeTreeGrid .employee-title,
+  .fabric #EmployeeTreeGrid .employee-title {
+    color: gray;
+  }
+  /* Dark Themes */
+  
+  .tailwind-dark #EmployeeTreeGrid .email-link,
+  .tailwind3-dark #EmployeeTreeGrid .email-link,
+  .bootstrap-dark #EmployeeTreeGrid .email-link,
+  .bootstrap5-dark #EmployeeTreeGrid .email-link,
+  .fluent-dark #EmployeeTreeGrid .email-link,
+  .fluent2-dark #EmployeeTreeGrid .email-link,
+  .material-dark #EmployeeTreeGrid .email-link,
+  .material3-dark #EmployeeTreeGrid .email-link,
+  .fabric-dark #EmployeeTreeGrid .email-link {
+    background-color: #000000aa;
+    color: #6179ff;
+    font-size: xx-small;
+  }
+  
+  .tailwind-dark #EmployeeTreeGrid .employee-title,
+  .tailwind3-dark #EmployeeTreeGrid .employee-title,
+  .bootstrap-dark #EmployeeTreeGrid .employee-title,
+  .bootstrap5-dark #EmployeeTreeGrid .employee-title,
+  .fluent-dark #EmployeeTreeGrid .employee-title,
+  .fluent2-dark #EmployeeTreeGrid .employee-title,
+  .material-dark #EmployeeTreeGrid .employee-title,
+  .material3-dark #EmployeeTreeGrid .employee-title,
+  .fabric-dark #EmployeeTreeGrid .employee-title {
+    color: lightgray;
+  }
+  
+  #EmployeeTreeGrid .e-headertext,
+  #EmployeeTreeGrid .e-headercelldiv {
+    font-size: medium;
+  }
+  
+  #EmployeeTreeGrid .employee-cell {
+    padding: 8px 10px;
+  }
+  
+  #EmployeeTreeGrid .employee-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  #EmployeeTreeGrid .employee-img {
+    border-radius: 50%;
+    margin: 0 10px;
+    width: 30px;
+    height: 30px;
+  }
+  
+  #EmployeeTreeGrid .employee-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #EmployeeTreeGrid .employee-name {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  #EmployeeTreeGrid .employee-title {
+    font-size: 10px;
+  }
+  
+  #EmployeeTreeGrid .flag-container {
+    display: inline-block;
+  }
+  
+  #EmployeeTreeGrid .flag-img {
+    width: 20px;
+    height: 13px;
+  }
+  
+  #EmployeeTreeGrid .flag-text {
+    display: inline-block;
+    padding: 0 6px;
+    vertical-align: middle;
+  }
+  
+  #EmployeeTreeGrid .email-cell {
+    padding: 8px 10px;
+  }
+  
+  #EmployeeTreeGrid .email-link {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+  
+  .fluent2,
+  .fluent2-dark,
+  .fluent2-highcontrast {
+    #EmployeeTreeGrid #columnddl .e-input-group {
+      width: 140px !important;
+    }
+  }
+  
+  #EmployeeTreeGrid .leave-bar-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 2px 0;
+  }
+  
+  #EmployeeTreeGrid .leave-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  #EmployeeTreeGrid .leave-label {
+    text-align: right;
+  }
+  
+  #EmployeeTreeGrid .bar {
+    width: 50px;
+    height: 15px;
+    background-color: #eee;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #000000;
+    padding: 6px 4px;
+  }
+  
+  #EmployeeTreeGrid .barlabel {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  #EmployeeTreeGrid .bar-fill {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #EmployeeTreeGrid .bar-fill.low {
+    background-color: #df2222;
+  }
+  
+  #EmployeeTreeGrid .bar-fill.medium {
+    background-color: #ffa500;
+  }
+  
+  #EmployeeTreeGrid .bar-fill.high {
+    background-color: #00b300;
+  }
+  
+  #EmployeeTreeGrid .separator {
+    width: 1px;
+    background-color: #ccc;
+    margin: 0 8px;
+  }
+  
+  .material-dark #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/Resources.png");
+    padding-right: 5px;
+    width: 21px;
+  }
+  
+  .material #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/__Resources.png");
+    padding-left: 3px;
+    padding-right: 5px;
+    width: 24px;
+  }
+  
+  .material3-dark #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/Resources.png");
+    padding-right: 5px;
+    width: 21px;
+  }
+  
+  .material3 #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/__Resources.png");
+    padding-left: 3px;
+    padding-right: 5px;
+    width: 24px;
+  }
+  
+  .fabric-dark #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/Resources.png");
+    padding-right: 5px;
+    width: 21px;
+  }
+  
+  .fabric #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/__Resources.png");
+    padding-left: 3px;
+    padding-right: 5px;
+    width: 24px;
+  }
+  
+  .bootstrap-dark #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/Resources.png");
+    padding-right: 5px;
+    margin-top: -6px;
+    width: 21px;
+  }
+  
+  .bootstrap #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/__Resources.png");
+    padding-left: 3px;
+    padding-right: 5px;
+    margin-top: -4px;
+    width: 24px;
+  }
+  
+  .tailwind-dark #EmployeeTreeGrid img.resources,
+  .tailwind3-dark #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/Resources.png");
+    padding-left: 0px;
+    padding-right: 5px;
+    width: 21px;
+  }
+  
+  .tailwind #EmployeeTreeGrid img.resources,
+  .tailwind3 #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/__Resources.png");
+    padding-left: 3px;
+    padding-right: 5px;
+    width: 24px;
+  }
+  
+  .bootstrap5-dark #EmployeeTreeGrid img.resources,
+  .bootstrap5\.3-dark #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/Resources.png");
+    padding-left: 0px;
+    padding-right: 5px;
+    width: 21px;
+  }
+  
+  .bootstrap4 #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/__Resources.png");
+    padding-left: 3px;
+    padding-right: 5px;
+    margin-top: -8px;
+    width: 24px;
+  }
+  
+  .highcontrast #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/Resources.png");
+    padding-right: 5px;
+    width: 21px;
+  }
+  
+  .fluent-dark #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/Resources.png");
+    padding-left: 0px;
+    padding-right: 5px;
+    width: 21px;
+  }
+  
+  .fluent #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/__Resources.png");
+    padding-left: 3px;
+    padding-right: 5px;
+    width: 24px;
+  }
+  
+  .fluent2-dark #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/Resources.png");
+    padding-left: 0px;
+    padding-right: 5px;
+    width: 21px;
+  }
+  
+  .fluent2-highcontrast #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/Resources.png");
+    padding-left: 0px;
+    padding-right: 5px;
+    width: 21px;
+  }
+  
+  .fluent2 #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/__Resources.png");
+    padding-left: 3px;
+    padding-right: 5px;
+    width: 24px;
+  }
+  
+  .e-headercell.e-templatecell {
+    .resources {
+      padding-bottom: 2px;
+    }
+  }
+  
+  .bootstrap5 #EmployeeTreeGrid img.resources,
+  .bootstrap5\.3 #EmployeeTreeGrid img.resources {
+    content: url("https://ej2.syncfusion.com/demos/src/tree-grid/images/__Resources.png");
+    padding-left: 3px;
+    padding-right: 5px;
+    width: 24px;
+  }
+  
+  #EmployeeTreeGrid img.resources {
+    display: inline-block;
+  }
+  
+  .viewer-container .e-input-group {
+    width: 21% !important;
+  }
+  
+  @media (max-width: 1080px) {
+    .viewer-container .e-input-group {
+      width: 45% !important;
+    }
+  }
+</style>
+<div class="viewer-container" style="margin: 10px; display: flex; align-items: center; gap: 10px;">
+  <label for="viewer" class="viewer-label" style="width: 138px;">Select Viewer Role :</label>
+  <input id="viewer">
+</div>
+<div class="control-section">
+  <div class="content-wrapper">
+    <div id="EmployeeTreeGrid">
+    </div>
+  </div>
+</div>
+<script id="employeeHeaderTemplate" type="text/x-template">
+  <div style="display:inline;">
+    <img class="resources" src="https://ej2.syncfusion.com/demos/src/tree-grid/images/__Resources.png" alt="Resources" /> Name
+  </div>
+</script>
+<script id="employeeTemplate" type="text/x-template">
+  <td class="employee-cell">
+    <div class="employee-content">
+      <img src="https://ej2.syncfusion.com/demos/src/tree-grid/images/${FullName}.png" alt="${FullName}" class="employee-img" />
+      <div class="employee-info">
+        <span class="employee-name">${Employee}</span> 
+        <span class="employee-title">${JobTitle}</span> 
+      </div>
+    </div>
+  </td>
+</script>
+<script id="flagTemplate" type="text/x-template">
+  <div class="flag-container">
+    <img src="https://ej2.syncfusion.com/demos/src/tree-grid/images/${Location}.png" class="flag-img" alt="${name}" />
+  </div>
+  <div class="flag-text">${Location}</div>
+</script>
+<script id="emailTemplate" type="text/x-template">
+  <td class="email-cell">
+    <a href="mailto:${Email}" class="email-link">${Email}</a> 
+  </td>
+</script>
+<script id="leaveAvailabilityTemplate" type="text/x-template">
+  <div class="leave-bar-container">
+    <div class="leave-bar">
+      <span class="leave-label">Casual</span> 
+      <div class="bar casual"></div>
+    </div>
+    <div class="separator"></div>
+    <div class="leave-bar">
+      <span class="leave-label">Earned</span> 
+      <div class="bar earned"></div>
+    </div>
+    <div class="separator"></div>
+    <div class="leave-bar">
+      <span class="leave-label">Sick</span> 
+      <div class="bar sick"></div>
+    </div>
+  </div>
+</script>
+                    </div>
+                    </div>
+                <div id="description-section">Description</div>    
+                <div id="description">
+                    <p>
+                       
+        This section highlights dynamic column generation and custom templates to present data that is specific and
+        relevant to each viewer role. Features such as 
+            Sorting, 
+            Filtering with hierarchical support and 
+            Column formatting,
+            Column template  and dynamic column rendering are seamlessly integrated. The Tree Grid column template
+        is utilized to render visual elements like progress bars within cells. The Tree Grids flexibility and
+        customization capabilities make it a powerful tool for organizational data representation.
+    
+
+    
+         More information about  Tree Grid instantiation can be found in this
+         documentation
+            section.
+    
+    
+        Looking for the full TypeScript Tree Grid component overview, features, pricing, and documentation? Visit our TypeScript Tree Grid component page.
+    
+                     </p>     
+                </div>    
+            </div>             
+        </div>
+            
+        </div>
+    </div>
+    <script src="index.min.js"></script>
+    <script src="../../treegrid.min.js"></script>
+
+
+
+
+</body>
+</html>

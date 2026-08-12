@@ -1,0 +1,220 @@
+<div class="col-lg-12 control-section">
+    <div id="querybuilder">
+    </div>
+    <div class="e-query-preview">
+        <div class="e-tab-section">
+            <div>
+                <div class="e-sample-resize-container">
+                    <div id="tab_orientation">
+                        <div class="e-tab-header">
+                            <div>SQL</div>
+                            <div>JSON</div>
+                            <div>MongoDB</div>
+                            <div>CEL</div>
+                            <div>SpEL</div>
+                        </div>
+                        <div class="e-content">
+                            <div class="preview">
+                                <div class="content">
+                                    <div>
+                                        <div id='container'>
+                                            <input type='radio' id='element1' />
+                                            <input type='radio' id='element2' />
+                                            <input type='radio' id='element3' />
+                                        </div>
+                                        <div id="content" style="margin-top: 10px;">
+                                            <textarea readonly
+                                                class='e-text-area-content e-sql-content'></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="content" style="margin-top: 10px;">
+                                    <textarea readonly
+                                        class='e-text-area-content e-json-content'></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="content" style="margin-top: 10px;">
+                                    <textarea readonly
+                                        class='e-text-area-content e-mongo-content'></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="content" style="margin-top: 10px;">
+                                    <textarea readonly
+                                        class='e-text-area-content e-cel-content'></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="content" style="margin-top: 10px;">
+                                    <textarea readonly
+                                        class='e-text-area-content e-spel-content'></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="headerTemplate" type="text/x-template">
+    <div class = 'e-groupheader'>
+        <input type="text" class= "e-custom-group-btn"  id='${ruleID}_cndtnbtn'>
+        <div class = "e-header">
+            <div class = "e-qb-hdr-content">
+                <button id = '${ruleID}_addbtn' class = "e-control e-btn e-primary e-grp-btn">Add Group</button>
+            </div>
+            <div class = "e-qb-hdr-content">
+                <button id = '${ruleID}_addbtn' class = "e-control e-btn e-primary e-cond-btn">Add Condition</button>
+            </div>
+            ${if(ruleID !== 'querybuilder_group0')}
+                <div class = "e-qb-hdr-content">
+                    <button  id= 'dltbtn' class = "e-control e-btn e-danger e-del-btn">Remove</button>
+                </div>
+            ${/if}
+    </div>
+    </div>
+</script>
+
+
+<div id="action-description">
+    <p>
+        This sample demonstrates the overview of Query Builder component with showing different types of queries. The query preview can be changed using the tab component.
+    </p>
+</div>
+<div id="description">
+    <p>
+        The Query Builder component is used to create or edit the filters. You can edit the filters by changing the appropriate fields. In this demo, Query Builder features such as exporting the filter as SQL Query and JSON are used along with the sample level implementation of CEL, SpEL and Mongo queries.
+    </p>
+    <p>
+        More information about Query Builder can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/documentation/query-builder/getting-started/">
+            documentation section</a>.
+    </p>
+</div>
+<!-- custom code start -->
+<style>
+    .e-query-builder {
+        margin: 0 auto;
+    }
+
+    .e-query-builder .cndtnbtn.e-control.e-dropdownlist.e-lib.e-input {
+        padding-left: 10px;
+    }
+
+    .e-query-builder span.e-custom-group-btn {
+        max-width: 100px;
+        border-radius: 5px !important;
+        border-width: 1px !important;
+    }
+
+    .e-query-builder .e-custom-group-btn.e-input-focus::before,
+    .e-custom-group-btn.e-input-focus::after {
+        background: transparent !important;
+    }
+
+    .e-query-builder .e-custom-group-btn {
+        padding-left: 10px;
+        height: 32px;
+    }
+
+    .e-bigger .e-query-builder .e-custom-group-btn {
+        padding-left: 10px;
+        height: 36px;
+    }
+
+    .e-query-builder .e-header {
+        display: inline-block;
+        float: right;
+    }
+
+    .e-query-builder .e-qb-hdr-content {
+        display: inline-block;
+        padding: 5px;
+    }
+
+    .e-query-builder .e-grp-btn {
+        background-color: #6c757d !important;
+    }
+
+    .e-query-builder .e-cond-btn {
+        background-color: #6c757d !important;
+    }
+
+    .e-query-builder .e-grp-btn:hover {
+        background-color: #545c63 !important;
+    }
+
+    .e-query-builder .e-cond-btn:hover {
+        background-color: #545c63 !important;
+    }
+
+    .e-query-preview {
+        margin-top: 20px !important;
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        height: 400px;
+    }
+
+    .e-query-preview .e-tab {
+        height: 200px;
+    }
+
+    .e-query-preview .preview {
+        margin-top: 20px;
+    }
+
+    .control-section {
+        margin-top: 50px;
+    }
+
+    .e-query-preview .content {
+        margin: 10px;
+    }
+
+    .e-text-area-content {
+        margin: 10px;
+        overflow: auto;
+        border: none;
+        height: 300px;
+        width: 98%;
+    }
+
+    .e-text-area-content:focus-visible {
+        outline: none;
+    }
+
+    .e-query-preview .e-sql-content,
+    .e-query-preview .e-mongo-content,
+    .e-query-preview .e-json-content {
+        margin: 10px;
+        border: none;
+        height: 200px;
+        width: 98%;
+    }
+
+    .e-query-preview .e-mongo-content,
+    .e-query-preview .e-json-content {
+        height: 320px;
+    }
+
+    .e-custom-radio-btn {
+        margin-left: 20px;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .e-query-builder .e-header {
+            float: none;
+        }
+
+        .e-query-builder .e-qb-hdr-content {
+            padding-left: 0px !important;
+            padding-right: 10px !important;
+            padding-top: 10px !important;
+        }
+    }
+</style>
+<!-- custom code end -->

@@ -1,0 +1,78 @@
+import * as ReactDOM from 'react-dom';
+import * as React from 'react';
+import { useEffect, useRef } from 'react';
+import { updateSampleSection } from '../common/sample-base';
+import './ai-attachments.css';
+import { AIAssistViewComponent, PromptModel, PromptRequestEventArgs, ToolbarSettingsModel } from '@syncfusion/ej2-react-interactive-chat';
+import { getAIResponse } from '../common/ai-service';
+import * as data from './promptResponseData.json';
+
+const Attachments = () => {
+    useEffect(() => {
+        updateSampleSection();
+    }, []);
+
+    const promptsData: PromptModel[] = [
+        {
+            response: "Ask Questions, to better understand how your prompt interacts with AI-generated or default data responses..!"
+        }
+    ];
+
+    const prompts:{ [key: string]: string | string[] } [] = data["defaultPromptResponseData"];
+
+    const suggestion: string[] = data["defaultSuggestions"];
+
+    const toolbarItemClicked = (args) => {
+        if (args.item.iconCss === 'e-icons e-refresh') {
+            assistInstance.current.prompts = [];
+            assistInstance.current.promptSuggestions = suggestion;
+        }
+    };
+
+    const assistViewToolbarSettings: ToolbarSettingsModel = {
+        items: [ { iconCss: 'e-icons e-refresh', align: 'Right' } ],
+        itemClicked: toolbarItemClicked
+    };
+
+    const bannerTemplate: string = `<div class="banner-content">
+        <div class="e-icons e-assistview-icon"></div>
+        <h3>AI Assistance</h3>
+        <i>Type your message or attach files to get started.</i>
+    </div>`;
+
+     const attachmentSettings = {
+        saveUrl: 'https://services.syncfusion.com/react/production/api/FileUploader/Save',
+        removeUrl: 'https://services.syncfusion.com/react/production/api/FileUploader/Remove'
+    };
+
+
+    const assistInstance = useRef<AIAssistViewComponent>(null);
+    const abortControllerRef = useRef<AbortController | undefined>();
+
+    const promptRequest = async (args: PromptRequestEventArgs) => {
+        abortControllerRef.current = new AbortController();
+        const foundPrompt = prompts.find((promptObj) => promptObj.prompt === args.prompt);
+        const response = foundPrompt
+            ? foundPrompt.response
+            : await getAIResponse(args as any, abortControllerRef.current);
+        assistInstance.current.addPromptResponse(response as string);
+        assistInstance.current.promptSuggestions = (foundPrompt?.suggestions as string[]) || suggestion;
+    };
+    return(
+        <div className='control-pane'>
+            <div className="control-section">
+                <div className="attachment-aiassistview">
+                    <AIAssistViewComponent id="aiAssistView" promptSuggestions={suggestion} toolbarSettings={assistViewToolbarSettings} enableStreaming={true} promptRequest={promptRequest} ref={assistInstance}  enableAttachments={true}  attachmentSettings= {attachmentSettings} bannerTemplate={bannerTemplate}></AIAssistViewComponent>
+                </div>
+            </div>
+
+            <div id="action-description">
+                <p>This sample demonstrates how users can attach files while interacting with the AI AssistView. The control enables file uploads to enhance the context of conversations and responses.</p>
+            </div>
+            <div id="description">
+                <p>In this example, the <a target="_blank" href="https://ej2.syncfusion.com/react/documentation/api/ai-assistview/#enableattachments">enableAttachments</a> property is set to <code>true</code> to enable file attachments. By, using the <a target="_blank" href="https://ej2.syncfusion.com/react/documentation/api/ai-assistview/#attachmentsettings">attachmentSettings</a> configure the <a target="_blank" href="https://ej2.syncfusion.com/react/documentation/api/ai-assistview/attachmentSettings/#saveurl">saveUrl</a> and <a target="_blank" href="https://ej2.syncfusion.com/react/documentation/api/ai-assistview/attachmentSettings/#removeurl">removeUrl</a> to allow file uploads for the attached files. Additionally, the <a target="_blank" href="https://ej2.syncfusion.com/react/documentation/api/ai-assistview/#bannertemplate">bannerTemplate</a> customizes the banner message, and <a target="_blank" href="https://ej2.syncfusion.com/react/documentation/api/ai-assistview/#toolbarsettings">toolbarSettings</a> includes a right-aligned <code>Refresh</code> button. The <a target="_blank" href="https://ej2.syncfusion.com/react/documentation/api/ai-assistview/#promptsuggestions">promptSuggestions</a> feature offers suggested prompts, while <a target="_blank" href="https://ej2.syncfusion.com/react/documentation/api/ai-assistview/#promptrequest">promptRequest</a> handles user queries.</p>
+            </div>
+        </div>
+    );
+}
+export default Attachments;

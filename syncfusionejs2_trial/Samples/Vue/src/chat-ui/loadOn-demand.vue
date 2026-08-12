@@ -1,0 +1,88 @@
+<template>
+    <div class="control-section chat-ui">
+        <div class="chatui-loadonDemand">
+            <ejs-chatui id="loadonDemand" :user="currentUser" headerText="Michale Suyama" headerIconCss="chat_user2_avatar" showTimeBreak="true" loadOnDemand="true" :messages="chatMessages"></ejs-chatui>
+        </div>
+    </div>
+    <div id="action-description">
+        <p>This sample demonstrates the load on-demand feature of the Chat UI component to render a large number of data's.</p>
+    </div>
+    <div id="description">
+        <p> 
+            In this example, the chat <a target="_blank" href="https://ej2.syncfusion.com/vue/documentation/api/chat-ui/#messages">messages</a> are the list of conversations between two users allowing to scroll through their conversation history. The <a target="_blank" href="https://ej2.syncfusion.com/vue/documentation/api/chat-ui/#loadondemand">loadOnDemand</a> property allows you to load more messages on demand, improving the performance and reducing load times, particularly in long conversations. Only the visible conversations are render, reducing the amount of DOM elements and improving the overall performance.
+        </p>
+    </div>   
+</template>
+
+<script>
+
+import { ChatUIComponent } from '@syncfusion/ej2-vue-interactive-chat';
+
+export default {
+    components: {
+        "ejs-chatui": ChatUIComponent
+    },
+    data: function() {
+        return {
+            currentUser: {
+                id: "user1",
+                user: "Albert"
+            },
+            michaleUser: {
+                id: "user2",
+                user: "Michale Suyama",
+                avatarUrl: "src/chat-ui/images/andrew.png"
+            },
+            chatMessages: []
+        }
+    },
+    created() {
+        let baseDate = new Date();
+        baseDate.setDate(baseDate.getDate() - 3);
+        const dayIncrement = 24 * 60 * 60 * 1000;
+        const authorNames = ["Albert", "Michale"];
+
+        for (let i = 1; i <= 200; i++) {
+            if (i % 50 === 1 && i !== 1) {
+                baseDate = new Date(baseDate.getTime() + dayIncrement);
+            }
+
+            const authorIndex = i % 2;
+            this.chatMessages.push({
+                text: `Message ${i} from ${authorNames[authorIndex]}`,
+                author: authorIndex === 0 ? this.currentUser : this.michaleUser,
+                timeStamp: new Date(
+                baseDate.getTime() - (200 * 60 * 1000) + (i * 60 * 1000)
+                )
+            });
+        }
+    }
+}
+</script>
+
+<style>
+    .chatui-loadonDemand {
+        height: 500px;
+        width: 40%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .chatui-loadonDemand .chat_user2_avatar {
+        background-image: url('./images/andrew.png');
+        background-color: unset;
+    }   
+
+    @media only screen and (max-width: 850px) {
+        .chatui-loadonDemand {
+            flex-direction: column;
+            height: 500px;
+            width: 80%;
+        }
+        .chat-ui.control-section {
+            height: 1050px;
+        }
+    }
+</style>

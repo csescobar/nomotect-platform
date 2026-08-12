@@ -1,0 +1,146 @@
+<div class="control-section">
+  <div class="col-lg-10 control-section">
+    <ejs-gantt #selection id="Selection" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data"
+      [taskFields]="taskSettings" [allowSelection]="true" [labelSettings]="labelSettings" [treeColumnIndex]="1"
+      [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+      [allowResizing]="true" [enableHover]="true" [highlightWeekends]="true" [columns]="columns"
+      [selectionSettings]="selectionSettings">
+    </ejs-gantt>
+  </div>
+
+  <div class="col-lg-2 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Properties</div>
+      <div class="property-panel-content">
+        <table id="property" class="property-panel-table" title="Properties">
+         <tr>
+            <td>
+              <label for="hover" class="hover-label">
+                Enable Hover
+                <input 
+                  type="checkbox" 
+                  id="hover" 
+                  class="checkbox" 
+                  [checked]="enableHover" 
+                  aria-label="Enable or disable hover effect"
+                  (change)="onHoverChange($event)" />
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td class="property-label">
+              <div class="property-title">
+                Selection Mode
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="property-input">
+              <div class="dropdown-container">
+                <ejs-dropdownlist 
+                  #selectionModeList 
+                  [dataSource]='dropDownModeListData'
+                  [fields]='dropDownModeListFields' 
+                  [value]="defaultSelectionMode"
+                  aria-label="Select row or cell selection mode">
+                </ejs-dropdownlist>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="property-label">
+              <div class="property-title">
+                Selection Type
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="property-input">
+              <div class="dropdown-container">
+                <ejs-dropdownlist 
+                  #selectionTypeList 
+                  [dataSource]='dropDownTypeListData'
+                  [fields]='dropDownTypeListFields' 
+                  [value]="defaultSelectionType"
+                  aria-label="Select single or multiple selection type">
+                </ejs-dropdownlist>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="property-label">
+              <div class="property-title">
+                Toggle Selection
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="property-input">
+              <div class="dropdown-container">
+                <ejs-dropdownlist 
+                  #selectionToggleList 
+                  [dataSource]='dropDownToggleListData'
+                  [fields]='dropDownToggleListFields' 
+                  [value]="enableToggle"
+                  aria-label="Enable or disable toggle selection">
+                </ejs-dropdownlist>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="button-cell">
+              <div class="button-container">
+                <button 
+                  ejs-button 
+                  id="perform" 
+                  aria-label="Apply selection settings"
+                  (click)="perform()">
+                  Perform
+                </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p> The selection feature enables you to highlight row or cell.</p>
+</div>
+
+<div id="description">
+  <p>
+    The Gantt control supports two types of selection that can be set by using the <a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/api/gantt/selectionSettingsModel/#type">selectionSettings.type</a>
+    property.
+    They are:
+  </p>
+  <ul>
+    <li><code>Single</code> - Sets a single value by default and allows only selection of a single row or a cell.</li>
+    <li><code>Multiple</code> - Allows you to select multiple rows or cells. To perform the multi-selection, press and
+      hold the CTRL key and click the desired rows or cells.</li>
+  </ul>
+  <p>
+    The Gantt control supports three types of selection modes that can be set by using the <a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/api/gantt/selectionSettingsModel/#mode">selectionSettings.mode</a>
+    property.
+    They are:
+  </p>
+  <ul>
+    <li><code>Row</code> - Allows you to select only rows, and the row value is set by default.</li>
+    <li><code>Cell</code> - Allows you to select only cells.</li>
+    <li><code>Both</code> - Allows you to select rows and cells at the same time..</li>
+  </ul>
+  <p>
+    The Gantt control supports toggle selection that can be set by using the <a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/api/gantt/selectionSettingsModel/#enabletoggle">selectionSettings.enableToggle</a>
+    property.
+  </p>
+    <p>
+      Gantt component features are segregated into individual feature-wise modules. To use a selection, markers and resize feature, inject the
+      <code>SelectionService</code>, <code>DayMarkersService</code> and <code>ResizeService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/selection/selection">documentation section</a>.</p>
+</div>

@@ -1,0 +1,16 @@
+{
+    "name": "File Manager",
+    "directory": "ai-filemanager",
+    "category": "Smart AI Solutions",
+    "samples": [
+        {
+            "url": "smart-filemanager",
+            "name": "Smart FileManager",
+            "category": "File Manager",
+            "sourceFiles": [
+                { "displayName": "smart-filemanager.vue", "path": "src/ai-filemanager/ai-smart-filemanager.vue" }
+            ],
+            "description": "This demo showcases the File Manager AI feature."
+        }
+    ]
+}

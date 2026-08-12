@@ -1,0 +1,119 @@
+<div class="control-pane">
+    <div class="control-section">
+        <!-- Toolbar (styled like original) -->
+        <div class="custom-toolbar">
+
+            <!-- LEFT GROUP -->
+            <div class="toolbar-left">
+                <div class="timezone-label">
+                    <label class="showhide">Time Zone:</label>
+                </div>
+
+                <div id="timezonelist"></div>
+            </div>
+
+            <!-- RIGHT GROUP -->
+            <div class="toolbar-right">
+                <div class="timeline-section">
+                    <button id="previous-timespan" class="previous-timespan">
+                        <span class="e-icons e-chevron-left-fill"></span>
+                    </button>
+                </div>
+
+                <div id="timeline"></div>
+
+                <div class="timeline-section">
+                    <button id="next-timespan" class="next-timespan">
+                        <span class="e-icons e-chevron-right-fill"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gantt -->
+        <div id="timezone"></div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates how the JavaScript Gantt Chart schedules project tasks using the UTC timezone, ensuring consistent date and time handling across global teams.</p>
+</div>
+
+<div id="description">
+    <p>
+        For example, in this demo, the timezone of Gantt is set to UTC, and the task named <code>Plan timeline</code> has start time as <code>08:00 am</code> but converted based on UTC and rendered at <code>2.30 am</code>.
+    </p>
+    <p>
+        When a user sets any timezone, dates are converted based on the value set to the <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/javascript/documentation/api/gantt#timezone">timezone</a></code> property of Gantt control.
+    </p>
+    <p>More information on the Essential<sup>®</sup> JS2 Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/javascript/documentation/gantt/timezone">documentation section</a>.</p>
+</div>
+
+<style>
+    .custom-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* space only between groups */
+        padding: 5px;
+        width: 100%;
+    }
+
+    /* LEFT GROUP */
+    .toolbar-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* RIGHT GROUP */
+    .toolbar-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* Label */
+    .showhide {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    /* Dropdown widths */
+    #timezonelist {
+        min-width: 250px;
+    }
+
+    #timeline {
+        min-width: 100px;
+    }
+
+    /* Buttons */
+    .previous-timespan,
+    .next-timespan {
+        height: 32px !important;
+        width: 32px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* ✅ RTL support */
+    html[dir="rtl"] .custom-toolbar {
+        flex-direction: row-reverse;  /* ✅ reverse layout */
+    }
+
+    /* Fix spacing in RTL */
+    html[dir="rtl"] .timezone-label {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    /* Fix dropdown alignment */
+    html[dir="rtl"] #timezonelist,
+    html[dir="rtl"] #timeline {
+        text-align: right;
+    }
+    .bootstrap5\.3 #timezone .e-icons, .bootstrap5\.3-dark #timezone .e-icons{
+        color: white;
+    }
+</style>

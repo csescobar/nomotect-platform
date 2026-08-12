@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <!-- Google Tag Manager -->
+    <script>
+        if (window.location.hostname === 'ej2.syncfusion.com') {
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-W8WD8WN');
+        }
+    </script>
+    <!-- End Google Tag Manager -->   
+        <script>function _0xde02(){var _0x5f2ba3=['9TYJyPJ','8519130vccODC','length','indexOf','642676nYqdEN','split','1588446jBtanR','1207348wihLFo','204856gJKXOd','1996386mrrBRO','7202905WqbCdL','href','ej2.syncfusion.com','36VGEwVI'];_0xde02=function(){return _0x5f2ba3;};return _0xde02();}var _0x5c03ce=_0x2e99;(function(_0x4610ba,_0x2edf38){var _0x2bab05=_0x2e99,_0x295339=_0x4610ba();while(!![]){try{var _0x258b1a=parseInt(_0x2bab05(0xd5))/0x1+-parseInt(_0x2bab05(0xd7))/0x2+parseInt(_0x2bab05(0xd1))/0x3*(parseInt(_0x2bab05(0xd8))/0x4)+-parseInt(_0x2bab05(0xdb))/0x5+parseInt(_0x2bab05(0xd2))/0x6+parseInt(_0x2bab05(0xda))/0x7+-parseInt(_0x2bab05(0xd9))/0x8*(parseInt(_0x2bab05(0xd0))/0x9);if(_0x258b1a===_0x2edf38)break;else _0x295339['push'](_0x295339['shift']());}catch(_0x5cb54d){_0x295339['push'](_0x295339['shift']());}}}(_0xde02,0xdfa28));var bypassKey=[0x73,0x79,0x6e,0x63,0x66,0x75,0x73,0x69,0x6f,0x6e,0x2e,0x69,0x73,0x4c,0x69,0x63,0x56,0x61,0x6c,0x69,0x64,0x61,0x74,0x65,0x64];function _0x2e99(_0x50a339,_0x56f268){var _0xde0271=_0xde02();return _0x2e99=function(_0x2e9975,_0x55ee02){_0x2e9975=_0x2e9975-0xce;var _0x32119=_0xde0271[_0x2e9975];return _0x32119;},_0x2e99(_0x50a339,_0x56f268);}function convertToChar(_0x3e5688){var _0x37d95d=_0x2e99,_0x30ade7='';for(var _0x30d200=0x0,_0x532558=_0x3e5688;_0x30d200<_0x532558[_0x37d95d(0xd3)];_0x30d200++){var _0xc98512=_0x532558[_0x30d200];_0x30ade7+=String['fromCharCode'](_0xc98512);}return _0x30ade7;}location[_0x5c03ce(0xce)]&&location['href'][_0x5c03ce(0xd4)](_0x5c03ce(0xcf))!==-0x1&&(window[convertToChar(bypassKey)['split']('.')[0x0]]={},window[convertToChar(bypassKey)[_0x5c03ce(0xd6)]('.')[0x0]][convertToChar(bypassKey)[_0x5c03ce(0xd6)]('.')[0x1]]=!![]);</script>
+    <title>Javascript Data Grid Virtual Scrolling Example - Syncfusion</title>
+	<meta name="description" content="This example explains the Virtual Scrolling functionality in the Javascript Data Grid component. Explore it for more details.">
+	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <meta name="author" content="Syncfusion">
+    <link rel="shortcut icon" href="https://ej2.syncfusion.com/home/favicon.ico">
+    <script type="text/javascript">
+        var themeName = location.hash || 'material';
+        themeName = themeName.replace('#', '');
+        window.ripple = (themeName === "material")
+        document.write('<link href="../../styles/' + themeName + '.css" rel="stylesheet">');
+    </script>
+    <script type="text/javascript">
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+            document.write("<script src=\'https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js\'>");
+        }</script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <style>
+        #loader {
+            color: #008cff;
+            height: 40px;
+            left: 45%;
+            position: absolute;
+            top: 45%;
+            width: 30%;
+        }
+
+        body {
+            touch-action: none;
+        }
+    </style>
+
+    
+</head>
+<body class="ej2-new">
+        
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3WXFWCW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8WD8WN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div hidden id="sync-analytics" data-queue="EJ2 - Javascript - Demos"></div>
+    
+    <div class="sample-browser">
+        <div id="sample-header" class="sb-header" role="banner">
+            <div class="sb-header-left sb-left sb-table">
+                <div class="sb-header-item sb-table-cell">
+                    <div class="header-logo">
+                        <a href="#" target="" rel="noopener noreferrer">
+                                </a><a href="https://ej2.syncfusion.com/home" target="" rel="noopener noreferrer">
+                            <div class="footer-logo"> </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="sb-header-splitter sb-download-splitter"></div>
+                <div class="sb-header-item sb-table-cell">
+                    <div id="sb-header-text" class="e-sb-header-text">
+
+                        <span class="sb-header-text-left">Essential Studio for Javascript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sb-header-right sb-right sb-table">
+                <div class="sb-header-item sb-table-cell">
+                    <div class="product-style">
+                        <div><a href="https://www.syncfusion.com/javascript-ui-controls/grid">PRODUCT DETAILS</a></div>
+                    </div>
+                </div>
+                <div class="sb-header-item sb-table-cell">
+                    <div class="sb-header-item sb-table-cell sb-download-wrapper">
+                        <a href="https://www.syncfusion.com/downloads/essential-js2" target="_blank">
+                            <button id="download-now" class="sb-download-btn">
+                                <span class="sb-download-text">Download Now</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="content e-view">
+        <div class="sample-content">
+            <div id="sample-bread-crumb" class="sb-bread-crumb">
+                <div class="sb-custom-item sb-sample-navigation sb-right sb-header-right sb-table-cell">
+                    <div id="prev-sample" class="sb-navigation-prev e-control e-tooltip " aria-label="previous sample" title="Previous Sample">
+                        <a href="https://ej2.syncfusion.com/demos/grid/dom-virtualization/"="" class=""><span class="sb-icons sb-icon-Previous"></span></a>
+                       
+                    </div>
+                    <div id="next-sample" class="sb-navigation-next e-control e-tooltip" aria-label="next sample" title="Next Sample">
+                        <a href="https://ej2.syncfusion.com/demos/grid/infinite-scrolling/"="" class=""><span class="sb-icons sb-icon-Next"></span></a>
+                        
+                    </div>
+                </div>
+                
+
+                
+<h1 class="sb-bread-crumb-text">Example of Virtual Scrolling in Javascript Data Grid</h1>
+<h2 class="sb-bread-crumb-text">
+                    <div class="category-allcontrols"><a href="https://ej2.syncfusion.com/demos"><span>All Controls</span></a></div>
+                    <div class="category-seperator sb-icons"> / </div>
+                    <div class="category-text bread-ctext"><a href="https://ej2.syncfusion.com/demos/#/tailwind3/grid/default.html"><span>Data Grid</span></a></div>
+                    <div class="category-seperator sb-icons"> / </div>
+                    <div class="crumb-sample">Virtual Scrolling</div>
+                </h2>
+            </div>
+            <div class="control-content">
+            <div id="action-description">
+                    <p>
+                        </p><div class="layout" id="actionDes">
+    <p>This sample highlights row and column virtualization in the Grid component, allowing efficient rendering and smooth scrolling of large datasets with excellent performance, along with full CRUD support and column templates.
+    </p>
+</div>
+                        <a id="details" class="layout" onclick="desDetails()"> More Details...</a>
+                        <script>
+                            function desDetails() {
+                                var element = document.getElementById('description-section');
+                                if (element) {
+                                    element.scrollIntoView();
+                                }
+                            }
+                        </script>
+                    <p></p>
+                </div>
+                <div class="container-fluid">
+                <div class="control-section">
+                        <script type="text/x-template" id="paymentTemplate">
+  ${paymentTemplate(data)}
+</script>
+<template>
+  <input class="rating">
+</template>
+<script type="text/x-jsrender" id="ratingTemplate">
+  ${ratingDetail(data)}
+</script>
+<script type="text/x-jsrender" id="priorityTemplate">
+  ${priorityDetail(data)}
+</script>
+<script type="text/x-jsrender" id="paymentStatusTemplate">
+  ${paymentStatusDetail(data)}
+</script>
+<script type="text/x-jsrender" id="orderStatusTemplate">
+  ${orderStatusDetail(data)}
+</script>
+<script type="text/x-jsrender" id="stockStatusTemplate">
+  ${stockStatusDetail(data)}
+</script>
+<script type="text/x-jsrender" id="stockLevelTemplate">
+  ${stockLevelDetail(data)}
+</script>
+
+<!-- custom code start -->
+<style>
+  .custom-rating.e-rating-container .e-rating-item-container,
+  .e-bigger .custom-rating.e-rating-container .e-rating-item-container .e-rating-icon,
+  .e-bigger.custom-rating.e-rating-container .e-rating-item-container .e-rating-icon {
+    font-size: 11px;
+  }
+  
+  .custom-rating.e-rating-container .e-rating-item-container .e-rating-icon {
+    -webkit-text-fill-color: lightgrey;
+    -webkit-text-stroke: 1px lightgrey;
+  }
+  
+  .custom-rating.e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon {
+    background: linear-gradient(to right, #ffa600 var(--rating-value), #ffa600 var(--rating-value));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #ffa600;
+  }
+  
+  .virtual-statustemp {
+    position: relative;
+    padding: 15px 0;
+    border-radius: 5px;
+    text-align: center
+  }
+  
+  .virtual-statustemp.e-highcolor {
+    background-color: #f8d7da;
+  }
+  
+  .virtual-statustemp.e-lowcolor {
+    background-color: #d4edda;
+  }
+  
+  .virtual-statustemp.e-mediumcolor {
+    background-color: #fff3cd;
+  }
+  
+  .virtual-statustemp.e-criticalcolor {
+    background-color: #efacac;
+  }
+  
+  td.e-rowcell .virtual-statustxt.e-highcolor {
+    color: #b21f2d;
+  }
+  
+  td.e-rowcell .virtual-statustxt.e-lowcolor {
+    color: #155724;
+  }
+  
+  td.e-rowcell .virtual-statustxt.e-mediumcolor {
+    color: #856404;
+  }
+  
+  td.e-rowcell .virtual-statustxt.e-criticalcolor {
+    color: darkred;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-highcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-highcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-highcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-highcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-highcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-highcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-highcolor {
+    color: #FF6F61;
+  }
+  
+  .material3-dark .virtual-statustemp.e-highcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-highcolor,
+  .fluent2-dark .virtual-statustemp.e-highcolor,
+  .tailwind3-dark .virtual-statustemp.e-highcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-highcolor,
+  .fluent-dark .virtual-statustemp.e-highcolor,
+  .highcontrast .virtual-statustemp.e-highcolor {
+    background-color: #3E1F1F;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-lowcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-lowcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-lowcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-lowcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-lowcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-lowcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-lowcolor {
+    color: #81C784;
+  }
+  
+  .material3-dark .virtual-statustemp.e-lowcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-lowcolor,
+  .fluent2-dark .virtual-statustemp.e-lowcolor,
+  .tailwind3-dark .virtual-statustemp.e-lowcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-lowcolor,
+  .fluent-dark .virtual-statustemp.e-lowcolor,
+  .highcontrast .virtual-statustemp.e-lowcolor {
+    background-color: #1F3A2E;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-mediumcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-mediumcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-mediumcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-mediumcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-mediumcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-mediumcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-mediumcolor {
+    color: #FFD54F;
+  }
+  
+  .material3-dark .virtual-statustemp.e-mediumcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-mediumcolor,
+  .fluent2-dark .virtual-statustemp.e-mediumcolor,
+  .tailwind3-dark .virtual-statustemp.e-mediumcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-mediumcolor,
+  .fluent-dark .virtual-statustemp.e-mediumcolor,
+  .highcontrast .virtual-statustemp.e-mediumcolor {
+    background-color: #3A2E1F;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-criticalcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-criticalcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-criticalcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-criticalcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-criticalcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-criticalcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-criticalcolor {
+    color: #F28B82;
+  }
+  
+  .material3-dark .virtual-statustemp.e-criticalcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-criticalcolor,
+  .fluent2-dark .virtual-statustemp.e-criticalcolor,
+  .tailwind3-dark .virtual-statustemp.e-criticalcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-criticalcolor,
+  .fluent-dark .virtual-statustemp.e-criticalcolor,
+  .highcontrast .virtual-statustemp.e-criticalcolor {
+    background-color: #5A1A1A;
+  }
+  
+  .image {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url('//ej2.syncfusion.com/demos/src/grid/images/spinner.gif');
+    background-position: center;
+    width: 16px;
+    height: 28px;
+  }
+  
+  .e-bigger .image {
+    height: 36px;
+  }
+  
+  #popup {
+    position: absolute;
+    background-color: transparent;
+    display: none;
+    z-index: 100;
+  }
+  
+  .div-button {
+    margin: 5px 5px 5px 0;
+  }
+  
+  #performanceTime {
+    float: right;
+    margin-top: 3px;
+  }
+  
+  .e-bigger #performanceTime {
+    margin-top: 8px;
+  }
+  
+  .virtual-statustemp.e-paidcolor {
+    background-color: #e6f4ea;
+  }
+  
+  .virtual-statustxt.e-paidcolor {
+    color: #155724;
+  }
+  
+  .virtual-statustemp.e-pendingcolor {
+    background-color: #fff8e1;
+  }
+  
+  .virtual-statustxt.e-pendingcolor {
+    color: #856404;
+  }
+  
+  .virtual-statustemp.e-refundcolor {
+    background-color: #fff0f0;
+  }
+  
+  .virtual-statustxt.e-refundcolor {
+    color: #b21f2d;
+  }
+  
+  .virtual-statustemp.e-deliveredcolor {
+    background-color: #e6f3ea;
+  }
+  
+  .virtual-statustxt.e-deliveredcolor {
+    color: #2e7d32;
+  }
+  
+  .virtual-statustemp.e-shippedcolor {
+    background-color: #e7f0fb;
+  }
+  
+  .virtual-statustxt.e-shippedcolor {
+    color: #1565c0;
+  }
+  
+  .virtual-statustemp.e-processingcolor {
+    background-color: #fff8e6;
+  }
+  
+  .virtual-statustxt.e-processingcolor {
+    color: #ff9800;
+  }
+  
+  .virtual-statustemp.e-packedcolor {
+    background-color: #fff7ed;
+  }
+  
+  .virtual-statustxt.e-packedcolor {
+    color: #d97706;
+  }
+  
+  .virtual-statustemp.e-returnedcolor {
+    background-color: #FCE4E4;
+  }
+  
+  .virtual-statustxt.e-returnedcolor {
+    color: #8B0000;
+  }
+  
+  .virtual-statustemp.e-cancelcolor {
+    background-color: #f2f2f2;
+  }
+  
+  .virtual-statustxt.e-cancelcolor {
+    color: #6b6b6b;
+  }
+  
+  .virtual-statustemp.e-orderedcolor {
+    background-color: #E0F2F1;
+  }
+  
+  .virtual-statustxt.e-orderedcolor {
+    color: #00796B;
+  }
+  
+  .virtual-statustemp.e-failedcolor {
+    background-color: #f2f2f2;
+  }
+  
+  .virtual-statustxt.e-failedcolor {
+    color: #6b6b6b;
+  }
+  
+  .material3-dark .virtual-statustemp.e-paidcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-paidcolor,
+  .fluent2-dark .virtual-statustemp.e-paidcolor,
+  .tailwind3-dark .virtual-statustemp.e-paidcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-paidcolor,
+  .fluent-dark .virtual-statustemp.e-paidcolor,
+  .highcontrast .virtual-statustemp.e-paidcolor {
+    background-color: #133b2b;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-paidcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-paidcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-paidcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-paidcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-paidcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-paidcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-paidcolor {
+    color: #81C784;
+  }
+  
+  .material3-dark .virtual-statustemp.e-pendingcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-pendingcolor,
+  .fluent2-dark .virtual-statustemp.e-pendingcolor,
+  .tailwind3-dark .virtual-statustemp.e-pendingcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-pendingcolor,
+  .fluent-dark .virtual-statustemp.e-pendingcolor,
+  .highcontrast .virtual-statustemp.e-pendingcolor {
+    background-color: #3a331f;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-pendingcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-pendingcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-pendingcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-pendingcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-pendingcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-pendingcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-pendingcolor {
+    color: #FFD54F;
+  }
+  
+  .material3-dark .virtual-statustemp.e-refundcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-refundcolor,
+  .fluent2-dark .virtual-statustemp.e-refundcolor,
+  .tailwind3-dark .virtual-statustemp.e-refundcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-refundcolor,
+  .fluent-dark .virtual-statustemp.e-refundcolor,
+  .highcontrast .virtual-statustemp.e-refundcolor {
+    background-color: #3a1f1f;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-refundcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-refundcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-refundcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-refundcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-refundcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-refundcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-refundcolor {
+    color: #FF8A80;
+  }
+  
+  .material3-dark .virtual-statustemp.e-deliveredcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-deliveredcolor,
+  .fluent2-dark .virtual-statustemp.e-deliveredcolor,
+  .tailwind3-dark .virtual-statustemp.e-deliveredcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-deliveredcolor,
+  .fluent-dark .virtual-statustemp.e-deliveredcolor,
+  .highcontrast .virtual-statustemp.e-deliveredcolor {
+    background-color: #173924;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-deliveredcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-deliveredcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-deliveredcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-deliveredcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-deliveredcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-deliveredcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-deliveredcolor {
+    color: #A5D6A7;
+  }
+  
+  .material3-dark .virtual-statustemp.e-shippedcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-shippedcolor,
+  .fluent2-dark .virtual-statustemp.e-shippedcolor,
+  .tailwind3-dark .virtual-statustemp.e-shippedcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-shippedcolor,
+  .fluent-dark .virtual-statustemp.e-shippedcolor,
+  .highcontrast .virtual-statustemp.e-shippedcolor {
+    background-color: #12321f;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-shippedcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-shippedcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-shippedcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-shippedcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-shippedcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-shippedcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-shippedcolor {
+    color: #A5D6A7;
+  }
+  
+  .material3-dark .virtual-statustemp.e-processingcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-processingcolor,
+  .fluent2-dark .virtual-statustemp.e-processingcolor,
+  .tailwind3-dark .virtual-statustemp.e-processingcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-processingcolor,
+  .fluent-dark .virtual-statustemp.e-processingcolor,
+  .highcontrast .virtual-statustemp.e-processingcolor {
+    background-color: #332f1f;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-processingcolor {
+    color: #FFD54F;
+  }
+  
+  .material3-dark .virtual-statustemp.e-cancelcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-cancelcolor,
+  .fluent2-dark .virtual-statustemp.e-cancelcolor,
+  .tailwind3-dark .virtual-statustemp.e-cancelcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-cancelcolor,
+  .fluent-dark .virtual-statustemp.e-cancelcolor,
+  .highcontrast .virtual-statustemp.e-cancelcolor {
+    background-color: #3a1a1a;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-cancelcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-cancelcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-cancelcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-cancelcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-cancelcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-cancelcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-cancelcolor {
+    color: #F28B82;
+  }
+  /* additional dark-theme overrides for new badge classes */
+  
+  .material3-dark .virtual-statustemp.e-packedcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-packedcolor,
+  .fluent2-dark .virtual-statustemp.e-packedcolor,
+  .tailwind3-dark .virtual-statustemp.e-packedcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-packedcolor,
+  .fluent-dark .virtual-statustemp.e-packedcolor,
+  .highcontrast .virtual-statustemp.e-packedcolor {
+    background-color: #5c3a11;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-packedcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-packedcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-packedcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-packedcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-packedcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-packedcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-packedcolor {
+    color: #FFD54F;
+  }
+  
+  .material3-dark .virtual-statustemp.e-processingcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-processingcolor,
+  .fluent2-dark .virtual-statustemp.e-processingcolor,
+  .tailwind3-dark .virtual-statustemp.e-processingcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-processingcolor,
+  .fluent-dark .virtual-statustemp.e-processingcolor,
+  .highcontrast .virtual-statustemp.e-processingcolor {
+    background-color: #5a3a00;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-processingcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-processingcolor {
+    color: #FFD54F;
+  }
+  
+  .material3-dark .virtual-statustemp.e-returnedcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-returnedcolor,
+  .fluent2-dark .virtual-statustemp.e-returnedcolor,
+  .tailwind3-dark .virtual-statustemp.e-returnedcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-returnedcolor,
+  .fluent-dark .virtual-statustemp.e-returnedcolor,
+  .highcontrast .virtual-statustemp.e-returnedcolor {
+    background-color: #3a2a28;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-returnedcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-returnedcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-returnedcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-returnedcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-returnedcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-returnedcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-returnedcolor {
+    color: #FFCDD2;
+  }
+  
+  .material3-dark .virtual-statustemp.e-orderedcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-orderedcolor,
+  .fluent2-dark .virtual-statustemp.e-orderedcolor,
+  .tailwind3-dark .virtual-statustemp.e-orderedcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-orderedcolor,
+  .fluent-dark .virtual-statustemp.e-orderedcolor,
+  .highcontrast .virtual-statustemp.e-orderedcolor {
+    background-color: #2b2b2b;
+    border-color: #444;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-orderedcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-orderedcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-orderedcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-orderedcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-orderedcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-orderedcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-orderedcolor {
+    color: #ECEFF1;
+  }
+  
+  .material3-dark .virtual-statustemp.e-failedcolor,
+  .bootstrap5\.3-dark .virtual-statustemp.e-failedcolor,
+  .fluent2-dark .virtual-statustemp.e-failedcolor,
+  .tailwind3-dark .virtual-statustemp.e-failedcolor,
+  .fluent2-highcontrast .virtual-statustemp.e-failedcolor,
+  .fluent-dark .virtual-statustemp.e-failedcolor,
+  .highcontrast .virtual-statustemp.e-failedcolor {
+    background-color: #4a4a4a;
+  }
+  
+  .material3-dark td.e-rowcell .virtual-statustxt.e-failedcolor,
+  .bootstrap5\.3-dark td.e-rowcell .virtual-statustxt.e-failedcolor,
+  .fluent2-dark td.e-rowcell .virtual-statustxt.e-failedcolor,
+  .tailwind3-dark td.e-rowcell .virtual-statustxt.e-failedcolor,
+  .fluent2-highcontrast td.e-rowcell .virtual-statustxt.e-failedcolor,
+  .fluent-dark td.e-rowcell .virtual-statustxt.e-failedcolor,
+  .highcontrast td.e-rowcell .virtual-statustxt.e-failedcolor {
+    color: #ffffff;
+  }
+  
+  td.e-rowcell .e-payment-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  td.e-rowcell .e-payment-info img {
+    margin-right: 5px;
+  }
+  
+  .material3-dark td.e-rowcell .e-payment-info img,
+  .bootstrap5\.3-dark td.e-rowcell .e-payment-info img,
+  .fluent2-dark td.e-rowcell .e-payment-info img,
+  .tailwind3-dark td.e-rowcell .e-payment-info img,
+  .fluent2-highcontrast td.e-rowcell .e-payment-info img,
+  .fluent-dark td.e-rowcell .e-payment-info img,
+  .highcontrast td.e-rowcell .e-payment-info img {
+    filter: brightness(0) invert(1);
+  }
+  
+  .fluent2-highcontrast td.e-rowcell .e-row:hover .e-payment-info img,
+  .fluent2-highcontrast td.e-rowcell .e-rowcell.e-selectionbackground .e-payment-info img {
+    filter: none;
+  }
+</style>
+
+<!-- custom code end -->
+<div class="control-section">
+  <div class="content-wrapper">
+    <div class="div-button">
+      <button id="genarate" class="e-info"> Load 100K Data</button>
+      <span id="popup">
+                <span id="gif" class="image"></span> 
+      </span> 
+      <span id="performanceTime">Time Taken: 0 ms</span> 
+    </div>
+    <div id="Grid">
+    </div>
+  </div>
+</div>
+                    </div>
+                    </div>
+                <div id="description-section">Description</div>    
+                <div id="description">
+                    <p>
+                       The virtual scrolling feature in the Grid renders only the rows and columns that are currently visible in the viewport, rather than loading the entire dataset into the DOM. This approach significantly improves performance when working with large data sources by reducing the number of DOM elements.
+    To enable row virtualization, set the
+        enableVirtualization
+        property to true. For column virtualization, set the
+        enableColumnVirtualization property to true. When using virtualization, it is essential to define the height
+        property so that the Grid
+        can accurately calculate the number of visible rows. For seamless scrolling, set args.enableSeamlessScrolling as true in the Grid's load event. This ensures smooth vertical and horizontal transitions, providing a smoother experience during fast scrolling when virtualization is enabled.
+    
+    
+        In this example, click the "Load 100K Data" button to bind a dataset containing 100,000 rows and 30 columns. Then, scroll vertically and horizontally to experience the virtualized rendering in action. Full data editing support is available with the virtualization feature.
+    
+    Injecting Module:
+    
+        Features of the Grid component are organized into individual, feature-specific modules. To use the virtual scrolling functionality, inject the
+        VirtualScroll module using the Grid.Inject(VirtualScroll) section. 
+    
+    For more detailed information about virtual scrolling, refer to this documentation.
+    
+        Looking for the full TypeScript Data Grid component overview, features, pricing, and documentation? Visit our 
+            TypeScript Data Grid component page
+                     </p>     
+                </div>    
+            </div>             
+        </div>
+            
+        </div>
+    </div>
+    <script src="index.min.js"></script>
+    <script src="../../grid.min.js"></script>
+
+
+
+
+</body>
+</html>

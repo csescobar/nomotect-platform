@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+  <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W8WD8WN');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <title>Demos, Examples & Tutorial Samples of Syncfusion React UI Components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="description"
+        content="Explore and learn Syncfusion React UI components using large collection of demos, example applications and tutorial samples." />
+    <link rel="canonical" href="https://ej2.syncfusion.com/home/react.html">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link href="src/lib/content/roboto.css" rel="stylesheet">
+    <link href="src/lib/content/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/style.min.css" rel="stylesheet">
+    <style> /* hide the entire page until CSS and JS are ready */
+        html.loading body { visibility: hidden; }
+    </style>
+    <script>
+        document.documentElement.classList.add('loading');
+        window.addEventListener('load', function() {
+            document.documentElement.classList.remove('loading');
+        });
+    </script>
+
+    <script defer src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        window.activeId = 2;
+    </script>
+    <script>
+    function switchTab(index) {
+        document.getElementById('ej2-react').classList.toggle('sb-display-none', index !== 0);
+        document.getElementById('pure-react').classList.toggle('sb-display-none', index === 0);
+        // Toggle active class on the tab buttons
+        var buttons = document.querySelectorAll('.sb-tab-bar .sb-tab-button');
+            buttons.forEach(function (btn, i) {
+            btn.classList.toggle('active', i === index);
+        });
+    }
+    </script>
+    <!-- beta banner -->
+    <script src="https://cdn.syncfusion.com/scripts/common/pagevisit/subdomain-pagevisit.min.js" type ="text/javascript"></script>
+</head>
+
+<body data-sb-name='react'>
+
+    <div hidden id="sync-analytics" data-queue="EJ2 - React - Home"></div>
+
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8WD8WN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+   <!-- Header -->
+   <div id="header-bar">
+    <div class='header-logo'>
+        <a href="https://www.syncfusion.com/react-components" target="_blank" aria-label="Explore Syncfusion React Components" rel="noopener noreferrer">
+            <div class="footer-logo"> </div>
+        </a>
+    </div>
+    <div class="head-text">| EJ2 Syncfusion DEMOS</div>
+    <div id="searching" class="newsearch">
+        <input id="search-box" type="text" placeholder='Search for components or features..'
+            onfocusout="hideSearchDesktop()" />
+        <div id='search-popup' class='sb-search-result e-hidden'></div>
+        <a id='sb-re-route' class='e-hidden' href="" target="_blank"></a>
+    </div>
+    <!-- For mobile search -->
+    <div id="mbSearch">
+        <input id="mob-search-box" type="text" placeholder='Search for components or features..'
+            onfocus="mobilefocus()" onfocusout="hideSearch()" />
+        <div id='mob-search-popup' class='sb-search-result e-hidden'></div>
+        <a id='sb-re-route' class='e-hidden' href="" target="_blank"></a>
+    </div>
+    <div id="mob-search" class="sb-icons"> </div>
+    <button id="free-trial-btn" class="e-btn e-primary" title="Free Trial"
+            onclick="window.open('https://www.syncfusion.com/account/downloads','_blank')">Free Trial</button>
+</div>
+
+<!-- image banner -->
+<div class="row" id="img-Banner" style="position: relative;">
+    <div class="col-xs-5 no-padding">
+        <div class="row">
+            <P class="banner-text">The best Components for developing web Apps</p>
+        </div>
+    </div>
+    <div class="col-xs-7 no-padding">
+        <div id="lottie"> </div>
+    </div>
+    <div id="img-Banner2" style="padding: 45px 0 35px 0px;">
+        <a href="#platform"><span id="animate-icon"></span></a></div>
+</div>
+
+<!-- mobile image banner -->
+<section id="mob-img-Banner" class="row" style="display:none;position: relative;">
+    <P class="bannner-text">The best Components for developing web Apps</p>
+    <div id="img-Banner2" style="padding: 45px 0 35px 0px;">
+        <a href="#platform"><span id="animate-icon1"></span></a></div>
+</section>
+
+<!-- header for platform switcher -->
+<div id="platform"> </div>
+<!-- trusted company list section -->
+            <section id="company-list">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12 text-center">
+                            <h4>
+                                Trusted by the world’s leading companies
+                            </h4>
+                            <div class="desk-image">
+                                <img alt="Syncfusion Trusted Companies"
+                                src="images/trusted_companies.png"
+                                loading="lazy">
+                            </div>
+                            <div class="mob-imgae">
+                                <img alt="Syncfusion Trusted Companies"
+                                src="https://cdn.syncfusion.com/content/images/FT/common/Syncfusion-trusted-companies-mobile.png"
+                                loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    <!-- Ai-content -->
+    <div class="ai-development-showcase"><!--!-->
+        <div class="title-section">
+            <h2 class="main-title">Accelerate Enterprise App Development with AI</h2>
+            <p class="subtitle">
+                Use ready-to-deploy AI components, an intelligent code editor, AI coding assistants (MCP Server), and a 24/7
+                HelpBot to streamline delivery across your tech stack.
+            </p>
+        </div>
+    
+        <div class="main-card" aria-label="AI development showcase" role="region">
+            <div class="sparkle-icon" aria-hidden="true"><img
+                    src="https://cdn.syncfusion.com/content/images/home-v1/AIsparkle-img.svg" width="42" height="42" alt=""
+                    loading="lazy" decoding="async"></div>
+    
+            <!--!-->
+            <div class="card-content">
+                <section class="left-section" aria-labelledby="ai-powered-title">
+                    <h3 id="ai-powered-title" class="section-title">AI-Powered Components</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item"><span class="feature-text"><strong>Smart TextArea</strong>: Sentence-level
+                                AI autocomplete tuned by role and phrasing.
+                            </span></li>
+                        <li class="feature-item"><span class="feature-text"><strong>Smart Paste</strong>: Paste structured
+                                data to autofill forms and reduce input errors.
+                            </span></li>
+                        <li class="feature-item"><span class="feature-text"><strong>AI AssistView</strong>: On-demand AI
+                                suggestions and explanations to guide users while they work.
+                            </span></li>
+                    </ul>
+                </section>
+    
+                <div class="vertical-divider" aria-hidden="true"></div>
+    
+                <section class="right-section" aria-labelledby="ai-ready-title">
+                    <h3 id="ai-ready-title" class="section-title">AI-Ready Components</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item"><span class="feature-text"><strong>DataGrid</strong>: Handle and analyze
+                                large datasets with AI insights.
+                            </span></li>
+                        <li class="feature-item"><span class="feature-text"><strong>Charts</strong>: Visualize data patterns
+                                and trends with AI-ready interactions.
+                            </span></li>
+                        <li class="feature-item"><span class="feature-text"><strong>Scheduler</strong>: Optimize planning
+                                and resource management with AI integration.
+                            </span></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="bottom-link-section"><a
+                    href="../React/#/tailwind3/ai-smart-paste/default" target="_blank"
+                    rel="noopener noreferrer" style="text-decoration:none;"><button
+                        aria-label="Explore AI-Powered Components" class="e-control e-btn e-lib explore-link">Explore
+                        AI-Powered Components<span
+                            class="e-icons e-arrow-right e-btn-icon e-icon-right"></span></button></a></div>
+        </div>
+    </div>
+<!-- body -->
+    <div class='content-body' style="visibility:hidden;">
+        <div class="container-fluid">
+
+            <!-- Components list section -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="tab-content">
+                        <div class="row sf-container">
+                            <div class="popular-components">
+                                <h2>Most Popular UI Components</h2>
+                                <div class="sf-popular-components">
+                                    <div class="sf-popular-component data-grid">
+                                        <a href="../React/#/tailwind3/grid/overview" rel="noopener noreferrer"">
+                                            <div class="e-card">
+                                                <div class="e-card-image" style="background-image:url(https://cdn.syncfusion.com/blazor/images/demos/data-grid.svg)"></div>
+                                                <div class="e-card-content">Data Grid</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="sf-popular-component charts">
+                                        <a href="../React/#/tailwind3/chart/overview"" rel="noopener noreferrer"">
+                                            <div class="e-card">
+                                                <div class="e-card-image" style="background-image:url(https://cdn.syncfusion.com/blazor/images/demos/charts.svg)"></div>
+                                                <div class="e-card-content">Charts</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="sf-popular-component scheduler sb-sdk-hide">
+                                        <a href="../React/#/tailwind3/schedule/overview" rel="noopener noreferrer"">
+                                            <div class="e-card">
+                                                <div class="e-card-image" style="background-image:url(https://cdn.syncfusion.com/blazor/images/demos/scheduler.svg)"></div>
+                                                <div class="e-card-content">Scheduler</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="sf-popular-component diagram sb-sdk-hide">
+                                        <a href="../React/#/tailwind3/diagram/default-functionality" rel="noopener noreferrer"">
+                                            <div class="e-card">
+                                                <div class="e-card-image" style="background-image:url(https://cdn.syncfusion.com/blazor/images/demos/diagram.svg)"></div>
+                                                <div class="e-card-content">Diagram</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="sf-popular-component diagram sb-sdk-hide">
+                                        <a href="../React/#/tailwind3/rich-text-editor/tools" rel="noopener noreferrer">
+                                            <div class="e-card">
+                                                <div class="e-card-image" style="background-image:url(https://cdn.syncfusion.com/blazor/images/demos/rich-text-editor.svg)"></div>
+                                                <div class="e-card-content">Rich Text Editor</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="sf-popular-component diagram">
+                                        <a href="../React/#/tailwind3/treegrid/treegrid-overview" rel="noopener noreferrer">
+                                            <div class="e-card">
+                                                <div class="e-card-image" style="background-image:url(https://cdn.syncfusion.com/blazor/images/demos/tree-grid.svg)"></div>
+                                                <div class="e-card-content">Tree Grid</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container">
+                                <div class="es-text-head">
+                                    <h1 class="opens-font"> Syncfusion<sup>®</sup> React UI Components demos</h1>
+                                </div>
+                                <div class="es-text-content">
+                                    Essential<sup>®</sup> JS 2 for React is a modern React UI Components library that has been
+                                    built from the ground up to be lightweight,
+                                    responsive, modular and touch friendly. 
+                                    <br/> Syncfusion<sup>®</sup> React UI components integrate easily with Next.js applications, offering rich built-in features. Explore our React components in the <a href="https://ej2.syncfusion.com/nextjs/demos/tailwind3/grid/overview" target="_blank">Next.js demos</a>.
+                                    <br/> It also includes complete support for
+                                    Angular,
+                                    Vue, ASP.NET MVC and ASP.NET Core frameworks.
+                                    <br/>
+                                    Explore and learn using feature-wise demos in Components section and example
+                                    applications
+                                    in Showcase applications section.
+                                </div>
+                            </div>
+                        </div>
+                      <div class="row" style="margin-top: 80px;">
+                        <div class="componet-head all-components" >
+                            All Components
+                        </div>
+                       </div>
+                            <div class="sb-tab-bar">
+                                <div class="sb-tab-list">
+                                    <button class="sb-tab-button active" onclick="switchTab(0)">EJ2 React</button>
+                                    <button class="sb-tab-button" onclick="switchTab(1)">Pure React</button>
+                                </div>
+                            </div>
+                            <div id="ej2-react" class="container sample-list">
+                                    <div class="col-sm-6 col-md-3 col-xs-6 sample-group">
+                                        <div class="catagory">Smart Components</div>
+                                        <ul class="list--hover">
+                                            <li>
+                                                    <a href="../React/#/tailwind3/ai-smart-paste/default" rel="noopener noreferrer">
+                                                    <span class="sb-icons sb-icon-data-form"></span>
+                                                    <span>Smart Paste</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                    <a href="../React/#/tailwind3/ai-smart-textarea/default" rel="noopener noreferrer">
+                                                    <span class="sb-icons sb-icon-smart-textarea"></span>
+                                                    <span>Smart TextArea</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                            <div class="catagory">Grids</div>
+                                            <ul class="list--hover">
+                                                <li>
+                                                    <a href="../React/#/tailwind3/grid/overview" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-grid"></span>
+                                                        <span>DataGrid</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/pivot-table/overview" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-pivot"></span>
+                                                        <span>Pivot Table</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/treegrid/treegrid-overview" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-treegrid"></span>
+                                                        <span>Tree Grid</span>
+                                                    </a>
+                                                </li>
+                                                
+                                            </ul>
+                                            <div class="catagory">Interactive Chat</div>
+                                            <ul>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/ai-assistview/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-aiassistview"></span>
+                                                        <span>AI AssistView</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/chat-ui/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-chatui"></span>
+                                                        <span>Chat UI</span>
+                                                    </a>
+                                                </li>
+                                        <li>
+                                            <a href="../React/#/tailwind3/inline-ai-assist/ai-overview" rel="noopener noreferrer">
+                                                <span class="sb-icons sb-icon-inline-ai-assist"></span>
+                                                <span>Inline AI Assist</span>
+                                                <div class="e-badge badge-css">
+                                                    PREVIEW
+                                                </div>
+                                            </a>
+                                        </li>
+                                            </ul>
+                                            <div class="catagory">File Viewers & Editors</div>
+                                            <ul class="list--hover">
+                                                <li>
+                                                    <a href="../React/#/tailwind3/inplace-editor/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-insideeditor"></span>
+                                                        <span>In-place Editor</span>
+                                                    </a>
+                                                </li>
+                                                
+                                                <li class="sb-sdk-hide">
+                                                    <a href="../React/#/tailwind3/rich-text-editor/tools" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-RTE"></span>
+                                                        <span>Rich Text Editor</span>
+                                                    </a>
+                                                </li>
+                                                <li class="sb-sdk-hide">
+                                                    <a href="../React/#/tailwind3/markdown-editor/overview" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-MDE"></span>
+                                                        <span>Markdown Editor</span>
+                                                    </a>
+                                                </li>
+                                                
+                                                <li>
+                                                    <a href="../React/#/tailwind3/image-editor/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-image_editor"> </span>
+                                                        <span>Image Editor</span>
+                                                    </a>
+                                                </li>
+                                                <li class="sb-sdk-hide">
+                                                    <a href="../React/#/tailwind3/block-editor/overview" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-block_editor"> </span>
+                                                        <span>Block Editor</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="catagory">Layout</div>
+                                            <ul class="list--hover">
+                                                <li>
+                                                    <a href="../React/#/tailwind3/avatar/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-avatar"></span>
+                                                        <span>Avatar</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/card/basic" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-card"></span>
+                                                        <span>Card</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/dialog/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-dialog"></span>
+                                                        <span>Dialog</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/predefined-dialogs/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-predefineddialog"></span>
+                                                        <span>Predefined Dialogs</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/listview/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-listview">
+                                                        </span>
+                                                        <span>ListView</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/tooltip/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-tooltip"></span>
+                                                        <span>Tooltip</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/splitter/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-splitter"></span>
+                                                        <span>Splitter</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/dashboard-layout/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-dashboardlayout"></span>
+                                                        <span>Dashboard Layout</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/timeline/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-timeline"></span>
+                                                        <span>Timeline</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="col-sm-6 col-md-3 col-xs-6 sample-group">
+                                            <div class="catagory">Data Visualization</div>
+                                            <ul class="list--hover">
+                                                <li>
+                                                    <a href="../React/#/tailwind3/chart/overview" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-charts"></span>
+                                                        <span>Charts</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/three-dimension-chart/column" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-3d-chart"></span>
+                                                        <span>3D Chart</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/three-dimension-circular-chart/pie"
+                                                        rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-3d-circular-chart"></span>
+                                                        <span>3D Circular Chart</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/stock-chart/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-stockchart"></span>
+                                                        <span>Stock Chart</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/arc-gauge/default-functionalities" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-arcgauge"></span>
+                                                        <span>Arc Gauge</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/circular-gauge/default-functionalities"
+                                                        rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-circulargauge"></span>
+                                                        <span>Circular Gauge</span>
+                                                    </a>
+                                                </li>
+                                                <li class="sb-sdk-hide">
+                                                    <a href="../React/#/tailwind3/diagram/default-functionality" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-diagram"></span>
+                                                        <span>Diagram</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/heatmap-chart/default-functionalities"
+                                                        rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-heatmap"></span>
+                                                        <span>HeatMap Chart</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/linear-gauge/default-functionalities"
+                                                        rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-lineargauge"></span>
+                                                        <span>Linear Gauge</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/maps/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-maps"></span>
+                                                        <span>Maps</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/range-navigator/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-range_navigator"></span>
+                                                        <span>Range Selector</span>
+                                                    </a>
+                                                </li>
+        
+                                                <li>
+                                                    <a href="../React/#/tailwind3/smith-chart/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-smith_chart"></span>
+                                                        <span>Smith Chart</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/barcode/ean8" rel="noopener noreferrer">
+                                                            <span class="sb-icons sb-icon-barcode"></span>
+                                                            <span>Barcode Generator</span> 
+                                                        </a>
+                                                </li>
+        
+                                                <li>
+                                                    <a href="../React/#/tailwind3/sparkline/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-sparkline"></span>
+                                                        <span>Sparkline Charts</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/treemap/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-treemap"></span>
+                                                        <span>TreeMap</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/bullet-chart/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-bulletchart"></span>
+                                                        <span>Bullet Chart</span>
+                                                    </a>
+                                                </li>
+                                                <li class="sb-sdk-hide">
+                                                    <a href="../React/#/tailwind3/kanban/overview" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-kanban"></span>
+                                                        <span>Kanban</span>
+                                                    </a>
+                                                </li>
+                                               <li>
+                                                    <a href="../React/#/tailwind3/sankey/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-sankey"></span>
+                                                        <span>Sankey</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="catagory">Buttons</div>
+                                            <ul class="list--hover">
+                                                <li>
+                                                    <a href="../React/#/tailwind3/button/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-button"></span>
+                                                        <span>Button</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/button/button-group" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-buttongroup"></span>
+                                                        <span>Button Group</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/button/dropdown-button" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-dropdownbutton"></span>
+                                                        <span>Dropdown Menu</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/button/progress-button" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-progressbutton"></span>
+                                                        <span>Progress Button</span>
+                                                    </a>
+                                                </li>
+        
+                                                <li>
+                                                    <a href="../React/#/tailwind3/button/split-button" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-splitbutton"></span>
+                                                        <span>Split Button</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/chips/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-chip"></span>
+                                                        <span>Chips</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/floating-action-button/overview" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-floatingactionbutton"></span>
+                                                        <span>FAB</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/speed-dial/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-speeddial"></span>
+                                                        <span>Speed Dial</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="col-sm-6 col-md-3 col-xs-6 sample-group">
+                                            <div class="catagory">Calendars</div>
+                                            <ul class="list--hover">
+                                                <li class="sb-sdk-hide">
+                                                    <a href="../React/#/tailwind3/schedule/overview" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-schedule"></span>
+                                                        <span>Scheduler</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/calendar/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-calendar"></span>
+                                                        <span>Calendar</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/datepicker/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-datepicker"></span>
+                                                        <span>DatePicker</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/daterangepicker/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-daterangepicker"></span>
+                                                        <span>DateRangePicker</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/datetimepicker/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-datetimepicker"></span>
+                                                        <span>DateTime Picker</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/timepicker/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-timepicker"></span>
+                                                        <span>TimePicker</span>
+                                                    </a>
+                                                </li>
+                                                <li class="sb-sdk-hide">
+                                                    <a href="../React/#/tailwind3/gantt/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-gantt"></span>
+                                                        <span>Gantt Chart</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="catagory">Inputs</div>
+                                            <ul class="list--hover">
+                                                <li>
+                                                    <a href="../React/#/tailwind3/textboxes/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-textbox"></span>
+                                                        <span>TextBox</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/textarea/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-textarea"></span>
+                                                        <span>TextArea</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/maskedtextbox/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-maskedtextbox"></span>
+                                                        <span>Input Mask</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/numerictextbox/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-numerictextbox"></span>
+                                                        <span>Numeric TextBox</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/button/radio-button" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-radiobutton"></span>
+                                                        <span>Radio Button</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/button/checkbox" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-checkbox"></span>
+                                                        <span>Checkbox</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/color-picker/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-colorpicker"></span>
+                                                        <span>Color Picker</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/uploader/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-uploader"></span>
+                                                        <span>File Upload</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/range-slider/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-slider"></span>
+                                                        <span>Slider</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/button/switch" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-switch"></span>
+                                                        <span>Toggle Switch Button</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/signature/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-signature"></span>
+                                                        <span>Signature</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/rating/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-rating"></span>
+                                                        <span>Rating</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/otp-input/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-otp-input"></span>
+                                                        <span>OTP Input</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/speech-to-text/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-voice-input"></span>
+                                                        <span>Speech To Text</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="catagory">Forms</div>
+                                            <ul class="list--hover">
+                                                <li>
+                                                    <a href="../React/#/tailwind3/query-builder/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-filterbuilder"></span>
+                                                        <span>Query Builder</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="col-sm-6 col-md-3 col-xs-6 sample-group">
+                                            <div class="catagory">Dropdowns</div>
+                                            <ul class="list--hover">
+                                                <li>
+                                                    <a href="../React/#/tailwind3/auto-complete/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-autocomplete"></span>
+                                                        <span>AutoComplete</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/combo-box/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-combobox"></span>
+                                                        <span>ComboBox</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/drop-down-list/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-dropdownlist"></span>
+                                                        <span>Dropdown List</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/drop-down-tree/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-dropdowntree"></span>
+                                                        <span>Dropdown Tree</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/multi-select/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-multiselect"></span>
+                                                        <span>MultiSelect Dropdown</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/mention/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-mention"></span>
+                                                        <span>Mention</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/list-box/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-listbox"></span>
+                                                        <span>ListBox</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/multicolumn-combobox/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-multicolumn-combobox"></span>
+                                                        <span>MultiColumn ComboBox</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="catagory">Navigation</div>
+                                            <ul class="list--hover">
+                                                <li>
+                                                    <a href="../React/#/tailwind3/accordion/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-accordion"></span>
+                                                        <span>Accordion</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/appbar/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-appbar"></span>
+                                                        <span>AppBar</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/breadcrumb/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-breadcrumb"></span>
+                                                        <span>Breadcrumb</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/carousel/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-carousel"></span>
+                                                        <span>Carousel</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/context-menu/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-contextmenu"></span>
+                                                        <span>Context Menu</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/menu/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-menu"></span>
+                                                        <span>Menu Bar</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/sidebar/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-sidebar"></span>
+                                                        <span>Sidebar</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/tab/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-tab"></span>
+                                                        <span>Tabs</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/toolbar/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-toolbar"></span>
+                                                        <span>Toolbar</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/ribbon/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-ribbon"></span>
+                                                        <span>Ribbon</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/treeview/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-treeview"></span>
+                                                        <span>TreeView</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/file-manager/overview" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-filemanager"></span>
+                                                        <span>File Manager</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/stepper/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-stepper"></span>
+                                                        <span>Stepper</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="catagory">Notifications</div>
+                                            <ul class="list--hover">
+                                                <li>
+                                                    <a href="../React/#/tailwind3/message/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-message"></span>
+                                                        <span>Message</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/badge/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-badge"></span>
+                                                        <span>Badge</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/toast/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-toast"></span>
+                                                        <span>Toast</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/progress-bar/linear" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-progressbar"></span>
+                                                        <span>Progress Bar</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="../React/#/tailwind3/skeleton/default" rel="noopener noreferrer">
+                                                        <span class="sb-icons sb-icon-skeleton"></span>
+                                                        <span>Skeleton</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                            </div>
+                <div id="pure-react" class="container sample-list sb-display-none">
+                    <div class="row">
+                        <div class="component-description">
+                            Built entirely from scratch using React functional components and hooks, without relying on any wrappers. <a href="https://react.syncfusion.com/react-ui/overview/introduction" target="_blank">Learn more</a>.
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-xs-6 sample-group">
+                            <div class="catagory">Grids</div>
+                            <ul class="list--hover">
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/data-grid/overview" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-grid"></span>
+                                        <span>Data Grid</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="catagory">Calendars</div>
+                            <ul class="list--hover">
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/scheduler/overview" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-schedule"></span>
+                                        <span>Scheduler</span>
+                                        <div class="e-badge badge-css">
+                                            NEW
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/calendar" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-calendar"></span>
+                                        <span>Calendar</span>
+                                        <div class="e-badge badge-css">
+                                            NEW
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/datepicker" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-datepicker"></span>
+                                        <span>DatePicker</span>
+                                        <div class="e-badge badge-css">
+                                            NEW
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/timepicker" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-timepicker"></span>
+                                        <span>TimePicker</span>
+                                        <div class="e-badge badge-css">
+                                            NEW
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="catagory">Dropdowns</div>
+                            <ul class="list--hover">
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/dropdown-list" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-dropdownlist"></span>
+                                        <span>Dropdown List</span>
+                                        <div class="e-badge badge-css">
+                                            NEW
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-xs-6 sample-group">
+                            <div class="catagory">Data Visualization</div>
+                            <ul class="list--hover">
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/chart/overview" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-charts"></span>
+                                        <span>Charts</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="catagory">Buttons</div>
+                            <ul class="list--hover">
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/button" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-button"></span>
+                                        <span>Button</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/chip" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-chip"></span>
+                                        <span>Chips</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/dropdown-button" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-dropdownbutton"></span>
+                                        <span>Dropdown Button</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/floating-action-button" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-floatingactionbutton"></span>
+                                        <span>Floating Action Button</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/radio-button" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-radiobutton"></span>
+                                        <span>Radio Button</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/split-button" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-splitbutton"></span>
+                                        <span>Split Button</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-xs-6 sample-group">
+                            <div class="catagory">Navigation</div>
+                            <ul class="list--hover">
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/context-menu" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-contextmenu"></span>
+                                        <span>Context Menu</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/toolbar" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-toolbar"></span>
+                                        <span>Toolbar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                
+                            <div class="catagory">Inputs</div>
+                            <ul class="list--hover">
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/checkbox" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-checkbox"></span>
+                                        <span>Checkbox</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/numeric-textbox" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-numerictextbox"></span>
+                                        <span>Numeric TextBox</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/form" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-data-form"></span>
+                                        <span>Form</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/textarea" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-textarea"></span>
+                                        <span>TextArea</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/textbox" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-textbox"></span>
+                                        <span>TextBox</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-xs-6 sample-group">
+                            <div class="catagory">Layout</div>
+                            <ul class="list--hover">
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/dialog" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-dialog"></span>
+                                        <span>Dialog</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/tooltip" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-tooltip"></span>
+                                        <span>Tooltip</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="catagory">Notifications</div>
+                            <ul class="list--hover">
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/message" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-message"></span>
+                                        <span>Message</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/skeleton" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-skeleton"></span>
+                                        <span>Skeleton</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/spinner" rel="noopener noreferrer">
+                                        <span class="sb-icons">
+                                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="25" height="25"
+                                                viewBox="0 0 32 32">
+                                                <path fill="#3c78ef"
+                                                    d="M10.706 27.766l0.020 0.407 0.059 0.396 0.097 0.382 0.132 0.366 0.165 0.348 0.196 0.329 0.226 0.307 0.253 0.283 0.279 0.257 0.302 0.229 0.323 0.2 0.343 0.168 0.36 0.134 0.376 0.098 0.389 0.060 0.401 0.021 0.401-0.021 0.389-0.060 0.376-0.098 0.36-0.134 0.343-0.168 0.323-0.2 0.302-0.229 0.279-0.257 0.253-0.283 0.226-0.307 0.196-0.328 0.165-0.348 0.132-0.366 0.097-0.382 0.059-0.396 0.020-0.407-0.020-0.408-0.059-0.396-0.097-0.382-0.132-0.366-0.165-0.349-0.196-0.329-0.226-0.307-0.253-0.283-0.279-0.257-0.302-0.23-0.323-0.2-0.343-0.168-0.36-0.134-0.376-0.098-0.389-0.060-0.401-0.021-0.401 0.021-0.389 0.060-0.376 0.098-0.36 0.134-0.343 0.168-0.323 0.2-0.302 0.23-0.279 0.257-0.253 0.283-0.226 0.307-0.196 0.329-0.165 0.349-0.132 0.366-0.097 0.382-0.059 0.396-0.020 0.408zM4.322 22.606l-0.113 0.126-0.098 0.134-0.083 0.141-0.068 0.147-0.053 0.152-0.038 0.156-0.023 0.158-0.007 0.159 0.007 0.159 0.023 0.158 0.038 0.156 0.053 0.152 0.068 0.147 0.083 0.141 0.098 0.134 0.113 0.126 0.124 0.114 0.132 0.099 0.139 0.083 0.145 0.068 0.15 0.053 0.153 0.038 0.155 0.023 0.157 0.008 0.157-0.008 0.155-0.023 0.153-0.038 0.15-0.053 0.145-0.068 0.139-0.083 0.132-0.099 0.124-0.114 0.112-0.126 0.097-0.134 0.082-0.141 0.067-0.147 0.052-0.152 0.037-0.156 0.022-0.158 0.007-0.159-0.007-0.159-0.022-0.158-0.037-0.156-0.052-0.152-0.067-0.147-0.082-0.141-0.097-0.134-0.112-0.126-0.124-0.114-0.132-0.099-0.139-0.084-0.145-0.069-0.15-0.053-0.153-0.038-0.156-0.023-0.157-0.008-0.156 0.008-0.155 0.023-0.153 0.038-0.149 0.053-0.145 0.069-0.139 0.084-0.132 0.099-0.124 0.114zM22.675 21.528l-0.247 0.278-0.214 0.296-0.181 0.311-0.148 0.324-0.115 0.335-0.082 0.342-0.049 0.348-0.016 0.35 0.016 0.35 0.049 0.348 0.082 0.342 0.115 0.335 0.148 0.324 0.181 0.311 0.214 0.296 0.247 0.278 0.273 0.251 0.291 0.218 0.306 0.184 0.319 0.151 0.329 0.117 0.337 0.084 0.342 0.050 0.345 0.017 0.345-0.017 0.342-0.050 0.337-0.084 0.329-0.117 0.319-0.151 0.306-0.184 0.291-0.218 0.273-0.251 0.247-0.278 0.214-0.296 0.181-0.311 0.148-0.324 0.115-0.335 0.082-0.342 0.049-0.348 0.016-0.35-0.016-0.35-0.049-0.348-0.082-0.342-0.115-0.335-0.148-0.324-0.181-0.311-0.214-0.296-0.247-0.278-0.273-0.25-0.291-0.217-0.306-0.184-0.319-0.15-0.329-0.117-0.337-0.084-0.342-0.050-0.344-0.017-0.345 0.017-0.343 0.050-0.337 0.084-0.33 0.117-0.319 0.15-0.306 0.184-0.291 0.217-0.272 0.25zM0.25 15.559l0.008 0.17 0.025 0.165 0.040 0.159 0.055 0.153 0.069 0.145 0.082 0.137 0.094 0.128 0.105 0.118 0.116 0.107 0.126 0.096 0.135 0.083 0.143 0.070 0.15 0.056 0.157 0.041 0.162 0.025 0.167 0.009 0.167-0.009 0.162-0.025 0.157-0.041 0.15-0.056 0.143-0.070 0.135-0.083 0.126-0.096 0.116-0.107 0.105-0.118 0.094-0.128 0.082-0.137 0.069-0.145 0.055-0.153 0.040-0.159 0.025-0.165 0.008-0.17-0.008-0.17-0.025-0.165-0.040-0.159-0.055-0.152-0.069-0.145-0.082-0.137-0.094-0.128-0.105-0.118-0.116-0.107-0.126-0.096-0.135-0.083-0.143-0.070-0.15-0.056-0.157-0.041-0.162-0.025-0.167-0.009-0.167 0.009-0.162 0.025-0.157 0.041-0.15 0.056-0.143 0.070-0.135 0.083-0.126 0.096-0.116 0.107-0.105 0.118-0.094 0.128-0.082 0.137-0.069 0.145-0.055 0.152-0.040 0.159-0.025 0.165-0.008 0.17zM25.216 15.559l0.017 0.34 0.049 0.33 0.081 0.318 0.11 0.305 0.138 0.29 0.164 0.274 0.188 0.256 0.211 0.236 0.232 0.214 0.252 0.191 0.27 0.166 0.286 0.14 0.3 0.112 0.313 0.082 0.325 0.050 0.334 0.017 0.334-0.017 0.325-0.050 0.313-0.082 0.3-0.112 0.286-0.14 0.269-0.166 0.251-0.191 0.232-0.214 0.211-0.236 0.188-0.256 0.163-0.274 0.137-0.29 0.11-0.305 0.080-0.318 0.049-0.33 0.017-0.34-0.017-0.34-0.049-0.33-0.081-0.318-0.11-0.305-0.138-0.29-0.164-0.274-0.188-0.256-0.211-0.236-0.232-0.214-0.251-0.191-0.269-0.166-0.285-0.14-0.3-0.112-0.313-0.082-0.324-0.050-0.334-0.017-0.334 0.017-0.325 0.050-0.313 0.082-0.3 0.112-0.286 0.14-0.27 0.166-0.252 0.191-0.232 0.214-0.211 0.236-0.188 0.256-0.164 0.274-0.138 0.29-0.11 0.305-0.081 0.318-0.049 0.33-0.017 0.34zM3.859 5.697l-0.157 0.177-0.136 0.188-0.115 0.198-0.094 0.206-0.073 0.213-0.052 0.218-0.031 0.221-0.010 0.223 0.010 0.223 0.031 0.221 0.052 0.218 0.073 0.213 0.094 0.206 0.115 0.198 0.136 0.188 0.157 0.176 0.174 0.159 0.185 0.138 0.195 0.117 0.203 0.096 0.209 0.074 0.214 0.053 0.218 0.032 0.219 0.011 0.219-0.011 0.218-0.032 0.214-0.053 0.209-0.074 0.203-0.096 0.195-0.117 0.185-0.138 0.174-0.159 0.157-0.176 0.136-0.188 0.115-0.198 0.094-0.206 0.073-0.213 0.052-0.218 0.031-0.221 0.010-0.223-0.010-0.223-0.031-0.221-0.052-0.218-0.073-0.213-0.094-0.206-0.115-0.198-0.136-0.188-0.157-0.176-0.174-0.159-0.185-0.138-0.195-0.117-0.203-0.096-0.209-0.075-0.214-0.053-0.217-0.032-0.219-0.011-0.219 0.011-0.218 0.032-0.215 0.053-0.21 0.075-0.203 0.096-0.195 0.117-0.185 0.138-0.174 0.159zM22.506 4.563l-0.202 0.227-0.175 0.242-0.148 0.255-0.121 0.265-0.094 0.274-0.067 0.28-0.040 0.284-0.013 0.286 0.013 0.286 0.040 0.284 0.067 0.28 0.094 0.274 0.121 0.265 0.148 0.255 0.175 0.242 0.202 0.227 0.223 0.205 0.238 0.178 0.25 0.151 0.261 0.123 0.269 0.096 0.276 0.068 0.28 0.041 0.282 0.014 0.282-0.014 0.28-0.041 0.276-0.068 0.269-0.096 0.261-0.123 0.25-0.151 0.238-0.178 0.223-0.205 0.202-0.227 0.175-0.242 0.148-0.254 0.121-0.265 0.094-0.274 0.067-0.28 0.040-0.284 0.013-0.287-0.013-0.287-0.040-0.285-0.067-0.28-0.094-0.274-0.121-0.266-0.148-0.255-0.175-0.242-0.202-0.227-0.224-0.204-0.238-0.177-0.25-0.15-0.261-0.123-0.269-0.096-0.275-0.069-0.28-0.041-0.282-0.014-0.281 0.014-0.279 0.041-0.275 0.068-0.269 0.096-0.261 0.123-0.251 0.15-0.238 0.178-0.224 0.205zM12.012 2.906l0.013 0.272 0.040 0.264 0.064 0.255 0.088 0.244 0.11 0.232 0.131 0.219 0.15 0.204 0.169 0.189 0.185 0.171 0.201 0.153 0.215 0.133 0.228 0.112 0.24 0.089 0.25 0.065 0.259 0.040 0.267 0.014 0.267-0.014 0.26-0.040 0.251-0.066 0.24-0.089 0.229-0.112 0.216-0.133 0.201-0.153 0.186-0.171 0.169-0.189 0.151-0.205 0.131-0.219 0.11-0.232 0.088-0.244 0.064-0.254 0.040-0.264 0.014-0.271-0.014-0.272-0.040-0.264-0.064-0.255-0.088-0.244-0.11-0.232-0.131-0.219-0.151-0.204-0.169-0.189-0.186-0.171-0.201-0.153-0.216-0.133-0.229-0.112-0.24-0.089-0.251-0.065-0.26-0.040-0.267-0.014-0.267 0.014-0.259 0.040-0.25 0.066-0.24 0.089-0.228 0.112-0.215 0.133-0.201 0.153-0.185 0.171-0.169 0.189-0.15 0.205-0.131 0.219-0.11 0.232-0.088 0.244-0.064 0.254-0.040 0.264-0.013 0.271z" />
+                                            </svg>
+                                        </span>
+                                        <span>Spinner</span>
+                                        <div class="e-badge badge-css">
+                                            NEW
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://react.syncfusion.com/react-ui/toast" rel="noopener noreferrer">
+                                        <span class="sb-icons sb-icon-toast"></span>
+                                        <span>Toast</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            
+
+           <!-- Showcase sample slide show -->
+            <div class="row" style="padding-top: 55px">
+                <div class="sample-head">
+                    See how our components can be transformed into beautiful and efficient apps
+                </div>
+            </div>
+
+            <div class="slider-wrapper desk-mode">
+                <div class="slider responsive lazy"  style="margin: 0 4% 4%;">
+                    <div id="carouseldesk">
+
+                    </div>
+                </div>
+                <!-- <div class="slider-progress">
+                    <div class="progress"></div>
+                </div> -->
+            </div>
+
+            <div class="slider-wrapper mob-slide mobile-mode" >
+                <div class="slider responsive lazy"  style="margin: 0% 20%;">
+                    <div id="carouselmob">
+
+                    </div>
+                </div>    
+                <!--  <div class="mob-slider-progress">
+                    <div class="mob-progress"></div>
+                </div> -->
+            </div>
+            <!-- Reviews -->
+            <div class="sf-review-container">
+                <div class="sf-review sf-container">
+                    <div class="sf-section">
+                        <div class="app-logo-section"><img style="width:242px; height: 49px" class="app-capterra-logo"
+                                src="https://cdn.syncfusion.com/content/images/user-reviews/capterra-logo.png?v=01122022083421"
+                                alt="Capterra-logo" loading="lazy">
+                            <div class="row">
+                                <div class="star-rating"
+                                    style=" background-image:url(https://cdn.syncfusion.com/content/images/user-reviews/users-reward-rating-4.4.png)">
+                                </div>
+                                <div class="app-ratings">4.5/5</div>
+                            </div>
+                            <div class="reviews-count">(650+ Reviews)</div>
+                            <a rel="nofollow" class="app-ratings-link" href="https://www.capterra.com/p/228226/Essential-Studio/"
+                                aria-label="Read more on Capterra"> Read more on Capterra </a>
+                        </div>
+                    </div>
+                    <div class="sf-section">
+                        <div class="app-logo-section"><img style="width:242px; height: 49px" class="app-g2-logo"
+                                src="https://cdn.syncfusion.com/content/images/user-reviews/G2-logo.png?v=01122022083421"
+                                alt="G2-logo" loading="lazy">
+                            <div class="row">
+                                <div class="star-rating"
+                                    style=" background-image: url(https://cdn.syncfusion.com/content/images/user-reviews/users-reward-rating-4.4.png)">
+                                </div>
+                                <div class="app-ratings">4.5/5</div>
+                            </div>
+                            <div class="reviews-count">(550+ Reviews)</div>
+                            <a rel="nofollow" class="app-ratings-link"
+                                href="https://www.g2.com/products/syncfusion-essential-studio-enterprise-edition/reviews"> Read more
+                                on G2 </a>
+                        </div>
+                    </div>
+                    <div class="sf-section">
+                        <div class="app-logo-section"><img style="width:242px; height: 49px" class="app-getapp-logo"
+                                src="https://cdn.syncfusion.com/content/images/user-reviews/get-app-logo.png?v=01122022083421"
+                                alt="GetApp-logo" loading="lazy">
+                            <div class="row">
+                                <div class="star-rating"
+                                    style=" background-image:url(https://cdn.syncfusion.com/content/images/user-reviews/users-reward-rating-4.4.png)">
+                                </div>
+                                <div class="app-ratings">4.5/5</div>
+                            </div>
+                            <div class="reviews-count">(650+ Reviews)</div>
+                            <a rel="nofollow" class="app-ratings-link"
+                                href="https://www.getapp.com/development-tools-software/a/essential-studio/"> Read more on GetApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer section -->
+            <div class="sf-footer-links">
+                <div class="sf-container"><!--!-->
+                    <div class="sf-ad-img"></div>
+                    <div class="sf-ad-content"><!--!-->
+                        <h3>Transform your web apps today with Syncfusion JavaScript UI Controls</h3>
+                        <ul>
+                            <li><span class="sbicons sf-ad-strip-tick"></span>
+                                <span>145+ high-performance and responsive UI components</span>
+                            </li>
+                            <li><span class="sbicons sf-ad-strip-tick"></span>
+                                <span>Dedicated support</span>
+                            </li>
+                            <li><span class="sbicons sf-ad-strip-tick"></span>
+                                <span>Hassle-free licensing</span>
+                            </li>
+                        </ul>
+                        <div class="sf-ad-button"><a
+                                href="https://www.syncfusion.com/account/login"
+                                target="_blank" rel="noopener" tabindex="-1"><button tabindex="0"
+                                    class="e-control e-btn e-lib e-primary">Try It for
+                                    Free<span class="sbicons sf-gt-icon e-btn-icon e-icon-right"></span></button></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="sf-footer-contact">
+                <div class="sf-footer-container">
+                    <div class="sf-footer-col sf-footer-col-one">
+                        <div class="sf-footer-title">EXPLORE OUR PRODUCTS</div>
+                        <ul>
+                            <li><a href="https://www.syncfusion.com/ui-component-suite"
+                                    aria-label="Developer Platform">Developer Platform</a></li>
+                            <li><a href="https://www.boldbi.com/" aria-label="Analytics Platform">Analytics Platform</a>
+                            </li>
+                            <li><a href="https://www.boldreports.com/" aria-label="Reporting Platform">Reporting
+                                    Platform</a></li>
+                            <li><a href="https://boldsign.com/?utm_source=syncfusionnavfooter&utm_medium=referral&utm_campaign=boldsign"
+                                    aria-label="eSignature Software and API">eSignature Software and API</a></li>
+                            <li><a href="https://www.bolddesk.com/?utm_source=syncfusionnavfooter&utm_medium=referral&utm_campaign=bolddesk"
+                                    aria-label="Customer Service Software">Customer Service Software</a></li>
+                            <li><a href="https://www.bolddesk.com/knowledge-base-software"
+                                    aria-label="Knowledge Base Software">Knowledge Base Software</a></li>
+                        </ul>
+                    </div>
+                    <div class="sf-footer-col sf-footer-col-two">
+                        <div class="sf-footer-title">RESOURCES</div>
+                        <ul>
+                            <li><a href="https://www.syncfusion.com/succinctly-free-ebooks"
+                                    aria-label="Ebooks">Ebooks</a></li>
+                            <li><a href="https://www.syncfusion.com/resources/techportal/whitepapers"
+                                    aria-label="Whitepapers">Whitepapers</a></li>
+                            <li><a href="https://www.syncfusion.com/case-studies/" aria-label="Case Studies">Case
+                                    Studies</a></li>
+                            <li><a href="https://www.syncfusion.com/faq/" aria-label="Technical FAQ">Technical FAQ</a>
+                            </li>
+                            <li><a href="https://www.syncfusion.com/code-examples" aria-label="Code Examples">Code
+                                    Examples</a></li>
+                            <li><a href="https://www.syncfusion.com/pages/accessibility/"
+                                    aria-label="Accessibility">Accessibility</a></li>
+                            <li><a href="https://www.syncfusion.com/web-stories/" aria-label="Web Stories">Web
+                                    Stories</a></li>
+                            <li><a href="https://www.syncfusion.com/webinars/" aria-label="Webinars">Webinars</a></li>
+                            <li><a href="https://www.syncfusion.com/resource-center/"
+                                    aria-label="Resource Center">Resource Center</a></li>
+                        </ul>
+                    </div>
+                    <div class="sf-footer-col sf-footer-col-three">
+                        <div class="sf-footer-title">FREE TOOLS</div>
+                        <ul>
+                            <li><a href="https://www.syncfusion.com/free-tools/online-md-to-html-converter"
+                                aria-label="Online MD to HTML Converter">Online MD to HTML Converter</a></li>
+                            <li><a href="https://www.syncfusion.com/free-tools/online-html-to-md-converter" 
+                                aria-label="Online HTML to MD Converter">Online HTML to MD Converter</a></li>
+                            <li><a href="https://www.syncfusion.com/free-tools/online-html-to-text-converter"
+                                aria-label="Online HTML to Text Converter">Online HTML to Text Converter</a></li>
+                            <li><a href="https://www.syncfusion.com/free-tools/online-text-to-html-converter"
+                                aria-label="Online Text to HTML Converter">Online Text to HTML Converter</a></li>
+                            <li><a href="https://www.syncfusion.com/pages/figma-ui-kits" 
+                                aria-label="Web Figma UI Kits">Web Figma UI Kits</a></li>                         
+                            <li><a href="https://www.syncfusion.com/essential-react-ui-kit"
+                                aria-label="React UI Kit">React UI Kit</a></li>
+                            <li><a href="https://www.syncfusion.com/free-tools/"
+                                aria-label="All Free Tools">More ></a></li>
+                        </ul>
+                    </div>
+                    <div class="sf-footer-col sf-footer-col-four">
+                        <div class="sf-footer-title">SUPPORT</div>
+                        <ul>
+                            <li><a href="https://www.syncfusion.com/forums/react-js2"
+                                    aria-label="Community Forum">Community Forum</a></li>
+                            <li><a href="https://support.syncfusion.com/kb" aria-label="Knowledge Base">Knowledge
+                                    Base</a></li>
+                            <li><a href="https://support.syncfusion.com" aria-label="Contact Support">Contact
+                                    Support</a></li>
+                            <li><a href="https://www.syncfusion.com/feedback" target="_blank" rel="noopener"
+                                    aria-label="Features">Features &amp; Bugs</a></li>
+                            <li><a href="https://s3.amazonaws.com/files2.syncfusion.com/web/support/sla/31.2/syncfusion_software_support_sla.pdf"
+                                    aria-label="SLA">SLA</a></li>
+                            <li><a href="https://www.syncfusion.com/support/product-lifecycle/estudio"
+                                    aria-label="Product Life Cycle">Product Life Cycle</a></li>
+                        </ul>
+                    </div>
+                    <div class="sf-footer-col sf-footer-col-five">
+                        <div class="sf-footer-title">LEARNING</div>
+                        <ul>
+                            <li><a href="../React/#/tailwind3/grid/overview">Demos</a></li>
+                            <li><a rel="noopener" href="https://ej2.syncfusion.com/react/documentation/introduction" target="_blank"
+                                    aria-label="Documentation">Documentation</a></li>
+                            <li><a rel="noopener" href="https://www.syncfusion.com/blogs/" aria-label="Blog">Blog</a>
+                            </li>
+                            <li><a href="https://www.syncfusion.com/tutorial-videos"
+                                    aria-label="Tutorial Videos">Tutorial Videos</a></li>
+                            <li><a href="https://www.syncfusion.com/showcase-apps" aria-label="Showcase Apps">Showcase
+                                    Apps</a></li>
+                            <li><a href="https://www.syncfusion.com/products/whatsnew" aria-label="What's New'">What's
+                                    New</a></li>
+                            <li><a href="https://www.syncfusion.com/products/roadmap" aria-label="Road Map">Road Map</a>
+                            </li>
+                            <li><a href="https://www.syncfusion.com/products/release-history"
+                                    aria-label="Release History">Release History</a></li>
+                        </ul>
+                    </div>
+                    <div class="sf-footer-col sf-footer-col-six">
+                        <div class="sf-footer-title">COMPANY</div>
+                        <ul>
+                            <li><a href="https://www.syncfusion.com/company/about-us" aria-label="About Us">About Us</a>
+                            </li>
+                            <li><a href="https://www.syncfusion.com/company/about-us/customerlist"
+                                    aria-label="Customers">Customers</a></li>
+                            <li><a href="https://www.syncfusion.com/blogs" aria-label="Blog">Blog</a></li>
+                            <li><a href="https://www.syncfusion.com/company/news-press-release" aria-label="News">News
+                                    &amp; Events</a></li>
+                            <li><a href="https://www.syncfusion.com/company/careers/" aria-label="Careers">Careers</a>
+                            </li>
+                            <li><a href="https://www.syncfusion.com/company/partners" aria-label="Partners">Partners</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sf-footer-container">
+                    <div class="sf-footer-copyright">
+                        <div class="sf-footer-syncfusion-logo">
+                            <a title="Syncfusion Inc." href="/">
+                                <img src="https://cdn.syncfusion.com/content/images/Contact-us/primary_logo.svg"
+                                    alt="syncfusion-logo" class="sf-footer-logo-img" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="sf-footer-policy-links">
+                            <a href="https://www.syncfusion.com/legal/privacy-policy/">Privacy Policy</a> |
+                            <a href="https://www.syncfusion.com/legal/cookie-policy/">Cookie Policy</a> |
+                            <a href="https://www.syncfusion.com/legal/website-terms-of-use/">Terms of Use</a> |
+                            <a href="https://www.syncfusion.com/legal/security-policy/">Security Policy</a> |
+                            <a href="https://www.syncfusion.com/legal/responsible-disclosure/">Responsible Disclosure</a> |
+                            <a href="https://www.syncfusion.com/legal/ethics-policy/">Ethics Policy</a>
+                        </div>
+                        <div id="copyright-desktop" class="sf-copyright">
+                            <a class="social-link" href="https://www.syncfusion.com/copyright"></a>
+                        </div>
+                    </div>
+                    <div class="sf-contact-details">
+                        <div class="sf-contact-fax">
+                            <ul>
+                                <li>Fax: +1 919.573.0306</li>
+                                <li>US: +1 919.481.1974</li>
+                                <li>UK: +44 20 7084 6215</li>
+                            </ul>
+                        </div>
+                        <div class="sf-contact-mail">
+                            <ul>
+                                <li class="contact-text">Toll Free (USA):</li>
+                                <li>1-888-9DOTNET</li>
+                                <li><a href="mailto:sales@syncfusion.com">sales@syncfusion.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="sf-social-media">
+                            <ul>
+                                <li><a aria-label="Please click this icon to visit Syncfusion's Facebook page"
+                                        rel="nofollow noopener noreferrer" class="social-icon" target="_blank"
+                                        href="https://www.facebook.com/Syncfusion"><img width="32" height="32" alt="facebook-icon"
+                                            class="sf-facebook-icon"
+                                            src="https://cdn.syncfusion.com/content/images/footer-icons/facebook-icon.svg"
+                                            loading="lazy">
+                                        <p class="social-icon-count">39K+</p>
+                                    </a></li>
+                                <li><a aria-label="Please click this icon to visit Syncfusion's X page"
+                                        class="social-icon" target="_blank" href="https://x.com/Syncfusion"
+                                        rel="noopener nofollow"><img width="32" height="32" alt="twitter-icon" class="sf-twitter-icon"
+                                            src="https://cdn.syncfusion.com/content/images/footer-icons/twitter-icon.svg"
+                                            loading="lazy">
+                                        <p class="social-icon-count">12K+</p>
+                                    </a></li>
+                                <li><a aria-label="Please click this icon to visit Syncfusion's LinkedIn page"
+                                        class="social-icon" target="_blank"
+                                        href="https://www.linkedin.com/company/syncfusion?trk=top_nav_home"
+                                        rel="noopener nofollow"><img width="32" height="32" alt="linkedin-icon" class="sf-linkedin-icon"
+                                            src="https://cdn.syncfusion.com/content/images/footer-icons/linkedin-icon.svg"
+                                            loading="lazy">
+                                        <p class="social-icon-count">15K+</p>
+                                    </a></li>
+                                <li><a aria-label="Please click this icon to visit Syncfusion's Youtube page"
+                                        class="social-icon" target="_blank" href="https://www.youtube.com/syncfusioninc"
+                                        rel="noopener nofollow"><img width="32" height="32" alt="youtube-icon" class="sf-youtube-icon"
+                                            src="https://cdn.syncfusion.com/content/images/footer-icons/youtube-icon.svg"
+                                            loading="lazy">
+                                        <p class="social-icon-count">27K+</p>
+                                    </a></li>
+                                <li><a aria-label="Please click this icon to visit Syncfusion's pinterest page"
+                                        class="social-icon" rel="nofollow noopener noreferrer" target="_blank"
+                                        href="https://www.pinterest.com/syncfusionofficial/"><img width="32" height="32" alt="pinterest-icon"
+                                            class="sf-pinterest-icon"
+                                            src="https://cdn.syncfusion.com/content/images/footer-icons/pinterest-icon.svg"
+                                            loading="lazy"></a></li>
+                                <li><a aria-label="Please click this icon to visit Syncfusion's instagram page"
+                                        class="social-icon" rel="nofollow noopener noreferrer" target="_blank"
+                                        href="https://www.instagram.com/syncfusionofficial/"><img width="32" height="32" alt="instagram-icon"
+                                            class="sf-instagram-icon"
+                                            src="https://cdn.syncfusion.com/content/images/footer-icons/instagram-icon.svg"
+                                            loading="lazy"></a></li>
+
+                                <li><a aria-label="Please click this icon to visit Syncfusion's threads page"
+                                        class="social-icon" rel="nofollow noopener noreferrer" target="_blank"
+                                        href="https://www.threads.net/syncfusionofficial"><img width="32" height="32" alt="threads-icon"
+                                            class="sf-threads-icon"
+                                            src="https://cdn.syncfusion.com/content/images/footer-icons/threads-icon.svg"
+                                            loading="lazy"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id='sb-switcher-popup' class='sb-switch-popup sb-switch-small sb-hide' style="display: none">
+            <ul id='switch-sb'>
+                <li class='sb-current'>React</li>
+                <li>
+                    <a id='typescript' href="./index.html">JavaScript</a>
+                </li>
+                <li>
+                    <a id='angular' href="./angular.html">Angular</a>
+                </li>
+                <li>
+                    <a id='vue' href="./vue.html"> Vue</a>
+                </li>
+                <li>
+                    <a id='javascript' href="./javascript.html">JavaScript (ES5)</a>
+                </li>
+                <li>
+                    <a id='aspnetcore' style="display: none" href="./aspnetcore.html">ASP.NET Core</a>
+                </li>
+                <li>
+                    <a id='aspnetmvc' style="display: none" href="./aspnetmvc.html"> ASP.NET MVC</a>
+                </li>
+                <li>
+                    <a id='aspnetcore-blazor' style="display: none" href="./blazor.html">Blazor</a>
+                </li>
+            </ul>
+        </div>
+        <script defer src="dist/index.min.js"></script>
+         <script>
+            window.addEventListener('load', function() {
+           document.querySelector('.content-body').style.visibility = 'visible';
+           });
+        </script>
+    </div>
+</body>
+
+</html>
+<style>.sb-sdk-hide { display: none;}</style>

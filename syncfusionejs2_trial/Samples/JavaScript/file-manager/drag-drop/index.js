@@ -1,0 +1,23 @@
+ej.base.enableRipple(window.ripple)
+/**
+ * File Manager Drag and Drop feature sample
+ */
+
+    var hostUrl = 'https://physical-service.syncfusion.com/';
+    // Initialize the FileManager component
+    var fileObject = new ej.filemanager.FileManager({
+            ajaxSettings: {
+                url: hostUrl + 'api/FileManager/FileOperations',
+                getImageUrl: hostUrl + 'api/FileManager/GetImage',
+                uploadUrl: hostUrl + 'api/FileManager/Upload',
+                downloadUrl: hostUrl + 'api/FileManager/Download'    
+            },
+            toolbarSettings: { items: ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Delete', 'Refresh', 'Download', 'Rename', 'Selection', 'View', 'Details'] },            
+            allowDragAndDrop: true,
+            contextMenuSettings: {
+                file: [ "Cut", "Copy", "|", "Delete", "Download", "Rename", "|", "Details"],
+                layout: ["SortBy", "View", "Refresh", "|", "Paste", "|", "NewFolder", "|", "Details", "|", "SelectAll"],
+                visible: true
+            }
+    });
+    fileObject.appendTo('#filemanager');

@@ -1,0 +1,99 @@
+.overview-inlineAIPrompt .email-container:has(.e-rtl).email-container,
+.overview-inlineAIPrompt .email-container:has(.e-rtl) .e-input {
+    direction: rtl;
+    text-align: right;
+}
+
+.overview-inlineAIPrompt #sparkleBtn,
+.e-bigger .overview-inlineAIPrompt #sparkleBtn {
+    max-height: 30px;
+    max-width: 30px;
+    padding: 6px;
+    line-height: 100%;
+}
+
+.e-bigger .overview-inlineAIPrompt #sparkleBtn .e-btn .e-btn-icon {
+    font-size: 16px;
+}
+
+.overview-inlineAIPrompt .e-card:hover,
+.overview-inlineAIPrompt .e-card-content:hover {
+    background: none;
+}
+
+.overview-inlineAIPrompt .demo-title {
+    margin: 0 0 15px 10px;
+}
+
+.overview-inlineAIPrompt .email-composer {
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.overview-inlineAIPrompt .email-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.overview-inlineAIPrompt .email-field-vertical {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.overview-inlineAIPrompt .field-label {
+    font-weight: 600;
+    min-width: 80px;
+}
+
+.overview-inlineAIPrompt .email-body {
+    min-height: 300px;
+    margin-top: 15px;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.overview-inlineAIPrompt .email-body > p {
+    padding: 10px;
+    border-radius: 6px;
+    position: relative;
+    cursor: text;
+}
+
+.overview-inlineAIPrompt .email-body > p:hover {
+    background: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.e-bigger.e-dark-mode .overview-inlineAIPrompt .email-body > p:hover,
+.e-dark-mode .overview-inlineAIPrompt .email-body > p:hover,
+.fluent2-highcontrast .overview-inlineAIPrompt .email-body > p:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.overview-inlineAIPrompt .email-actions,
+.e-bigger .overview-inlineAIPrompt .email-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.overview-inlineAIPrompt .message-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.overview-inlineAIPrompt .email-container {
+    margin: 20px 0;
+}
+
+.overview-inlineAIPrompt .field-input {
+    flex: 1;
+}

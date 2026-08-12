@@ -1,0 +1,75 @@
+<div class="control-section">
+    <div id="overview_aiassist">
+        <div class="aiassist-sidebar">
+            <h3>Notes</h3>
+            <div class="e-skeleton e-skeleton-text" style="height: 15px; width: 100%;"></div>
+            <div class="e-skeleton e-skeleton-text" style="height: 15px; width: 80%;"></div>
+            <div class="e-skeleton e-skeleton-text" style="height: 15px; width: 100%;"></div>
+        </div>
+        <div id="target" class="aiassist-overview-control">
+            <div class="notes-container">
+                <h3>New Note</h3>
+                <h5>Open AI Assist and copy the response to get updated here.</h5>
+                <div class="copied-content"></div>
+            </div>
+            <div id="dialogElement" style="height: 550px; width: 560px;">
+                <div id="aiassist-overview-sample" style="border: none;"></div>
+            </div>
+            <button id="fab"></button>
+        </div>
+    </div>
+</div>
+<style>
+    #overview_aiassist {
+        width: 70%;
+        margin: 0 auto;
+        height: 80vh;
+        display: flex;
+        border: 1px solid #d1d1d1;
+        border-radius: 10px;
+        position: relative;
+    }
+    .aiassist-overview-control {
+        width: 70%;
+        position: relative;
+        padding: 10px;
+    }
+    .aiassist-sidebar {
+        background-color: #fbf8f8;
+        width: 20%;
+        padding: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .notes-container {
+        overflow: auto;
+        height: 100%;
+    }
+    .aiassist-overview-control .e-dialog .e-dlg-content {
+        padding: 0;
+    }
+    @media (max-width: 750px) {
+        .aiassist-overview-control {
+            width: 90%;
+        }
+        .aiassist-sidebar {
+            display: none;
+        }
+        .aiassist-overview-control .e-dialog .e-dlg-content {
+            padding: 10px;
+        }
+    }
+    body[class*="-dark"] #overview_aiassist {
+        border: 1px solid #8c8c8c;
+    }
+    body[class*="-dark"] .aiassist-sidebar {
+        background-color: #3a3a3a;
+    }
+</style>
+
+<div id="action-description">
+    <p>This example showcases the usage the Blazor AIAssistView component.</p>
+</div>
+<div id="description">
+    <p>This sample demonstrates the AIAssistView component rendered in Dialog component.</p>
+</div>

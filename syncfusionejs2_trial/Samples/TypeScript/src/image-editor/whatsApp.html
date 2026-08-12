@@ -1,0 +1,307 @@
+
+<div id="whatsAppSample" class="col-lg-12 control-section e-img-editor-sample">
+    <div class="sender-profile">
+        <img src="./images/profile.png" alt="Sender Avatar" class="avatar">
+        <div class="sender-details">
+            <div class="sender-name">Julie Anderson</div>
+            <div class="sender-status">Online</div>
+        </div>
+    </div>
+    <div class="chat-container" id="chat-container">  
+        <div class="message-container" id="message-container">
+            <div class="message receiver-message">
+                <div class="account-info">
+                    <img src= "./images/sunset.jpg" alt="Receiver Avatar" class="avatar"> 
+                    <span class="date-time">2/11/2024 10:23:56 PM</span>
+                </div>
+                <img src="./images/baloon.jpg" alt="Preview Image" class="preview" id="img_1"> 
+            </div> 
+            <div class="message sender-message">
+                <div class="account-info">
+                    <img src="./images/profile.png" alt="Sender Avatar" class="avatar"> 
+                    <span class="date-time">2/11/2024 10:24:16 PM</span>
+                </div>
+                <img src="./images/bridge.png" alt="Preview Image" class="preview" id="img_2">
+            </div>
+        </div> 
+        <div class="message new-message"> 
+            <input type="text" placeholder="Type your message..." id="textArea"> 
+            <input type="file" name="add-image" id="file-uploader" style="display: none;" accept="image/*">
+            <button id="add-image-btn">Add Image</button> 
+            <button id="send-message"></button>
+        </div> 
+    </div> 
+    <div class="image-preview-container" id="imagePreviewContainer" style="display: none;">
+        <img src="" id="previewImgContainer" class="preview-img-container" alt="previewImage">
+        <br>
+        <div class="button-container">
+            <button id="back" class="chat-button"></button>
+            <button id="edit" class="chat-button"></button>
+            <button id="send-image" class="chat-button" style="display: none;"></button>
+        </div>
+    </div>
+    <div class="image-editor-container" id="image-editor-container" style="display: none;">
+        <div id="top-toolbarArea">
+                <div id="top-toolbar"></div>
+        </div>
+        <div id="imageEditor">
+        <div id="bottom-toolbarArea">
+            <div id="bottom-toolbar"></div>
+            <div id="filter-toolbar"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates WhatsApp chat UI using Image Editor Control.</p>
+</div>
+<div id='description'>
+    <p>
+        The Image Editor component provides built-in support to edit images in the following ways through APIs:
+    </p>
+    <ul>
+        <li><b>Selection</b> : Multiple selection options are available. The selection region can be a square or circle, customized to various aspects ratios, and customized by dragging and resizing.</li>
+        <li><b>Crop</b> : The image can be cropped based on the selection.</li>
+        <li><b>Rotate</b> : The image can be rotated both clockwise and anticlockwise by 90 degrees.</li>
+        <li><b>Flip</b> : The image can be flipped both horizontally and vertically.</li>
+        <li><b>Zoom</b> : The image can be zoomed in and out.</li>
+        <li><b>Pan</b> : View the entire image by toggling the pan option from the toolbar.</li>
+        <li><b>Freehand drawing</b> : Draw freehand on the image and adjust the pen's stroke width and stroke color.</li>
+        <li><b>Reset</b> : Revert all the edited states and load the original image.</li>
+        <li><b>Save</b> : Save the edited image in JPEG, PNG, and SVG formats.</li>
+        <li><b>Annotation</b> : Text, rectangle, ellipse, arrow, path, image, and line annotation shapes are supported.</li>
+	    <li><b>Finetunes</b> : The effects such as brightness, contrast, hue, sauration, and blur can be applied to the image.</li>
+        <li><b>Filters</b> : The predefined filters such as chrome, cold, warm, grayscale, sepia, and invert can be applied to the image.</li>
+        <li><b>Frames</b> : The predefined frames such as mat, bevel, line, hook, and inset can be applied to the image.</li>
+        <li><b>Resize</b> : The image can be resized to cater to the user's preferences and needs, enhancing the adaptability and usability of the content.</li>
+    </ul>
+    <p>
+        More information about Image Editor can be found in this
+        <a target='_blank' 
+        href='https://ej2.syncfusion.com/documentation/image-editor/getting-started/'>
+        documentation section</a>.
+    </p>
+</div>
+
+<style>
+    .e-image-editor {
+        margin: 0 auto;
+    }
+	    
+    .e-img-editor-sample {
+        height: 80vh;
+        width: 100%;
+    }
+	
+	#whatsAppSample {
+        margin: 50px auto;
+        max-width: 1000px;
+        max-height: 630px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+
+    .chat-container {  
+        background-color: #fff; 
+        border-radius: 10px; 
+        overflow: hidden; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        font-family: 'Roboto', sans-serif;
+        font-size: small;
+        position: relative;
+        width: 1000px;
+        height: 575px;
+        background-color: lavender
+    } 
+
+    .message-container { 
+        display: flex; 
+        flex-direction: column; 
+        overflow-y: scroll;
+        scrollbar-width: none; /* Hide scrollbar on Firefox */
+        -ms-overflow-style: none; /* Hide scrollbar on IE and Edge */
+        height: 85%;
+        box-sizing: border-box;
+        align-items: flex-start;
+    } 
+
+    .message-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar on Chrome, Safari, and Opera */
+    }
+
+    .message { 
+        padding: 10px; 
+        margin: 10px; 
+        border-radius: 5px; 
+        max-width: 30%; 
+        word-wrap: break-word; 
+        display: flex;  
+        flex-direction: column; /* Change to column layout */
+    }
+
+    .new-message {
+        flex-direction: row; /* Change to column layout */
+    }
+
+    .sender-message { 
+        background-color: #6750a42b; 
+        color: #000; 
+        align-self: flex-start; 
+    } 
+
+    .receiver-message { 
+        background-color: #6750a42b; 
+        color: #000;  
+        align-self: flex-end; 
+    } 
+
+    .avatar { 
+        width: 30px; 
+        height: 30px; 
+        border-radius: 50%; 
+        margin-right: 10px; 
+    } 
+
+    .message input { 
+        width: calc(80% - 20px); 
+        padding: 8px; 
+        margin: 10px; 
+        border: 1px solid #6750a4; 
+        border-radius: 10px; 
+    } 
+
+    .message button, .chat-button { 
+        padding: 8px; 
+        margin: 10px; 
+        background-color: #6750a4 !important; 
+        color: #fff; 
+        border: none; 
+        border-radius: 50%; 
+        cursor: pointer; 
+    }
+
+    #add-image-btn {
+        border-radius: 10px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .sender-profile {
+        max-width: 1000px;
+        background-color: #6750a4;
+        padding: 10px; 
+        border-radius: 10px 10px 0 0;  
+        word-wrap: break-word; 
+        display: flex; 
+        align-items: center; 
+    }
+
+    .sender-details {
+        color: #fff;
+    }
+
+    .sender-name {
+        font-size: medium;
+    }
+
+    .preview {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .new-message {
+        max-width: 100%;
+    }
+
+    .sender-status {
+        font-size: smaller;
+    }
+
+    .image-preview-container, .preview-img-container, .image-editor-container {
+        max-width: 1000px;
+        max-height: 575px;
+    }
+
+    .image-preview-container {
+        text-align: center;
+        background-color: #6750a42b;
+    }
+
+    .preview-img-container {
+        max-height: 525px;
+        height: 525px;
+    }
+
+    .image-editor-container {
+        max-height: 535px;
+        height: 535px;
+
+    }
+
+    #bottom-toolbarArea {
+        position: absolute;
+        top: 470px;
+        z-index: 1;
+        width: 100% !important;
+    }
+
+    #bottom-toolbar {
+        position: absolute;
+        border-radius: 8px;
+    }
+
+    #filter-toolbar {
+        height: 130px !important;
+        display: none;
+        top: -90px;
+    }
+
+    #top-toolbar {
+        border-top: 1px solid #bdbdbd;
+        border-right: 1px solid #bdbdbd;
+        border-left: 1px solid #bdbdbd;
+    }
+
+    .date-time {
+        font-size: 0.7rem;
+        color: #999;
+        float: right;
+    }
+
+    .button-container button:hover, .message button:hover{
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .message-container, .sender-details {
+        cursor: default;
+    }
+
+    .message-container .preview {
+        cursor: pointer;
+    }
+
+    .account-info
+    .date-time {
+        margin-top: 5px; /* Add margin between elements */
+    }
+
+    #send-message, .chat-button {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    #textArea::placeholder {
+        color: #999;
+    }
+
+    #textArea:focus {
+        outline: none;
+        border-color: dodgerblue;
+        box-shadow: 0 0 5px dodgerblue;
+    }
+
+</style>

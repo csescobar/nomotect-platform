@@ -1,0 +1,37 @@
+{
+    "name": "AI AssistView",
+    "directory": "ai-assist-view",
+    "category": "Interactive Chat",
+    "ftName": "AIAssistView",
+    "type": "preview",
+    "samples": [
+        {
+            "url": "default",
+            "name": "Default Functionalities",
+            "category": "AI AssistView",
+            "api":{ "AIAssitView": ["promptSuggestions", "prompts", "promptRequest"] },
+            "description": "Showcases the default combinations of the AiAssistView control."
+        },
+        {
+            "url": "views",
+            "name": "Views",
+            "category": "AI AssistView",
+            "api":{ "AIAssitView": ["promptSuggestions", "prompts", "promptRequest"] },
+            "description": "Showcases the views combinations of the AiAssistView control"
+        },
+        {
+            "url": "template",
+            "name": "Template",
+            "category": "AI AssistView",
+            "api":{ "AIAssitView": ["bannerTemplate", "promptItemTemplate", "responseItemTemplate", "promptSuggestionItemTemplate", "footerTemplate",  "promptSuggestions", "prompts", "promptRequest"] },
+            "description": "Showcases the template properties of the AiAssistView control."
+        },
+        {
+            "url": "overview",
+            "name": "Overview",
+            "category": "AI AssistView",
+            "api":{ "AIAssitView": ["promptSuggestions", "prompts", "promptRequest"] },
+            "description": "Showcases the AiAssistView control overview."
+        }
+    ]
+}

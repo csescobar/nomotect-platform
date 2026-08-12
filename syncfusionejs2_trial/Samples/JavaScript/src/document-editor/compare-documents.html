@@ -1,0 +1,122 @@
+<div class="control-section">
+    <title>Essential JS 2 - DocumentEditor</title>
+  <div class="content-wrapper">
+    <div id="title">Essential JS 2 for JavaScript - Document Editor</div>
+    <div id="description">The Document Editor component is used to create, edit, view, and print Word documents. This
+        demo shows how to compare two Word documents and visualize their differences.</div>
+    <div id="panel">
+        <div id="sample">
+            <div class="content-container" id="container">
+                <div class="control-section">
+                    <div id="comparison-control-panel">
+                        <div id="file-upload-section">
+                            <label>
+                                Original Document :
+                                <input style="margin-left: 10px" id="originalFileInput" type="file"
+                                       accept=".docx,.dotx,.docm,.dotm,.doc,.dot,.rtf,.txt,.xml,.html,.sfdt"/>
+                            </label>
+                            <label style="margin-left: 20px;">
+                                Revised Document :
+                                <input style="margin-left: 10px" id="revisedFileInput" type="file"
+                                       accept=".docx,.dotx,.docm,.dotm,.doc,.dot,.rtf,.txt,.xml,.html,.sfdt"/>
+                            </label>
+                        </div>
+                        <div id="options-section" style="display: flex; margin-top: 15px; align-items: center;">
+                            <label style="flex: 1">
+                                <input type="checkbox" id="showTrackedChanges" checked style="margin-right: 8px"/>
+                                Show comparison result with tracked changes
+                            </label>
+                            <!-- SYNCFUSION BUTTONS -->
+                            <button id="compareButton" disabled>Compare Documents</button>
+                            <button id="downloadButton" disabled style="margin-left: 10px">Download Result</button>
+                        </div>
+                    </div>
+                    <div id="editors-container" style="display: flex; height: 600px; margin-top: 20px;">
+                        <div class="editor-container" style="width: 50%; padding-right: 10px;">
+                            <div class="editor-label" style="font-weight: 500; margin-bottom: 5px;">
+                                Original Document
+                            </div>
+                            <div id="documentEditor1" style="height: 100%; border: 1px solid #e0e0e0;"></div>
+                        </div>
+                        <div class="editor-container" style="width: 50%; padding-left: 10px;">
+                            <div id="editor2Label" class="editor-label" style="font-weight: 500; margin-bottom: 5px;">
+                                Result Document (with tracked changes)
+                            </div>
+                            <div id="documentEditor2" style="height: 100%; border: 1px solid #e0e0e0;"></div>
+                        </div>
+                    </div>
+                    <div id="action-description" style="margin-top: 20px;">
+                        <p>The Document Editor component supports comparing two documents with the help of
+                            Syncfusion DocIO and displays the differences between them.</p>
+                    </div>
+                    <div id="description">
+                        <p>In this example, you can:</p>
+                        <ul>
+                            <li>Upload original and revised documents (.docx or .sfdt formats)</li>
+                            <li>Compare the documents to see the differences</li>
+                            <li>View the differences with or without tracked changes</li>
+                            <li>Download the compared result document</li>
+                        </ul>
+                        <p style="display: block"> More information about the document editor features can be found in
+                            this <a target="_blank"
+                                    href="https://ej2.syncfusion.com/javascript/documentation/document-editor/overview/">documentation
+                                section.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Add essential styles to ensure proper layout */
+    #comparison-control-panel {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 900px;
+        gap: 12px;
+        padding: 18px;
+        margin: 20px auto 24px auto;
+        border: 1.5px solid #d4dbf9;
+        background: #f6f9fe;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(80,120,220,0.06);
+    }
+
+    #file-upload-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #options-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #editors-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        width: 100%;
+        height: 600px;
+        overflow: hidden;
+    }
+
+    .editor-container {
+        width: 50%;
+        min-width: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #documentEditor1, #documentEditor2 {
+        height: calc(100% - 25px);
+        border: 1px solid #e0e0e0;
+    }
+</style>

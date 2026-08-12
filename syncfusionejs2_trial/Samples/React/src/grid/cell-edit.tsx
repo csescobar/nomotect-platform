@@ -1,0 +1,157 @@
+
+import { GridComponent, ColumnsDirective, ColumnDirective, Inject, Toolbar, Edit, Page, Sort, Filter, FilterSettingsModel } from '@syncfusion/ej2-react-grids';
+import { appointmentData } from './data';
+import * as React from 'react';
+import { SampleBase } from '../common/sample-base';
+import './cell-edit.css';
+
+/**
+ * Cell Editing sample
+ */
+
+export class CellEdit extends SampleBase<{}, {}> {
+    public gridInstance: GridComponent | null = null;
+    public toolbarOptions: any = ['Add', 'Delete', 'Update', 'Cancel'];
+    public filterSettings: FilterSettingsModel = { type: 'CheckBox' };
+    public editSettings: any = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Cell' };
+    private doctorTemplate = (props: any) => {
+        const doctorList: string[] = [
+            'Dr. Smitha', 'Dr. Johnson', 'Dr. Garcia', 'Dr. Brianna',
+            'Dr. Williams', 'Dr. Martinez', 'Dr. Davis', 'Dr. Joanna'
+        ];
+
+        const index = doctorList.indexOf(props.Doctor) + 1;
+
+        return (
+            <div className="doctor-cell">
+                {`src/grid/images/${index}.png`}
+                <span>{props.Doctor}</span>
+            </div>
+        );
+    };
+    private statusTemplate = (props: any) => {
+        let cls = 'waiting';
+        if (props.Status === 'Booked') cls = 'booked';
+        else if (props.Status === 'Canceled') cls = 'canceled';
+        else if (props.Status === 'Completed') cls = 'completed';
+
+        return (
+            <div>
+                <span className={`badge ${cls}`}>
+                    {props.Status}
+                </span>
+            </div>
+        );
+    };
+    private typeTemplate = (props: any) => {
+        let cls = 'consult';
+
+        if (props.Type === 'Emergency') {
+            cls = 'emergency';
+        } else if (props.Type === 'Lab Test') {
+            cls = 'lab';
+        } else if (props.Type === 'Follow-up') {
+            cls = 'follow';
+        } else if (props.Type === 'Routine Check') {
+            cls = 'routine';
+        }
+
+        return (
+            <span className={`type ${cls}`}>
+                {props.Type}
+            </span>
+        );
+    };
+
+    actionBegin(args: any): void {
+        if (args.requestType === 'save' && args.action === 'add') {
+            args.data.ApptID = 'APT-' + (Date.now() % 100000);
+        }
+    }
+
+    onActionComplete(args: any): void {
+        if (args.requestType === 'save' && args.columnName === 'Doctor') {
+            const doctorRoomMap: any = {
+                'Dr. Smitha': 'R1',
+                'Dr. Johnson': 'R2',
+                'Dr. Garcia': 'R6',
+                'Dr. Brianna': 'R4',
+                'Dr. Williams': 'R3',
+                'Dr. Martinez': 'R7',
+                'Dr. Davis': 'R8',
+                'Dr. Joanna': 'R5',
+            };
+
+            if (this.gridInstance) {
+                this.gridInstance.updateCell(args.rowIndex, 'Room', doctorRoomMap[args.data.Doctor]);
+            }
+        }
+    }
+
+    validateAppointmentTime(args: any) {
+        if (!args.value) return false;
+        let date = new Date(args.value);
+        let hour = date.getHours();
+        return !(hour < 9 || hour > 20);
+    }
+
+    render() {
+        return (
+            <div className='control-pane'>
+                <div className='control-section'>
+                        <GridComponent id="CellEdit" ref={(grid: GridComponent) => (this.gridInstance = grid)} dataSource={appointmentData} allowPaging={true} allowSorting={true}
+                            allowFiltering={true} toolbar={this.toolbarOptions} editSettings={this.editSettings} filterSettings={this.filterSettings}
+                            height={400} rowHeight={40} actionComplete={this.onActionComplete.bind(this)} clipMode="EllipsisWithTooltip" actionBegin={this.actionBegin.bind(this)}>
+                            <ColumnsDirective>
+                                <ColumnDirective field="ApptID" headerText="Appointment ID" isPrimaryKey={true} width={140} visible={false} ></ColumnDirective>
+                                <ColumnDirective field="Patient" headerText="Patient" width={150} validationRules={{ required: true }}></ColumnDirective>
+                                <ColumnDirective field="Doctor" headerText="Doctor" width={160} template={this.doctorTemplate} editType="dropdownedit" validationRules={{ required: true }}></ColumnDirective>
+                                <ColumnDirective field="AppointmentTime" headerText="Appointment Time" editType="datetimepickeredit" width={200} format={{ type: 'dateTime', format: 'M/d/y hh:mm a' }} 
+                                    validationRules={{ required: true,
+                                        timeRule: [
+                                            this.validateAppointmentTime.bind(this),
+                                            'Appointment allowed only between 9AM – 9PM'
+                                        ]
+                                    }}></ColumnDirective>
+                                <ColumnDirective field="Type" headerText="Type" width={150} template={this.typeTemplate} editType="dropdownedit" validationRules={{ required: true }}></ColumnDirective>
+                                <ColumnDirective field="Status" headerText="Status" width={130} template={this.statusTemplate} editType="dropdownedit" validationRules={{ required: true }}></ColumnDirective>
+                                <ColumnDirective field="Room" headerText="Room No" width={120} ></ColumnDirective>
+                                <ColumnDirective field="Fee" headerText="Fee" textAlign="Right" width={90} format="C2" editType="numericedit" edit={{ params: { showSpinButton: false } }}
+                                   validationRules={{ required: true, min: 50, max: 500 }} ></ColumnDirective>
+                                <ColumnDirective field="Notes" headerText="Notes" width={260} ></ColumnDirective>
+                            </ColumnsDirective>
+                            <Inject services={[Toolbar, Edit, Page, Sort, Filter]} />
+                    </GridComponent>
+                    <div id="action-description">
+                        <p>This sample demonstrates cell editing for quick and efficient data updates. It provides a seamless editing experience for modifying individual cell values within the Grid.</p>
+                    </div>
+                    <div id="description">
+                        <p>
+                            Cell editing allows users to modify a single cell’s value directly. This mode is enabled by setting <code><a target="_blank" className="code"
+                                href="https://ej2.syncfusion.com/react/documentation/api/grid/editSettings/#mode">editSettings.mode</a></code> to <code>Cell</code>. Users can enter edit mode by double‑clicking a cell and then changing its value. The update is applied when the user presses "Enter" key or moves to another cell.
+                        </p>
+                        <p>
+                            This editing mode works seamlessly with other Grid features such as validation, formatting, and more, ensuring a consistent and efficient editing experience.
+                        </p>
+                        <p>
+                            <strong>Injecting Module:</strong>
+                        </p>
+                        <p>
+                            Features of the Grid component are organized into individual, feature-specific modules. To use the editing and toolbar
+                            functionality, inject the required modules <code>Edit</code> and <code>Toolbar</code> into the <code>services</code>.
+                        </p>
+                        <p>
+                            More information on edit configuration can be found in the <a target="_blank"
+                                href="https://ej2.syncfusion.com/react/documentation/grid/editing"> documentation section</a>.
+                        </p>
+                        <p>Looking for the full React Data Grid component overview, features, pricing, and documentation? Visit our
+                            <a target="_blank"
+                                href="https://www.syncfusion.com/react-components/react-data-grid"> React Data Grid component</a> page.</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default CellEdit;

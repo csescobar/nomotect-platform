@@ -1,0 +1,150 @@
+{
+    "name": "BlockEditor",
+    "description": "Block Editor Components",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/syncfusion/ej2-blockeditor"
+    },
+    "keywords": {
+        "common": ["ej2", "syncfusion", "blockeditor", "ej2-blockeditor", "block editor", "blocks", "editor", "modular-editor", "block-based"],
+        "angular": ["angular", "ng", "ej2-angular-blockeditor", "angular-blockeditor", "block editor", "blocks", "editor", "modular-editor", "block-based"],
+        "react": ["react", "reactjs", "ej2-react-blockeditor", "react-blockeditor", "block editor", "blocks", "editor", "modular-editor", "block-based"],
+        "vue": ["vue", "vuejs", "ej2-vue-blockeditor", "vue-blockeditor", "block editor", "blocks", "editor", "modular-editor", "block-based"]
+    },
+    "components": [
+        {
+            "baseClass": "BlockEditor",
+            "directoryName": "blockeditor",
+            "type": "container",
+            "selector": "[ejs-blockeditor], ejs-blockeditor",
+            "preferredTag": "div",
+            "reactPreferredTag": "div",
+            "defaultTag": "<div id='editor'></div>",
+            "twoWays": [
+                "blocks"
+            ],
+            "dynamicModules": [
+                "Collaboration",
+                "VersionHistory"
+            ],
+            "diModuleFiles": [
+                { "fileName": "collaboration" },
+                { "fileName": "version-plugin" }
+            ],
+            "comment": [
+                "/**",
+                " * Represents the Essential JS 2 Angular BlockEditor Component.",
+                " * ```html",
+                " * <ejs-blockeditor></ejs-blockeditor>",
+                " * ```",
+                " */"
+            ],
+            "reactComment": [
+                "/**",
+                " * Represents the React BlockEditor Component",
+                " * ```tsx",
+                " * <BlockEditorComponent></BlockEditorComponent>",
+                " * ```",
+                " */"
+            ],
+            "vueComment": [
+                "/**",
+                " * Represents the Essential JS 2 VueJS BlockEditor Component",
+                " * ```vue",
+                " * <ejs-blockeditor></ejs-blockeditor>",
+                " * ```",
+                " */"
+            ],
+            "complexDirective": [
+                {
+                    "propertyName": "commandMenuSettings",
+                    "baseClass": "CommandMenuSettings",
+                    "aspClassName":"CommandMenuSettings",
+                    "SelectorName": "e-blockeditor-commandmenusettings",
+                    "aspSelectorName": "e-blockeditor-commandmenusettings"
+                },
+                {
+                    "propertyName": "inlineToolbarSettings",
+                    "baseClass": "InlineToolbarSettings",
+                    "aspClassName":"InlineToolbarSettings",
+                    "SelectorName": "e-blockeditor-inlinetoolbarsettings",
+                    "aspSelectorName": "e-blockeditor-inlinetoolbarsettings"
+                },
+                {
+                    "propertyName": "blockActionMenuSettings",
+                    "baseClass": "BlockActionMenuSettings",  
+                    "aspClassName":"BlockActionMenuSettings",
+                    "SelectorName": "e-blockeditor-blockactionmenusettings",
+                    "aspSelectorName": "e-blockeditor-blockactionmenusettings"
+                },
+                {
+                    "propertyName": "contextMenuSettings",
+                    "baseClass": "ContextMenuSettings",  
+                    "aspClassName":"ContextMenuSettings",
+                    "SelectorName": "e-blockeditor-contextmenusettings",
+                    "aspSelectorName": "e-blockeditor-contextmenusettings",
+                    "templateProperties": [
+                        "itemTemplate"
+                    ]
+                },
+                {
+                    "propertyName": "pasteCleanupSettings",
+                    "baseClass": "PasteCleanupSettings",  
+                    "aspClassName":"PasteCleanupSettings",
+                    "SelectorName": "e-blockeditor-pastesettings",
+                    "aspSelectorName": "e-blockeditor-pastesettings"
+                },
+                {
+                    "propertyName": "labelSettings",
+                    "baseClass": "LabelSettings",  
+                    "aspClassName":"LabelSettings",
+                    "SelectorName": "e-blockeditor-labelsettings",
+                    "aspSelectorName": "e-blockeditor-labelsettings"
+                },
+                {
+                    "propertyName": "backgroundColorSettings",
+                    "baseClass": "BackgroundColorSettings",  
+                    "aspClassName":"BackgroundColorSettings",
+                    "SelectorName": "e-blockeditor-backgroundcolorsettings",
+                    "aspSelectorName": "e-blockeditor-backgroundcolorsettings"
+                },
+                {
+                    "propertyName": "fontColorSettings",
+                    "baseClass": "FontColorSettings",  
+                    "aspClassName":"FontColorSettings",
+                    "SelectorName": "e-blockeditor-fontcolorsettings",
+                    "aspSelectorName": "e-blockeditor-fontcolorsettings"
+                },
+                {
+                    "propertyName": "imageBlockSettings",
+                    "baseClass": "ImageBlockSettings",  
+                    "aspClassName":"ImageBlockSettings",
+                    "SelectorName": "e-blockeditor-imagesettings",
+                    "aspSelectorName": "e-blockeditor-imagesettings"
+                },
+                {
+                    "propertyName": "codeBlockSettings",
+                    "baseClass": "CodeBlockSettings",  
+                    "aspClassName":"CodeBlockSettings",
+                    "SelectorName": "e-blockeditor-codeblocksettings",
+                    "aspSelectorName": "e-blockeditor-codeblocksettings"
+                },
+                {
+                    "propertyName": "transformSettings",
+                    "baseClass": "TransformSettings",  
+                    "aspClassName":"TransformSettings",
+                    "SelectorName": "e-blockeditor-transformsettings",
+                    "aspSelectorName": "e-blockeditor-transformsettings"
+                },
+                {
+                    "propertyName": "collaborationSettings",
+                    "baseClass": "CollaborationSettings",  
+                    "aspClassName":"CollaborationSettings",
+                    "SelectorName": "e-blockeditor-collaborationsettings",
+                    "aspSelectorName": "e-blockeditor-collaborationsettings"
+                }
+            ],
+            "tagDirective": []
+        }
+    ]
+}

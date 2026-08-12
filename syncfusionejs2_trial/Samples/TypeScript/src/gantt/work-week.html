@@ -1,0 +1,84 @@
+<div class="col-lg-8 control-section">
+    <div class="content-wrapper">
+        <div id="WorkWeek">
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <table id="property" title="Properties" style="width: 100%;">
+        <colgroup>
+            <col style="width:30%" />
+            <col style="width:70%" />
+        </colgroup>
+        <tr>
+            <td style="width:30%">
+                <div>Working Days</div>
+            </td>
+            <td style="width:70%">
+                <div style="padding-top: 0px;width: 210px;">
+                    <input id="WorkingDays" style="padding: 2px;" type="text" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:30%">
+                <div>Show Weekends</div>
+            </td>
+            <td style="width:70%">
+                <div>
+                    <input type="checkbox" id="toggleWeekendVisibility" class="checkbox" checked="checked" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:30%">
+                <div>Highlight Weekends</div>
+            </td>
+            <td style="width:70%">
+                <div>
+                    <input type="checkbox" id="togglehighlightWeekends" class="checkbox" checked="checked" />
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates how to adjust the working days within a week and manage the visibility of non-working days in the timeline, enabling customized project scheduling.</p>
+</div>
+
+<div id="description">
+    <p>
+        In this example, you can customize which days of the week are considered working days using the <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/gantt/index-default#workweek">workWeek</a> property. 
+        Simply select your preferred working days from the dropdown list in the property panel, and they will be applied to the Gantt Chart. Weekends can be highlighted using the <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/gantt/index-default#highlightweekends">highlightweekends</a> property for easy identification.     
+    </p>        
+    <p>
+        Non-working days are visible by default in the Gantt Chart timeline, their visibility can be customized using the <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/gantt/timelinesettingsmodel#showweekend">timelineSettings.showWeekend</a> property. Setting this to false will hide non-working days from the timeline.
+    </p>
+    <p style="font-weight: 500">Injecting Module:</p>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use selection feature, inject the
+        <code>Selection</code> module using the <code>Gantt.Inject(Selection)</code> method. To use markers feature, inject the
+        <code>DayMarkers</code> module using the <code>Gantt.Inject(DayMarkers)</code> method.
+    </p>
+    <p>More information on the Essential<sup>®</sup> JS2 Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/documentation/gantt/task-scheduling#weekendnon-working-days">documentation section</a>.</p>
+</div>
+
+<style>
+    .fluent2 #export,
+    .fluent2-dark #export {
+        padding: 7px;
+    }
+    
+    .fluent2 .property-panel-table div,
+    .fluent2-dark .property-panel-table div{
+        padding-left: 10px;
+        padding-top: 0px;
+    }
+
+    .fluent2 .e-multi-select-wrapper,
+    .fluent2-dark .e-multi-select-wrapper{
+        padding-right: 0px;
+    }
+</style>
+

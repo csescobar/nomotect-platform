@@ -1,0 +1,44 @@
+<div class="control-section">
+    <div style="width: 100%;height: 10%">
+        <div id='toolbar' style="width:100%;height: 10%;margin-top: 10px;">
+        </div>
+    </div>
+    <div style="width: 100%;height: 80%;border-width: 0 1px 1px 1px; border-style: solid; border-color:#D7D7D7">
+        <div id="diagram-space" class="sb-mobile-diagram">
+            <div id="diagram"></div>
+        </div>
+    </div>
+</div>
+<div id="editDialog">
+    <div class="showLabel">
+        <input id="Description" />
+    </div>
+    <div class="showLabel" style="padding-top: 14px">
+        <input id="Color" />
+    </div>
+    <div class="showDropdown">
+        <input type="text" id="SourceId" />
+    </div>
+    <div class="showDropdown" style="padding-top: 14px">
+        <input type="text" id="TargetId" />
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates generating a diagram by reading data from the database, and updating it with newly inserted/updated/deleted nodes and connectors through web services.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This example shows how the user reads the data source and performs add, edit, delete of data in the data source
+        at runtime. The <code>crudAction</code> property of the <code>dataSourceSettings</code> and <code>crudAction</code> property of the
+        <code>connectionDataSource</code> allow you to define the server-side method name for <code>create</code>, <code>read</code>, <code>update</code>, and
+        <code>delete</code> operations.
+    </p>
+    <p>
+        The <code>insertData</code> method is used to send the newly added/inserted data from client to server side. Likewise,
+        <code>updateData</code> and <code>removeData</code> are used to send the updated and deleted diagram elements to the server.
+    </p>
+    <br>
+</div>

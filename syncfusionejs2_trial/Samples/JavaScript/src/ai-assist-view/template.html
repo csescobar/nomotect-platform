@@ -1,0 +1,254 @@
+<div class="control-section">
+    <div id="template-aiassist">
+        <div id="template_AiAssistView"></div>
+    </div>
+</div>
+
+<script id="ai-bannerViewTemplate" type="text/x-jsrender">
+<div class="ai-assist-banner">
+    <div class="e-icons e-aiassist-chat"></div>
+    <h2>AI Assistance</h2>
+    <div class="ai-assist-banner-subtitle">Your everyday AI companion</div>
+</div>
+</script>
+
+<script id="ai-promptItemTemplate" type="text/x-jsrender">
+<div class="ai-prompt-template">
+    <div class="prompt-icon-content">
+        <span class="promptHeader">You</span>
+        <span class="e-aiassist-user e-icons"></span>
+    </div>
+    <div>
+        ${prompt}
+    </div>
+    <div class="prompt-toolbar-icon e-icons e-aiassist-copy">
+    </div>
+</div>
+</script>
+
+<script id="ai-responseItemTemplate" type="text/x-jsrender">
+<div class="ai-response-template">
+    <div class="response-icon-content">
+        <span class="e-aiassist-chat e-icons"></span>
+        <span class="responseHeader">AIAssist</span>
+    </div>
+    <div class="response-content">
+        <div>
+            ${response}
+        </div>
+        <div class='responser-toolbar-items'>
+            <div class="response-toolbar-icon e-icons e-aiassist-copy">
+            </div>
+            <div class="response-counter">Generated Response: ${index}</div>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="ai-promptSuggestionItemTemplate" type="text/x-jsrender">
+    <div class='suggestion-contents active'>
+        ${promptSuggestion}
+    </div>
+</script>
+
+<script id="ai-footerTemplate" type="text/x-jsrender">
+<div class="custom-footer">
+    <textarea id="textarea"></textarea>
+    <button id="btn" class="e-btn e-primary" style="margin-top: 10px">Generate Prompt</button>
+</div>
+</script>
+
+<div id="action-description">
+    <p>This sample demonstrates the template functionality of the AI AssistView control.</p>
+</div>
+<div id="description">
+    <p>This sample demonstrates the AIAssistView component with its Template Properties.
+        In this example, we showcase repository activities by customizing each elements using the <code>bannerViewTemplate</code>, <code>promptItemTemplate</code>,
+        <code>responseItemTemplate</code>, <code>promptSuggestionItemTemplate</code>, <code>footerTemplate</code>  property. It allows to create unique appearances for AI Assistview elements.
+    </p>
+</div>
+
+<style>
+    #template-aiassist {
+        height: 600px;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .ai-assist-banner,
+    .ai-prompt-template,
+    .ai-response-template,
+    .custom-footer,
+    .prompt-icon-content,
+    .response-icon-content,
+    .prompt-toolbar-icon,
+    .response-toolbar-icon,
+    .responser-toolbar-items {
+        display: flex;
+    }
+    .ai-assist-banner {
+        flex-direction: column;
+        justify-content: center;
+        height: 200px;
+        font-size: 18px;
+        text-align: center;
+    }
+    .ai-assist-banner h2 {
+        margin: 0;
+    }
+    .ai-assist-banner .e-icons:before {
+        font-size: 40px;
+    }
+    .ai-prompt-template,
+    .ai-response-template {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .custom-footer {
+        justify-content: space-between;
+        align-items: end;
+    }
+    .generate-btn {
+        align-self: flex-end;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+    .custom-footer .e-multi-line-input {
+        flex: 1;
+    }
+    .prompt-icon-content,
+    .response-icon-content,
+    .ai-assist-banner,
+    .prompt-toolbar-icon,
+    .response-toolbar-icon,
+    .responser-toolbar-items {
+        align-items: center;
+    }
+    .prompt-icon-content {
+        justify-content: end;
+    }
+    .promptHeader,
+    .responseHeader {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .suggestion-contents {
+        background-color: #e0e0e0;
+        padding: 10px 15px; 
+        border-radius: 6px;
+        margin-bottom: 10px; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        cursor: pointer;
+        width: max-content;
+        display: none;
+    }
+    .suggestion-contents:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .e-aiassist-user,
+    .e-aiassist-chat {
+        padding: 5px;
+        font-size: 14px;
+        border-radius: 50%;
+        padding: 5px;
+    }
+    .e-aiassist-chat {
+        margin-right: 8px;
+    }
+    .e-aiassist-user {
+        margin-left: 8px;
+    }
+    .prompt-toolbar-icon,
+    .response-toolbar-icon {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        border-radius: 4px;
+    }
+    .prompt-toolbar-icon:hover,
+    .response-toolbar-icon:hover {
+        background-color: #f0f0f0;
+        border: 1px solid #f0f0f0;
+    }
+    .e-aiassist-suggestions {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .suggestion-contents.active {
+        display: block;
+    }
+    .responser-toolbar-items {
+        gap: 5px;
+    }
+    .response-counter {
+        background-color: rgb(240, 240, 240);
+        padding: 5px 10px;
+        border-radius: 4px;
+        width: max-content;
+    }
+    .ai-prompt-template:hover .prompt-toolbar-icon,
+    .ai-response-template:hover .responser-toolbar-items,
+    .responser-toolbar-items.active {
+        opacity: 1;
+        transition: opacity .3s;
+    }
+    .prompt-toolbar-icon,
+    .responser-toolbar-items {
+        opacity: 0;
+    }
+    .response-content {
+        margin-left: 32px;
+    }
+    #template-aiassist ul {
+        display: inline-block;
+    }
+    #template-aiassist li {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+    #template-aiassist .e-aiassist-view .e-aiassist-views .e-aiassist-prompt-text {
+        background: none;
+     }
+    @media (max-width: 750px) {
+        .custom-footer {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .generate-btn {
+            align-self: auto;
+        }
+        #template-aiassist .e-aiassist-suggestions {
+            width: 90%;
+        }
+        .suggestion-contents {
+            width: inherit;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    /* Generic dark theme modifications */
+    body[class*="-dark"] .suggestion-contents {
+        background-color: #2e2e2e;
+    }
+    body[class*="-dark"] .suggestion-contents:hover {
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    }
+    body[class*="-dark"] .e-aiassist-user,
+    body[class*="-dark"] .e-aiassist-chat {
+        color: #66b2ff;
+    }
+    body[class*="-dark"] .response-counter {
+        background-color: #383838;
+    }
+    body[class*="-dark"] .prompt-toolbar-icon:hover,
+    body[class*="-dark"] .response-toolbar-icon:hover {
+        background-color: #4a4a4a;
+        border: 1px solid #4a4a4a;
+    }
+</style>

@@ -1,0 +1,200 @@
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FunnelDiagram = void 0;
+var React = require("react");
+var ej2_react_diagrams_1 = require("@syncfusion/ej2-react-diagrams");
+var sample_base_1 = require("../common/sample-base");
+var LEVEL_COLORS = {
+    level1: '#C2272D',
+    level2: '#F16C0D',
+    level3: '#FFC107',
+    level4: '#4CB443',
+    level5: '#008AE0',
+    level6: '#8715BC',
+};
+// Tooltip Template
+function getToolTemplate(iconClass, iconFill, description, cumulativeRate, conversionRate) {
+    return " \n<div style=\"border-radius: 8px; max-width: 240px; min-width: 180px; padding: 12px; font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px;\">\n<!-- Container for icon and description -->\n<div style=\"display: flex; align-items: center; padding: 5px 0px;\">\n    <div class=\"".concat(iconClass, " annotation-icon\" style=\"display: flex; align-items: center; justify-content: center;\n    width: 34px; height: 34px; background: ").concat(iconFill, "; color: #FFFFFF; border-radius: 50%; margin-right: 10px;\"></div>\n    <div style=\"font-weight: 600; font-size: 16px;\">\n        ").concat(description, "\n    </div>\n</div>\n<hr style=\"margin: 3px; border-top: 1px solid #9CA3AF;\">\n\n<div style=\"display: grid; row-gap: 8px;\">\n    ").concat(conversionRate !== undefined ? "\n        <div style=\"display: flex; justify-content: space-between; align-items: center;\">\n            <span style=\"font-weight: 500; opacity:0.7;\">Conversion</span>\n            <span style=\"font-weight: 600;\">".concat(conversionRate, "%</span>\n        </div>\n    ") : '', "\n\n    <div style=\"display: flex; justify-content: space-between; align-items: center;\">\n        <span style=\"font-weight: 500; opacity:0.7;\">Cumulative</span>\n        <span style=\"font-weight: 600;\">").concat(cumulativeRate, "%</span>\n    </div>\n</div>\n</div>\n");
+}
+// Title Icon Annotation Template
+function getIconTemplate(iconClass) {
+    return "<div class=\"".concat(iconClass, "\" style=\"width: 60px; height: 60px;display: flex; align-items: center;\n            justify-content: center; font-size: 34px; color: #FFFFFF; !important;\">\n            </div>");
+}
+// Annotation
+function getStageLabel(content) {
+    return {
+        content: content,
+        offset: { x: 0, y: 0.5 },
+        horizontalAlignment: 'Right',
+        verticalAlignment: 'Bottom',
+        margin: { right: 6, bottom: 4 },
+        style: { fontSize: 16, textWrapping: 'NoWrap', fontFamily: 'Segoe UI' }
+    };
+}
+// Title node factory
+function createTitleNode() {
+    return {
+        id: 'title',
+        offsetX: 150, offsetY: -40,
+        width: 250, height: 50,
+        annotations: [
+            {
+                content: 'Marketing Funnel', offset: { x: 0.5, y: 0.2 },
+                style: { color: '#111827', fontSize: 24, fontFamily: 'Segoe UI' }
+            },
+            {
+                content: 'Measuring Campaign Effectiveness', offset: { x: 0.5, y: 0.7 },
+                style: { color: '#6B7280', fontSize: 16, fontFamily: 'Segoe UI' }
+            }
+        ],
+        constraints: ej2_react_diagrams_1.NodeConstraints.None,
+        style: { strokeColor: 'transparent' }
+    };
+}
+// Stage node factory
+function createNode(id, width, height, fill, offsetX, offsetY, pathData, valueText, iconClass, description, cumulativeRate, conversionRate, portX) {
+    if (portX === void 0) { portX = 0.9; }
+    return {
+        id: id,
+        offsetX: offsetX,
+        offsetY: offsetY,
+        width: width,
+        height: height,
+        annotations: [{
+                content: valueText,
+                style: { color: '#FFFFFF', fontSize: 18, fontFamily: 'Segoe UI', bold: true }
+            }],
+        shape: { type: 'Path', data: pathData },
+        style: { fill: fill, strokeColor: 'transparent' },
+        constraints: ej2_react_diagrams_1.NodeConstraints.PointerEvents | ej2_react_diagrams_1.NodeConstraints.Tooltip | ej2_react_diagrams_1.NodeConstraints.ReadOnly,
+        tooltip: {
+            relativeMode: 'Mouse',
+            position: 'TopCenter',
+            content: getToolTemplate(iconClass, fill, description, cumulativeRate, conversionRate)
+        },
+        ports: [{ id: 'port', offset: { x: portX, y: 0.8 } }],
+    };
+}
+// Label node factory
+function createLabelNode(id, width, height, fill, offsetX, offsetY, iconClass, description) {
+    return {
+        id: id,
+        offsetX: offsetX,
+        offsetY: offsetY,
+        width: width,
+        height: height,
+        annotations: [
+            { template: getIconTemplate(iconClass) },
+            getStageLabel(description)
+        ],
+        shape: { type: 'Basic', shape: 'Ellipse' },
+        style: { fill: fill, strokeColor: fill },
+        constraints: ej2_react_diagrams_1.NodeConstraints.InConnect
+    };
+}
+// Connector factory
+function createConnector(sourceID, targetID, strokeColor, p1x, p1y, p2x, p2y, sourcePortID) {
+    if (sourcePortID === void 0) { sourcePortID = 'port'; }
+    return {
+        sourceID: sourceID,
+        sourcePortID: sourcePortID,
+        targetID: targetID,
+        targetDecorator: { shape: 'None' },
+        style: { strokeColor: strokeColor },
+        segments: [
+            { type: 'Straight', point: { x: p1x, y: p1y } },
+            { type: 'Straight', point: { x: p2x, y: p2y } },
+        ],
+        constraints: ej2_react_diagrams_1.ConnectorConstraints.None
+    };
+}
+var FunnelDiagram = /** @class */ (function (_super) {
+    __extends(FunnelDiagram, _super);
+    function FunnelDiagram() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.diagramRef = React.createRef();
+        _this.diagramCreated = false;
+        _this.nodes = [
+            // Title Node
+            createTitleNode(),
+            // First level of the funnel.
+            createNode('awareness', 560, 80, LEVEL_COLORS.level1, 150, 100, 'M560 0H0L56.7194 80H503.281L560 0Z', '10,000', 'sf-icon-ads-exposure', 'Ad Exposure', 100, undefined, 0.9),
+            // Second level of the funnel.
+            createNode('interest', 446, 80, LEVEL_COLORS.level2, 150, 180, 'M503 80H57L113.648 160H446.352L503 80Z', '6,500', 'sf-icon-page-visits', 'Page Visits', 65, 65.00, 0.89),
+            // Third level of the funnel.
+            createNode('consideration', 334, 80, LEVEL_COLORS.level3, 150, 260, 'M447 160H113L169.869 240H390.131L447 160Z', '3,800', 'sf-icon-sign-up', 'Sign Ups', 38, 58.46, 0.85),
+            // Fourth level of the funnel.
+            createNode('intent', 220, 80, LEVEL_COLORS.level4, 150, 340, 'M170 240L226.801 320H333.199L390 240H170Z', '2,000', 'sf-icon-demo-request', 'Demo Requests', 20, 52.63, 0.8),
+            // Fifth level of the funnel.
+            createNode('purchase', 106, 80, LEVEL_COLORS.level5, 150, 420, 'M333 320H227V400H333V320Z', '1,200', 'sf-icon-orders', 'Orders', 12, 60.00, 0.9),
+            // Sixth and final level of the funnel.
+            createNode('retention', 106, 80, LEVEL_COLORS.level6, 150, 500, 'M227 480H333V400H227V480Z', '800', 'sf-icon-engagement', 'Subscribed Users', 8, 66.67, 0.9),
+            // Labels
+            createLabelNode('awareness_label', 60, 60, LEVEL_COLORS.level1, 620, 100, 'sf-icon-ads-exposure', 'Ad Exposure'),
+            createLabelNode('interest_label', 60, 60, LEVEL_COLORS.level2, 620, 180, 'sf-icon-page-visits', 'Page Visits'),
+            createLabelNode('consideration_label', 60, 60, LEVEL_COLORS.level3, 620, 260, 'sf-icon-sign-up', 'Sign Ups'),
+            createLabelNode('intent_label', 60, 60, LEVEL_COLORS.level4, 620, 340, 'sf-icon-demo-request', 'Demo Requests'),
+            createLabelNode('purchase_label', 60, 60, LEVEL_COLORS.level5, 620, 420, 'sf-icon-orders', 'Orders'),
+            createLabelNode('retention_label', 60, 60, LEVEL_COLORS.level6, 620, 500, 'sf-icon-engagement', 'Subscribed Users'),
+        ];
+        // Connectors
+        _this.connectors = [
+            createConnector('awareness', 'awareness_label', LEVEL_COLORS.level1, 430, 124, 455, 98),
+            createConnector('interest', 'interest_label', LEVEL_COLORS.level2, 430, 204, 455, 178),
+            createConnector('consideration', 'consideration_label', LEVEL_COLORS.level3, 430, 284, 455, 258),
+            createConnector('intent', 'intent_label', LEVEL_COLORS.level4, 430, 364, 455, 338),
+            createConnector('purchase', 'purchase_label', LEVEL_COLORS.level5, 430, 444, 455, 418),
+            createConnector('retention', 'retention_label', LEVEL_COLORS.level6, 430, 524, 455, 498),
+        ];
+        return _this;
+    }
+    FunnelDiagram.prototype.render = function () {
+        var _this = this;
+        return (React.createElement("div", { className: "control-pane diagram-control-pane" },
+            React.createElement("style", null, funnelCss),
+            React.createElement("div", { className: "control-section funnel-diagram-container", style: { opacity: 0 } },
+                React.createElement(ej2_react_diagrams_1.DiagramComponent, { ref: this.diagramRef, id: "diagram", width: "100%", height: "675px", nodes: this.nodes, connectors: this.connectors, snapSettings: {
+                        constraints: ej2_react_diagrams_1.SnapConstraints.None
+                    }, created: function () {
+                        _this.diagramCreated = true;
+                        // Fit the diagram to the page on creation.
+                        _this.diagramRef.current.fitToPage();
+                        setTimeout(function () {
+                            // show diagram
+                            var container = document.querySelector('.funnel-diagram-container');
+                            if (container) {
+                                container.style.opacity = '1';
+                            }
+                        }, 10);
+                    }, load: function () {
+                        if (_this.diagramCreated) {
+                            _this.diagramRef.current.fitToPage();
+                        }
+                    } })),
+            React.createElement("div", { id: "action-description" },
+                React.createElement("p", null,
+                    "The funnel diagram is built using the ",
+                    React.createElement("a", { href: "https://www.syncfusion.com/react-components/react-diagram", target: "_blank" }, "React Diagram"),
+                    ", and it visually represents the conversion flow of users through a marketing campaign. The diagram is structured as a vertically stacked funnel, narrowing from top to bottom to indicate decreasing user counts at each stage of the customer journey.")),
+            React.createElement("div", { id: "description" },
+                React.createElement("p", null, "Each funnel stage is constructed using customizable node shapes that reflect its width and value, while distinct colors enhance visual clarity. Interactive tooltip display conversion and cumulative rates on hover, and labels indicate the purpose of each stage. This structured visual approach helps marketers quickly assess performance and identify areas for improvement."))));
+    };
+    return FunnelDiagram;
+}(sample_base_1.SampleBase));
+exports.FunnelDiagram = FunnelDiagram;
+var funnelCss = "\n@font-face {\nfont-family: 'Funnel Diagram Icon';\nsrc:\nurl(data:application/x-font-ttf;charset=utf-8;base64,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bCBEaWFncmFtIEljb25SZWd1bGFyRnVubmVsIERpYWdyYW0gSWNvbkZ1bm5lbCBEaWFncmFtIEljb25WZXJzaW9uIDEuMEZ1bm5lbCBEaWFncmFtIEljb25Gb250IGdlbmVyYXRlZCB1c2luZyBTeW5jZnVzaW9uIE1ldHJvIFN0dWRpb3d3dy5zeW5jZnVzaW9uLmNvbQAgAEYAdQBuAG4AZQBsACAARABpAGEAZwByAGEAbQAgAEkAYwBvAG4AUgBlAGcAdQBsAGEAcgBGAHUAbgBuAGUAbAAgAEQAaQBhAGcAcgBhAG0AIABJAGMAbwBuAEYAdQBuAG4AZQBsACAARABpAGEAZwByAGEAbQAgAEkAYwBvAG4AVgBlAHIAcwBpAG8AbgAgADEALgAwAEYAdQBuAG4AZQBsACAARABpAGEAZwByAGEAbQAgAEkAYwBvAG4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAdQBzAGkAbgBnACAAUwB5AG4AYwBmAHUAcwBpAG8AbgAgAE0AZQB0AHIAbwAgAFMAdAB1AGQAaQBvAHcAdwB3AC4AcwB5AG4AYwBmAHUAcwBpAG8AbgAuAGMAbwBtAAAAAAIAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwECAQMBBAEFAQYBBwEIAAxhZHMtZXhwb3N1cmULcGFnZS12aXNpdHMHc2lnbi11cAxkZW1vLXJlcXVlc3QGb3JkZXJzCmVuZ2FnZW1lbnQAAAA=) format('truetype');\nfont-weight: normal;\nfont-style: normal;\n}\n\n[class^=\"sf-icon-\"], [class*=\" sf-icon-\"] {\n font-family: 'Funnel Diagram Icon' !important;\nspeak: none;\nfont-size: 24px;\nfont-style: normal;\nfont-weight: normal;\nfont-variant: normal;\ntext-transform: none;\nline-height: 1;\n-webkit-font-smoothing: antialiased;\n-moz-osx-font-smoothing: grayscale;\n}\n\n.sf-icon-ads-exposure:before { content: \"\\e700\"; }\n.sf-icon-page-visits:before { content: \"\\e701\"; }\n.sf-icon-sign-up:before { content: \"\\e702\"; }\n.sf-icon-demo-request:before { content: \"\\e703\"; }\n.sf-icon-orders:before { content: \"\\e704\"; }\n.sf-icon-engagement:before { content: \"\\e705\"; }\n";

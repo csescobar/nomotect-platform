@@ -1,0 +1,4468 @@
+{
+    "grid": {
+        "classname": "Grid",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/form-validator,input,NumericTextBox,TextBox",
+            "ej2-navigations/ContextMenu,Toolbar",
+            "ej2-calendars/DatePicker,DateTimePicker,TimePicker",
+            "ej2-dropdowns/AutoComplete,DropDownList",
+            "ej2-popups",
+            "ej2-buttons/Button,CheckBox,RadioButton",
+            "ej2-excel-export",
+            "ej2-pdf-export",
+            "ej2-file-utils",
+            "ej2-compression",
+            "ej2-splitbuttons"
+        ],
+        "baseModule": "ej2-grids/grid/base/grid",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-buttons/Button,CheckBox",
+            "ej2-data",
+            "ej2-popups",
+            "ej2-file-utils",
+            "ej2-compression",
+            "ej2-splitbuttons"
+        ],
+        "injectableDependencies": {
+            "Filter": [
+                "ej2-inputs/NumericTextBox",
+                "ej2-calendars/DatePicker,DateTimePicker",
+                "ej2-dropdowns/AutoComplete,DropDownList",
+                "ej2-buttons/RadioButton",
+                "ej2-navigations/ContextMenu"
+            ],
+            "Edit": [
+                "ej2-inputs/form-validator,input,NumericTextBox,TextBox",
+                "ej2-dropdowns/DropDownList",
+                "ej2-calendars/DatePicker,DateTimePicker,TimePicker"
+            ],
+            "ColumnMenu": [
+                "ej2-navigations/ContextMenu"
+            ],
+            "ContextMenu": [
+                "ej2-navigations/ContextMenu"
+            ],
+            "Toolbar": [
+                "ej2-navigations/Toolbar"
+            ],
+            "ExcelExport": [
+                "ej2-excel-export"
+            ],
+            "PdfExport": [
+                "ej2-pdf-export"
+            ]
+        },
+        "injectablePath": {
+            "Filter": [
+                "export * from './actions/filter';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/filter"
+            ],
+            "Page": [
+                "export * from './actions/page';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/page"
+            ],
+            "Selection": [
+                "export * from './actions/selection';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/selection"
+            ],
+            "Sort": [
+                "export * from './actions/sort';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/sort"
+            ],
+            "Group": [
+                "export * from './actions/group';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/group"
+            ],
+            "Reorder": [
+                "export * from './actions/reorder';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/reorder"
+            ],
+            "RowDD": [
+                "export * from './actions/row-reorder';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/row-reorder"
+            ],
+            "DetailRow": [
+                "export * from './actions/detail-row';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/detail-row"
+            ],
+            "Toolbar": [
+                "export * from './actions/toolbar';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/toolbar"
+            ],
+            "Aggregate": [
+                "export * from './actions/aggregate';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/aggregate"
+            ],
+            "Search": [
+                "export * from './actions/search';",
+                "ej2-grids/grid/actions"
+            ],
+            "VirtualScroll": [
+                "export * from './actions/virtual-scroll';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/virtual-scroll"
+            ],
+            "Edit": [
+                "export * from './actions/edit';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/edit"
+            ],
+            "Resize": [
+                "export * from './actions/resize';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/resize"
+            ],
+            "ExcelExport": [
+                "export * from './actions/excel-export';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/excel-export"
+            ],
+            "PdfExport": [
+                "export * from './actions/pdf-export';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/pdf-export"
+            ],
+            "CommandColumn": [
+                "export * from './actions/command-column';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/command-column"
+            ],
+            "ContextMenu": [
+                "export * from './actions/context-menu';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/context-menu"
+            ],
+            "Freeze": [
+                "export * from './actions/freeze';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/freeze"
+            ],
+            "ColumnMenu": [
+                "export * from './actions/column-menu';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/column-menu"
+            ],
+            "ColumnChooser": [
+                "export * from './actions/column-chooser';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/column-chooser"
+            ],
+            "ForeignKey": [
+                "export * from './actions/foreign-key';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/foreign-key"
+            ],
+            "InfiniteScroll": [
+                "export * from './actions/infinite-scroll';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/infinite-scroll"
+            ],
+            "LazyLoadGroup": [
+                "export * from './actions/lazy-load-group';",
+                "ej2-grids/grid/actions",
+                "ej2-grids/grid/lazy-load-group"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-grids"
+    },
+    "dialog": {
+        "classname": "Dialog",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/common,popup",
+            "ej2-buttons/Button"
+        ],
+        "baseModule": "ej2-popups/dialog/dialog",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-popups/common,popup",
+            "ej2-buttons/Button"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-popups"
+    },
+    "toast": {
+        "classname": "Toast",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/Button",
+            "ej2-popups/popup"
+        ],
+        "baseModule": "ej2-notifications/toast/toast",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-buttons/Button",
+            "ej2-popups/popup"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-notifications"
+    },
+    "drop-down-list": {
+        "classname": "DropDownList",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-notifications/skeleton",
+            "ej2-popups/popup"
+        ],
+        "baseModule": "ej2-dropdowns/drop-down-list/drop-down-list",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-notifications/skeleton",
+            "ej2-popups/popup"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "VirtualScroll ": [
+                "export * from '../common/virtual-scroll';",
+                "ej2-dropdowns/common/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-dropdowns"
+    },
+    "combo-box": {
+        "classname": "ComboBox",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-notifications/skeleton",
+            "ej2-popups/popup",
+            "ej2-dropdowns/DropDownList"
+        ],
+        "baseModule": "ej2-dropdowns/combo-box/combo-box",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-notifications/skeleton",
+            "ej2-popups/popup",
+            "ej2-dropdowns/DropDownList"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "VirtualScroll ": [
+                "export * from '../common/virtual-scroll';",
+                "ej2-dropdowns/common/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-dropdowns"
+    },
+    "auto-complete": {
+        "classname": "AutoComplete",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-notifications/skeleton",
+            "ej2-popups/popup",
+            "ej2-dropdowns/DropDownList,ComboBox"
+        ],
+        "baseModule": "ej2-dropdowns/auto-complete/auto-complete",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-notifications/skeleton",
+            "ej2-popups/popup",
+            "ej2-dropdowns/DropDownList,ComboBox"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "VirtualScroll ": [
+                "export * from '../common/virtual-scroll';",
+                "ej2-dropdowns/common/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-dropdowns"
+    },
+    "multi-select": {
+        "classname": "MultiSelect",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-popups/popup"
+        ],
+        "baseModule": "ej2-dropdowns/multi-select/multi-select",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-popups/popup"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "VirtualScroll ": [
+                "export * from '../common/virtual-scroll';",
+                "ej2-dropdowns/common/index"
+            ],
+            "CheckBoxSelection": [
+                "export * from './checkbox-selection';",
+                "ej2-dropdowns/multi-select/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-dropdowns"
+    },
+    "linear-gauge": {
+        "classname": "LinearGauge",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-pdf-export",
+            "ej2-compression",
+            "ej2-file-utils"
+        ],
+        "baseModule": "ej2-lineargauge/linear-gauge/linear-gauge",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base"
+        ],
+        "injectableDependencies": {
+            "PdfExport": [
+                "ej2-pdf-export",
+                "ej2-compression",
+                "ej2-file-utils"
+            ]
+        },
+        "injectablePath": {
+            "Print": [
+                "export * from './model/print';",
+                "ej2-lineargauge/linear-gauge/model",
+                "ej2-lineargauge/linear-gauge/print"
+            ],
+            "ImageExport": [
+                "export * from './model/image-export';",
+                "ej2-lineargauge/linear-gauge/model",
+                "ej2-lineargauge/linear-gauge/image-export"
+            ],
+            "PdfExport": [
+                "export * from './model/pdf-export';",
+                "ej2-lineargauge/linear-gauge/model",
+                "ej2-lineargauge/linear-gauge/pdf-export"
+            ],
+            "GaugeTooltip": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-lineargauge/linear-gauge/user-interaction",
+                "ej2-lineargauge/linear-gauge/tooltip"
+            ],
+            "Annotations": [
+                "export * from './annotations/annotations';",
+                "ej2-lineargauge/linear-gauge/annotations",
+                "ej2-lineargauge/linear-gauge/annotations"
+            ],
+            "Gradient": [
+                "export * from './axes/gradient';",
+                "ej2-lineargauge/linear-gauge/axes",
+                "ej2-lineargauge/linear-gauge/gradient"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-lineargauge"
+    },
+    "button": {
+        "classname": "Button",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "native",
+        "package": "ej2-buttons"
+    },
+    "check-box": {
+        "classname": "CheckBox",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "native",
+        "package": "ej2-buttons"
+    },
+    "radio-button": {
+        "classname": "RadioButton",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "native",
+        "package": "ej2-buttons"
+    },
+    "maskedtextbox": {
+        "classname": "MaskedTextBox",
+        "dependencies": [
+            "ej2-base",
+            "ej2-inputs/MaskedTextBox/base",
+            "ej2-inputs/input"
+        ],
+        "baseModule": "ej2-inputs/maskedtextbox/maskedtextbox/maskedtextbox",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-inputs/MaskedTextBox/base",
+            "ej2-inputs/input"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "numerictextbox": {
+        "classname": "NumericTextBox",
+        "dependencies": [
+            "ej2-base",
+            "ej2-inputs/input"
+        ],
+        "baseModule": "ej2-inputs/numerictextbox/numerictextbox",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-inputs/input"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "slider": {
+        "classname": "Slider",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/Tooltip"
+        ],
+        "blazorDependencies": [
+            "ej2-base",
+            "ej2-popups"
+        ],
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "uploader": {
+        "classname": "Uploader",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "baseModule": "ej2-inputs/uploader/uploader",
+        "baseDependecies": [
+            "ej2-base"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "maps": {
+        "classname": "Maps",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-svg-base",
+            "ej2-pdf-export",
+            "ej2-compression",
+            "ej2-file-utils"
+        ],
+        "baseModule": "ej2-maps/maps/maps",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-svg-base"
+        ],
+        "injectableDependencies": {
+            "PdfExport": [
+                "ej2-pdf-export",
+                "ej2-compression",
+                "ej2-file-utils"
+            ]
+        },
+        "injectablePath": {
+            "Print": [
+                "export * from './model/print';",
+                "ej2-maps/maps/model",
+                "ej2-maps/maps/print"
+            ],
+            "ImageExport": [
+                "export * from './model/export-image';",
+                "ej2-maps/maps/model",
+                "ej2-maps/maps/export-image"
+            ],
+            "PdfExport": [
+                "export * from './model/export-pdf';",
+                "ej2-maps/maps/model",
+                "ej2-maps/maps/export-pdf"
+            ],
+            "Annotations": [
+                "export * from './user-interaction/annotation';",
+                "ej2-maps/maps/user-interaction",
+                "ej2-maps/maps/annotation"
+            ],
+            "Zoom": [
+                "export * from './user-interaction/zoom';",
+                "ej2-maps/maps/user-interaction",
+                "ej2-maps/maps/zoom"
+            ],
+            "MapsTooltip": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-maps/maps/user-interaction",
+                "ej2-maps/maps/tooltip"
+            ],
+            "Selection": [
+                "export * from './user-interaction/selection';",
+                "ej2-maps/maps/user-interaction",
+                "ej2-maps/maps/selection"
+            ],
+            "Highlight": [
+                "export * from './user-interaction/highlight';",
+                "ej2-maps/maps/user-interaction",
+                "ej2-maps/maps/highlight"
+            ],
+            "Legend": [
+                "export * from './layers/legend';",
+                "ej2-maps/maps/layers",
+                "ej2-maps/maps/legend"
+            ],
+            "NavigationLine": [
+                "export * from './layers/navigation-selected-line';",
+                "ej2-maps/maps/layers",
+                "ej2-maps/maps/navigation-selected-line"
+            ],
+            "DataLabel": [
+                "export * from './layers/data-label';",
+                "ej2-maps/maps/layers",
+                "ej2-maps/maps/data-label"
+            ],
+            "Polygon": [
+                "export * from './layers/polygon';",
+                "ej2-maps/maps/layers",
+                "ej2-maps/maps/polygon"
+            ],
+            "Marker": [
+                "export * from './layers/marker';",
+                "ej2-maps/maps/layers",
+                "ej2-maps/maps/marker"
+            ],
+            "Bubble": [
+                "export * from './layers/bubble';",
+                "ej2-maps/maps/layers",
+                "ej2-maps/maps/bubble"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-maps"
+    },
+    "calendar": {
+        "classname": "Calendar",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "baseModule": "ej2-calendars/calendar/calendar",
+        "baseDependecies": [
+            "ej2-base"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "Islamic": [
+                "export * from './islamic';",
+                "ej2-calendars/calendar/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-calendars"
+    },
+    "datepicker": {
+        "classname": "DatePicker",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/popup",
+            "ej2-inputs/input",
+            "ej2-calendars/Calendar"
+        ],
+        "baseModule": "ej2-calendars/datepicker/datepicker",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-popups/popup",
+            "ej2-inputs/input",
+            "ej2-calendars/Calendar"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "Islamic": [
+                "export * from './islamic';",
+                "ej2-calendars/calendar/index"
+            ],
+            "MaskedDateTime": [
+                "export * from './masked-date-time';",
+                "ej2-calendars/maskbase/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-calendars"
+    },
+    "daterangepicker": {
+        "classname": "DateRangePicker",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/popup",
+            "ej2-buttons/Button",
+            "ej2-inputs/input",
+            "ej2-lists/common",
+            "ej2-calendars/Calendar"
+        ],
+        "baseModule": "ej2-calendars/daterangepicker/daterangepicker",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-popups/popup",
+            "ej2-buttons/Button",
+            "ej2-inputs/input",
+            "ej2-lists/common",
+            "ej2-calendars/Calendar"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-calendars"
+    },
+    "datetimepicker": {
+        "classname": "DateTimePicker",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/popup",
+            "ej2-inputs/input",
+            "ej2-lists/common",
+            "ej2-calendars/DatePicker,TimePicker,DateTimePicker"
+        ],
+        "baseModule": "ej2-calendars/datetimepicker/datetimepicker",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-popups/popup",
+            "ej2-inputs/input",
+            "ej2-lists/common",
+            "ej2-calendars/DatePicker,TimePicker,DateTimePicker"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "Islamic": [
+                "export * from './islamic';",
+                "ej2-calendars/calendar/index"
+            ],
+            "MaskedDateTime": [
+                "export * from './masked-date-time';",
+                "ej2-calendars/maskbase/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-calendars"
+    },
+    "timepicker": {
+        "classname": "TimePicker",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/popup",
+            "ej2-inputs/input",
+            "ej2-lists/common",
+            "ej2-calendars/TimePicker"
+        ],
+        "baseModule": "ej2-calendars/timepicker/timepicker",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-popups/popup",
+            "ej2-inputs/input",
+            "ej2-lists/common",
+            "ej2-calendars/TimePicker"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "Islamic": [
+                "export * from './islamic';",
+                "ej2-calendars/calendar/index"
+            ],
+            "MaskedDateTime": [
+                "export * from './masked-date-time';",
+                "ej2-calendars/maskbase/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-calendars"
+    },
+    "treeview": {
+        "classname": "TreeView",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-inputs/input",
+            "ej2-popups/Spinner",
+            "ej2-buttons/CheckBox"
+        ],
+        "blazorDependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists",
+            "ej2-popups"
+        ],
+        "blazorType": "native",
+        "package": "ej2-navigations"
+    },
+    "pager": {
+        "classname": "Pager",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "wrapper",
+        "package": "ej2-grids"
+    },
+    "drop-down-button": {
+        "classname": "DropDownButton",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/popup",
+            "ej2-buttons/Button"
+        ],
+        "blazorType": "native",
+        "package": "ej2-splitbuttons"
+    },
+    "split-button": {
+        "classname": "SplitButton",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/popup",
+            "ej2-buttons/Button"
+        ],
+        "blazorType": "native",
+        "package": "ej2-splitbuttons"
+    },
+    "chart": {
+        "classname": "Chart",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export"
+        ],
+        "baseModule": "ej2-charts/chart/chart",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data"
+        ],
+        "injectableDependencies": {
+            "Export": [
+                "ej2-pdf-export",
+                "ej2-excel-export"
+            ]
+        },
+        "injectablePath": {
+            "Export": [
+                "export * from './print-export/export';",
+                "ej2-charts/chart/print-export",
+                "ej2-charts/chart/export"
+            ],
+            "ScrollBar": [
+                "export * from '../common/scrollbar/scrollbar';",
+                "ej2-charts/common/scrollbar",
+                "ej2-charts/common/scrollbar"
+            ],
+            "ParetoSeries": [
+                "export * from './series/pareto-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/pareto-series"
+            ],
+            "MultiLevelLabel": [
+                "export * from './axis/multi-level-labels';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/multi-level-labels"
+            ],
+            "MultiColoredLineSeries": [
+                "export * from './series/multi-colored-line-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/multi-colored-line-series"
+            ],
+            "MultiColoredAreaSeries": [
+                "export * from './series/multi-colored-area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/multi-colored-area-series"
+            ],
+            "BoxAndWhiskerSeries": [
+                "export * from './series/box-and-whisker-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/box-and-whisker-series"
+            ],
+            "ChartAnnotation": [
+                "export * from './annotation/annotation';",
+                "ej2-charts/chart/annotation",
+                "ej2-charts/chart/annotation"
+            ],
+            "Legend": [
+                "export * from './legend/legend';",
+                "ej2-charts/chart/legend",
+                "ej2-charts/chart/legend"
+            ],
+            "ErrorBar": [
+                "export * from './series/error-bar';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/error-bar"
+            ],
+            "SeriesLabel": [
+                "export * from './series/SeriesLabel';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/SeriesLabel"
+            ],
+            "DataLabel": [
+                "export * from './series/data-label';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/data-label"
+            ],
+            "Highlight": [
+                "export * from './user-interaction/high-light';",
+                "ej2-charts/chart/user-interaction",
+                "ej2-charts/chart/high-light"
+            ],
+            "DataEditing": [
+                "export * from './user-interaction/data-editing';",
+                "ej2-charts/chart/user-interaction",
+                "ej2-charts/chart/data-editing"
+            ],
+            "Selection": [
+                "export * from './user-interaction/selection';",
+                "ej2-charts/chart/user-interaction",
+                "ej2-charts/chart/selection"
+            ],
+            "Zoom": [
+                "export * from './user-interaction/zooming';",
+                "ej2-charts/chart/user-interaction",
+                "ej2-charts/chart/zooming"
+            ],
+            "Tooltip": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-charts/chart/user-interaction",
+                "ej2-charts/chart/tooltip"
+            ],
+            "Crosshair": [
+                "export * from './user-interaction/crosshair';",
+                "ej2-charts/chart/user-interaction",
+                "ej2-charts/chart/crosshair"
+            ],
+            "Trendlines": [
+                "export * from './trend-lines/trend-line';",
+                "ej2-charts/chart/trend-lines",
+                "ej2-charts/chart/trend-line"
+            ],
+            "MacdIndicator": [
+                "export * from './technical-indicators/macd-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/macd-indicator"
+            ],
+            "BollingerBands": [
+                "export * from './technical-indicators/bollinger-bands';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/bollinger-bands"
+            ],
+            "StochasticIndicator": [
+                "export * from './technical-indicators/stochastic-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/stochastic-indicator"
+            ],
+            "RsiIndicator": [
+                "export * from './technical-indicators/rsi-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/rsi-indicator"
+            ],
+            "MomentumIndicator": [
+                "export * from './technical-indicators/momentum-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/momentum-indicator"
+            ],
+            "AtrIndicator": [
+                "export * from './technical-indicators/atr-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/atr-indicator"
+            ],
+            "AccumulationDistributionIndicator": [
+                "export * from './technical-indicators/ad-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/ad-indicator"
+            ],
+            "TmaIndicator": [
+                "export * from './technical-indicators/tma-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/tma-indicator"
+            ],
+            "EmaIndicator": [
+                "export * from './technical-indicators/ema-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/ema-indicator"
+            ],
+            "SmaIndicator": [
+                "export * from './technical-indicators/sma-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/sma-indicator"
+            ],
+            "LineSeries": [
+                "export * from './series/line-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/line-series"
+            ],
+            "ColumnSeries": [
+                "export * from './series/column-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/column-series"
+            ],
+            "AreaSeries": [
+                "export * from './series/area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/area-series"
+            ],
+            "BarSeries": [
+                "export * from './series/bar-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/bar-series"
+            ],
+            "PolarSeries": [
+                "export * from './series/polar-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/polar-series"
+            ],
+            "RadarSeries": [
+                "export * from './series/radar-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/radar-series"
+            ],
+            "StackingBarSeries": [
+                "export * from './series/stacking-bar-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/stacking-bar-series"
+            ],
+            "CandleSeries": [
+                "export * from './series/candle-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/candle-series"
+            ],
+            "StackingColumnSeries": [
+                "export * from './series/stacking-column-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/stacking-column-series"
+            ],
+            "StepLineSeries": [
+                "export * from './series/step-line-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/step-line-series"
+            ],
+            "StepAreaSeries": [
+                "export * from './series/step-area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/step-area-series"
+            ],
+            "StackingAreaSeries": [
+                "export * from './series/stacking-area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/stacking-area-series"
+            ],
+            "StackingStepAreaSeries": [
+                "export * from './series/stacking-step-area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/stacking-step-area-series"
+            ],
+            "StackingLineSeries": [
+                "export * from './series/stacking-line-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/stacking-line-series"
+            ],
+            "ScatterSeries": [
+                "export * from './series/scatter-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/scatter-series"
+            ],
+            "RangeColumnSeries": [
+                "export * from './series/range-column-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/range-column-series"
+            ],
+            "RangeStepAreaSeries": [
+                "export * from './series/range-step-area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/range-step-area-series"
+            ],
+            "WaterfallSeries": [
+                "export * from './series/waterfall-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/waterfall-series"
+            ],
+            "HiloSeries": [
+                "export * from './series/hilo-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/hilo-series"
+            ],
+            "HiloOpenCloseSeries": [
+                "export * from './series/hilo-open-close-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/hilo-open-close-series"
+            ],
+            "RangeAreaSeries": [
+                "export * from './series/range-area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/range-area-series"
+            ],
+            "SplineRangeAreaSeries": [
+                "export * from './series/spline-range-area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/spline-range-area-series"
+            ],
+            "BubbleSeries": [
+                "export * from './series/bubble-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/bubble-series"
+            ],
+            "SplineSeries": [
+                "export * from './series/spline-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/spline-series"
+            ],
+            "HistogramSeries": [
+                "export * from './series/histogram-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/histogram-series"
+            ],
+            "SplineAreaSeries": [
+                "export * from './series/spline-area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/spline-area-series"
+            ],
+            "StripLine": [
+                "export * from './axis/strip-line';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/strip-line"
+            ],
+            "DateTime": [
+                "export * from './axis/date-time-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/date-time-axis"
+            ],
+            "Category": [
+                "export * from './axis/category-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/category-axis"
+            ],
+            "Logarithmic": [
+                "export * from './axis/logarithmic-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/logarithmic-axis"
+            ],
+            "DateTimeCategory": [
+                "export * from './axis/date-time-category-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/date-time-category-axis"
+            ],
+            "LastValueLabel": [
+                "export * from './series/last-value-label';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/last-value-label"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-charts"
+    },
+    "accumulation-chart": {
+        "classname": "AccumulationChart",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export"
+        ],
+        "baseModule": "ej2-charts/accumulation-chart/accumulation",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data"
+        ],
+        "injectableDependencies": {
+            "Export": [
+                "ej2-pdf-export",
+                "ej2-excel-export"
+            ]
+        },
+        "injectablePath": {
+            "Export": [
+                "export * from '../chart/print-export/export';",
+                "ej2-chart/chart/print-export",
+                "ej2-chart/chart/export"
+            ],
+            "AccumulationAnnotation": [
+                "export * from './annotation/annotation';",
+                "ej2-charts/accumulation-chart/annotation",
+                "ej2-charts/accumulation-chart/annotation"
+            ],
+            "AccumulationHighlight": [
+                "export * from './user-interaction/high-light';",
+                "ej2-charts/accumulation-chart/user-interaction",
+                "ej2-charts/accumulation-chart/high-light"
+            ],
+            "AccumulationSelection": [
+                "export * from './user-interaction/selection';",
+                "ej2-charts/accumulation-chart/user-interaction",
+                "ej2-charts/accumulation-chart/selection"
+            ],
+            "AccumulationTooltip": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-charts/accumulation-chart/user-interaction",
+                "ej2-charts/accumulation-chart/tooltip"
+            ],
+            "AccumulationDataLabel": [
+                "export * from './renderer/dataLabel';",
+                "ej2-charts/accumulation-chart/renderer",
+                "ej2-charts/accumulation-chart/dataLabel"
+            ],
+            "AccumulationLegend": [
+                "export * from './renderer/legend';",
+                "ej2-charts/accumulation-chart/renderer",
+                "ej2-charts/accumulation-chart/legend"
+            ],
+            "PyramidSeries": [
+                "export * from './renderer/pyramid-series';",
+                "ej2-charts/accumulation-chart/renderer",
+                "ej2-charts/accumulation-chart/pyramid-series"
+            ],
+            "FunnelSeries": [
+                "export * from './renderer/funnel-series';",
+                "ej2-charts/accumulation-chart/renderer",
+                "ej2-charts/accumulation-chart/funnel-series"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-charts"
+    },
+    "circular-gauge": {
+        "classname": "CircularGauge",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-pdf-export",
+            "ej2-compression",
+            "ej2-file-utils"
+        ],
+        "baseModule": "ej2-circulargauge/circular-gauge/circular-gauge",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base"
+        ],
+        "injectableDependencies": {
+            "PdfExport": [
+                "ej2-pdf-export",
+                "ej2-compression",
+                "ej2-file-utils"
+            ]
+        },
+        "injectablePath": {
+            "Print": [
+                "export * from './model/print';",
+                "ej2-circulargauge/circular-gauge/model",
+                "ej2-circulargauge/circular-gauge/print"
+            ],
+            "Annotations": [
+                "export * from './annotations/annotations';",
+                "ej2-circulargauge/circular-gauge/annotations",
+                "ej2-circulargauge/circular-gauge/annotations"
+            ],
+            "GaugeTooltip": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-circulargauge/circular-gauge/user-interaction",
+                "ej2-circulargauge/circular-gauge/tooltip"
+            ],
+            "Legend": [
+                "export * from './legend/legend';",
+                "ej2-circulargauge/circular-gauge/legend",
+                "ej2-circulargauge/circular-gauge/legend"
+            ],
+            "ImageExport": [
+                "export * from './model/image-export';",
+                "ej2-circulargauge/circular-gauge/model",
+                "ej2-circulargauge/circular-gauge/image-export"
+            ],
+            "PdfExport": [
+                "export * from './model/pdf-export';",
+                "ej2-circulargauge/circular-gauge/model",
+                "ej2-circulargauge/circular-gauge/pdf-export"
+            ],
+            "Gradient": [
+                "export * from './axes/gradient';",
+                "ej2-circulargauge/circular-gauge/axes",
+                "ej2-circulargauge/circular-gauge/gradient"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-circulargauge"
+    },
+    "accordion": {
+        "classname": "Accordion",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "native",
+        "package": "ej2-navigations"
+    },
+    "toolbar": {
+        "classname": "Toolbar",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/Button",
+            "ej2-popups/popup",
+            "ej2-navigations/HScroll",
+            "ej2-navigations/VScroll"
+        ],
+        "blazorType": "native",
+        "package": "ej2-navigations"
+    },
+    "tab": {
+        "classname": "Tab",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/Button",
+            "ej2-popups/popup",
+            "ej2-navigations/HScroll",
+            "ej2-navigations/VScroll",
+            "ej2-navigations/Toolbar"
+        ],
+        "blazorType": "native",
+        "package": "ej2-navigations"
+    },
+    "context-menu": {
+        "classname": "ContextMenu",
+        "dependencies": [
+            "ej2-base",
+            "ej2-lists/common",
+            "ej2-popups/popup",
+            "ej2-navigations/common/h-scroll, v-scroll, menu-scroll"
+        ],
+        "blazorType": "native",
+        "package": "ej2-navigations"
+    },
+    "menu": {
+        "classname": "Menu",
+        "dependencies": [
+            "ej2-base",
+            "ej2-lists/common",
+            "ej2-popups/popup",
+            "ej2-navigations/common/h-scroll, v-scroll, menu-scroll"
+        ],
+        "blazorType": "native",
+        "package": "ej2-navigations"
+    },
+    "schedule": {
+        "classname": "Schedule",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/form-validator,input,NumericTextBox",
+            "ej2-buttons/Button, CheckBox",
+            "ej2-lists/common/list-base",
+            "ej2-popups",
+            "ej2-calendars/Calendar, DatePicker, DateTimePicker",
+            "ej2-dropdowns/DropDownList, MultiSelect",
+            "ej2-navigations/Toolbar, TreeView"
+        ],
+        "baseModule": "ej2-schedule/schedule/base/schedule",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/form-validator,input,NumericTextBox",
+            "ej2-buttons/Button, CheckBox",
+            "ej2-lists/common/list-base",
+            "ej2-popups",
+            "ej2-calendars/Calendar, DatePicker, DateTimePicker",
+            "ej2-dropdowns/DropDownList, MultiSelect",
+            "ej2-navigations/Toolbar, TreeView"
+        ],
+        "injectableDependencies": {
+            "ExcelExport": [
+                "ej2-excel-export"
+            ]
+        },
+        "injectablePath": {
+            "Resize": [
+                "export * from './actions/resize';",
+                "ej2-schedule/schedule/index"
+            ],
+            "DragAndDrop": [
+                "export * from './actions/drag';",
+                "ej2-schedule/schedule/index"
+            ],
+            "ExcelExport": [
+                "export * from './exports/excel-export';",
+                "ej2-schedule/schedule/exports/index"
+            ],
+            "ICalendarExport": [
+                "export * from './exports/calendar-export';",
+                "ej2-schedule/schedule/exports/index"
+            ],
+            "ICalendarImport": [
+                "export * from './exports/calendar-import';",
+                "ej2-schedule/schedule/exports/index"
+            ],
+            "Print": [
+                "export * from './exports/print';",
+                "ej2-schedule/schedule/exports/index"
+            ],
+            "Year": [
+                "export * from './renderer/year';",
+                "ej2-schedule/schedule/index"
+            ],
+            "Day": [
+                "export * from './renderer/day';",
+                "ej2-schedule/schedule/index"
+            ],
+            "Week": [
+                "export * from './renderer/week';",
+                "ej2-schedule/schedule/index"
+            ],
+            "WorkWeek": [
+                "export * from './renderer/work-week';",
+                "ej2-schedule/schedule/index"
+            ],
+            "Month": [
+                "export * from './renderer/month';",
+                "ej2-schedule/schedule/index"
+            ],
+            "Agenda": [
+                "export * from './renderer/agenda';",
+                "ej2-schedule/schedule/index"
+            ],
+            "MonthAgenda": [
+                "export * from './renderer/month-agenda';",
+                "ej2-schedule/schedule/index"
+            ],
+            "TimelineViews": [
+                "export * from './renderer/timeline-view';",
+                "ej2-schedule/schedule/index"
+            ],
+            "TimelineMonth": [
+                "export * from './renderer/timeline-month';",
+                "ej2-schedule/schedule/index"
+            ],
+            "TimelineYear": [
+                "export * from './renderer/timeline-year';",
+                "ej2-schedule/schedule/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-schedule"
+    },
+    "recurrence-editor": {
+        "classname": "RecurrenceEditor",
+        "dependencies": [
+            "ej2-base",
+            "ej2-inputs/NumericTextBox",
+            "ej2-buttons/Button, RadioButton",
+            "ej2-calendars/DatePicker",
+            "ej2-dropdowns/DropDownList"
+        ],
+        "baseModule": "ej2-schedule/recurrence-editor/recurrence-editor",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-inputs/NumericTextBox",
+            "ej2-buttons/Button, RadioButton",
+            "ej2-calendars/DatePicker",
+            "ej2-dropdowns/DropDownList"
+        ],
+        "injectableDependencies": [],
+        "blazorType": "wrapper",
+        "package": "ej2-schedule"
+    },
+    "sidebar": {
+        "classname": "Sidebar",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorDependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "native",
+        "package": "ej2-navigations"
+    },
+    "range-navigator": {
+        "classname": "RangeNavigator",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export",
+            "ej2-navigations/Toolbar",
+            "ej2-buttons/Button",
+            "ej2-calendars/DateRangePicker"
+        ],
+        "baseModule": "ej2-charts/range-navigator/range-navigator",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export"
+        ],
+        "injectableDependencies": {
+            "PeriodSelector": [
+                "ej2-navigations",
+                "ej2-calendars"
+            ],
+            "Export": [
+                "ej2-excel-export"
+            ]
+        },
+        "injectablePath": {
+            "RangeTooltip": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-charts/range-navigator/user-interaction",
+                "ej2-charts/range-navigator/tooltip"
+            ],
+            "LineSeries": [
+                "export * from '../chart/series/line-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/line-series"
+            ],
+            "ColumnSeries": [
+                "export * from '../chart/series/column-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/column-series"
+            ],
+            "AreaSeries": [
+                "export * from '../chart/series/area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/area-series"
+            ],
+            "SplineSeries": [
+                "export * from '../chart/series/spline-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/spline-series"
+            ],
+            "SplineAreaSeries": [
+                "export * from '../chart/series/spline-area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/spline-area-series"
+            ],
+            "StepLineSeries": [
+                "export * from '../chart/series/step-line-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/step-line-series"
+            ],
+            "Logarithmic": [
+                "export * from '../chart/axis/logarithmic-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/logarithmic-axis"
+            ],
+            "DateTimeCategory": [
+                "export * from '../chart/axis/date-time-category-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/date-time-category-axis"
+            ],
+            "DateTime": [
+                "export * from '../chart/axis/date-time-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/date-time-axis"
+            ],
+            "Double": [
+                "export * from '../chart/axis/double-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/double-axis"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-charts"
+    },
+    "treemap": {
+        "classname": "TreeMap",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export",
+            "ej2-compression",
+            "ej2-file-utils"
+        ],
+        "baseModule": "ej2-treemap/treemap/treemap",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-svg-base"
+        ],
+        "injectableDependencies": {
+            "PdfExport": [
+                "ej2-pdf-export",
+                "ej2-compression",
+                "ej2-file-utils"
+            ]
+        },
+        "injectablePath": {
+            "Print": [
+                "export * from './model/print';",
+                "ej2-treemap/treemap/model",
+                "ej2-treemap/treemap/print"
+            ],
+            "ImageExport": [
+                "export * from './model/image-export';",
+                "ej2-treemap/treemap/model",
+                "ej2-treemap/treemap/image-export"
+            ],
+            "PdfExport": [
+                "export * from './model/pdf-export';",
+                "ej2-treemap/treemap/model",
+                "ej2-treemap/treemap/pdf-export"
+            ],
+            "TreeMapTooltip": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-treemap/treemap/user-interaction",
+                "ej2-treemap/treemap/tooltip"
+            ],
+            "TreeMapLegend": [
+                "export * from './layout/legend';",
+                "ej2-treemap/treemap/layout",
+                "ej2-treemap/treemap/legend"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-treemap"
+    },
+    "smithchart": {
+        "classname": "Smithchart",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-pdf-export"
+        ],
+        "baseModule": "ej2-charts/smithchart/smithchart",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "SmithchartLegend": [
+                "export * from './legend/legend';",
+                "ej2-charts/smithchart/legend",
+                "ej2-charts/smithchart/legend"
+            ],
+            "TooltipRender": [
+                "export * from './series/tooltip';",
+                "ej2-charts/smithchart/series",
+                "ej2-charts/smithchart/tooltip"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-charts"
+    },
+    "switch": {
+        "classname": "Switch",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "native",
+        "package": "ej2-buttons"
+    },
+    "color-picker": {
+        "classname": "ColorPicker",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/Button",
+            "ej2-inputs/Slider",
+            "ej2-inputs/input",
+            "ej2-splitbuttons/SplitButton",
+            "ej2-popups/Tooltip"
+        ],
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "diagram": {
+        "classname": "Diagram",
+        "dependencies": [
+            "ej2-diagrams/overview",
+            "ej2-base",
+            "ej2-data",
+            "ej2-navigations/ContextMenu,Accordion",
+            "ej2-popups/Tooltip"
+        ],
+        "baseModule": "ej2-diagrams/diagram/diagram",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-popups/Tooltip"
+        ],
+        "injectableDependencies": {
+            "DiagramContextMenu": [
+                "ej2-navigations/ContextMenu"
+            ]
+        },
+        "injectablePath": {
+            "DiagramContextMenu": [
+                "export * from './objects/context-menu';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "LineRouting": [
+                "export * from './interaction/line-routing';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "LineDistribution": [
+                "export * from './interaction/line-distribution';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "LineOverlapping": [
+                "export * from './interaction/line-overlapping';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "MindMap": [
+                "export * from './layout/mind-map';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "HierarchicalTree": [
+                "export * from './layout/hierarchical-tree';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "RadialTree": [
+                "export * from './layout/radial-tree';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "ComplexHierarchicalTree": [
+                "export * from './layout/complex-hierarchical-tree';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "SymmetricLayout": [
+                "export * from './layout/symmetrical-layout';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "FlowchartLayout": [
+                "export * from './layout/flowChart/flow-chart-layout';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "DiagramCollaboration": [
+                "export * from './objects/collaboration';",
+                "ej2-diagrams/diagram/index"
+            ],
+            "DataBinding": [
+                "export * from './data-binding/data-binding';",
+                "ej2-diagrams/diagram/index"
+            ]
+        },
+        "blazorDependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-popups"
+        ],
+        "blazorType": "hybrid",
+        "package": "ej2-diagrams"
+    },
+    "symbol-palette": {
+        "classname": "SymbolPalette",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-navigations/Accordion",
+            "ej2-popups/Tooltip"
+        ],
+        "baseModule": "ej2-diagrams/symbol-palette/symbol-palette",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-navigations/Accordion",
+            "ej2-popups/Tooltip"
+        ],
+        "injectableDependencies": {},
+        "blazorDependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-navigations"
+        ],
+        "blazorType": "wrapper",
+        "package": "ej2-diagrams"
+    },
+    "overview": {
+        "classname": "Overview",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorDependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "wrapper",
+        "package": "ej2-diagrams"
+    },
+    "document-editor": {
+        "classname": "DocumentEditor",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/Dialog,Tooltip,Spinner,Popup",
+            "ej2-dropdowns/DropDownList,ComboBox",
+            "ej2-inputs/NumericTextBox,ColorPicker",
+            "ej2-navigations/ContextMenu,Tab,Toolbar",
+            "ej2-buttons/Button,CheckBox,RadioButton",
+            "ej2-calendars/DateTimePicker",
+            "ej2-splitbuttons/SplitButton,DropDownButton",
+            "ej2-file-utils",
+            "ej2-compression",
+            "ej2-office-chart",
+            "ej2-charts",
+            "ej2-svg-base",
+            "ej2-pdf-export"
+        ],
+        "baseModule": "ej2-documenteditor/document-editor/document-editor",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-popups/Dialog,Tooltip,Spinner,Popup",
+            "ej2-office-chart",
+            "ej2-charts",
+            "ej2-compression",
+            "ej2-file-utils",
+            "ej2-svg-base",
+            "ej2-pdf-export"
+        ],
+        "injectableDependencies": {
+            "SfdtExport": [
+                "ej2-file-utils",
+                "ej2-compression"
+            ],
+            "WordExport": [
+                "ej2-file-utils",
+                "ej2-compression"
+            ],
+            "TextExport": [
+                "ej2-file-utils"
+            ],
+            "Selection": [
+                "ej2-splitbuttons/DropDownButton"
+            ],
+            "Editor": [
+                "ej2-popups/Dialog,Spinner",
+                "ej2-dropdowns/DropDownBase"
+            ],
+            "OptionsPane": [
+                "ej2-buttons/CheckBox",
+                "ej2-navigations/Tab,TreeView"
+            ],
+            "ContextMenu": [
+                "ej2-navigations/ContextMenu",
+                "ej2-buttons/CheckBox",
+                "ej2-popups/Dialog"
+            ],
+            "HyperlinkDialog": [
+                "ej2-dropdowns/DropDownList",
+                "ej2-buttons/CheckBox",
+                "ej2-inputs/NumericTextBox"
+            ],
+            "TableDialog": [
+                "ej2-inputs/NumericTextBox"
+            ],
+            "BookmarkDialog": [
+                "ej2-buttons/Button"
+            ],
+            "TableOfContentsDialog": [
+                "ej2-inputs/NumericTextBox"
+            ],
+            "PageSetupDialog": [
+                "ej2-inputs/NumericTextBox",
+                "ej2-dropdowns/DropDownList",
+                "ej2-buttons/CheckBox",
+                "ej2-navigations/Tab"
+            ],
+            "ParagraphDialog": [
+                "ej2-inputs/NumericTextBox",
+                "ej2-dropdowns/DropDownList",
+                "ej2-buttons/CheckBox,RadioButton",
+                "ej2-navigations/Tab"
+            ],
+            "ListDialog": [
+                "ej2-inputs/NumericTextBox",
+                "ej2-dropdowns/DropDownList"
+            ],
+            "StyleDialog": [
+                "ej2-dropdowns/DropDownList,ComboBox",
+                "ej2-inputs/NumericTextBox,ColorPicker",
+                "ej2-data",
+                "ej2-buttons/Button,RadioButton",
+                "ej2-splitbuttons/DropDownButton"
+            ],
+            "StylesDialog": [
+                "ej2-lists/ListView",
+                "ej2-buttons/Button"
+            ],
+            "BulletsAndNumberingDialog": [
+                "ej2-navigations/Tab"
+            ],
+            "FontDialog": [
+                "ej2-dropdowns/DropDownList",
+                "ej2-inputs/ColorPicker",
+                "ej2-buttons/CheckBox"
+            ],
+            "TablePropertiesDialog": [
+                "ej2-inputs/NumericTextBox"
+            ],
+            "BordersAndShadingDialog": [
+                "ej2-inputs/NumericTextBox,ColorPicker",
+                "ej2-dropdowns/DropDownList"
+            ],
+            "TableOptionsDialog": [
+                "ej2-inputs/NumericTextBox",
+                "ej2-buttons/CheckBox"
+            ],
+            "CellOptionsDialog": [
+                "ej2-inputs/NumericTextBox",
+                "ej2-buttons/CheckBox"
+            ],
+            "SpellCheckerDialog": [
+                "ej2-buttons/Button",
+                "ej2-lists/ListView"
+            ],
+            "ColumnsDialog": [
+                "ej2-inputs/NumericTextBox",
+                "ej2-buttons/CheckBox"
+            ],
+            "TabDialog": [
+                "ej2-buttons/Button,RadioButton",
+                "ej2-lists/ListView",
+                "ej2-inputs/NumericTextBox"
+            ],
+            "TextFormFieldDialog": [
+                "ej2-dropdowns/DropDownList,ComboBox",
+                "ej2-buttons/CheckBox",
+                "ej2-popups/Dialog"
+            ],
+            "CheckBoxFormFieldDialog": [
+                "ej2-inputs/NumericTextBox",
+                "ej2-buttons/CheckBox,RadioButton"
+            ],
+            "DropDownFormFieldDialog": [
+                "ej2-buttons/Button,CheckBox",
+                "ej2-lists/ListView",
+                "ej2-inputs/NumericTextBox",
+                "ej2-popups/Dialog"
+            ],
+            "CollaborativeEditing": [
+                "ej2-popups/Dialog,Spinner"
+            ],
+            "ContentControlPropertiesDialog": [
+                "ej2-buttons/Button,CheckBox",
+                "ej2-lists/ListView",
+                "ej2-inputs/NumericTextBox,ColorPicker"
+            ],
+            "DateContentDialog": [
+                "ej2-calendars/DateTimePicker"
+            ],
+            "PicContentControlDialog": [
+                "ej2-popups/Dialog"
+            ],
+            "FootNotesDialog": [
+                "ej2-inputs/NumericTextBox",
+                "ej2-dropdowns/DropDownList"
+            ]
+        },
+        "injectablePath": {
+            "Print": [
+                "export * from './implementation/print';",
+                "ej2-documenteditor/document-editor/implementation/print"
+            ],
+            "Editor": [
+                "export * from './implementation/editor/index';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index"
+            ],
+            "Selection": [
+                "export * from './implementation/selection/index';",
+                "ej2-documenteditor/document-editor/implementation/selection/index"
+            ],
+            "EditorHistory": [
+                "export * from './implementation/editor-history/index';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/editor-history/index"
+            ],
+            "SfdtExport": [
+                "export * from './implementation/writer/sfdt-export';",
+                "ej2-documenteditor/document-editor/implementation/writer/sfdt-export"
+            ],
+            "WordExport": [
+                "export * from './implementation/writer/word-export';",
+                "ej2-documenteditor/document-editor/implementation/writer/sfdt-export",
+                "ej2-documenteditor/document-editor/implementation/writer/word-export"
+            ],
+            "TextExport": [
+                "export * from './implementation/writer/text-export';",
+                "ej2-documenteditor/document-editor/implementation/writer/sfdt-export",
+                "ej2-documenteditor/document-editor/implementation/writer/text-export"
+            ],
+            "Search": [
+                "export * from './implementation/search/index';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/search/index"
+            ],
+            "OptionsPane": [
+                "export * from './implementation/search/options-pane';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/search/index",
+                "ej2-documenteditor/document-editor/implementation/search/options-pane"
+            ],
+            "ContextMenu": [
+                "export * from './implementation/context-menu';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/context-menu"
+            ],
+            "HyperlinkDialog": [
+                "export * from './implementation/dialogs/hyperlink-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/hyperlink-dialog"
+            ],
+            "TableDialog": [
+                "export * from './implementation/dialogs/table-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/table-dialog"
+            ],
+            "BookmarkDialog": [
+                "export * from './implementation/dialogs/bookmark-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/bookmark-dialog"
+            ],
+            "TableOfContentsDialog": [
+                "export * from './implementation/dialogs/table-of-contents-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/table-of-contents-dialog"
+            ],
+            "PageSetupDialog": [
+                "export * from './implementation/dialogs/page-setup-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/page-setup-dialog"
+            ],
+            "ParagraphDialog": [
+                "export * from './implementation/dialogs/paragraph-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/tab-dialog",
+                "ej2-documenteditor/document-editor/implementation/dialogs/paragraph-dialog"
+            ],
+            "ListDialog": [
+                "export * from './implementation/dialogs/list-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/list-dialog"
+            ],
+            "StyleDialog": [
+                "export * from './implementation/dialogs/style-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/styles-dialog",
+                "ej2-documenteditor/document-editor/implementation/dialogs/style-dialog",
+                "ej2-documenteditor/document-editor/implementation/dialogs/bullets-and-numbering-dialog"
+            ],
+            "StylesDialog": [
+                "export * from './implementation/dialogs/styles-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/styles-dialog",
+                "ej2-documenteditor/document-editor/implementation/dialogs/style-dialog",
+                "ej2-documenteditor/document-editor/implementation/dialogs/bullets-and-numbering-dialog"
+            ],
+            "BulletsAndNumberingDialog": [
+                "export * from './implementation/dialogs/bullets-and-numbering-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/styles-dialog",
+                "ej2-documenteditor/document-editor/implementation/dialogs/style-dialog",
+                "ej2-documenteditor/document-editor/implementation/dialogs/bullets-and-numbering-dialog"
+            ],
+            "FontDialog": [
+                "export * from './implementation/dialogs/font-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/font-dialog"
+            ],
+            "TablePropertiesDialog": [
+                "export * from './implementation/dialogs/table-properties-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/cell-options-dialog",
+                "ej2-documenteditor/document-editor/implementation/dialogs/table-properties-dialog"
+            ],
+            "BordersAndShadingDialog": [
+                "export * from './implementation/dialogs/borders-and-shading-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/borders-and-shading-dialog"
+            ],
+            "TableOptionsDialog": [
+                "export * from './implementation/dialogs/table-options-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/table-options-dialog"
+            ],
+            "CellOptionsDialog": [
+                "export * from './implementation/dialogs/cell-options-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/table-properties-dialog",
+                "ej2-documenteditor/document-editor/implementation/dialogs/cell-options-dialog"
+            ],
+            "SpellCheckerDialog": [
+                "export * from './implementation/dialogs/spellCheck-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/spell-check/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/spellCheck-dialog"
+            ],
+            "ColumnsDialog": [
+                "export * from './implementation/dialogs/columns-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/columns-dialog"
+            ],
+            "TabDialog": [
+                "export * from './implementation/dialogs/tab-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/paragraph-dialog",
+                "ej2-documenteditor/document-editor/implementation/dialogs/tab-dialog"
+            ],
+            "TextFormFieldDialog": [
+                "export * from './implementation/dialogs/form-field-text-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/form-field-text-dialog"
+            ],
+            "CheckBoxFormFieldDialog": [
+                "export * from './implementation/dialogs/form-field-check-box-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/form-field-check-box-dialog"
+            ],
+            "DropDownFormFieldDialog": [
+                "export * from './implementation/dialogs/form-field-drop-down-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/form-field-drop-down-dialog"
+            ],
+            "ImageResizer": [
+                "export * from './implementation/editor/image-resizer';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/editor/image-resizer"
+            ],
+            "SpellChecker": [
+                "export * from './implementation/spell-check/index';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/spell-check/index"
+            ],
+            "Optimized": [
+                "export * from './implementation/text-helper/optimized';",
+                "ej2-documenteditor/document-editor/implementation/text-helper/optimized"
+            ],
+            "CollaborativeEditingHandler": [
+                "export * from './implementation/collaboration/index;",
+                "ej2-documenteditor/document-editor/implementation/collaboration/index"
+            ],
+            "CollaborativeEditing": [
+                "export * from './implementation/editor/collaborative-editing';",
+                "ej2-documenteditor/document-editor/implementation/editor/collaborative-editing"
+            ],
+            "ContentControlPropertiesDialog": [
+                "export * from './implementation/dialogs/content-control-properties-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/content-control-properties-dialog"
+            ],
+            "DateContentDialog": [
+                "export * from './implementation/dialogs/datepicker-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/datepicker-dialog"
+            ],
+            "PicContentControlDialog": [
+                "export * from './implementation/dialogs/pic-contentControl-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/dialogs/pic-contentControl-dialog"
+            ],
+            "FootNotesDialog": [
+                "export * from './implementation/dialogs/notes-dialog';",
+                "ej2-documenteditor/document-editor/implementation/selection/index",
+                "ej2-documenteditor/document-editor/implementation/editor/index",
+                "ej2-documenteditor/document-editor/implementation/context-menu",
+                "ej2-documenteditor/document-editor/implementation/dialogs/notes-dialog"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-documenteditor"
+    },
+    "list-view": {
+        "classname": "ListView",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/CheckBox",
+            "ej2-data"
+        ],
+        "baseModule": "ej2-lists/list-view/list-view",
+        "baseDependencies": [
+            "ej2-base",
+            "ej2-buttons/CheckBox",
+            "ej2-data"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "Virtualization": [
+                "export * from './virtualization';",
+                "ej2-lists/list-view/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-lists"
+    },
+    "pivotview": {
+        "classname": "PivotView",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/MaskedTextBox,NumericTextBox,ColorPicker",
+            "ej2-navigations/TreeView,ContextMenu,Tab,Menu,Toolbar",
+            "ej2-calendars/Calendar,DatePicker,DateTimePicker",
+            "ej2-dropdowns/DropDownList,MultiSelect",
+            "ej2-popups",
+            "ej2-buttons/Button,RadioButton,CheckBox",
+            "ej2-splitbuttons",
+            "ej2-excel-export",
+            "ej2-pdf-export",
+            "ej2-file-utils",
+            "ej2-compression",
+            "ej2-grids",
+            "ej2-charts/Chart"
+        ],
+        "baseModule": "ej2-pivotview/pivotview/base/pivotview",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-grids/Grid",
+            "ej2-popups/Spinner,Tooltip"
+        ],
+        "injectableDependencies": {
+            "GroupingBar": [
+                "ej2-buttons/Button",
+                "ej2-navigations/Toolbar",
+                "ej2-popups/Dialog",
+                "ej2-splitbuttons",
+                "ej2-navigations/Menu,ContextMenu,Tab,TreeView",
+                "ej2-calendars/Calendar,DatePicker,DateTimePicker",
+                "ej2-dropdowns/DropDownList"
+            ],
+            "FieldList": [
+                "ej2-buttons/Button,CheckBox",
+                "ej2-calendars/Calendar,DatePicker,DateTimePicker",
+                "ej2-inputs/MaskedTextBox,NumericTextBox",
+                "ej2-navigations/ContextMenu,Menu,Tab,TreeView",
+                "ej2-popups/Dialog",
+                "ej2-splitbuttons"
+            ],
+            "CalculatedField": [
+                "ej2-buttons/Button,CheckBox,RadioButton",
+                "ej2-dropdowns/DropDownList",
+                "ej2-inputs/MaskedTextBox,NumericTextBox",
+                "ej2-popups/Dialog",
+                "ej2-navigations/Accordion,ContextMenu,Menu,Tab,TreeView"
+            ],
+            "ConditionalFormatting": [
+                "ej2-buttons/Button",
+                "ej2-dropdowns/DropDownList",
+                "ej2-inputs/ColorPicker",
+                "ej2-popups/Dialog"
+            ],
+            "DrillThrough": [
+                "ej2-popups/Dialog"
+            ],
+            "Toolbar": [
+                "ej2-buttons/CheckBox",
+                "ej2-dropdowns/DropDownList",
+                "ej2-navigations/Menu,Toolbar",
+                "ej2-popups/Dialog"
+            ],
+            "PivotChart": [
+                "ej2-charts",
+                "ej2-navigations/ContextMenu"
+            ],
+            "PDFExport": [
+                "ej2-pdf-export"
+            ],
+            "ExcelExport": [
+                "ej2-excel-export"
+            ],
+            "NumberFormatting": [
+                "ej2-dropdowns/DropDownList",
+                "ej2-popups/Dialog"
+            ],
+            "Grouping": [
+                "ej2-buttons/CheckBox",
+                "ej2-calendars/Calendar,DatePicker,DateTimePicker",
+                "ej2-dropdowns/MultiSelect",
+                "ej2-inputs/MaskedTextBox,NumericTextBox",
+                "ej2-popups/Dialog"
+            ],
+            "Pager": [
+                "ej2-dropdowns/DropDownList",
+                "ej2-grids/Pager",
+                "ej2-inputs/MaskedTextBox,NumericTextBox"
+            ]
+        },
+        "injectablePath": {
+            "GroupingBar": [
+                "export * from './grouping-bar/grouping-bar';",
+                "ej2-pivotview/common/index"
+            ],
+            "ConditionalFormatting": [
+                "export * from './conditionalformatting/conditional-formatting';",
+                "ej2-pivotview/common/index"
+            ],
+            "NumberFormatting": [
+                "export * from './popups/formatting-dialog';",
+                "ej2-pivotview/common/index"
+            ],
+            "CalculatedField": [
+                "export * from './calculatedfield/calculated-field';",
+                "ej2-pivotview/common/index"
+            ],
+            "Toolbar": [
+                "export * from './popups/toolbar';",
+                "ej2-pivotview/common/index"
+            ],
+            "FieldList": [
+                "export * from './actions/field-list';",
+                "ej2-pivotview/common/index"
+            ],
+            "ExcelExport": [
+                "export * from './actions/excel-export';",
+                "ej2-pivotview/pivotview/actions"
+            ],
+            "PDFExport": [
+                "export * from './actions/pdf-export';",
+                "ej2-pivotview/pivotview/actions"
+            ],
+            "VirtualScroll": [
+                "export * from './actions/virtualscroll';",
+                "ej2-pivotview/pivotview/actions"
+            ],
+            "Grouping": [
+                "export * from './popups/grouping';",
+                "ej2-pivotview/common/index"
+            ],
+            "DrillThrough": [
+                "export * from './actions/drill-through';",
+                "ej2-pivotview/pivotview/actions"
+            ],
+            "Pager": [
+                "export * from './actions/pager';",
+                "ej2-pivotview/pivotview/actions"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-pivotview"
+    },
+    "pivotfieldlist": {
+        "classname": "PivotFieldList",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/MaskedTextBox,NumericTextBox",
+            "ej2-navigations/TreeView,ContextMenu,Tab,Menu",
+            "ej2-calendars/Calendar,DatePicker,DateTimePicker",
+            "ej2-dropdowns/DropDownList,MultiSelect",
+            "ej2-popups",
+            "ej2-buttons/Button,RadioButton,CheckBox",
+            "ej2-splitbuttons"
+        ],
+        "baseModule": "ej2-pivotview/pivotfieldlist/base/field-list",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-buttons/Button,CheckBox",
+            "ej2-calendars/Calendar,DatePicker,DateTimePicker",
+            "ej2-data",
+            "ej2-inputs/MaskedTextBox,NumericTextBox",
+            "ej2-navigations/ContextMenu,Menu,Tab,TreeView",
+            "ej2-splitbuttons",
+            "ej2-popups/Dialog"
+        ],
+        "injectableDependencies": {
+            "CalculatedField": [
+                "ej2-buttons/RadioButton",
+                "ej2-dropdowns/DropDownList",
+                "ej2-navigations/Accordion"
+            ]
+        },
+        "injectablePath": {
+            "CalculatedField": [
+                "export * from './calculatedfield/calculated-field';",
+                "ej2-pivotfieldlist/common/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-pivotview"
+    },
+    "rich-text-editor": {
+        "classname": "RichTextEditor",
+        "dependencies": [
+            "ej2-base",
+            "ej2-inputs/ColorPicker,NumericTextBox,Uploader",
+            "ej2-buttons/Button,CheckBox,RadioButton",
+            "ej2-popups/common,popup,Dialog",
+            "ej2-navigations/Toolbar",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-filemanager/FileManager",
+            "ej2-interactive-chat/AIAssistView",
+            "ej2-markdown-converter/MarkdownConverter"
+        ],
+        "baseModule": "ej2-richtexteditor/rich-text-editor/base/rich-text-editor",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-popups",
+            "ej2-buttons/Button",
+            "ej2-navigations/Toolbar",
+            "ej2-inputs/NumericTextBox,TextBox",
+            "ej2-splitbuttons/DropDownButton,SplitButton"
+        ],
+        "injectableDependencies": {
+            "HtmlEditor": [],
+            "MarkdownEditor": [],
+            "Toolbar": [
+                "ej2-inputs/ColorPicker,Uploader"
+            ],
+            "Link": [
+                "ej2-inputs/ColorPicker,Uploader",
+                "ej2-buttons/CheckBox"
+            ],
+            "Image": [
+                "ej2-inputs/ColorPicker,Uploader",
+                "ej2-buttons/CheckBox"
+            ],
+            "Audio": [
+                "ej2-inputs/ColorPicker,Uploader",
+                "ej2-buttons/CheckBox"
+            ],
+            "Video": [
+                "ej2-inputs/ColorPicker,Uploader",
+                "ej2-buttons/CheckBox"
+            ],
+            "Count": [
+                "ej2-inputs/ColorPicker,Uploader"
+            ],
+            "QuickToolbar": [
+                "ej2-inputs/ColorPicker,Uploader"
+            ],
+            "Table": [
+                "ej2-inputs/ColorPicker,Uploader"
+            ],
+            "PasteCleanup": [
+                "ej2-inputs/ColorPicker,Uploader",
+                "ej2-buttons/RadioButton"
+            ],
+            "Resize": [
+                "ej2-inputs/ColorPicker,Uploader"
+            ],
+            "FileManager": [
+                "ej2-inputs/ColorPicker,Uploader",
+                "ej2-filemanager/FileManager"
+            ],
+            "FormatPainter": [
+                "ej2-inputs/ColorPicker,Uploader"
+            ],
+            "EmojiPicker": [
+                "ej2-inputs/ColorPicker,Uploader"
+            ],
+            "SlashMenu": [
+                "ej2-dropdowns/Mention"
+            ],
+            "ImportExport": [
+                "ej2-inputs/ColorPicker,Uploader",
+                "ej2-splitbuttons/ProgressButton"
+            ],
+            "AIAssistant": [
+                "ej2-inputs/ColorPicker,Uploader",
+                "ej2-interactive-chat/AIAssistView",
+                "ej2-markdown-converter/MarkdownConverter"
+            ]
+        },
+        "injectablePath": {
+            "Toolbar": [
+                "export * from './actions/toolbar';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "Link": [
+                "export * from './renderer/link-module';",
+                "ej2-richtexteditor/rich-text-editor/renderer"
+            ],
+            "Image": [
+                "export * from './renderer/image-module';",
+                "ej2-richtexteditor/rich-text-editor/renderer"
+            ],
+            "ImportExport": [
+                "export * from './actions/import-export';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "Audio": [
+                "export * from './renderer/audio-module';",
+                "ej2-richtexteditor/rich-text-editor/renderer"
+            ],
+            "Video": [
+                "export * from './renderer/video-module';",
+                "ej2-richtexteditor/rich-text-editor/renderer"
+            ],
+            "Count": [
+                "export * from './actions/count';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "QuickToolbar": [
+                "export * from './actions/quick-toolbar';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "HtmlEditor": [
+                "export * from './actions/html-editor';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "MarkdownEditor": [
+                "export * from './actions/markdown-editor';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "Table": [
+                "export * from './renderer/table-module';",
+                "ej2-richtexteditor/rich-text-editor/renderer"
+            ],
+            "PasteCleanup": [
+                "export * from './actions/paste-clean-up';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "Resize": [
+                "export * from './actions/resize';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "FileManager": [
+                "export * from './actions/file-manager';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "FormatPainter": [
+                "export * from './actions/format-painter';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "EmojiPicker": [
+                "export * from './actions/emoji-picker';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "SlashMenu": [
+                "export * from './renderer/slash-menu';",
+                "ej2-richtexteditor/rich-text-editor/renderer"
+            ],
+            "CodeBlock": [
+                "export * from './actions/code-block';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "ClipBoardCleanup": [
+                "export * from './actions/clipboard-cleanup';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "AutoFormat": [
+                "export * from './actions/auto-format';",
+                "ej2-richtexteditor/rich-text-editor/actions"
+            ],
+            "AIAssistant": [
+                "export * from './renderer/ai-assistant';",
+                "ej2-richtexteditor/rich-text-editor/renderer"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-richtexteditor"
+    },
+    "heatmap": {
+        "classname": "HeatMap",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-svg-base",
+            "ej2-pdf-export",
+            "ej2-file-utils",
+            "ej2-compression"
+        ],
+        "baseModule": "ej2-heatmap/heatmap/heatmap",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-svg-base",
+            "ej2-pdf-export",
+            "ej2-compression",
+            "ej2-file-utils"
+        ],
+        "blazorDependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-svg-base",
+            "ej2-pdf-export",
+            "ej2-file-utils",
+            "ej2-compression"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "Tooltip": [
+                "export * from './utils/tooltip';",
+                "ej2-heatmap/heatmap/utils",
+                "ej2-heatmap/heatmap/tooltip"
+            ],
+            "Legend": [
+                "export * from './legend/legend';",
+                "ej2-heatmap/heatmap/legend",
+                "ej2-heatmap/heatmap/legend"
+            ],
+            "Adaptor": [
+                "export * from './datasource/adaptor';",
+                "ej2-heatmap/heatmap/datasource",
+                "ej2-heatmap/heatmap/adaptor"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-heatmap"
+    },
+    "sparkline": {
+        "classname": "Sparkline",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-svg-base"
+        ],
+        "baseModule": "ej2-charts/sparkline/sparkline",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-svg-base"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "SparklineTooltip": [
+                "export * from './rendering/sparkline-tooltip';",
+                "ej2-charts/sparkline/rendering",
+                "ej2-charts/sparkline/sparkline-tooltip"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-charts"
+    },
+    "tooltip": {
+        "classname": "Tooltip",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/Popup"
+        ],
+        "blazorDependencies": [
+            "ej2-base",
+            "ej2-popups"
+        ],
+        "blazorType": "native",
+        "package": "ej2-popups"
+    },
+    "textbox": {
+        "classname": "TextBox",
+        "dependencies": [
+            "ej2-base",
+            "ej2-inputs/input"
+        ],
+        "baseModule": "ej2-inputs/textbox/textbox",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-inputs/input"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "avatar": {
+        "package": "ej2-layouts"
+    },
+    "badge": {
+        "package": "ej2-notifications"
+    },
+    "card": {
+        "package": "ej2-cards"
+    },
+    "progress-button": {
+        "classname": "ProgressButton",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/Spinner",
+            "ej2-buttons/Button"
+        ],
+        "blazorType": "native",
+        "package": "ej2-splitbuttons"
+    },
+    "h-scroll": {
+        "package": "ej2-navigations"
+    },
+    "v-scroll": {
+        "package": "ej2-navigations"
+    },
+    "document-editor-container": {
+        "classname": "DocumentEditorContainer",
+        "dependencies": [
+            "ej2-base",
+            "ej2-navigations/Toolbar,Tab",
+            "ej2-ribbon",
+            "ej2-navigations/Menu,Tab",
+            "ej2-popups/Dialog,Spinner,Tooltip",
+            "ej2-dropdowns/DropDownBase,DropDownList,ComboBox",
+            "ej2-inputs/NumericTextBox,ColorPicker",
+            "ej2-buttons/Button,CheckBox",
+            "ej2-splitbuttons/SplitButton,DropDownButton"
+        ],
+        "baseModule": "ej2-documenteditor/document-editor-container/document-editor-container",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-navigations/Toolbar,Tab"
+        ],
+        "injectableDependencies": {
+            "Toolbar": [
+                "ej2-navigations/Toolbar,Tab"
+            ],
+            "Ribbon": [
+                "ej2-ribbon",
+                "ej2-navigations/Menu,Tab",
+                "ej2-popups/Dialog,Spinner,Tooltip",
+                "ej2-dropdowns/DropDownBase,DropDownList,ComboBox",
+                "ej2-inputs/NumericTextBox,ColorPicker",
+                "ej2-buttons/Button,CheckBox",
+                "ej2-splitbuttons/SplitButton,DropDownButton"
+            ],
+            "injectablePath": {
+                "Toolbar": [
+                    "export * from './tool-bar/index';",
+                    "ej2-documenteditor/document-editor-container/tool-bar/index"
+                ],
+                "Ribbon": [
+                    "export * from './ribbon/index';",
+                    "ej2-documenteditor/document-editor-container/ribbon/index"
+                ]
+            }
+        },
+        "blazorType": "native",
+        "package": "ej2-documenteditor"
+    },
+    "chips": {
+        "classname": "ChipList",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "hybrid",
+        "package": "ej2-buttons"
+    },
+    "treegrid": {
+        "classname": "TreeGrid",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/form-validator,input,NumericTextBox,TextBox",
+            "ej2-navigations/ContextMenu,Toolbar",
+            "ej2-calendars/DatePicker,DateTimePicker,TimePicker",
+            "ej2-dropdowns/AutoComplete,DropDownList",
+            "ej2-popups",
+            "ej2-buttons/Button,CheckBox,RadioButton",
+            "ej2-excel-export",
+            "ej2-pdf-export",
+            "ej2-file-utils",
+            "ej2-compression",
+            "ej2-splitbuttons",
+            "ej2-grids"
+        ],
+        "baseModule": "ej2-treegrid/treegrid/base/treegrid",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/form-validator,input,NumericTextBox,TextBox",
+            "ej2-navigations/ContextMenu",
+            "ej2-calendars/DatePicker,DateTimePicker,TimePicker",
+            "ej2-dropdowns/AutoComplete,DropDownList",
+            "ej2-popups",
+            "ej2-buttons/Button,CheckBox,RadioButton",
+            "ej2-file-utils",
+            "ej2-compression",
+            "ej2-splitbuttons",
+            "ej2-grids"
+        ],
+        "injectableDependencies": {
+            "PdfExport": [
+                "ej2-pdf-export"
+            ],
+            "ExcelExport": [
+                "ej2-excel-export"
+            ],
+            "Toolbar": [
+                "ej2-navigations/Toolbar"
+            ]
+        },
+        "injectablePath": {
+            "Filter": [
+                "export * from './actions/filter';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/filter"
+            ],
+            "Page": [
+                "export * from './actions/page';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/page"
+            ],
+            "Sort": [
+                "export * from './actions/sort';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/sort"
+            ],
+            "Reorder": [
+                "export * from './actions/Reorder';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/Reorder"
+            ],
+            "Toolbar": [
+                "export * from './actions/toolbar';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/toolbar"
+            ],
+            "Aggregate": [
+                "export * from './actions/summary';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/summary"
+            ],
+            "Resize": [
+                "export * from './actions/resize';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/resize"
+            ],
+            "ColumnMenu": [
+                "export * from './actions/column-menu';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/column-menu"
+            ],
+            "ExcelExport": [
+                "export * from './actions/excel-export';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/excel-export"
+            ],
+            "PdfExport": [
+                "export * from './actions/pdf-export';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/pdf-export"
+            ],
+            "CommandColumn": [
+                "export * from './actions/command-column';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/command-column"
+            ],
+            "Edit": [
+                "export * from './actions/edit';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/edit"
+            ],
+            "VirtualScroll": [
+                "export * from './actions/virtual-scroll';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/virtual-scroll"
+            ],
+            "DetailRow": [
+                "export * from './actions/detail-row';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/detail-row"
+            ],
+            "RowDD": [
+                "export * from './actions/rowdragdrop';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/rowdragdrop"
+            ],
+            "Freeze": [
+                "export * from './actions/freeze-column';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/freeze-column"
+            ],
+            "ColumnChooser": [
+                "export * from './actions/column-chooser';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/column-chooser"
+            ],
+            "InfiniteScroll": [
+                "export * from './actions/infinite-scroll';",
+                "ej2-treegrid/treegrid/actions",
+                "ej2-treegrid/treegrid/actions/infinite-scroll"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-treegrid"
+    },
+    "pdfviewer": {
+        "classname": "PdfViewer",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/Button,CheckBox,Chip,RadioButton,ClickEventArgs",
+            "ej2-data/Query",
+            "ej2-dropdowns/AutoComplete,ComboBox,DropDownList,ChangeEventArgs",
+            "ej2-inputs/ColorPicker,Input,NumericTextBox,Slider,TextBox,ChangeEventArgs,ColorPickerEventArgs",
+            "ej2-lists/ListView,ListBase",
+            "ej2-navigations/Accordion,ContextMenu,Menu,Sidebar,Tab,TreeView,Toolbar,ItemModel,MenuItemModel,MenuModel,BeforeOpenCloseMenuEventArgs,ClickEventArgs,DrawNodeEventArgs,EventArgs,MenuEventArgs,NodeClickEventArgs,SelectEventArg",
+            "ej2-notifications/Toast,ToastCloseArgs",
+            "ej2-popups/Dialog,Popup,Tooltip,Spinner,TooltipEventArgs",
+            "ej2-inplace-editor",
+            "ej2-splitbuttons/DropDownButton,DropDownButtonModel,ItemModel,BeforeOpenCloseMenuEventArgs,MenuEventArgs,OpenCloseMenuEventArgs",
+            "ej2-pdf",
+            "ej2-pdf-data-extract"
+        ],
+        "baseModule": "ej2-pdfviewer/pdfviewer/pdfviewer",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-inputs/NumericTextBox,TextBox,Input",
+            "ej2-navigations/ContextMenu,Tab,SelectEventArgs,Toolbar,ItemModel,ClickEventArgs,MenuItemModel",
+            "ej2-pdf",
+            "ej2-pdf-data-extract",
+            "ej2-popups/Dialog,Popup,Tooltip,Spinner,TooltipEventArgs",
+            "ej2-dropdowns/AutoComplete,ComboBox,DropDownList,ChangeEventArgs",
+            "ej2-lists"
+        ],
+        "injectableDependencies": {
+            "Annotation": [
+                "ej2-inputs/Slider,ColorPicker,ChangeEventArgs,ColorPickerEventArgs",
+                "ej2-inplace-editor",
+                "ej2-data/Query",
+                "ej2-splitbuttons/DropDownButton,MenuEventArgs,",
+                "ej2-navigations/Accordion,Menu,MenuItemMode,BeforeOpenCloseMenuEventArgs"
+            ],
+            "Toolbar": [
+                "ej2-buttons/Button,CheckBox,RadioButton,ClickEventArgs",
+                "ej2-data/Query",
+                "ej2-navigations/Menu,MenuModel,MenuEventArgs,BeforeOpenCloseMenuEventArgs",
+                "ej2-splitbuttons/DropDownButton,BeforeOpenCloseMenuEventArgs,OpenCloseMenuEventArgs,ItemModel,DropDownButtonModel,MenuEventArgs",
+                "ej2-inputs/ColorPicker,Slider,ChangeEventArgs"
+            ],
+            "BookmarkView": [
+                "ej2-navigations/TreeView,Sidebar,DrawNodeEventArgs,NodeClickEventArgs,EventArgs"
+            ],
+            "TextSearch": [
+                "ej2-buttons/CheckBox",
+                "ej2-notifications/Toast,ToastCloseArgs"
+            ],
+            "FormDesigner": [
+                "ej2-splitbuttons/DropDownButton",
+                "ej2-inputs/ColorPicker,Slider",
+                "ej2-buttons/Button,CheckBox,Chip"
+            ],
+            "Magnification": [
+                "ej2-notifications/Toast,ToastCloseArgs"
+            ],
+            "PageOrganizer": [
+                "ej2-buttons/CheckBox",
+                "ej2-inputs/Slider,ChangeEventArgs",
+                "ej2-navigations/BeforeOpenCloseMenuEventArgs",
+                "ej2-splitbuttons/DropDownButton,OpenCloseMenuEventArgs"
+            ]
+        },
+        "injectablePath": {
+            "LinkAnnotation": [
+                "export * from './link-annotation';",
+                "ej2-pdfviewer/pdfviewer/annotation/index"
+            ],
+            "BookmarkView": [
+                "export * from './bookmark-view';",
+                "ej2-pdfviewer/pdfviewer/bookmark-view/index"
+            ],
+            "Magnification": [
+                "export * from './magnification';",
+                "ej2-pdfviewer/pdfviewer/magnification/index"
+            ],
+            "ThumbnailView": [
+                "export * from './thumbnail-view';",
+                "ej2-pdfviewer/pdfviewer/thumbnail-view/index"
+            ],
+            "Toolbar": [
+                "export * from './toolbar/index';",
+                "ej2-pdfviewer/pdfviewer/index"
+            ],
+            "Navigation": [
+                "export * from './page-navigation';",
+                "ej2-pdfviewer/pdfviewer/navigation/index"
+            ],
+            "Print": [
+                "export * from './print';",
+                "ej2-pdfviewer/pdfviewer/print/index"
+            ],
+            "TextSelection": [
+                "export * from './text-selection';",
+                "ej2-pdfviewer/pdfviewer/text-selection/index"
+            ],
+            "TextSearch": [
+                "export * from './text-search';",
+                "ej2-pdfviewer/pdfviewer/text-search/index"
+            ],
+            "Annotation": [
+                "export * from './annotation/index';",
+                "ej2-pdfviewer/pdfviewer/index"
+            ],
+            "FormDesigner": [
+                "export * from './form-designer';",
+                "ej2-pdfviewer/pdfviewer/form-designer/index"
+            ],
+            "FormFields": [
+                "export * from './form-fields';",
+                "ej2-pdfviewer/pdfviewer/form-fields/index"
+            ],
+            "PageOrganizer": [
+                "export * from './organize-pdf';",
+                "ej2-pdfviewer/pdfviewer/organize-pdf/index"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-pdfviewer"
+    },
+    "splitter": {
+        "classname": "Splitter",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "baseModule": "ej2-layouts/splitter/splitter",
+        "baseDependecies": [
+            "ej2-base"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-layouts"
+    },
+    "inplaceeditor": {
+        "classname": "InPlaceEditor",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists",
+            "ej2-inputs/Input,ColorPicker,MaskedTextBox,NumericTextBox,Slider,TextBox,FormValidator",
+            "ej2-buttons/Button",
+            "ej2-calendars/DatePicker,DateRangePicker,DateTimePicker,TimePicker",
+            "ej2-dropdowns",
+            "ej2-popups/Popup,Tooltip",
+            "ej2-richtexteditor"
+        ],
+        "package": "ej2-inplace-editor"
+    },
+    "query-builder": {
+        "classname": "QueryBuilder",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/Button",
+            "ej2-buttons/RadioButton",
+            "ej2-splitbuttons/ButtonGroup",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-data",
+            "ej2-inputs/NumericTextBox",
+            "ej2-inputs/TextBox",
+            "ej2-dropdowns/DropDownList",
+            "ej2-calendars/DatePicker"
+        ],
+        "baseDependencies": [
+            "ej2-base",
+            "ej2-buttons/Button",
+            "ej2-buttons/RadioButton",
+            "ej2-splitbuttons/ButtonGroup",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-data",
+            "ej2-inputs/NumericTextBox",
+            "ej2-inputs/TextBox",
+            "ej2-dropdowns/DropDownList",
+            "ej2-calendars/DatePicker"
+        ],
+        "injectableDependencies": {
+            "QueryLibrary": []
+        },
+        "injectablePath": {
+            "QueryLibrary": [
+                "export * from './query-library';",
+                "ej2-querybuilder/query-builder/index"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-querybuilder"
+    },
+    "inplace-editor": {
+        "classname": "InPlaceEditor",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/ColorPicker,MaskedTextBox,NumericTextBox,Slider,TextBox,FormValidator",
+            "ej2-buttons/Button",
+            "ej2-calendars/DatePicker,DateRangePicker,DateTimePicker,TimePicker",
+            "ej2-dropdowns/DropDownList,ComboBox,AutoComplete,MultiSelect",
+            "ej2-popups/Tooltip,spinner",
+            "ej2-richtexteditor"
+        ],
+        "baseModule": "ej2-inplace-editor/inplace-editor/base/inplace-editor",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/ColorPicker,MaskedTextBox,NumericTextBox,Slider,TextBox,FormValidator",
+            "ej2-buttons/Button",
+            "ej2-calendars/DatePicker,DateRangePicker,DateTimePicker,TimePicker",
+            "ej2-dropdowns/DropDownList,ComboBox,AutoComplete,MultiSelect",
+            "ej2-popups/Tooltip,spinner"
+        ],
+        "injectableDependencies": {
+            "AutoComplete": [
+                "ej2-lists/common",
+                "ej2-inputs/input",
+                "ej2-buttons/Button",
+                "ej2-notifications/skeleton",
+                "ej2-popups/popup",
+                "ej2-dropdowns/DropDownList,ComboBox"
+            ],
+            "MultiSelect": [
+                "ej2-lists/common",
+                "ej2-inputs/input",
+                "ej2-buttons/Button",
+                "ej2-popups/popup"
+            ],
+            "ComboBox": [
+                "ej2-lists/common",
+                "ej2-inputs/input",
+                "ej2-buttons/Button",
+                "ej2-notifications/skeleton",
+                "ej2-popups/popup",
+                "ej2-dropdowns/DropDownList"
+            ],
+            "TimePicker": [
+                "ej2-popups/popup",
+                "ej2-inputs/input",
+                "ej2-lists/common",
+                "ej2-calendars/TimePicker"
+            ],
+            "DateRangePicker": [
+                "ej2-popups/popup",
+                "ej2-buttons/Button",
+                "ej2-inputs/input",
+                "ej2-lists/common",
+                "ej2-calendars/Calendar"
+            ],
+            "Slider": [
+                "ej2-inputs/input"
+            ],
+            "ColorPicker": [
+                "ej2-buttons/Button",
+                "ej2-inputs/Slider",
+                "ej2-inputs/input",
+                "ej2-splitbuttons/SplitButton",
+                "ej2-popups/Tooltip"
+            ],
+            "Rte": [
+                "ej2-inputs/ColorPicker,NumericTextBox,Uploader",
+                "ej2-buttons/Button,CheckBox,RadioButton",
+                "ej2-popups/common,popup,Dialog",
+                "ej2-navigations/Toolbar",
+                "ej2-splitbuttons/DropDownButton",
+                "ej2-richtexteditor/editor-manager"
+            ]
+        },
+        "injectablePath": {
+            "AutoComplete": [
+                "export * from './auto-complete';",
+                "ej2-inplace-editor/modules/index"
+            ],
+            "MultiSelect": [
+                "export * from './multi-select';",
+                "ej2-inplace-editor/modules/index"
+            ],
+            "ComboBox": [
+                "export * from './combo-box';",
+                "ej2-inplace-editor/modules/index"
+            ],
+            "TimePicker": [
+                "export * from './time-picker';",
+                "ej2-inplace-editor/modules/index"
+            ],
+            "DateRangePicker": [
+                "export * from './date-range-picker';",
+                "ej2-inplace-editor/modules/index"
+            ],
+            "Slider": [
+                "export * from './slider';",
+                "ej2-inplace-editor/modules/index"
+            ],
+            "ColorPicker": [
+                "export * from './color-picker';",
+                "ej2-inplace-editor/modules/index"
+            ],
+            "Rte": [
+                "export * from './rte';",
+                "ej2-inplace-editor/modules/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-inplace-editor"
+    },
+    "dashboardlayout": {
+        "classname": "DashboardLayout",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "package": "ej2-layouts"
+    },
+    "stock-chart": {
+        "classname": "StockChart",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export",
+            "ej2-navigations/Toolbar",
+            "ej2-calendars/DateRangePicker",
+            "ej2-buttons/Button",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-lists",
+            "ej2-inputs",
+            "ej2-popups"
+        ],
+        "baseModule": "ej2-charts/stock-chart/stock-chart",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export",
+            "ej2-excel-export",
+            "ej2-navigations/Toolbar",
+            "ej2-calendars/DateRangePicker",
+            "ej2-buttons/Button",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-lists",
+            "ej2-inputs",
+            "ej2-popups"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "Export": [
+                "export * from '../chart/print-export/export';",
+                "ej2-charts/chart/print-export",
+                "ej2-charts/chart/export"
+            ],
+            "StockLegend": [
+                "export * from './legend/legend';",
+                "ej2-charts/stock-chart/legend",
+                "ej2-charts/stock-chart/legend"
+            ],
+            "RangeTooltip": [
+                "export * from '../range-navigator/user-interaction/tooltip';",
+                "ej2-charts/range-navigator/user-interaction",
+                "ej2-charts/range-navigator/tooltip"
+            ],
+            "MacdIndicator": [
+                "export * from '../chart/technical-indicators/macd-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/macd-indicator"
+            ],
+            "BollingerBands": [
+                "export * from '../chart/technical-indicators/bollinger-bands';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/bollinger-bands"
+            ],
+            "StochasticIndicator": [
+                "export * from '../chart/technical-indicators/stochastic-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/stochastic-indicator"
+            ],
+            "RsiIndicator": [
+                "export * from '../chart/technical-indicators/rsi-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/rsi-indicator"
+            ],
+            "MomentumIndicator": [
+                "export * from '../chart/technical-indicators/momentum-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/momentum-indicator"
+            ],
+            "AtrIndicator": [
+                "export * from '../chart/technical-indicators/atr-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/atr-indicator"
+            ],
+            "AccumulationDistributionIndicator": [
+                "export * from '../chart/technical-indicators/ad-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/ad-indicator"
+            ],
+            "TmaIndicator": [
+                "export * from '../chart/technical-indicators/tma-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/tma-indicator"
+            ],
+            "EmaIndicator": [
+                "export * from '../chart/technical-indicators/ema-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/ema-indicator"
+            ],
+            "SmaIndicator": [
+                "export * from '../chart/technical-indicators/sma-indicator';",
+                "ej2-charts/chart/technical-indicators",
+                "ej2-charts/chart/sma-indicator"
+            ],
+            "LineSeries": [
+                "export * from '../chart/series/line-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/line-series"
+            ],
+            "Logarithmic": [
+                "export * from '../chart/axis/logarithmic-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/logarithmic-axis"
+            ],
+            "DateTimeCategory": [
+                "export * from '../chart/axis/date-time-category-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/date-time-category-axis"
+            ],
+            "DateTime": [
+                "export * from '../chart/axis/date-time-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/date-time-axis"
+            ],
+            "Category": [
+                "export * from '../chart/axis/category-axis';",
+                "ej2-charts/chart/axis",
+                "ej2-charts/chart/category-axis"
+            ],
+            "SplineSeries": [
+                "export * from '../chart/series/spline-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/spline-series"
+            ],
+            "HiloSeries": [
+                "export * from '../chart/series/hilo-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/hilo-series"
+            ],
+            "HiloOpenCloseSeries": [
+                "export * from '../chart/series/hilo-open-close-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/hilo-open-close-series"
+            ],
+            "CandleSeries": [
+                "export * from '../chart/series/candle-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/candle-series"
+            ],
+            "ColumnSeries": [
+                "export * from '../chart/series/column-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/column-series"
+            ],
+            "AreaSeries": [
+                "export * from '../chart/series/area-series';",
+                "ej2-charts/chart/series",
+                "ej2-charts/chart/area-series"
+            ],
+            "Tooltip": [
+                "export * from '../chart/user-interaction/tooltip';",
+                "ej2-charts/chart/user-interaction",
+                "ej2-charts/chart/tooltip"
+            ],
+            "Trendlines": [
+                "export * from '../chart/trend-lines/trend-line';",
+                "ej2-charts/chart/trend-lines",
+                "ej2-charts/chart/trend-line"
+            ],
+            "Crosshair": [
+                "export * from '../chart/user-interaction/crosshair';",
+                "ej2-charts/chart/user-interaction",
+                "ej2-charts/chart/crosshair"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-charts"
+    },
+    "icons": {
+        "classname": "e-icons",
+        "dependencies": [],
+        "package": "ej2-icons"
+    },
+    "gantt": {
+        "classname": "Gantt",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-grids",
+            "ej2-treegrid",
+            "ej2-richtexteditor/RichTextEditor",
+            "ej2-calendars/DatePicker,DateTimePicker",
+            "ej2-buttons/CheckBox,Button",
+            "ej2-dropdowns/DropDownList,ComboBox,MultiSelect",
+            "ej2-excel-export",
+            "ej2-pdf-export",
+            "ej2-navigations/ContextMenu,Toolbar,Tab",
+            "ej2-inputs/TextBox,NumericTextBox,MaskedTextBox",
+            "ej2-popups/Dialog,Tooltip,Spinner",
+            "ej2-layouts/Splitter"
+        ],
+        "baseModule": "ej2-gantt/gantt/base/gantt.js",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-grids",
+            "ej2-treegrid",
+            "ej2-popups",
+            "ej2-layouts/Splitter"
+        ],
+        "injectableDependencies": {
+            "Filter": [
+                "ej2-inputs/NumericTextBox,TextBox",
+                "ej2-calendars/DatePicker,DateTimePicker",
+                "ej2-dropdowns/AutoComplete,DropDownList,CheckBoxSelection",
+                "ej2-buttons/RadioButton",
+                "ej2-navigations/ContextMenu"
+            ],
+            "Edit": [
+                "ej2-inputs/form-validator,input,NumericTextBox,TextBox,MaskedTextBox",
+                "ej2-dropdowns/DropDownList,ComboBox,MultiSelect,CheckBoxSelection",
+                "ej2-buttons/CheckBox,RadioButton",
+                "ej2-calendars/DatePicker,DateTimePicker,TimePicker",
+                "ej2-richtexteditor/RichTextEditor",
+                "ej2-navigations/Tab"
+            ],
+            "ColumnMenu": [
+                "ej2-navigations/ContextMenu"
+            ],
+            "ContextMenu": [
+                "ej2-navigations/ContextMenu"
+            ],
+            "PdfExport": [
+                "ej2-pdf-export"
+            ],
+            "ExcelExport": [
+                "ej2-excel-export"
+            ],
+            "Toolbar": [
+                "ej2-navigations/Toolbar"
+            ]
+        },
+        "injectablePath": {
+            "Filter": [
+                "export * from './filter';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/filter"
+            ],
+            "Edit": [
+                "export * from './edit';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/edit"
+            ],
+            "Reorder": [
+                "export * from './column-reorder';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/column-reorder"
+            ],
+            "Resize": [
+                "export * from './column-resize';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/column-resize"
+            ],
+            "Sort": [
+                "export * from './sort';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/sort"
+            ],
+            "Selection": [
+                "export * from './selection';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/selection"
+            ],
+            "Toolbar": [
+                "export * from './toolbar';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/toolbar"
+            ],
+            "DayMarkers": [
+                "export * from './day-markers';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/day-markers"
+            ],
+            "CriticalPath": [
+                "export * from './critical-path';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/critical-path"
+            ],
+            "UndoRedo": [
+                "export * from './undo-redo';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/undo-redo"
+            ],
+            "ContextMenu": [
+                "export * from './context-menu';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/context-menu"
+            ],
+            "ExcelExport": [
+                "export * from './excel-export';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/excel-export"
+            ],
+            "ColumnMenu": [
+                "export * from './column-menu';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/column-menu"
+            ],
+            "RowDD": [
+                "export * from './rowdragdrop';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/rowdragdrop"
+            ],
+            "PdfExport": [
+                "export * from './pdf-export';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/pdf-export"
+            ],
+            "VirtualScroll": [
+                "export * from './virtual-scroll';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/virtual-scroll"
+            ],
+            "Freeze": [
+                "export * from './freeze-column';",
+                "ej2-gantt/gantt/actions",
+                "ej2-gantt/gantt/actions/freeze-column"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-gantt"
+    },
+    "file-manager": {
+        "classname": "FileManager",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/input,TextBox,Uploader",
+            "ej2-popups/Spinner,Dialog",
+            "ej2-buttons/CheckBox",
+            "ej2-lists/ListView",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-navigations/ContextMenu,TreeView,Toolbar",
+            "ej2-layouts/Splitter",
+            "ej2-grids/Grid"
+        ],
+        "baseModule": "ej2-filemanager/file-manager/base/file-manager",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs/input, TextBox, Uploader",
+            "ej2-popups/Spinner, Dialog",
+            "ej2-buttons/CheckBox",
+            "ej2-lists/ListView",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-layouts/Splitter"
+        ],
+        "injectableDependencies": {
+            "Toolbar": [
+                "ej2-navigations/Toolbar"
+            ],
+            "NavigationPane": [
+                "ej2-navigations/TreeView"
+            ],
+            "ContextMenu": [
+                "ej2-navigations/ContextMenu"
+            ],
+            "DetailsView": [
+                "ej2-grids/Grid"
+            ]
+        },
+        "injectablePath": {
+            "DetailsView": [
+                "export * from './layout/details-view';",
+                "ej2-filemanager/file-manager/layout/index"
+            ],
+            "NavigationPane": [
+                "export * from './layout/navigation-pane';",
+                "ej2-filemanager/file-manager/layout/index"
+            ],
+            "Toolbar": [
+                "export * from './actions/toolbar';",
+                "ej2-filemanager/file-manager/actions/index"
+            ],
+            "Virtualization": [
+                "export * from './actions/virtualization';",
+                "ej2-filemanager/file-manager/actions/index"
+            ]
+        },
+        "blazorDependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs",
+            "ej2-popups",
+            "ej2-buttons",
+            "ej2-lists",
+            "ej2-splitbuttons",
+            "ej2-navigations",
+            "ej2-layouts",
+            "ej2-grids"
+        ],
+        "blazorType": "native",
+        "package": "ej2-filemanager"
+    },
+    "sortable": {
+        "classname": "Sortable",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "package": "ej2-lists"
+    },
+    "list-box": {
+        "classname": "ListBox",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common,sortable",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-popups/popup"
+        ],
+        "baseModule": "ej2-dropdowns/list-box/list-box",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common,sortable",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-popups/popup"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "CheckboxSelection": [
+                "export * from './checkbox-selection';",
+                "ej2-dropdowns/multi-select/index"
+            ]
+        },
+        "blazorType": "native",
+        "package": "ej2-dropdowns"
+    },
+    "dashboard-layout": {
+        "classname": "DashboardLayout",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "hybrid",
+        "package": "ej2-layouts"
+    },
+    "barcode": {
+        "classname": "Barcode",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data"
+        ],
+        "package": "ej2-barcode-generator"
+    },
+    "datamatrix": {
+        "classname": "DataMatrixGenerator",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data"
+        ],
+        "package": "ej2-barcode-generator"
+    },
+    "qrcode": {
+        "classname": "QRCodeGenerator",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data"
+        ],
+        "package": "ej2-barcode-generator"
+    },
+    "drawing": {
+        "classname": "Drawing",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data"
+        ],
+        "package": "ej2-drawings"
+    },
+    "spreadsheet": {
+        "classname": "Spreadsheet",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-inputs",
+            "ej2-navigations/ContextMenu,Menu,Tab,Toolbar,TreeView",
+            "ej2-popups",
+            "ej2-buttons/Button,common,CheckBox,RadioButton,Switch",
+            "ej2-splitbuttons/common,DropDownButton,SplitButton",
+            "ej2-lists",
+            "ej2-dropdowns/ListBox,DropDownList,ComboBox",
+            "ej2-grids/grid",
+            "ej2-charts/chart",
+            "ej2-svg-base/svg-base",
+            "ej2-calendars/DatePicker,DateTimePicker"
+        ],
+        "baseModule": "ej2-spreadsheet/spreadsheet/base/spreadsheet",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-popups"
+        ],
+        "injectableDependencies": {
+            "Ribbon": [
+                "ej2-navigations/Tab,Toolbar,Menu",
+                "ej2-splitbuttons/DropDownButton,SplitButton",
+                "ej2-inputs/ColorPicker",
+                "ej2-lists/ListView",
+                "ej2-buttons/Button"
+            ],
+            "FormulaBar": [
+                "ej2-dropdowns/DropDownList,ComboBox",
+                "ej2-lists/ListView"
+            ],
+            "SheetTabs": [
+                "ej2-navigations/Tab",
+                "ej2-splitbuttons/DropDownButton"
+            ],
+            "Clipboard": [
+                "ej2-data"
+            ],
+            "DataBind": [
+                "ej2-data"
+            ],
+            "ContextMenu": [
+                "ej2-navigations/ContextMenu"
+            ],
+            "Formula": [
+                "ej2-dropdowns/AutoComplete"
+            ],
+            "Sort": [
+                "ej2-dropdowns/DropDownList",
+                "ej2-buttons/RadioButton,CheckBox",
+                "ej2-lists/ListView",
+                "ej2-data"
+            ],
+            "Filter": [
+                "ej2-data",
+                "ej2-grids/util,ExcelFilterBase,CheckBoxFilterBase",
+                "ej2-navigations/TreeView"
+            ],
+            "SpreadsheetHyperlink": [
+                "ej2-navigations/Tab,TreeView"
+            ],
+            "DataValidation": [
+                "ej2-inputs/FormValidator,NumericTextBox",
+                "ej2-buttons/CheckBox",
+                "ej2-dropdowns/DropDownList"
+            ],
+            "ProtectSheet": [
+                "ej2-lists/ListView",
+                "ej2-buttons/Button"
+            ],
+            "FindAndReplace": [
+                "ej2-buttons/Button,CheckBox",
+                "ej2-dropdowns/DropDownList",
+                "ej2-inputs/TextBox"
+            ],
+            "ConditionalFormatting": [
+                "ej2-dropdowns/DropDownList",
+                "ej2-inputs/NumericTextBox"
+            ],
+            "SpreadsheetChart": [
+                "ej2-charts"
+            ],
+            "AutoFill": [
+                "ej2-splitbuttons/DropDownButton"
+            ],
+            "AIAssist": [
+                "ej2-interactive-chat/AIAssistView",
+                "ej2-markdown-converter/MarkdownConverter"
+            ]
+        },
+        "injectablePath": {
+            "AIAssist": [
+                "export * from './ai-assist';",
+                "ej2-spreadsheet/spreadsheet/integrations/index"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-spreadsheet"
+    },
+    "spreadsheet-ribbon": {
+        "classname": "Ribbon",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "package": "ej2-spreadsheet"
+    },
+    "ribbon": {
+        "classname": "Ribbon",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/Tooltip",
+            "ej2-buttons/Button,CheckBox",
+            "ej2-splitbuttons/DropDownButton,SplitButton",
+            "ej2-navigations/Menu,Tab,Toolbar",
+            "ej2-dropdowns/DropDownBase,DropDownList,ComboBox",
+            "ej2-inputs/ColorPicker"
+        ],
+        "baseModule": "ej2-ribbon/ribbon/base/ribbon",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-popups/Tooltip",
+            "ej2-buttons/Button,CheckBox",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-navigations/Tab,Toolbar",
+            "ej2-dropdowns/DropDownBase,DropDownList,ComboBox"
+        ],
+        "injectableDependencies": {
+            "RibbonColorPicker": [
+                "ej2-splitbuttons/SplitButton",
+                "ej2-inputs/ColorPicker"
+            ],
+            "RibbonFileMenu": [
+                "ej2-navigations/Menu"
+            ],
+            "RibbonBackstage": [
+                "ej2-navigations/Menu"
+            ],
+            "RibbonContextualTab": [
+                "ej2-navigations/Tab"
+            ]
+        },
+        "injectablePath": {
+            "RibbonColorPicker": [
+                "export * from './items/ribbon-colorpicker';",
+                "ej2-ribbon/items/index",
+                "ej2-ribbon/index"
+            ],
+            "RibbonFileMenu": [
+                "export * from './modules/ribbon-filemenu';",
+                "ej2-ribbon/modules/index",
+                "ej2-ribbon/index"
+            ],
+            "RibbonBackstage": [
+                "export * from './modules/ribbon-backstage';",
+                "ej2-ribbon/modules/index",
+                "ej2-ribbon/index"
+            ],
+            "RibbonContextualTab": [
+                "export * from './modules/ribbon-contextualtab';",
+                "ej2-ribbon/modules/index",
+                "ej2-ribbon/index"
+            ],
+            "RibbonKeyTip": [
+                "export * from './modules/ribbon-keytip';",
+                "ej2-ribbon/modules/index",
+                "ej2-ribbon/index"
+            ],
+            "RibbonGallery": [
+                "export * from './items/ribbon-gallery';",
+                "ej2-ribbon/items/index",
+                "ej2-ribbon/index"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-ribbon"
+    },
+    "bullet-chart": {
+        "classname": "BulletChart",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export"
+        ],
+        "baseModule": "ej2-charts/bullet-chart/bullet-chart",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export"
+        ],
+        "injectableDependencies": {},
+        "injectablePath": {
+            "BulletTooltip": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-charts/bullet-chart/user-interaction",
+                "ej2-charts/bullet-chart/tooltip"
+            ],
+            "BulletChartLegend": [
+                "export * from './legend/legend';",
+                "ej2-charts/bullet-chart/legend",
+                "ej2-charts/bullet-chart/legend"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-charts"
+    },
+    "spinner": {
+        "classname": "Spinner",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "baseModule": "ej2-popups/spinner/spinner",
+        "baseDependecies": [
+            "ej2-base"
+        ],
+        "injectableDependencies": {},
+        "package": "ej2-popups"
+    },
+    "kanban": {
+        "classname": "Kanban",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/Button",
+            "ej2-data",
+            "ej2-dropdowns/DropDownList,MultiSelect",
+            "ej2-inputs/form-validator,NumericTextBox,TextBox",
+            "ej2-navigations/TreeView",
+            "ej2-popups/popup,spinner,Dialog,Tooltip"
+        ],
+        "baseModule": "ej2-kanban-component/kanban/base/kanban",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-buttons/Button,CheckBox",
+            "ej2-data",
+            "ej2-dropdowns/DropDownList ",
+            "ej2-inputs/form-validator,NumericTextBox,TextBox",
+            "ej2-navigations/TreeView",
+            "ej2-popups/popup,spinner,Dialog,Tooltip"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-kanban"
+    },
+    "drop-down-tree": {
+        "classname": "DropDownTree",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-inputs/input",
+            "ej2-buttons/Button",
+            "ej2-navigations/treeview",
+            "ej2-popups/popup"
+        ],
+        "blazorType": "none",
+        "package": "ej2-dropdowns"
+    },
+    "progressbar": {
+        "classname": "ProgressBar",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data"
+        ],
+        "blazorType": "wrapper",
+        "package": "ej2-progressbar"
+    },
+    "breadcrumb": {
+        "classname": "Breadcrumb",
+        "dependencies": [
+            "ej2-base",
+            "ej2-lists/common",
+            "ej2-popups/popup"
+        ],
+        "blazorType": "native",
+        "package": "ej2-navigations"
+    },
+    "signature": {
+        "classname": "Signature",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "carousel": {
+        "classname": "Carousel",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/Button"
+        ],
+        "blazorType": "wrapper",
+        "package": "ej2-navigations"
+    },
+    "floating-action-button": {
+        "classname": "Fab",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/button"
+        ],
+        "blazorType": "native",
+        "package": "ej2-buttons"
+    },
+    "speed-dial": {
+        "classname": "SpeedDial",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/button, floating-action-button"
+        ],
+        "blazorType": "native",
+        "package": "ej2-buttons"
+    },
+    "message": {
+        "classname": "Message",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "wrapper",
+        "package": "ej2-notifications"
+    },
+    "skeleton": {
+        "classname": "Skeleton",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "wrapper",
+        "package": "ej2-notifications"
+    },
+    "appbar": {
+        "classname": "AppBar",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "native",
+        "package": "ej2-navigations"
+    },
+    "image-editor": {
+        "classname": "ImageEditor",
+        "dependencies": [
+            "ej2-base",
+            "ej2-lists",
+            "ej2-data",
+            "ej2-buttons/Button",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-inputs/ColorPicker",
+            "ej2-popups/Spinner",
+            "ej2-inputs/Uploader",
+            "ej2-navigations/Toolbar"
+        ],
+        "blazorType": "native",
+        "package": "ej2-image-editor"
+    },
+    "mention": {
+        "classname": "Mention",
+        "dependencies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-popups/popup"
+        ],
+        "baseModule": "ej2-dropdowns/mention/mention",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-data",
+            "ej2-lists/common",
+            "ej2-popups/popup"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-dropdowns"
+    },
+    "rating": {
+        "classname": "Rating",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/Tooltip"
+        ],
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "pdf-parser": {
+        "classname": "Pdf",
+        "dependencies": [
+            "ej2-base",
+            "ej2-file-utils",
+            "ej2-compression"
+        ],
+        "package": "ej2-pdf"
+    },
+    "stepper": {
+        "classname": "Stepper",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/tooltip"
+        ],
+        "blazorDependencies": [
+            "ej2-base",
+            "ej2-popups"
+        ],
+        "blazorType": "native",
+        "package": "ej2-navigations"
+    },
+    "chart3d": {
+        "classname": "Chart3D",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export"
+        ],
+        "baseModule": "ej2-charts/chart3d/chart3D",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data"
+        ],
+        "injectableDependencies": {
+            "Export": [
+                "ej2-pdf-export"
+            ]
+        },
+        "injectablePath": {
+            "Export3D": [
+                "export * from './print-export/export';",
+                "ej2-charts/chart3D/print-export",
+                "ej2-charts/chart3D/export"
+            ],
+            "Legend3D": [
+                "export * from './legend/legend';",
+                "ej2-charts/chart3D/legend",
+                "ej2-charts/chart3D/legend"
+            ],
+            "Tooltip3D": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-charts/chart3D/user-interaction",
+                "ej2-charts/chart3D/tooltip"
+            ],
+            "Selection3D": [
+                "export * from './user-interaction/selection';",
+                "ej2-charts/chart3D/user-interaction",
+                "ej2-charts/chart3D/selection"
+            ],
+            "Highlight3D": [
+                "export * from './user-interaction/high-light';",
+                "ej2-charts/chart3D/user-interaction",
+                "ej2-charts/chart3D/high-light"
+            ],
+            "DataLabel3D": [
+                "export * from './series/data-label';",
+                "ej2-charts/chart3D/series",
+                "ej2-charts/chart3D/data-label"
+            ],
+            "DateTime3D": [
+                "export * from './axis/date-time-axis';",
+                "ej2-charts/chart3D/axis",
+                "ej2-charts/chart3D/date-time-axis"
+            ],
+            "Category3D": [
+                "export * from './axis/category-axis';",
+                "ej2-charts/chart3D/axis",
+                "ej2-charts/chart3D/category-axis"
+            ],
+            "DateTimeCategory3D": [
+                "export * from './axis/date-time-category-axis';",
+                "ej2-charts/chart3D/axis",
+                "ej2-charts/chart3D/date-time-category-axis"
+            ],
+            "Logarithmic3D": [
+                "export * from './axis/logarithmic-axis';",
+                "ej2-charts/chart3D/axis",
+                "ej2-charts/chart3D/logarithmic-axis"
+            ],
+            "ColumnSeries3D": [
+                "export * from './series/column-series';",
+                "ej2-charts/chart3D/series",
+                "ej2-charts/chart3D/column-series"
+            ],
+            "BarSeries3D": [
+                "export * from './series/bar-series';",
+                "ej2-charts/chart3D/series",
+                "ej2-charts/chart3D/bar-series"
+            ],
+            "StackingColumnSeries3D": [
+                "export * from './series/stacking-column-series';",
+                "ej2-charts/chart3D/series",
+                "ej2-charts/chart3D/stacking-column-series"
+            ],
+            "StackingBarSeries3D": [
+                "export * from './series/stacking-bar-series';",
+                "ej2-charts/chart3D/series",
+                "ej2-charts/chart3D/stacking-bar-series"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-charts"
+    },
+    "injectablePath": {
+        "Filter": [
+            "export * from './actions/filter';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/filter"
+        ],
+        "Page": [
+            "export * from './actions/page';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/page"
+        ],
+        "Selection": [
+            "export * from './actions/selection';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/selection"
+        ],
+        "Sort": [
+            "export * from './actions/sort';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/sort"
+        ],
+        "Group": [
+            "export * from './actions/group';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/group"
+        ],
+        "Reorder": [
+            "export * from './actions/reorder';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/reorder"
+        ],
+        "RowDD": [
+            "export * from './actions/row-reorder';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/row-reorder"
+        ],
+        "DetailRow": [
+            "export * from './actions/detail-row';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/detail-row"
+        ],
+        "Toolbar": [
+            "export * from './actions/toolbar';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/toolbar"
+        ],
+        "Aggregate": [
+            "export * from './actions/aggregate';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/aggregate"
+        ],
+        "Search": [
+            "export * from './actions/search';",
+            "ej2-grids/grid/actions"
+        ],
+        "VirtualScroll": [
+            "export * from './actions/virtual-scroll';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/virtual-scroll"
+        ],
+        "Edit": [
+            "export * from './actions/edit';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/edit"
+        ],
+        "Resize": [
+            "export * from './actions/resize';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/resize"
+        ],
+        "ExcelExport": [
+            "export * from './actions/excel-export';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/excel-export"
+        ],
+        "PdfExport": [
+            "export * from './actions/pdf-export';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/pdf-export"
+        ],
+        "CommandColumn": [
+            "export * from './actions/command-column';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/command-column"
+        ],
+        "ContextMenu": [
+            "export * from './actions/context-menu';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/context-menu"
+        ],
+        "Freeze": [
+            "export * from './actions/freeze';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/freeze"
+        ],
+        "ColumnMenu": [
+            "export * from './actions/column-menu';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/column-menu"
+        ],
+        "ColumnChooser": [
+            "export * from './actions/column-chooser';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/column-chooser"
+        ],
+        "ForeignKey": [
+            "export * from './actions/foreign-key';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/foreign-key"
+        ],
+        "InfiniteScroll": [
+            "export * from './actions/infinite-scroll';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/infinite-scroll"
+        ],
+        "LazyLoadGroup": [
+            "export * from './actions/lazy-load-group';",
+            "ej2-grids/grid/actions",
+            "ej2-grids/grid/lazy-load-group"
+        ],
+        "package": "ej2-grids"
+    },
+    "timeline": {
+        "classname": "Timeline",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "native",
+        "package": "ej2-layouts"
+    },
+    "circular3d": {
+        "classname": "CircularChart3D",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data",
+            "ej2-pdf-export"
+        ],
+        "baseModule": "ej2-charts/circularchart3d/circularchart3d",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-data"
+        ],
+        "injectableDependencies": {
+            "Export": [
+                "ej2-pdf-export"
+            ]
+        },
+        "injectablePath": {
+            "CircularChartExport3D": [
+                "export * from './print-export/export';",
+                "ej2-charts/circularchart3d/print-export",
+                "ej2-charts/circularchart3d/export"
+            ],
+            "CircularChartLegend3D": [
+                "export * from './legend/legend';",
+                "ej2-charts/circularchart3d/legend",
+                "ej2-charts/circularchart3d/legend"
+            ],
+            "CircularChartTooltip3D": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-charts/circularchart3d/user-interaction",
+                "ej2-charts/circularchart3d/tooltip"
+            ],
+            "CircularChartSelection3D": [
+                "export * from './user-interaction/selection';",
+                "ej2-charts/circularchart3d/user-interaction",
+                "ej2-charts/circularchart3d/selection"
+            ],
+            "CircularChartHighlight3D": [
+                "export * from './user-interaction/high-light';",
+                "ej2-charts/circularchart3d/user-interaction",
+                "ej2-charts/circularchart3d/high-light"
+            ],
+            "CircularChartDataLabel3D": [
+                "export * from './renderer/dataLabel';",
+                "ej2-charts/circularchart3d/renderer",
+                "ej2-charts/circularchart3d/dataLabel"
+            ],
+            "PieSeries3D": [
+                "export * from './renderer/series';",
+                "ej2-charts/circularchart3d/renderer",
+                "ej2-charts/circularchart3d/series"
+            ]
+        },
+        "package": "ej2-charts"
+    },
+    "textarea": {
+        "classname": "TextArea",
+        "dependencies": [
+            "ej2-base",
+            "ej2-inputs/input",
+            "ej2-inputs/textbox"
+        ],
+        "baseModule": "ej2-inputs/textarea/textarea",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-inputs/input",
+            "ej2-inputs/textbox"
+        ],
+        "injectableDependencies": {},
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "otp-input": {
+        "classname": "OTPInput",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "multicolumn-combobox": {
+        "classname": "MultiColumnComboBox",
+        "dependencies": [
+            "ej2-base",
+            "ej2-dropdowns/DropDownBase,DropDownList,ComboBox",
+            "ej2-grids/Grid"
+        ],
+        "blazorType": "native",
+        "package": "ej2-multicolumn-combobox"
+    },
+    "smart-paste-button": {
+        "classname": "SmartPasteButton",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/button"
+        ],
+        "blazorType": "native",
+        "package": "ej2-buttons"
+    },
+    "smart-textarea": {
+        "classname": "SmartTextArea",
+        "dependencies": [
+            "ej2-base",
+            "ej2-inputs/textarea"
+        ],
+        "blazorType": "native",
+        "package": "ej2-inputs"
+    },
+    "ai-assistview": {
+        "classname": "AIAssistView",
+        "dependencies": [
+            "ej2-base",
+            "ej2-navigations/Toolbar",
+            "ej2-inputs/TextArea"
+        ],
+        "blazorType": "native",
+        "package": "ej2-interactive-chat"
+    },
+    "chat-ui": {
+        "classname": "ChatUI",
+        "dependencies": [
+            "ej2-base",
+            "ej2-navigations/Toolbar",
+            "ej2-inputs/TextArea",
+            "ej2-popups/spinner",
+            "ej2-buttons/button",
+            "ej2-dropdowns/Mention",
+            "ej2-buttons/floating-action-button"
+        ],
+        "blazorType": "native",
+        "package": "ej2-interactive-chat"
+    },
+    "speech-to-text": {
+        "classname": "SpeechToText",
+        "dependencies": [
+            "ej2-base",
+            "ej2-buttons/Button",
+            "ej2-popups/Tooltip"
+        ],
+        "blazorType": "hybrid",
+        "package": "ej2-inputs"
+    },
+    "blockeditor": {
+        "classname": "BlockEditor",
+        "dependencies": [
+            "ej2-base",
+            "ej2-popups/Tooltip,Dialog,Popup",
+            "ej2-buttons/Button,CheckBox",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-navigations/Menu,Toolbar,ContextMenu",
+            "ej2-dropdowns/DropDownList,Mention",
+            "ej2-inputs/ColorPicker"
+        ],
+        "baseModule": "ej2-blockeditor/blockeditor/base/blockeditor",
+        "baseDependencies": [
+            "ej2-base",
+            "ej2-popups/Tooltip,Dialog,Popup",
+            "ej2-buttons/Button,CheckBox",
+            "ej2-splitbuttons/DropDownButton",
+            "ej2-navigations/Menu,Toolbar,ContextMenu",
+            "ej2-dropdowns/DropDownList,Mention",
+            "ej2-inputs/ColorPicker"
+        ],
+        "blazorType": "wrapper",
+        "package": "ej2-blockeditor"
+    },
+    "pdf-data-extract": {
+        "classname": "PdfDataExtract",
+        "dependencies": [
+            "ej2-base",
+            "ej2-file-utils",
+            "ej2-compression",
+            "ej2-pdf"
+        ],
+        "package": "ej2-pdf-data-extract"
+    },
+    "markdown-converter": {
+        "classname": "MarkdownConverter",
+        "dependencies": [
+            "ej2-base"
+        ],
+        "package": "ej2-markdown-converter"
+    },
+    "sankey": {
+        "classname": "Sankey",
+        "dependencies": [
+            "ej2-base",
+            "ej2-svg-base",
+            "ej2-pdf-export"
+        ],
+        "baseModule": "ej2-charts/sankey/sankey",
+        "baseDependecies": [
+            "ej2-base",
+            "ej2-svg-base"
+        ],
+        "injectableDependencies": {
+            "Export": [
+                "ej2-pdf-export"
+            ]
+        },
+        "injectablePath": {
+            "SankeyExport": [
+                "export * from './print-export/export';",
+                "ej2-charts/sankey/print-export",
+                "ej2-charts/sankey/export"
+            ],
+            "SankeyTooltip": [
+                "export * from './user-interaction/tooltip';",
+                "ej2-charts/sankey/user-interaction",
+                "ej2-charts/sankey/tooltip"
+            ],
+            "SankeyLegend": [
+                "export * from './legend/legend';",
+                "ej2-charts/sankey/legend",
+                "ej2-charts/sankey/legend"
+            ]
+        },
+        "blazorType": "wrapper",
+        "package": "ej2-charts"
+    },
+    "inline-ai-assist": {
+        "classname": "InlineAIAssist",
+        "dependencies": [
+            "ej2-base",
+            "ej2-navigations/Toolbar",
+            "ej2-inputs/TextArea",
+            "ej2-dropdowns/Mention",
+            "ej2-popups/Popup"
+        ],
+        "blazorType": "native",
+        "package": "ej2-interactive-chat"
+    }
+}

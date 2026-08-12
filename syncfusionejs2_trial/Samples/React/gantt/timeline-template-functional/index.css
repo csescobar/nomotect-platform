@@ -1,0 +1,27 @@
+#TimelineTemplate .e-gantt-tree-grid-pane .e-columnheader{
+    height: 70px !important;
+}
+#TimelineTemplate .e-gantt-tree-grid-pane .e-headercell{
+    height: 70px !important;
+}
+#TimelineTemplate  .e-timeline-header-container {
+    height: 70px !important;
+}
+#TimelineTemplate .e-timeline-single-header-cell {
+    height: 70px !important;
+}  
+
+#TimelineTemplate .fluent2-highcontrast .e-header-cell-label.e-gantt-top-cell-text,
+#TimelineTemplate .fluent-dark .e-header-cell-label.e-gantt-top-cell-text,
+#TimelineTemplate .fluent2-dark .e-header-cell-label.e-gantt-top-cell-text,
+#TimelineTemplate .material3-dark .e-header-cell-label.e-gantt-top-cell-text,
+#TimelineTemplate .highcontrast .e-header-cell-label.e-gantt-top-cell-text {
+    background-color: #000;
+}
+
+#TimelineTemplate .bootstrap5_3-dark .e-header-cell-label.e-gantt-top-cell-text{
+    background-color: #000;
+}
+#TimelineTemplate .tailwind3-dark .e-header-cell-label.e-gantt-top-cell-text{
+    background-color: #000;
+}

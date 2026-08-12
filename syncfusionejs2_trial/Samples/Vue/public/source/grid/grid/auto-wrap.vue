@@ -1,0 +1,58 @@
+<template>
+<div class="col-lg-12 control-section">
+    <div id="action-description">
+        <p>This sample demonstrates the Data Grid with the text wrap option enabled for both header and cell content. 
+            This setting ensures that long header text and cell values are fully visible by wrapping onto multiple lines instead of being truncated with an ellipsis.</p>
+    </div>
+    <div>
+        <ejs-grid :dataSource="data" :allowPaging='true' :allowSorting='true' :allowFiltering='true' :filterSettings='filterSettings' :pageSettings='pageSettings' :allowTextWrap='true' height='400'>
+            <e-columns>
+                <e-column field='Inventor' headerText='Inventor Name' width='155'></e-column>
+                <e-column field='NumberofPatentFamilies' headerText="No of Patent Families" width='200' textAlign='Right'></e-column>
+                <e-column field='Country' headerText='Country' width='120'></e-column>
+                <e-column field='Active' width='130'></e-column>
+                <e-column field='Mainfieldsofinvention' headerText='Main Fields of Invention (Primary patent technology areas)' width='180'></e-column>
+            </e-columns>
+        </ejs-grid>
+    <div style="margin-top: 10px; text-align: right">Source:
+        <a href="https://en.wikipedia.org/wiki/List_of_prolific_inventors" target='_blank'>Wikipedia: List of Prolific inventors</a>
+    </div>
+
+    </div>
+
+     <div id="description">
+        <p>In this demo, the <strong>"Main Fields of Invention"</strong> column exceeds the available width, so its header and cell content are wrapped across multiple lines for better readability. Text wrapping is enabled by setting the grid’s <code><a aria-label="API link for documentation" target="_blank" className="code"
+            href="http://ej2.syncfusion.com/vue/documentation/api/grid/#allowtextwrap">allowTextWrap</a></code> property to <strong>true</strong>, which automatically applies wrapping to both header and cell content.</p>
+        <p>More information on text wrap can be found in this <a target="_blank" href="https://ej2.syncfusion.com/vue/documentation/grid/cell"> documentation section</a></p>
+        <p>
+            Looking for the full Vue Data Grid component overview, features, pricing, and documentation? Visit our
+            <a target="_blank" href="https://www.syncfusion.com/vue-components/vue-data-grid">
+                Vue Data Grid component</a> page.
+        </p>
+  
+    </div>
+
+</div>
+</template>
+<script lang="ts">
+import { GridComponent, ColumnDirective, ColumnsDirective, Page, Filter, Sort } from "@syncfusion/ej2-vue-grids";
+import { inventoryData } from "./data-source";
+
+export default {
+  components: {
+    'ejs-grid': GridComponent,
+    'e-column': ColumnDirective,
+    'e-columns': ColumnsDirective
+  },   
+  data: () => {
+    return {
+      data: inventoryData,
+      pageSettings: { pageCount: 5},
+      filterSettings: { type: 'Menu' }
+    };
+  },
+  provide: {
+      grid: [Page, Filter, Sort]
+  }
+}
+</script>

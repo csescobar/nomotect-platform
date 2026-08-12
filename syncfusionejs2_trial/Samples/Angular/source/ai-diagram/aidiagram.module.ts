@@ -1,0 +1,14 @@
+import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { SmartFlowchartComponent } from './smart-flowchart.component';
+import { SmartMindmapComponent } from './smart-mindmap.component';
+import { SmartUmlSequenceDiagramComponent } from './smart-umlSequenceDiagram.component';
+
+export const AIDiagramAppRoutes: Object[] = [
+    { path: ':theme/ai-diagram/smart-flowchart', ignoreOnBuild: true, component: SmartFlowchartComponent, name: 'Text to Flowchart', description: 'This demo showcases the Diagram AI feature.', category: 'Diagram', 'order': '02' },
+    { path: ':theme/ai-diagram/smart-mindmap', ignoreOnBuild: true, component: SmartMindmapComponent, name: 'Text to MindMap', description: 'This demo showcases the Diagram AI feature.', category: 'Diagram', 'order': '02' },
+    { path: ':theme/ai-diagram/smart-umlSequenceDiagram', ignoreOnBuild: true, component: SmartUmlSequenceDiagramComponent, name: 'Text to UML Sequence Diagram', description: 'This demo showcases the Diagram AI feature.', category: 'Diagram', 'order': '02' }
+];
+
+export const AIDiagramSampleModule: ModuleWithProviders<any> = RouterModule.forChild(AIDiagramAppRoutes);
