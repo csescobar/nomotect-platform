@@ -5,6 +5,48 @@
     <p class="ej2-showcase-section__desc"><%= t("ej2_showcase.forms.description") %></p>
   </header>
 
+  <%# ── Checkbox, Radio, Switch, Slider & InputGroup ───────────────────────── %>
+  <div class="ej2-showcase-card" id="ej2-forms-basic">
+    <div class="ej2-showcase-card__header">
+      <h3 class="ej2-showcase-card__title">Controles de Formulários Básicos (Syncfusion ViewComponents)</h3>
+      <p class="ej2-showcase-card__desc">Componentes Checkbox, RadioGroup, Toggle (Switch), Slider e InputGroup emparelhados sob Ui::Syncfusion::*</p>
+    </div>
+    <div class="ej2-showcase-card__demo">
+      <div class="showcase__grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.5rem; width: 100%;">
+        <div>
+          <h4>Ui::Syncfusion::CheckboxComponent</h4>
+          <%= render Ui::Syncfusion::CheckboxComponent.new(name: "ej2_demo[alerts]", label: t("showcase.examples.checkbox_label"), checked: true, help_text: t("showcase.examples.checkbox_help")) %>
+        </div>
+        <div>
+          <h4>Ui::Syncfusion::RadioGroupComponent</h4>
+          <%= render Ui::Syncfusion::RadioGroupComponent.new(
+            name: "ej2_demo[risk]",
+            legend: t("showcase.examples.radio_legend"),
+            options: [
+              { label: t("showcase.examples.radio_low"), value: "low", checked: true },
+              { label: t("showcase.examples.radio_high"), value: "high" }
+            ]
+          ) %>
+        </div>
+        <div>
+          <h4>Ui::Syncfusion::ToggleComponent (Switch)</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <%= render Ui::Syncfusion::ToggleComponent.new(name: "ej2_demo[notifications]", label: t("showcase.examples.toggle_notifications"), checked: true) %>
+            <%= render Ui::Syncfusion::ToggleComponent.new(name: "ej2_demo[dark_mode]", label: t("showcase.examples.toggle_dark_mode"), checked: false) %>
+          </div>
+        </div>
+        <div>
+          <h4>Ui::Syncfusion::SliderComponent</h4>
+          <%= render Ui::Syncfusion::SliderComponent.new(name: "ej2_demo[threshold]", label: t("showcase.examples.slider_threshold"), value: 65, min: 0, max: 100, step: 5) %>
+        </div>
+        <div>
+          <h4>Ui::Syncfusion::InputGroupComponent</h4>
+          <%= render Ui::Syncfusion::InputGroupComponent.new(name: "ej2_demo[contract]", value: "150.000", prefix: "R$", suffix: ",00", label: t("showcase.examples.input_group_price")) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <%# ── TextBox ──────────────────────────────────────────────────────────────── %>
   <div class="ej2-showcase-card" id="ej2-forms-textbox">
     <div class="ej2-showcase-card__header">
