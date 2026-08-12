@@ -1,0 +1,22 @@
+schema_version: 1
+id: 237-ui-form-controls-showcase-enhancements
+category: feature
+summary: Introduce CheckboxComponent, RadioGroupComponent, ToggleComponent, SliderComponent, and InputGroupComponent ViewComponents with showcase integration, Portuguese i18n, strict CSP inline-style compliance, and unified form control design tokens.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Removed inline style attributes from JS controllers and ViewComponents to ensure strict CSP style-src compliance without nonces.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: ToggleComponent implements role=switch with aria-checked state. SliderComponent implements accessible range input semantics. Checkbox and Radio controls maintain rigid 20px sizing with keyboard focus rings.
