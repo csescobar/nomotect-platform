@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "e8b02c0f0f239edf305b1bf2984a0e5952bd8715",
+  "repository_commit": "9360abb272caf8b4b55859dbc64069301e7c97b9",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -3341,7 +3341,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "149a140a7f5896e2d4cbeaa1de6d408d7f1e0365dd88ab88413299f40abb573a"
+      "sha256": "5070166813d7d4290eca07d836437d6134418c49fc77a15eff72f557374ee7d3"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3552,6 +3552,16 @@
       "path": "lib/ai/configuration_resolver.rb",
       "kind": "source",
       "sha256": "8f4ef114961e72db554453600e13acf7187823939fb0e998511969c17b2d24c8"
+    },
+    {
+      "path": "lib/ai/mcp/gateway.rb",
+      "kind": "source",
+      "sha256": "7bea131716b7bb496eb3eecb07555946b7c5c386ff802c686b225387a65a89b2"
+    },
+    {
+      "path": "lib/ai/mcp/resources.rb",
+      "kind": "source",
+      "sha256": "73e36826d24d160032ba133d29ba1b14adefbc8ecea2225df58e225e6db0f2b1"
     },
     {
       "path": "lib/ai/providers/anthropic_adapter.rb",
@@ -4152,6 +4162,16 @@
       "path": "test/lib/ai_configuration_resolver_test.rb",
       "kind": "test",
       "sha256": "0bda293a5b46af22b58af033200f4d6242dc5737b0ed2984a1ce3eec947f9818"
+    },
+    {
+      "path": "test/lib/ai_mcp_gateway_test.rb",
+      "kind": "test",
+      "sha256": "c4e9feffa0173caad87e803501a48be54f7cef09a5bca7f6f1fe7f0b42e270fe"
+    },
+    {
+      "path": "test/lib/ai_mcp_resources_test.rb",
+      "kind": "test",
+      "sha256": "affa252d342e9ae0c5dfee6bd3044e92d4610f962282aeee16b8c90205ac476b"
     },
     {
       "path": "test/lib/ai_provider_interface_test.rb",

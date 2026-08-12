@@ -1,0 +1,22 @@
+schema_version: 1
+id: 235-epic-16-ai-assistant-phase-2-3
+category: feature
+summary: Epic 16 Phases 2 & 3 — MCP Application Gateway (lib/ai/mcp/gateway.rb) with Current context propagation and audit logging, plus contextual resources provider (lib/ai/mcp/resources.rb) exposing nomotect:// URIs.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: Created Ai::Mcp::Gateway for tool execution and Ai::Mcp::Resources exposing safe contextual data via nomotect:// URIs with data minimization.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
