@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repository_commit": "edd47cb67adaf8837ebc701ca402d83ea7249196",
+  "repository_commit": "dc126c7e67bef5af81dd3c863431d34e00886100",
   "generation_command": "ruby bin/repository-intelligence generate",
   "files": [
     {
@@ -3341,7 +3341,7 @@
     {
       "path": "docs/releases/generated/unreleased.md",
       "kind": "documentation",
-      "sha256": "a8c328537976310cf5c4bb10870dd84105da0aa5b0984722c368384d3d0cf7a7"
+      "sha256": "8ba0dc4fecc753e7b713e3b6ebc024d1d85565d7106c19feb6e580330a4773bc"
     },
     {
       "path": "docs/releases/generated/upgrade-notes.md",
@@ -3396,7 +3396,7 @@
     {
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "kind": "documentation",
-      "sha256": "4effe2e63af29f6dcf1f387ee92c7a6b13ab6f78e784c46a3bec126f809635df"
+      "sha256": "60b0872ef1f84af6b0153cfd7b876a786f7131f86957ca0f942ba99d8e9c53b3"
     },
     {
       "path": "docs/roadmap/roadmap.md",
@@ -3561,7 +3561,17 @@
     {
       "path": "lib/audit/event_logger.rb",
       "kind": "source",
-      "sha256": "dbdf188928e8b60cb70e7c9d11a7af54968b404185c00172a6faa86ac651b872"
+      "sha256": "1559a73249d9e2ddaa49ef2ab0ff7bee7239c604ccab16cdb0ff948f6b8cab7b"
+    },
+    {
+      "path": "lib/audit/evidence_exporter.rb",
+      "kind": "source",
+      "sha256": "a33f494f8a696da5f73d4a2094e070e6f435003fc80f4ca45f20c3ddc961dcff"
+    },
+    {
+      "path": "lib/audit/tamper_evident_verifier.rb",
+      "kind": "source",
+      "sha256": "d8ce62862c7439bc9f6b4b60b7a29a1b3709297823fc240d52ee5af4ae728a30"
     },
     {
       "path": "lib/container_environment_validator.rb",
@@ -4127,6 +4137,16 @@
       "path": "test/lib/audit_event_logger_test.rb",
       "kind": "test",
       "sha256": "be68ae931c92ba1c8a9f0b5418e7a888a9643a2caa968bf48369778318b6bdba"
+    },
+    {
+      "path": "test/lib/audit_evidence_exporter_test.rb",
+      "kind": "test",
+      "sha256": "bc16a037946a5b0e64d3d536ac60f64e3af3dcb5541b7d433021b697622696df"
+    },
+    {
+      "path": "test/lib/audit_tamper_evident_verifier_test.rb",
+      "kind": "test",
+      "sha256": "69c20f75f8e8815166184cfa1e8b007796a6593ce31e5ac0f639e839bc940cb6"
     },
     {
       "path": "test/lib/clean_starter_onboarding_test.rb",

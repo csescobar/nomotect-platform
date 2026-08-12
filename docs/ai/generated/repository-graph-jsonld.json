@@ -2900,7 +2900,7 @@
       "name": "Releases::Generated::Unreleased",
       "path": "docs/releases/generated/unreleased.md",
       "properties": {
-        "sha256": "a8c328537976310cf5c4bb10870dd84105da0aa5b0984722c368384d3d0cf7a7",
+        "sha256": "8ba0dc4fecc753e7b713e3b6ebc024d1d85565d7106c19feb6e580330a4773bc",
         "source": "platform"
       },
       "@id": "document:Releases::Generated::Unreleased"
@@ -3010,7 +3010,7 @@
       "name": "Roadmap::Platform-evolution-roadmap",
       "path": "docs/roadmap/platform-evolution-roadmap.md",
       "properties": {
-        "sha256": "4effe2e63af29f6dcf1f387ee92c7a6b13ab6f78e784c46a3bec126f809635df",
+        "sha256": "60b0872ef1f84af6b0153cfd7b876a786f7131f86957ca0f942ba99d8e9c53b3",
         "source": "platform"
       },
       "@id": "document:Roadmap::Platform-evolution-roadmap"
@@ -4180,6 +4180,28 @@
         "source": "platform"
       },
       "@id": "test:Lib::AuditEventLogger"
+    },
+    {
+      "id": "test:Lib::AuditEvidenceExporter",
+      "type": "test",
+      "name": "Lib::AuditEvidenceExporter",
+      "path": "test/lib/audit_evidence_exporter_test.rb",
+      "properties": {
+        "sha256": "bc16a037946a5b0e64d3d536ac60f64e3af3dcb5541b7d433021b697622696df",
+        "source": "platform"
+      },
+      "@id": "test:Lib::AuditEvidenceExporter"
+    },
+    {
+      "id": "test:Lib::AuditTamperEvidentVerifier",
+      "type": "test",
+      "name": "Lib::AuditTamperEvidentVerifier",
+      "path": "test/lib/audit_tamper_evident_verifier_test.rb",
+      "properties": {
+        "sha256": "69c20f75f8e8815166184cfa1e8b007796a6593ce31e5ac0f639e839bc940cb6",
+        "source": "platform"
+      },
+      "@id": "test:Lib::AuditTamperEvidentVerifier"
     },
     {
       "id": "test:Lib::CleanStarterOnboarding",

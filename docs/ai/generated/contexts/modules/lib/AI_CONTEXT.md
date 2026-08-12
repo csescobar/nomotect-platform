@@ -4,7 +4,7 @@
 
 ## Responsibilities
 
-- test: Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationSkeletonDocumentationSanitization, Lib::ApplicationStarter, Lib::AssuranceFreshnessChecker, Lib::AssuranceRunner, Lib::AuditEventLogger, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::ContextualAuthorization, Lib::DesignTokens::Compiler, Lib::DeveloperGuidelines, Lib::Epic9Certification, Lib::EvolutionDiscovery, Lib::GovernancePolicyRegistry, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::PermissionRegistry, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
+- test: Lib::ApplicationLayoutConfig, Lib::ApplicationRegistrations, Lib::ApplicationSkeletonDocumentationSanitization, Lib::ApplicationStarter, Lib::AssuranceFreshnessChecker, Lib::AssuranceRunner, Lib::AuditEventLogger, Lib::AuditEvidenceExporter, Lib::AuditTamperEvidentVerifier, Lib::CleanStarterOnboarding, Lib::ContainerEnvironmentValidator, Lib::ContextualAuthorization, Lib::DesignTokens::Compiler, Lib::DeveloperGuidelines, Lib::Epic9Certification, Lib::EvolutionDiscovery, Lib::GovernancePolicyRegistry, Lib::GridEngine::HtmlRenderer, Lib::GridEngine::Query, Lib::GridEngine::SyncfusionAdapter, Lib::GridEngine::Types, Lib::Localization::SupportedLocales, Lib::McpBootstrap, Lib::PermissionRegistry, Lib::Platform::Version, Lib::RepositoryIntelligence, Lib::RepositoryIntelligenceAiArtifact, Lib::RepositoryIntelligenceDocumentationGovernance, Lib::RepositoryIntelligenceHealth, Lib::RepositoryIntelligencePlaybookExecutor, Lib::RepositoryIntelligenceStorage
 
 ## Source paths
 
@@ -15,6 +15,8 @@
 - `test/lib/assurance_freshness_checker_test.rb`
 - `test/lib/assurance_runner_test.rb`
 - `test/lib/audit_event_logger_test.rb`
+- `test/lib/audit_evidence_exporter_test.rb`
+- `test/lib/audit_tamper_evident_verifier_test.rb`
 - `test/lib/clean_starter_onboarding_test.rb`
 - `test/lib/container_environment_validator_test.rb`
 - `test/lib/contextual_authorization_test.rb`

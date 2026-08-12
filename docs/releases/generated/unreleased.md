@@ -85,6 +85,7 @@
 - Epic 14 Phase 1 — Continuous Assurance & Evidence introducing machine-readable assurance control contracts schema (JSON Schema v1.0), YAML controls, Assurance::Runner, executable bin/assurance CLI, and CI integration. (`230-epic-14-continuous-assurance-phase-1`)
 - Epic 14 Phase 2 — Continuous Assurance & Evidence completing Assurance::FreshnessChecker with fail-closed stale evidence validation and end-to-end evidence graph traceability CLI (bin/assurance --graph). (`231-epic-14-continuous-assurance-phase-2`)
 - Epic 15 Phases 1 & 2 — Administrative governance policy registry (lib/governance/policy_registry.rb) across 10 corporate domains and standardized structured audit event taxonomy (lib/audit/event_logger.rb) across 9 event families. (`232-epic-15-governance-audit-phase-1-2`)
+- Epic 15 Phases 3 & 4 — Completing Governance & Audit Platform with Audit::TamperEvidentVerifier SHA-256 chained event digest verification and Audit::EvidenceExporter deterministic audit package exporter. (`233-epic-15-governance-audit-phase-3-4`)
 
 ### Fixed
 
@@ -233,6 +234,7 @@
 - **Security — 230-epic-14-continuous-assurance-phase-1:** Introduced machine-readable assurance control contracts and executable bin/assurance CLI with CI integration.
 - **Security — 231-epic-14-continuous-assurance-phase-2:** Completed Assurance::FreshnessChecker evidence validation engine and bin/assurance --graph traceability tree renderer.
 - **Security — 232-epic-15-governance-audit-phase-1-2:** Implemented Governance::PolicyRegistry across 10 corporate domains and Audit::EventLogger structured taxonomy.
+- **Security — 233-epic-15-governance-audit-phase-3-4:** Implemented Audit::TamperEvidentVerifier digest chaining and Audit::EvidenceExporter deterministic packaging.
 - **Privacy — 126-operational-readiness-contracts:** Operational evidence contains platform metadata and artifact references without persisted credentials.
 - **Privacy — 127-restore-certification:** Certification uses credential-free metadata and temporary component media.
 - **Privacy — 128-diagnostic-support-bundles:** Bundles minimize collected data, redact sensitive values and email addresses, and never upload automatically.
