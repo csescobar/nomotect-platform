@@ -20,9 +20,9 @@ Read the [platform vision](VISION.md), [platform architecture](docs/architecture
 
 ## Release and maturity
 
-The current platform version is **v1.0.0** (General Availability). All Epics 0 through 10 are complete, validated, and certified for enterprise production use.
+The current platform version is **v1.1.0** (General Availability). All Epics 0 through 16, the full Adoption Validation Improvement Program (Phases 0–7), and the Syncfusion EJ2 Enterprise Component Suite (Fases 1 e 2) are complete, validated, and certified for enterprise production use.
 
-The stable release is published with OIDC attestations, container images on GHCR, and clean standalone bootstrap certification. See the [authoritative roadmap](docs/roadmap/roadmap.md) and [v1.0.0 Release Gate](docs/roadmap/v1-0-0-release-gate.md).
+The stable release is published with OIDC attestations, container images on GHCR, standalone Application Starter distribution (`nomotect-starter`), MCP-first AI agent onboarding, and clean standalone bootstrap certification. See the [authoritative roadmap](docs/roadmap/roadmap.md), [Adoption Validation Improvements](docs/roadmap/adoption-validation-improvements.md) and [v1.0.0 Release Gate](docs/roadmap/v1-0-0-release-gate.md).
 
 
 ## Runtime baseline

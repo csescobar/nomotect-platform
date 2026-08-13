@@ -8,7 +8,7 @@ class V1ReleaseCandidateTest < ActiveSupport::TestCase
     assert File.exist?(version_path), "VERSION file must exist"
 
     version = File.read(version_path).strip
-    assert_includes %w[1.0.0-rc.1 1.0.0], version
+    assert_includes %w[1.0.0-rc.1 1.0.0 1.1.0], version
   end
 
 

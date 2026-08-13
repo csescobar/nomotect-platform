@@ -4,7 +4,11 @@ All notable platform changes are generated from versioned change fragments.
 
 ## Unreleased
 
-Required release impact: `major`.
+Required release impact: `none`.
+
+- No changes declared.
+
+## 1.1.0
 
 ### Added
 

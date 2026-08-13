@@ -9,7 +9,7 @@ Provide machine-readable guidance for humans and AI agents changing reusable UI 
 Owned paths:
 
 - `app/components/ui/**`
-- design-system styles in `app/assets/stylesheets/application.css`
+- design-system styles in `app/assets/stylesheets/application.css` and `app/assets/stylesheets/syncfusion_ej2.css`
 - component tests under `test/components/ui/**`
 - `docs/design-system/**`
 
@@ -31,13 +31,19 @@ The canonical design token source remains under `config/design_tokens/**` and is
 
 ## Current components
 
-- `Ui::ButtonComponent`
-- `Ui::CardComponent`
-- `Ui::BadgeComponent`
-- `Ui::AlertComponent`
-- `Ui::DividerComponent`
-- `Ui::EmptyStateComponent`
-- `Ui::ThemeSwitcherComponent`
+- Core Baseline Components:
+  - `Ui::ButtonComponent`
+  - `Ui::CardComponent`
+  - `Ui::BadgeComponent`
+  - `Ui::AlertComponent`
+  - `Ui::DividerComponent`
+  - `Ui::EmptyStateComponent`
+  - `Ui::ThemeSwitcherComponent`
+- Syncfusion EJ2 Enterprise Suite (`Ui::Syncfusion::*`):
+  - Form Controls: `CheckboxComponent`, `RadioGroupComponent`, `SwitchComponent`, `SliderComponent`, `InputGroupComponent`, `DatePickerComponent`, `DateRangePickerComponent`, `TimePickerComponent`, `FileUploadComponent`, `ComboboxComponent`, `MultiSelectComponent`, `AutoCompleteComponent`, `TagInputComponent`, `FieldComponent`
+  - Navigation & Structure: `StepperComponent`, `TabsComponent`, `TreeViewComponent`, `BreadcrumbComponent`
+  - Feedback & Overlays: `ProgressBarComponent`, `SkeletonComponent`, `DialogComponent`, `ToastComponent`, `TooltipComponent`, `SpinnerComponent`, `PopoverComponent`
+  - Data & Containers: `GridComponent`, `ButtonComponent`, `CardComponent`, `TimelineComponent`, `BadgeComponent`, `AvatarComponent`
 
 ## Review checklist
 
@@ -61,4 +67,4 @@ The canonical design token source remains under `config/design_tokens/**` and is
 
 ## Known limitations
 
-This slice does not yet provide component previews, visual regression testing, icons, form controls, complex overlays, or a public showcase. Those belong to subsequent Epic 2 pull requests.
+The core design system baseline and the complete Syncfusion EJ2 enterprise component suite are fully implemented, tested, and showcased under `/component_showcase` and `/ej2_showcase`.

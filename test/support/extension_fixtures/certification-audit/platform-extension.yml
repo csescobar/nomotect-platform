@@ -7,7 +7,7 @@ extension:
   entrypoint: certification/audit
 
 platform:
-  requirement: ">= 0.8.0, <= 1.0.0"
+  requirement: ">= 0.8.0, <= 1.1.0"
 
 
 capabilities:
