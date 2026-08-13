@@ -1,0 +1,22 @@
+schema_version: 1
+id: 242-prepare-release-v1-1-0
+category: internal
+summary: Prepare NomoTect Platform version 1.1.0 GA release documents and archive change fragments.
+release_impact: none
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: none
+  notes:
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: none
+  notes:
