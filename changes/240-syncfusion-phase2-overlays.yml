@@ -1,0 +1,22 @@
+schema_version: 1
+id: 240-syncfusion-phase2-overlays
+category: feature
+summary: Expand Syncfusion EJ2 suite with Ui::Syncfusion::ToastComponent, TooltipComponent, SpinnerComponent, and PopoverComponent for Phase 2 Feedback & Overlays.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: All Phase 2 Overlay ViewComponents adhere to strict CSP style-src rules.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Syncfusion Phase 2 Overlay ViewComponents include accessible ARIA labels and tooltip roles.

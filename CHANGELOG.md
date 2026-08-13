@@ -93,6 +93,7 @@ Required release impact: `major`.
 - Introduce CheckboxComponent, RadioGroupComponent, ToggleComponent, SliderComponent, and InputGroupComponent ViewComponents with showcase integration, Portuguese i18n, strict CSP inline-style compliance, and unified form control design tokens. (`237-ui-form-controls-showcase-enhancements`)
 - Expand Syncfusion EJ2 suite with canonical Ui::Syncfusion::* ViewComponents (Checkbox, RadioGroup, Toggle, Slider, InputGroup, DatePicker, DateRangePicker, TimePicker, FileUpload, Combobox, MultiSelect, Stepper, Tabs, TreeView, ProgressBar, Skeleton, Grid, Dialog, Button, Card) and full unit test coverage. (`238-syncfusion-viewcomponents-expansion`)
 - Expand Syncfusion EJ2 suite with Ui::Syncfusion::AutoCompleteComponent, TagInputComponent, and FieldComponent for Phase 2 Form Extras. (`239-syncfusion-phase2-form-extras`)
+- Expand Syncfusion EJ2 suite with Ui::Syncfusion::ToastComponent, TooltipComponent, SpinnerComponent, and PopoverComponent for Phase 2 Feedback & Overlays. (`240-syncfusion-phase2-overlays`)
 
 ### Fixed
 
