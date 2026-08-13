@@ -1550,6 +1550,10 @@ input::placeholder {
 }
 
 /* Spinner & Skeleton Loaders */
+.e-spinner-pane {
+  pointer-events: none !important;
+}
+
 .ej2-spinner-card-box {
   position: relative;
   min-height: 8rem;
