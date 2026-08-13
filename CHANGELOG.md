@@ -6,7 +6,9 @@ All notable platform changes are generated from versioned change fragments.
 
 Required release impact: `none`.
 
-- No changes declared.
+### Internal
+
+- Prepare NomoTect Platform version 1.1.0 GA release documents and archive change fragments. (`242-prepare-release-v1-1-0`)
 
 ## 1.1.0
 

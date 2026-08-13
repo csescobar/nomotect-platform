@@ -5,11 +5,13 @@
 
 ## Changes
 
-- No changes declared.
+### Internal
+
+- Prepare NomoTect Platform version 1.1.0 GA release documents and archive change fragments. (`242-prepare-release-v1-1-0`)
 
 ## Affected contracts
 
-- No public contracts declared.
+- `platform`
 
 ## Cross-cutting assessments
 
