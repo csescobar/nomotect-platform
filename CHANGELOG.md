@@ -94,6 +94,7 @@ Required release impact: `major`.
 - Expand Syncfusion EJ2 suite with canonical Ui::Syncfusion::* ViewComponents (Checkbox, RadioGroup, Toggle, Slider, InputGroup, DatePicker, DateRangePicker, TimePicker, FileUpload, Combobox, MultiSelect, Stepper, Tabs, TreeView, ProgressBar, Skeleton, Grid, Dialog, Button, Card) and full unit test coverage. (`238-syncfusion-viewcomponents-expansion`)
 - Expand Syncfusion EJ2 suite with Ui::Syncfusion::AutoCompleteComponent, TagInputComponent, and FieldComponent for Phase 2 Form Extras. (`239-syncfusion-phase2-form-extras`)
 - Expand Syncfusion EJ2 suite with Ui::Syncfusion::ToastComponent, TooltipComponent, SpinnerComponent, and PopoverComponent for Phase 2 Feedback & Overlays. (`240-syncfusion-phase2-overlays`)
+- Expand Syncfusion EJ2 suite with Ui::Syncfusion::BreadcrumbComponent, TimelineComponent, BadgeComponent, and AvatarComponent for Phase 2 Data & Display. (`241-syncfusion-phase2-data-display`)
 
 ### Fixed
 

@@ -76,4 +76,48 @@
       </div>
     </div>
   </div>
+
+  <%# ── Data & Display Extras (Phase 2 Pacote C) ───────────────────────────── %>
+  <div class="ej2-showcase-card" id="ej2-data-display-demo">
+    <div class="ej2-showcase-card__header">
+      <h3 class="ej2-showcase-card__title">Data & Display (Syncfusion ViewComponents)</h3>
+      <p class="ej2-showcase-card__desc">Componentes Ui::Syncfusion::BreadcrumbComponent, TimelineComponent, BadgeComponent e AvatarComponent</p>
+    </div>
+    <div class="ej2-showcase-card__demo">
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div>
+          <h4 class="ej2-showcase-grid__title">Ui::Syncfusion::BreadcrumbComponent</h4>
+          <%= render Ui::Syncfusion::BreadcrumbComponent.new(
+            items: [
+              { text: "Início", url: "#" },
+              { text: "Projetos", url: "#" },
+              { text: "NomoTect Platform", active: true }
+            ]
+          ) %>
+        </div>
+
+        <div>
+          <h4 class="ej2-showcase-grid__title">Ui::Syncfusion::AvatarComponent & BadgeComponent</h4>
+          <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <%= render Ui::Syncfusion::AvatarComponent.new(initials: "CE", size: :lg, shape: :circle) %>
+            <%= render Ui::Syncfusion::AvatarComponent.new(initials: "NT", size: :md, shape: :square) %>
+            <%= render Ui::Syncfusion::BadgeComponent.new(text: "Ativo", variant: :success) %>
+            <%= render Ui::Syncfusion::BadgeComponent.new(text: "Admin", variant: :primary) %>
+            <%= render Ui::Syncfusion::BadgeComponent.new(text: "Alerta", variant: :warning) %>
+            <%= render Ui::Syncfusion::BadgeComponent.new(text: "Crítico", variant: :danger) %>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="ej2-showcase-grid__title">Ui::Syncfusion::TimelineComponent</h4>
+          <%= render Ui::Syncfusion::TimelineComponent.new(
+            events: [
+              { title: "Repositório Criado", timestamp: "10:00 - 12/08", status: :success, description: "Pipeline CI/CD configurado" },
+              { title: "Revisão de Arquitetura", timestamp: "11:30 - 12/08", status: :info, description: "Suíte Syncfusion integrando com Turbo" }
+            ]
+          ) %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

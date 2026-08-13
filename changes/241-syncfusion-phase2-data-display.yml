@@ -1,0 +1,22 @@
+schema_version: 1
+id: 241-syncfusion-phase2-data-display
+category: feature
+summary: Expand Syncfusion EJ2 suite with Ui::Syncfusion::BreadcrumbComponent, TimelineComponent, BadgeComponent, and AvatarComponent for Phase 2 Data & Display.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: All Phase 2 Data & Display ViewComponents adhere to strict CSP style-src rules.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Syncfusion Phase 2 Data & Display ViewComponents include WAI-ARIA breadcrumb roles and semantic markup.
