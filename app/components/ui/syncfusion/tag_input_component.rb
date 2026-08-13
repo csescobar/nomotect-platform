@@ -8,6 +8,7 @@ module Ui
         values: [],
         data_source: [],
         placeholder: nil,
+        aria_label: nil,
         disabled: false,
         input_id: nil,
         html_options: {}
@@ -16,6 +17,7 @@ module Ui
         @values = Array(values)
         @data_source = Array(data_source)
         @placeholder = placeholder || "Add tags..."
+        @aria_label = aria_label || @placeholder || @name
         @disabled = !!disabled
         @input_id = input_id || "ej2_tag_input_#{SecureRandom.hex(4)}"
         @html_options = html_options
@@ -33,6 +35,7 @@ module Ui
             id: @input_id,
             name: @name,
             placeholder: @placeholder,
+            aria: { label: @aria_label },
             disabled: (@disabled ? "disabled" : nil),
             class: "e-control e-multiselect e-input",
             data: {

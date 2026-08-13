@@ -9,6 +9,7 @@ module Ui
         data_source: [],
         url: nil,
         placeholder: nil,
+        aria_label: nil,
         min_length: 1,
         disabled: false,
         input_id: nil,
@@ -19,6 +20,7 @@ module Ui
         @data_source = data_source
         @url = url
         @placeholder = placeholder || "Search..."
+        @aria_label = aria_label || @placeholder || @name
         @min_length = min_length
         @disabled = !!disabled
         @input_id = input_id || "ej2_autocomplete_#{SecureRandom.hex(4)}"
@@ -38,6 +40,7 @@ module Ui
             name: @name,
             value: @value,
             placeholder: @placeholder,
+            aria: { label: @aria_label },
             disabled: (@disabled ? "disabled" : nil),
             class: "e-control e-autocomplete e-input",
             data: {
