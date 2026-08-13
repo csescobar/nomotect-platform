@@ -44,4 +44,36 @@
       <div class="ej2-toast-container"></div>
     </div>
   </div>
+
+  <%# ── Feedback & Overlays (Phase 2 Pacote B) ─────────────────────────────── %>
+  <div class="ej2-showcase-card" id="ej2-overlays-demo">
+    <div class="ej2-showcase-card__header">
+      <h3 class="ej2-showcase-card__title">Feedback & Overlays (Syncfusion ViewComponents)</h3>
+      <p class="ej2-showcase-card__desc">Componentes Ui::Syncfusion::ToastComponent, TooltipComponent, SpinnerComponent e PopoverComponent</p>
+    </div>
+    <div class="ej2-showcase-card__demo">
+      <div class="ej2-showcase-grid">
+        <div class="ej2-showcase-grid__item">
+          <h4 class="ej2-showcase-grid__title">Ui::Syncfusion::TooltipComponent</h4>
+          <%= render Ui::Syncfusion::TooltipComponent.new(message: "Alerta de segurança ativo", position: "TopCenter") do %>
+            <button type="button" class="button button--secondary">Passe o mouse aqui</button>
+          <% end %>
+        </div>
+
+        <div class="ej2-showcase-grid__item">
+          <h4 class="ej2-showcase-grid__title">Ui::Syncfusion::PopoverComponent</h4>
+          <%= render Ui::Syncfusion::PopoverComponent.new(title: "Detalhes do Sistema", trigger_text: "Informações") do %>
+            <p style="font-size: 0.875rem; color: var(--color-text-muted);">Servidor operando com 99.9% de uptime sob o protocolo NomoTect.</p>
+          <% end %>
+        </div>
+
+        <div class="ej2-showcase-grid__item">
+          <h4 class="ej2-showcase-grid__title">Ui::Syncfusion::SpinnerComponent</h4>
+          <div style="min-height: 4.5rem; position: relative; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: var(--space-sm); display: flex; align-items: center; justify-content: center;">
+            <%= render Ui::Syncfusion::SpinnerComponent.new(label: "Sincronizando...", size: "small", auto_hide: 3000) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
