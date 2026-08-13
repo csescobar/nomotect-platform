@@ -2,7 +2,7 @@ schema_version: 1
 id: 211-v1-0-0-ga-certification
 category: feature
 summary: Complete Release Gate v1.0.0 GA certification including GitHub Release publication, OCI container image promotion, and clean standalone bootstrap validation.
-release_impact: major
+release_impact: minor
 contracts:
   - ADR-0015
 migration:

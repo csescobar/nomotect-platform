@@ -4,9 +4,10 @@
 
 The authenticated component showcase is the living reference for the platform design system. It displays representative variants, states, form controls, containers, feedback, and empty states using production components and semantic design tokens.
 
-## Route
+## Routes
 
-`GET /component_showcase` requires authentication and is linked from the application shell.
+- `GET /component_showcase` — Core baseline UI components showcase. Requires authentication and is linked from the application shell.
+- `GET /ej2_showcase` — Enterprise Syncfusion EJ2 ViewComponents showcase (`Ui::Syncfusion::*`), organized into Form Controls, Dialogs, Cards, Enterprise Grid Engine, Buttons, Toasts, Loading Spinners, Overlays, and Data & Display components.
 
 ## Expectations
 
@@ -14,7 +15,7 @@ Every public visual component must have at least one representative state in the
 
 ## Automated accessibility audit
 
-`Accessibility::HtmlAudit` analyzes the fully rendered showcase HTML. The integration test fails for:
+`Accessibility::HtmlAudit` analyzes the fully rendered showcase HTML for both `/component_showcase` and `/ej2_showcase`. The integration test fails for:
 
 - duplicate IDs;
 - form controls without accessible labels;
@@ -22,7 +23,7 @@ Every public visual component must have at least one representative state in the
 - broken `aria-labelledby`, `aria-describedby`, or `aria-controls` references;
 - skipped heading levels.
 
-The audit is intentionally deterministic and dependency-light. It complements, rather than replaces, browser testing, keyboard review, screen-reader review, and color-contrast verification.
+The audit is intentionally deterministic and dependency-light. It complements, rather than replaces, browser testing (`bin/rails test:system`), keyboard review, screen-reader review, and color-contrast verification.
 
 ## Manual verification checklist
 

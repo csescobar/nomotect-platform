@@ -30,7 +30,7 @@ module Epic10
       findings = []
       findings << "target version must be an Epic 10 release candidate" unless TARGET_PATTERN.match?(target_version)
       findings << "source commit must be a full lowercase Git SHA" unless COMMIT_PATTERN.match?(source_commit)
-      findings << "VERSION must be 0.9.0, 1.0.0-rc.1 or 1.0.0 during RC planning" unless %w[0.9.0 1.0.0-rc.1 1.0.0].include?(current_version)
+      findings << "VERSION must be 0.9.0, 1.0.0-rc.1 or 1.0.0 during RC planning" unless %w[0.9.0 1.0.0-rc.1 1.0.0 1.1.0].include?(current_version)
       required_paths.each do |path|
         findings << "required RC planning input is missing: #{relative(path)}" unless path.file?
       end
