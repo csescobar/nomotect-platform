@@ -92,6 +92,7 @@ Required release impact: `major`.
 - Epic 16 Phases 4, 5 & 6 — Completing AI Assistant Platform with Governed MCP Tools Registry (lib/ai/mcp/tool_registry.rb), SKILL.md Skills Framework (lib/ai/skills/), Platform Skills, and Governed AI Mutating Action Executor (lib/ai/mcp/action_executor.rb) with user confirmation policies and audit integration (ai.action.executed). (`236-epic-16-ai-assistant-phase-4-5-6`)
 - Introduce CheckboxComponent, RadioGroupComponent, ToggleComponent, SliderComponent, and InputGroupComponent ViewComponents with showcase integration, Portuguese i18n, strict CSP inline-style compliance, and unified form control design tokens. (`237-ui-form-controls-showcase-enhancements`)
 - Expand Syncfusion EJ2 suite with canonical Ui::Syncfusion::* ViewComponents (Checkbox, RadioGroup, Toggle, Slider, InputGroup, DatePicker, DateRangePicker, TimePicker, FileUpload, Combobox, MultiSelect, Stepper, Tabs, TreeView, ProgressBar, Skeleton, Grid, Dialog, Button, Card) and full unit test coverage. (`238-syncfusion-viewcomponents-expansion`)
+- Expand Syncfusion EJ2 suite with Ui::Syncfusion::BreadcrumbComponent, TimelineComponent, BadgeComponent, and AvatarComponent for Phase 2 Data & Display. (`241-syncfusion-phase2-data-display`)
 
 ### Fixed
 
