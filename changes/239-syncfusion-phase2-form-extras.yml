@@ -1,0 +1,22 @@
+schema_version: 1
+id: 239-syncfusion-phase2-form-extras
+category: feature
+summary: Expand Syncfusion EJ2 suite with Ui::Syncfusion::AutoCompleteComponent, TagInputComponent, and FieldComponent for Phase 2 Form Extras.
+release_impact: minor
+contracts:
+  - platform
+migration:
+  required: false
+  notes:
+upgrade:
+  required: false
+  notes:
+security:
+  impact: reviewed
+  notes: All Phase 2 ViewComponents adhere to strict CSP style-src rules.
+privacy:
+  impact: none
+  notes:
+accessibility:
+  impact: reviewed
+  notes: Syncfusion Phase 2 ViewComponents include accessible ARIA labels, role attributes, and field error feedback.

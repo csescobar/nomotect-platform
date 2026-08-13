@@ -202,4 +202,48 @@
       </div>
     </div>
   </div>
+
+  <%# ── AutoComplete, TagInput & FieldComponent (Phase 2 Extras) ────────────── %>
+  <div class="ej2-showcase-card" id="ej2-forms-phase2-extras">
+    <div class="ej2-showcase-card__header">
+      <h3 class="ej2-showcase-card__title">Form Extras (AutoComplete, TagInput & Field Wrapper)</h3>
+      <p class="ej2-showcase-card__desc">Novos componentes Ui::Syncfusion::AutoCompleteComponent, TagInputComponent e FieldComponent</p>
+    </div>
+    <div class="ej2-showcase-card__demo">
+      <div class="ej2-showcase-grid">
+        <div class="ej2-showcase-grid__item">
+          <h4 class="ej2-showcase-grid__title">Ui::Syncfusion::AutoCompleteComponent</h4>
+          <%= render Ui::Syncfusion::AutoCompleteComponent.new(
+            name: "ej2_demo[country]",
+            placeholder: "Digite um país...",
+            data_source: ["Brasil", "Argentina", "Chile", "Colômbia", "Uruguai", "Paraguai", "Peru", "Equador"]
+          ) %>
+        </div>
+        <div class="ej2-showcase-grid__item">
+          <h4 class="ej2-showcase-grid__title">Ui::Syncfusion::TagInputComponent</h4>
+          <%= render Ui::Syncfusion::TagInputComponent.new(
+            name: "ej2_demo[tags][]",
+            placeholder: "Adicionar tecnologias...",
+            values: ["Ruby", "Rails"],
+            data_source: ["Ruby", "Rails", "PostgreSQL", "Docker", "Syncfusion", "Stimulus"]
+          ) %>
+        </div>
+        <div class="ej2-showcase-grid__item">
+          <h4 class="ej2-showcase-grid__title">Ui::Syncfusion::FieldComponent</h4>
+          <%= render Ui::Syncfusion::FieldComponent.new(
+            label: "E-mail de Notificação",
+            required: true,
+            hint: "Usado para envio de alertas críticos de sistema",
+            errors: ["formato inválido"]
+          ) do %>
+            <%= render Ui::Syncfusion::AutoCompleteComponent.new(
+              name: "ej2_demo[field_email]",
+              placeholder: "exemplo@nomotect.com",
+              data_source: ["admin@nomotect.com", "support@nomotect.com", "dev@nomotect.com"]
+            ) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
